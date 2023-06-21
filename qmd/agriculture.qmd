@@ -1,6 +1,8 @@
-# Agriculture
+# Agriculture {#sec-ag .unnumbered}
 
-## Misc
+## Misc {#sec-ag-misc .unnumbered}
 
 -   Commodity prices normally forecast using a cobweb model which leads to price risk
--   Vegetable price series are much more volatile than other commodities - Seasonality regulates the supply and demand - Perishable nature of the produce adds complications in stabalizing the price
+-   Vegetable price series are much more volatile than other commodities
+    -   Seasonality regulates the supply and demand
+    -   Perishable nature of the produce adds complications in stabalizing the price

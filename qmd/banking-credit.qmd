@@ -1,58 +1,57 @@
-# Banking/Credit
+# Banking/Credit {#sec-bank-cred .unnumbered}
 
-## Misc
+## Misc {#sec-bank-cred-misc .unnumbered}
 
 -   Logistic Regression models typically with 8 to 10 predictors are common
-		-   "To adopt a new algorithm, it not only had to outperform regression. The improvement also had to justify the effort of explaining the algorithm."
-    		-   Using SHAP, PDPs, etc. just adds more complexity because then you would have also needed to explain the method used to explain the model
+    -   "To adopt a new algorithm, it not only had to outperform regression. The improvement also had to justify the effort of explaining the algorithm."
+        -   Using SHAP, PDPs, etc. just adds more complexity because then you would have also needed to explain the method used to explain the model
 -   DS Use Cases
-		-   Credit risk — predict default due to financial distress
-		-   Fraud — predict if customers do not intend to repay a loan
-		-   Pre-areas — identify customers in financial distress
-		-   Churn—identify customers who intend to leave the bank
-		-   Marketing — identify the best customers to promote a product to
+    -   Credit risk --- predict default due to financial distress
+    -   Fraud --- predict if customers do not intend to repay a loan
+    -   Pre-areas --- identify customers in financial distress
+    -   Churn --- identify customers who intend to leave the bank
+    -   Marketing --- identify the best customers to promote a product to
 
-## Fraud
+## Fraud {#sec-bank-cred-fraud .unnumbered}
 
 -   Misc
-		-   **Fraud Score** - Values that indicate how risky a user action is. Scoring determined by fraud rules.
-		-   Computing ROI for a fraud model
-    		-   Assume the cost of fraud is the cost of the transaction
-    		-   Calculate the total cost of all the fraudulent transactions in the test dataset.
-    				-   Calculate the cost based on the model predictions.
-    		-   False Negatives: Observed frauds that weren't predicted are assigned a cost equal to the value of the transaction.
-    		-   False Positives: Legitimate transactions that were marked as fraud are assigned $0 cost.
-    				-   This likely isn’t true. There is the cost of having to deal with customers calling because the transaction was declined or the cost sending out texts for suspicious transactions, but this cost is very small relative to the cost of a fraudulent transaction.
-    				-   Zhang, D. , Bhandari, B. and Black, D. (2020) Credit Card Fraud Detection Using Weighted Support Vector Machine. _Applied Mathematics_, **11**, 1275-1291. doi: [10.4236/am.2020.1112087](https://doi.org/10.4236/am.2020.1112087).
-    		-   Other costs can include deployment (e.g. DL model vs logistic regression)
-    		-   ROI of the new model = costs of old model - cost of new model
-    		-   Example: [article](https://lsinks.github.io/posts/2023-04-11-credit-card-fraud/fraud_tutorial.html#finding-a-high-performing-model)
+    -   **Fraud Score** - Values that indicate how risky a user action is. Scoring determined by fraud rules.
+    -   Computing ROI for a fraud model
+        -   Assume the cost of fraud is the cost of the transaction
+        -   Calculate the total cost of all the fraudulent transactions in the test dataset.
+            -   Calculate the cost based on the model predictions.
+        -   False Negatives: Observed frauds that weren't predicted are assigned a cost equal to the value of the transaction.
+        -   False Positives: Legitimate transactions that were marked as fraud are assigned \$0 cost.
+            -   This likely isn't true. There is the cost of having to deal with customers calling because the transaction was declined or the cost sending out texts for suspicious transactions, but this cost is very small relative to the cost of a fraudulent transaction.
+            -   Zhang, D. , Bhandari, B. and Black, D. (2020) Credit Card Fraud Detection Using Weighted Support Vector Machine. *Applied Mathematics*, **11**, 1275-1291. doi: [10.4236/am.2020.1112087](https://doi.org/10.4236/am.2020.1112087).
+        -   Other costs can include deployment (e.g. DL model vs logistic regression)
+        -   ROI of the new model = costs of old model - cost of new model
+        -   Example: [article](https://lsinks.github.io/posts/2023-04-11-credit-card-fraud/fraud_tutorial.html#finding-a-high-performing-model)
 -   Metrics
-		-   FN: predicting “not fraud” for a transaction that is indeed fraud
-    		-   A false negative more costly than false positive
-		-   Recall (aka sensitivity): Ratio of correct fraud predictions (TP) out of all fraud events (TP + FN)
-		-   FN Rate: Ratio of fraud events  the model failed to predict out of all fraud events
-    		-   complement of Recall, (FN/(TP+FN))
-		    -   most expensive to organizations in terms of direct financial losses, resulting in chargebacks and other stolen funds
-		-   FP Rate: rate at which a model predicts fraud for a transaction that is not actually fraudulent
-    		-   FP / (FP + TN)
-    		-   Measures the incovenience for the customer that the model inflicts
-    		-   Seems to be a metric to monitor by group to see if the model is ethically biased
+-   FN: predicting "not fraud" for a transaction that is indeed fraud
+    -   A false negative more costly than false positive
+-   Recall (aka sensitivity): Ratio of correct fraud predictions (TP) out of all fraud events (TP + FN)
+-   FN Rate: Ratio of fraud events  the model failed to predict out of all fraud events
+    -   complement of Recall, (FN/(TP+FN))
+    -   most expensive to organizations in terms of direct financial losses, resulting in chargebacks and other stolen funds
+-   FP Rate: rate at which a model predicts fraud for a transaction that is not actually fraudulent
+    -   FP / (FP + TN)
+    -   Measures the incovenience for the customer that the model inflicts
+    -   Seems to be a metric to monitor by group to see if the model is ethically biased
 -   Model Monitoring
-		-   Far more false positives in production than the validation baseline
-    		-   results in legitimate purchases getting denied at the point of sale and annoyed customers.
-		-   A dip in aggregate accuracy
-    		-   Investigate prediction accuracy by group
-    		-   Example: The fraud model isn’t as good at predicting smaller transactions relative to the big-ticket purchases that predominated in the training data
-		-   Feature performance heatmaps can be the difference between patching costly model exploits in hours versus several days
-		-   Scenario Examples
+    -   Far more false positives in production than the validation baseline
+        -   Results in legitimate purchases getting denied at the point of sale and annoyed customers.
+    -   A dip in aggregate accuracy
+        -   Investigate prediction accuracy by group
+        -   Example: The fraud model isn't as good at predicting smaller transactions relative to the big-ticket purchases that predominated in the training data
+    -   Feature performance heatmaps can be the difference between patching costly model exploits in hours versus several days
+    -   Scenario Examples
         -   Prediction Drift
-        		-		_Possible Drift Correlation:_ An influx and surge of fraud predictions could mean that your model is under attack! You are classifying a lot more fraud than what you expect to see in production, but (so far) your model is doing a good job of catching this. Let’s hope it stays that way.
-        		-		_Real-World Scenario:_ A hack of a health provider leads to a surge of identity theft and credit card numbers sold on the dark web. Luckily, the criminals aren’t novel enough in their exploits to avoid getting caught by existing fraud models.
-    		-   Actuals Drift (No Prediction Drift)
-    				-   _Possible Drift Correlation:_ An influx of fraud actuals without changes to the distribution of your predictions means that fraudsters found an exploit in your model and that they’re getting away with it. Troubleshoot and fix your model ASAP to avoid any more costly chargebacks.
-    				-   _Real-World Scenario:_ A global crime ring sends unemployment fraud to all-time highs using new tactics with prepaid debit cards, causing a dip in performance for fraud models trained on pre-COVID or more conventional credit card data.
-    		-   Feature Drift
-    				-   _Possible Drift Correlation_: An influx of new and/or existing feature values could be an indicator of seasonal changes (tax or holiday season) or in the worst case be correlated with a fraud exploitation; use drift over time stacked on top of your performance metric over time graph to validate whether any correlation exists.
-    				-   _Real-World Scenario_: An earlier holiday shopping season than normal takes hold, with bigger ticket purchases than prior years. It might be a sign of record retail demand and changing consumer behavior or a novel fraud exploitation (or both).
-
+            -   *Possible Drift Correlation:* An influx and surge of fraud predictions could mean that your model is under attack! You are classifying a lot more fraud than what you expect to see in production, but (so far) your model is doing a good job of catching this. Let's hope it stays that way.
+            -   *Real-World Scenario:* A hack of a health provider leads to a surge of identity theft and credit card numbers sold on the dark web. Luckily, the criminals aren't novel enough in their exploits to avoid getting caught by existing fraud models.
+        -   Actuals Drift (No Prediction Drift)
+            -   *Possible Drift Correlation:* An influx of fraud actuals without changes to the distribution of your predictions means that fraudsters found an exploit in your model and that they're getting away with it. Troubleshoot and fix your model ASAP to avoid any more costly chargebacks.
+            -   *Real-World Scenario:* A global crime ring sends unemployment fraud to all-time highs using new tactics with prepaid debit cards, causing a dip in performance for fraud models trained on pre-COVID or more conventional credit card data.
+        -   Feature Drift
+            -   *Possible Drift Correlation*: An influx of new and/or existing feature values could be an indicator of seasonal changes (tax or holiday season) or in the worst case be correlated with a fraud exploitation; use drift over time stacked on top of your performance metric over time graph to validate whether any correlation exists.
+            -   *Real-World Scenario*: An earlier holiday shopping season than normal takes hold, with bigger ticket purchases than prior years. It might be a sign of record retail demand and changing consumer behavior or a novel fraud exploitation (or both).

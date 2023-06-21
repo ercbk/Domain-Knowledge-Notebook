@@ -1,29 +1,28 @@
-# Budget Allocation
+# Budget Allocation {#sec-budall .unnumbered}
 
+## Misc {#sec-budallo-misc .unnumbered}
 
-TOC
+## Performance-based Budget Cuts {#sec-budallo-perform-cuts .unnumbered}
 
--   Misc
--   Performance-based Budget Cuts
+-   Notes from: [The Politics of Performance Measurement](https://realworlddatascience.net/careers/posts/2023/04/18/politics-of-performance-measurement.html) - Scenario: "Criminal Justice Division (CJD) of the Texas Governor's Office received news all government agencies dread: budgets were to be cut. CJD oversaw a grant program that funded specialty courts throughout the state, however it was now being told that the program's budget of \$10.6m would be reduced 20% to \$8.5m by 2018."
 
-Misc
+    -   How should these cuts be distributed among grant holders?
+    -   Goal: Develop a data collection and performance assessment process to allocate budget cuts in a manner widely accepted
 
-	
-
-Performance-based Budget Cuts
-
--   Notes from: [The Politics of Performance Measurement](https://realworlddatascience.net/careers/posts/2023/04/18/politics-of-performance-measurement.html)
-		-   Scenario: "Criminal Justice Division (CJD) of the Texas Governor’s Office received news all government agencies dread: budgets were to be cut. CJD oversaw a grant program that funded specialty courts throughout the state, however it was now being told that the program’s budget of $10.6m would be reduced 20% to $8.5m by 2018."
-			  -   How should these cuts be distributed among grant holders?
-			  -   Goal: Develop a data collection and performance assessment process to allocate budget cuts in a manner widely accepted
 -   Options
-    1. **Cut across the board.** The Advisory Council would employ the same scoring method as the previous year but reduce each grant amount by 20%.
-  			This option would leave long-running grantees scrambling to make up for this shortfall by reducing services, laying off staff, or spending more of their limited local funds. Worse, it would punish all grantees equally – our most successful programs would be arbitrarily defunded.
-  	2. **Fewer grants.** Grants were scored based on the quality of their application and all grants that passed a certain threshold got funded. The Advisory Council would employ the same scoring method as the previous year but instead of funding the top $10.6m worth of grants, they would fund the top $8.5m worth.
-    -   This seemed a less bad option than cutting across the board, but we would still run into the problem of arbitrarily defunding successful programs. Grants near the bottom of the Advisory Council’s cutoff that got funded the previous year would be denied renewal only because the goalposts had moved.
-  	3. **Targeted funding.** The Advisory Council would incorporate performance data and statewide strategic plan alignment into their scoring method and make cuts accordingly.
--   Engage stakeholders and define performance
-		-   Convene a strategy session with the stakeholders to discuss how to proceed as part of a broader strategic plan
-    		-   Achieve consensus on high-level goals (e.g. fund strategically, focus on success, build capacity)
-    		-   Larger plan agreed upon that would also include: capacity building, training and technical assistance, helping courts obtain non-CJD sources of funding, and steering grantees toward established best practice.
 
+    1.  **Cut across the board.** The Advisory Council would employ the same scoring method as the previous year but reduce each grant amount by 20%.
+        -   This option would leave long-running grantees scrambling to make up for this shortfall by reducing services, laying off staff, or spending more of their limited local funds. Worse, it would punish all grantees equally --- our most successful programs would be arbitrarily defunded.
+    2.  **Fewer grants.** Grants were scored based on the quality of their application and all grants that passed a certain threshold got funded. The Advisory Council would employ the same scoring method as the previous year but instead of funding the top \$10.6m worth of grants, they would fund the top \$8.5m worth.
+        -   This seemed a less bad option than cutting across the board, but we would still run into the problem of arbitrarily defunding successful programs. Grants near the bottom of the Advisory Council's cutoff that got funded the previous year would be denied renewal only because the goalposts had moved.
+
+    ```{=html}
+    <!-- -->
+    ```
+    3.  **Targeted funding.** The Advisory Council would incorporate performance data and statewide strategic plan alignment into their scoring method and make cuts accordingly.
+
+-   Engage stakeholders and define performance
+
+    -   Convene a strategy session with the stakeholders to discuss how to proceed as part of a broader strategic plan
+        -   Achieve consensus on high-level goals (e.g. fund strategically, focus on success, build capacity)
+        -   Larger plan agreed upon that would also include: capacity building, training and technical assistance, helping courts obtain non-CJD sources of funding, and steering grantees toward established best practice.
