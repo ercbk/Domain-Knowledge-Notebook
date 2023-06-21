@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.340">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Domain Knowledge Notebook - 4&nbsp; Healthcare</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../qmd/insurance.html" rel="next">
+<link href="../qmd/finance.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../qmd/healthcare.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Healthcare</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">Domain Knowledge Notebook</a> 
+        <div class="sidebar-tools-main tools-wide">
+    <a href="https://ericbook.netlify.app/" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-house-fill"></i></a>
+    <a href="https://github.com/ercbk/Domain-Knowledge-Notebook" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../qmd/agriculture.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Agriculture</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../qmd/banking-credit.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Banking/Credit</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../qmd/budget-allocation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Budget Allocation</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../qmd/economics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Economics</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../qmd/environment.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Environment</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../qmd/epidemiology.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Epidemiology</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../qmd/finance.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Finance</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../qmd/healthcare.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Healthcare</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../qmd/insurance.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Insurance</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../qmd/kpis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">KPIs</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../qmd/location-selection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Location Selection</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../qmd/logistics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Logistics</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../qmd/manufacturing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Manufacturing</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../qmd/marketing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Marketing</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../qmd/meteorology.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Meteorology</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../qmd/nonprofits.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Nonprofits</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../qmd/politics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Politics</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../qmd/product-development.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Product Development</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../qmd/real-estate.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Real Estate</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../qmd/retail.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Retail</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../qmd/saas.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">SaaS</span></span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Healthcare</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<p>TOC</p>
+<ul>
+<li>Misc</li>
+<li>Terms</li>
+<li>Processing</li>
+<li>Fairness and Privacy</li>
+</ul>
+<p>Misc</p>
+<ul>
+<li>Notes from - Paper: <a href="https://www.nature.com/articles/s41746-018-0029-1">Scalable and accurate deep learning with electronic health records</a> by Google AI’s team - <a href="https://towardsdatascience.com/how-to-encode-medical-records-for-deep-learning-fcd690630e8b">How to Encode Medical Records for Deep Learning</a> - Makes data suitable for a RNN (see Processing for details)</li>
+<li>Also see - <a href="Geospatial, Analysis">Geospatial, Analysis</a> &gt;&gt; Disease Mapping</li>
+<li>Bias in Healthcare Claims Data (<a href="https://towardsdatascience.com/healthcare-is-inherently-biased-b60bf00d4af7">article</a>, (mini) <a href="https://jamanetwork.com/journals/jamanetworkopen/article-abstract/2800118">paper</a>) - Imbalance of patients or members represented in large healthcare datasets can make your results non-generalizable or (in some cases) flat out invalid.<br>
+- Goals should be: investigate the biases, mitigate as well as possible, and decide which insights are still valuable or meaningful despite these nuances<br>
+- Characteristics of data that lead to biases<br>
+- Only includes any members/patients who actually <em>had</em> an incident/event for which the insurer processed a subsequent claim<br>
+- Tends to over/underrepresent certain groups who are more likely to have chronic health problems, adverse social determinants of health, seek care,<br>
+- Groups are reflective of the type of demographics your organization tends to serve or that you have a larger book of business in<br>
+- Can cause over-and-under-representation of certain diseases - Even companies within the same insurance sector may not have similar populations. Company business practices affect the types of populations within their data.<br>
+- Our [patients / members / employees / residents / etc.] may not act similarly or even represent [all patients / other groups / other types of employer s / other regions / etc.]<br>
+- Data is years old. Effects sizes in data that’s 5 or 6yrs old may not be valid now.<br>
+- Types<br>
+- Undercoverage bias - occurs when a part of the population is excluded from your sample.<br>
+- Historical bias - occurs when socio-cultural prejudices and beliefs are mirrored into systematic processes [that are then reflected in the data].<br>
+- Systemic biases - result from institutions operating in ways that disadvantage certain groups.<br>
+- Solutions<br>
+- Augment or compare with outside data:&nbsp; data sharing/collaboration or tapping into additional feeds such as health information exchange (HIE)<br>
+- Social Determinants of Health (SDOH) - (see definition below) compare socio-economics and demographics of your dataset with&nbsp; Census estimates and the SDOH variability seen for said zip codes.<br>
+- Will determine the amount of reweighting/normalizing the data requires</li>
+<li>Populations within Healthcare Claims Data<br>
+- Lines of business (LOB) such as patients with coverage from a government payer (Medicaid, Medicare); commercial lines (employer groups, retail or purchased via the exchange); self-insured (self-funded groups, usually large employers paying for their own healthcare claims of employees), etc.<br>
+- Sub-lines of business, or groups. For instance, Medicaid may consist of multiple sub-groups representing different levels of eligibility, coverage, benefits, or types of people/why they qualified for the program (Temporary Assistance for Needy Families (TANF) vs.&nbsp;Medicaid expansion for adults)<br>
+- Demographics (certain groups, males or females, certain regions, etc.)<br>
+- Conditions (examining certain chronic conditions, top disease states of interest or those driving the highest costs to the system, those that Medicare focuses on, etc.)<br>
+- Sub-groups of some combination of the above, for instance: Medicaid, TANF, looking at mothers vs.&nbsp;newborns<br>
+- Cross-group comparison of some combination of the above, for instance: Medicaid, TANF, new mothers and their cost/utilization/outcomes trends vs.&nbsp;Commercial, self-insured, new mothers and their cost/utilization/outcomes<br>
+</li>
+<li>ICU’s data is usually the most complete and available for research compared to other healthcare data</li>
+<li>Recognized cutpoints - 25 kg/m2 to define “overweight” based on body mass index.</li>
+<li>DS Use Cases: - Clinical Outcomes - mortality (death) events - Early warning score (EWS) - likelihood of death - Features: respiratory rate, oxygen saturation, temperature, blood pressure, heart rate, and consciousness rating - Each variable has a normal range as established by common medical knowledge. A score is computed based on a lookup table to characterize how far away the variable is from its normal range. If the sum of all scores surpasses a threshold, it means a high likelihood of death - Early warning system for patient deterioration (CHARTwatch at Toronto hospital system, <a href="https://www.youtube.com/watch?v=3PSNMV7SdNE">video</a>) - Deployed to General Internal Medicine ward (GIM) - Slides with links to papers that discuss the model on the youtube website - Predicts risk score of a patient “at risk” - “at risk” - transfer to ICU or transfer to Palliative Care unit or Death (composite endpoint, see Terms) - Probability score then thresholded into “high,” “medium,” and “low” risk (color coded) labels - Features: laboratory values, vital measurements, and demographichs - Prediction delivery - Email to nurses, palliative care unit, etc. - Table with name, bed #,… , Status (aka prediction) for each patient - “front-end tool” - software for people that sign out patients, has general patient information, includes column for Status - Phone alerts for patients with High risk labels get sent to clinicians - Resource Utilization - Planning for hospital bed capacity - Score for long length of stay (i.e.&nbsp;larger than 7 days) - commonly computed 24 hours after admission - logistic regression model (with proper regularization techniques) - Features: age, gender, condition category, diagnosis code, hospital service received, and lab tests of vital signs to produce a probability number for long length of stay. - Assignment/Scheduling - Forecast daily Emergency Department arrivals - Quality of Care - 30 days readmission after discharge - Hospital score for readmission - typically calculated at discharge time - Features: hemoglobin level, sodium level, type of the admission, number of previous admissions, length of stay, whether the hospital stay is cancer related, and whether medical procedures were performed during the stay - Based on established medical knowledge, the values of each factor is translated to a risk score, and the sum of which depicts the overall risk of readmission - Medical Imaging AI tools - Dashboard to compute dosage (e.g.&nbsp;blood thinner) based on patient health factors</li>
+</ul>
+<p>Terms</p>
+<ul>
+<li><strong>Biomedical Informatics</strong> - involves carrying out analysis on large-scale biological datasets in order to understand and profer solutions to health-related problems. Focuses on the optimal use of biomedical information, data, and knowledge for problem-solving and decision-making by employing computational and traditional approaches</li>
+<li><strong>Calibration</strong> - the agreement between the estimated and the “true” risk of an outcome. A well-calibrated model is one that minimizes residuals, which is equivalent to saying that the model fits the test data well. (This is just GoF. How well the model generalizes.)</li>
+<li><strong>Clinical Data Science</strong> - focuses on applying data science to healthcare with the goal of improving the overall well-being of patients and the healthcare system</li>
+<li><strong>Discrimination</strong> - the ability of a model to rank patients according to risk (Often measured by AUROC)</li>
+<li><strong>Electronic Health Record (EHR)</strong> -&nbsp; comprehensive collection of all information by the individuals involved in patient care. This includes records from clinicians, laboratories, radiology imaging, health insurance, socio-demographics, genetic sequencing data, etc.</li>
+<li><strong>Electronic Medical Record (EMR)</strong> - patient medical and treatment history within a single practice. EMR is the electronic version of the traditional paper records found in clinicians’ offices.</li>
+<li><strong>Endpoint</strong> - Outcome variable measured in a medical study. e.g.&nbsp;Death, stroke, or quality of life are good endpoints. Blood tests and images on scans are not good endpoints. - A <strong>composite endpoint</strong> is one that consists of two or more events - Example: death due to cardiovascular causes or hospitalization due to heart failure - So the binary outcome would be a 1 if either of those events took place or a 0 if they did not. Or in a survival model, time until either of those events. - Issues - See <a href="https://johnmandrola.substack.com/p/the-all-important-endpoint-of-a-medical">The All-Important Endpoint of a Medical Study</a> for details - See Harrell in the comments for the solution</li>
+<li><strong>FHIR</strong> - Fast Healthcare Interoperability Resources - open healthcare data standard (also sets standards for other things) - one JSON data schema per healthcare concept — e.g.&nbsp;Patient, Observation, Condition, MedicationRequest, etc.</li>
+<li><strong>Healthcare Analytics</strong> - analytics activities that can be undertaken as a result of data generated from core areas of healthcare including claims and cost data, pharmaceutical and research &amp; development data, clinical data, patient behavior &amp; sentiment data (narrower in scope compared to clinical data science)</li>
+<li><strong>Life Expectancy</strong> - a snapshot of the current mortality (“expenctancy” comes from “expected value”) - Assumes that assumes that the observed age-specific death rates at the time of birth for a cohort stay unchanged for their entire lifetimes.</li>
+<li><strong>Line of Business (LOB)</strong> - a statutory set of heath insurance policies</li>
+<li><strong>Progression-Free Survival (PFS)</strong> - The length of time during and after the treatment of a disease, such as cancer, that a patient lives with the disease but it does not get worse. In a clinical trial, measuring the PFS is one way to see how well a new treatment works.</li>
+<li><strong>Progression-Free Survival Rate</strong> - The percentage of people who did not have new tumor growth or cancer spread during or after treatment. The disease may have responded to treatment completely or partially, or the disease may be stable. This means the cancer is still there but not growing or spreading.</li>
+<li><strong>Social Determinants of Health (SDOH)</strong> - conditions in the environments where people are born, live, learn, work, play, worship, and age that affect a wide range of health, functioning, and quality-of-life outcomes and risks. (US Health and Human Services <a href="https://health.gov/healthypeople/priority-areas/social-determinants-health">article</a>) - 5 Categories: Economic Stability, Education Access and Quality, Health Care Access and Quality, Neighborhood and Built Environment, Social and Community Context</li>
+</ul>
+<p>Processing</p>
+<ul>
+<li>Categoricals and Codes<br>
+<img src="./_resources/Healthcare.resources/image.png" class="img-fluid"> - Reconciling codes from various sources of data can be challenging because some coding systems are proprietary - e.g.&nbsp;“Heart failure” may be “123” in one coding system and “1a2b3c” in another - Solution: Tokenize data and create embeddings - Works as long as each healthcare dataset uses a consistent set of coding systems for itself - Tokenization - Text - Just split it by whitespaces. For - Example: “high glucose” becomes [“high”, “glucose”] - Codes - Embedding - For every field in every healthcare concept, we build a vocabulary of a predefined size - Creating a global vocabulary doesn’t work because different fields carries distinct healthcare semantics - Train an embedding for each token - Embeddings are learnt jointly with the prediction tasks - Choose the same embedding dimension for all fields within a given healthcare concept (easier for aggregating) - Aggregate to a common time-step - e.g.&nbsp;1 hour or a few hours or can be tuned as a hyperparameter - Take the average of all field embeddings in an instance (embeddings for a time step) to form the aggregated embedding for that instance - Can also use median, etc. instead of mean - If there are multiple instances of a concept, we can further average the instance embeddings to form the embedding for that concept - Since the healthcare concepts are a predefined enumerated list, we can concatenate the concept embeddings together to form a fixed sized example. - If a concept does not appear in the time-step, we just set its embedding to all 0s. - Append timestamp feature to embedding - The timestamp of the instances / training examples are not evenly spaced. When a particular event occurs and has significant clinical meaning, it’s not captured by the embeddings. - Take the average of the timestamps of all instances in the time-stamp, and append it to the end of the fixed size embedding we obtained via fields -&gt; instance, and instances -&gt; concept aggregation - This part isn’t completely clear to me. Need to check the Google AI paper - I think it means average all the timestamps within each aggregated embedding and append it to the embedding - Seems like the averaged timestame would need to be transformed into a numerical before being appended.</li>
+</ul>
+<p>Fairness and Privacy</p>
+<ul>
+<li>Misc - Notes from - <a href="https://towardsdatascience.com/algorithmic-bias-in-healthcare-and-some-strategies-for-mitigating-it-835abe28df7">Algorithmic Bias in Healthcare and Some Strategies for Mitigating It</a> - Deidentified clinical data sets are collections of observational patient data that have been stripped of all direct Patient Health Information (PHI) components. IRB permission is not necessary for access to deidentified clinical data sets. - Clinical data sets with HIPAA restrictions include observational patient information such as dates of admission, discharge, service, and birth and death as well as city, state, zip codes with five digits or more, and ages expressed in years, months, days, or hours. Without a patient’s consent or a HIPAA waiver, HIPAA-restricted clinical data sets may be used or shared for research, public health, or healthcare operations.</li>
+<li>Biases to fairness - Historical bias - when the data collected to train an AI system no longer reflects the current reality - e.g.&nbsp;even though the gender pay gap is still an issue, it was worse in the past. - Representation bias - depends on how the training data is defined and sampled from the population. - e.g.&nbsp;the data used for training the first facial recognition system, mostly relying on white faces, which lead the model to have a hard time recognizing black faces and other dark-skinned faces. - Measurement bias - occurs when training data features or measurements differ from real-world data - e.g.&nbsp;where the data for image recognition is mainly collected from one type of camera while real-world data is from multiple types of cameras. - Coding/human bias - this happens mostly when scientists dive deep into a project with their subjective thoughts about their study - e.g.&nbsp;“non-white patients receive fewer cardiovascular interventions and fewer renal transplants”, and “Black women are more likely to die after being diagnosed with breast cancer”. <a href="https://www.jointcommission.org/resources/news-and-multimedia/newsletters/newsletters/quick-safety/quick-safety-issue-23-implicit-bias-in-health-care/implicit-bias-in-health-care/#.Y4VE3uzMJTY">Source</a></li>
+<li>Strategies to mitigate bias - Collecting and using diverse training data: - Data on-representative of the real-world population is a common cause of bias. - Collect and use diverse training data that accurately reflects the demographics, backgrounds, and characteristics of the population the algorithm will be used on. - Test the algorithm for bias: - Can be done using a variety of methods, including conducting bias audits and using fairness metrics to measure the algorithm’s performance. - Use algorithmic fairness techniques: - Pre-processing algorithms that adjust the data to reduce bias - In-processing algorithms that make adjustments during the training process - Post-processing algorithms that adjust the output of the algorithm to make it fairer - Ensure transparency and accountability: - Provide clear explanations of how the algorithm works, - Regularly review and update the algorithm to remove any biases that may have been introduced - Provide mechanisms for individuals to challenge the decisions made by the algorithm. - Engaging with diverse stakeholders - e.g.&nbsp;individuals and communities that may be affected by the algorithm - Understand their perspectives and incorporate their feedback into the design and implementation of the algorithm. - Can help ensure the algorith accurately reflects the needs and concerns of the population it will be used on.</li>
+<li>Examples of Algorithmic Bias - UnitedHealth Group - Developed a commercial algorithm in order to determine which patients would require extra medical care (patients with the greatest medical need). - A bias in the algorithm reduced the number of black patients identified for extra care by more than half, and falsely concluded that black patients are healthier than equally sick White patients. - race correlated with other factors such as historical healthcare expenditures to evaluate future healthcare needs, which made it reflect economic inequality rather than the true medical needs of patients. - Drug discovery for Covid-19 - An AI system was developed to triage patients and expedite the discovery of a new vaccine - The AI system was able to predict with 70 to 80% accuracy which patients are likely to develop severe lung disease - The triage process was solely based on the symptoms and preexisting conditions of patients, which can be biased because of the disparities based on race and social economic status.</li>
+</ul>
+
+
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../qmd/finance.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Finance</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../qmd/insurance.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Insurance</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>

@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.340">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Domain Knowledge Notebook - 6&nbsp; KPIs</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../qmd/location-selection.html" rel="next">
+<link href="../qmd/insurance.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../qmd/kpis.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">KPIs</span></a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">Domain Knowledge Notebook</a> 
+        <div class="sidebar-tools-main tools-wide">
+    <a href="https://ericbook.netlify.app/" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-house-fill"></i></a>
+    <a href="https://github.com/ercbk/Domain-Knowledge-Notebook" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../qmd/agriculture.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Agriculture</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../qmd/banking-credit.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Banking/Credit</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../qmd/budget-allocation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Budget Allocation</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../qmd/economics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Economics</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../qmd/environment.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Environment</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../qmd/epidemiology.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Epidemiology</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../qmd/finance.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Finance</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../qmd/healthcare.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Healthcare</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../qmd/insurance.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Insurance</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../qmd/kpis.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">KPIs</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../qmd/location-selection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Location Selection</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../qmd/logistics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Logistics</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../qmd/manufacturing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Manufacturing</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../qmd/marketing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Marketing</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../qmd/meteorology.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Meteorology</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../qmd/nonprofits.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Nonprofits</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../qmd/politics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Politics</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../qmd/product-development.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Product Development</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../qmd/real-estate.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Real Estate</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../qmd/retail.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">16</span>&nbsp; <span class="chapter-title">Retail</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../qmd/saas.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">17</span>&nbsp; <span class="chapter-title">SaaS</span></span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">KPIs</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<p>TOC</p>
+<ul>
+<li>Misc</li>
+<li>Terms</li>
+<li>General</li>
+<li>Product Metrics</li>
+</ul>
+<p>Misc</p>
+<ul>
+<li>Also see - <a href="Job, Organizational and Team Development">Job, Organizational and Team Development</a> &gt;&gt; Developing a data strategy &gt;&gt; Objectives and Key Results (OKRs) - <a href="Product Development">Product Development</a> &gt;&gt; Metrics</li>
+<li>Leaders should focus on 3 to 6 KPIs that will drive growth.</li>
+<li>When a KPI’s growth begins to stagnate, break up the KPI monolith into smaller, more meaningful (and hopefully, easier to optimize) segments</li>
+</ul>
+<p>Terms</p>
+<ul>
+<li><strong>Operationalization</strong> - a process of defining the measurement of a phenomenon that is not directly measurable (e.g.&nbsp;happiness), though its existence is indicated by other phenomena. It is the process of defining a fuzzy concept so as to make the theoretical concept clearly distinguishable or measurable, and to understand it in terms of empirical observations.</li>
+</ul>
+<p>General</p>
+<ul>
+<li><p>KPI characteristics - Monotonic: you always want to drive them higher or lower - Typically a summary statistic or rate</p></li>
+<li><p>Question that you should ask when determining which metrics should be your KPIs What do you want to know?</p>
+<pre><code>How much do you need to know?
+
+Why do you want to know this?
+
+What is the value or impact between not knowing and knowing?</code></pre></li>
+<li><p>“Input –&gt; Output –&gt; Outcome” framework - Input Metrics - Provide information about the resources used to create a system or process - Useful for evaluating the efficiency of a system or process - What you control: amount of time you spend on a task, the quantity of materials used to produce something, etc. - Outputs should be highly responsive to your inputs - Output Metrics - Provide information about the immediate results of a system or process - Useful for evaluating the performance of a system or process - Answers whether the system or process is producing the desired results. - It should be clear how much your output would change for one additional unit of input. - Very actionable but not fully under your control - There is a causal link between your output and your outcome, so difficult to discover - May require experimentation to determine causality - Typically tracked daily - Outcome Metrics - North Star metrics (See Product Metrics &gt;&gt; Types) - What you are aiming to move with all your activities. - Typically requires multiple outputs to move - Typically tracked monthly or quarterly - Example: Educational Program - The # of teachers, their average seniority, the funding of the school (inputs) help drive the grades of the students and their consistency over time higher (output) which ultimately lead to more students graduating high school (outcomes).</p></li>
+<li><p>Industry examples - Financial — Revenue growth, cash flow, burn rate, gross profit - Customer — Engagement rates, net promoter scores, acquisition costs, conversion rates - Support &amp; Service — Turnaround time, mean time to resolve, SLA compliance, quality - Employee — Attrition and retention, satisfaction, engagement - Governance, Risk, &amp; Compliance — Percent compliance to process, audit compliance, non-security incidents Issues - Avoid incentivizing the wrong behavior - As soon as someone’s performance is linked to a metric — it is fair game to expect them to try to move the metric, so it is up to the metric designer to make sure the ‘rules of the game’ are clearly articulated. - Example: Reducing the number of support tickets opened via email - Potential Solution: Engineer makes it as hard as possible to contact the email support - Unintended Consequence: Increasing the number of ‘negative’ social media interactions - Example: You don’t want to push your salespeople to sell without caring about the retention rate. - e.g Car salesmen selling a lemon to a customer. Customer unlikely to return to buy another car. - Solutions - Pair metric with a guardrail metric (see Product Metrics &gt;&gt; Types) - Examples - quantity (sales) + quality (retention rate) - short term metric (inventory level) + long term metric (# of shortages) - Design a compound metric - By taking into account multiple measurement, it cannot be easily gamed - Can also include metrics you don’t want move negatively (e.g.&nbsp;cost metrics, guardrail metrics, health metrics) - For experiments that use this metric, you then create a binary decision rule to decide if your experiment is successful or not. - Beware of Deceptive Metrics - Correlation does not equal causation - Example: Someone discovers that the # of transactions is correlated w/higher revenue - Company decides to make # of transactions a metric and starts trying to increase it. - e.g.&nbsp;re-targeting former customers, offering discounts, etc. - Revenue doesn’t substantially increase after considerable effort and resources - Analysis reveals that the revenue is being mostly driven by a few whales buying high-ticket items while the team’s increase in transactions was mostly low-ticket items - So, the strategy should’ve been to target more whales and not just trying to increase the # of transactions</p></li>
+<li><p>Checks - Metric is precise (i.e.&nbsp;measurement isn’t noisy) - Metric is accurate (i.e.&nbsp;it properly depicts the phenomenon it is supposed to depict).</p></li>
+<li><p>Next Steps - Figure out the best way to calculate these metrics - Create dashboards to monitor them over time - Set up alerts when thresholds are crossed - anomaly detection</p></li>
+</ul>
+<p>Product Metrics</p>
+<ul>
+<li><p>Why are they important? - Metrics help companies have clarity, alignment and prioritization in what to build. - Metrics help a company decide how to build the product once they’ve prioritized what to build. - Metrics help a company determine how successful they are and hold them accountable to an outcome.</p></li>
+<li><p>Types - <strong>North Star Metric (NSM)</strong> - Long-term metric focused on the desired outcome for the entire company - Examples of potential NSMs - Instagram: Monthly Active Users - Spotify: Time Spent Listening - Airbnb: Booked Nights - Lyft: Rides per week - Slack: Daily Active Users - Customer happiness (e.g.&nbsp;revenue, Net Promoter Score (NPS), and customer satisfaction) - Quora: Questions Answered - <strong>Primary</strong> - Ask - “what is the desired outcome for this product?” (keeping the company’s mission in mind) - Example: number of high quality sellers that join the platform as a result of the email outreach - “What do our customers care about, and how do we solve it as fast as possible?” - Example - Engineering, product, and marketing agree that onboarding is a pain point, you decide to build goals and KPIs around making it easier for new customers to get started. - Align the company around the shared goal of reducing new tool onboarding from five days to three days - Data team gathers metrics on usage and helps build A/B tests - Engineering team modifies the product - Marketing team creates nurture campaigns - Map this outcome to a metric that is meaningful, measurable, and movable - Meaningful - Should reflect the way a company intends to drive value for its customers (based on the company’s <em>mission</em>)</p>
+<pre><code>        -   Avoid _vanity_ metrics.
+                -   Example: Quora uses push notifications to alert users when they would be best suited to answer a question. However, the number of times users click on the notification and open the app is a vanity metric. It may make Quora feel good to see open rates going up. But Quora didn’t release push notifications to drive open rates. The outcome they were aiming for was to get high quality answers to questions asked on their platform. So an outcome oriented metric would focus on answer rates, not open rates.
+        -   Measurable
+        -   Each component of that metric's formula should be a datapoint that you can collect with high confidence and precision. And remember to add a time frame to your metric.
+        -   Some aspects of a company's or product's mission/goal aren't measurable directly but may be measured through latent variables, proxy, or highly associated variable or group of variables
+        -   Moveable
+        -   Basically means the metric shouldn't be so noisy as to inhibit being able to measure changes when you take actions to change it.
+        -   The metric should measure something that as directly under control of the company as possible.
+                -   Example: Page Load Time - time difference between a user clicking on a link or typing the URL in the browser and the page being rendered to the user.
+                -   This is affected substantially by the user's computer, ISP, browser, etc. along with the app/website code. So asis, it wouldn't be a good metric to track.
+        -   Other Desirables
+        -   Quick Feedback
+                -   Actions taken to influence the metric should be (almost) immediately observable
+                -   Example: Measuring (subscription) retention would require you to wait until the end of the month in order to be able to judge the effect of your action. Daily Active Users might be a better alternative
+        -   Easily Interpretted
+                -   The role of a metric is to align teams around a specific goal so that they can take the right steps towards achieving that goal. If people can’t understand the metric, they can’t take the right steps to optimize for it.
+                -   Examples:
+                -   Complicated: the median of a weighted combination of viewing time, comments, likes, shares per user (with each action having different weights based on its importance)
+                -   Simpler: average watch time per user.
+        -   Not Gameable
+                -   I.e. picking an easily moveable metric that has no real value leads to bad incentives.
+-   **Supporting/Tracking/Input Metrics**
+-   Leading indicators that the NSM or the primary metric is moving in the right direction
+-   Inputs into the NSM and are directly correlated to its value
+-   Also tells you where your efforts to move your NSM may be falling short.
+-   Examples
+        -   Number of emails sent
+        -   The number of people that opened the email
+        -   Number of businesses that signed up to sell on the platform
+-   **Counter Metrics/Guardrails**
+-   Other outcomes that the business cares about, which may be negatively affected by a positive change in the primary metric (or NSM)
+-   They exist to make sure that in the pursuit of your primary metric, you are not doing harm to another aspect of the business
+-   Example (email marketing to obtain quality sellers for Amazon)
+        -   if your primary metric focuses on product _quantity_, your guardrail metric might be around product _quality_
+        -   The guardrail, average number of purchases a user makes in a day, ensures that the influx of sellers that the primary metric optimizes for doesn’t result in consumers becoming so overwhelmed by choice, that they end up not buying anything at all</code></pre></li>
+<li><p>User journey: <strong>AARRR</strong> (or Pirate Metric) Framework - <strong>Awareness</strong>: How many people are aware your brand exists? - metric examples: number of website visits, social media metrics (number of likes, shares, impressions, reach), time spent on a website, email open rate - <strong>Acquisition</strong>: How many people are interacting with your product? - A <strong>lead</strong> is any potential user who’s information you’ve been able to capture in some shape or form. - e.g.&nbsp;people who give you their email addresses when they sign up for your mailing list are considered to be leads. - A <strong>qualified lead</strong> when they show additional interest in your product beyond giving you their information. - e.g.&nbsp;in addition to signing up for your mailing list they also watch a webinar or sign up for a demo - metric examples: number of leads, number of qualified leads, sign ups, downloads, install, chatbot interactions - <strong>Activation</strong>: How many people are realizing the value of your product? - typically in the form of an <em>action taken x times with in a period of y days</em> - When the activation hurdle is crossed, an individual goes from unknown entity to actual user. - Example (Dropbox): Their activation metric is the number of users that have stored at least one file in one dropbox folder on one device - metric examples: number of connections made, number of times an action is performed, number of steps completed - <strong>Engagement</strong>: What is the breadth and frequency of user engagement? - Depth of their usage: How often are they using your product? Is it above or below the average users frequency? - Breadth of their usage: Are they performing every action that’s possible with your product? Are they favoring some more than others? What if you have multiple products? Are they using all of them? - metric examples: daily, weekly and monthly active users, time spent in a session, session frequency, actions taken in the product - <strong>Revenue</strong>: How many people are paying for your product? - ** Remember, a business should optimize for the value they bring to their customers, not the revenue they generate. And, if their customers are deriving a lot of value from the business, willingness to pay will be a natural byproduct - metric examples: % of paid customers; average revenue per customer; conversion rate of trial to paid customers; number of transactions completed; shopping cart abandonment rates; ad-metrics like click-through-rate and conversion rate (crucial for ads based businesses) - <strong>Retention/Renewal</strong>: How often are your people coming back? - metric examples: % of users coming back to your platform each day, month, year (product dependent); churn rates; customer lifetime value - <strong>Referral</strong>: How many customers are becoming advocates? - metric examples: <em><a href="https://www.netpromoter.com/know/">Net Promoter Score</a></em>, <a href="https://www.questionpro.com/blog/viral-coefficient/">viral coefficient</a> i.e.&nbsp;the average number of people that your users refer you to - Also see - <a href="Survey, Design">Survey, Design</a> &gt;&gt; Response Scales &gt;&gt; Net Promoter Score - <a href="Algorithms, Product">Algorithms, Product</a> &gt;&gt; Net Promoter Score</p></li>
+</ul>
+
+
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../qmd/insurance.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Insurance</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../qmd/location-selection.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Location Selection</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>
