@@ -2,22 +2,56 @@ project:
   type: book
 
 book:
-  title: "Domain-Knowledge-Notebook"
-  author: "Norah Jones"
+  title: "Domain Knowledge Notebook"
+  author: "Eric Book"
   date: "6/21/2023"
+  reader-mode: true
+  repo-url: https://github.com/ercbk/Domain-Knowledge-Notebook
+  sidebar: 
+    collapse-level: 1
+    background: "#fffaf0"
+    foreground: "#335f83"
+    tools: 
+      - icon: house-fill
+        href: https://ericbook.netlify.app/
   chapters:
     - index.qmd
-    - intro.qmd
-    - summary.qmd
-    - references.qmd
-
-bibliography: references.bib
+    - qmd/agriculture.qmd
+    - qmd/banking-credit.qmd
+    - qmd/budget-allocation.qmd
+    - qmd/economics.qmd
+    - qmd/environment.qmd
+    - qmd/epidemiology.qmd
+    - qmd/finance.qmd
+    - qmd/healthcare.qmd
+    - qmd/insurance.qmd
+    - qmd/kpis.qmd 
+    - qmd/location-selection.qmd
+    - qmd/logistics.qmd
+    - qmd/manufacturing.qmd
+    - qmd/marketing.qmd
+    - qmd/meteorology.qmd
+    - qmd/nonprofits.qmd
+    - qmd/politics.qmd
+    - qmd/product-development.qmd
+    - qmd/real-estate.qmd
+    - qmd/retail.qmd
+    - qmd/saas.qmd
 
 format:
   html:
-    theme: cosmo
-  pdf:
-    documentclass: scrreprt
+    toc-depth: 4
+    theme: paper
+    css: styles.css
+    code-link: true
+    backgroundcolor: "#fffaf0"
+    fontcolor: "#404d59"
+    mainfont: 'Lora'
+    monofont: 'Fira Code Retina'
+    linkcolor: '#0064B6FF'
+    highlight-style: printing
 
 editor: visual
 
+execute:
+    freeze: auto

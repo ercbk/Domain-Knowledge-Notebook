@@ -1,0 +1,96 @@
+
+
+
+h1, .h1 {
+ text-transform: uppercase !important;
+ font-weight: 540;
+}
+
+
+h2, .h2 {
+    font-weight: 540 !important;
+    border-bottom: 2px solid #404d59;
+    padding-bottom: .5rem;
+}
+
+
+h3, .h3 {
+    font-weight: 530 !important;
+    font-size: calc(1.25rem + 0.24vw);
+    border-bottom: 2px solid #dee2e6;
+    padding-bottom: .5rem;
+}
+
+
+h4, .h4 {
+  font-weight: 530 !important;
+  border-left: 4px solid #dee2e6;
+  padding-left: 3px;
+}
+
+
+/* highlight effect around Examples */
+.ribbon-highlight{
+  position:relative;
+  margin:0.1em;
+  color: white;
+  padding: 0 14px;
+  margin: 0 15px
+}
+.ribbon-highlight:before{
+  content:"";
+  z-index:-1;
+  left:-0.04em;
+  top:0.1em;
+  border-width:0.5em;
+  border-style: solid;
+  border-color: #13bf18;
+  position:absolute;
+  width:100%;
+  border-left-color:transparent;
+  border-right-color:transparent;
+}
+
+
+/* Book title */
+.sidebar-title>a {
+    color: #0064B6FF;
+}
+
+/* css selector for github icon */
+#quarto-sidebar > div.pt-lg-2.mt-2.text-left.sidebar-header > div > div > a > i{
+  color: #0064B6FF;
+}
+
+
+
+/* --------------------------------MathJax LateX attributes ------------------------------------- */
+
+/*
+.math.inline {
+  font-size: 150%;
+  color: #22b222;
+}
+*/
+
+/*
+.math.display {
+}
+*/
+
+/* aligns latext equation block text to the left */
+mjx-container[jax="CHTML"][display="true"] {
+    text-align: left !important;
+}
+
+/* outlier note; using equation id to specify a specific equation. There's some extra space on the left side that needs removed.
+#eq-grubbstest > span > mjx-container > mjx-math > mjx-mtable {
+  text-align: left;
+}
+
+/* for all equations using equation ids
+mjx-container [width="full"] {
+    width: 100%;
+    text-align: left;
+}
+*/

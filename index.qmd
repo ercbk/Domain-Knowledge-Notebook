@@ -1,9 +1,13 @@
-# Preface {.unnumbered}
+---
+format:
+  html: 
+    css: index.css
+---
 
-This is a Quarto book.
+# Preface  {.unnumbered}
 
-To learn more about Quarto books visit <https://quarto.org/docs/books>.
+These notes were transferred from Evernote to Quarto, so some of notes may be difficult to read as the editing of the note format is still an ongoing process.
 
-```{r}
-1 + 1
-```
+Notes without numbers in sidebar should be a good indicator of a note that I've finished formatting.
+
+If you see any mistakes or have any questions, please open an issue at the github [repository](https://github.com/ercbk/Domain-Knowledge-Notebook).
