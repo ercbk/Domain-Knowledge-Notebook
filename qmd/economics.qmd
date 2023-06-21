@@ -1,0 +1,45 @@
+# Economics
+
+
+TOC
+
+-   Misc
+-   Terms
+-   Price Elasticity
+
+Misc
+
+-   **Dynamic stochastic general equilibrium (DSGE)** models, which are popular in macroeconomic modeling, are garbage ([article](https://marginalrevolution.com/marginalrevolution/2022/11/a-big-and-embarrassing-challenge-to-dsge-models.html))
+		-   Even under extremely ideal conditions they don't retrieve the parameters and using them to forecast is no better than chance.
+
+Terms
+
+-   **Adverse Selection** - a market situation where buyers and sellers have different information. The result is that participants with key information might participate selectively in trades at the expense of other parties who do not have the same information
+		-   e.g. A person waits until he knows he is sick and in need of health care before applying for a health insurance policy. The buyer has more knowledge (i.e., about their health). To fight adverse selection, insurance companies reduce exposure to large claims by limiting coverage or raising premiums
+-   **Intertemporal Price Discrimination** - charging a high price initially, then lowering price after time passes.
+		-   a method for firms to separate consumer groups based on willingness to pay
+		-   e.g. last minute travel bookings (opposite direction since last minute bookings usually cost more)
+-   **Price Elasticity** **of Demand** **(PED)**\- the percent change in demand given the percent change in price assuming that everything else doesn’t change
+		-   How sensitive the quantity demanded is to its price. When the price rises, quantity demanded falls for almost any good, but it falls more for some than for others.
+		-   The elasticity of a good or service can vary according to the number of close substitutes available, its relative cost, and the amount of time that has elapsed since the price change occurred.
+		-   When the price of a good or service has reached the **point of elasticity**, sellers and buyers quickly adjust their demand for that good or service.
+		-   An **inelastic** product is one that consumers continue to purchase even after a change in price
+		-   Products or services that are elastic are either unnecessary or can be easily replaced with a substitute.
+-   **Second Degree Price Discrimination** - charging a different price for different quantities at the same time
+
+Price Elasticity
+
+-   By identifying the price elasticity of demand, you can try to determine the amount of price you can increase without hurting the demand, as well as check at what point an increase in price starts to affect the market.
+-   Price is NOT the only variable that influences whether you purchase a product or service. Therefore, looking at quantity purchased at each price to determine price elasticity is not enough.
+-   Guidelines
+		-   If the PED is greater than one (PED > 1), it is known as “**elastic**”, meaning changes in price causes a significant change in demand.
+		-   If the PED is equal to 1 (PED = 1), then this means any change in price causes equivalent changes in demand.
+		-   If the PED is less than one (PED < 1), it is known as “**inelastic**”. This means changes in price don’t affect the demand that much.
+		-   If the PED is equal to 0 (PED = 0), known as “**perfectly inelastic**”, meaning any change in price doesn’t cause a change in demand.
+-   Process
+		-   Filter on the specific subset of sales data relevant to the dimension which you are estimating elasticity (e.g. if estimating the price elasticity for red wine, filter on only red wine sales)
+		-   Perform a log transformation on the future sales target variable and on the current price feature
+		-   Train a multivariable linear regression model to accurately predict future sales
+		-   The price elasticity estimate will be the coefficient of the log transformed, price feature
+		-   Repeat steps 1–4 for each elasticity estimate
+

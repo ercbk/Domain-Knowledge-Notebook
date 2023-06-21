@@ -1,0 +1,55 @@
+# SaaS
+
+
+TOC
+
+-   Misc
+-   User Segmentation
+
+Misc
+
+-   Notes from
+		-   [Meaningful metrics: How data sharpened the focus of product teams](https://blog.duolingo.com/growth-model-duolingo/)
+
+User Segmentation
+![](./_resources/SaaS.resources/image.png)
+
+-   Diagram of users based on their activity on the language learning software, "duolingo."
+		-   See article for an example of a user journey
+-   Activity States
+		-   New users: learners who are experiencing Duolingo for the first time ever
+		-   Current users: learners active today, who were also active in the past week
+		-   Reactivated users: learners active today, who were also active in the past month (but not the past week)
+		-   Resurrected users: learners active today, who were last active >30 days ago
+		-   At-risk Weekly Active Users (WAU): learners who have been active within the past week, but not today
+		-   At-risk Monthly Active Users (MAU): learners who were active within the past month, but not the past week
+		-   Dormant Users: learners who have been inactive for at least 30 days
+-   Rates
+		-   Retention Rates
+		-   New User Retention Rate (NURR): The proportion of day 1 learners who return on day 2. This day 2 transition puts these learners into another “active” state (Current User)
+		-   Deactivation Rates: e.g. WAU or MAU loss rate
+		-   Activation Rates: e.g. Reactivation or Resurrection rate
+-   Process
+		-   Classify all users (past or present) into an activity state each day
+		-   Collect data: monitor rates of transition between states.
+		-   These transition probabilities are monitored as retention rates, activation rates, and deactivation rates
+		-   Use transition probabilities to create Markov model for simulations
+-   Identify new metrics, through simulations of the Markov model, that - when optimized - are likely to increase a North Star or Primary metric.
+		-   Example![](./_resources/SaaS.resources/image.1.png)
+		-   Simulation is for 3yrs into the future
+		-   "Lever" is the parameter being increased
+				-   In the sim, it's increased 2% month-over-month
+		-   Daily Active Users (DAU) is the North Star metric that is being opitimized (i.e. increased)
+		-   Interpretation: Increasing Current User Retention Rate (CURR) increases DAU by 75% over the next 3yrs
+		-   Formulas at time, t
+		-   **DAUt** = ReactivatedUsert + NewUsert + ResurrectedUsert + CurrentUsert
+		-   **WAUt** = ReactivatedUsert + NewUsert + ResurrectedUsert + CurrentUsert + AtRiskWAUt
+		-   **MAUt** = ReactivatedUsert + NewUsert + ResurrectedUsert + CurrentUsert + AtRiskWAUt + AtRiskMAUt
+		-   **ReactivatedUsert** = ReactivationRatet \* AtRiskMAUt-1
+		-   **ResurrectedUsert** \= ResurrectionRatet \* DormantUserst-1
+		-   **CurrentUsert** = (NewUsert-1 \* NURRt) + (ReactivatedUsert-1 \* RURRt) + (ResurrectedUsert-1 \* SURRt) + (CurrentUsert-1 \* CURRt) + (AtRiskWAUt-1 \* WAURRt)
+		-   **DormantUsert** = (DormantUsert-1 \* DormantRRt) + (AtRiskMAUt-1 \* MAULossRatet)
+		-   **AtRiskMAUt** = (AtRiskMAUt-1 \* ARMAURRt) + (AtRiskWAUt-1 \* WAULossRatet)
+		-   **AtRiskWAUt** = (AtRiskWAUt-1 \* ARWAURRt) + (CurrentUsert-1 \* (1-CURRt)) + (ReactivatedUsert-1 \* (1-RURRt)) + (NewUsert-1 \* (1-NURRt)) + (ResurrectedUsert-1 \* (1-SURRt))
+-   Perform A/B tests to see whether 1) the selected metric can be moved and 2) whether moving it actually moves the north star/primary metric
+
