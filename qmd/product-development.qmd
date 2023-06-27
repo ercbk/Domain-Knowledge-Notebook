@@ -1,23 +1,6 @@
-# Product Development
+# Product Development  {#sec-proddev}
 
-## TOC
-
--   Misc
--   Terms
--   Behavioral Data
--   Conversion Funnels
--   Stages of Product Development
--   Why do people leave and stay?
--   Feedback
--   Metrics
-    -   Success
-    -   Guardrail
-    -   Funnel
-    -   Input-Output
-    -   Growth
-    -   Platform
-
-## Misc
+## Misc  {#sec-proddev-misc}
 
 -   Also see [Decison Theory](Decison%20Theory) \>\> Conjoint Analysis for surveying consumers about product attributes to calculate attribute utilities and probability of purchase
 -   Flaws of Purchase-Funnel Based Attribution Metrics
@@ -50,13 +33,13 @@
         -   Get your customer retention people in a room with a white board and list all the issues they CONSTANTLY hear from customers but have stopped bothering to report up the chain.
         -   However painful it is to your bottom line. However politically tough it is. However complex the problem. These are the things that need to be fixed.
 
-Terms
+## Terms  {#sec-proddev-terms}
 
 -   [**Bounce Rate**]{style="color: #009499"} - the percentage of visitors to a particular website who navigate away from the site after viewing only one page. Low bounce rate can indicate the landing page needs improvement
 -   [**Product Listing Page (PLP)**]{style="color: #009499"} -  webpage that lists all your products or a category of your products
 -   [**Product Details Page**]{style="color: #009499"} **(PDP)**\]{style='color: #009499'} - webpage for a specific product that shows in-depth information
 
-Behavioral Data
+## Behavioral Data  {#sec-proddev-behdat}
 
 -   Behavioral data serves two main purposes for teams --- understanding how the product is being used or not used (user behavior) and building personalized customer experiences across various touchpoints to influence user behavior.
     -   Launching new features without instrumenting them (e.g. tracking) beforehand takes away the opportunity to analyze how those features are used (if at all) and to trigger in-app experiences or messages when relevant events take place (or don't).
@@ -123,7 +106,7 @@ Behavioral Data
     -   PostHog (open-source)
         -   Can be integrated with Airbyte
 
-Conversion Funnels ![](./_resources/Product_Development.resources/image.4.png)
+## Conversion Funnels  {#sec-proddev-convfun} ![](./_resources/Product_Development.resources/image.4.png)
 
 -   Figure: Typical eCommerce Funnel
     -   Funnel moves down and users drop off until only 3% of users ("% users") reach Transaction (aka conversion)
@@ -178,58 +161,50 @@ Conversion Funnels ![](./_resources/Product_Development.resources/image.4.png)
             -   For each signal in terms of activity (i.e. counts of events), segment customers into 3 quantiles (\< Q33, Q33 \< Q66, \>Q66) with labels below average, average, above average customers
                 -   Can also label customers who did not have any events for a signal at all (0-score users)
 
-## Stages of Product Development
+## Stages of Product Development  {#sec-proddev-sopd}
 
-```         
-Stage 1: Coming up with initial product ideas.
+* Stage 1: Coming up with initial product ideas.
+* Stage 2: Selecting ideas:
+  * Quantitative analysis to select a subset of ideas to which to devote resources, often referred to as opportunity sizing.
+* Stage 3: Experiment design:
+  * Involved with selecting success and guardrail metrics, running sanity checks, choosing randomization units, etc.
+  * Candidates will need to consider alternatives when it is not possible to run A/B tests.
+* Stage 4: Making a launch decision:
+  * Making scientific decisions based on experimentation results.
+  * Diagnosing problems and evaluating tradeoffs.
+  * Throughout the product development lifecycle, working with the appropriate **metrics** is of paramount importance
 
-Stage 2: Selecting ideas:
-* Quantitative analysis to select a subset of ideas to which to devote resources, often referred to as opportunity sizing.
-Stage 3: Experiment design:
-* Involved with selecting success and guardrail metrics, running sanity checks, choosing randomization units, etc.
-* Candidates will need to consider alternatives when it is not possible to run A/B tests.
-Stage 4: Making a launch decision:
-* Making scientific decisions based on experimentation results.
-* Diagnosing problems and evaluating tradeoffs.
-Throughout the product development lifecycle, working with the appropriate **metrics** is of paramount importance
-```
 
-# Why do people leave and stay?
+## Why do people leave and stay?  {#sec-proddev-wdplas}
 
-```         
-Might need to be answered by user research and experiments instead of user analytics data
-    Collaborate with the UX research team to help design the surveys and interviews, and generate insights
-    
-    Collaborate with the engineers to design experiments and analyze results
-    
-Some reasons people churn:
-* They might not understand the product.
-* The product might be hard to use.
-* People might not see the value of the product.
-* People prefer a competitor’s product.
-* The product might have some issues like bugs or being slow.
-* The new user is not the target user. There could be a mismatch between the user acuiqition and core features.
-* People might only need our product for a short period of time.
-Some reasons people become long term users:
-* People love the product.
-* Personalized notification works.
-* It has become a habit for people to use the product.
-```
+         
+* Might need to be answered by user research and experiments instead of user analytics data
+* Collaborate with the UX research team to help design the surveys and interviews, and generate insights
+* Collaborate with the engineers to design experiments and analyze results
+* Some reasons people churn:
+  * They might not understand the product.
+  * The product might be hard to use.
+  * People might not see the value of the product.
+  * People prefer a competitor’s product.
+  * The product might have some issues like bugs or being slow.
+  * The new user is not the target user. There could be a mismatch between the user acuiqition and core features.
+  * People might only need our product for a short period of time.
+* Some reasons people become long term users:
+  * People love the product.
+  * Personalized notification works.
+  * It has become a habit for people to use the product.
 
-Feedback
 
-```         
-Misc
-    Before even touching any of the data, ask yourself some **user privacy questions**: do we have good reason to be looking at the user data? Would we be violating any user privacy? In modern technology, user privacy is at the forefront so this should always be your first thought.
-    
-Types
-* In-product bug reporting: many products give users a way to leave feedback if the system crashes or they navigate somewhere unexpected.
-* In-product feedback: products can ask for more general feedback in specific locations or always give users an option in site menus.
-* Social media: thanks to the wide penetration of social media, it’s common to find feedback about products online. You can track specific tags on Twitter, monitor your company’s Facebook or Instagram profiles or check your executive’s posts.
-* Internal feedback: many people working internally in a company will have a view of how the product behaves and capturing feedback from these people is also important.
-* User research: companies can actively seek user feedback through user research which often includes recruiting individuals and asking questions directly.
-```
+## Feedback  {#sec-proddev-fdbk}
 
+* Misc
+  * Before even touching any of the data, ask yourself some **user privacy questions**: do we have good reason to be looking at the user data? Would we be violating any user privacy? In modern technology, user privacy is at the forefront so this should always be your first thought.
+* Types
+  * In-product bug reporting: many products give users a way to leave feedback if the system crashes or they navigate somewhere unexpected.
+  * In-product feedback: products can ask for more general feedback in specific locations or always give users an option in site menus.
+  * Social media: thanks to the wide penetration of social media, it’s common to find feedback about products online. You can track specific tags on Twitter, monitor your company’s Facebook or Instagram profiles or check your executive’s posts.
+  * Internal feedback: many people working internally in a company will have a view of how the product behaves and capturing feedback from these people is also important.
+  * User research: companies can actively seek user feedback through user research which often includes recruiting individuals and asking questions directly.
 -   Potential Insights
     -   Inform product direction: if users are consistently asking for a specific feature or requesting you to add more types of content, then the product may very well benefit from following their advice.
     -   Identify bugs: when something goes wrong, users are often happy to complain about it. Monitoring user feedback is a great way to get quick insights into potential problems with your product.
@@ -255,7 +230,7 @@ Types
     -   Set up anomaly detection to be alerted if there are significant movements in the metric. This can be simple percentage movements in the key metrics that you identified above in the understand and modelling phases, or you can use more sophisticated algorithms.
     -   It's also good to create automated reports where possible, to summarize longer term trends, such as quarterly reports. You'll always require some manual work, but setting up the queries and making it as easy as possible to action is important.
 
-Metrics
+## Metrics  {#sec-proddev-metrics}
 
 -   Types
     -   Success
@@ -293,12 +268,14 @@ Metrics
             -   Number of leads to which the Sales team proactively reaches out;
             -   Number of paid customers (each of which is a company / business) who made recurrent purchases.
         -   What makes a good step to monitor in a conversion funnel? Notes from [Step Suggestions: How We Take the "Guess and Check" Out of Building Funnels](https://heap.io/blog/step-suggestions-how-we-automate-building-funnels)
-            -   A good funnel step is ubiquitous: almost no users reach the next step without performing this action.![](./_resources/Product_Development.resources/funnel-results-when-x-is-ubiquitous.png)
+            -   A good funnel step is ubiquitous: almost no users reach the next step without performing this action.  
+                ![](./_resources/Product_Development.resources/funnel-results-when-x-is-ubiquitous.png)
                 -   Examples:
                     -   Ubiquitous: "Enter Password" or "Click Add to Cart"
                     -   Not Ubiquitous: "Subscribe to Mailing List" or "View Warranty"
                 -   To qualify as ubiquitus, at least 97% of completers need to have completed the step.
-            -   A good funnel step is divisive: some users drop off before performing the step, and others drop off after.![](./_resources/Product_Development.resources/funnel-results-x-is-divisive.png)
+            -   A good funnel step is divisive: some users drop off before performing the step, and others drop off after.  
+                ![](./_resources/Product_Development.resources/funnel-results-x-is-divisive.png)
                 -   X is a good milestone: 25% of users drop off from A to X, and 33% drop off from X to A (divisiveness = min(25%, 33%) = 25%).
                 -   Y isn't a good milestone: 0% of users drop off from A to Y (divisiveness = min(0%, 50%) = 0%).
                 -   Z isn't a good milestone, 0% of users drop off from Z to B (divisiveness = min(0%, 50%) = 0%)
@@ -377,12 +354,15 @@ Metrics
                     -   Time period depends on your products natural cycle. May be monthly ("L30"), weekly ("L7"), daily, etc.
                         -   [Example]{.ribbon-highlight}: productivity/work-related products that users engage with Monday through Friday. B2B SaaS products will often find it useful to show this version, as they want to drive usage during the work week.
                     -   "Smile" curves are good
-                        -   Monthly![](./_resources/Product_Development.resources/image.1.png)
+                        -   Monthly  
+                            ![](./_resources/Product_Development.resources/image.1.png)
                             -   The 7% (far right) that engage daily shows that a group of users are returning frequently (daily) so it may be possible that the impressions can support an ad business
                             -   Successive Power User Curves should ideally show users shifting over more to the right side of the smile
-                        -   Weekly![](./_resources/Product_Development.resources/image.2.png)
+                        -   Weekly  
+                            ![](./_resources/Product_Development.resources/image.2.png)
                             -   The "smile" occurs between 1 and 5 days which makes sense for productivity type product that is most active during the workweek.
-                    -   Cohort analysis![](./_resources/Product_Development.resources/image.3.png)
+                    -   Cohort analysis  
+                        ![](./_resources/Product_Development.resources/image.3.png)
                         -   Shows a positive shift in user engagement from August to November, where a larger segment of the population is becoming active on a daily basis, and there's more of a smile curve.
                         -   Inflection points where the line starts to bend upward for a particular month can indicate:
                             -   When a critical product release, unblocking features, or a marketing effort might have started to bend the curve
@@ -392,7 +372,8 @@ Metrics
         -   Difficulty of measuring incrementality for referral initiatives: When new referral programs are launched, network effects are typically introduced because any new customer can be simultaneously a referrer and a referee.
         -   Differences between B2B and B2C settings: In B2B companies, acquisition/activation/retention etc. are typically defined at the "company / business" level, because a customer is a company / business. There could be analogous granular user-level metrics as well.
         -   Challenges of international expansion: These include additional costs associated with localization (adapting a product appropriately to better fit the customers in a particular market), regulatory / compliance requirements, understanding the competitive landscape, etc.
-    -   RARRA instead of AARRR?![](./_resources/Product_Development.resources/1aihm6-T1GIPS5VDZxjq7Xw.png)
+    -   RARRA instead of AARRR?  
+        ![](./_resources/Product_Development.resources/1aihm6-T1GIPS5VDZxjq7Xw.png)
         -   AARRR focuses too much on Acquisition even though Retention is more important, especially for many internet products that struggle to retain people.
         -   Reasons why retention is more important:
             -   acquisition strategies (e.g., ads) are expensive and it is often cheaper to retain a user than get a new user
