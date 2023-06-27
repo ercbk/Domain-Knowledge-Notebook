@@ -1,6 +1,5 @@
 # Manufacturing
 
-
 TOC
 
 -   Misc
@@ -8,22 +7,20 @@ TOC
 
 Misc
 
-Distributed Manufacturing (DM)
-Notes from [Online Scheduling Approach for Distributed Additive Manufacturing](https://www.youtube.com/watch?v=8wXRir49b9w)
+Distributed Manufacturing (DM) Notes from [Online Scheduling Approach for Distributed Additive Manufacturing](https://www.youtube.com/watch?v=8wXRir49b9w)
 
 -   Global Mass Production vs Global Distributed Production![](./_resources/Manufacturing.resources/Screenshot-(514).png)
 -   Dynamica Allocation of Production Orders (POs)![](./_resources/Manufacturing.resources/Screenshot-(516).png)
-		-   Production order inputs delivery location, spare part to be manufactured, quantity needed
-		-   The only thing being locally modeled seems to be production time
-		-   Travel Time from PC to Delivery Location is a request from an API
-				-   Seems like there should be a cost element here. Freight charges if delivery is outside the company. If manufacturing and delivery is local though, then maybe the only real cost is gas and that would indirectly included in the Travel Time calculation
-		-   Queue time should be something that's monitored and can be looked up in a table
-		-   Set-up time should be something that's considered a constant depending on the spare part
+    -   Production order inputs delivery location, spare part to be manufactured, quantity needed
+    -   The only thing being locally modeled seems to be production time
+        -   Travel Time from PC to Delivery Location is a request from an API
+            -   Seems like there should be a cost element here. Freight charges if delivery is outside the company. If manufacturing and delivery is local though, then maybe the only real cost is gas and that would indirectly included in the Travel Time calculation
+        -   Queue time should be something that's monitored and can be looked up in a table
+        -   Set-up time should be something that's considered a constant depending on the spare part
 -   Implementation![](./_resources/Manufacturing.resources/Screenshot-(520).png)
-		-   FASTEN is a manufacturing software company
-		-   Not sure if this tool is used to feed simulated POs to the pipeline or if it's used to optimize the objective function or both
-		-   Components in this project make sense to me but these arrows don't all make sense to me
+    -   FASTEN is a manufacturing software company
+        -   Not sure if this tool is used to feed simulated POs to the pipeline or if it's used to optimize the objective function or both
+    -   Components in this project make sense to me but these arrows don't all make sense to me
 -   Benchmark
-		-   The null model was one where the PC with shortest distance from PC to delivery location was chosen every time
-		-   The metric was Average Wait Time to receive the spare part after being ordered
-
+    -   The null model was one where the PC with shortest distance from PC to delivery location was chosen every time
+    -   The metric was Average Wait Time to receive the spare part after being ordered

@@ -1,43 +1,41 @@
 # Meteorology
 
-
 TOC
 
 Misc
 
-Example: Extreme hot weather events in Western Europe-Atlantic region ([video](https://www.youtube.com/watch?v=Mpzqz4y1oYY), around ~1:07:03)
+[Example]{.ribbon-highlight}: Extreme hot weather events in Western Europe-Atlantic region ([video](https://www.youtube.com/watch?v=Mpzqz4y1oYY), around \~1:07:03)
 
 -   Jonathan Koh: pre-print available in June or July 2023
 -   Data: "ERA5 reanalysis data"
-		-   Monthly
-		-   Training: 1979 - 2020
-		-   Validation: 2020 - 2022 (simple train-test split?)
+    -   Monthly
+    -   Training: 1979 - 2020
+    -   Validation: 2020 - 2022 (simple train-test split?)
 -   Goals:
-		-   predict probability of an event (i.e. binary classification), intensity of event (ie regression), spatial dependence of events (i.e. spatial correlation)
-		-   identify weather patterns driving extremes (i.e. predictors)
-		-   global thermodynamic (i.e.. climate change)
-		-   local land surface: soil moisture or snow cover determin surface energy budget (i.e. wet soil buffers heat)
-		-   regional dynamic conditions: diabatic (clear skies), adiabatic warming (subsidence) or advection of warm air from anti-cyclonic circulation (atmospheric blocking)
+    -   predict probability of an event (i.e. binary classification), intensity of event (ie regression), spatial dependence of events (i.e. spatial correlation)
+    -   identify weather patterns driving extremes (i.e. predictors)
+        -   global thermodynamic (i.e.. climate change)
+        -   local land surface: soil moisture or snow cover determin surface energy budget (i.e. wet soil buffers heat)
+        -   regional dynamic conditions: diabatic (clear skies), adiabatic warming (subsidence) or advection of warm air from anti-cyclonic circulation (atmospheric blocking)
 -   Model
-		-   Response:
-		-   Extreme 2m daily temp anomalies over land
-		-   Predictors
-		-   atmospheric blocking measured by variable, "Z500" (5-day avg)
-		-   soil moisture, "SM" (15-day avg)
-		-   Resolution
-		-   There's a predictor for each 5.6 x 5.6 degree (lat-lon) grid points![](./_resources/Meteorology.resources/Screenshot-(1399).png)
-				-   Shows the Western Europe-Atlantic region (disregard the horizontal black line)
-		-   There's a response variable for each 1.3 x 0.3 degree (lat-lon) grid points![](./_resources/Meteorology.resources/Screenshot-(1398).png)
-				-   Study region, larger box, is a smaller subregion within the Western Europe-Atlantic region, and the Risk area is the smaller box
-				-   The response variable measurements are for the grid points in the study region
-		-   Model![](./_resources/Meteorology.resources/Screenshot-(1400).png)
-		-   Model has 3 components
-				-   Exceedence Probability is fit first. Then, its probabilities are used in the Marginal Extermal Intensity model. Then, both results are used to model the Spatial Dependence
-				-   Exceedence Probability: indicator response for whether temp has exceeded the threshold.
-				-   fits a boosted tree with mean log loss
-				-   Marginal Extremal Intensity: uses a univariate loss function discussed at the beginning of the talk
-				-   ksi (shape?) is a hyperparameter along number of trees, m.
-				-   Spatial Dependence
-				-   Paper doesn't come out until June or July, so will have to wait to see if there's a package and to get further details
-		-   Feature importances will be the Z500 and SM for each of the geographical location variables. These feature importances can used to figure out weather patterns in those areas that were important to occurance of the high temperature event in the risk area.
-
+    -   Response:
+        -   Extreme 2m daily temp anomalies over land
+    -   Predictors
+        -   atmospheric blocking measured by variable, "Z500" (5-day avg)
+        -   soil moisture, "SM" (15-day avg)
+    -   Resolution
+        -   There's a predictor for each 5.6 x 5.6 degree (lat-lon) grid points![](./_resources/Meteorology.resources/Screenshot-(1399).png)
+            -   Shows the Western Europe-Atlantic region (disregard the horizontal black line)
+        -   There's a response variable for each 1.3 x 0.3 degree (lat-lon) grid points![](./_resources/Meteorology.resources/Screenshot-(1398).png)
+            -   Study region, larger box, is a smaller subregion within the Western Europe-Atlantic region, and the Risk area is the smaller box
+            -   The response variable measurements are for the grid points in the study region
+    -   Model![](./_resources/Meteorology.resources/Screenshot-(1400).png)
+        -   Model has 3 components
+            -   Exceedence Probability is fit first. Then, its probabilities are used in the Marginal Extermal Intensity model. Then, both results are used to model the Spatial Dependence
+            -   Exceedence Probability: indicator response for whether temp has exceeded the threshold.
+                -   fits a boosted tree with mean log loss
+            -   Marginal Extremal Intensity: uses a univariate loss function discussed at the beginning of the talk
+                -   ksi (shape?) is a hyperparameter along number of trees, m.
+            -   Spatial Dependence
+            -   Paper doesn't come out until June or July, so will have to wait to see if there's a package and to get further details
+        -   Feature importances will be the Z500 and SM for each of the geographical location variables. These feature importances can used to figure out weather patterns in those areas that were important to occurance of the high temperature event in the risk area.

@@ -1,6 +1,5 @@
 # Location Selection
 
-
 TOC
 
 -   Misc
@@ -12,77 +11,76 @@ Misc
 -   Customer research, market expertise & experience, and competitor location analysis can all help inform the important criteria for your business
 -   [Tool](https://www.jordanbean.com/example-work#populationestimator) to calculate population density within a certain radius of a location
 -   Might be more useful to aggregate smaller geographies into overlapping circular areas to compare candidates![](./_resources/Location_Selection.resources/1-iT14nGkyxpTDKrzXieHUpg.png)
-		-   Would have to decide how to handle geographies that are only partially enclosed in a circlular area
-		-   Use a percentage?
-		-   Include the whole thing?
+    -   Would have to decide how to handle geographies that are only partially enclosed in a circlular area
+        -   Use a percentage?
+        -   Include the whole thing?
 
 Factors
 
 -   Understanding of the demographic or economic factors that must be in place to be successful
 -   Examples of questions
-		-   Do you need a large population?
-		-   High income population?
-		-   High presence of certain age brackets?
-		-   Do you rely on office worker foot traffic?
-		-   Is the presence of certain business types important (restaurants, healthcare facilities)?
+    -   Do you need a large population?
+    -   High income population?
+    -   High presence of certain age brackets?
+    -   Do you rely on office worker foot traffic?
+    -   Is the presence of certain business types important (restaurants, healthcare facilities)?
 -   Non-data factors
-		-   appropriate accessibility (car traffic/foot traffic, street frontage)
-		-   signage
-		-   availability and size of space
-		-   cost/affordability
+    -   appropriate accessibility (car traffic/foot traffic, street frontage)
+    -   signage
+    -   availability and size of space
+    -   cost/affordability
 
 Location Profiles
 
 -   These are created for existing stores and locations or potential new stores
--   Example: Workforce and Demographic
+-   [Example]{.ribbon-highlight}: Workforce and Demographic
 
 ![](./_resources/Location_Selection.resources/1-u7KtEJ5Gbi-zaDd5dwRlhQ.png)![](./_resources/Location_Selection.resources/1-KAR-xT1uxjSvNfxvpPBdiQ.png)
 
 -   Other potential variables
-		-   Customer median driving distance
-		-   may also inform on the correct census geography to use
-		-   Distance\_to highways, business district, etc.
+    -   Customer median driving distance
+        -   may also inform on the correct census geography to use
+    -   Distance_to highways, business district, etc.
 
 Analysis
 
 -   Use thresholds for any profile variables to help narrow the group of potential candidate locations to a managable number
-		-   Might be useful to fit a decision tree to develop rules to use as thresholds
-		-   Example
-		-   Zip Code Population of 25,000+
-				-   May want to use census geographies other than zip code
-		-   City Population of 150,000+
-		-   Growing Population
-		-   Household Income of $75,000+
-		-   High percentage of the population in the workforce
-		-   High economic activity
-		-   Primary industry of employment in White Collar
-		-   Percentage millennial population
-		-   Restaurant density
+    -   Might be useful to fit a decision tree to develop rules to use as thresholds
+    -   Example
+        -   Zip Code Population of 25,000+
+            -   May want to use census geographies other than zip code
+        -   City Population of 150,000+
+        -   Growing Population
+        -   Household Income of \$75,000+
+        -   High percentage of the population in the workforce
+        -   High economic activity
+        -   Primary industry of employment in White Collar
+        -   Percentage millennial population
+        -   Restaurant density
 -   Score candidate locations
-		-   Create weights for important profile variables and then calculate scores for each candidate location
-		-   Methods for creating weights
-				-   Wing it with domain knowledge
-				-   Coefficients from a regularized regression of KPI ~ standardized\_profile\_vars could be used as weights
-				-   Or feature importance, shapely values, etc. from tree model
-				-   Correlation or association statistics as weights
-		-   Order scores highest to lowest
-		-   If more than one location is considered, then group\_by a suitably-sized geography
+    -   Create weights for important profile variables and then calculate scores for each candidate location
+        -   Methods for creating weights
+            -   Wing it with domain knowledge
+            -   Coefficients from a regularized regression of KPI \~ standardized_profile_vars could be used as weights
+                -   Or feature importance, shapely values, etc. from tree model
+            -   Correlation or association statistics as weights
+    -   Order scores highest to lowest
+        -   If more than one location is considered, then group_by a suitably-sized geography
 -   Cluster candidate location profiles with current successful stores
-		-   Candidate locations that are in the same cluster as your stores are the ones that should be considered
-		-   Prominent features of the cluster(s) may indicate which profile variables are more important than others
+    -   Candidate locations that are in the same cluster as your stores are the ones that should be considered
+    -   Prominent features of the cluster(s) may indicate which profile variables are more important than others
 -   Take top-n candidates and dig deeper:
-		-   Competitor analysis
-		-   Example questions
-				-   How many competitors exist is location?
-				-   Where are they located?
-				-   How satisfied are consumers with the options that exist today?
-				-   Which competitors are most popular, suggesting we may want to look in other areas?
-				-   e.g. Google Map, Yelp, etc. reviews of competitors at this location
-		-   Mapping may illuminate other considerations
-		-   e.g. one location has large swaths of uninhabitable land — is there enough population density for us to be successful?
-		-   How close are these locations to your other stores?
-		-   Could one leach customers from the other?
-		-   Examine profiles of final candidates
-		-   What are the primary differences?
-		-   What are the best features?
-
+    -   Competitor analysis
+        -   Example questions
+            -   How many competitors exist is location?
+            -   Where are they located?
+            -   How satisfied are consumers with the options that exist today?
+                -   Which competitors are most popular, suggesting we may want to look in other areas?
+                -   e.g. Google Map, Yelp, etc. reviews of competitors at this location
+    -   Mapping may illuminate other considerations
+        -   e.g. one location has large swaths of uninhabitable land --- is there enough population density for us to be successful?
+    -   How close are these locations to your other stores?
+        -   Could one leach customers from the other?
+    -   Examine profiles of final candidates
+        -   What are the primary differences?
+        -   What are the best features?

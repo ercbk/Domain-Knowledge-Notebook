@@ -1,44 +1,35 @@
 # Insurance
 
-
-TOC
-
--   Misc
--   Risk
--   Analysis
--   Market Basket Analysis
-
-Misc
+## Misc
 
 -   DS Use Cases
-		-   Predict insurance claims frequency (see bkmk)
+    -   Predict insurance claims frequency (see bkmk)
 
-Risk
+## Risk
 
 -   Limiting exposure
-		-   From <http://ronaldrichman.co.za/2021/02/24/x-is-not-fx-insurance-edition/>
-		-   Severity
-		-   Capping the payout of a policy
-				-   e.g. only paying a maximum amount if tragedy strikes
-		-   Frequency
-		-   Setting a threshold to which the policy only pays out after the threshold has been passed
-				-   Keeps the insurance company from being needled to death by administrative costs of frequent policy payouts
-				-   e.g. minor doctor appointments
-		-   Reinsurance
-		-   policies that produce an option-like exposure, where one can pass risk above a fixed level of losses to the counterparty for a fixed premium (excess of loss). Other options are to share risks in more or less equal proportions.
-				-   allows insurers take on risky (and potentially more profitable) policies by taking on an insurance policy themselves for the excess risk
-				-   airplanes, volatile manufacturing, etc.
+    -   From <http://ronaldrichman.co.za/2021/02/24/x-is-not-fx-insurance-edition/>
+    -   Severity
+        -   Capping the payout of a policy
+            -   e.g. only paying a maximum amount if tragedy strikes
+    -   Frequency
+        -   Setting a threshold to which the policy only pays out after the threshold has been passed
+            -   Keeps the insurance company from being needled to death by administrative costs of frequent policy payouts
+            -   e.g. minor doctor appointments
+    -   Reinsurance
+        -   Policies that produce an option-like exposure, where one can pass risk above a fixed level of losses to the counterparty for a fixed premium (excess of loss). Other options are to share risks in more or less equal proportions.
+            -   Allows insurers take on risky (and potentially more profitable) policies by taking on an insurance policy themselves for the excess risk
+                -   airplanes, volatile manufacturing, etc.
 -   Analysis
-		-   Fit one distribution to the smaller and more frequent attritional losses, and another disruption to the extreme losses, with the latter distribution often motivated by extreme value theory
-		-   This approach ignores the fact the each loss has an upper bound determined by the limits on the policy generating the loss. Also, since these extreme losses follow a very heavy tailed distribution, naïve estimators of the statistical properties of these losses are likely to be biased
-		-   Shadow Moments
-		-   transform the data to a new domain that is unbounded, parameterizing EVT distributions in this domain, and then translating the implications of these models back to the original bounded domain
-		-   Cirillo, P., & Taleb, N. N. (2016). On the statistical properties and tail risk of violent conflicts. Physica A: Statistical Mechanics and Its Applications, 452, 29–45. https://doi.org/10.1016/j.physa.2016.01.050
-		-   Cirillo, P., & Taleb, N. N. (2020, June 1). Tail risk of contagious diseases. Nature Physics, Vol. 16, pp. 606–613. https://doi.org/10.1038/s41567-020-0921-x
+    -   Fit one distribution to the smaller and more frequent attritional losses, and another disruption to the extreme losses, with the latter distribution often motivated by extreme value theory
+        -   This approach ignores the fact the each loss has an upper bound determined by the limits on the policy generating the loss. Also, since these extreme losses follow a very heavy tailed distribution, naïve estimators of the statistical properties of these losses are likely to be biased
+    -   Shadow Moments
+        -   Transform the data to a new domain that is unbounded, parameterizing EVT distributions in this domain, and then translating the implications of these models back to the original bounded domain
+        -   Cirillo, P., & Taleb, N. N. (2016). On the statistical properties and tail risk of violent conflicts. Physica A: Statistical Mechanics and Its Applications, 452, 29--45. https://doi.org/10.1016/j.physa.2016.01.050
+        -   Cirillo, P., & Taleb, N. N. (2020, June 1). Tail risk of contagious diseases. Nature Physics, Vol. 16, pp. 606--613. https://doi.org/10.1038/s41567-020-0921-x
 
-Market Basket Analysis
+## Market Basket Analysis
 
--   support: What percent of patients have disease 1 and disease 2?
--   confidence: Of the people w/disease1, what percent also have disease 2?
--   lift: How much more likely are you to have disease 2 if you already had disease 1 (and vice versa)
-
+-   Support: What percent of patients have disease 1 and disease 2?
+-   Confidence: Of the people w/disease1, what percent also have disease 2?
+-   Lift: How much more likely are you to have disease 2 if you already had disease 1 (and vice versa)

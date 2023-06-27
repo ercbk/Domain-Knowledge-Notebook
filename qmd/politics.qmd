@@ -1,53 +1,51 @@
 # Politics
 
-
 Ethan Epping talk
 
 -   Most common modeling are for "support" (who they vote for) and "turn-out" (whether they vote at all) responses
 -   messages around civic and community engagement is better at encouraging low propensity voters than pushing your candidate's policy agenda
 -   turnout model
-		-   features: previous vote history of an individual; feature that influence turnout in general
-		-   ncoa data (national change of address)
-				-   voter file info can be outdated
-				-   when people move, nobody calls to cancel their voter registration
-		-   geocoding
-		-   commercially available
-				-   mobile phone data
-				-   Experion
-		-   govt
-				-   gun and boat registration
-				-   college student lists at public universities
-		-   data collected through contact by the campaign
+    -   features: previous vote history of an individual; feature that influence turnout in general
+        -   ncoa data (national change of address)
+            -   voter file info can be outdated
+            -   when people move, nobody calls to cancel their voter registration
+        -   geocoding
+        -   commercially available
+            -   mobile phone data
+            -   Experion
+        -   govt
+            -   gun and boat registration
+            -   college student lists at public universities
+        -   data collected through contact by the campaign
 -   support model
-		-   features: survey data + other data
+    -   features: survey data + other data
 -   DNC uses BigQuery/SQL for a db and analytics, python for engineering; datascience does some R but more python
 -   voter file
-		-   list of registered voters in every state
-		-   publicly available
-		-   states have various restrictions
-				-   OH and NC publish online and is free
-				-   some cost thousands and only available to campaigns
-				-   not available for commercial use though
-		-   includes everything that's on voter registration
-		-   addresses. phone numbers, etc.
-		-   vote history (participation)
-		-   If you don't vote in 2 straight federal elections you are usually eligible to be removed from the registry
+    -   list of registered voters in every state
+    -   publicly available
+        -   states have various restrictions
+            -   OH and NC publish online and is free
+            -   some cost thousands and only available to campaigns
+            -   not available for commercial use though
+    -   includes everything that's on voter registration
+        -   addresses. phone numbers, etc.
+        -   vote history (participation)
+    -   If you don't vote in 2 straight federal elections you are usually eligible to be removed from the registry
 -   "arbor" (sp?) tool
-		-   for registration drives
-		-   at census block or precinct level, take census estimate of eligible voters and subtract the number of registered voters
-		-   helps to figure out where to prioritize efforts (i.e. where the biggest pool of unregistered, eligible voters are)
+    -   for registration drives
+    -   at census block or precinct level, take census estimate of eligible voters and subtract the number of registered voters
+    -   helps to figure out where to prioritize efforts (i.e. where the biggest pool of unregistered, eligible voters are)
 -   "election base" tool
-		-   de-aggregate results down to the census block level
+    -   de-aggregate results down to the census block level
 -   resolution is usually at the census block level because precinct boundaries often change
 -   Early voting data
-		-   Want to find voters that have requested a ballot but have yet to mail it in
-		-   best time to talk to them
-		-   rejection data: talk to voters who incorrectly filled out a ballot
-		-   voter needs to talk to county clerk
-		-   or show up on voting day
+    -   Want to find voters that have requested a ballot but have yet to mail it in
+        -   best time to talk to them
+    -   rejection data: talk to voters who incorrectly filled out a ballot
+        -   voter needs to talk to county clerk
+        -   or show up on voting day
 -   Jobs
-		-   https://www.progressivedatajobs.org/
-		-   guide to application process: https://guide.progressivedatajobs.org/
-		-   https://www.digidems.com/
-		-   takes tech people and gives some political training then deploys to campaigns
-
+    -   https://www.progressivedatajobs.org/
+        -   guide to application process: https://guide.progressivedatajobs.org/
+    -   https://www.digidems.com/
+        -   takes tech people and gives some political training then deploys to campaigns
