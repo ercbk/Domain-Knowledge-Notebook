@@ -247,14 +247,31 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#sec-log-misc" id="toc-sec-log-misc" class="nav-link active" data-scroll-target="#sec-log-misc"><span class="header-section-number">4.1</span> Misc</a></li>
+  <li><a href="#sec-log-terms" id="toc-sec-log-terms" class="nav-link" data-scroll-target="#sec-log-terms"><span class="header-section-number">4.2</span> Terms</a></li>
+  <li><a href="#sec-log-demfcast" id="toc-sec-log-demfcast" class="nav-link" data-scroll-target="#sec-log-demfcast"><span class="header-section-number">4.3</span> Demand Forecasting</a></li>
+  <li><a href="#sec-log-safstk" id="toc-sec-log-safstk" class="nav-link" data-scroll-target="#sec-log-safstk"><span class="header-section-number">4.4</span> Safety Stock (aka Buffer Stock)</a></li>
+  <li><a href="#sec-log-eoq" id="toc-sec-log-eoq" class="nav-link" data-scroll-target="#sec-log-eoq"><span class="header-section-number">4.5</span> Economic Order Quantity (EOQ) (aka Wilson Formula)</a></li>
+  <li><a href="#sec-log-outpol" id="toc-sec-log-outpol" class="nav-link" data-scroll-target="#sec-log-outpol"><span class="header-section-number">4.6</span> Order-Up-To (OUT) Level Policy</a></li>
+  <li><a href="#sec-log-reordpt" id="toc-sec-log-reordpt" class="nav-link" data-scroll-target="#sec-log-reordpt"><span class="header-section-number">4.7</span> Reorder Point</a></li>
+  <li><a href="#sec-log-dim" id="toc-sec-log-dim" class="nav-link" data-scroll-target="#sec-log-dim"><span class="header-section-number">4.8</span> Decision Impact Metrics</a></li>
+  <li><a href="#sec-log-pffpp" id="toc-sec-log-pffpp" class="nav-link" data-scroll-target="#sec-log-pffpp"><span class="header-section-number">4.9</span> Profit Functions for Perishable Products</a></li>
+  <li><a href="#sec-log-drdsh" id="toc-sec-log-drdsh" class="nav-link" data-scroll-target="#sec-log-drdsh"><span class="header-section-number">4.10</span> DoorDash</a></li>
+  <li><a href="#sec-log-supch" id="toc-sec-log-supch" class="nav-link" data-scroll-target="#sec-log-supch"><span class="header-section-number">4.11</span> Supply Chain</a></li>
+  <li><a href="#sec-log-warmang" id="toc-sec-log-warmang" class="nav-link" data-scroll-target="#sec-log-warmang"><span class="header-section-number">4.12</span> Warehouse Management</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Logistics</span></h1>
+<h1 class="title"><span id="sec-log" class="quarto-section-identifier"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Logistics</span></span></h1>
 </div>
 
 
@@ -269,26 +286,13 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>TOC</p>
+<section id="sec-log-misc" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="sec-log-misc"><span class="header-section-number">4.1</span> Misc</h2>
 <ul>
-<li>Misc</li>
-<li>Demand Forecasting</li>
-<li>Safety Stock</li>
-<li>Economic Order Quantity (EOQ)</li>
-<li>Order-Up-To Level Policy</li>
-<li>Reorder Point</li>
-<li>Decision Impact Metrics</li>
-<li>Profit functions for perishable products</li>
-<li>DoorDash</li>
-<li>Supply Chain</li>
-<li>Warehouse Management</li>
-</ul>
-<p>Misc</p>
-<pre><code>Goal: develop a replenishment policy that will minimize your ordering, holding and shortage costs.
-* Ordering Costs ($ per order): fixed cost to place an order due to administrative costs, system maintenance or manufacturing costs
-* Holding Costs ($ per unit per unit of time): all the costs required to hold your inventory (storage, insurance, and capital costs)
-* Shortage/Stock-out Costs ($ per unit): the costs of not having enough inventory to meet the customer demand (Lost Sales, Penalty)</code></pre>
-<ul>
+<li>Goal: develop a replenishment policy that will minimize your ordering, holding and shortage costs.</li>
+<li>Ordering Costs ($ per order): fixed cost to place an order due to administrative costs, system maintenance or manufacturing costs</li>
+<li>Holding Costs ($ per unit per unit of time): all the costs required to hold your inventory (storage, insurance, and capital costs)</li>
+<li>Shortage/Stock-out Costs ($ per unit): the costs of not having enough inventory to meet the customer demand (Lost Sales, Penalty)</li>
 <li>Forecast PI widths serve as a proxy for inventory holding costs and provides valuable input for setting a target service level</li>
 <li>Packages
 <ul>
@@ -322,7 +326,9 @@ ul.task-list li input[type="checkbox"] {
 </ul></li>
 </ul></li>
 </ul>
-<p>Terms</p>
+</section>
+<section id="sec-log-terms" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="sec-log-terms"><span class="header-section-number">4.2</span> Terms</h2>
 <ul>
 <li><span style="color: #009499"><strong>Active References</strong></span> - a product may have multiple SKUs. All SKUs would be needed in order to calculate stats for that product. The active reference for a product is one SKU that encompasses all other SKUs.
 <ul>
@@ -351,7 +357,9 @@ ul.task-list li input[type="checkbox"] {
 <li><span style="color: #009499"><strong>Wastage</strong></span> - where supply greatly outstrips demand, and the product expires</li>
 <li><span style="color: #009499"><strong>S&amp;OP</strong></span> - Sales &amp; Operations Planning</li>
 </ul>
-<p>Demand Forecasting</p>
+</section>
+<section id="sec-log-demfcast" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="sec-log-demfcast"><span class="header-section-number">4.3</span> Demand Forecasting</h2>
 <ul>
 <li><p>Misc</p>
 <ul>
@@ -589,7 +597,9 @@ ul.task-list li input[type="checkbox"] {
 </ul></li>
 </ul></li>
 </ul>
-<p>Safety Stock (aka buffer stock)</p>
+</section>
+<section id="sec-log-safstk" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="sec-log-safstk"><span class="header-section-number">4.4</span> Safety Stock (aka Buffer Stock)</h2>
 <ul>
 <li>Misc
 <ul>
@@ -738,7 +748,9 @@ ul.task-list li input[type="checkbox"] {
 </ul></li>
 </ul></li>
 </ul>
-<p>Economic Order Quantity (EOQ) (aka Wilson Formula)</p>
+</section>
+<section id="sec-log-eoq" class="level2" data-number="4.5">
+<h2 data-number="4.5" class="anchored" data-anchor-id="sec-log-eoq"><span class="header-section-number">4.5</span> Economic Order Quantity (EOQ) (aka Wilson Formula)</h2>
 <ul>
 <li>the ideal order quantity a company should purchase to minimize inventory costs such as holding costs, shortage costs, and order costs
 <ul>
@@ -762,7 +774,10 @@ ul.task-list li input[type="checkbox"] {
 </ul></li>
 <li><img src="./_resources/Logistics.resources/ql_e515353171060899a1dc73b3daa97572_l3.png" class="img-fluid"></li>
 </ul>
-<p>Order-Up-To (OUT) Level Policy <img src="./_resources/Logistics.resources/Screenshot-(1316).png" class="img-fluid"></p>
+</section>
+<section id="sec-log-outpol" class="level2" data-number="4.6">
+<h2 data-number="4.6" class="anchored" data-anchor-id="sec-log-outpol"><span class="header-section-number">4.6</span> Order-Up-To (OUT) Level Policy</h2>
+<p><img src="./_resources/Logistics.resources/Screenshot-(1316).png" class="img-fluid"></p>
 <ul>
 <li>Time intervals (i.e.&nbsp;Review Interval) trigger a replenishment, not reorder points
 <ul>
@@ -817,7 +832,9 @@ ul.task-list li input[type="checkbox"] {
 </ul></li>
 </ul></li>
 </ul>
-<p>Reorder Point</p>
+</section>
+<section id="sec-log-reordpt" class="level2" data-number="4.7">
+<h2 data-number="4.7" class="anchored" data-anchor-id="sec-log-reordpt"><span class="header-section-number">4.7</span> Reorder Point</h2>
 <ul>
 <li>The reorder point is the threshold amount of inventory at which you need place an replenishment order
 <ul>
@@ -831,7 +848,9 @@ ul.task-list li input[type="checkbox"] {
 </ul></li>
 <li><strong>Reorder Point = Safety Stock + (Davg × Lead time)</strong></li>
 </ul>
-<p>Decision Impact Metrics</p>
+</section>
+<section id="sec-log-dim" class="level2" data-number="4.8">
+<h2 data-number="4.8" class="anchored" data-anchor-id="sec-log-dim"><span class="header-section-number">4.8</span> Decision Impact Metrics</h2>
 <ul>
 <li>Other methods for determining forecast performance have serious flaws
 <ul>
@@ -1019,7 +1038,9 @@ ul.task-list li input[type="checkbox"] {
 <li>ROI = sum(DIna)- (cost of people, tools, etc. used by department to generate forecasts)</li>
 </ul></li>
 </ul>
-<p>Profit functions for perishable products</p>
+</section>
+<section id="sec-log-pffpp" class="level2" data-number="4.9">
+<h2 data-number="4.9" class="anchored" data-anchor-id="sec-log-pffpp"><span class="header-section-number">4.9</span> Profit Functions for Perishable Products</h2>
 <ul>
 <li>The newsvendor problem is a class of problems, where the product can only be sold one day, after which it goes to waste. So this is appropriate, for example, for perishable products in retail</li>
 <li>Notes from An <a href="https://forecasting.svetunkov.ru/en/2021/09/03/an-integrated-method-for-estimation-and-optimisation/">Integrated Method for Estimation and Optimisation</a>; associated <a href="http://dx.doi.org/10.13140/RG.2.2.27057.81763">paper</a></li>
@@ -1084,8 +1105,11 @@ x2&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 3.3423&nbsp; &nbsp; 2.7810&nbsp; &nb
 <li>The only thing that would change is the loss function, where the prices and costs would depend non-linearly on the order quantity and sales.</li>
 </ul></li>
 </ul>
-<p>DoorDash Notes from https://towardsdatascience.com/managing-supply-and-demand-balance-through-machine-learning-70d4f0808617</p>
+</section>
+<section id="sec-log-drdsh" class="level2" data-number="4.10">
+<h2 data-number="4.10" class="anchored" data-anchor-id="sec-log-drdsh"><span class="header-section-number">4.10</span> DoorDash</h2>
 <ul>
+<li>Notes from <a href="https://towardsdatascience.com/managing-supply-and-demand-balance-through-machine-learning-70d4f0808617" class="uri">https://towardsdatascience.com/managing-supply-and-demand-balance-through-machine-learning-70d4f0808617</a></li>
 <li>2-stage solution
 <ul>
 <li>forcasting supply and demand</li>
@@ -1180,7 +1204,9 @@ x2&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 3.3423&nbsp; &nbsp; 2.7810&nbsp; &nb
 </ul></li>
 </ul></li>
 </ul>
-<p>Supply Chain</p>
+</section>
+<section id="sec-log-supch" class="level2" data-number="4.11">
+<h2 data-number="4.11" class="anchored" data-anchor-id="sec-log-supch"><span class="header-section-number">4.11</span> Supply Chain</h2>
 <ul>
 <li><p>Misc</p>
 <ul>
@@ -1244,7 +1270,9 @@ x2&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 3.3423&nbsp; &nbsp; 2.7810&nbsp; &nb
 </ul></li>
 </ul></li>
 </ul>
-<p>Warehouse Management</p>
+</section>
+<section id="sec-log-warmang" class="level2" data-number="4.12">
+<h2 data-number="4.12" class="anchored" data-anchor-id="sec-log-warmang"><span class="header-section-number">4.12</span> Warehouse Management</h2>
 <ul>
 <li>Misc
 <ul>
@@ -1266,6 +1294,7 @@ x2&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 3.3423&nbsp; &nbsp; 2.7810&nbsp; &nb
 </ul>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
