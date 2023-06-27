@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.427">
+<meta name="generator" content="quarto-1.3.433">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -288,41 +288,294 @@ ul.task-list li input[type="checkbox"] {
 <li>Stages of Product Development</li>
 <li>Why do people leave and stay?</li>
 <li>Feedback</li>
-<li>Metrics - Success - Guardrail - Funnel - Input-Output - Growth - Platform</li>
+<li>Metrics
+<ul>
+<li>Success</li>
+<li>Guardrail</li>
+<li>Funnel</li>
+<li>Input-Output</li>
+<li>Growth</li>
+<li>Platform</li>
+</ul></li>
 </ul>
 </section>
 <section id="misc" class="level2" data-number="10.2">
 <h2 data-number="10.2" class="anchored" data-anchor-id="misc"><span class="header-section-number">10.2</span> Misc</h2>
 <ul>
 <li>Also see <a href="Decison Theory">Decison Theory</a> &gt;&gt; Conjoint Analysis for surveying consumers about product attributes to calculate attribute utilities and probability of purchase</li>
-<li>Flaws of Purchase-Funnel Based Attribution Metrics - Notes from <a href="https://codeascraft.com/2020/02/24/the-causal-analysis-of-cannibalization-in-online-products/">The Causal Analysis of Cannibalization in Online Products</a> - Users usually take more complicated journeys than a heuristically-defined purchase-funnel can capture. - Examples - If the recommendations make users stay longer on Etsy, and users click listings on other pages and modules to make purchases, then the recommendation-attributed metrics fail to capture the contribution of the recommendations to these conversions.&nbsp; The purchase-funnel is based on “click”, and there is no way to incorporate “dwell time” to the purchase-funnel. - Suppose the true user journey is “click A in recommendation → search A → click A in search results → click A in many other places → purchase A”.&nbsp; Shall the conversion be attributed to recommendation or search? Shall all the visited pages and modules share the credit of this conversion? Any answer would be too heuristic to be convincing. - Violation of causal experiment assumptions (ignorability assumption) - segments of users who follow the pattern of purchase-funnel may not be comparable between treatment and control groups, because the segmentation criterion (i.e., user journey) happens after random assignment and thus the segments of users are not randomized between the two groups. - Solution involves causal mediation analysis (also see <a href="Causal Inference">Causal Inference</a> &gt;&gt; Mediation Analysis)</li>
-<li>Distribution of effect sizes for webpage variations using Optimizely (platform for A/B testing) data<img src="./_resources/Product_Development.resources/FICx2hFXEAUYbOz.png" class="img-fluid"> - Median (and average) webpage variations have roughly zero effect on webpage Engagement - <a href="https://twitter.com/marketsensei/status/1477381162888839177">Thread</a> summarizing paper - 70% of effects will not show any impact on Engagement compared to a baseline - alpha=0.05 yield an FDR of 18%-25% (i.e.&nbsp;much higher than alpha) - Recommends only testing sizeable changes as these are the type of changes that yield the largest effects and fewer false discoveries (i.e.&nbsp;the tails of the effect size distribution) - See paper for other tests and recommendations</li>
+<li>Flaws of Purchase-Funnel Based Attribution Metrics
+<ul>
+<li>Notes from <a href="https://codeascraft.com/2020/02/24/the-causal-analysis-of-cannibalization-in-online-products/">The Causal Analysis of Cannibalization in Online Products</a></li>
+<li>Users usually take more complicated journeys than a heuristically-defined purchase-funnel can capture.
+<ul>
+<li>Examples
+<ul>
+<li>If the recommendations make users stay longer on Etsy, and users click listings on other pages and modules to make purchases, then the recommendation-attributed metrics fail to capture the contribution of the recommendations to these conversions.&nbsp; The purchase-funnel is based on “click”, and there is no way to incorporate “dwell time” to the purchase-funnel.</li>
+<li>Suppose the true user journey is “click A in recommendation → search A → click A in search results → click A in many other places → purchase A”.&nbsp; Shall the conversion be attributed to recommendation or search? Shall all the visited pages and modules share the credit of this conversion? Any answer would be too heuristic to be convincing.</li>
+</ul></li>
+</ul></li>
+<li>Violation of causal experiment assumptions (ignorability assumption)
+<ul>
+<li>segments of users who follow the pattern of purchase-funnel may not be comparable between treatment and control groups, because the segmentation criterion (i.e., user journey) happens after random assignment and thus the segments of users are not randomized between the two groups.</li>
+</ul></li>
+<li>Solution involves causal mediation analysis (also see <a href="Causal Inference">Causal Inference</a> &gt;&gt; Mediation Analysis)</li>
+</ul></li>
+<li>Distribution of effect sizes for webpage variations using Optimizely (platform for A/B testing) data<img src="./_resources/Product_Development.resources/FICx2hFXEAUYbOz.png" class="img-fluid">
+<ul>
+<li>Median (and average) webpage variations have roughly zero effect on webpage Engagement</li>
+<li><a href="https://twitter.com/marketsensei/status/1477381162888839177">Thread</a> summarizing paper
+<ul>
+<li>70% of effects will not show any impact on Engagement compared to a baseline</li>
+<li>alpha=0.05 yield an FDR of 18%-25% (i.e.&nbsp;much higher than alpha)</li>
+<li>Recommends only testing sizeable changes as these are the type of changes that yield the largest effects and fewer false discoveries (i.e.&nbsp;the tails of the effect size distribution)
+<ul>
+<li>See paper for other tests and recommendations</li>
+</ul></li>
+</ul></li>
+</ul></li>
 <li>Loyalty measure by app category<img src="./_resources/Product_Development.resources/image.png" class="img-fluid"></li>
-<li>Trust Thermocline - Point at which the number of customers that use your product suddenly drops off a cliff (3 nested <a href="https://twitter.com/anthrocypher/status/1588571424993992704">Threads</a>) - Breaching this point typically occurs when a company continually changes the service, raises prices year after year but doesn’t notice a major change in customer subscriptions/engagement. Then customers start abruptly dropping the product. - Most of the time the company cannot regain the customers after this point and even if they do they will never reach heights they were at previously. - If you’re a relatively large company you should have customer retention department/team/process in place - Signals to watch out for - Watch for grumbling and LISTEN to it. - Don’t assume that because people have swallowed a price or service change that they’ll swallow another one. - Treat user trust as a finite asset. Because it is. - Ground-level customer-facing people will be the ones receiving these signals - Maintaining your customer base - Get your customer retention people in a room with a white board and list all the issues they CONSTANTLY hear from customers but have stopped bothering to report up the chain. - However painful it is to your bottom line. However politically tough it is. However complex the problem. These are the things that need to be fixed.</li>
+<li>Trust Thermocline - Point at which the number of customers that use your product suddenly drops off a cliff (3 nested <a href="https://twitter.com/anthrocypher/status/1588571424993992704">Threads</a>)
+<ul>
+<li>Breaching this point typically occurs when a company continually changes the service, raises prices year after year but doesn’t notice a major change in customer subscriptions/engagement. Then customers start abruptly dropping the product.</li>
+<li>Most of the time the company cannot regain the customers after this point and even if they do they will never reach heights they were at previously.</li>
+<li>If you’re a relatively large company you should have customer retention department/team/process in place</li>
+<li>Signals to watch out for
+<ul>
+<li>Watch for grumbling and LISTEN to it.</li>
+<li>Don’t assume that because people have swallowed a price or service change that they’ll swallow another one.</li>
+<li>Treat user trust as a finite asset. Because it is.</li>
+</ul></li>
+<li>Ground-level customer-facing people will be the ones receiving these signals</li>
+<li>Maintaining your customer base
+<ul>
+<li>Get your customer retention people in a room with a white board and list all the issues they CONSTANTLY hear from customers but have stopped bothering to report up the chain.</li>
+<li>However painful it is to your bottom line. However politically tough it is. However complex the problem. These are the things that need to be fixed.</li>
+</ul></li>
+</ul></li>
 </ul>
 <p>Terms</p>
 <ul>
-<li><strong>Bounce Rate</strong> - the percentage of visitors to a particular website who navigate away from the site after viewing only one page. Low bounce rate can indicate the landing page needs improvement</li>
-<li><strong>Product Listing Page (PLP)</strong> -&nbsp; webpage that lists all your products or a category of your products</li>
-<li><strong>Product Details Page</strong> <strong>(PDP)</strong> - webpage for a specific product that shows in-depth information</li>
+<li><span style="color: #009499"><strong>Bounce Rate</strong></span> - the percentage of visitors to a particular website who navigate away from the site after viewing only one page. Low bounce rate can indicate the landing page needs improvement</li>
+<li><span style="color: #009499"><strong>Product Listing Page (PLP)</strong></span> -&nbsp; webpage that lists all your products or a category of your products</li>
+<li><span style="color: #009499"><strong>Product Details Page</strong></span> <strong>(PDP)</strong>]{style=‘color: #009499’} - webpage for a specific product that shows in-depth information</li>
 </ul>
 <p>Behavioral Data</p>
 <ul>
-<li>Behavioral data serves two main purposes for teams — understanding how the product is being used or not used (user behavior) and building personalized customer experiences across various touchpoints to influence user behavior. - Launching new features without instrumenting them (e.g.&nbsp;tracking) beforehand takes away the opportunity to analyze how those features are used (if at all) and to trigger in-app experiences or messages when relevant events take place (or don’t).</li>
-<li>Misc - Notes from <a href="https://towardsdatascience.com/how-to-collect-behavioral-data-2a891fad6bc5">How to Collect Behavioral Data</a> - Also see <a href="Marketing">Marketing</a> &gt;&gt; Customer Segmentation &gt;&gt; Behaviorial Segmentation</li>
-<li>Sources - Primary: web app, mobile apps, a smart device, or a combination — powered by proprietary code - Secondary: all external or third-party tools that your customers interact with directly or indirectly - e.g.&nbsp;tools used for authentication, payments, in-app experiences, support, feedback, engagement, and advertising - Auth0 for authentication, Stripe for payments, and AppCues for in-app experiences - Opening a support ticket via Zendesk, leaving feedback via Typeform, opening an email sent via Intercom, or engaging with an ad on Facebook - To collect data from secondary sources, you can either use source integrations offered by data collection tools or write your own code</li>
-<li>Extract Data - Using vendors are the best option. Maintenance and troubleshooting are not trivial for homemade solutions even for experienced engineers. - CDI or ELT? - CDI is best-in-class to collect behavioral data from primary or first-party data sources — web and mobile apps, and IoT devices - ELT is best-in-class to collect all types of data including behavioral data from secondary data sources — third-party tools that power various customer experiences. - Customer Data Infrastructure (CDI) - Characteristics - Purpose-built to collect behavioral data from <em>primary or first-party data sources</em> but some solutions also support a handful of secondary data sources (third-party tools). - Data is typically synced to a cloud data warehouse like Snowflake, BigQuery, or Redshift, but most CDI solutions have the ability to sync data to third-party tools as well. - All CDI vendors offer a variety of data collection SDKs and APIs - Some CDI solutions store a copy of the data, some make it optional, and some don’t. - CDI Vendors - Segment Connections - supports data warehouses and a host of third-party tools as destinations, as well as store a copy of your data that can be accessed later if needed. - mParticle - offers CDI capabilities along with identity resolution in its Standard edition whereas audience building is available on the Premium plan - Also supports data warehouses and a host of third-party tools as destinations, as well as store a copy of your data that can be accessed later if needed. - RudderStack Event Stream and Jitsu - Open Source; support warehouses and third-party tools but RudderStack offers a more extensive catalog of destinations - Snowplow - open-source and unlike the others, Snowplow doesn’t support third-party tools as it is focused on warehouses and a few open source projects as destinations. - Freshpaint that offers codeless or implicit tracking - MetaRouter which is a server-side CDI that only runs in a private cloud instance - ELT tools - These provide more comprehensive source integrations than CDIs can - Airbyte - Open-source - Offers source connectors with 150+ tools like Zendesk, Intercom, Stripe, Typeform, and Facebook Ads, many of which generate event data - Offers a Connector Development Kit (CDK) that you can use to build integrations that are maintained by Airbyte’s community members - Other (all open source): Fivetran, Stitch, and Meltano</li>
-<li>Process Data - Notes from <a href="https://towardsdatascience.com/the-modern-customer-data-stack-3cd91a3e79d1">The Modern Customer Data Stack</a> - Identity Resolution: Identifying the same users in different data sources - Identify match keys: Determine which fields or columns you’ll be using to determine which individuals are the same individual within and across sources. - Example: email address and last name. - Aggregate Customer Records: Create a source lookup table that has all the customer records from your source tables. - Match &amp; Assign a Customer ID: Take records that have the same (or in some cases, similar) match keys and generate a unique customer identifier for that matching group of customer records. Every customer id that is generated can be used to link the customer sources together going forward. - Roll in more sources: As you get more sources you can start rolling them into the same process by setting the correct rules and precedence for the source. - Master Data Models: Creating a final/clean view of your customers and associated facts and dimensions. - Start with a “Customer → Transaction → Event” framework (more <a href="https://www.flywheelsoftware.com/help-center-articles/preparing-your-data-for-flywheel">details</a>)<img src="./_resources/Product_Development.resources/1-MVPyykz1OOXltfCWZL62ig.png" class="img-fluid"> - Customers: Create a table of your customers with the ability to quickly add new fields - Transactions: Join key from customers table to their transaction history - Events: Any events you track for each customer - Other business types may have other tables - double-sided marketplace - tables for both sellers and buyers as different entities. - B2B business - separate accounts and contacts entities</li>
-<li>Analysis Tools - General characteristics - Offer SDKs and APIs to collect data from your primary (first-party) data sources - using purpose-built data collection tools (CDI and ELT) is more efficient and prevents vendor lock-in - Store a copy of your data and allow you to export the data (usually for an additional fee) - Amplitude, Mixpanel - Can be integrated with Airbyte - Indicative, Heap - PostHog (open-source) - Can be integrated with Airbyte</li>
+<li>Behavioral data serves two main purposes for teams — understanding how the product is being used or not used (user behavior) and building personalized customer experiences across various touchpoints to influence user behavior.
+<ul>
+<li>Launching new features without instrumenting them (e.g.&nbsp;tracking) beforehand takes away the opportunity to analyze how those features are used (if at all) and to trigger in-app experiences or messages when relevant events take place (or don’t).</li>
+</ul></li>
+<li>Misc
+<ul>
+<li>Notes from <a href="https://towardsdatascience.com/how-to-collect-behavioral-data-2a891fad6bc5">How to Collect Behavioral Data</a></li>
+<li>Also see <a href="Marketing">Marketing</a> &gt;&gt; Customer Segmentation &gt;&gt; Behaviorial Segmentation</li>
+</ul></li>
+<li>Sources
+<ul>
+<li>Primary: web app, mobile apps, a smart device, or a combination — powered by proprietary code</li>
+<li>Secondary: all external or third-party tools that your customers interact with directly or indirectly
+<ul>
+<li>e.g.&nbsp;tools used for authentication, payments, in-app experiences, support, feedback, engagement, and advertising
+<ul>
+<li>Auth0 for authentication, Stripe for payments, and AppCues for in-app experiences</li>
+<li>Opening a support ticket via Zendesk, leaving feedback via Typeform, opening an email sent via Intercom, or engaging with an ad on Facebook</li>
+</ul></li>
+<li>To collect data from secondary sources, you can either use source integrations offered by data collection tools or write your own code</li>
+</ul></li>
+</ul></li>
+<li>Extract Data
+<ul>
+<li>Using vendors are the best option. Maintenance and troubleshooting are not trivial for homemade solutions even for experienced engineers.</li>
+<li>CDI or ELT?
+<ul>
+<li>CDI is best-in-class to collect behavioral data from primary or first-party data sources — web and mobile apps, and IoT devices</li>
+<li>ELT is best-in-class to collect all types of data including behavioral data from secondary data sources — third-party tools that power various customer experiences.</li>
+</ul></li>
+<li>Customer Data Infrastructure (CDI)
+<ul>
+<li>Characteristics
+<ul>
+<li>Purpose-built to collect behavioral data from <em>primary or first-party data sources</em> but some solutions also support a handful of secondary data sources (third-party tools).</li>
+<li>Data is typically synced to a cloud data warehouse like Snowflake, BigQuery, or Redshift, but most CDI solutions have the ability to sync data to third-party tools as well.</li>
+<li>All CDI vendors offer a variety of data collection SDKs and APIs</li>
+<li>Some CDI solutions store a copy of the data, some make it optional, and some don’t.</li>
+</ul></li>
+<li>CDI Vendors
+<ul>
+<li>Segment Connections - supports data warehouses and a host of third-party tools as destinations, as well as store a copy of your data that can be accessed later if needed.</li>
+<li>mParticle - offers CDI capabilities along with identity resolution in its Standard edition whereas audience building is available on the Premium plan
+<ul>
+<li>Also supports data warehouses and a host of third-party tools as destinations, as well as store a copy of your data that can be accessed later if needed.</li>
+</ul></li>
+<li>RudderStack Event Stream and Jitsu - Open Source; support warehouses and third-party tools but RudderStack offers a more extensive catalog of destinations</li>
+<li>Snowplow - open-source and unlike the others, Snowplow doesn’t support third-party tools as it is focused on warehouses and a few open source projects as destinations.</li>
+<li>Freshpaint that offers codeless or implicit tracking</li>
+<li>MetaRouter which is a server-side CDI that only runs in a private cloud instance</li>
+</ul></li>
+</ul></li>
+<li>ELT tools
+<ul>
+<li>These provide more comprehensive source integrations than CDIs can</li>
+<li>Airbyte
+<ul>
+<li>Open-source</li>
+<li>Offers source connectors with 150+ tools like Zendesk, Intercom, Stripe, Typeform, and Facebook Ads, many of which generate event data</li>
+<li>Offers a Connector Development Kit (CDK) that you can use to build integrations that are maintained by Airbyte’s community members</li>
+</ul></li>
+<li>Other (all open source): Fivetran, Stitch, and Meltano</li>
+</ul></li>
+</ul></li>
+<li>Process Data
+<ul>
+<li>Notes from <a href="https://towardsdatascience.com/the-modern-customer-data-stack-3cd91a3e79d1">The Modern Customer Data Stack</a></li>
+<li>Identity Resolution: Identifying the same users in different data sources
+<ul>
+<li>Identify match keys: Determine which fields or columns you’ll be using to determine which individuals are the same individual within and across sources.
+<ul>
+<li><span class="ribbon-highlight">Example</span>: email address and last name.</li>
+</ul></li>
+<li>Aggregate Customer Records: Create a source lookup table that has all the customer records from your source tables.</li>
+<li>Match &amp; Assign a Customer ID: Take records that have the same (or in some cases, similar) match keys and generate a unique customer identifier for that matching group of customer records. Every customer id that is generated can be used to link the customer sources together going forward.</li>
+<li>Roll in more sources: As you get more sources you can start rolling them into the same process by setting the correct rules and precedence for the source.</li>
+</ul></li>
+<li>Master Data Models: Creating a final/clean view of your customers and associated facts and dimensions.
+<ul>
+<li>Start with a “Customer → Transaction → Event” framework (more <a href="https://www.flywheelsoftware.com/help-center-articles/preparing-your-data-for-flywheel">details</a>)<img src="./_resources/Product_Development.resources/1-MVPyykz1OOXltfCWZL62ig.png" class="img-fluid">
+<ul>
+<li>Customers: Create a table of your customers with the ability to quickly add new fields</li>
+<li>Transactions: Join key from customers table to their transaction history</li>
+<li>Events: Any events you track for each customer</li>
+<li>Other business types may have other tables
+<ul>
+<li>double-sided marketplace - tables for both sellers and buyers as different entities.</li>
+<li>B2B business - separate accounts and contacts entities</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li>Analysis Tools
+<ul>
+<li>General characteristics
+<ul>
+<li>Offer SDKs and APIs to collect data from your primary (first-party) data sources
+<ul>
+<li>using purpose-built data collection tools (CDI and ELT) is more efficient and prevents vendor lock-in</li>
+</ul></li>
+<li>Store a copy of your data and allow you to export the data (usually for an additional fee)</li>
+</ul></li>
+<li>Amplitude, Mixpanel
+<ul>
+<li>Can be integrated with Airbyte</li>
+</ul></li>
+<li>Indicative, Heap</li>
+<li>PostHog (open-source)
+<ul>
+<li>Can be integrated with Airbyte</li>
+</ul></li>
+</ul></li>
 </ul>
 <p>Conversion Funnels <img src="./_resources/Product_Development.resources/image.4.png" class="img-fluid"></p>
 <ul>
-<li>Figure: Typical eCommerce Funnel - Funnel moves down and users drop off until only 3% of users (“% users”) reach Transaction (aka conversion) - “CR” is the conversion rate at each point in the funnel</li>
+<li>Figure: Typical eCommerce Funnel
+<ul>
+<li>Funnel moves down and users drop off until only 3% of users (“% users”) reach Transaction (aka conversion)</li>
+<li>“CR” is the conversion rate at each point in the funnel</li>
+</ul></li>
 <li>Provide you with quantitative data about the number of customers that churn at each stage of the funnel. While this information is already valuable, paired up with <em>qualitative</em> data, it gives you all the insights you need to retain more customers.</li>
-<li>Misc - Also see - <a href="Marketing">Marketing</a> &gt;&gt; Customer Journey - <a href="Algorithms, Product">Algorithms, Product</a> &gt;&gt; Customer Journey, Conversion Funnel - Typical e-commerce user conversion rate can be benchmarked at around <a href="https://www.bigcommerce.com/articles/ecommerce/conversion-rate-optimization/">2.5–3%</a> in a regular business as usual time.</li>
-<li>Benefits - Product Managers: - Useful for new feature launches. By grouping your sessions by user or device properties, you can compare the conversions between different user cohorts. - Is the new feature sticking or not? Are your users struggling with it? Are they simply not interested? Looking at the numbers is one thing, but try getting deeper by watching session replays. Now you see what went wrong exactly. - Marketers: - Break down conversion numbers according to the different acquisition channels and figure out where your most valuable users are coming from. This way, you can focus your efforts on the more relevant channels.</li>
-<li>Signals - The more rare an event is that’s high in an e-commerce funnel (i.e more towards Home Page), the more weight it carries in terms of purchase signaling. - If a user has entered the bottom of the funnel (i.e.&nbsp;more towards Begin Checkout) and simply dropped off, it strong reason to reach out in attempts to facilitate or promote movement down the funnel.</li>
-<li>Data - Funnel data at the user-level over a time period<img src="./_resources/Product_Development.resources/image.5.png" class="img-fluid"> - The columns are in sequence according the conversion funnel (i.e.&nbsp;“Home” is the beginning of the funnel and “Purchase” is the end.) - Values are counts of viewing events for webpages in the conversion funnel - Values for Home must be an indicator of whether they have visited or started on the Home Page. - Interpretation - User A - Looks similar to a window shopper, that is engaged enough — 50% of their PLP views turn to PDP views. - They have not added anything to a cart but they may have had something there from previous sessions — which is indicated by 1 cart view. - User B - Likely a customer who is actively trying to make a choice. They may be preparing their cart for a transaction but have not started checking out yet. - User C - Went way deeper into PLP browsing. - Shows signs of being ready to commit to a purchase and even started checking out once. However, they did not complete a transaction. - Possibly, they dropped off in search for coupon codes or better deals elsewhere. - Maybe, based on the high PLP view count, they were deep into search but did not manage to find the products of interest. - User D - Probably knew what they wanted, which is - Indicated by a relatively high ratio from PLP to PDP views and high PDP views to Add to Cart ratio. - They viewed their cart multiple times, reviewing it. But somehow, they have not started the checkout. - This could be a perfect candidate for the abandoned cart campaign. - User E - Probably a returning customer who come back shortly after another session. - Signal Scoring Steps - Choose a timeframe - Depends on the business model and the action you’re expecting to take with it. - Examples - Users are taking up to around 1 month to consider a purchase, then update segments on a 30-day rolling basis. - You want to communicate with your customers daily, then daily morning updates could be something to consider. - Individual Signals: events that are positively associated with the conversion (e.g.&nbsp;the number of daily PLP views, PDP views, add to carts, etc.) - Understanding how a user scores in each one of these signals can help identify which part of the conversion funnel was not covered by a user. - These scores can inform how the business should interact with that customer - For each signal in terms of activity (i.e.&nbsp;counts of events), segment customers into 3 quantiles (&lt; Q33, Q33 &lt; Q66, &gt;Q66) with labels below average, average, above average customers - Can also label customers who did not have any events for a signal at all (0-score users)</li>
+<li>Misc
+<ul>
+<li>Also see
+<ul>
+<li><a href="Marketing">Marketing</a> &gt;&gt; Customer Journey</li>
+<li><a href="Algorithms, Product">Algorithms, Product</a> &gt;&gt; Customer Journey, Conversion Funnel</li>
+</ul></li>
+<li>Typical e-commerce user conversion rate can be benchmarked at around <a href="https://www.bigcommerce.com/articles/ecommerce/conversion-rate-optimization/">2.5–3%</a> in a regular business as usual time.</li>
+</ul></li>
+<li>Benefits
+<ul>
+<li>Product Managers:
+<ul>
+<li>Useful for new feature launches. By grouping your sessions by user or device properties, you can compare the conversions between different user cohorts.</li>
+<li>Is the new feature sticking or not? Are your users struggling with it? Are they simply not interested? Looking at the numbers is one thing, but try getting deeper by watching session replays. Now you see what went wrong exactly.</li>
+</ul></li>
+<li>Marketers:
+<ul>
+<li>Break down conversion numbers according to the different acquisition channels and figure out where your most valuable users are coming from. This way, you can focus your efforts on the more relevant channels.</li>
+</ul></li>
+</ul></li>
+<li>Signals
+<ul>
+<li>The more rare an event is that’s high in an e-commerce funnel (i.e more towards Home Page), the more weight it carries in terms of purchase signaling.</li>
+<li>If a user has entered the bottom of the funnel (i.e.&nbsp;more towards Begin Checkout) and simply dropped off, it strong reason to reach out in attempts to facilitate or promote movement down the funnel.</li>
+</ul></li>
+<li>Data
+<ul>
+<li>Funnel data at the user-level over a time period<img src="./_resources/Product_Development.resources/image.5.png" class="img-fluid">
+<ul>
+<li>The columns are in sequence according the conversion funnel (i.e.&nbsp;“Home” is the beginning of the funnel and “Purchase” is the end.)</li>
+<li>Values are counts of viewing events for webpages in the conversion funnel
+<ul>
+<li>Values for Home must be an indicator of whether they have visited or started on the Home Page.</li>
+</ul></li>
+<li>Interpretation
+<ul>
+<li>User A
+<ul>
+<li>Looks similar to a window shopper, that is engaged enough — 50% of their PLP views turn to PDP views.</li>
+<li>They have not added anything to a cart but they may have had something there from previous sessions — which is indicated by 1 cart view.</li>
+</ul></li>
+<li>User B
+<ul>
+<li>Likely a customer who is actively trying to make a choice. They may be preparing their cart for a transaction but have not started checking out yet.</li>
+</ul></li>
+<li>User C
+<ul>
+<li>Went way deeper into PLP browsing.</li>
+<li>Shows signs of being ready to commit to a purchase and even started checking out once. However, they did not complete a transaction.
+<ul>
+<li>Possibly, they dropped off in search for coupon codes or better deals elsewhere.</li>
+<li>Maybe, based on the high PLP view count, they were deep into search but did not manage to find the products of interest.</li>
+</ul></li>
+</ul></li>
+<li>User D
+<ul>
+<li>Probably knew what they wanted, which is
+<ul>
+<li>Indicated by a relatively high ratio from PLP to PDP views and high PDP views to Add to Cart ratio.</li>
+</ul></li>
+<li>They viewed their cart multiple times, reviewing it. But somehow, they have not started the checkout.</li>
+<li>This could be a perfect candidate for the abandoned cart campaign.</li>
+</ul></li>
+<li>User E
+<ul>
+<li>Probably a returning customer who come back shortly after another session.</li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li>Signal Scoring Steps
+<ul>
+<li>Choose a timeframe
+<ul>
+<li>Depends on the business model and the action you’re expecting to take with it.</li>
+<li>Examples
+<ul>
+<li>Users are taking up to around 1 month to consider a purchase, then update segments on a 30-day rolling basis.</li>
+<li>You want to communicate with your customers daily, then daily morning updates could be something to consider.</li>
+</ul></li>
+</ul></li>
+<li>Individual Signals: events that are positively associated with the conversion (e.g.&nbsp;the number of daily PLP views, PDP views, add to carts, etc.)
+<ul>
+<li>Understanding how a user scores in each one of these signals can help identify which part of the conversion funnel was not covered by a user.
+<ul>
+<li>These scores can inform how the business should interact with that customer</li>
+</ul></li>
+<li>For each signal in terms of activity (i.e.&nbsp;counts of events), segment customers into 3 quantiles (&lt; Q33, Q33 &lt; Q66, &gt;Q66) with labels below average, average, above average customers
+<ul>
+<li>Can also label customers who did not have any events for a signal at all (0-score users)</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
 </ul>
 </section>
 <section id="stages-of-product-development" class="level2" data-number="10.3">
@@ -330,13 +583,13 @@ ul.task-list li input[type="checkbox"] {
 <pre><code>Stage 1: Coming up with initial product ideas.
 
 Stage 2: Selecting ideas:
-    -   Quantitative analysis to select a subset of ideas to which to devote resources, often referred to as opportunity sizing.
+* Quantitative analysis to select a subset of ideas to which to devote resources, often referred to as opportunity sizing.
 Stage 3: Experiment design:
-    -   Involved with selecting success and guardrail metrics, running sanity checks, choosing randomization units, etc.
-    -   Candidates will need to consider alternatives when it is not possible to run A/B tests.
+* Involved with selecting success and guardrail metrics, running sanity checks, choosing randomization units, etc.
+* Candidates will need to consider alternatives when it is not possible to run A/B tests.
 Stage 4: Making a launch decision:
-    -   Making scientific decisions based on experimentation results.
-    -   Diagnosing problems and evaluating tradeoffs.
+* Making scientific decisions based on experimentation results.
+* Diagnosing problems and evaluating tradeoffs.
 Throughout the product development lifecycle, working with the appropriate **metrics** is of paramount importance</code></pre>
 </section>
 <section id="why-do-people-leave-and-stay" class="level1" data-number="11">
@@ -347,75 +600,336 @@ Throughout the product development lifecycle, working with the appropriate **met
     Collaborate with the engineers to design experiments and analyze results
     
 Some reasons people churn:
-    -   They might not understand the product.
-    -   The product might be hard to use.
-    -   People might not see the value of the product.
-    -   People prefer a competitor’s product.
-    -   The product might have some issues like bugs or being slow.
-    -   The new user is not the target user. There could be a mismatch between the user acuiqition and core features.
-    -   People might only need our product for a short period of time.
+* They might not understand the product.
+* The product might be hard to use.
+* People might not see the value of the product.
+* People prefer a competitor’s product.
+* The product might have some issues like bugs or being slow.
+* The new user is not the target user. There could be a mismatch between the user acuiqition and core features.
+* People might only need our product for a short period of time.
 Some reasons people become long term users:
-    -   People love the product.
-    -   Personalized notification works.
-    -   It has become a habit for people to use the product.</code></pre>
+* People love the product.
+* Personalized notification works.
+* It has become a habit for people to use the product.</code></pre>
 <p>Feedback</p>
 <pre><code>Misc
     Before even touching any of the data, ask yourself some **user privacy questions**: do we have good reason to be looking at the user data? Would we be violating any user privacy? In modern technology, user privacy is at the forefront so this should always be your first thought.
     
 Types
-    -   In-product bug reporting: many products give users a way to leave feedback if the system crashes or they navigate somewhere unexpected.
-    -   In-product feedback: products can ask for more general feedback in specific locations or always give users an option in site menus.
-    -   Social media: thanks to the wide penetration of social media, it’s common to find feedback about products online. You can track specific tags on Twitter, monitor your company’s Facebook or Instagram profiles or check your executive’s posts.
-    -   Internal feedback: many people working internally in a company will have a view of how the product behaves and capturing feedback from these people is also important.
-    -   User research: companies can actively seek user feedback through user research which often includes recruiting individuals and asking questions directly.</code></pre>
+* In-product bug reporting: many products give users a way to leave feedback if the system crashes or they navigate somewhere unexpected.
+* In-product feedback: products can ask for more general feedback in specific locations or always give users an option in site menus.
+* Social media: thanks to the wide penetration of social media, it’s common to find feedback about products online. You can track specific tags on Twitter, monitor your company’s Facebook or Instagram profiles or check your executive’s posts.
+* Internal feedback: many people working internally in a company will have a view of how the product behaves and capturing feedback from these people is also important.
+* User research: companies can actively seek user feedback through user research which often includes recruiting individuals and asking questions directly.</code></pre>
 <ul>
-<li>Potential Insights - Inform product direction: if users are consistently asking for a specific feature or requesting you to add more types of content, then the product may very well benefit from following their advice. - Identify bugs: when something goes wrong, users are often happy to complain about it. Monitoring user feedback is a great way to get quick insights into potential problems with your product. - Understand product sentiment: product teams will often ask themselves, how are we doing? There are many ways to answer this question including benchmarking against similar products and looking at retention metrics, but an equally effective method is to understand product sentiment through user feedback. This can help you know when you may need to invest more in building a better product, or if you can go heavily into marketing spend.</li>
-<li>Issues - User feedback is typically biased: if people are unhappy with something, then more likely to shout about it, then if they’re not fussed by it. This can lead to the feedback you actually receive being weighted heavily to the extremities, both users complaining about negative experiences and also those strong advocates who loved your product. There’s no silver bullet for dealing with this, so it’s important that all analyses done be caveated with this. - User feedback is noisy: feedback comes from people, and people have very different circumstances when coming into contact with your product. A feature might be loved by one user and hated by the next. To this end, it’s important to try to get as much data as possible, and from different sources. Another important approach is to look deeper than the averages, rather than just the mean, look at the actual distribution of reviews — are there a few people with very negative ratings changing the average? DS outputs - Self-service dashboards: users across a company can use the dashboard to get insights on feedback. - Regular reporting: having a good understanding of the feedback data can lead to automatic generation of reports which can drastically reduce the time to actually understand feedback and get insights out of it. - Scalable datasets: datasets which can be used by employees across the company.</li>
-<li>EDA/Processing - For your product area, identify the keyword/s that users are likely to use, for example if you’re running a clothing e-commerce store, they might be: “fit”, “style”, “expensive”, “ugly”, etc. Try to keep the total number to less than ten. - Sample at least 100 pieces of feedback from the total population and do a simple text match with the terms identified in the step above. - Manually scan through the sampled feedback. Did they all fall into the categories already thought of? Does the category actually match the content? For those missing a category, should there be a new category added to capture this? - You can iterate on the three steps above until you’re happy with how the feedback looks. - Plot the volume of reports matching your keyword/s, do you see a consistent pattern, are there increases around any product launches? Correlation with product launches and known bugs can help confirm the reports correlate with what you’re interested in. - Check the volume is high enough to be useful. You should aim to find a few hundred reports per day in order to get meaningful feedback. Of course, you can work with fewer if that’s all you have, but it will be harder to detect quick changes.</li>
-<li>Modeling - Perform sentiment analysis to understand if users are positive or negative towards your product. - Run topic modelling algorithms to have a more flexible understanding of the topics users are giving feedback on.</li>
-<li>Track Metrics - This should include taking the analyses completed above and making timeseries to add to dashboards. - Set up anomaly detection to be alerted if there are significant movements in the metric. This can be simple percentage movements in the key metrics that you identified above in the understand and modelling phases, or you can use more sophisticated algorithms. - It’s also good to create automated reports where possible, to summarize longer term trends, such as quarterly reports. You’ll always require some manual work, but setting up the queries and making it as easy as possible to action is important.</li>
+<li>Potential Insights
+<ul>
+<li>Inform product direction: if users are consistently asking for a specific feature or requesting you to add more types of content, then the product may very well benefit from following their advice.</li>
+<li>Identify bugs: when something goes wrong, users are often happy to complain about it. Monitoring user feedback is a great way to get quick insights into potential problems with your product.</li>
+<li>Understand product sentiment: product teams will often ask themselves, how are we doing? There are many ways to answer this question including benchmarking against similar products and looking at retention metrics, but an equally effective method is to understand product sentiment through user feedback. This can help you know when you may need to invest more in building a better product, or if you can go heavily into marketing spend.</li>
+</ul></li>
+<li>Issues
+<ul>
+<li>User feedback is typically biased: if people are unhappy with something, then more likely to shout about it, then if they’re not fussed by it. This can lead to the feedback you actually receive being weighted heavily to the extremities, both users complaining about negative experiences and also those strong advocates who loved your product. There’s no silver bullet for dealing with this, so it’s important that all analyses done be caveated with this.</li>
+<li>User feedback is noisy: feedback comes from people, and people have very different circumstances when coming into contact with your product. A feature might be loved by one user and hated by the next. To this end, it’s important to try to get as much data as possible, and from different sources. Another important approach is to look deeper than the averages, rather than just the mean, look at the actual distribution of reviews — are there a few people with very negative ratings changing the average? DS outputs</li>
+<li>Self-service dashboards: users across a company can use the dashboard to get insights on feedback.</li>
+<li>Regular reporting: having a good understanding of the feedback data can lead to automatic generation of reports which can drastically reduce the time to actually understand feedback and get insights out of it.</li>
+<li>Scalable datasets: datasets which can be used by employees across the company.</li>
+</ul></li>
+<li>EDA/Processing
+<ul>
+<li>For your product area, identify the keyword/s that users are likely to use, for example if you’re running a clothing e-commerce store, they might be: “fit”, “style”, “expensive”, “ugly”, etc. Try to keep the total number to less than ten.</li>
+<li>Sample at least 100 pieces of feedback from the total population and do a simple text match with the terms identified in the step above.</li>
+<li>Manually scan through the sampled feedback. Did they all fall into the categories already thought of? Does the category actually match the content? For those missing a category, should there be a new category added to capture this?</li>
+<li>You can iterate on the three steps above until you’re happy with how the feedback looks.</li>
+<li>Plot the volume of reports matching your keyword/s, do you see a consistent pattern, are there increases around any product launches? Correlation with product launches and known bugs can help confirm the reports correlate with what you’re interested in.</li>
+<li>Check the volume is high enough to be useful. You should aim to find a few hundred reports per day in order to get meaningful feedback. Of course, you can work with fewer if that’s all you have, but it will be harder to detect quick changes.</li>
+</ul></li>
+<li>Modeling
+<ul>
+<li>Perform sentiment analysis to understand if users are positive or negative towards your product.</li>
+<li>Run topic modelling algorithms to have a more flexible understanding of the topics users are giving feedback on.</li>
+</ul></li>
+<li>Track Metrics
+<ul>
+<li>This should include taking the analyses completed above and making timeseries to add to dashboards.</li>
+<li>Set up anomaly detection to be alerted if there are significant movements in the metric. This can be simple percentage movements in the key metrics that you identified above in the understand and modelling phases, or you can use more sophisticated algorithms.</li>
+<li>It’s also good to create automated reports where possible, to summarize longer term trends, such as quarterly reports. You’ll always require some manual work, but setting up the queries and making it as easy as possible to action is important.</li>
+</ul></li>
 </ul>
 <p>Metrics</p>
 <ul>
-<li><p>Types - Success - Guardrail - Funnel - Input-Output - Growth - Platform</p></li>
-<li><p><strong>Success metrics</strong> (sometimes called a “north star metric” or “primary metric” or “OKR metric”) are used to measure the success or health of a product. Commonly used (daily/monthly) success metrics include: - active users - bookings / purchases - revenue - click through rate conversion rate</p></li>
-<li><p><strong>Guardrail metrics</strong> measures core quantities that should not degrade in pursuit of a new product or feature. Success metrics of other core product teams can sometimes also serve as guardrail metrics. Examples can include: - bounce rate - the percentage of visitors to a particular website who navigate away from the site after viewing only one page. High bounce rate can indicate the landing page needs improvement - cancellation / unsubscription rate - latency</p></li>
-<li><p><strong>Funnel Metrics</strong> are any family of metrics that tracks the “user journey” through various parts of a product. - AARRR growth metrics (see below for details: A user who is activated must have been acquired (through some channel or organically); a user who generates revenue must have been previously activated. - Conversion funnels: a standard “conversion path” through the product, captured through basic metrics such as: - tech company - Number of visitors to webpage; - Number of logged-in users; Number of users who click particular parts of the logged-in pages;</p>
-<pre><code>        -   Number of users who visit the checkout page;
-        -   Number of users who purchase.
--   B2B (Business to Business)
-        -   Number of visitors to webpage (leads);
-        -   Number of leads who request free trials;
-        -   Number of leads to which the Sales team proactively reaches out;
-        -   Number of paid customers (each of which is a company / business) who made recurrent purchases.Number of visitors to webpage (leads);
-        -   Number of leads who request free trials;
-        -   Number of leads to which the Sales team proactively reaches out;
-        -   Number of paid customers (each of which is a company / business) who made recurrent purchases.
--   What makes a good step to monitor in a conversion funnel?
-    Notes from [Step Suggestions: How We Take the "Guess and Check" Out of Building Funnels](https://heap.io/blog/step-suggestions-how-we-automate-building-funnels)
-        -   A good funnel step is ubiquitous: almost no users reach the next step without performing this action.![](./_resources/Product_Development.resources/funnel-results-when-x-is-ubiquitous.png)
-        -   Examples:
-                -   Ubiquitous: “Enter Password” or “Click Add to Cart”
-                -   Not Ubiquitous: “Subscribe to Mailing List” or “View Warranty”
-        -   To qualify as ubiquitus, at least 97% of completers need to have completed the step.
-        -   A good funnel step is divisive: some users drop off before performing the step, and others drop off after.![](./_resources/Product_Development.resources/funnel-results-x-is-divisive.png)
-        -   X is a good milestone: 25% of users drop off from A to X, and 33% drop off from X to A (divisiveness = min(25%, 33%) = 25%).
-        -   Y isn’t a good milestone: 0% of users drop off from A to Y (divisiveness = min(0%, 50%) = 0%).
-        -   Z isn’t a good milestone, 0% of users drop off from Z to B (divisiveness = min(0%, 50%) = 0%)
-        -   Not Divisive Example: "Submit" at the end of a form
-                -   If 100% of people that click that button reach the next page, then it’s not worth adding a step to break that down
-        -   Examples
-        -   form field change events, like entering a password or checking a checkbox.
-        -   pageview
-        -   Pitfalls
-        -   Adding a step to the funnel that isn't required for conversion
-                -   If you add this step, the conversion rate will be biased
-                -   Example:
-                -   Funnel for a login form which has a true conversion rate of 36% (login submits/login pageviews)
-                -   Entering a phone number was an optional step. Adding it to the funnel drops the conversion rate to 19.98%</code></pre></li>
-<li><p><strong>Input-output Metrics</strong> - Input / driver metrics: Metrics that track the activities / resources used to work towards an outcome. - Output metrics: Metrics that demonstrate the outcome of an initiative. - Example: Search and Recommendation - Input metrics - click-through-rate (CTR) - average time spent on a particular types of content - Output metrics - average time spent on the platform per user - sessions-per-user - successful sessions per user - advertisement revenue - Example: Fraud Detection - also see Platform Metrics - Input metrics - true / false positive rates of - fraud rules and models - fraud scores are calculated based on rules, which add or subtract points. The user action may be a transaction, signup or login. Rules look at data points such as an email address, IP address, or social media presence. - operations manual review volumes - A human is reviews the case to determine whether action is needed. In fraud, an model output may trigger a “manual review” to determine whether an event was indeed fraudulent. - customer transaction amounts - Whether or not a transaction not fit a customer’s normal buying habits - Output metrics - fraud loss volumes - losses prevented - revenue</p></li>
-<li><p><strong>Growth Metrics</strong> (AARRR) - are responsible for enlarging a product’s user base and keeping current users engaged - AARRR - Acquisition: Getting customers to sign up for a website or product, which requires driving product awareness (often known as “top of funnel”). - Activation: Getting customers to gain basic familiarity with the product, and appreciating the basic product value. - Retention: Getting customers to come back to the product on a regular basis; a customer that exhibits no (or minimal) activity over some predetermined time period is known as churned (the precise definition depends on the business context and varies greatly across teams / companies). - Referral: Getting customers to share the product with others, in turn further growing the user base. - Revenue: Getting customers to adopt one or more paid features that generate revenue for the company; also known as Monetization. - Concepts - Tradeoffs between acquisition and revenue: How should a company strike the optimal balance between revenue maximization and acquiring new customers (the latter can always be done via expensive campaigns, such as providing large discounts / gifts for new users, etc.)? - Different levels of engagement: Typically, a company will have multiple tiers of user engagement metrics, which reflect different levels of product engagement (with “activated user” being the lowest tier). - If daily use is what is most valuable (e.g.&nbsp;Facebook, ad revenue), Engagement = Daily Active Users (DAU) / Monthly Active Users (MAU) - Emails and push notifications tend to increase casual numbers (the MAU) but not the daily users (DAU). - The magnitude of the engagement of this type is mostly determined by the product category and doesn’t change much over time - see Misc &gt;&gt; Loyalty measure by app category - high-frequency, high-retention apps (e.g.&nbsp;communication) - i.e.&nbsp;an app with 10% DAU/MAU doesn’t usually turn into a 40% DAU/MAU - If daily use is NOT where the company’s value comes from, then find and investigate <strong>power users</strong>. - e.g.&nbsp;Users of companies like Uber, ecommerce, Airbnb don’t use their services every day but these companies are huge. - Questions - Which customers generate the most value for your company? - How are they doing it? - Frequency of use? - What % of your users are active (engage in valuable activity) every day last week? - Network effects? - Content they’ve produced or saved? - What characteristics make them different from the casual user? - The action(s) should correlate to some value metric. - How are you going to produce or acquire more of them? - how can I understand their needs better and make sure we continue building in a direction that supports their daily workflow (and that we can upsell new features)? - Power User Curve (aka activity histogram or the “L30”) - Histogram of users’ engagement by the total number of days they performed which action you’ve deemed valuable in a month - Can be applied to a cohort if you’re a subscription business, track product launches, track results from feature changes, or results from marketing campaiagns, etc. (see below) - I don’t think this concept has to be limited to time being on the x-axis. It could be any metric value you consider representative of a “power user.” - Also see <a href="Google, Analytics, Analysis">Google, Analytics, Analysis</a> &gt;&gt; Power User Analysis - Y axis: % users, X axis: visits - Time period depends on your products natural cycle. May be monthly (“L30”), weekly (“L7”), daily, etc. - Example: productivity/work-related products that users engage with Monday through Friday. B2B SaaS products will often find it useful to show this version, as they want to drive usage during the work week. - “Smile” curves are good - Monthly<img src="./_resources/Product_Development.resources/image.1.png" class="img-fluid"> - The 7% (far right) that engage daily shows that a group of users are returning frequently (daily) so it may be possible that the impressions can support an ad business - Successive Power User Curves should ideally show users shifting over more to the right side of the smile - Weekly<img src="./_resources/Product_Development.resources/image.2.png" class="img-fluid"> - The “smile” occurs between 1 and 5 days which makes sense for productivity type product that is most active during the workweek. - Cohort analysis<img src="./_resources/Product_Development.resources/image.3.png" class="img-fluid"> - Shows a positive shift in user engagement from August to November, where a larger segment of the population is becoming active on a daily basis, and there’s more of a smile curve. - Inflection points where the line starts to bend upward for a particular month can indicate: - When a critical product release, unblocking features, or a marketing effort might have started to bend the curve - This might be a place to double down, to increase engagement. - For a network effects product, you might expect to see newer cohorts gradually improve as you achieve network density/liquidity. - Retention and churn cannot be easily estimated over the short term: Definitions of retention and churn vary from company to company, but typically require weeks if not months of continuous observation. Furthermore, it is possible for a churned customer to recover (often known as <em>resurrection</em>), so it is important to clarify the precise metric definitions and assumptions before answering any questions (e.g.&nbsp;first time churning, most recent time churning, ever churned, etc.). - Difficulty of measuring incrementality for referral initiatives: When new referral programs are launched, network effects are typically introduced because any new customer can be simultaneously a referrer and a referee. - Differences between B2B and B2C settings: In B2B companies, acquisition/activation/retention etc. are typically defined at the “company / business” level, because a customer is a company / business. There could be analogous granular user-level metrics as well. - Challenges of international expansion: These include additional costs associated with localization (adapting a product appropriately to better fit the customers in a particular market), regulatory / compliance requirements, understanding the competitive landscape, etc. - RARRA instead of AARRR?<img src="./_resources/Product_Development.resources/1aihm6-T1GIPS5VDZxjq7Xw.png" class="img-fluid"> - AARRR focuses too much on Acquisition even though Retention is more important, especially for many internet products that struggle to retain people. - Reasons why retention is more important: - acquisition strategies (e.g., ads) are expensive and it is often cheaper to retain a user than get a new user - retention is the foundation of growth - user retention is more directly connected to revenue than acquisition.</p></li>
-<li><p><strong>Platform Metrics</strong> - Departments include Customer Support, Trust and Safety, Payments, Infrastructure, Operations - Many of these are indirectly related to the Growth Metrics - Metrics - Costs of operations / infrastructure: a granular understanding of various infrastructure costs allows one to effectively evaluate tradeoffs for expansion. - average cost of a help center ticket / escalation - essential quantity to track for many types of product changes in customer-facing companies - Success / failure rates: These metrics are strongly correlated with conversion, particularly in the Monetization context (since payments are typically the final step of the monetization funnel). - percentage of transaction attempts that succeed / failure out of all transaction attempts - False positive / false negative / true positive rates (for fraud detection): rules and models for detecting bad user behavio - Also see input/output metrics - false positives can decrease a good customer’s lifetime value (LTV or CLV) - false negatives increase fraud losses - Fraud loss metrics: As a company scales, fraud losses typically follow (from a mixture of) - “born bad users” - users who abuse the product for inappropriate financial gains and - third party fraud - users who take over the accounts of good users - Vendor costs: (e.g.&nbsp;Stripes for payments processing) - need to be carefully weighed against other core business metrics.</p></li>
+<li>Types
+<ul>
+<li>Success</li>
+<li>Guardrail</li>
+<li>Funnel</li>
+<li>Input-Output</li>
+<li>Growth</li>
+<li>Platform</li>
+</ul></li>
+<li><strong>Success metrics</strong> (sometimes called a “north star metric” or “primary metric” or “OKR metric”) are used to measure the success or health of a product. Commonly used (daily/monthly) success metrics include:
+<ul>
+<li>active users</li>
+<li>bookings / purchases</li>
+<li>revenue</li>
+<li>click through rate conversion rate</li>
+</ul></li>
+<li><strong>Guardrail metrics</strong> measures core quantities that should not degrade in pursuit of a new product or feature. Success metrics of other core product teams can sometimes also serve as guardrail metrics. Examples can include:
+<ul>
+<li>bounce rate - the percentage of visitors to a particular website who navigate away from the site after viewing only one page. High bounce rate can indicate the landing page needs improvement</li>
+<li>cancellation / unsubscription rate</li>
+<li>latency</li>
+</ul></li>
+<li><strong>Funnel Metrics</strong> are any family of metrics that tracks the “user journey” through various parts of a product.
+<ul>
+<li>AARRR growth metrics (see below for details: A user who is activated must have been acquired (through some channel or organically); a user who generates revenue must have been previously activated.</li>
+<li>Conversion funnels: a standard “conversion path” through the product, captured through basic metrics such as:
+<ul>
+<li>tech company
+<ul>
+<li><p>Number of visitors to webpage;</p></li>
+<li><p>Number of logged-in users; Number of users who click particular parts of the logged-in pages;</p></li>
+<li><p>Number of users who visit the checkout page;</p></li>
+<li><p>Number of users who purchase.</p></li>
+</ul></li>
+<li>B2B (Business to Business)
+<ul>
+<li>Number of visitors to webpage (leads);</li>
+<li>Number of leads who request free trials;</li>
+<li>Number of leads to which the Sales team proactively reaches out;</li>
+<li>Number of paid customers (each of which is a company / business) who made recurrent purchases.Number of visitors to webpage (leads);</li>
+<li>Number of leads who request free trials;</li>
+<li>Number of leads to which the Sales team proactively reaches out;</li>
+<li>Number of paid customers (each of which is a company / business) who made recurrent purchases.</li>
+</ul></li>
+<li>What makes a good step to monitor in a conversion funnel? Notes from <a href="https://heap.io/blog/step-suggestions-how-we-automate-building-funnels">Step Suggestions: How We Take the “Guess and Check” Out of Building Funnels</a>
+<ul>
+<li>A good funnel step is ubiquitous: almost no users reach the next step without performing this action.<img src="./_resources/Product_Development.resources/funnel-results-when-x-is-ubiquitous.png" class="img-fluid">
+<ul>
+<li>Examples:
+<ul>
+<li>Ubiquitous: “Enter Password” or “Click Add to Cart”</li>
+<li>Not Ubiquitous: “Subscribe to Mailing List” or “View Warranty”</li>
+</ul></li>
+<li>To qualify as ubiquitus, at least 97% of completers need to have completed the step.</li>
+</ul></li>
+<li>A good funnel step is divisive: some users drop off before performing the step, and others drop off after.<img src="./_resources/Product_Development.resources/funnel-results-x-is-divisive.png" class="img-fluid">
+<ul>
+<li>X is a good milestone: 25% of users drop off from A to X, and 33% drop off from X to A (divisiveness = min(25%, 33%) = 25%).</li>
+<li>Y isn’t a good milestone: 0% of users drop off from A to Y (divisiveness = min(0%, 50%) = 0%).</li>
+<li>Z isn’t a good milestone, 0% of users drop off from Z to B (divisiveness = min(0%, 50%) = 0%)</li>
+<li>Not Divisive <span class="ribbon-highlight">Example</span>: “Submit” at the end of a form
+<ul>
+<li>If 100% of people that click that button reach the next page, then it’s not worth adding a step to break that down</li>
+</ul></li>
+</ul></li>
+<li>Examples
+<ul>
+<li>form field change events, like entering a password or checking a checkbox.</li>
+<li>pageview</li>
+</ul></li>
+<li>Pitfalls
+<ul>
+<li>Adding a step to the funnel that isn’t required for conversion
+<ul>
+<li>If you add this step, the conversion rate will be biased</li>
+<li><span class="ribbon-highlight">Example</span>:
+<ul>
+<li>Funnel for a login form which has a true conversion rate of 36% (login submits/login pageviews)</li>
+<li>Entering a phone number was an optional step. Adding it to the funnel drops the conversion rate to 19.98%</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><strong>Input-output Metrics</strong>
+<ul>
+<li>Input / driver metrics: Metrics that track the activities / resources used to work towards an outcome.</li>
+<li>Output metrics: Metrics that demonstrate the outcome of an initiative.</li>
+<li><span class="ribbon-highlight">Example</span>: Search and Recommendation
+<ul>
+<li>Input metrics
+<ul>
+<li>click-through-rate (CTR)</li>
+<li>average time spent on a particular types of content</li>
+</ul></li>
+<li>Output metrics
+<ul>
+<li>average time spent on the platform per user</li>
+<li>sessions-per-user</li>
+<li>successful sessions per user</li>
+<li>advertisement revenue</li>
+</ul></li>
+</ul></li>
+<li><span class="ribbon-highlight">Example</span>: Fraud Detection
+<ul>
+<li>also see Platform Metrics</li>
+<li>Input metrics
+<ul>
+<li>true / false positive rates of
+<ul>
+<li>fraud rules and models
+<ul>
+<li>fraud scores are calculated based on rules, which add or subtract points. The user action may be a transaction, signup or login. Rules look at data points such as an email address, IP address, or social media presence.</li>
+</ul></li>
+<li>operations manual review volumes
+<ul>
+<li>A human is reviews the case to determine whether action is needed. In fraud, an model output may trigger a “manual review” to determine whether an event was indeed fraudulent.</li>
+</ul></li>
+<li>customer transaction amounts
+<ul>
+<li>Whether or not a transaction not fit a customer’s normal buying habits</li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li>Output metrics
+<ul>
+<li>fraud loss volumes</li>
+<li>losses prevented</li>
+<li>revenue</li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><strong>Growth Metrics</strong> (AARRR) - are responsible for enlarging a product’s user base and keeping current users engaged
+<ul>
+<li>AARRR
+<ul>
+<li>Acquisition: Getting customers to sign up for a website or product, which requires driving product awareness (often known as “top of funnel”).</li>
+<li>Activation: Getting customers to gain basic familiarity with the product, and appreciating the basic product value.</li>
+<li>Retention: Getting customers to come back to the product on a regular basis; a customer that exhibits no (or minimal) activity over some predetermined time period is known as churned (the precise definition depends on the business context and varies greatly across teams / companies).</li>
+<li>Referral: Getting customers to share the product with others, in turn further growing the user base.</li>
+<li>Revenue: Getting customers to adopt one or more paid features that generate revenue for the company; also known as Monetization.</li>
+</ul></li>
+<li>Concepts
+<ul>
+<li>Tradeoffs between acquisition and revenue: How should a company strike the optimal balance between revenue maximization and acquiring new customers (the latter can always be done via expensive campaigns, such as providing large discounts / gifts for new users, etc.)?</li>
+<li>Different levels of engagement: Typically, a company will have multiple tiers of user engagement metrics, which reflect different levels of product engagement (with “activated user” being the lowest tier).
+<ul>
+<li>If daily use is what is most valuable (e.g.&nbsp;Facebook, ad revenue), Engagement = Daily Active Users (DAU) / Monthly Active Users (MAU)
+<ul>
+<li>Emails and push notifications tend to increase casual numbers (the MAU) but not the daily users (DAU).</li>
+<li>The magnitude of the engagement of this type is mostly determined by the product category and doesn’t change much over time
+<ul>
+<li>see Misc &gt;&gt; Loyalty measure by app category
+<ul>
+<li>high-frequency, high-retention apps (e.g.&nbsp;communication)</li>
+</ul></li>
+<li>i.e.&nbsp;an app with 10% DAU/MAU doesn’t usually turn into a 40% DAU/MAU</li>
+</ul></li>
+</ul></li>
+<li>If daily use is NOT where the company’s value comes from, then find and investigate <strong>power users</strong>.
+<ul>
+<li>e.g.&nbsp;Users of companies like Uber, ecommerce, Airbnb don’t use their services every day but these companies are huge.</li>
+<li>Questions
+<ul>
+<li>Which customers generate the most value for your company?</li>
+<li>How are they doing it?
+<ul>
+<li>Frequency of use?
+<ul>
+<li>What % of your users are active (engage in valuable activity) every day last week?</li>
+</ul></li>
+<li>Network effects?</li>
+<li>Content they’ve produced or saved?</li>
+<li>What characteristics make them different from the casual user?</li>
+</ul></li>
+<li>The action(s) should correlate to some value metric.</li>
+<li>How are you going to produce or acquire more of them?</li>
+<li>how can I understand their needs better and make sure we continue building in a direction that supports their daily workflow (and that we can upsell new features)?</li>
+</ul></li>
+<li>Power User Curve (aka activity histogram or the “L30”)
+<ul>
+<li>Histogram of users’ engagement by the total number of days they performed which action you’ve deemed valuable in a month
+<ul>
+<li>Can be applied to a cohort if you’re a subscription business, track product launches, track results from feature changes, or results from marketing campaiagns, etc. (see below)</li>
+<li>I don’t think this concept has to be limited to time being on the x-axis. It could be any metric value you consider representative of a “power user.”
+<ul>
+<li>Also see <a href="Google, Analytics, Analysis">Google, Analytics, Analysis</a> &gt;&gt; Power User Analysis
+<ul>
+<li>Y axis: % users, X axis: visits</li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li>Time period depends on your products natural cycle. May be monthly (“L30”), weekly (“L7”), daily, etc.
+<ul>
+<li><span class="ribbon-highlight">Example</span>: productivity/work-related products that users engage with Monday through Friday. B2B SaaS products will often find it useful to show this version, as they want to drive usage during the work week.</li>
+</ul></li>
+<li>“Smile” curves are good
+<ul>
+<li>Monthly<img src="./_resources/Product_Development.resources/image.1.png" class="img-fluid">
+<ul>
+<li>The 7% (far right) that engage daily shows that a group of users are returning frequently (daily) so it may be possible that the impressions can support an ad business</li>
+<li>Successive Power User Curves should ideally show users shifting over more to the right side of the smile</li>
+</ul></li>
+<li>Weekly<img src="./_resources/Product_Development.resources/image.2.png" class="img-fluid">
+<ul>
+<li>The “smile” occurs between 1 and 5 days which makes sense for productivity type product that is most active during the workweek.</li>
+</ul></li>
+</ul></li>
+<li>Cohort analysis<img src="./_resources/Product_Development.resources/image.3.png" class="img-fluid">
+<ul>
+<li>Shows a positive shift in user engagement from August to November, where a larger segment of the population is becoming active on a daily basis, and there’s more of a smile curve.</li>
+<li>Inflection points where the line starts to bend upward for a particular month can indicate:
+<ul>
+<li>When a critical product release, unblocking features, or a marketing effort might have started to bend the curve
+<ul>
+<li>This might be a place to double down, to increase engagement.</li>
+</ul></li>
+<li>For a network effects product, you might expect to see newer cohorts gradually improve as you achieve network density/liquidity.</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li>Retention and churn cannot be easily estimated over the short term: Definitions of retention and churn vary from company to company, but typically require weeks if not months of continuous observation. Furthermore, it is possible for a churned customer to recover (often known as <em>resurrection</em>), so it is important to clarify the precise metric definitions and assumptions before answering any questions (e.g.&nbsp;first time churning, most recent time churning, ever churned, etc.).</li>
+<li>Difficulty of measuring incrementality for referral initiatives: When new referral programs are launched, network effects are typically introduced because any new customer can be simultaneously a referrer and a referee.</li>
+<li>Differences between B2B and B2C settings: In B2B companies, acquisition/activation/retention etc. are typically defined at the “company / business” level, because a customer is a company / business. There could be analogous granular user-level metrics as well.</li>
+<li>Challenges of international expansion: These include additional costs associated with localization (adapting a product appropriately to better fit the customers in a particular market), regulatory / compliance requirements, understanding the competitive landscape, etc.</li>
+</ul></li>
+<li>RARRA instead of AARRR?<img src="./_resources/Product_Development.resources/1aihm6-T1GIPS5VDZxjq7Xw.png" class="img-fluid">
+<ul>
+<li>AARRR focuses too much on Acquisition even though Retention is more important, especially for many internet products that struggle to retain people.</li>
+<li>Reasons why retention is more important:
+<ul>
+<li>acquisition strategies (e.g., ads) are expensive and it is often cheaper to retain a user than get a new user</li>
+<li>retention is the foundation of growth</li>
+<li>user retention is more directly connected to revenue than acquisition.</li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><strong>Platform Metrics</strong>
+<ul>
+<li>Departments include Customer Support, Trust and Safety, Payments, Infrastructure, Operations</li>
+<li>Many of these are indirectly related to the Growth Metrics</li>
+<li>Metrics
+<ul>
+<li>Costs of operations / infrastructure: a granular understanding of various infrastructure costs allows one to effectively evaluate tradeoffs for expansion.
+<ul>
+<li>average cost of a help center ticket / escalation - essential quantity to track for many types of product changes in customer-facing companies</li>
+</ul></li>
+<li>Success / failure rates: These metrics are strongly correlated with conversion, particularly in the Monetization context (since payments are typically the final step of the monetization funnel).
+<ul>
+<li>percentage of transaction attempts that succeed / failure out of all transaction attempts</li>
+</ul></li>
+<li>False positive / false negative / true positive rates (for fraud detection): rules and models for detecting bad user behavio
+<ul>
+<li>Also see input/output metrics</li>
+<li>false positives can decrease a good customer’s lifetime value (LTV or CLV)</li>
+<li>false negatives increase fraud losses</li>
+</ul></li>
+<li>Fraud loss metrics: As a company scales, fraud losses typically follow (from a mixture of)
+<ul>
+<li>“born bad users” - users who abuse the product for inappropriate financial gains and</li>
+<li>third party fraud - users who take over the accounts of good users</li>
+</ul></li>
+<li>Vendor costs: (e.g.&nbsp;Stripes for payments processing)
+<ul>
+<li>need to be carefully weighed against other core business metrics.</li>
+</ul></li>
+</ul></li>
+</ul></li>
 </ul>
 
 

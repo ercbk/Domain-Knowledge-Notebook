@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.427">
+<meta name="generator" content="quarto-1.3.433">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -278,9 +278,32 @@ ul.task-list li input[type="checkbox"] {
 <p>Distributed Manufacturing (DM) Notes from <a href="https://www.youtube.com/watch?v=8wXRir49b9w">Online Scheduling Approach for Distributed Additive Manufacturing</a></p>
 <ul>
 <li>Global Mass Production vs Global Distributed Production<img src="./_resources/Manufacturing.resources/Screenshot-(514).png" class="img-fluid"></li>
-<li>Dynamica Allocation of Production Orders (POs)<img src="./_resources/Manufacturing.resources/Screenshot-(516).png" class="img-fluid"> - Production order inputs delivery location, spare part to be manufactured, quantity needed - The only thing being locally modeled seems to be production time - Travel Time from PC to Delivery Location is a request from an API - Seems like there should be a cost element here. Freight charges if delivery is outside the company. If manufacturing and delivery is local though, then maybe the only real cost is gas and that would indirectly included in the Travel Time calculation - Queue time should be something that’s monitored and can be looked up in a table - Set-up time should be something that’s considered a constant depending on the spare part</li>
-<li>Implementation<img src="./_resources/Manufacturing.resources/Screenshot-(520).png" class="img-fluid"> - FASTEN is a manufacturing software company - Not sure if this tool is used to feed simulated POs to the pipeline or if it’s used to optimize the objective function or both - Components in this project make sense to me but these arrows don’t all make sense to me</li>
-<li>Benchmark - The null model was one where the PC with shortest distance from PC to delivery location was chosen every time - The metric was Average Wait Time to receive the spare part after being ordered</li>
+<li>Dynamica Allocation of Production Orders (POs)<img src="./_resources/Manufacturing.resources/Screenshot-(516).png" class="img-fluid">
+<ul>
+<li>Production order inputs delivery location, spare part to be manufactured, quantity needed</li>
+<li>The only thing being locally modeled seems to be production time
+<ul>
+<li>Travel Time from PC to Delivery Location is a request from an API
+<ul>
+<li>Seems like there should be a cost element here. Freight charges if delivery is outside the company. If manufacturing and delivery is local though, then maybe the only real cost is gas and that would indirectly included in the Travel Time calculation</li>
+</ul></li>
+<li>Queue time should be something that’s monitored and can be looked up in a table</li>
+<li>Set-up time should be something that’s considered a constant depending on the spare part</li>
+</ul></li>
+</ul></li>
+<li>Implementation<img src="./_resources/Manufacturing.resources/Screenshot-(520).png" class="img-fluid">
+<ul>
+<li>FASTEN is a manufacturing software company
+<ul>
+<li>Not sure if this tool is used to feed simulated POs to the pipeline or if it’s used to optimize the objective function or both</li>
+</ul></li>
+<li>Components in this project make sense to me but these arrows don’t all make sense to me</li>
+</ul></li>
+<li>Benchmark
+<ul>
+<li>The null model was one where the PC with shortest distance from PC to delivery location was chosen every time</li>
+<li>The metric was Average Wait Time to receive the spare part after being ordered</li>
+</ul></li>
 </ul>
 
 

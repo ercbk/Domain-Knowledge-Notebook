@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.427">
+<meta name="generator" content="quarto-1.3.433">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -285,119 +285,689 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 <p>Misc</p>
 <pre><code>Goal: develop a replenishment policy that will minimize your ordering, holding and shortage costs.
-    -   Ordering Costs ($ per order): fixed cost to place an order due to administrative costs, system maintenance or manufacturing costs
-    -   Holding Costs ($ per unit per unit of time): all the costs required to hold your inventory (storage, insurance, and capital costs)
-    -   Shortage/Stock-out Costs ($ per unit): the costs of not having enough inventory to meet the customer demand (Lost Sales, Penalty)</code></pre>
+* Ordering Costs ($ per order): fixed cost to place an order due to administrative costs, system maintenance or manufacturing costs
+* Holding Costs ($ per unit per unit of time): all the costs required to hold your inventory (storage, insurance, and capital costs)
+* Shortage/Stock-out Costs ($ per unit): the costs of not having enough inventory to meet the customer demand (Lost Sales, Penalty)</code></pre>
 <ul>
 <li>Forecast PI widths serve as a proxy for inventory holding costs and provides valuable input for setting a target service level</li>
-<li>Packages - {planr} - uses opening inventory, sales forecasts and supply variables to calculate projected inventory and projected coverage calculations (<a href="https://www.r-bloggers.com/2022/10/using-r-in-inventory-management-and-demand-forecasting/">article</a>)</li>
-<li>Question: “Due to the complexity/cost of maintaining inventory management system. Would it be sufficient to just set a safety stock level and replenish once the SKU dips below that level?” - The more products you handle, the more an inventory management system matters. If you have 1000s or 10s of 1000s of different products, it makes a large difference whether you do demand forecasting along with implementing the Order-Up-To Level Policy, etc.</li>
-<li>Variables of interest that need to be forecasted for various decisions - Stock/No Stock - should we continue to stock a product or discontinue the product and just let the current stock dwindle to zero. - Mean of Demand - Replenishment - how much product should we restock - Mean and Variance of Demand - Forecasts in conjunction with a hypothesized demand distribution (parametric) vs build-up of the empircal distribution via bootstrapping (non-parametric) - Returns - customer returning products - Net Demand which is equal to Demand - Returns - Can be forecasted itself or by forecasting Demand and Returns separately. - Last Time Buy (LTB) - the supplier’s “last call” for a part or component. The final chance an enterprise will have to buy the part before the supplier stops producing it. - Rate of Demand Decline</li>
+<li>Packages
+<ul>
+<li>{planr} - uses opening inventory, sales forecasts and supply variables to calculate projected inventory and projected coverage calculations (<a href="https://www.r-bloggers.com/2022/10/using-r-in-inventory-management-and-demand-forecasting/">article</a>)</li>
+</ul></li>
+<li>Question: “Due to the complexity/cost of maintaining inventory management system. Would it be sufficient to just set a safety stock level and replenish once the SKU dips below that level?”
+<ul>
+<li>The more products you handle, the more an inventory management system matters. If you have 1000s or 10s of 1000s of different products, it makes a large difference whether you do demand forecasting along with implementing the Order-Up-To Level Policy, etc.</li>
+</ul></li>
+<li>Variables of interest that need to be forecasted for various decisions
+<ul>
+<li>Stock/No Stock - should we continue to stock a product or discontinue the product and just let the current stock dwindle to zero.
+<ul>
+<li>Mean of Demand</li>
+</ul></li>
+<li>Replenishment - how much product should we restock
+<ul>
+<li>Mean and Variance of Demand</li>
+<li>Forecasts in conjunction with a hypothesized demand distribution (parametric) vs build-up of the empircal distribution via bootstrapping (non-parametric)</li>
+</ul></li>
+<li>Returns - customer returning products
+<ul>
+<li>Net Demand which is equal to Demand - Returns
+<ul>
+<li>Can be forecasted itself or by forecasting Demand and Returns separately.</li>
+</ul></li>
+</ul></li>
+<li>Last Time Buy (LTB) - the supplier’s “last call” for a part or component. The final chance an enterprise will have to buy the part before the supplier stops producing it.
+<ul>
+<li>Rate of Demand Decline</li>
+</ul></li>
+</ul></li>
 </ul>
 <p>Terms</p>
 <ul>
-<li><strong>Active References</strong> - a product may have multiple SKUs. All SKUs would be needed in order to calculate stats for that product. The active reference for a product is one SKU that encompasses all other SKUs. - e.g.&nbsp;Last season’s dress “C” has been replaced by the new dress “D”. Even though both dresses are identical, they have different SKUs. Dress D’s SKU will be the active reference. Therefore, if the retailer sold two units of C in the past and three units of D this week, Nextail will show D having sold five units. - Also seen this term used when referring to all unique SKUs on an order sheet as the total active references.</li>
-<li><strong>Linked Lines</strong> (aka <strong>Silent Switches</strong>) - refer to when several products in a retailer’s inventory are commercially equivalent. In other words, when identical products are identified by multiple SKUs. - Example: continuity products are ordered over multiple seasons or years or when large orders are split among different suppliers</li>
-<li>Order Components<img src="./_resources/Logistics.resources/image.8.png" class="img-fluid"> - <strong>Order</strong>: The “shopping basket” full of items you’ve just purchased. - <strong>Lines</strong>: The different products within your order, recognized by warehouses as each individual Stock Keeping Unit (SKU) or Universal Product Code (UPC) number. - <strong>Units</strong>: The quantity of each line.</li>
-<li><strong>Reference</strong> - id for a product (e.g.&nbsp;SKU)</li>
-<li><strong>Rotations</strong> - speed at which products enter and exit the warehouse - High rotation: Units enter and exit continuously. These items are in high demand. - Medium rotation: Units enter and exit in smaller volumes than those in High Rotation. - Low rotation: These are the items that spend the most time in the warehouse, and are in low demand.</li>
-<li><strong>SKU</strong> - Stock Keeping Unit - Usually a bar code that has all the information to distinguish it from another product. These attributes can include manufacturer, description, material, size, color, packaging, and warranty terms. When a business takes inventory of its stock, it counts the quantity it has of each SKU.</li>
-<li><strong>Supply Chain</strong> - a network of processes and stock locations built to deliver services and goods to customers.</li>
-<li><strong>Wastage</strong> - where supply greatly outstrips demand, and the product expires</li>
-<li><strong>S&amp;OP</strong> - Sales &amp; Operations Planning</li>
+<li><span style="color: #009499"><strong>Active References</strong></span> - a product may have multiple SKUs. All SKUs would be needed in order to calculate stats for that product. The active reference for a product is one SKU that encompasses all other SKUs.
+<ul>
+<li>e.g.&nbsp;Last season’s dress “C” has been replaced by the new dress “D”. Even though both dresses are identical, they have different SKUs. Dress D’s SKU will be the active reference. Therefore, if the retailer sold two units of C in the past and three units of D this week, Nextail will show D having sold five units.</li>
+<li>Also seen this term used when referring to all unique SKUs on an order sheet as the total active references.</li>
+</ul></li>
+<li><span style="color: #009499"><strong>Linked Lines</strong></span> (aka [<strong>Silent Switches</strong>) - refer to when several products in a retailer’s inventory are commercially equivalent. In other words, when identical products are identified by multiple SKUs.
+<ul>
+<li><span class="ribbon-highlight">Example</span>: continuity products are ordered over multiple seasons or years or when large orders are split among different suppliers</li>
+</ul></li>
+<li>Order Components<img src="./_resources/Logistics.resources/image.8.png" class="img-fluid">
+<ul>
+<li>[<strong>Order</strong>: The “shopping basket” full of items you’ve just purchased.</li>
+<li>[<strong>Lines</strong>: The different products within your order, recognized by warehouses as each individual Stock Keeping Unit (SKU) or Universal Product Code (UPC) number.</li>
+<li>[<strong>Units</strong>: The quantity of each line.</li>
+</ul></li>
+<li><span style="color: #009499"><strong>Reference</strong></span> - id for a product (e.g.&nbsp;SKU)</li>
+<li><span style="color: #009499"><strong>Rotations</strong></span> - speed at which products enter and exit the warehouse
+<ul>
+<li>High rotation: Units enter and exit continuously. These items are in high demand.</li>
+<li>Medium rotation: Units enter and exit in smaller volumes than those in High Rotation.</li>
+<li>Low rotation: These are the items that spend the most time in the warehouse, and are in low demand.</li>
+</ul></li>
+<li><span style="color: #009499"><strong>SKU</strong></span> - Stock Keeping Unit - Usually a bar code that has all the information to distinguish it from another product. These attributes can include manufacturer, description, material, size, color, packaging, and warranty terms. When a business takes inventory of its stock, it counts the quantity it has of each SKU.</li>
+<li><span style="color: #009499"><strong>Supply Chain</strong></span> - a network of processes and stock locations built to deliver services and goods to customers.</li>
+<li><span style="color: #009499"><strong>Wastage</strong></span> - where supply greatly outstrips demand, and the product expires</li>
+<li><span style="color: #009499"><strong>S&amp;OP</strong></span> - Sales &amp; Operations Planning</li>
 </ul>
 <p>Demand Forecasting</p>
 <ul>
-<li><p>Misc - Also see DoorDash &gt;&gt; Forecast Supply and Demand - <a href="https://towardsdatascience.com/reinforcement-learning-for-inventory-optimization-series-iii-sim-to-real-transfer-for-the-rl-model-d260c3b8277d">Reinforcement Learning for Inventory Optimization Series III: Sim-to-Real Transfer for the RL Model | by Guangrui Xie | Jan, 2023 | Towards Data Science</a></p></li>
-<li><p>Metrics for judging demand forecasts<img src="./_resources/Logistics.resources/1-ni6N2L4yp0ynlOzL01f8Fg.png" class="img-fluid"> - change in the number of Stock-Out days - percent change in Service Level - change in Profit - change in wastage - change in inventory costs</p></li>
-<li><p>Notes from <a href="https://towardsdatascience.com/are-your-demand-forecasts-hurting-profits-and-service-levels-f61af7c5ff">Are Your Demand Forecasts Hurting Profits and Service Levels</a> - Blue Dot Thinking’s <a href="http://www.bluedotthinking.com/">WasteNot API service</a> ($) WasteNot (logistics analytics firm) uses prophet for demand forecasting which consistently under-predicts, so they use an adjustment for better forecasts</p>
-<pre><code>-   Prediction adjustment - (e.g. for perishables) calculate an optimal “Buffer Multiplier” value — each predicted value from the statistical forecast is multiplied by the multiplier, resulting in a higher number of units replenished each day
--   Variables used:
-        -   unit\_sale\_price/unit\_cost
-        -   historical variability
-        -   shelf-life (seconds)
-        -   stock levels
-    They didn't show the formula, but I'm guessing their modeling residuals with these variables.</code></pre>
+<li><p>Misc</p>
+<ul>
+<li>Also see DoorDash &gt;&gt; Forecast Supply and Demand</li>
+<li><a href="https://towardsdatascience.com/reinforcement-learning-for-inventory-optimization-series-iii-sim-to-real-transfer-for-the-rl-model-d260c3b8277d">Reinforcement Learning for Inventory Optimization Series III: Sim-to-Real Transfer for the RL Model | by Guangrui Xie | Jan, 2023 | Towards Data Science</a></li>
+</ul></li>
+<li><p>Metrics for judging demand forecasts<img src="./_resources/Logistics.resources/1-ni6N2L4yp0ynlOzL01f8Fg.png" class="img-fluid"></p>
+<ul>
+<li>change in the number of Stock-Out days</li>
+<li>percent change in Service Level</li>
+<li>change in Profit</li>
+<li>change in wastage</li>
+<li>change in inventory costs</li>
+</ul></li>
+<li><p>Notes from <a href="https://towardsdatascience.com/are-your-demand-forecasts-hurting-profits-and-service-levels-f61af7c5ff">Are Your Demand Forecasts Hurting Profits and Service Levels</a></p>
+<ul>
+<li><p>Blue Dot Thinking’s <a href="http://www.bluedotthinking.com/">WasteNot API service</a> ($) WasteNot (logistics analytics firm) uses prophet for demand forecasting which consistently under-predicts, so they use an adjustment for better forecasts</p></li>
+<li><p>Prediction adjustment - (e.g.&nbsp;for perishables) calculate an optimal “Buffer Multiplier” value — each predicted value from the statistical forecast is multiplied by the multiplier, resulting in a higher number of units replenished each day</p>
+<ul>
+<li>Variables used:
+<ul>
+<li>unit_sale_price/unit_cost</li>
+<li>historical variability</li>
+<li>shelf-life (seconds)</li>
+<li>stock levels They didn’t show the formula, but I’m guessing their modeling residuals with these variables.</li>
+</ul></li>
+</ul></li>
+</ul>
 <p>Notes from <a href="https://towardsdatascience.com/case-study-applying-a-data-science-process-model-to-a-real-world-scenario-93ae57b682bf">Case Study: Applying a Data Science Process Model to a Real-World Scenario</a> A VERY detailed article that goes through a scenario of step-by-step planning and execution of changing a manual stock replenishment process to an automated one</p>
-<pre><code>As a guide, they use [DASC-PM](https://medium.com/towards-data-science/dasc-pm-a-novel-process-model-for-data-science-projects-9f872f2534b1) (DAta SCience - Process Model) - a structured and scientific process for project management
-
--   Project manager tries to examine whether the project can fundamentally be classified as feasible and whether the requirements can be carried out with the available resources.
--   Expert Interviews: Is the problem in general is very well suited for the deployment of data science and are there corresponding projects that have already been undertaken externally and also published?
--   Data science team: Are there a sufficient number of potentially suitable methods for this project and are the required data sources are available?
--   IT department: check the available infrastructure and the expertise of the involved employees.
-Demand forecasting model
--   Requirements:
-        -   Accuracy of 75%. This means that the forecasts for quantities of each product should deviate from actual requirements by no more than 25%.
-        -   Produce monthly planning cycles and quantify the need for short-term and long-term materials
--   Data sources: Order histories, inventory and sales figures for customers, and internal advertising plans
--   Features: seasonality, trends, and market developments
--   Forecasts regenerated every month
--   Forecasts loaded into internal planning software
--   Projections will be analyzed and, if need be, supplemented or corrected.
-        -   Planners can make their corrections during the first four working days of the month.
-        -   The final planning quantity will ultimately be used by the factories for production planning.
--   Example: IBM Planning Analytics
-        -   Allows for the creation of flexible views where the users can personally choose their context (time reference, product groups, etc.)and adjust calculations in real-time.
-        -   Sounds like expensive optimization software with a snazzy UI
--   Final plans are loaded into the Data Lake after processing by the planning teams so they can be referenced in the future.
--   User Integration
--   Users are included in the development from the beginning to ensure technical correctness and relevance and to ensure familiarity with the solution before the end of the development phase.
--   Simple line and bar charts for processes and benchmarks are used, along with tables reduced to what is most important.
--   Planners get training sessions to help them interpret the forecasts and classify their quality.
--   Complete documentation is drafted
-        -   Technical part:&nbsp; data structures and connections
-        -   Content part: jointly prepared with the users to describe the usage of the data product
--   Post-Development Phase (i.e. maintenance of the project)
--   Constant automated adjustment of the prediction model to new data
--   Various parameters such as the forecast horizon or threshold values for the accuracy of the prediction can be made by the planners
--   Problems occurring after the release of the first version are entered via the IT ticket system and assigned to the data science area
--   At regular intervals, it is also checked whether the model still satisfies the expectations of the company or whether changes are necessary.</code></pre></li>
-<li><p>Forecasting shocks is difficult for an algorithm - Notes from <a href="https://doordash.engineering/2021/02/24/why-good-forecasts-treat-human-input-as-part-of-the-model/">Why Good Forecasts Treat Human Input as Part of the Model</a> - Preprocessing - It can be better to smooth out (expected) shocks in the training data and then add an adjustment to the predictions during the dates of the shocks. - The smoothed out data will help the algorithm produce more accurate predictions for days when there isn’t an expected shock. - e.g.&nbsp;kalman filter with parameters for seasonality, trends from {{tsmoothie}} - Nothing special about this smoother. Probably just the method in tsmoothie that performed best for them (which is a good reason to use it). - Approaches for manually replacing oulier values - Replace the outlier week with the most recent week prior to the dip as a proxy for what should have happened. - Use domain knowledge - e.g.&nbsp;Marketing departiment is expecting 10% growth the week after it’s new promotion - Replace with one of the previous methods, then apply a smoothing algorithm<img src="./_resources/Logistics.resources/image4-1.png" class="img-fluid"> - Shows the Kalman filter by itself fails to replace the outlier dip with the normal, expected peak, but the manual adjustment + Kalman gives us what we want - Examples of shocks that may need training data to have manual adjustments and not be smoothed by an algorithm - one-time spikes due to abnormal weather conditions - one-off promotions - replace the outlier week with the most recent week prior to the dip as a proxy for what should have happened. - a sustained marketing campaign that is indistinguishable from organic growth. - Prediction Adjustment - Extreme events (i.e.&nbsp;unprecedented promotions or weather), where the expected impact is well outside of any historical data, may prove impossible for forecasting methods to produce an adequate forecast - Since it’s outside the range of historical data, building a more complex model or just including weather or promotional features won’t help. - Requires using domain expertise of the event to use to adjust the predictions - Make sure to build-out the code infrastructure so that each manual adjustment should just feel like adding another input to the model.</p></li>
-<li><p>Intermittent Demand - Misc - Also see ADAM ebook <a href="https://openforecast.org/adam/ADAMIntermittent.html">chapter</a>, <a href="https://forecasting.svetunkov.ru/en/2018/09/18/smooth-package-for-r-intermittent-state-space-model-part-i-introducing-the-model/">post</a>, real world <a href="https://www.r-bloggers.com/2023/05/story-of-probabilistic-forecasting-of-hourly-emergency-department-arrivals/">use case</a> on adding an occurrence variable to an ETS model to handle intermittent data - The use case paper also includes a GAMLSS with truncated Normal distribution model with code that performed well - Uses {<a href="https://github.com/jbrowell/ProbCast">probcast</a>} which has functions around gams, gamlss, and boosted gamlss models from {mgcv}, {mboost}, {gamlss}, etc. - Notes from - CMAF FFT: Intermittent Demand Forecasting (<a href="https://www.youtube.com/watch?v=PRidAjQRtCs&amp;list=WL&amp;index=1">Video</a>) - From authors of “Intermittent Demand Forecasting. Context, Methods and Applications” (see your book shelf) - Preferrable to avoid intermittence by aggregating data to a category that’s higher in the product hierarchy or lengthen the frequency. - Not always possible. For example, different SKUs have different lead times, so aggregating products into categories with the same protection intervals can be complicated. - Protection Interval is your horizon, which equals the length of the review period + length of the lead time - See Order-Up-To (OUT) Level Policy for details - Compound Distributions - Target - Incidence/occurrence (of Demand): Poisson and Bernoulli - Discrete positive Demand interspersed with zeros: Neg. Binomial - Sounds like zero-inflated, censored distribution - Options - Discrete Compound Poisson (aka Stuttering Poisson): Poisson + Geometric - Negative Binomial: Poisson + Logarithmic - Lumpy data - Data that’s intermittent and has extreme variability in demand sizes - Negative Binomial built to handle this type of data - Forecasting Mean Demand - Parametric - Exponential Smoothing - Popular method but bad for intermittent forecasting - ADAM extends ETS by adding an occurence variable to the model, so this might not be the case. - Biased on “issue points” (see video for more details) - Croston Method - Inversion Bias: we believe the mean demand is higher than predicted - SBA (Syntetos-Boylan Approximation) - *Recommended* - Corrects Croston bias - Supported by empirical evidence - Temporal Aggregation: Overlapping vs Non-Overlapping - self-improving mechanism - See video for details (although it wasn’t discussed in great detail) - Non-Parametric (aka Empirical) - Bootstrapping - resample in blocks or resample independently - independently is how you normally see bootstrapping - With blocks, bin your sequential data into non-overlapping partitions and resample independently within each partition. - Forecasting Demand Variance - Using the variance of the forecast error of the protection interval to estimate the variance of demand over the protection interval - Classical method is to calculate the variance of the errors over each review period and aggregate to the get the variance over the protection interval, but the above method is better empirically and theoretically - Diagnostics - Do NOT use metrics based on absolute errors (e.g MASE, MAPE) <em>by themselves</em> - Minimization of these metrics, by themselves, can result (i.e.&nbsp;over half of your values are zeros) in always recommending 0 value forecasts - Can be used in conjunction with bias correction measures - Scaled Mean Squared Error - Relative Root Mean Squared Error - Look at the predictive distributions instead of just the point forecasts - Accuracy Implication Metrics - measure the effect of the forecast on inventory<img src="./_resources/Logistics.resources/Screenshot-(1319).png" class="img-fluid"> - Y Axis: 1 - Fill_Rate; X Axis: Average on-hand inventory - Each method is a forecasting model - Think the Fill Rate is estimated from a simulation using the method’s forecast and a range of average SOH values as parameters</p></li>
+<pre><code>  As a guide, they use [DASC-PM](https://medium.com/towards-data-science/dasc-pm-a-novel-process-model-for-data-science-projects-9f872f2534b1) (DAta SCience - Process Model) - a structured and scientific process for project management</code></pre>
+<ul>
+<li>Project manager tries to examine whether the project can fundamentally be classified as feasible and whether the requirements can be carried out with the available resources.
+<ul>
+<li>Expert Interviews: Is the problem in general is very well suited for the deployment of data science and are there corresponding projects that have already been undertaken externally and also published?</li>
+<li>Data science team: Are there a sufficient number of potentially suitable methods for this project and are the required data sources are available?</li>
+<li>IT department: check the available infrastructure and the expertise of the involved employees. Demand forecasting model</li>
+<li>Requirements:
+<ul>
+<li>Accuracy of 75%. This means that the forecasts for quantities of each product should deviate from actual requirements by no more than 25%.</li>
+<li>Produce monthly planning cycles and quantify the need for short-term and long-term materials</li>
+</ul></li>
+<li>Data sources: Order histories, inventory and sales figures for customers, and internal advertising plans</li>
+<li>Features: seasonality, trends, and market developments</li>
+<li>Forecasts regenerated every month</li>
+</ul></li>
+<li>Forecasts loaded into internal planning software
+<ul>
+<li>Projections will be analyzed and, if need be, supplemented or corrected.
+<ul>
+<li>Planners can make their corrections during the first four working days of the month.</li>
+<li>The final planning quantity will ultimately be used by the factories for production planning.</li>
+</ul></li>
+<li><span class="ribbon-highlight">Example</span>: IBM Planning Analytics
+<ul>
+<li>Allows for the creation of flexible views where the users can personally choose their context (time reference, product groups, etc.)and adjust calculations in real-time.</li>
+<li>Sounds like expensive optimization software with a snazzy UI</li>
+</ul></li>
+</ul></li>
+<li>Final plans are loaded into the Data Lake after processing by the planning teams so they can be referenced in the future.</li>
+<li>User Integration
+<ul>
+<li>Users are included in the development from the beginning to ensure technical correctness and relevance and to ensure familiarity with the solution before the end of the development phase.</li>
+<li>Simple line and bar charts for processes and benchmarks are used, along with tables reduced to what is most important.</li>
+<li>Planners get training sessions to help them interpret the forecasts and classify their quality.</li>
+<li>Complete documentation is drafted
+<ul>
+<li>Technical part:&nbsp; data structures and connections</li>
+<li>Content part: jointly prepared with the users to describe the usage of the data product</li>
+</ul></li>
+</ul></li>
+<li>Post-Development Phase (i.e.&nbsp;maintenance of the project)
+<ul>
+<li>Constant automated adjustment of the prediction model to new data</li>
+<li>Various parameters such as the forecast horizon or threshold values for the accuracy of the prediction can be made by the planners</li>
+<li>Problems occurring after the release of the first version are entered via the IT ticket system and assigned to the data science area</li>
+<li>At regular intervals, it is also checked whether the model still satisfies the expectations of the company or whether changes are necessary.</li>
+</ul></li>
+</ul></li>
+<li><p>Forecasting shocks is difficult for an algorithm</p>
+<ul>
+<li>Notes from <a href="https://doordash.engineering/2021/02/24/why-good-forecasts-treat-human-input-as-part-of-the-model/">Why Good Forecasts Treat Human Input as Part of the Model</a></li>
+<li>Preprocessing
+<ul>
+<li>It can be better to smooth out (expected) shocks in the training data and then add an adjustment to the predictions during the dates of the shocks.</li>
+<li>The smoothed out data will help the algorithm produce more accurate predictions for days when there isn’t an expected shock.
+<ul>
+<li>e.g.&nbsp;kalman filter with parameters for seasonality, trends from {{tsmoothie}}
+<ul>
+<li>Nothing special about this smoother. Probably just the method in tsmoothie that performed best for them (which is a good reason to use it).</li>
+</ul></li>
+</ul></li>
+<li>Approaches for manually replacing oulier values
+<ul>
+<li>Replace the outlier week with the most recent week prior to the dip as a proxy for what should have happened.</li>
+<li>Use domain knowledge
+<ul>
+<li>e.g.&nbsp;Marketing departiment is expecting 10% growth the week after it’s new promotion</li>
+</ul></li>
+<li>Replace with one of the previous methods, then apply a smoothing algorithm<img src="./_resources/Logistics.resources/image4-1.png" class="img-fluid">
+<ul>
+<li>Shows the Kalman filter by itself fails to replace the outlier dip with the normal, expected peak, but the manual adjustment + Kalman gives us what we want</li>
+</ul></li>
+</ul></li>
+<li>Examples of shocks that may need training data to have manual adjustments and not be smoothed by an algorithm
+<ul>
+<li>one-time spikes due to abnormal weather conditions</li>
+<li>one-off promotions
+<ul>
+<li>replace the outlier week with the most recent week prior to the dip as a proxy for what should have happened.</li>
+</ul></li>
+<li>a sustained marketing campaign that is indistinguishable from organic growth.</li>
+</ul></li>
+</ul></li>
+<li>Prediction Adjustment
+<ul>
+<li>Extreme events (i.e.&nbsp;unprecedented promotions or weather), where the expected impact is well outside of any historical data, may prove impossible for forecasting methods to produce an adequate forecast
+<ul>
+<li>Since it’s outside the range of historical data, building a more complex model or just including weather or promotional features won’t help.</li>
+</ul></li>
+<li>Requires using domain expertise of the event to use to adjust the predictions</li>
+<li>Make sure to build-out the code infrastructure so that each manual adjustment should just feel like adding another input to the model.</li>
+</ul></li>
+</ul></li>
+<li><p>Intermittent Demand</p>
+<ul>
+<li>Misc
+<ul>
+<li>Also see ADAM ebook <a href="https://openforecast.org/adam/ADAMIntermittent.html">chapter</a>, <a href="https://forecasting.svetunkov.ru/en/2018/09/18/smooth-package-for-r-intermittent-state-space-model-part-i-introducing-the-model/">post</a>, real world <a href="https://www.r-bloggers.com/2023/05/story-of-probabilistic-forecasting-of-hourly-emergency-department-arrivals/">use case</a> on adding an occurrence variable to an ETS model to handle intermittent data
+<ul>
+<li>The use case paper also includes a GAMLSS with truncated Normal distribution model with code that performed well
+<ul>
+<li>Uses {<a href="https://github.com/jbrowell/ProbCast">probcast</a>} which has functions around gams, gamlss, and boosted gamlss models from {mgcv}, {mboost}, {gamlss}, etc.</li>
+</ul></li>
+</ul></li>
+<li>Notes from
+<ul>
+<li>CMAF FFT: Intermittent Demand Forecasting (<a href="https://www.youtube.com/watch?v=PRidAjQRtCs&amp;list=WL&amp;index=1">Video</a>)
+<ul>
+<li>From authors of “Intermittent Demand Forecasting. Context, Methods and Applications” (see your book shelf)</li>
+</ul></li>
+</ul></li>
+<li>Preferrable to avoid intermittence by aggregating data to a category that’s higher in the product hierarchy or lengthen the frequency.
+<ul>
+<li>Not always possible. For example, different SKUs have different lead times, so aggregating products into categories with the same protection intervals can be complicated.</li>
+</ul></li>
+</ul></li>
+<li>Protection Interval is your horizon, which equals the length of the review period + length of the lead time
+<ul>
+<li>See Order-Up-To (OUT) Level Policy for details</li>
+</ul></li>
+<li>Compound Distributions
+<ul>
+<li>Target
+<ul>
+<li>Incidence/occurrence (of Demand): Poisson and Bernoulli</li>
+<li>Discrete positive Demand interspersed with zeros: Neg. Binomial
+<ul>
+<li>Sounds like zero-inflated, censored distribution</li>
+</ul></li>
+</ul></li>
+<li>Options
+<ul>
+<li>Discrete Compound Poisson (aka Stuttering Poisson): Poisson + Geometric</li>
+<li>Negative Binomial: Poisson + Logarithmic</li>
+</ul></li>
+<li>Lumpy data
+<ul>
+<li>Data that’s intermittent and has extreme variability in demand sizes</li>
+<li>Negative Binomial built to handle this type of data</li>
+</ul></li>
+</ul></li>
+<li>Forecasting Mean Demand
+<ul>
+<li>Parametric
+<ul>
+<li>Exponential Smoothing
+<ul>
+<li>Popular method but bad for intermittent forecasting
+<ul>
+<li>ADAM extends ETS by adding an occurence variable to the model, so this might not be the case.</li>
+</ul></li>
+<li>Biased on “issue points” (see video for more details)</li>
+</ul></li>
+<li>Croston Method
+<ul>
+<li>Inversion Bias: we believe the mean demand is higher than predicted</li>
+</ul></li>
+<li>SBA (Syntetos-Boylan Approximation)
+<ul>
+<li>*Recommended*</li>
+<li>Corrects Croston bias</li>
+<li>Supported by empirical evidence</li>
+</ul></li>
+<li>Temporal Aggregation: Overlapping vs Non-Overlapping
+<ul>
+<li>self-improving mechanism</li>
+<li>See video for details (although it wasn’t discussed in great detail)</li>
+</ul></li>
+</ul></li>
+<li>Non-Parametric (aka Empirical)
+<ul>
+<li>Bootstrapping
+<ul>
+<li>resample in blocks or resample independently
+<ul>
+<li>independently is how you normally see bootstrapping</li>
+<li>With blocks, bin your sequential data into non-overlapping partitions and resample independently within each partition.</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li>Forecasting Demand Variance
+<ul>
+<li>Using the variance of the forecast error of the protection interval to estimate the variance of demand over the protection interval
+<ul>
+<li>Classical method is to calculate the variance of the errors over each review period and aggregate to the get the variance over the protection interval, but the above method is better empirically and theoretically</li>
+</ul></li>
+</ul></li>
+<li>Diagnostics
+<ul>
+<li>Do NOT use metrics based on absolute errors (e.g MASE, MAPE) <em>by themselves</em>
+<ul>
+<li>Minimization of these metrics, by themselves, can result (i.e.&nbsp;over half of your values are zeros) in always recommending 0 value forecasts</li>
+<li>Can be used in conjunction with bias correction measures</li>
+</ul></li>
+<li>Scaled Mean Squared Error</li>
+<li>Relative Root Mean Squared Error</li>
+<li>Look at the predictive distributions instead of just the point forecasts</li>
+<li>Accuracy Implication Metrics - measure the effect of the forecast on inventory<img src="./_resources/Logistics.resources/Screenshot-(1319).png" class="img-fluid">
+<ul>
+<li>Y Axis: 1 - Fill_Rate; X Axis: Average on-hand inventory</li>
+<li>Each method is a forecasting model</li>
+<li>Think the Fill Rate is estimated from a simulation using the method’s forecast and a range of average SOH values as parameters</li>
+</ul></li>
+</ul></li>
+</ul></li>
 </ul>
 <p>Safety Stock (aka buffer stock)</p>
 <ul>
-<li>Misc - Notes from <a href="https://web.mit.edu/2.810/www/files/readings/King_SafetyStock.pdf">Article</a> - Calculation of Safety Stock can be more useful than trying to improve forecast accuracy for intermittent(or sporadic) product time series (lotsa zeros).</li>
+<li>Misc
+<ul>
+<li>Notes from <a href="https://web.mit.edu/2.810/www/files/readings/King_SafetyStock.pdf">Article</a></li>
+<li>Calculation of Safety Stock can be more useful than trying to improve forecast accuracy for intermittent(or sporadic) product time series (lotsa zeros).</li>
+</ul></li>
 <li><strong>Safety stock</strong> - extra inventory held by a retailer or a manufacturer in case demand increases unexpectedly. This means it’s additional stock above the desired inventory level that you would usually hold for day-to-day operations.</li>
 <li><strong>Replenishment cycle</strong> - cycle between replenishment (i.e.&nbsp;restocking) orders</li>
-<li><strong>Fill rate</strong> (aka <strong>Fulfillment Rate</strong>)- the percentage of orders that you can ship from your available stock without any lost sales, backorders, or stockouts.<img src="./_resources/Logistics.resources/Screenshot-(494).png" class="img-fluid"> - Fill Rate = (Total Orders Shipped / Total Orders Placed) x 100 - On average, companies typically maintain a fill rate of about 85%-95%. But ideally, you should strive for a fill rate between 97% and 99%.</li>
-<li>Reasons for safety stock: - Demand uncertainty - Every retailer and manufacturer will have products that sell well all year round and products that fluctuate in demand. - Lead time uncetrainty - deliveries arriving earlier or later than expected, a safety stock formula will help you to cover unexpected delays and demand fluctuation to maintain a consistent output. - <strong>lead time</strong> (aka performance cycle)- time required between the creation of a replenishment order and the effective store replenishment - Usually a distribution and not a constant, so it needs to be recorded in order to get a sample standard deviation thats used the safety stock formula - Factors: - deciding what to order or produce - approval time - submitting a purchase requisition - emailing vendors - manufacturing and processing of the product - delivery time from vendor - incoming inspection time - time it takes to put on the shelf - any additional time required to return to the start of the next cycle <strong>Stockouts</strong> - out of stock events - Safety stock determinations are not intended to eliminate all stockouts—just the majority of them Usually caused by: - Changes in consumer demand - Incorrect stock forecasts - Variability in lead times for raw materials - Costs due to stockouts - Loss of revenue - Loss of gross profit - Loss of customers - Reduced market share - Poor efficiency - Strained supplier and retailer relationships</li>
-<li><strong>(Cycle) Service level (Z)</strong> - the probability that the amount of inventory on hand during the lead time is sufficient to meet expected demand – that is, the probability that a stockout will not occur. - Higher service level –&gt; more safety stock - Independently choose a service level for groups of products based things such as strategic importance, profit margin, or dollar volume. - The retail industry aims to maintain a typical service level of between 90% and 95% depending on the product - Example: <img src="./_resources/Logistics.resources/Screenshot-(493).png" class="img-fluid"> - At 95 percent service level, expect: - (D1) for 50 percent of replenishment cycles, not all cycle stock will be depleted and safety stock will not be needed - (D2) for 45 percent of replenishment cycles, the safety stock will suffice. - (D3) and for 5 percent of replenishment cycles, expect a stockout. - Kind of a confusing diagram but I think the y-axis is total stock and x-axis represents time (kinda sorta) - Stock dwindles as product is sold as the cycle ends, then stock is replenished after an order and begins to dwindle again.</li>
-<li>Safety Stock equations - When the demand interval doesn’t equal lead time interval - used to mitigate demand variability and lead time variability (σLT see next formula) is very small or zero - <strong>Safety stock = Z × √[PC / T1] × σD</strong> - PC = performance cycle, another term for total lead time - T1 = time increment used for calculating standard deviation of demand - σD = standard deviation of demand. - (Partial) Example: if the standard deviation of demand is calculated from weekly demand data and the total lead time including review period is three weeks. - PC = 21 days (3 weeks) - T1 = 7 days (weekly data) - Safety Stock = Z * √3 * σD - Example: Desired service level = 95%; seven-day manufacturing time and the one day needed to arrive at the warehouse; Standard deviation of weekly demand = 10 rolls - Safety stock = 1.65 * √[8/7] * 10 rolls - Safety stock = 18 rolls - When the lead time varies and demand variability (σD see previous formula) is very small or zero - <strong>Safety Stock = Z × σLT × Davg</strong> - Z is the z-score of the service level (1-sided, upper-tail) - e.g.&nbsp;95% service level –&gt; Z = 1.64; 90% service level –&gt; Z = 1.28 - <code>qnorm(0.95)</code> = 1.644854, <code>qnorm(0.90)</code> = 1.281552 - σLT is the standard deviation of the lead time - Davg is the demand forecast - Depends what the frequency of the series is, but you want an estimate of the total demand between orders - Example: If orders are made monthly and you forecast weekly sales, then your horizon is likely monthly and you sum around 4 weeks of point estimates to get D. - When both demand variability and lead time variability are present - demand and lead time <em>variability</em> are independent - <strong>Safety stock = Z ×</strong> <strong>√[(PC/T1&nbsp; ×&nbsp; σD2 ) + (σLT × Davg)2]</strong> - demand and lead time <em>variability</em> are not independent - <strong>Safety stock = (Z × √[PC/T1] × σD) + ( Z × σLT × Davg)</strong> - Demand variability is the dominant influence on safety stock requirements. - With the recognition of what factors dominate an equation, it becomes easier to focus improvement efforts</li>
-<li>Issues - Sometimes recommended safety stock volumes are larger than business leaders are comfortable having - alternative/supplement: order expediting - Reduce safety stock volume by keeping small amounts of expensive products and rely on air freight to cover peaks in demand. The cost of shipping a small percentage of total demand via air can be minimal compared to the cost of carrying large amounts of safety stock of the valuable material on an ongoing basis. - alternative/supplement: make-to-order (MTO) or finish-to-order (FTO) production environment - If lead times allow, MTO eliminates the need for most safety stock. Meanwhile, FTO allows for less differentiation in safety stock than finished-product inventory, which lowers demand variability and reduces safety stock requirements. - FTO and MTO also are well suited for situations where customers are willing to accept longer lead times for highly sporadic purchases.</li>
+<li><strong>Fill rate</strong> (aka <strong>Fulfillment Rate</strong>)- the percentage of orders that you can ship from your available stock without any lost sales, backorders, or stockouts.<img src="./_resources/Logistics.resources/Screenshot-(494).png" class="img-fluid">
+<ul>
+<li>Fill Rate = (Total Orders Shipped / Total Orders Placed) x 100</li>
+<li>On average, companies typically maintain a fill rate of about 85%-95%. But ideally, you should strive for a fill rate between 97% and 99%.</li>
+</ul></li>
+<li>Reasons for safety stock:
+<ul>
+<li>Demand uncertainty - Every retailer and manufacturer will have products that sell well all year round and products that fluctuate in demand.</li>
+<li>Lead time uncetrainty - deliveries arriving earlier or later than expected, a safety stock formula will help you to cover unexpected delays and demand fluctuation to maintain a consistent output.
+<ul>
+<li><strong>lead time</strong> (aka performance cycle)- time required between the creation of a replenishment order and the effective store replenishment
+<ul>
+<li>Usually a distribution and not a constant, so it needs to be recorded in order to get a sample standard deviation thats used the safety stock formula</li>
+<li>Factors:
+<ul>
+<li>deciding what to order or produce</li>
+<li>approval time</li>
+<li>submitting a purchase requisition</li>
+<li>emailing vendors</li>
+<li>manufacturing and processing of the product</li>
+<li>delivery time from vendor</li>
+<li>incoming inspection time</li>
+<li>time it takes to put on the shelf</li>
+<li>any additional time required to return to the start of the next cycle <strong>Stockouts</strong> - out of stock events</li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li>Safety stock determinations are not intended to eliminate all stockouts—just the majority of them Usually caused by:
+<ul>
+<li>Changes in consumer demand</li>
+<li>Incorrect stock forecasts</li>
+<li>Variability in lead times for raw materials</li>
+</ul></li>
+<li>Costs due to stockouts
+<ul>
+<li>Loss of revenue</li>
+<li>Loss of gross profit</li>
+<li>Loss of customers</li>
+<li>Reduced market share</li>
+<li>Poor efficiency</li>
+<li>Strained supplier and retailer relationships</li>
+</ul></li>
+</ul></li>
+<li><strong>(Cycle) Service level (Z)</strong> - the probability that the amount of inventory on hand during the lead time is sufficient to meet expected demand – that is, the probability that a stockout will not occur.
+<ul>
+<li>Higher service level –&gt; more safety stock</li>
+<li>Independently choose a service level for groups of products based things such as strategic importance, profit margin, or dollar volume.
+<ul>
+<li>The retail industry aims to maintain a typical service level of between 90% and 95% depending on the product</li>
+</ul></li>
+<li><span class="ribbon-highlight">Example</span>: <img src="./_resources/Logistics.resources/Screenshot-(493).png" class="img-fluid">
+<ul>
+<li>At 95 percent service level, expect:
+<ul>
+<li>(D1) for 50 percent of replenishment cycles, not all cycle stock will be depleted and safety stock will not be needed</li>
+<li>(D2) for 45 percent of replenishment cycles, the safety stock will suffice.</li>
+<li>(D3) and for 5 percent of replenishment cycles, expect a stockout.</li>
+</ul></li>
+<li>Kind of a confusing diagram but I think the y-axis is total stock and x-axis represents time (kinda sorta)
+<ul>
+<li>Stock dwindles as product is sold as the cycle ends, then stock is replenished after an order and begins to dwindle again.</li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li>Safety Stock equations
+<ul>
+<li>When the demand interval doesn’t equal lead time interval
+<ul>
+<li>used to mitigate demand variability and lead time variability (σLT see next formula) is very small or zero</li>
+<li><strong>Safety stock = Z × √[PC / T1] × σD</strong>
+<ul>
+<li>PC = performance cycle, another term for total lead time</li>
+<li>T1 = time increment used for calculating standard deviation of demand</li>
+<li>σD = standard deviation of demand.
+<ul>
+<li>(Partial) <span class="ribbon-highlight">Example</span>: if the standard deviation of demand is calculated from weekly demand data and the total lead time including review period is three weeks.
+<ul>
+<li>PC = 21 days (3 weeks)</li>
+<li>T1 = 7 days (weekly data)</li>
+<li>Safety Stock = Z * √3 * σD</li>
+</ul></li>
+<li><span class="ribbon-highlight">Example</span>: Desired service level = 95%; seven-day manufacturing time and the one day needed to arrive at the warehouse; Standard deviation of weekly demand = 10 rolls
+<ul>
+<li>Safety stock = 1.65 * √[8/7] * 10 rolls
+<ul>
+<li>Safety stock = 18 rolls</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li>When the lead time varies and demand variability (σD see previous formula) is very small or zero
+<ul>
+<li><strong>Safety Stock = Z × σLT × Davg</strong>
+<ul>
+<li>Z is the z-score of the service level (1-sided, upper-tail)
+<ul>
+<li>e.g.&nbsp;95% service level –&gt; Z = 1.64; 90% service level –&gt; Z = 1.28</li>
+<li><code>qnorm(0.95)</code> = 1.644854, <code>qnorm(0.90)</code> = 1.281552</li>
+</ul></li>
+<li>σLT is the standard deviation of the lead time</li>
+<li>Davg is the demand forecast
+<ul>
+<li>Depends what the frequency of the series is, but you want an estimate of the total demand between orders</li>
+<li><span class="ribbon-highlight">Example</span>: If orders are made monthly and you forecast weekly sales, then your horizon is likely monthly and you sum around 4 weeks of point estimates to get D.</li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li>When both demand variability and lead time variability are present
+<ul>
+<li>demand and lead time <em>variability</em> are independent
+<ul>
+<li><strong>Safety stock = Z ×</strong> <strong>√[(PC/T1&nbsp; ×&nbsp; σD2 ) + (σLT × Davg)2]</strong></li>
+</ul></li>
+<li>demand and lead time <em>variability</em> are not independent
+<ul>
+<li><strong>Safety stock = (Z × √[PC/T1] × σD) + ( Z × σLT × Davg)</strong></li>
+</ul></li>
+<li>Demand variability is the dominant influence on safety stock requirements.
+<ul>
+<li>With the recognition of what factors dominate an equation, it becomes easier to focus improvement efforts</li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li>Issues
+<ul>
+<li>Sometimes recommended safety stock volumes are larger than business leaders are comfortable having
+<ul>
+<li>alternative/supplement: order expediting
+<ul>
+<li>Reduce safety stock volume by keeping small amounts of expensive products and rely on air freight to cover peaks in demand. The cost of shipping a small percentage of total demand via air can be minimal compared to the cost of carrying large amounts of safety stock of the valuable material on an ongoing basis.</li>
+</ul></li>
+<li>alternative/supplement: make-to-order (MTO) or finish-to-order (FTO) production environment
+<ul>
+<li>If lead times allow, MTO eliminates the need for most safety stock. Meanwhile, FTO allows for less differentiation in safety stock than finished-product inventory, which lowers demand variability and reduces safety stock requirements.</li>
+<li>FTO and MTO also are well suited for situations where customers are willing to accept longer lead times for highly sporadic purchases.</li>
+</ul></li>
+</ul></li>
+</ul></li>
 </ul>
 <p>Economic Order Quantity (EOQ) (aka Wilson Formula)</p>
 <ul>
-<li>the ideal order quantity a company should purchase to minimize inventory costs such as holding costs, shortage costs, and order costs - Usually used for purchase ordering (not production) - <strong>Assumes demand, ordering, and holding costs remain constant over time</strong></li>
+<li>the ideal order quantity a company should purchase to minimize inventory costs such as holding costs, shortage costs, and order costs
+<ul>
+<li>Usually used for purchase ordering (not production)</li>
+<li><strong>Assumes demand, ordering, and holding costs remain constant over time</strong></li>
+</ul></li>
 <li>Goal: minimize the cost of ordering and holding stock, while still meeting demand and service level requirements</li>
-<li>Costs of ordering: - placing your order - delivery - transportation - receiving the order</li>
-<li>Costs of holding stock: - paying for stock in advance - warehousing - storage - depreciation</li>
+<li>Costs of ordering:
+<ul>
+<li>placing your order</li>
+<li>delivery</li>
+<li>transportation</li>
+<li>receiving the order</li>
+</ul></li>
+<li>Costs of holding stock:
+<ul>
+<li>paying for stock in advance</li>
+<li>warehousing</li>
+<li>storage</li>
+<li>depreciation</li>
+</ul></li>
 <li><img src="./_resources/Logistics.resources/ql_e515353171060899a1dc73b3daa97572_l3.png" class="img-fluid"></li>
 </ul>
 <p>Order-Up-To (OUT) Level Policy <img src="./_resources/Logistics.resources/Screenshot-(1316).png" class="img-fluid"></p>
 <ul>
-<li>Time intervals (i.e.&nbsp;Review Interval) trigger a replenishment, not reorder points - Length depends on the industry - Examples - Manufacturing: 1 month - Retail: 1 week</li>
-<li>Misc - Notes from - CMAF FFT: Intermittent Demand Forecasting (<a href="https://www.youtube.com/watch?v=PRidAjQRtCs&amp;list=WL&amp;index=1">Video</a>) - From authors of “Intermittent Demand Forecasting. Context, Methods and Applications” (see your book shelf) - Should have more details on OUT replenishment model - UT-Dallas “Basestock Model CH. 13” <a href="https://personal.utdallas.edu/~metin/Or6302/Folios/ombasestock.pdf">Slides</a> - Based on Cachon &amp; Terwiesch book, “Matching Supply with Demand” (<a href="http://cachon-terwiesch.net/3e/">link</a>)</li>
+<li>Time intervals (i.e.&nbsp;Review Interval) trigger a replenishment, not reorder points
+<ul>
+<li>Length depends on the industry</li>
+<li>Examples
+<ul>
+<li>Manufacturing: 1 month</li>
+<li>Retail: 1 week</li>
+</ul></li>
+</ul></li>
+<li>Misc
+<ul>
+<li>Notes from
+<ul>
+<li>CMAF FFT: Intermittent Demand Forecasting (<a href="https://www.youtube.com/watch?v=PRidAjQRtCs&amp;list=WL&amp;index=1">Video</a>)
+<ul>
+<li>From authors of “Intermittent Demand Forecasting. Context, Methods and Applications” (see your book shelf)
+<ul>
+<li>Should have more details on OUT replenishment model</li>
+</ul></li>
+</ul></li>
+<li>UT-Dallas “Basestock Model CH. 13” <a href="https://personal.utdallas.edu/~metin/Or6302/Folios/ombasestock.pdf">Slides</a>
+<ul>
+<li>Based on Cachon &amp; Terwiesch book, “Matching Supply with Demand” (<a href="http://cachon-terwiesch.net/3e/">link</a>)</li>
+</ul></li>
+</ul></li>
+</ul></li>
 <li>Inventory Position (IP) = Stock-on-Hand - backorders + On-Order-Inventory</li>
-<li>After every Review Interval, the OUT gets optimized according to Replenishment variables - Mean and Variance of Demand are estimated - Forecasts in conjunction with a hypothesized demand distribution (parametric) vs build-up of the empircal distribution via bootstrapping (non-parametric) - See Demand Forecasting &gt;&gt; Intermittent Demand &gt;&gt; Forecasting Mean Demand - Given updated variables, place order that raises IP to OUT level (S)</li>
-<li>Protection Interval is period that you should have enough inventory to cover. - The forecast horizon which equals the Review Interval + Lead Time</li>
-<li>Evaluate service at each level of an order: orders, lines, units. - Lines (SKU Level) - Whether to use Cycle Service Level (CSL) or Fill Rate (ReadyRate (?) is also a possibility) - CSL - probability of not going out of stock -&nbsp; not realistic but easy to calculate - Fill Rate measures true service offered to customers, but more involved in its application - Also see Safety Stock for more details on CSL and Fill Rate</li>
+<li>After every Review Interval, the OUT gets optimized according to Replenishment variables
+<ul>
+<li>Mean and Variance of Demand are estimated</li>
+<li>Forecasts in conjunction with a hypothesized demand distribution (parametric) vs build-up of the empircal distribution via bootstrapping (non-parametric)
+<ul>
+<li>See Demand Forecasting &gt;&gt; Intermittent Demand &gt;&gt; Forecasting Mean Demand</li>
+</ul></li>
+<li>Given updated variables, place order that raises IP to OUT level (S)</li>
+</ul></li>
+<li>Protection Interval is period that you should have enough inventory to cover.
+<ul>
+<li>The forecast horizon which equals the Review Interval + Lead Time</li>
+</ul></li>
+<li>Evaluate service at each level of an order: orders, lines, units.
+<ul>
+<li>Lines (SKU Level)
+<ul>
+<li>Whether to use Cycle Service Level (CSL) or Fill Rate (ReadyRate (?) is also a possibility)
+<ul>
+<li>CSL - probability of not going out of stock -&nbsp; not realistic but easy to calculate</li>
+<li>Fill Rate measures true service offered to customers, but more involved in its application</li>
+<li>Also see Safety Stock for more details on CSL and Fill Rate</li>
+</ul></li>
+</ul></li>
+</ul></li>
 </ul>
 <p>Reorder Point</p>
 <ul>
-<li>The reorder point is the threshold amount of inventory at which you need place an replenishment order - once an item’s stock falls below PAR level, an optimised order quantity is generated</li>
-<li>Components used to determine a reorder point - Safety Stock - Reorder Point Formula - Periodic Automatic Replacement (PAR)</li>
+<li>The reorder point is the threshold amount of inventory at which you need place an replenishment order
+<ul>
+<li>once an item’s stock falls below PAR level, an optimised order quantity is generated</li>
+</ul></li>
+<li>Components used to determine a reorder point
+<ul>
+<li>Safety Stock</li>
+<li>Reorder Point Formula</li>
+<li>Periodic Automatic Replacement (PAR)</li>
+</ul></li>
 <li><strong>Reorder Point = Safety Stock + (Davg × Lead time)</strong></li>
 </ul>
 <p>Decision Impact Metrics</p>
 <ul>
-<li>Other methods for determining forecast performance have serious flaws - Reasons industry benchmarks for forecast accuracy shouldn’t be used - diversity of business strategies (size of portfolio, product &amp; brand positioning) - the level at which the forecast accuracy is measured and even the metric’s definition itself (especially with value-weighted formulas) may differ - <a href="https://www.youtube.com/watch?v=o70E_qMnT5s">Forecast Value Added</a> (FVA) - FVA: The change in a forecasting accuracy metric that can be attributed to a particular process or participant in the forecasting process. - Example<img src="./_resources/Logistics.resources/Screenshot-(807).png" class="img-fluid"> - Statistical model has 5% FVA vs Naive forecast - Adjusted Statistical Forecast has 2% FVA vs Naive Forecast - Forecast gets manually adjusted by management - Reasons why FVA shouldn’t be used - The difference in Forecast Accuracy (FA) metrics (e.g.&nbsp;MAPE) of the production forecasting algorithm and the naive forecasting algorithm is usually weighted by portfolio revenue, volume or number of items - A FA metric is not a key business performance indicator (KPI) - FA has little correlation with business performance. - Improving FA does not mean you are generating value. - Costs may increase, decrease or remain the same as accuracy changes. - FA metrics can contradict each other - Switching from one FA metric to another could profoundly alter your FVA results.</li>
-<li>Constraints and business rules have to be considered and not just a forecast metric - e.g.&nbsp;allowed pack sizes, the minimum order quantity, the storage finite capacity, holding/excess costs, shortage costs, fixed costs, etc.</li>
-<li>Forecast Accuracy (FA) metrics are difficult to understand for normals - Using Decision Impact (DI) metrics can help eliminate: - <em>“The forecast is always wrong!”, “The forecast is too this”, “The forecast is not enough that”, “What does 70% FA mean?”, “Is this good or bad?”</em></li>
-<li>Probabilistic Forecasts + DI metrics - Identify parameters (i.e.&nbsp;whatever value you’re forecasting) with the highest economic risk - Economic risk is related to the size of the PI of the forecast - Investigate potential causes for the risk and find solutions - Example - Calculate - DIa min - the costs associated with the forecast at the 5% percentile - DIa max - the costs associated with the forecast at 95% percentile. - Calculate economic risk<img src="./_resources/Logistics.resources/1-NLRsAZ3syc39UldMkJ6BdQ.png" class="img-fluid"></li>
-<li>Decision-based Components - components that takes into account the decision being made using the forecast - Example: One weather forecast predicts 4 inches of rain but another forecast predicts 0 inches of rain. The next day it rains 1 inch. - If the decision being made was whether to take an umbrella, the first forecast is the best forecast even though its error is worse than the second forecast. - Components - Decision Function - for any forecast input, simulate the decision process and evaluate the quality of the final decision - Decision Impact (DI) - metric that defines how decision quality is measured - usually in terms of financial cost - A “North Star” type metric</li>
-<li>Decision Cost function: The cost function is used to score each stock replenishment decision based on its true business impact usually in terms of financial cost - Example: Walmart retail data (M5) - The Decision Cost is the sum of following factors: - Ordering, shipping and handling cost (Fixed Costs) - Fulfilling an order generates costs for the ordering, preparation, expedition, transportation, etc. - Let’s assume these costs represent $40 per range of $1000 of purchase value. - Holding cost (Excess Costs) - Holding costs are associated with the storage of unsold inventories. - Let’s assume the annual holding cost is 10% of the inventory value (valued at purchase price), i.e.&nbsp;0.19% per week. - Shortage cost - When demand exceeds the available inventory, both the demand and customer goodwill may be lost. - As retailers propose a wide range of similar products, a part of the demand is carried to other products. - Let’s assume that only half of the sales will effectively be lost. The shortage cost could then be measured as 50% of each lost sale gross margin. - Other Considerations - Replenishment Strategy - Leadtime - Order Cycle - Replenishment Policy - Safety Stock - Additional Product Information - Gross Margin - Pack Sizes - Initial Inventory - example: using the safety stock value - Computational Costs - Algorithm training time - Compute size - Data pipeline</li>
-<li>Types of forecasts that are required - “actual” forecast: forecast from a candidate model that will potentially go into production - “naive” forecast: forecast from a simple method (e.g.&nbsp;seasonal-naive, simple moving average, etc.) or a previous used method</li>
+<li>Other methods for determining forecast performance have serious flaws
+<ul>
+<li>Reasons industry benchmarks for forecast accuracy shouldn’t be used
+<ul>
+<li>diversity of business strategies (size of portfolio, product &amp; brand positioning)</li>
+<li>the level at which the forecast accuracy is measured and even the metric’s definition itself (especially with value-weighted formulas) may differ</li>
+</ul></li>
+<li><a href="https://www.youtube.com/watch?v=o70E_qMnT5s">Forecast Value Added</a> (FVA)
+<ul>
+<li>FVA: The change in a forecasting accuracy metric that can be attributed to a particular process or participant in the forecasting process.
+<ul>
+<li>Example<img src="./_resources/Logistics.resources/Screenshot-(807).png" class="img-fluid">
+<ul>
+<li>Statistical model has 5% FVA vs Naive forecast</li>
+<li>Adjusted Statistical Forecast has 2% FVA vs Naive Forecast
+<ul>
+<li>Forecast gets manually adjusted by management</li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li>Reasons why FVA shouldn’t be used
+<ul>
+<li>The difference in Forecast Accuracy (FA) metrics (e.g.&nbsp;MAPE) of the production forecasting algorithm and the naive forecasting algorithm is usually weighted by portfolio revenue, volume or number of items</li>
+<li>A FA metric is not a key business performance indicator (KPI)
+<ul>
+<li>FA has little correlation with business performance.</li>
+<li>Improving FA does not mean you are generating value.</li>
+<li>Costs may increase, decrease or remain the same as accuracy changes.</li>
+</ul></li>
+<li>FA metrics can contradict each other
+<ul>
+<li>Switching from one FA metric to another could profoundly alter your FVA results.</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li>Constraints and business rules have to be considered and not just a forecast metric
+<ul>
+<li>e.g.&nbsp;allowed pack sizes, the minimum order quantity, the storage finite capacity, holding/excess costs, shortage costs, fixed costs, etc.</li>
+</ul></li>
+<li>Forecast Accuracy (FA) metrics are difficult to understand for normals
+<ul>
+<li>Using Decision Impact (DI) metrics can help eliminate:
+<ul>
+<li><em>“The forecast is always wrong!”, “The forecast is too this”, “The forecast is not enough that”, “What does 70% FA mean?”, “Is this good or bad?”</em></li>
+</ul></li>
+</ul></li>
+<li>Probabilistic Forecasts + DI metrics
+<ul>
+<li>Identify parameters (i.e.&nbsp;whatever value you’re forecasting) with the highest economic risk
+<ul>
+<li>Economic risk is related to the size of the PI of the forecast</li>
+</ul></li>
+<li>Investigate potential causes for the risk and find solutions</li>
+<li>Example
+<ul>
+<li>Calculate
+<ul>
+<li>DIa min - the costs associated with the forecast at the 5% percentile</li>
+<li>DIa max - the costs associated with the forecast at 95% percentile.</li>
+</ul></li>
+<li>Calculate economic risk<img src="./_resources/Logistics.resources/1-NLRsAZ3syc39UldMkJ6BdQ.png" class="img-fluid"></li>
+</ul></li>
+</ul></li>
+<li>Decision-based Components - components that takes into account the decision being made using the forecast
+<ul>
+<li><span class="ribbon-highlight">Example</span>: One weather forecast predicts 4 inches of rain but another forecast predicts 0 inches of rain. The next day it rains 1 inch.
+<ul>
+<li>If the decision being made was whether to take an umbrella, the first forecast is the best forecast even though its error is worse than the second forecast.</li>
+</ul></li>
+<li>Components
+<ul>
+<li>Decision Function - for any forecast input, simulate the decision process and evaluate the quality of the final decision</li>
+<li>Decision Impact (DI) - metric that defines how decision quality is measured
+<ul>
+<li>usually in terms of financial cost</li>
+<li>A “North Star” type metric</li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li>Decision Cost function: The cost function is used to score each stock replenishment decision based on its true business impact usually in terms of financial cost
+<ul>
+<li><span class="ribbon-highlight">Example</span>: Walmart retail data (M5)
+<ul>
+<li>The Decision Cost is the sum of following factors:
+<ul>
+<li>Ordering, shipping and handling cost (Fixed Costs)
+<ul>
+<li>Fulfilling an order generates costs for the ordering, preparation, expedition, transportation, etc.</li>
+<li>Let’s assume these costs represent $40 per range of $1000 of purchase value.</li>
+</ul></li>
+<li>Holding cost (Excess Costs)
+<ul>
+<li>Holding costs are associated with the storage of unsold inventories.</li>
+<li>Let’s assume the annual holding cost is 10% of the inventory value (valued at purchase price), i.e.&nbsp;0.19% per week.</li>
+</ul></li>
+<li>Shortage cost
+<ul>
+<li>When demand exceeds the available inventory, both the demand and customer goodwill may be lost.</li>
+<li>As retailers propose a wide range of similar products, a part of the demand is carried to other products.</li>
+<li>Let’s assume that only half of the sales will effectively be lost. The shortage cost could then be measured as 50% of each lost sale gross margin.</li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li>Other Considerations
+<ul>
+<li>Replenishment Strategy
+<ul>
+<li>Leadtime</li>
+<li>Order Cycle</li>
+<li>Replenishment Policy</li>
+<li>Safety Stock</li>
+</ul></li>
+<li>Additional Product Information
+<ul>
+<li>Gross Margin</li>
+<li>Pack Sizes</li>
+<li>Initial Inventory
+<ul>
+<li>example: using the safety stock value</li>
+</ul></li>
+</ul></li>
+<li>Computational Costs
+<ul>
+<li>Algorithm training time</li>
+<li>Compute size</li>
+<li>Data pipeline</li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li>Types of forecasts that are required
+<ul>
+<li>“actual” forecast: forecast from a candidate model that will potentially go into production</li>
+<li>“naive” forecast: forecast from a simple method (e.g.&nbsp;seasonal-naive, simple moving average, etc.) or a previous used method</li>
+</ul></li>
 <li>Steps
 <ol type="1">
 <li>Decide how best to measure the Decision Impact as related to the forecast
@@ -413,18 +983,41 @@ Demand forecasting model
 <ul>
 <li>Actual cost (DIa): cost after applying the decision cost function to the “actual” forecast (see above)</li>
 <li>Naive cost (DIn): cost after applying the decision cost function to the “naive” forecast (see above)</li>
-<li>Oracle cost (DIo): cost after applying the decision cost function to the observed values - This would be the costs of a forecast in which we had perfect knowledge. (So probably just fixed costs)</li>
+<li>Oracle cost (DIo): cost after applying the decision cost function to the observed values
+<ul>
+<li>This would be the costs of a forecast in which we had perfect knowledge. (So probably just fixed costs)</li>
+</ul></li>
 </ul></li>
 <li>Calculate Decision Impact metrics:
 <ul>
-<li>Earned Value (aka Forecast Value Added) (DIna) - DIna = DIn - DIa</li>
-<li>Unearned Value (aka yet-to-be earned value)(DIao) - The value that could still be gained by improving forecasts - DIao = DIa -DIo</li>
-<li>Total Earnable Value (DIno) - The range of earnable value - DIno = DIn - DIo</li>
-<li>Proportion of the Earned Value - DIna/DIno</li>
-<li>Proportion of yet-to-be earned value - DIao/DIno</li>
+<li>Earned Value (aka Forecast Value Added) (DIna)
+<ul>
+<li>DIna = DIn - DIa</li>
+</ul></li>
+<li>Unearned Value (aka yet-to-be earned value)(DIao)
+<ul>
+<li>The value that could still be gained by improving forecasts</li>
+<li>DIao = DIa -DIo</li>
+</ul></li>
+<li>Total Earnable Value (DIno)
+<ul>
+<li>The range of earnable value</li>
+<li>DIno = DIn - DIo</li>
+</ul></li>
+<li>Proportion of the Earned Value
+<ul>
+<li>DIna/DIno</li>
+</ul></li>
+<li>Proportion of yet-to-be earned value
+<ul>
+<li>DIao/DIno</li>
+</ul></li>
 </ul></li>
 </ol></li>
-<li>DI metrics for all generated forecasts can be used to calculate a quarterly, semestrial, or annual ROI for the product planning department - ROI = sum(DIna)- (cost of people, tools, etc. used by department to generate forecasts)</li>
+<li>DI metrics for all generated forecasts can be used to calculate a quarterly, semestrial, or annual ROI for the product planning department
+<ul>
+<li>ROI = sum(DIna)- (cost of people, tools, etc. used by department to generate forecasts)</li>
+</ul></li>
 </ul>
 <p>Profit functions for perishable products</p>
 <ul>
@@ -439,7 +1032,15 @@ Demand forecasting model
 </ul>
 <p><em>π</em>(_q__t_,_y__t_)={_p__y_<em>t</em>−_v__q_<em>t</em>−_c__h_(_q__t_−_y__t_),_p__q_<em>t</em>−_v__q_<em>t</em>−_c__s_(_y__t_−_q__t_),for&nbsp;​_q__t_≥_y__t_for&nbsp;​_q__t_&lt;_y__t_,</p>
 <ul>
-<li>Terms - yt is the actual sales - p is the price of the product - qt ​is the order quantity - v is the cost of production - ch is the holding cost - cs is the shortage cost</li>
+<li>Terms
+<ul>
+<li>yt is the actual sales</li>
+<li>p is the price of the product</li>
+<li>qt ​is the order quantity</li>
+<li>v is the cost of production</li>
+<li>ch is the holding cost</li>
+<li>cs is the shortage cost</li>
+</ul></li>
 </ul>
 <pre><code>library(greybox)
 # Generate artificial data
@@ -477,46 +1078,191 @@ x2&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 3.3423&nbsp; &nbsp; 2.7810&nbsp; &nb
 <p><img src="./_resources/Logistics.resources/ordersDynamics.png" class="img-fluid"></p>
 <ul>
 <li><p>Figure above corresponds to the orders (purple) and would cover roughly 90.91% of cases (black), so that we would run out of product in approximately 10% of cases, which would still be more profitable than any other option.</p></li>
-<li><p>Nonlinear case - See link to associated paper above - The only thing that would change is the loss function, where the prices and costs would depend non-linearly on the order quantity and sales.</p></li>
+<li><p>Nonlinear case</p>
+<ul>
+<li>See link to associated paper above</li>
+<li>The only thing that would change is the loss function, where the prices and costs would depend non-linearly on the order quantity and sales.</li>
+</ul></li>
 </ul>
 <p>DoorDash Notes from https://towardsdatascience.com/managing-supply-and-demand-balance-through-machine-learning-70d4f0808617</p>
 <ul>
-<li>2-stage solution - forcasting supply and demand - optimizing supply of workers with demand of food orders</li>
-<li>Define the problem - Supply and demand imbalance&nbsp; (i.e.&nbsp;drivers and food orders) - Effects - For consumers, a lack of driver availability during peak demand is more likely to lead to order lateness, longer delivery times, or inability to request a delivery and having to opt for pick up. - For Dashers, a lack of orders leads to lower earnings and longer and more frequent shifts in order to hit personal goals. - For merchants, undersupply leads to delayed deliveries, which typically results in cold food and a decreased reorder rate.</li>
-<li>Optimization Strategies - Balancing at the delivery level means every order has a Dasher available at the most optimal time - consumer preferences and other changing conditions in the environment, such as traffic and weather, make it difficult to balance supply and demand at the delivery level - Balancing at the market level means there are relatively equal numbers of Dashers and orders in a market but there are not necessarily optimal conditions for each of these groups at the delivery level.</li>
-<li>Metric - Number of hours required to make deliveries during a time period - Optimize keeping delivery durations low and Dasher (drivers) busyness high - Able to account for regional variation driven by traffic conditions, batching rates, and food preparation times. - Units: hourly or day-parts (e.g.&nbsp;breakfast, lunch, dinner) - There’s too much variation during a day in order to aggregate to a higher level metric. Demand and supply would be artifically smoothed. - Example: - Sunday at dinner time in New York City, and we estimate that 1,000 driver hours are needed to fulfill the expected demand. We might also estimate that unless we provide extra incentives, only 800 hours will likely be provided organically. Without mobilization actions we would be undersupplied by about 200 hours.</li>
-<li>Optimization - Adjust supply of drivers by incentivizing with pay bonues during high demand hours</li>
-<li>Forecast Supply and Demand - LightGBM - Predictors - Information about population size, general traffic conditions, number of available merchants, climate, and geography - character variables were replaced with embedding vectors - Supply - Counterfactual to understand how to make tradeoffs between supply and costs - How will supply levels change if we changed incentive levels so that we can ? - I assume “incentive_level” is a variable in the supply forecast model, so this could just be adjusted in “newdata” and a&nbsp; prediction (or maybe during a training session?) made to see the effects on supply.</li>
-<li>Decision Making - consumes supply and demand predictions and attempts to generate a set of optimal actions - Mixed-Integer Programming (MIP) - linear optimization (see bkmks, ompr pkg) - easy to formalize, implement, and explain to stakeholders - Custom objective function for minimizing undersupply with several constraints. - Can be configured to favor either profitability (profit per customer?) or growth (increase in orders per customer?) - or maybe its about drivers — profitability (just enough incentive to get just enough drivers?) or growth (not sure what the “driver” angle is here) - Constraints - Never allocate more than one incentive in a particular region-time unit. - Never exceed the maximum allowable budget set by our finance and operations partners. - regional - different budgets, custom penalties, exclusion criteria for which units should not be included in the optimization, or incentive constraints that are guided by variability of the inputs. - Optimizer must account for uncertainty<img src="./_resources/Logistics.resources/Screenshot-(363).png" class="img-fluid"> - City B’s forecast distribution has substantial uncertainty, and it’s mean says it will have enough drivers (i.e.&nbsp;oversupply) - City A’s forecast distribution is more certain, and it’s more likely to be undersupplied. - W/o taking uncertainty into account, the optimizer will not take into account that there’s a sizeable chance B will be undersupplied - Taking uncertainty into account sometimes causes an over-allocation of resources to these uncertain regions (small areas, fewer orders, fewer drivers, larger variance) - They do something with resampling to solve this but I didn’t quite understand it.</li>
+<li>2-stage solution
+<ul>
+<li>forcasting supply and demand</li>
+<li>optimizing supply of workers with demand of food orders</li>
+</ul></li>
+<li>Define the problem
+<ul>
+<li>Supply and demand imbalance&nbsp; (i.e.&nbsp;drivers and food orders)</li>
+<li>Effects
+<ul>
+<li>For consumers, a lack of driver availability during peak demand is more likely to lead to order lateness, longer delivery times, or inability to request a delivery and having to opt for pick up.</li>
+<li>For Dashers, a lack of orders leads to lower earnings and longer and more frequent shifts in order to hit personal goals.</li>
+<li>For merchants, undersupply leads to delayed deliveries, which typically results in cold food and a decreased reorder rate.</li>
+</ul></li>
+</ul></li>
+<li>Optimization Strategies
+<ul>
+<li>Balancing at the delivery level means every order has a Dasher available at the most optimal time
+<ul>
+<li>consumer preferences and other changing conditions in the environment, such as traffic and weather, make it difficult to balance supply and demand at the delivery level</li>
+</ul></li>
+<li>Balancing at the market level means there are relatively equal numbers of Dashers and orders in a market but there are not necessarily optimal conditions for each of these groups at the delivery level.</li>
+</ul></li>
+<li>Metric
+<ul>
+<li>Number of hours required to make deliveries during a time period
+<ul>
+<li>Optimize keeping delivery durations low and Dasher (drivers) busyness high</li>
+<li>Able to account for regional variation driven by traffic conditions, batching rates, and food preparation times.</li>
+</ul></li>
+<li>Units: hourly or day-parts (e.g.&nbsp;breakfast, lunch, dinner)
+<ul>
+<li>There’s too much variation during a day in order to aggregate to a higher level metric. Demand and supply would be artifically smoothed.</li>
+</ul></li>
+<li><span class="ribbon-highlight">Example</span>:
+<ul>
+<li>Sunday at dinner time in New York City, and we estimate that 1,000 driver hours are needed to fulfill the expected demand. We might also estimate that unless we provide extra incentives, only 800 hours will likely be provided organically. Without mobilization actions we would be undersupplied by about 200 hours.</li>
+</ul></li>
+</ul></li>
+<li>Optimization
+<ul>
+<li>Adjust supply of drivers by incentivizing with pay bonues during high demand hours</li>
+</ul></li>
+<li>Forecast Supply and Demand
+<ul>
+<li>LightGBM</li>
+<li>Predictors
+<ul>
+<li>Information about population size, general traffic conditions, number of available merchants, climate, and geography</li>
+<li>character variables were replaced with embedding vectors</li>
+</ul></li>
+<li>Supply
+<ul>
+<li>Counterfactual to understand how to make tradeoffs between supply and costs
+<ul>
+<li>How will supply levels change if we changed incentive levels so that we can ?</li>
+<li>I assume “incentive_level” is a variable in the supply forecast model, so this could just be adjusted in “newdata” and a&nbsp; prediction (or maybe during a training session?) made to see the effects on supply.</li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li>Decision Making
+<ul>
+<li>consumes supply and demand predictions and attempts to generate a set of optimal actions</li>
+<li>Mixed-Integer Programming (MIP)
+<ul>
+<li>linear optimization (see bkmks, ompr pkg)</li>
+<li>easy to formalize, implement, and explain to stakeholders</li>
+<li>Custom objective function for minimizing undersupply with several constraints.
+<ul>
+<li>Can be configured to favor either profitability (profit per customer?) or growth (increase in orders per customer?)
+<ul>
+<li>or maybe its about drivers — profitability (just enough incentive to get just enough drivers?) or growth (not sure what the “driver” angle is here)</li>
+</ul></li>
+<li>Constraints
+<ul>
+<li>Never allocate more than one incentive in a particular region-time unit.</li>
+<li>Never exceed the maximum allowable budget set by our finance and operations partners.</li>
+<li>regional
+<ul>
+<li>different budgets, custom penalties, exclusion criteria for which units should not be included in the optimization, or incentive constraints that are guided by variability of the inputs.</li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li>Optimizer must account for uncertainty<img src="./_resources/Logistics.resources/Screenshot-(363).png" class="img-fluid">
+<ul>
+<li>City B’s forecast distribution has substantial uncertainty, and it’s mean says it will have enough drivers (i.e.&nbsp;oversupply)</li>
+<li>City A’s forecast distribution is more certain, and it’s more likely to be undersupplied.</li>
+<li>W/o taking uncertainty into account, the optimizer will not take into account that there’s a sizeable chance B will be undersupplied</li>
+<li>Taking uncertainty into account sometimes causes an over-allocation of resources to these uncertain regions (small areas, fewer orders, fewer drivers, larger variance)</li>
+<li>They do something with resampling to solve this but I didn’t quite understand it.</li>
+</ul></li>
+</ul></li>
+</ul></li>
 </ul>
 <p>Supply Chain</p>
 <ul>
-<li><p>Misc - Notes from: <a href="https://towardsdatascience.com/4-smart-visualizations-for-supply-chain-descriptive-analytics-fda4dfc2829a">4 Smart Visualizations for Supply Chain Descriptive Analytics</a></p></li>
-<li><p>Flow Distribution of units between production areas and markets<img src="./_resources/Logistics.resources/image.png" class="img-fluid"> - Data&nbsp; - Source: the production facility name (left-side) - Target: the market supplied (right-side) - Units: the number of items flowing (width of bars) - Interpretation - India is the biggest country for production output - Japan market demand is mainly supplied locally - USA and Germany do not have local production facilities</p></li>
+<li><p>Misc</p>
+<ul>
+<li>Notes from: <a href="https://towardsdatascience.com/4-smart-visualizations-for-supply-chain-descriptive-analytics-fda4dfc2829a">4 Smart Visualizations for Supply Chain Descriptive Analytics</a></li>
+</ul></li>
+<li><p>Flow Distribution of units between production areas and markets<img src="./_resources/Logistics.resources/image.png" class="img-fluid"></p>
+<ul>
+<li>Data&nbsp;
+<ul>
+<li>Source: the production facility name (left-side)</li>
+<li>Target: the market supplied (right-side)</li>
+<li>Units: the number of items flowing (width of bars)</li>
+</ul></li>
+<li>Interpretation
+<ul>
+<li>India is the biggest country for production output</li>
+<li>Japan market demand is mainly supplied locally</li>
+<li>USA and Germany do not have local production facilities</li>
+</ul></li>
+</ul></li>
 <li><p>Network Optimization<img src="./_resources/Logistics.resources/image.1.png" class="img-fluid"></p>
-<pre><code>-   x-axis: each column represents a demand scenario (i.e. there are 50 demand scenarios in this example)
--   y-axis: are the production/supply locations
--   A blue box means that that location is included in the optimal configuration of locations for that scenario
--   e.g. In scenario 1, having a low capacity facility in India and a high capacity facility in India is optimal for this scenario.
--   I think this viz can be done with {[waffle](https://github.com/hrbrmstr/waffle)} using `geom_waffle`_without_ `theme_enhance_waffle`
-
--   Simulate how the variability of demand in various markets (e.g. 50 scenarios) affects the optimal distribution of production/supply locations
--   Hopefully a configuration of locations will be optimal for a preponderance of scenarios. Assuming each scenario is equally important, that configuration of locations is the optimal choice.
-        -   Or I guess you could weight each scenario by frequency or something. Maybe you have a distribution of scenarios from which you drawing from.
--   Linear programming
--   Also see [Optimization, general](Optimization, general)
--   Set decision variable, objective function
--   list the constraints according to the demand for each market
--   Solutions are indicator variables for production/supply locations and whether they are 1 or 0.
-        -   There should be a boolean variable for a high capacity location and low capacity location in each country
-        -   For each variable, 1 indicates that location should be built or that it should be in operation at that particular capacity</code></pre></li>
-<li><p>Pareto Plot - Data<img src="./_resources/Logistics.resources/image.7.png" class="img-fluid"> - “BOX” is the number of box/packs picked of that product (“SKU”) for that order (“ORDER_NUMBER”) on that date (“DATE_FORMAT”) - Preprocessing - Sum the number of boxes picked per SKU - Sort your data frame by descending order on BOX quantity - Calculate the cumulative sum of BOX - Calculate the cumulative number of SKU</p></li>
+<ul>
+<li><p>x-axis: each column represents a demand scenario (i.e.&nbsp;there are 50 demand scenarios in this example)</p></li>
+<li><p>y-axis: are the production/supply locations</p></li>
+<li><p>A blue box means that that location is included in the optimal configuration of locations for that scenario</p>
+<ul>
+<li>e.g.&nbsp;In scenario 1, having a low capacity facility in India and a high capacity facility in India is optimal for this scenario.</li>
+</ul></li>
+<li><p>I think this viz can be done with {<a href="https://github.com/hrbrmstr/waffle">waffle</a>} using <code>geom_waffle</code><em>without</em> <code>theme_enhance_waffle</code></p></li>
+<li><p>Simulate how the variability of demand in various markets (e.g.&nbsp;50 scenarios) affects the optimal distribution of production/supply locations</p>
+<ul>
+<li>Hopefully a configuration of locations will be optimal for a preponderance of scenarios. Assuming each scenario is equally important, that configuration of locations is the optimal choice.
+<ul>
+<li>Or I guess you could weight each scenario by frequency or something. Maybe you have a distribution of scenarios from which you drawing from.</li>
+</ul></li>
+</ul></li>
+<li><p>Linear programming</p>
+<ul>
+<li>Also see <a href="Optimization, general">Optimization, general</a></li>
+<li>Set decision variable, objective function</li>
+<li>list the constraints according to the demand for each market</li>
+<li>Solutions are indicator variables for production/supply locations and whether they are 1 or 0.
+<ul>
+<li>There should be a boolean variable for a high capacity location and low capacity location in each country</li>
+<li>For each variable, 1 indicates that location should be built or that it should be in operation at that particular capacity</li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><p>Pareto Plot</p>
+<ul>
+<li>Data<img src="./_resources/Logistics.resources/image.7.png" class="img-fluid">
+<ul>
+<li>“BOX” is the number of box/packs picked of that product (“SKU”) for that order (“ORDER_NUMBER”) on that date (“DATE_FORMAT”)</li>
+</ul></li>
+<li>Preprocessing
+<ul>
+<li>Sum the number of boxes picked per SKU</li>
+<li>Sort your data frame by descending order on BOX quantity</li>
+<li>Calculate the cumulative sum of BOX</li>
+<li>Calculate the cumulative number of SKU</li>
+</ul></li>
+</ul></li>
 </ul>
 <p>Warehouse Management</p>
 <ul>
-<li>Misc - Picking operations account for the largest proportion of the total warehouse costs (up to more than 60%). This is why the design of these areas is of such importance. - The closer the high demand or large goods are to the loading and unloading docks, the lower the handling costs.</li>
-<li>Material Flow Types - Simple flows: To understand how these movements work, we can examine the simplest possible flow, which takes place when units sent by the supplier are used, without dividing these up.<img src="./_resources/Logistics.resources/image.4.png" class="img-fluid"> - Medium flows: Movements start to become more complex with this type of flow. It is normally found in warehouses with single or combined picking operations, generally with the supply of full pallets.<img src="./_resources/Logistics.resources/image.5.png" class="img-fluid"> - Complex flows: There are warehouses with different working areas, depending on the types of product and their consumption. They normally have intermediate handling areas and can require various operations that in turn need flows of a certain (and at times great) complexity. This diagram shows an example of this type of facility and the loading movements that occur there.<img src="./_resources/Logistics.resources/image.6.png" class="img-fluid"></li>
-<li>Warehouse Optimization<img src="./_resources/Logistics.resources/image.2.png" class="img-fluid"><img src="./_resources/Logistics.resources/image.3.png" class="img-fluid"> - A: High Rotation, B: Medium Rotation, C: Low Rotation - (Left) Pareto Plot shows how High Rotation products are classified as those accounting for 20% of total products but also 80% of sales (point on the curve) - (Right) Shows how the “A” products have been positioned closest to the loading and unloading area.</li>
+<li>Misc
+<ul>
+<li>Picking operations account for the largest proportion of the total warehouse costs (up to more than 60%). This is why the design of these areas is of such importance.</li>
+<li>The closer the high demand or large goods are to the loading and unloading docks, the lower the handling costs.</li>
+</ul></li>
+<li>Material Flow Types
+<ul>
+<li>Simple flows: To understand how these movements work, we can examine the simplest possible flow, which takes place when units sent by the supplier are used, without dividing these up.<img src="./_resources/Logistics.resources/image.4.png" class="img-fluid"></li>
+<li>Medium flows: Movements start to become more complex with this type of flow. It is normally found in warehouses with single or combined picking operations, generally with the supply of full pallets.<img src="./_resources/Logistics.resources/image.5.png" class="img-fluid"></li>
+<li>Complex flows: There are warehouses with different working areas, depending on the types of product and their consumption. They normally have intermediate handling areas and can require various operations that in turn need flows of a certain (and at times great) complexity. This diagram shows an example of this type of facility and the loading movements that occur there.<img src="./_resources/Logistics.resources/image.6.png" class="img-fluid"></li>
+</ul></li>
+<li>Warehouse Optimization<img src="./_resources/Logistics.resources/image.2.png" class="img-fluid"><img src="./_resources/Logistics.resources/image.3.png" class="img-fluid">
+<ul>
+<li>A: High Rotation, B: Medium Rotation, C: Low Rotation</li>
+<li>(Left) Pareto Plot shows how High Rotation products are classified as those accounting for 20% of total products but also 80% of sales (point on the curve)</li>
+<li>(Right) Shows how the “A” products have been positioned closest to the loading and unloading area.</li>
+</ul></li>
 </ul>
 
 

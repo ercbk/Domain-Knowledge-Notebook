@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.427">
+<meta name="generator" content="quarto-1.3.433">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -275,15 +275,70 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 <p>Misc</p>
 <ul>
-<li>Notes from - <a href="https://blog.duolingo.com/growth-model-duolingo/">Meaningful metrics: How data sharpened the focus of product teams</a></li>
+<li>Notes from
+<ul>
+<li><a href="https://blog.duolingo.com/growth-model-duolingo/">Meaningful metrics: How data sharpened the focus of product teams</a></li>
+</ul></li>
 </ul>
 <p>User Segmentation <img src="./_resources/SaaS.resources/image.png" class="img-fluid"></p>
 <ul>
-<li>Diagram of users based on their activity on the language learning software, “duolingo.” - See article for an example of a user journey</li>
-<li>Activity States - New users: learners who are experiencing Duolingo for the first time ever - Current users: learners active today, who were also active in the past week - Reactivated users: learners active today, who were also active in the past month (but not the past week) - Resurrected users: learners active today, who were last active &gt;30 days ago - At-risk Weekly Active Users (WAU): learners who have been active within the past week, but not today - At-risk Monthly Active Users (MAU): learners who were active within the past month, but not the past week - Dormant Users: learners who have been inactive for at least 30 days</li>
-<li>Rates - Retention Rates - New User Retention Rate (NURR): The proportion of day 1 learners who return on day 2. This day 2 transition puts these learners into another “active” state (Current User) - Deactivation Rates: e.g.&nbsp;WAU or MAU loss rate - Activation Rates: e.g.&nbsp;Reactivation or Resurrection rate</li>
-<li>Process - Classify all users (past or present) into an activity state each day - Collect data: monitor rates of transition between states. - These transition probabilities are monitored as retention rates, activation rates, and deactivation rates - Use transition probabilities to create Markov model for simulations</li>
-<li>Identify new metrics, through simulations of the Markov model, that - when optimized - are likely to increase a North Star or Primary metric. - Example<img src="./_resources/SaaS.resources/image.1.png" class="img-fluid"> - Simulation is for 3yrs into the future - “Lever” is the parameter being increased - In the sim, it’s increased 2% month-over-month - Daily Active Users (DAU) is the North Star metric that is being opitimized (i.e.&nbsp;increased) - Interpretation: Increasing Current User Retention Rate (CURR) increases DAU by 75% over the next 3yrs - Formulas at time, t - <strong>DAUt</strong> = ReactivatedUsert + NewUsert + ResurrectedUsert + CurrentUsert - <strong>WAUt</strong> = ReactivatedUsert + NewUsert + ResurrectedUsert + CurrentUsert + AtRiskWAUt - <strong>MAUt</strong> = ReactivatedUsert + NewUsert + ResurrectedUsert + CurrentUsert + AtRiskWAUt + AtRiskMAUt - <strong>ReactivatedUsert</strong> = ReactivationRatet * AtRiskMAUt-1 - <strong>ResurrectedUsert</strong> = ResurrectionRatet * DormantUserst-1 - <strong>CurrentUsert</strong> = (NewUsert-1 * NURRt) + (ReactivatedUsert-1 * RURRt) + (ResurrectedUsert-1 * SURRt) + (CurrentUsert-1 * CURRt) + (AtRiskWAUt-1 * WAURRt) - <strong>DormantUsert</strong> = (DormantUsert-1 * DormantRRt) + (AtRiskMAUt-1 * MAULossRatet) - <strong>AtRiskMAUt</strong> = (AtRiskMAUt-1 * ARMAURRt) + (AtRiskWAUt-1 * WAULossRatet) - <strong>AtRiskWAUt</strong> = (AtRiskWAUt-1 * ARWAURRt) + (CurrentUsert-1 * (1-CURRt)) + (ReactivatedUsert-1 * (1-RURRt)) + (NewUsert-1 * (1-NURRt)) + (ResurrectedUsert-1 * (1-SURRt))</li>
+<li>Diagram of users based on their activity on the language learning software, “duolingo.”
+<ul>
+<li>See article for an example of a user journey</li>
+</ul></li>
+<li>Activity States
+<ul>
+<li>New users: learners who are experiencing Duolingo for the first time ever</li>
+<li>Current users: learners active today, who were also active in the past week</li>
+<li>Reactivated users: learners active today, who were also active in the past month (but not the past week)</li>
+<li>Resurrected users: learners active today, who were last active &gt;30 days ago</li>
+<li>At-risk Weekly Active Users (WAU): learners who have been active within the past week, but not today</li>
+<li>At-risk Monthly Active Users (MAU): learners who were active within the past month, but not the past week</li>
+<li>Dormant Users: learners who have been inactive for at least 30 days</li>
+</ul></li>
+<li>Rates
+<ul>
+<li>Retention Rates
+<ul>
+<li>New User Retention Rate (NURR): The proportion of day 1 learners who return on day 2. This day 2 transition puts these learners into another “active” state (Current User)</li>
+</ul></li>
+<li>Deactivation Rates: e.g.&nbsp;WAU or MAU loss rate</li>
+<li>Activation Rates: e.g.&nbsp;Reactivation or Resurrection rate</li>
+</ul></li>
+<li>Process
+<ul>
+<li>Classify all users (past or present) into an activity state each day</li>
+<li>Collect data: monitor rates of transition between states.
+<ul>
+<li>These transition probabilities are monitored as retention rates, activation rates, and deactivation rates</li>
+</ul></li>
+<li>Use transition probabilities to create Markov model for simulations</li>
+</ul></li>
+<li>Identify new metrics, through simulations of the Markov model, that - when optimized - are likely to increase a North Star or Primary metric.
+<ul>
+<li>Example<img src="./_resources/SaaS.resources/image.1.png" class="img-fluid">
+<ul>
+<li>Simulation is for 3yrs into the future</li>
+<li>“Lever” is the parameter being increased
+<ul>
+<li>In the sim, it’s increased 2% month-over-month</li>
+</ul></li>
+<li>Daily Active Users (DAU) is the North Star metric that is being opitimized (i.e.&nbsp;increased)</li>
+<li>Interpretation: Increasing Current User Retention Rate (CURR) increases DAU by 75% over the next 3yrs</li>
+</ul></li>
+<li>Formulas at time, t
+<ul>
+<li><strong>DAUt</strong> = ReactivatedUsert + NewUsert + ResurrectedUsert + CurrentUsert</li>
+<li><strong>WAUt</strong> = ReactivatedUsert + NewUsert + ResurrectedUsert + CurrentUsert + AtRiskWAUt</li>
+<li><strong>MAUt</strong> = ReactivatedUsert + NewUsert + ResurrectedUsert + CurrentUsert + AtRiskWAUt + AtRiskMAUt</li>
+<li><strong>ReactivatedUsert</strong> = ReactivationRatet * AtRiskMAUt-1</li>
+<li><strong>ResurrectedUsert</strong> = ResurrectionRatet * DormantUserst-1</li>
+<li><strong>CurrentUsert</strong> = (NewUsert-1 * NURRt) + (ReactivatedUsert-1 * RURRt) + (ResurrectedUsert-1 * SURRt) + (CurrentUsert-1 * CURRt) + (AtRiskWAUt-1 * WAURRt)</li>
+<li><strong>DormantUsert</strong> = (DormantUsert-1 * DormantRRt) + (AtRiskMAUt-1 * MAULossRatet)</li>
+<li><strong>AtRiskMAUt</strong> = (AtRiskMAUt-1 * ARMAURRt) + (AtRiskWAUt-1 * WAULossRatet)</li>
+<li><strong>AtRiskWAUt</strong> = (AtRiskWAUt-1 * ARWAURRt) + (CurrentUsert-1 * (1-CURRt)) + (ReactivatedUsert-1 * (1-RURRt)) + (NewUsert-1 * (1-NURRt)) + (ResurrectedUsert-1 * (1-SURRt))</li>
+</ul></li>
+</ul></li>
 <li>Perform A/B tests to see whether 1) the selected metric can be moved and 2) whether moving it actually moves the north star/primary metric</li>
 </ul>
 
