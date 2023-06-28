@@ -5,6 +5,7 @@ book:
   title: "Domain Knowledge"
   author: "Eric Book"
   date: "6/21/2023"
+  favicon: images/dk-favicon-32.png
   reader-mode: true
   repo-url: https://github.com/ercbk/Domain-Knowledge-Notebook
   sidebar: 
