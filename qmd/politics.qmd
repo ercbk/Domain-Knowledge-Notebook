@@ -1,6 +1,6 @@
-# Politics
+# Politics  {#sec-politics .unnumbered}
 
-## Misc
+## Misc  {#sec-politics-misc .unnumbered}
 
 -   Notes from Ethan Epping talk
     -   Most common modeling are for "support" (who they vote for) and "turn-out" (whether they vote at all) responses
