@@ -1,36 +1,10 @@
-# Marketing
+# Marketing {#sec-mark}
 
-TOC
+## Misc {#sec-mark-misc}
 
--   Sources
-
--   Misc
-
--   Terms
-
--   Use Cases
-
--   Metrics
-
--   Conversion Lift Tests
-
--   Geo-experiments
-
--   Channel Attribution Search Engine Marketing (SEM)
-
-    Customer Segmentation
-
--   Customer Journey
-
--   Workflow
-
-Sources
-
--   https://hbr.org/2021/07/why-you-arent-getting-more-from-your-marketing-ai?ab=seriesnav-spotlight
--   https://hbr.org/2021/07/how-to-design-an-ai-marketing-strategy?utm_source=Data_Elixir&utm_medium=social
-
-Misc
-
+-   Notes from
+    -   https://hbr.org/2021/07/why-you-arent-getting-more-from-your-marketing-ai?ab=seriesnav-spotlight
+    -   https://hbr.org/2021/07/how-to-design-an-ai-marketing-strategy?utm_source=Data_Elixir&utm_medium=social
 -   Most marketing AI addresses segmentation, targeting, and budget allocation.
 -   Tools to engage customers: Salesforce, Marketo, Braze, Facebook Ads, or Google Ads
     -   Google and Facebook are perennially at the [top of charts for highest return on ad spend](https://www.singular.net/blog/singular-roi-index-2020-blog/)
@@ -47,32 +21,20 @@ Misc
     -   Value Optimization (VO)
         -   looks for people who will spend a certain amount of money in your mobile app
 
-Terms
+## Terms {#sec-mark-terms}
 
 -   [**Action-Based**]{style="color: #009499"} - clicks, impressions, and GRP data
-
 -   [**Adstock**]{style="color: #009499"} - an average decaying function for the carryover effect (see Channel Attribution section)
-
 -   [**Advanced Mobile Measurement (AMM)**]{style="color: #009499"} - Facebook's tracker. Allowed advertisers to access click-through conversion data through their MMP
-
 -   [**Affiliate marketing**]{style="color: #009499"} - a type of performance-based marketing in which a business rewards one or more affiliates for each visitor or customer brought by the affiliate's own marketing efforts.
-
 -   [**Carryover Effect**]{style="color: #009499"} - the lag between the time a consumer is touched by an ad and the time a consumer converts because of the ad
-
 -   [**Click-in**]{style="color: #009499"} - when a user click on something to reach your website/app
-
 -   [**Click-out**]{style="color: #009499"} - the last click a user makes that take them to another website/app
-
--   \[**Clearing Price**: The final price paid for an impression.
-
+-   [**Clearing Price**]{style="color: #009499"} - The final price paid for an impression.
 -   [**CPC**]{style="color: #009499"} - Cost Per Click - refers to the cost an advertiser pays each time an online user clicks on his or her digital ad
-
 -   [**CPM**]{style="color: #009499"} or Cost Per Thousand Impressions is the amount *advertisers* are willing to pay for every one thousand impressions they receive
-
     -   CPM = (campaign_budget \* 1000) / #\_of_desired_impressions
-
 -   [**eCPM**]{style="color: #009499"} or effective CPM is the predicted revenue earned by a *publisher* for every one thousand impressions; metric for ad testing
-
     -   eCPM = (estimated_earnings \* 1000) / total_impressions
     -   factors that affect eCPM (for all, more is better)
         -   monthly website traffic
@@ -80,11 +42,8 @@ Terms
             -   find [ad networks offering better deals](https://www.adpushup.com/blog/the-best-ad-networks-for-publishers/) for different geographical locations
         -   viewability score
             -   multiple links in this [article](https://www.adpushup.com/blog/what-is-ecpm/)
-
 -   [**Floor prices**]{style="color: #009499"} are traditionally used by publishers to increase the closing price of their auctions. Think these are implemented by publishers with second-price auctions when they feel reductions are too large.
-
--   [**GRP**]{style="color: #009499"} -  Gross Rating Point. A standard measure in advertising, it measures advertising impact. You calculate it as a
-
+-   [**GRP**]{style="color: #009499"} - Gross Rating Point. A standard measure in advertising, it measures advertising impact. You calculate it as a
     -   One GRP is one percent of all potential adult television viewers (or in radio, listeners) in a market Calculatations:
         -   percent of the target market reached multiplied by the exposure frequency.
         -   GRPs (%) = 100 \* Impressions (#) ÷ Defined population (#)
@@ -93,55 +52,39 @@ Terms
             -   if you get advertise to 30% of the target market and give them 4 exposures, you would have 120 GRP.
             -   If an average of 12% of the people view each episode of a television program, and an ad is placed on 5 episodes, then the campaign has 12 × 5 = 60 GRPs.
             -   If 50% view three episodes, that's 150 GRPs
-
--   \[**Header Bidding**: Just the name for technical auctioning process behind bidding on ad space on a website.
-
+-   [**Header Bidding**]{style="color: #009499"} - Just the name for technical auctioning process behind bidding on ad space on a website.
     -   Used to be done by waterfall archetecture where ads would pass from one publisher's website to another until it reached one with a price floor that was below the advertiser's bidding price
-
 -   [**Ideal customer profile (ICP)**]{style="color: #009499"} - customers who bring in the most long-term value for a company
-
--   [**Identifier for Advertisers (IDFA)**]{style="color: #009499"} - a random device identifier assigned by Apple to a user's device. Advertisers use them to precisely target and track users within apps on iOS devices \[**Impression**: An instance of each time your ad is shown on a search result page or other site on the Google Network. (i.e. number of people your ad reaches)
-
+-   [**Identifier for Advertisers (IDFA)**]{style="color: #009499"} - a random device identifier assigned by Apple to a user's device. Advertisers use them to precisely target and track users within apps on iOS devices
+-   [**Impression**]{style="color: #009499"} - An instance of each time your ad is shown on a search result page or other site on the Google Network. (i.e. number of people your ad reaches)
     -   Each time your ad appears on Google or the Google Network, it's counted as one impression.
     -   In some cases, only a section of your ad may be shown. For example, in Google Maps, we may show only your business name and location or only your business name and the first line of your ad text.
     -   You'll sometimes see the abbreviation "Impr" in your account showing the number of impressions for your ad.
-
--   [**Inventory**]{style="color: #009499"} is the amount of ad space (or the number of advertisements) that a publisher has available to sell. While the term originated from print, it has grown to encompass ad space on the web and on apps and mobile ads
-
--   \[**Price Floor**: The minimum price a publisher will accept for its inventory-  ignoring all bids below that price. \[**Reduction**: Money saved in a second-price auction; difference between the bid price and the clearing price
-
--   [**RPM**]{style="color: #009499"} is similar to eCPM; it's the amount earned by *publishers* per thousand pageviews
-
+-   [**Inventory**]{style="color: #009499"} - the amount of ad space (or the number of advertisements) that a publisher has available to sell. While the term originated from print, it has grown to encompass ad space on the web and on apps and mobile ads
+-   [**Price Floor**]{style="color: #009499"} - The minimum price a publisher will accept for its inventory --- ignoring all bids below that price.
+-   [**Reduction**]{style="color: #009499"} - Money saved in a second-price auction; difference between the bid price and the clearing price
+-   [**RPM**]{style="color: #009499"} - similar to eCPM; it's the amount earned by *publishers* per thousand pageviews
 -   [**Touchpoint**]{style="color: #009499"} - any time a potential customer or customer comes in contact with your brand--before, during, or after they purchase something from you. Interactions with marketing campaigns and the home page provide rich information about who they are and what they like
-
     -   Examples:
         -   Before Purchase: Social media, Ratings and reviews, Testimonials, Word of mouth, Community involvement, Advertising, Marketing/PR, visits your website
         -   During Purchase: Store or office, Website, Catalog, Promotions, Staff or sales team, Phone system, Point of sale
         -   Post Purchase: Billing, Transactional emails, Marketing emails, Service and support teams, Online help center, Follow ups, Thank you cards
-
 -   [**UTM**]{style="color: #009499"} - Urchin Traffic Monitor - used to identify marketing channels or results from ad campaigns
-
     -   Name comes from Urchin Tracker, a web analytics software that served as the base for Google Analytics.
-
     -   e.g. http://yourwebsite.com/your-post-title/?utm_source=google
-
         -   utm code = string after "?"
             -   separate each UTM parameter with the '&' sign.
         -   This person clicked a google ad to get to your site
-
     -   Google URL builder [tool](https://ga-dev-tools.appspot.com/campaign-url-builder/)
-
     -   See [article](https://agencyanalytics.com/blog/utm-tracking) for me details, best practices, etc.
-
     -   Parameter types
-
         -   utm_source - traffic source (e.g. google, facebook, twitter, etc.)
         -   utm_medium - type of traffic source (e.g. CPC, email, social, referral, display, etc.)
         -   utm_campaign - campaign name, track the performance of a specific campaign
         -   utm\_\_\_content - In case you have multiple links pointing to the same URL (such as an email with two CTA buttons), this code will help you track which link was clicked (e.g `utm_content=navlink` )
         -   utm_term - track which keyword term a website visitor came from. This parameter is specifically used for paid search ads. (e.g. `utm_term=growth+hacking+tactics`)
 
-Use Cases
+## Use Cases {#sec-mark-usecases}
 
 -   Chatbots for lead development, customer support, and cross-selling or upselling
 
@@ -192,13 +135,13 @@ Use Cases
     -   Netflix - recommendations are on a separate standalone app where the customer needs to request recommendations
     -   ML that coaches a customer service rep through a call
 
-Metrics
+## Metrics {#sec-mark-metrics}
 
 -   conversion rates, bounce rates, and average basket sizes
 -   **Return on Ad Spend** (ROAS)
     -   ROAS = Sales Revenue / Advertising Budget Spend
 
-Conversion Lift Tests
+## Conversion Lift Tests {#sec-mark-custlift}
 
 -   Also see
     -   Data Science \>\> [Algorithms, Marketing](Algorithms,%20Marketing)
@@ -237,7 +180,7 @@ Conversion Lift Tests
     -   less than 100% you can redistribute budgets to better-performing campaigns and channels
     -   equal to or higher than 100% you know you are not cannibalizing organic traffic and that your ads are effective
 
-Geo-experiments
+## Geo-experiments {#sec-mark-geoexp}
 
 -   A quasi-experimental methodology where non-overlapping geographic regions (geos) are randomly assigned to a control or treatment group
     -   [Example]{.ribbon-highlight}: ads are served only in the geos of the treatment group while users in geos of the control group won't be exposed to the advert
@@ -255,25 +198,29 @@ Geo-experiments
         -   Randomly assign treatment and contol to geos
     4.  Analysis
         -   Use difference in differences or synthetic controls to measure incremental conversions
-        -   Example DiD![](./_resources/Marketing.resources/0-7mG9DH1XOy4T3g9G.png)
+        -   Example DiD\
+            ![](./_resources/Marketing.resources/0-7mG9DH1XOy4T3g9G.png)
 
-Channel Attribution
+## Channel Attribution {#sec-mark-chanatt}
 
 -   Misc
     -   Also see UTM parameters in Terms on how to use URLs to track different ad accounts.
         -   When you start tracking the UTM parameters and tying it to the account creation, you can now measure the conversion rate from ad click to purchase.
         -   The main KPI is now end-to-end customer acquisition cost, rather than cost per click.
     -   Model should reflect these characteristics
-        -   The concave shape of diminishing returns![](./_resources/Marketing.resources/1-Zus4VojzJJbIIFZ2rPqYJw.png)
+        -   The concave shape of diminishing returns\
+            ![](./_resources/Marketing.resources/1-Zus4VojzJJbIIFZ2rPqYJw.png)
             -   As the market becomes saturated by your ads, additional ad spend generates less return
             -   sales \~ ln(spend) and you'd have make sure you change the 0s to a really small number or add 1 , e.g y = ln(x+1).
                 -   By adding 1, zeroes will be zeros on the log-scale since log 1 = 0
         -   Carryover Effect
             -   the lag between the time a consumer is touched by an ad and the time a consumer converts because of the ad.
-            -   Adstock is a decaying function that describes the average carryover effect![](./_resources/Marketing.resources/1-Fmr_wpbh0SV7EHwZthBA4g.png)
+            -   Adstock is a decaying function that describes the average carryover effect\
+                ![](./_resources/Marketing.resources/1-Fmr_wpbh0SV7EHwZthBA4g.png)
                 -   The advertising effect of this example channel was about 40% in the initial week, then decrease to 20% in the following week, and so on
                     -   Not sure how this "effect" is measured. Maybe it means a 40% increase in conversions during the initial week of the ad buy. Maybe this is measured experimentally. Maybe it's something like a ratio of conversions after clicks on digital ads/paid search to total clicks on the ad.
-                -   Calculate a "spend_with_adstock" variable![](./_resources/Marketing.resources/1-PzWaS2vmwbiVg60-B8_6uQ.png)
+                -   Calculate a "spend_with_adstock" variable\
+                    ![](./_resources/Marketing.resources/1-PzWaS2vmwbiVg60-B8_6uQ.png)
                     -   decay rate is specific to an ad channel and business type
                         -   online ads have a more immedicate effect since users are usually ready to buy
                         -   offline ads have a longer delay since it takes time to respond
@@ -354,7 +301,7 @@ Channel Attribution
             -   Can't be used in Conversion Lift Tests
                 -   postbacks require a ad campaign ID for the conversion to be attributed to, so it's not possible to measure the conversion volume from a lift test's control group (since the control group isn't exposed to the ad)
 
-Search Engine Marketing (SEM)
+## Search Engine Marketing (SEM) {#sec-mark-sem}
 
 -   marketing on search engines where you pay to place ads at the top so that the user sees your ads before the organic search results (e.g. Google, Bing, etc.)
 
@@ -374,26 +321,19 @@ Search Engine Marketing (SEM)
 
             -   Bidder C \$2.50 first-price auction: B wins
 
-                clearing price will be the same as the bid- \$2.80
+            -   clearing price will be the same as the bid- \$2.80
 
-            second price auction: B wins
+            -   second price auction: B wins
 
-            ```         
-              clearing price = $0.01 + second-highest bid ($2.50) = $2.51
+            -   clearing price = \$0.01 + second-highest bid (\$2.50) = \$2.51
 
-              reduction = $2.80 (winning bid) - $2.51 (clearing price) = $0.29
-            ```
+            -   reduction = \$2.80 (winning bid) - \$2.51 (clearing price) = \$0.29
+    -   bid shading technique buyers use in first-price auctions in an attempt to avoid overpaying
+    -   takes a maximum possible bid and tries to forecast the market value for a given impression, in order to determine the actual bid price to submit.
+        -   outcome: bid price; model features: site, ad size, exchange and competitive dynamics
 
-    bid shading technique buyers use in first-price auctions in an attempt to avoid overpaying
-
-    ```         
-      takes a maximum possible bid and tries to forecast the market value for a given impression, in order to determine the actual bid price to submit.
-          outcome: bid price; model features: site, ad size, exchange and competitive dynamics
-
-          if win rates decrease, the algorithm raises the price they pay
-
-      Some publishers (google, bing, etc.) use intelligent price floors to counteract bid shading
-    ```
+        -   if win rates decrease, the algorithm raises the price they pay
+    -   Some publishers (google, bing, etc.) use intelligent price floors to counteract bid shading
 
 -   Optimize bidding for value vs traffic volume characteristics of key words
 
@@ -407,7 +347,7 @@ Search Engine Marketing (SEM)
             -   Pre-corona vs post-corona?
         -   Is there an optimal level of investment?
 
-Customer Segmentation
+## Customer Segmentation {#sec-mark-custseg}
 
 -   Also see
     -   Customer Journey (below)
@@ -496,7 +436,9 @@ Customer Segmentation
                   A market strategy could be to educate them about the advantages of digital services and then upsell digital products.
             ```
 
-Customer Journey ![](./_resources/Marketing.resources/image.1.png)![](./_resources/Marketing.resources/image.png)
+## Customer Journey {#sec-mark-custjourn}
+
+![](./_resources/Marketing.resources/image.1.png)![](./_resources/Marketing.resources/image.png)
 
 -   Top Figure: Typical SaaS User Journey
 -   Bottom Figure: General User Journey
@@ -516,9 +458,9 @@ Customer Journey ![](./_resources/Marketing.resources/image.1.png)![](./_resourc
     -   AI-enabled service agents (chatbots) triage customers' requests---and are able to deal with fluctuating volumes of service requests better than human agents are
     -   can handle simple queries about, say, delivery time or scheduling an appointment and can escalate more-complex issues to a human agent
 
-Workflow
+## Workflow {#sec-mark-wkflw}
 
--   Find the Ideal Customer Profile (ICP) and target them ([article](https://towardsdatascience.com/a-complete-guide-to-data-driven-customer-acquisition-f0f1708b328))![](./_resources/Marketing.resources/image.8.png)
+-   Find the Ideal Customer Profile (ICP) and target them ([article](https://towardsdatascience.com/a-complete-guide-to-data-driven-customer-acquisition-f0f1708b328)) ![](./_resources/Marketing.resources/image.8.png)
     -   Customer's long-term value = Revenue from the customer's repeated purchase --- customer's acquisition cost
     -   Segment in Negative, Low-Value, Medium-Value, and High Value cohorts
         -   See Customer Segmentation \>\> RFM Analysis
@@ -533,7 +475,7 @@ Workflow
             -   Cohort 1 reacts positively to campaigns about cool geeky features. On the other hand, cohort 2 engages more with campaigns spotlighting the practical benefits of using a new gadget.
             -   Cohort 1 trusts YouTubers who talk about the latest and greatest tech products and make purchases after watching unboxing videos. Cohort 2 likes to shop at Costco and buy gadgets at a discount
                 -   Partnering with tech influencers helps the company attract cohort 1 while working with wholesale stores speeds up selling to cohort 2.
-    -   Use experimentation on High-Value cohorts to test which acquisition/marketing campaigns have high ROAS.![](./_resources/Marketing.resources/image.9.png)
+    -   Use experimentation on High-Value cohorts to test which acquisition/marketing campaigns have high ROAS. ![](./_resources/Marketing.resources/image.9.png)
         -   For cohort 3, campaign A seems to have more success than campaign B
     -   Future campaigns can now target high value cohorts with greater conversion and less expenditure.
 -   Potential Pitfalls

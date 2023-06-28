@@ -1,13 +1,6 @@
-# KPIs
+# KPIs {#sec-kpis}
 
-TOC
-
--   Misc
--   Terms
--   General
--   Product Metrics
-
-Misc
+## Misc
 
 -   Also see
     -   [Job, Organizational and Team Development](Job,%20Organizational%20and%20Team%20Development) \>\> Developing a data strategy \>\> Objectives and Key Results (OKRs)
@@ -15,11 +8,11 @@ Misc
 -   Leaders should focus on 3 to 6 KPIs that will drive growth.
 -   When a KPI's growth begins to stagnate, break up the KPI monolith into smaller, more meaningful (and hopefully, easier to optimize) segments
 
-Terms
+## Terms
 
 -   [**Operationalization**]{style="color: #009499"} - a process of defining the measurement of a phenomenon that is not directly measurable (e.g. happiness), though its existence is indicated by other phenomena. It is the process of defining a fuzzy concept so as to make the theoretical concept clearly distinguishable or measurable, and to understand it in terms of empirical observations.
 
-General
+## General
 
 -   KPI characteristics
 
@@ -104,7 +97,7 @@ General
     -   Set up alerts when thresholds are crossed
         -   anomaly detection
 
-Product Metrics
+## Product Metrics
 
 -   Why are they important?
     -   Metrics help companies have clarity, alignment and prioritization in what to build.

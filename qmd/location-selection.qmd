@@ -1,21 +1,16 @@
-# Location Selection
+# Location Selection {#sec-locsel .unnumbered}
 
-TOC
-
--   Misc
--   Factors
--   Location Profiles
-
-Misc
+## Misc {#sec-locsel-misc .unnumbered}
 
 -   Customer research, market expertise & experience, and competitor location analysis can all help inform the important criteria for your business
 -   [Tool](https://www.jordanbean.com/example-work#populationestimator) to calculate population density within a certain radius of a location
--   Might be more useful to aggregate smaller geographies into overlapping circular areas to compare candidates![](./_resources/Location_Selection.resources/1-iT14nGkyxpTDKrzXieHUpg.png)
+-   Might be more useful to aggregate smaller geographies into overlapping circular areas to compare candidates\
+    ![](./_resources/Location_Selection.resources/1-iT14nGkyxpTDKrzXieHUpg.png){width="632"}
     -   Would have to decide how to handle geographies that are only partially enclosed in a circlular area
         -   Use a percentage?
         -   Include the whole thing?
 
-Factors
+## Factors {#sec-locsel-fact .unnumbered}
 
 -   Understanding of the demographic or economic factors that must be in place to be successful
 -   Examples of questions
@@ -25,28 +20,29 @@ Factors
     -   Do you rely on office worker foot traffic?
     -   Is the presence of certain business types important (restaurants, healthcare facilities)?
 -   Non-data factors
-    -   appropriate accessibility (car traffic/foot traffic, street frontage)
-    -   signage
-    -   availability and size of space
-    -   cost/affordability
+    -   Appropriate accessibility (car traffic/foot traffic, street frontage)
+    -   Signage
+    -   Availability and size of space
+    -   Cost/affordability
 
-Location Profiles
+## Location Profiles {#sec-locsel-locprof .unnumbered}
 
 -   These are created for existing stores and locations or potential new stores
--   [Example]{.ribbon-highlight}: Workforce and Demographic
 
-![](./_resources/Location_Selection.resources/1-u7KtEJ5Gbi-zaDd5dwRlhQ.png)![](./_resources/Location_Selection.resources/1-KAR-xT1uxjSvNfxvpPBdiQ.png)
+-   [Example]{.ribbon-highlight}: Workforce and Demographic ![](./_resources/Location_Selection.resources/1-u7KtEJ5Gbi-zaDd5dwRlhQ.png){width="632"}\
+    ![](./_resources/Location_Selection.resources/1-KAR-xT1uxjSvNfxvpPBdiQ.png){width="632"}
 
 -   Other potential variables
+
     -   Customer median driving distance
-        -   may also inform on the correct census geography to use
+        -   May also inform on the correct census geography to use
     -   Distance_to highways, business district, etc.
 
-Analysis
+## Analysis {#sec-locsel-anal .unnumbered}
 
 -   Use thresholds for any profile variables to help narrow the group of potential candidate locations to a managable number
     -   Might be useful to fit a decision tree to develop rules to use as thresholds
-    -   Example
+    -   [Example]{.ribbon-highlight}
         -   Zip Code Population of 25,000+
             -   May want to use census geographies other than zip code
         -   City Population of 150,000+
@@ -78,7 +74,7 @@ Analysis
                 -   Which competitors are most popular, suggesting we may want to look in other areas?
                 -   e.g. Google Map, Yelp, etc. reviews of competitors at this location
     -   Mapping may illuminate other considerations
-        -   e.g. one location has large swaths of uninhabitable land --- is there enough population density for us to be successful?
+        -   e.g. One location has large swaths of uninhabitable land --- is there enough population density for us to be successful?
     -   How close are these locations to your other stores?
         -   Could one leach customers from the other?
     -   Examine profiles of final candidates

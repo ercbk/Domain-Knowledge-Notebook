@@ -1,0 +1,94 @@
+# Low Hanging Fruit  {#sec-lhf .unnumbered}
+
+## Misc  {#sec-lhf-misc .unnumbered}
+
+-   Most companies don't have a holistic view of their business performance
+    -   Large proportion of the budget is spent on campaigns that generate little to no return
+    -   Monitoring business performance in real-time and swiftly halting initiatives with negative returns will give a company more time and cash to survive the unstable economy.
+-   Why a business needs statistics
+    -   Identifying Opportunities
+        -   Find new markets, promote better customer retention, increase sales, and identify sales opportunities
+        -   Increase efficiency by finding duplication in the market or pinpointing areas that you want to eliminate from your current strategic plan
+    -   Understanding customer behavior
+        -   Looking at their buying patterns and how they use your products or services
+        -   Can make decisions on the type of products or services you should offer to your customers
+        -   Identify new opportunities for product development by looking at areas that may require further research and study
+    -   Determining the correct target market
+        -   Identify the best possible choice for your business because all decisions must be made around this key area
+        -   Help determine whether your current target market is as profitable as it should be
+    -   Evaluating products or services
+        -   Determine what your customers are using or how they are accessing your products to find new ways to improve or alter a product or service you offer
+    -   Making better decisions
+        -   Allows you to make better decisions about business changes, hiring new employees, marketing, and advertising strategies
+
+## What you offer  {#sec-lhf-wyo .unnumbered}
+
+-   See [Data Science Notebook, Job, Organizational and Team Development](https://ercbk.github.io/Data-Science-Notebook/qmd/job-organizational-and-team-development.html){style="color: green"}
+-   In the beginning the value comes from creating a more automated, streamlined, and reliable process and developing metrics that better measure aspects of the business.
+-   Insights are an iterative process which depends heavily on the quality, quantity, and predictiveness of the data
+-   A data scientist automates and improves data-centric processes such as collecting, storing, accessing, analyzing, and reporting.
+
+## Report Automation and Alerts {#sec-lhf-raaa .unnumbered}
+
+-   See [Data Science Notebook, Job, Reports](https://ercbk.github.io/Data-Science-Notebook/qmd/job-reports.html){style="color: green"}
+-   Automate daily, monthly, quarterly etc. reports
+-   Typical components: analysis, report template, automation script, shiny dashboard
+-   Alerts
+    -   Send text or email (i.e. RPushbullet (text) or blastula (email))
+    -   Useful when dashboards designed to monitor things, aren't being used. This way a manager is only bothered when something is wrong
+    -   Examples
+        -   When an overtime limit is reached, send alert to department head
+        -   When inventory reaches a limit, send alert
+
+## Churn  {#sec-lhf-churn .unnumbered}
+
+-   See [Data Science Notebook, Algorithms, Marketing \>\> Churn](https://ercbk.github.io/Data-Science-Notebook/qmd/algorithms-marketing.html#sec-alg-mark-churn){style="color: green"}
+-   Why are customers leaving and how much is it costing
+-   Logistic regression if just a probability of whether a customer will churn is wanted
+-   Decision tree if it needs to presented to an executive or stakeholder not familiar with statistics
+
+## Monitoring Operational metrics  {#sec-lhf-mom .unnumbered}
+
+-   See
+    -   [Data Science Notebook, Job, Organizational and Team Development \>\> Developing a data strategy \>\> OKRs](https://ercbk.github.io/Data-Science-Notebook/qmd/job-organizational-and-team-development.html#sec-job-orgdev-datstrat-okr){style="color: green"}
+    -   [KPIs](kpis.qmd#sec-kpis){style="color: green"}
+-   This is about understanding the levers that drive your business, then using them to improve operations. A key aspect is making data available and understandable to those who are making daily decisions.
+-   Monitoring business performance in real-time allows businesses to swiftly halt initiatives with negative returns
+-   Metrics are also ways for organizations to align stakeholders around one vision of the world and one common goal.
+-   Metrics help companies have clarity, alignment and prioritization in what to build.
+-   Metrics help a company decide how to build the product once they've prioritized what to build.
+-   Metrics help a company determine how successful they are and hold them accountable to an outcome.
+-   Examples:
+    -   Daily updates about key metrics.
+    -   Is there a drop in conversion rate?
+    -   Are we meeting our KPIs?
+
+## Product Demand Forecasting  {#sec-lhf-pdf .unnumbered}
+
+-   See [Logistics  \>\> Demand Forecasting](logistics.qmd#sec-log-demfcast){style="color: green"}
+-   <https://www.remixinstitute.com/blog/automated-demand-forecasts-using-autocatboostcarma-in-r/#.XX_q6ShKi1s> (some pitch material)
+-   "Over 20% of Amazon's North American retail revenue can be attributed to customers who first tried to buy the product at a local store but found it out-of-stock"
+-   A demand forecasting system can help save a lot of dollars in term of workforce management, inventory cost and out of stock loss.
+    -   See inventory bkmk folder, SCPerf pkg. Has inventory/supply chain functions that utilize demand forecast as a variable.
+-   Sales forecasts by store
+-   Monthly units sold by SKU (item)
+-   eCommerce
+    -   Daily or Weekly Visits by Channel, Source, and/or Medium using Google Analytics data
+    -   Daily Customers, New Customers, Revenue, and Units Sold by Channel
+
+## Customer Segmentation  {#sec-lhf-custseg .unnumbered}
+
+-   See [Marketing \>\> Workflow](marketing.qmd#sec-mark-wkflw){style="color: green"} \>\> Find the Ideal Customer Profile (ICP) and target them
+-   Increases marketing efficiency by helping to indicate which campaigns are more likely to succeed with certain groups of customers
+-   The company can achieve a higher return on ad spend with a smaller marketing budget, yielding a higher profit margin and more room for market expansion.
+-   Form marketing hypotheses based on cluster characteristics and test these hypotheses by varying campaigns based on the customer's cluster membership.
+    -   Recommend a product they're likely to purchase, a multi-buy discount, or on-boarding them on a loyalty scheme (e.g. rewards program)
+    -   Once you know who your customers are and what their value is to your business, you can:
+    -   Personalize your products and services to better suit your customers' needs
+    -   Create Communication Strategies tailored to each segment
+    -   Focus Customer Acquisition to more profitable customers with messages and offers more likely to resonate with them
+    -   Apply Price Optimization to match customer individual price sensitivity
+    -   Increase Customer Retention by offering discounts to customers that haven't purchased in a long time
+    -   Enhance Customer Engagement by informing them about new products that are more relevant to them
+    -   Improve your chance to Cross-sell and Up-sell other products and services by reaching out for the right segment when they're more likely to respond
+    -   Test which type of incentive a certain segment is more likely to respond to (e.g. pricing discounts, loyalty programs, product recommendation, etc.)

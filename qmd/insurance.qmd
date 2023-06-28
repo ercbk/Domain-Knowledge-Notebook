@@ -1,11 +1,11 @@
-# Insurance
+# Insurance  {#sec-insur .unnumbered}
 
-## Misc
+## Misc  {#sec-insur-misc .unnumbered}
 
 -   DS Use Cases
     -   Predict insurance claims frequency (see bkmk)
 
-## Risk
+## Risk  {#sec-insur-risk .unnumbered}
 
 -   Limiting exposure
     -   From <http://ronaldrichman.co.za/2021/02/24/x-is-not-fx-insurance-edition/>
@@ -28,7 +28,7 @@
         -   Cirillo, P., & Taleb, N. N. (2016). On the statistical properties and tail risk of violent conflicts. Physica A: Statistical Mechanics and Its Applications, 452, 29--45. https://doi.org/10.1016/j.physa.2016.01.050
         -   Cirillo, P., & Taleb, N. N. (2020, June 1). Tail risk of contagious diseases. Nature Physics, Vol. 16, pp. 606--613. https://doi.org/10.1038/s41567-020-0921-x
 
-## Market Basket Analysis
+## Market Basket Analysis  {#sec-insur-mba .unnumbered}
 
 -   Support: What percent of patients have disease 1 and disease 2?
 -   Confidence: Of the people w/disease1, what percent also have disease 2?
