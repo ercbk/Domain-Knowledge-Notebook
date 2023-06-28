@@ -1,51 +1,55 @@
 # Politics
 
-Ethan Epping talk
+## Misc
 
--   Most common modeling are for "support" (who they vote for) and "turn-out" (whether they vote at all) responses
--   messages around civic and community engagement is better at encouraging low propensity voters than pushing your candidate's policy agenda
--   turnout model
-    -   features: previous vote history of an individual; feature that influence turnout in general
-        -   ncoa data (national change of address)
-            -   voter file info can be outdated
-            -   when people move, nobody calls to cancel their voter registration
-        -   geocoding
-        -   commercially available
-            -   mobile phone data
-            -   Experion
-        -   govt
-            -   gun and boat registration
-            -   college student lists at public universities
-        -   data collected through contact by the campaign
--   support model
-    -   features: survey data + other data
--   DNC uses BigQuery/SQL for a db and analytics, python for engineering; datascience does some R but more python
--   voter file
-    -   list of registered voters in every state
-    -   publicly available
-        -   states have various restrictions
-            -   OH and NC publish online and is free
-            -   some cost thousands and only available to campaigns
-            -   not available for commercial use though
-    -   includes everything that's on voter registration
-        -   addresses. phone numbers, etc.
-        -   vote history (participation)
-    -   If you don't vote in 2 straight federal elections you are usually eligible to be removed from the registry
--   "arbor" (sp?) tool
-    -   for registration drives
-    -   at census block or precinct level, take census estimate of eligible voters and subtract the number of registered voters
-    -   helps to figure out where to prioritize efforts (i.e. where the biggest pool of unregistered, eligible voters are)
--   "election base" tool
-    -   de-aggregate results down to the census block level
--   resolution is usually at the census block level because precinct boundaries often change
--   Early voting data
-    -   Want to find voters that have requested a ballot but have yet to mail it in
-        -   best time to talk to them
-    -   rejection data: talk to voters who incorrectly filled out a ballot
-        -   voter needs to talk to county clerk
-        -   or show up on voting day
--   Jobs
-    -   https://www.progressivedatajobs.org/
-        -   guide to application process: https://guide.progressivedatajobs.org/
-    -   https://www.digidems.com/
-        -   takes tech people and gives some political training then deploys to campaigns
+-   Notes from Ethan Epping talk
+    -   Most common modeling are for "support" (who they vote for) and "turn-out" (whether they vote at all) responses
+    -   Messages around civic and community engagement is better at encouraging low propensity voters than pushing your candidate's policy agenda
+    -   Turnout Model
+        -   Features: previous vote history of an individual; feature that influence turnout in general
+            -   NCOA data (National Change of Address)
+                -   Voter file info can be outdated
+                -   When people move, nobody calls to cancel their voter registration
+            -   Geocoding
+            -   Commercially Available
+                -   Mobile phone data
+                -   Experion
+            -   Government
+                -   Gun and Boat Registration
+                -   College student lists at public universities
+            -   Data collected through contact by the campaign
+    -   Support Model
+        -   Features: survey data + other data
+    -   DNC Stack
+        -   BigQuery/SQL for a db and analytics,
+        -   Python for engineering;
+        -   Datascience does some R but more python
+    -   Voter File
+        -   List of registered voters in every state
+        -   Publicly vailable
+            -   States have various restrictions
+                -   OH and NC publish online and is free
+                -   Some cost thousands and only available to campaigns
+                -   Not available for commercial use though
+        -   Includes everything that's on voter registration
+            -   Addresses. phone numbers, etc.
+            -   Vote history (participation)
+        -   If you don't vote in 2 straight federal elections you are usually eligible to be removed from the registry
+    -   "Arbor" (sp?) tool
+        -   For registration drives
+        -   At census block or precinct level, take census estimate of eligible voters and subtract the number of registered voters
+        -   Helps to figure out where to prioritize efforts (i.e. where the biggest pool of unregistered, eligible voters are)
+    -   "Election Base" tool
+        -   De-aggregate results down to the census block level
+    -   Resolution is usually at the census block level because precinct boundaries often change
+    -   Early voting data
+        -   Want to find voters that have requested a ballot but have yet to mail it in
+            -   Best time to talk to them
+        -   Rejection data: talk to voters who incorrectly filled out a ballot
+            -   Voter needs to talk to county clerk
+            -   Or show up on voting day
+    -   Jobs
+        -   <https://www.progressivedatajobs.org/>
+            -   Guide to application process: <https://guide.progressivedatajobs.org>
+        -   <https://www.digidems.com/>
+            -   Takes tech people and gives some political training then deploys to campaigns

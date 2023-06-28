@@ -1,76 +1,81 @@
-# Nonprofits
+# Nonprofits  {#sec-nonprof .unnumbered}
 
-Notes from:
+## Misc {#sec-nonprof-misc .unnumbered}
 
--   [Data Strategy for Non-Profits: Why?](https://blog.deltanalytics.org/data-strategy-for-non-profits-why-4f93d7abacf2)
+-   Notes from:
+    -   [Data Strategy for Non-Profits: Why?](https://blog.deltanalytics.org/data-strategy-for-non-profits-why-4f93d7abacf2)
 
-Why they need a data strategy
+## Developing a data strategy  {#sec-nonprof-devdatstrat .unnumbered}
 
--   identify opportunities, inform decision makers on how to allocate scarce resources, and to measure and communicate impact
+### Why They Need a Data Strategy  {#sec-nonprof-devdatstrat-wtmads .unnumbered}
+
+-   Identify opportunities, inform decision makers on how to allocate scarce resources, and to measure and communicate impact
 -   Providing greater transparency and accountability to funders.
     -   The availability of data has driven donors and grantmakers to be more conscious on the measurement of the impact that their dollars have. Non-profits which can better demonstrate their impact receive more financial support.
 -   Growing impact of programs and services.
     -   Data is utilized internally to improve services and expand impact which results in being able to generate greater impact.
 
-Developing a data strategy
+### Assess Organization  {#sec-nonprof-devdatstrat-assorg .unnumbered}
 
--   Assessing the following will help lay a foundation for a data strategy:
-    -   Mission and Theory of Change
-        -   a concrete outline which states
-            -   the impact that will be generated
-            -   the conditions needed to generate the impact
-            -   the programs in place to create those conditions.
-        -   Each piece of the Theory of Change can then be stated in terms of a quantifiable measure of success which will serve as the starting point for developing a data strategy.
-        -   Example![](./_resources/Nonprofits.resources/1-Ap92XjwEYV-kuAou_2nicg.png)
-    -   Stakeholders
-        -   Answer these questions:
-            -   Who are your stakeholders?
-                -   Identify subgroups and individuals who fall into these groups
-                    -   Donors and Volunteers.
-                    -   Management and Employees.
-                    -   Beneficiaries.
-            -   What questions do stakeholders have that can be answered through data?
-                -   donors and volunteers
-                    -   example: a data-driven Impact Report which provides a holistic view of how the nonprofit utilizes their resources to achieve its mission.
-                        -   Contains anectdotal stories with data that demonstrate how effectively their resources are being used
-                -   Management and employees
-                    -   example: more granular views on how individual programs and initiatives are performing on metrics related to their Theory of Change
-                -   Beneficiaries
-                    -   example: data around how projects in different sectors are performing
-            -   How will the data affect stakeholder decision making?
-                -   donors and volunteers
-                    -   can influence decisions around donating time and money
-                -   management and employees
-                    -   provides visibility into how resources are allocated internally and empowers internal decision makers to evaluate how to get the most impact out of the limited resources they have
-                -   beneficiaries
-                    -   can be used to garner buy in and allow the nonprofit access to communities that they would otherwise not have
-    -   Data Gap Analysis
-        -   Identify gaps between current data capabilities and those needed to answer all stakeholder questions
-        -   Contents
-            -   Outline all data needs in the form of questions derived from your Theory of Change and stakeholder analysis.
-            -   Deep dive into the required data to answer the questions and an estimate of how much that data would cost to obtain. Don't forget that the same data could answer multiple questions.
-            -   Identify data that has already been collected and any existing efforts to collect additional data.
-            -   Connect existing data and data efforts to questions and determine gaps between questions and data.
-            -   Propose strategies to bridge data gaps and sustain data assets. Evaluate both the benefits of answering the question and costs of acquiring the data.
-            -   Prioritize data gaps to close.
-            -   Communicate findings to relevant stakeholders.
+-   [Mission and Theory of Change]{.underline}
+    -   A concrete outline which states
+        -   The impact that will be generated
+        -   The conditions needed to generate the impact
+        -   The programs in place to create those conditions.
+    -   Each piece of the Theory of Change can then be stated in terms of a quantifiable measure of success which will serve as the starting point for developing a data strategy.
+    -   Example\
+        ![](./_resources/Nonprofits.resources/1-Ap92XjwEYV-kuAou_2nicg.png){width="332"}
+-   [Stakeholders]{.underline}
+    -   Answer these questions:
+        -   Who are your stakeholders?
+            -   Identify subgroups and individuals who fall into these groups
+                -   Donors and Volunteers.
+                -   Management and Employees.
+                -   Beneficiaries.
+        -   What questions do stakeholders have that can be answered through data?
+            -   Donors and Volunteers
+                -   Example: A data-driven Impact Report which provides a holistic view of how the nonprofit utilizes their resources to achieve its mission.
+                    -   Contains anectdotal stories with data that demonstrate how effectively their resources are being used
+            -   Management and Employees
+                -   Example: more granular views on how individual programs and initiatives are performing on metrics related to their Theory of Change
+            -   Beneficiaries
+                -   Example: data around how projects in different sectors are performing
+        -   How will the data affect stakeholder decision making?
+            -   Donors and Volunteers
+                -   Can influence decisions around donating time and money
+            -   Management and Employees
+                -   Provides visibility into how resources are allocated internally and empowers internal decision makers to evaluate how to get the most impact out of the limited resources they have
+            -   Beneficiaries
+                -   Can be used to garner buy in and allow the nonprofit access to communities that they would otherwise not have
+-   [Data Gap Analysis]{.underline}
+    -   Identify gaps between current data capabilities and those needed to answer all stakeholder questions
+    -   Contents
+        -   Outline all data needs in the form of questions derived from your Theory of Change and stakeholder analysis.
+        -   Deep dive into the required data to answer the questions and an estimate of how much that data would cost to obtain. Don't forget that the same data could answer multiple questions.
+        -   Identify data that has already been collected and any existing efforts to collect additional data.
+        -   Connect existing data and data efforts to questions and determine gaps between questions and data.
+        -   Propose strategies to bridge data gaps and sustain data assets. Evaluate both the benefits of answering the question and costs of acquiring the data.
+        -   Prioritize data gaps to close.
+        -   Communicate findings to relevant stakeholders.
 
-Identify key questions
+### Identify Key Questions  {#sec-nonprof-devdatstrat-idkeyquest .unnumbered}
 
--   Should be designed to be measurable, clear, and actionable (Also see nonprofit example in  [Project Management](Project%20Management) \>\> General Steps to Starting a Project)
+-   Should be designed to be measurable, clear, and actionable 
+    -   Also see nonprofit example in [Data Science Notebook, Projects, Planning \>\> General Steps to Starting a Project](https://ercbk.github.io/Data-Science-Notebook/qmd/project-planning.html#sec-proj-plan-gensteps){style="color: green"}
 -   Make sure that you are addressing the social outcome and not program output of your organization.
-    -   just answering the question of how many people go through your program, how many volunteers you recruit / retain, are not sufficient because they focus only on outputs --- but not social impact.
+    -   Just answering the question of how many people go through your program, how many volunteers you recruit / retain, are not sufficient because they focus only on outputs --- but not social impact.
     -   You would still need to assess whether those outputs are truly feeding into the social outcomes you want to accomplish through your organization.
 -   The answers to key data questions should be resolved by a "North Star metric" or the single, defining outcome metric that best captures the core value that your nonprofit delivers.
     -   Chasing non-critical metrics can strain resource constraints of the budget and time constraints of staff.
--   Examples
+-   Examples:
     -   Doctors Without Borders: Are we delivering adequate medical aid to people affected by crises (e.g., conflicts, epidemics, disasters) or exclusion from healthcare?
     -   American Red Cross: How many lives have been saved from the blood donated by our donors?
     -   Feeding America: How many people have we been able to provide food for this year?
     -   BUILD: Are we improving the academic and professional outcomes of our students?
 
-Outputs vs Outcomes
+### Outputs vs Outcomes  {#sec-nonprof-devdatstrat-outvout .unnumbered}
 
 -   Logic model
     -   It focuses on how inputs and activities translate to outputs and eventually
--   Example![](./_resources/Nonprofits.resources/1-1Zj8iZRg_8ClIH2ocpXZqQ.png)
+-   Example  
+    ![](./_resources/Nonprofits.resources/1-1Zj8iZRg_8ClIH2ocpXZqQ.png){width="632"}
