@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Domain Knowledge Notebook - Location Selection</title>
+<title>Domain Knowledge Notebook - Low Hanging Fruit</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../qmd/logistics.html" rel="next">
-<link href="../qmd/kpis.html" rel="prev">
+<link href="../qmd/manufacturing.html" rel="next">
+<link href="../qmd/logistics.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -75,7 +75,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../qmd/location-selection.html">Location Selection</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../qmd/low-hanging-fruit.html">Low Hanging Fruit</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -177,7 +177,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../qmd/location-selection.html" class="sidebar-item-text sidebar-link active">
+  <a href="../qmd/location-selection.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Location Selection</span></a>
   </div>
 </li>
@@ -189,7 +189,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../qmd/low-hanging-fruit.html" class="sidebar-item-text sidebar-link">
+  <a href="../qmd/low-hanging-fruit.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Low Hanging Fruit</span></a>
   </div>
 </li>
@@ -257,10 +257,13 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#sec-locsel-misc" id="toc-sec-locsel-misc" class="nav-link active" data-scroll-target="#sec-locsel-misc">Misc</a></li>
-  <li><a href="#sec-locsel-fact" id="toc-sec-locsel-fact" class="nav-link" data-scroll-target="#sec-locsel-fact">Factors</a></li>
-  <li><a href="#sec-locsel-locprof" id="toc-sec-locsel-locprof" class="nav-link" data-scroll-target="#sec-locsel-locprof">Location Profiles</a></li>
-  <li><a href="#sec-locsel-anal" id="toc-sec-locsel-anal" class="nav-link" data-scroll-target="#sec-locsel-anal">Analysis</a></li>
+  <li><a href="#sec-lhf-misc" id="toc-sec-lhf-misc" class="nav-link active" data-scroll-target="#sec-lhf-misc">Misc</a></li>
+  <li><a href="#sec-lhf-wyo" id="toc-sec-lhf-wyo" class="nav-link" data-scroll-target="#sec-lhf-wyo">What you offer</a></li>
+  <li><a href="#sec-lhf-raaa" id="toc-sec-lhf-raaa" class="nav-link" data-scroll-target="#sec-lhf-raaa">Report Automation and Alerts</a></li>
+  <li><a href="#sec-lhf-churn" id="toc-sec-lhf-churn" class="nav-link" data-scroll-target="#sec-lhf-churn">Churn</a></li>
+  <li><a href="#sec-lhf-mom" id="toc-sec-lhf-mom" class="nav-link" data-scroll-target="#sec-lhf-mom">Monitoring Operational metrics</a></li>
+  <li><a href="#sec-lhf-pdf" id="toc-sec-lhf-pdf" class="nav-link" data-scroll-target="#sec-lhf-pdf">Product Demand Forecasting</a></li>
+  <li><a href="#sec-lhf-custseg" id="toc-sec-lhf-custseg" class="nav-link" data-scroll-target="#sec-lhf-custseg">Customer Segmentation</a></li>
   </ul>
 </nav>
     </div>
@@ -269,7 +272,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span id="sec-locsel" class="quarto-section-identifier">Location Selection</span></h1>
+<h1 class="title"><span id="sec-lhf" class="quarto-section-identifier">Low Hanging Fruit</span></h1>
 </div>
 
 
@@ -284,133 +287,138 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="sec-locsel-misc" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="sec-locsel-misc">Misc</h2>
+<section id="sec-lhf-misc" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="sec-lhf-misc">Misc</h2>
 <ul>
-<li>Customer research, market expertise &amp; experience, and competitor location analysis can all help inform the important criteria for your business</li>
-<li><a href="https://www.jordanbean.com/example-work#populationestimator">Tool</a> to calculate population density within a certain radius of a location</li>
-<li>Might be more useful to aggregate smaller geographies into overlapping circular areas to compare candidates<br>
-<img src="./_resources/Location_Selection.resources/1-iT14nGkyxpTDKrzXieHUpg.png" class="img-fluid" width="632">
+<li>Most companies don’t have a holistic view of their business performance
 <ul>
-<li>Would have to decide how to handle geographies that are only partially enclosed in a circlular area
+<li>Large proportion of the budget is spent on campaigns that generate little to no return</li>
+<li>Monitoring business performance in real-time and swiftly halting initiatives with negative returns will give a company more time and cash to survive the unstable economy.</li>
+</ul></li>
+<li>Why a business needs statistics
 <ul>
-<li>Use a percentage?</li>
-<li>Include the whole thing?</li>
+<li>Identifying Opportunities
+<ul>
+<li>Find new markets, promote better customer retention, increase sales, and identify sales opportunities</li>
+<li>Increase efficiency by finding duplication in the market or pinpointing areas that you want to eliminate from your current strategic plan</li>
+</ul></li>
+<li>Understanding customer behavior
+<ul>
+<li>Looking at their buying patterns and how they use your products or services</li>
+<li>Can make decisions on the type of products or services you should offer to your customers</li>
+<li>Identify new opportunities for product development by looking at areas that may require further research and study</li>
+</ul></li>
+<li>Determining the correct target market
+<ul>
+<li>Identify the best possible choice for your business because all decisions must be made around this key area</li>
+<li>Help determine whether your current target market is as profitable as it should be</li>
+</ul></li>
+<li>Evaluating products or services
+<ul>
+<li>Determine what your customers are using or how they are accessing your products to find new ways to improve or alter a product or service you offer</li>
+</ul></li>
+<li>Making better decisions
+<ul>
+<li>Allows you to make better decisions about business changes, hiring new employees, marketing, and advertising strategies</li>
 </ul></li>
 </ul></li>
 </ul>
 </section>
-<section id="sec-locsel-fact" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="sec-locsel-fact">Factors</h2>
+<section id="sec-lhf-wyo" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="sec-lhf-wyo">What you offer</h2>
 <ul>
-<li>Understanding of the demographic or economic factors that must be in place to be successful</li>
-<li>Examples of questions
+<li>See <a href="https://ercbk.github.io/Data-Science-Notebook/qmd/job-organizational-and-team-development.html" style="color: green">Data Science Notebook, Job, Organizational and Team Development</a></li>
+<li>In the beginning the value comes from creating a more automated, streamlined, and reliable process and developing metrics that better measure aspects of the business.</li>
+<li>Insights are an iterative process which depends heavily on the quality, quantity, and predictiveness of the data</li>
+<li>A data scientist automates and improves data-centric processes such as collecting, storing, accessing, analyzing, and reporting.</li>
+</ul>
+</section>
+<section id="sec-lhf-raaa" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="sec-lhf-raaa">Report Automation and Alerts</h2>
 <ul>
-<li>Do you need a large population?</li>
-<li>High income population?</li>
-<li>High presence of certain age brackets?</li>
-<li>Do you rely on office worker foot traffic?</li>
-<li>Is the presence of certain business types important (restaurants, healthcare facilities)?</li>
+<li>See <a href="https://ercbk.github.io/Data-Science-Notebook/qmd/job-reports.html" style="color: green">Data Science Notebook, Job, Reports</a></li>
+<li>Automate daily, monthly, quarterly etc. reports</li>
+<li>Typical components: analysis, report template, automation script, shiny dashboard</li>
+<li>Alerts
+<ul>
+<li>Send text or email (i.e.&nbsp;RPushbullet (text) or blastula (email))</li>
+<li>Useful when dashboards designed to monitor things, aren’t being used. This way a manager is only bothered when something is wrong</li>
+<li>Examples
+<ul>
+<li>When an overtime limit is reached, send alert to department head</li>
+<li>When inventory reaches a limit, send alert</li>
 </ul></li>
-<li>Non-data factors
-<ul>
-<li>Appropriate accessibility (car traffic/foot traffic, street frontage)</li>
-<li>Signage</li>
-<li>Availability and size of space</li>
-<li>Cost/affordability</li>
 </ul></li>
 </ul>
 </section>
-<section id="sec-locsel-locprof" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="sec-locsel-locprof">Location Profiles</h2>
+<section id="sec-lhf-churn" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="sec-lhf-churn">Churn</h2>
 <ul>
-<li><p>These are created for existing stores and locations or potential new stores</p></li>
-<li><p><span class="ribbon-highlight">Example</span>: Workforce and Demographic <img src="./_resources/Location_Selection.resources/1-u7KtEJ5Gbi-zaDd5dwRlhQ.png" class="img-fluid" width="632"><br>
-<img src="./_resources/Location_Selection.resources/1-KAR-xT1uxjSvNfxvpPBdiQ.png" class="img-fluid" width="632"></p></li>
-<li><p>Other potential variables</p>
+<li>See <a href="https://ercbk.github.io/Data-Science-Notebook/qmd/algorithms-marketing.html#sec-alg-mark-churn" style="color: green">Data Science Notebook, Algorithms, Marketing &gt;&gt; Churn</a></li>
+<li>Why are customers leaving and how much is it costing</li>
+<li>Logistic regression if just a probability of whether a customer will churn is wanted</li>
+<li>Decision tree if it needs to presented to an executive or stakeholder not familiar with statistics</li>
+</ul>
+</section>
+<section id="sec-lhf-mom" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="sec-lhf-mom">Monitoring Operational metrics</h2>
 <ul>
-<li>Customer median driving distance
+<li>See
 <ul>
-<li>May also inform on the correct census geography to use</li>
+<li><a href="https://ercbk.github.io/Data-Science-Notebook/qmd/job-organizational-and-team-development.html#sec-job-orgdev-datstrat-okr" style="color: green">Data Science Notebook, Job, Organizational and Team Development &gt;&gt; Developing a data strategy &gt;&gt; OKRs</a></li>
+<li><a href="../qmd/kpis.html#sec-kpis" style="color: green">KPIs</a></li>
 </ul></li>
-<li>Distance_to highways, business district, etc.</li>
+<li>This is about understanding the levers that drive your business, then using them to improve operations. A key aspect is making data available and understandable to those who are making daily decisions.</li>
+<li>Monitoring business performance in real-time allows businesses to swiftly halt initiatives with negative returns</li>
+<li>Metrics are also ways for organizations to align stakeholders around one vision of the world and one common goal.</li>
+<li>Metrics help companies have clarity, alignment and prioritization in what to build.</li>
+<li>Metrics help a company decide how to build the product once they’ve prioritized what to build.</li>
+<li>Metrics help a company determine how successful they are and hold them accountable to an outcome.</li>
+<li>Examples:
+<ul>
+<li>Daily updates about key metrics.</li>
+<li>Is there a drop in conversion rate?</li>
+<li>Are we meeting our KPIs?</li>
 </ul></li>
 </ul>
 </section>
-<section id="sec-locsel-anal" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="sec-locsel-anal">Analysis</h2>
+<section id="sec-lhf-pdf" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="sec-lhf-pdf">Product Demand Forecasting</h2>
 <ul>
-<li>Use thresholds for any profile variables to help narrow the group of potential candidate locations to a managable number
+<li>See <a href="../qmd/logistics.html#sec-log-demfcast" style="color: green">Logistics &gt;&gt; Demand Forecasting</a></li>
+<li><a href="https://www.remixinstitute.com/blog/automated-demand-forecasts-using-autocatboostcarma-in-r/#.XX_q6ShKi1s" class="uri">https://www.remixinstitute.com/blog/automated-demand-forecasts-using-autocatboostcarma-in-r/#.XX_q6ShKi1s</a>&nbsp;(some pitch material)</li>
+<li>“Over 20% of Amazon’s North American retail revenue can be attributed to customers who first tried to buy the product at a local store but found it out-of-stock”</li>
+<li>A demand forecasting system can help save a lot of dollars in term of workforce management, inventory cost and out of stock loss.
 <ul>
-<li>Might be useful to fit a decision tree to develop rules to use as thresholds</li>
-<li><span class="ribbon-highlight">Example</span>
-<ul>
-<li>Zip Code Population of 25,000+
-<ul>
-<li>May want to use census geographies other than zip code</li>
+<li>See inventory bkmk folder, SCPerf pkg. Has inventory/supply chain functions that utilize demand forecast as a variable.</li>
 </ul></li>
-<li>City Population of 150,000+</li>
-<li>Growing Population</li>
-<li>Household Income of $75,000+</li>
-<li>High percentage of the population in the workforce</li>
-<li>High economic activity</li>
-<li>Primary industry of employment in White Collar</li>
-<li>Percentage millennial population</li>
-<li>Restaurant density</li>
-</ul></li>
-</ul></li>
-<li>Score candidate locations
+<li>Sales forecasts by store</li>
+<li>Monthly units sold by SKU (item)</li>
+<li>eCommerce
 <ul>
-<li>Create weights for important profile variables and then calculate scores for each candidate location
-<ul>
-<li>Methods for creating weights
-<ul>
-<li>Wing it with domain knowledge</li>
-<li>Coefficients from a regularized regression of KPI ~ standardized_profile_vars could be used as weights
-<ul>
-<li>Or feature importance, shapely values, etc. from tree model</li>
+<li>Daily or Weekly Visits by Channel, Source, and/or Medium using Google Analytics data</li>
+<li>Daily Customers, New Customers, Revenue, and Units Sold by Channel</li>
 </ul></li>
-<li>Correlation or association statistics as weights</li>
-</ul></li>
-</ul></li>
-<li>Order scores highest to lowest
+</ul>
+</section>
+<section id="sec-lhf-custseg" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="sec-lhf-custseg">Customer Segmentation</h2>
 <ul>
-<li>If more than one location is considered, then group_by a suitably-sized geography</li>
-</ul></li>
-</ul></li>
-<li>Cluster candidate location profiles with current successful stores
+<li>See <a href="../qmd/marketing.html#sec-mark-wkflw" style="color: green">Marketing &gt;&gt; Workflow</a> &gt;&gt; Find the Ideal Customer Profile (ICP) and target them</li>
+<li>Increases marketing efficiency by helping to indicate which campaigns are more likely to succeed with certain groups of customers</li>
+<li>The company can achieve a higher return on ad spend with a smaller marketing budget, yielding a higher profit margin and more room for market expansion.</li>
+<li>Form marketing hypotheses based on cluster characteristics and test these hypotheses by varying campaigns based on the customer’s cluster membership.
 <ul>
-<li>Candidate locations that are in the same cluster as your stores are the ones that should be considered</li>
-<li>Prominent features of the cluster(s) may indicate which profile variables are more important than others</li>
-</ul></li>
-<li>Take top-n candidates and dig deeper:
-<ul>
-<li>Competitor analysis
-<ul>
-<li>Example questions
-<ul>
-<li>How many competitors exist is location?</li>
-<li>Where are they located?</li>
-<li>How satisfied are consumers with the options that exist today?
-<ul>
-<li>Which competitors are most popular, suggesting we may want to look in other areas?</li>
-<li>e.g.&nbsp;Google Map, Yelp, etc. reviews of competitors at this location</li>
-</ul></li>
-</ul></li>
-</ul></li>
-<li>Mapping may illuminate other considerations
-<ul>
-<li>e.g.&nbsp;One location has large swaths of uninhabitable land — is there enough population density for us to be successful?</li>
-</ul></li>
-<li>How close are these locations to your other stores?
-<ul>
-<li>Could one leach customers from the other?</li>
-</ul></li>
-<li>Examine profiles of final candidates
-<ul>
-<li>What are the primary differences?</li>
-<li>What are the best features?</li>
-</ul></li>
+<li>Recommend a product they’re likely to purchase, a multi-buy discount, or on-boarding them on a loyalty scheme (e.g.&nbsp;rewards program)</li>
+<li>Once you know who your customers are and what their value is to your business, you can:</li>
+<li>Personalize your products and services to better suit your customers’ needs</li>
+<li>Create Communication Strategies tailored to each segment</li>
+<li>Focus Customer Acquisition to more profitable customers with messages and offers more likely to resonate with them</li>
+<li>Apply Price Optimization to match customer individual price sensitivity</li>
+<li>Increase Customer Retention by offering discounts to customers that haven’t purchased in a long time</li>
+<li>Enhance Customer Engagement by informing them about new products that are more relevant to them</li>
+<li>Improve your chance to Cross-sell and Up-sell other products and services by reaching out for the right segment when they’re more likely to respond</li>
+<li>Test which type of incentive a certain segment is more likely to respond to (e.g.&nbsp;pricing discounts, loyalty programs, product recommendation, etc.)</li>
 </ul></li>
 </ul>
 
@@ -653,13 +661,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../qmd/kpis.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">KPIs</span></span>
+      <a href="../qmd/logistics.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Logistics</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../qmd/logistics.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Logistics</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../qmd/manufacturing.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Manufacturing</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
