@@ -2,7 +2,7 @@ project:
   type: book
 
 book:
-  title: "Domain Knowledge Notebook"
+  title: "Domain Knowledge"
   author: "Eric Book"
   date: "6/21/2023"
   reader-mode: true
@@ -10,7 +10,7 @@ book:
   sidebar: 
     collapse-level: 1
     background: "#fffaf0"
-    foreground: "#335f83"
+    foreground: "#1E4477"
     tools: 
       - icon: house-fill
         href: https://ericbook.netlify.app/

@@ -61,7 +61,7 @@
 ### Identify Key Questions  {#sec-nonprof-devdatstrat-idkeyquest .unnumbered}
 
 -   Should be designed to be measurable, clear, and actionable 
-    -   Also see nonprofit example in [Data Science Notebook, Projects, Planning \>\> General Steps to Starting a Project](https://ercbk.github.io/Data-Science-Notebook/qmd/project-planning.html#sec-proj-plan-gensteps){style="color: green"}
+    -   Also see nonprofit example in [Projects, Planning \>\> General Steps to Starting a Project](https://ercbk.github.io/Data-Science-Notebook/qmd/project-planning.html#sec-proj-plan-gensteps){style="color: green"}
 -   Make sure that you are addressing the social outcome and not program output of your organization.
     -   Just answering the question of how many people go through your program, how many volunteers you recruit / retain, are not sufficient because they focus only on outputs --- but not social impact.
     -   You would still need to assess whether those outputs are truly feeding into the social outcomes you want to accomplish through your organization.

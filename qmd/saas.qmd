@@ -1,11 +1,11 @@
-# SaaS  {#sec-saas .unnumberd}
+# SaaS {#sec-saas .unnumbered}
 
-## Misc  {#sec-saas-misc .unnumberd}
+## Misc {#sec-saas-misc .unnumberd}
 
 -   Notes from
     -   [Meaningful metrics: How data sharpened the focus of product teams](https://blog.duolingo.com/growth-model-duolingo/)
 
-## User Segmentation  {#sec-saas-userseg .unnumberd}
+## User Segmentation {#sec-saas-userseg .unnumbered}
 
 ![](./_resources/SaaS.resources/image.png){width="432"}
 

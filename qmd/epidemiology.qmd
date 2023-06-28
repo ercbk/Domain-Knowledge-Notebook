@@ -21,7 +21,7 @@
     -   Issues
         -   Estimating the cov-var matrix becomes intractable with big data and many areas since the covariance must be estimated between each pair of areas
         -   CAR models assume the same level of spatial dependence between all areas which isn't likely.
--   {[bigDM](https://github.com/spatialstatisticsupna/bigDM)}
+-   [{]{style="color: #990000"}[bigDM](https://github.com/spatialstatisticsupna/bigDM){style="color: #990000"}[}]{style="color: #990000"}
     -   Scalable non-stationary Bayesian models for high-dim, count data
     -   Dependencies
         -   Uses {future} for distributed computing

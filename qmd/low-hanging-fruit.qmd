@@ -23,14 +23,14 @@
 
 ## What you offer  {#sec-lhf-wyo .unnumbered}
 
--   See [Data Science Notebook, Job, Organizational and Team Development](https://ercbk.github.io/Data-Science-Notebook/qmd/job-organizational-and-team-development.html){style="color: green"}
+-   See [Job, Organizational and Team Development](https://ercbk.github.io/Data-Science-Notebook/qmd/job-organizational-and-team-development.html){style="color: green"}
 -   In the beginning the value comes from creating a more automated, streamlined, and reliable process and developing metrics that better measure aspects of the business.
 -   Insights are an iterative process which depends heavily on the quality, quantity, and predictiveness of the data
 -   A data scientist automates and improves data-centric processes such as collecting, storing, accessing, analyzing, and reporting.
 
 ## Report Automation and Alerts {#sec-lhf-raaa .unnumbered}
 
--   See [Data Science Notebook, Job, Reports](https://ercbk.github.io/Data-Science-Notebook/qmd/job-reports.html){style="color: green"}
+-   See [Job, Reports](https://ercbk.github.io/Data-Science-Notebook/qmd/job-reports.html){style="color: green"}
 -   Automate daily, monthly, quarterly etc. reports
 -   Typical components: analysis, report template, automation script, shiny dashboard
 -   Alerts
@@ -42,7 +42,7 @@
 
 ## Churn  {#sec-lhf-churn .unnumbered}
 
--   See [Data Science Notebook, Algorithms, Marketing \>\> Churn](https://ercbk.github.io/Data-Science-Notebook/qmd/algorithms-marketing.html#sec-alg-mark-churn){style="color: green"}
+-   See [Algorithms, Marketing \>\> Churn](https://ercbk.github.io/Data-Science-Notebook/qmd/algorithms-marketing.html#sec-alg-mark-churn){style="color: green"}
 -   Why are customers leaving and how much is it costing
 -   Logistic regression if just a probability of whether a customer will churn is wanted
 -   Decision tree if it needs to presented to an executive or stakeholder not familiar with statistics
@@ -50,7 +50,7 @@
 ## Monitoring Operational metrics  {#sec-lhf-mom .unnumbered}
 
 -   See
-    -   [Data Science Notebook, Job, Organizational and Team Development \>\> Developing a data strategy \>\> OKRs](https://ercbk.github.io/Data-Science-Notebook/qmd/job-organizational-and-team-development.html#sec-job-orgdev-datstrat-okr){style="color: green"}
+    -   [Job, Organizational and Team Development \>\> Developing a data strategy \>\> OKRs](https://ercbk.github.io/Data-Science-Notebook/qmd/job-organizational-and-team-development.html#sec-job-orgdev-datstrat-okr){style="color: green"}
     -   [KPIs](kpis.qmd#sec-kpis){style="color: green"}
 -   This is about understanding the levers that drive your business, then using them to improve operations. A key aspect is making data available and understandable to those who are making daily decisions.
 -   Monitoring business performance in real-time allows businesses to swiftly halt initiatives with negative returns

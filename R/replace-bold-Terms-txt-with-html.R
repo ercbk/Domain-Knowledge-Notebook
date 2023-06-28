@@ -5,13 +5,7 @@
 pacman::p_load(dplyr, stringr, purrr)
 
 
-files <- c("qmd/dl-graph.qmd",
-           "qmd/geospatial-analysis.qmd",
-           "qmd/apis.qmd",
-           "qmd/mathematics-probability.qmd",
-           "qmd/db-engineering.qmd",
-           "qmd/scraping.qmd")
-# files <- fs::dir_ls(path = "qmd", glob = "*.qmd")
+files <- fs::dir_ls(path = "qmd", glob = "*.qmd")
 file_names <- files |>
   # remove ext
   str_remove_all(pattern = "\\.qmd") |> 
@@ -39,7 +33,7 @@ replace_Terms_txt_with_html <- function(file, name) {
   before_txt <- qmd_txt[1:(start_terms_idx - 1)]
   new_txt <- qmd_txt[start_terms_idx:end_terms_idx] |> 
     str_replace_all(pattern = "\\*\\*(?=[a-zA-Z])", "\\[\\*\\*") |> 
-    str_replace_all(pattern = "\\*\\*(?= )", "\\*\\*\\]{style='color: #14adff'}")
+    str_replace_all(pattern = "\\*\\*(?= )", "\\*\\*\\]{style='color: #009499'}")
   after_txt <- qmd_txt[(end_terms_idx + 1):length(qmd_txt)]
   combined_txt <- c(before_txt, new_txt, after_txt)
   
@@ -50,7 +44,7 @@ replace_Terms_txt_with_html <- function(file, name) {
 # walk2(files, file_names, replace_Terms_txt_with_html, .progress = TRUE)
 
 
-replace_Terms_txt_with_html("qmd/causal-inference.qmd", "causal-inference")
+replace_Terms_txt_with_html("qmd/economics.qmd", "economics")
 
 fs::file_move("qmd2/causal-inference.qmd", "qmd/causal-inference.qmd")
 
@@ -79,7 +73,7 @@ replace_Terms_txt_with_html2 <- function(file, name) {
   before_txt <- qmd_txt[1:(start_terms_idx - 1)]
   new_txt <- qmd_txt[start_terms_idx:(h2_terms_idx - 1)] |> 
     str_replace_all(pattern = "\\*\\*(?=[a-zA-Z])", "\\[\\*\\*") |> 
-    str_replace_all(pattern = "\\*\\*(?= )", "\\*\\*\\]{style='color: #14adff'}")
+    str_replace_all(pattern = "\\*\\*(?= )", "\\*\\*\\]{style='color: #009499'}")
   after_txt <- qmd_txt[(h2_terms_idx):length(qmd_txt)]
   combined_txt <- c(before_txt, new_txt, after_txt)
   
@@ -87,7 +81,7 @@ replace_Terms_txt_with_html2 <- function(file, name) {
   
 }
 
-replace_Terms_txt_with_html2("qmd/causal-inference.qmd", "causal-inference")
+replace_Terms_txt_with_html2("qmd/healthcare.qmd", "healthcare")
 
-fs::file_move("qmd2/causal-inference.qmd", "qmd/causal-inference.qmd")
+fs::file_move("qmd2/healthcare.qmd", "qmd/healthcare.qmd")
 
