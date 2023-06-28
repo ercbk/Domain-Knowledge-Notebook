@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Domain Knowledge Notebook - Finance</title>
+<title>Domain Knowledge - Finance</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -92,7 +92,7 @@ ul.task-list li input[type="checkbox"] {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="../">Domain Knowledge Notebook</a> 
+      <a href="../">Domain Knowledge</a> 
         <div class="sidebar-tools-main tools-wide">
     <a href="https://ericbook.netlify.app/" rel="" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-house-fill"></i></a>
     <a href="https://github.com/ercbk/Domain-Knowledge-Notebook" rel="" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
@@ -246,7 +246,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../qmd/saas.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">SaaS</span></span></a>
+ <span class="menu-text">SaaS</span></a>
   </div>
 </li>
     </ul>
@@ -319,9 +319,9 @@ ul.task-list li input[type="checkbox"] {
 <section id="sec-finance-terms" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="sec-finance-terms">Terms</h2>
 <ul>
-<li><strong>Basis Point</strong> - 1/100th of a percentage point</li>
-<li><strong>Basis Risk</strong> - the risk that an asset and a hedge will not move in opposite directions as expected; “basis” refers to the discrepancy.</li>
-<li><strong>Capital expenditure (CapEx)</strong> - money that is spent to acquire, repair, update, or improve a fixed company asset, such as a building, business, or equipment. For assets to fall under the CapEx destination, the investments must have a useful life of one year or more. A CapEx is amortized, or its value is deducted a little each year based on the total cost and its expected useful life.
+<li><span style="color: #009499"><strong>Basis Point</strong></span> - 1/100th of a percentage point</li>
+<li><span style="color: #009499"><strong>Basis Risk</strong></span> - the risk that an asset and a hedge will not move in opposite directions as expected; “basis” refers to the discrepancy.</li>
+<li><span style="color: #009499"><strong>Capital expenditure (CapEx)</strong></span> - money that is spent to acquire, repair, update, or improve a fixed company asset, such as a building, business, or equipment. For assets to fall under the CapEx destination, the investments must have a useful life of one year or more. A CapEx is amortized, or its value is deducted a little each year based on the total cost and its expected useful life.
 <ul>
 <li>Useful life refers to the estimated and generally agreed upon shelf life of a specific business asset.
 <ul>
@@ -329,13 +329,13 @@ ul.task-list li input[type="checkbox"] {
 </ul></li>
 <li>Also see <a href="https://www.shopify.com/blog/what-is-capex#:~:text=A%20CapEx%20is%20amortized%2C%20or,a%20new%20building's%20is%2039.">What Is a Capital Expenditure (CapEx)? Definition and Guide</a> (example, calculations, relation to operating expenditure (OpEx)</li>
 </ul></li>
-<li><strong>Cost of Carry</strong> or <strong>Carrying Charge</strong> - the cost of holding a security or a physical commodity over a period of time. The carrying charge includes insurance, storage and interest on the invested funds as well as other incidental costs
+<li><span style="color: #009499"><strong>Cost of Carry</strong></span> or <span style="color: #009499"><strong>Carrying Charge</strong></span> - the cost of holding a security or a physical commodity over a period of time. The carrying charge includes insurance, storage and interest on the invested funds as well as other incidental costs
 <ul>
 <li>For a stock, it’s is the opportunity cost of the capital that goes into it plus the risk you take on for holding it (this is what the idea of risk neutral valuation is based on).</li>
 </ul></li>
-<li><strong>Derivatives</strong> are securities that move in correspondence to one or more underlying assets. They include options, swaps, futures and forward contracts. The underlying assets can be stocks, bonds, commodities, currencies, indices or interest rates. Derivatives can be effective hedges against their underlying assets, since the relationship between the two is more or less clearly defined (if they’re negatively correlated? Or maybe if the underlying asset goes down, there’s a lag between the asset going down and the derivative going down. Therefore, you can sell the derivative before it goes down. Thus, hedging your risk). Knowing the value of an underlying asset helps traders determine the appropriate action (buy, sell, or hold) with their derivative.</li>
-<li><strong>Exchange Traded Fund (ETF)</strong> - A mutual fund that may be traded daily like a stock or bond.</li>
-<li><strong>False Strategy Theorem</strong> - Gives the threshold for which a Sharpe Ratio would be significant.
+<li><span style="color: #009499"><strong>Derivatives</strong></span> are securities that move in correspondence to one or more underlying assets. They include options, swaps, futures and forward contracts. The underlying assets can be stocks, bonds, commodities, currencies, indices or interest rates. Derivatives can be effective hedges against their underlying assets, since the relationship between the two is more or less clearly defined (if they’re negatively correlated? Or maybe if the underlying asset goes down, there’s a lag between the asset going down and the derivative going down. Therefore, you can sell the derivative before it goes down. Thus, hedging your risk). Knowing the value of an underlying asset helps traders determine the appropriate action (buy, sell, or hold) with their derivative.</li>
+<li><span style="color: #009499"><strong>Exchange Traded Fund (ETF)</strong></span> - A mutual fund that may be traded daily like a stock or bond.</li>
+<li><span style="color: #009499"><strong>False Strategy Theorem</strong></span> - Gives the threshold for which a Sharpe Ratio would be significant.
 <ul>
 <li>Given a sample of estimated performance statistics (e.g.&nbsp;sharpe ratios), {Sk} for k = 1, …, K, where each S ∈ N(0, 1) <span class="math display">\[
         \mathbb{E}[\max_{k} {S_k}] \approx (1-\gamma) Z^{-1} [1-\frac{1}{K}] + \gamma Z^{-1} {1 - \frac{1}{Ke}}
@@ -347,25 +347,25 @@ ul.task-list li input[type="checkbox"] {
 </ul></li>
 <li>Useful for backtesting multiple strategies and deciding whether the strategy with the maximum sharpe ratio is significant (mitigates multiple testing bias)</li>
 </ul></li>
-<li><strong>Futures</strong> are an obligation to the buyer and a seller. The seller of the future agrees to provide the underlying asset at expiry, and the buyer of the contract agrees to buy the underlying at expiry. The price they receive and pay, respectively, is the price they entered the futures contract at. Most futures traders close out their positions prior to expiration since retail traders and hedge funds have little need to take physical possession of barrels of oil, for example. But, they can buy or sell the contract at one price, and if it moves favorably they can exit the trade and make a profit that way. Futures are a derivative because the price of an oil futures contract is based on the price movement of oil, for example.</li>
-<li><strong>Hedge</strong> - an investment that is made with the intention of reducing the risk of adverse price movements in an asset. Normally, a hedge consists of taking an offsetting or opposite position in a related security. An example could be investing in both cyclical and counter-cyclical stocks.</li>
-<li><strong>Hedge Ratio</strong> (<strong>delta</strong>) - The effectiveness of a derivative hedge, delta, is the amount the price of a derivative moves per $1&nbsp;movement in the price of the underlying asset.</li>
-<li><strong>Leg</strong> - one part or one side of a multistep trade. &nbsp;Legs should be exercised at the same time in order to avoid any risks associated with fluctuations in the price of the related security. So a purchase and sale should be made around the same time to avoid any price risk. Strategy often associated with derivatives trading.</li>
-<li><strong>Limited Liability Corporation (LLC)</strong> - A corporation is a business organization that issues stock to its shareholders. A limited liability company is a business organization composed of members with membership interests. a type of legal entity that can be used when forming a business that offers protection to the owner(s) from personal liability for debts and other obligations that a business might incur. In other words, the personal assets of the owner cannot be used for legal claims against the business.The differences don’t really matter much at the taxation or day-to-day corporate level except in scale: LLCs tend to be smaller than corporations (more or less; a lot of people form small business corporations for good reasons and ignorant ones). (See <a href="https://www.investopedia.com/articles/personal-finance/011216/s-corp-vs-llc-which-should-i-choose.asp">Differences between a LLC and S Corp</a>)</li>
-<li><strong>Market Capitalization</strong> - the total dollar market value of a company’s outstanding shares. Calculated by multiplying the total number of a company’s shares by the current market price of one share.</li>
-<li><strong>Market Momentum</strong> - measure of overall market sentiment that can support buying and selling with and against market trends. In general, Momentum = Today’s price - Price from X days ago. Positive: bullish, Negative: bearish. More sophisticated indicators can be calculated, see https://www.investopedia.com/terms/m/marketmomentum.asp#:~</li>
-<li><strong>Options</strong> - an option on&nbsp;stock XYZ gives the holder the right to buy or sell XYZ at the strike price up until expiration. The underlying asset for the&nbsp;option is the stock of XYZ. The&nbsp;writer must either buy&nbsp;or sell the underlying asset to the buyer on the specified date at the agreed-upon price. The buyer is not obligated to purchase the underlying asset, but they can exercise their right if they choose to do so. If the option is about to expire, and the underlying asset has not moved favorably enough to make exercising the option worthwhile, the buyer can let the expire and they will lose the amount they paid for the option.
+<li><span style="color: #009499"><strong>Futures</strong></span> are an obligation to the buyer and a seller. The seller of the future agrees to provide the underlying asset at expiry, and the buyer of the contract agrees to buy the underlying at expiry. The price they receive and pay, respectively, is the price they entered the futures contract at. Most futures traders close out their positions prior to expiration since retail traders and hedge funds have little need to take physical possession of barrels of oil, for example. But, they can buy or sell the contract at one price, and if it moves favorably they can exit the trade and make a profit that way. Futures are a derivative because the price of an oil futures contract is based on the price movement of oil, for example.</li>
+<li><span style="color: #009499"><strong>Hedge</strong></span> - an investment that is made with the intention of reducing the risk of adverse price movements in an asset. Normally, a hedge consists of taking an offsetting or opposite position in a related security. An example could be investing in both cyclical and counter-cyclical stocks.</li>
+<li><span style="color: #009499"><strong>Hedge Ratio</strong></span> (<span style="color: #009499"><strong>delta</strong></span>) - The effectiveness of a derivative hedge, delta, is the amount the price of a derivative moves per $1 movement in the price of the underlying asset.</li>
+<li><span style="color: #009499"><strong>Leg</strong></span> - one part or one side of a multistep trade. Legs should be exercised at the same time in order to avoid any risks associated with fluctuations in the price of the related security. So a purchase and sale should be made around the same time to avoid any price risk. Strategy often associated with derivatives trading.</li>
+<li><span style="color: #009499"><strong>Limited Liability Corporation (LLC)</strong></span> - A corporation is a business organization that issues stock to its shareholders. A limited liability company is a business organization composed of members with membership interests. a type of legal entity that can be used when forming a business that offers protection to the owner(s) from personal liability for debts and other obligations that a business might incur. In other words, the personal assets of the owner cannot be used for legal claims against the business.The differences don’t really matter much at the taxation or day-to-day corporate level except in scale: LLCs tend to be smaller than corporations (more or less; a lot of people form small business corporations for good reasons and ignorant ones). (See <a href="https://www.investopedia.com/articles/personal-finance/011216/s-corp-vs-llc-which-should-i-choose.asp">Differences between a LLC and S Corp</a>)</li>
+<li><span style="color: #009499"><strong>Market Capitalization</strong></span> - the total dollar market value of a company’s outstanding shares. Calculated by multiplying the total number of a company’s shares by the current market price of one share.</li>
+<li><span style="color: #009499"><strong>Market Momentum</strong></span> - measure of overall market sentiment that can support buying and selling with and against market trends. In general, Momentum = Today’s price - Price from X days ago. Positive: bullish, Negative: bearish. More sophisticated indicators can be calculated, see https://www.investopedia.com/terms/m/marketmomentum.asp#:~</li>
+<li><span style="color: #009499"><strong>Options</strong></span> - an option on&nbsp;stock XYZ gives the holder the right to buy or sell XYZ at the strike price up until expiration. The underlying asset for the&nbsp;option is the stock of XYZ. The&nbsp;writer must either buy&nbsp;or sell the underlying asset to the buyer on the specified date at the agreed-upon price. The buyer is not obligated to purchase the underlying asset, but they can exercise their right if they choose to do so. If the option is about to expire, and the underlying asset has not moved favorably enough to make exercising the option worthwhile, the buyer can let the expire and they will lose the amount they paid for the option.
 <ul>
-<li><strong>Put option</strong>- if Morty buys 100 shares of Stock plc (STOCK) at $10 per share, he might hedge his investment by buying an American put option with a strike price of $8 expiring in one year. This option gives Morty the right to sell 100 shares of STOCK for $8 any time in the next year. Let’s assume he pays $1 for the option, or $100 in premium. If one year later STOCK is trading at $12, Morty will not exercise the option and will be out $100. He’s unlikely to fret, though, since his unrealized gain is $100 ($100 including the price of the put). If STOCK is trading at $0, on the other hand, Morty will exercise the option and sell his shares for $8, for a loss of $300 ($300 including the price of the put). Without the option, he stood to lose his entire investment.</li>
-<li><strong>Call options</strong> - contract giving the owner the right, but not the obligation, to buy a specified amount of an underlying security at a specified price within a specified time. The specified price is known as the <strong>strike price</strong> and the specified time during which a sale is made is its expiration (expiry) or time to maturity. As the price of the stock goes up, the value of the call option contract goes up. The contract can be sold at any time or you can purchase the stock at the guaranteed price on the expiration date. The price of the call option is called the premium.
+<li><span style="color: #009499"><strong>Put option</strong></span> - if Morty buys 100 shares of Stock plc (STOCK) at $10 per share, he might hedge his investment by buying an American put option with a strike price of $8 expiring in one year. This option gives Morty the right to sell 100 shares of STOCK for $8 any time in the next year. Let’s assume he pays $1 for the option, or $100 in premium. If one year later STOCK is trading at $12, Morty will not exercise the option and will be out $100. He’s unlikely to fret, though, since his unrealized gain is $100 ($100 including the price of the put). If STOCK is trading at $0, on the other hand, Morty will exercise the option and sell his shares for $8, for a loss of $300 ($300 including the price of the put). Without the option, he stood to lose his entire investment.</li>
+<li><span style="color: #009499"><strong>Call options</strong></span> - contract giving the owner the right, but not the obligation, to buy a specified amount of an underlying security at a specified price within a specified time. The specified price is known as the <span style="color: #009499"><strong>strike price</strong></span> and the specified time during which a sale is made is its expiration (expiry) or time to maturity. As the price of the stock goes up, the value of the call option contract goes up. The contract can be sold at any time or you can purchase the stock at the guaranteed price on the expiration date. The price of the call option is called the premium.
 <ul>
 <li>If Apple is trading at $110 at expiry (aka expiration date), the strike price is $100, and the options cost the buyer $2, the profit is $110 - ($100 +$2) = $8. If the buyer bought one contract that equates to $800 ($8 x 100 shares), or $1,600 if they bought two contracts ($8 x 200). If at expiry Apple is below $100, then the option buyer loses $200 ($2 x 100 shares) for each contract they bought.</li>
 <li>Suppose that Microsoft shares are trading at $108 per share. You own 100 shares of the stock and want to generate an income above and beyond the stock’s dividend. You also believe that shares are unlikely to rise above $115.00 per share over the next month. You take a look at the call options for the following month and see that there’s a 115.00 call trading at $0.37 per contract. So, you sell one call option and collect the $37 premium ($0.37 x 100 shares), representing a roughly four percent annualized income. If the stock rises above $115.00, the option buyer will exercise the option and you will have to deliver the 100 shares of stock at $115.00 per share. You still generated a profit of $7.00 per share, but you will have missed out on any upside above $115.00. If the stock doesn’t rise above $115.00, you keep the shares and the $37 in premium income.</li>
 </ul></li>
 </ul></li>
-<li><strong>Outstanding Shares</strong> - the number of stocks that a company has issued. This number represents all the shares that can be bought and sold by the public, as well as all the restricted shares that require special permission before being transacted.</li>
-<li><strong>Relative Performance</strong> - the price ratio of two stocks</li>
-<li><strong>Sharpe Ratio</strong> <strong>(annualized)</strong> - measures the performance of an asset relative to violitility (i.e.&nbsp;riskiness)
+<li><span style="color: #009499"><strong>Outstanding Shares</strong></span> - the number of stocks that a company has issued. This number represents all the shares that can be bought and sold by the public, as well as all the restricted shares that require special permission before being transacted.</li>
+<li><span style="color: #009499"><strong>Relative Performance</strong></span> - the price ratio of two stocks</li>
+<li><span style="color: #009499"><strong>Sharpe Ratio</strong></span> <span style="color: #009499"><strong>(annualized)</strong></span> - measures the performance of an asset relative to violitility (i.e.&nbsp;riskiness)
 <ul>
 <li>(expected excess returns relative to a risk free asset (e.g.&nbsp;treasury bond) / sd of those expected excess returns) * √number_of_observations_in_a_year</li>
 <li>Sharpe ratios above 1.0 are generally considered “good,” as this would suggest that the portfolio is offering excess returns relative to its volatility
@@ -375,12 +375,12 @@ ul.task-list li input[type="checkbox"] {
 <li>Multiplying by √number_of_observations_in_a_year makes “annualizes” the sharpe ratio and makes sharpe ratios comparable</li>
 <li><u>Should NOT be thought of as t-stats for testing significance of the sample mean (i.e.&nbsp;p-values for estimates) since it doesn’t account for the number of observations</u>
 <ul>
-<li>See <strong>Sharpe Ratio (deflated)</strong></li>
+<li>See <span style="color: #009499"><strong>Sharpe Ratio (deflated)</strong></span></li>
 <li>Investment professionals often use a rule of thumb of dividing the sharpe ratio by 2 when backtesting to avoid overfitting, there is no statistical basis for this.</li>
 </ul></li>
 </ul></li>
-<li><strong>Sharpe Ratio (probabilistic)</strong> - allows you test the significance of the Sharpe Ratio under assumptions of ergodicity and stationarity (<a href="https://www.davidhbailey.com/dhbpapers/sharpe-frontier.pdf">Paper</a>)</li>
-<li><strong>Sharpe Ratio (deflated)</strong> - the probability that an observed Sharpe Ratio was drawn from a distribution with positive mean after controlling for sample size (aka backtest length), skewness, kurtosis, and number of strategy variations explored.
+<li><span style="color: #009499"><strong>Sharpe Ratio (probabilistic)</strong></span> - allows you test the significance of the Sharpe Ratio under assumptions of ergodicity and stationarity (<a href="https://www.davidhbailey.com/dhbpapers/sharpe-frontier.pdf">Paper</a>)</li>
+<li><span style="color: #009499"><strong>Sharpe Ratio (deflated)</strong></span> - the probability that an observed Sharpe Ratio was drawn from a distribution with positive mean after controlling for sample size (aka backtest length), skewness, kurtosis, and number of strategy variations explored.
 <ul>
 <li><p>Combines probabilistic sharpe ratio and false strategy theorem</p></li>
 <li><p>Paper: <a href="https://www.davidhbailey.com/dhbpapers/deflated-sharpe.pdf">The Deflated Sharpe Ratio: Correcting for selection bias, backtest overfitting and non-normality</a></p>
@@ -390,12 +390,12 @@ ul.task-list li input[type="checkbox"] {
 </ul></li>
 <li><p>Returns from investment strategies often exhibit autocorrelation, fat tails, and negative skewness which further “deflates” the deflated sharpe ratio</p></li>
 </ul></li>
-<li><strong>Spread</strong> (<strong>Bid-Ask</strong>): the difference between two prices, rates or yields. - the gap between the bid and the ask prices of a security or asset, like a stock, bond or commodity. - the gap between a short position (that is, selling) in one futures contract or currency and a long position (that is, buying) in another. This is officially known as a spread trade</li>
-<li><strong>Volatility</strong>:
+<li><span style="color: #009499"><strong>Spread</strong></span> (<span style="color: #009499"><strong>Bid-Ask</strong>)</span>: the difference between two prices, rates or yields. - the gap between the bid and the ask prices of a security or asset, like a stock, bond or commodity. - the gap between a short position (that is, selling) in one futures contract or currency and a long position (that is, buying) in another. This is officially known as a spread trade</li>
+<li><span style="color: #009499"><strong>Volatility</strong></span>:
 <ul>
 <li>Parkinson Range (PR) = ln(closing_price) - ln(opening_price)</li>
 </ul></li>
-<li><strong>Yield</strong> a return measure for an investment over a set period of time, expressed as a percentage.
+<li><span style="color: #009499"><strong>Yield</strong></span> a return measure for an investment over a set period of time, expressed as a percentage.
 <ul>
 <li>Includes price increases as well as any dividends paid, calculated as the net realized return divided by the principal amount (i.e.&nbsp;amount invested).</li>
 <li>Higher yields are perceived to be an indicator of lower risk and higher income, but a high yield may not always be a positive, such as the case of a rising dividend yield due to a falling stock price.</li>
@@ -464,7 +464,7 @@ ul.task-list li input[type="checkbox"] {
 </ul></li>
 <li>Copulas
 <ul>
-<li>See <a href="https://ercbk.github.io/Data-Science-Notebook/qmd/correlation-association-and-distance.html#sec-corrassdist-cop" style="color: green">Data Science Notebook, Correlation, Association, and Distance &gt;&gt; Copulas</a></li>
+<li>See <a href="https://ercbk.github.io/Data-Science-Notebook/qmd/correlation-association-and-distance.html#sec-corrassdist-cop" style="color: green">Correlation, Association, and Distance &gt;&gt; Copulas</a></li>
 <li>Measures non-linear association</li>
 <li>For Value-at-Risk (VAR) calculations, Gaussian copula is overly optimistic and Gumbel is too pessimistic</li>
 <li>Copulas with upper tail dependence: Gumbel, Joe, N13, N14, Student-t.</li>
@@ -473,7 +473,7 @@ ul.task-list li input[type="checkbox"] {
 </ul></li>
 <li>Cointegration allows us to construct a stationary time series from two asset price series, if only we can find the magic weight, or more formally, the cointegration coefficient β. Then we can apply a mean-reversion strategy to trade both assets at the same time weighted by β. There is no guarantee that such β always exists, and you should look for other asset pairs if no such β can be found.
 <ul>
-<li>See <a href="https://ercbk.github.io/Data-Science-Notebook/qmd/forecasting-statistical.html#sec-fcast-stat-terms" style="color: green">Data Science Notebook, Forecasting, Statistical &gt;&gt; Terms</a></li>
+<li>See <a href="https://ercbk.github.io/Data-Science-Notebook/qmd/forecasting-statistical.html#sec-fcast-stat-terms" style="color: green">Forecasting, Statistical &gt;&gt; Terms</a></li>
 <li>Cointegrated assets share common nonstationary components, which may include trend, seasonal, and stochastic parts</li>
 <li>Might have low correlation, and highly correlated series might not be cointegrated at all.</li>
 <li>Describes a long-term relationship between the prices (correlation describes a short-term relationship between the returns). The resulting stationary series is the spread between the prices of both assets</li>
