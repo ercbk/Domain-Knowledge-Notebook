@@ -4,7 +4,10 @@
 
 -   [Example]{.ribbon-highlight}: Extreme hot weather events in Western Europe-Atlantic region
     -   Notes from [video](https://www.youtube.com/watch?v=Mpzqz4y1oYY), around \~1:07:03
-    -   Jonathan Koh: pre-print available in June or July 2023
+    -   Papers
+        -   [Gradient boosting with extreme-value theory for wildfire prediction](https://arxiv.org/pdf/2110.09497.pdf)
+        -   [Spatiotemporal wildfire modeling through point processes with moderate and extreme marks](https://projecteuclid.org/journals/annals-of-applied-statistics/volume-17/issue-1/Spatiotemporal-wildfire-modeling-through-point-processes-with-moderate-and-extreme/10.1214/22-AOAS1642.full?tab=ArticleLinkSupplemental)
+            -   See "Supplemental Content" tab for link to zip file with code --- uses [{INLA}]{style="color: #990000"} for modeling.
     -   Data: "ERA5 reanalysis data"
         -   Monthly
         -   Training: 1979 - 2020

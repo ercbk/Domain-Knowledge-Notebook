@@ -52,7 +52,7 @@
         -   Suppose that Microsoft shares are trading at \$108 per share. You own 100 shares of the stock and want to generate an income above and beyond the stock's dividend. You also believe that shares are unlikely to rise above \$115.00 per share over the next month. You take a look at the call options for the following month and see that there's a 115.00 call trading at \$0.37 per contract. So, you sell one call option and collect the \$37 premium (\$0.37 x 100 shares), representing a roughly four percent annualized income. If the stock rises above \$115.00, the option buyer will exercise the option and you will have to deliver the 100 shares of stock at \$115.00 per share. You still generated a profit of \$7.00 per share, but you will have missed out on any upside above \$115.00. If the stock doesn't rise above \$115.00, you keep the shares and the \$37 in premium income.
 -   [**Outstanding Shares**]{style="color: #009499"} - the number of stocks that a company has issued. This number represents all the shares that can be bought and sold by the public, as well as all the restricted shares that require special permission before being transacted.
 -   [**Relative Performance**]{style="color: #009499"} - the price ratio of two stocks
--   [**Sharpe Ratio**]{style="color: #009499"} [**(annualized)**]{style='color: #009499'} - measures the performance of an asset relative to violitility (i.e. riskiness)
+-   [**Sharpe Ratio**]{style="color: #009499"} [**(annualized)**]{style="color: #009499"} - measures the performance of an asset relative to violitility (i.e. riskiness)
     -   (expected excess returns relative to a risk free asset (e.g. treasury bond) / sd of those expected excess returns) \* √number_of_observations_in_a_year
     -   Sharpe ratios above 1.0 are generally considered "good," as this would suggest that the portfolio is offering excess returns relative to its volatility
         -   Even if your sharpe ratio is above 1 it may not be good if it is below the average sharpe ratio of peer group portfolios.
@@ -81,7 +81,7 @@
 ## 60/40 Portfolio Strategy {#sec-finance-6040 .unnumbered}
 
 -   Misc
-    -   {{[QSTrader](https://www.quantstart.com/qstrader/tutorial-60-40-portfolio/)}}
+    -   [{{]{style="color: goldenrod"}[QSTrader](https://www.quantstart.com/qstrader/tutorial-60-40-portfolio/){style="color: goldenrod"}[}}]{style="color: goldenrod"}
     -   Notes from - [The 60/40 Benchmark Portfolio](https://www.quantstart.com/articles/the-6040-benchmark-portfolio/)
 -   Description
 -   60/40 US Equities/Bonds strategy is a simple long-term investment approach that is widely utilised in the investment industry. It seeks to ensure that at any point during the lifetime of the investment that 60% of account equity is invested in one or more assets representing a broad selection of US equities (such as an S&P500 ETF), while 40% of account equity is invested in one or more assets representing a broad selection of US treasury bonds (such as a treasury bond ETF).
@@ -90,7 +90,7 @@
 ## Momentum Tactical Asset Allocation Strategy {#sec-finance--momassallo .unnumbered}
 
 -   Misc
-    -   {{[QSTrader](https://www.quantstart.com/qstrader/tutorial-60-40-portfolio/)}}
+    -   [{{]{style="color: goldenrod"}[QSTrader](https://www.quantstart.com/qstrader/tutorial-60-40-portfolio/){style="color: goldenrod"}[}}]{style="color: goldenrod"}
     -   Notes from
         -   [Systematic Tactical Asset Allocation: An Introduction](https://www.quantstart.com/articles/systematic-tactical-asset-allocation-an-introduction/) - [Tutorial](https://www.quantstart.com/qstrader/tutorial-momentum-tactical-asset-allocation-strategy/)
 -   Description
@@ -118,7 +118,7 @@
     -   Figure out the optimal time interval to retrain model due to data drift
     -   Rolling 20-day correlation is a common way to monitor stock correlation
 -   Copulas
-    -   See [Correlation, Association, and Distance \>\> Copulas](https://ercbk.github.io/Data-Science-Notebook/qmd/correlation-association-and-distance.html#sec-corrassdist-cop){style="color: green"}
+    -   See [Association, Copulas](https://ercbk.github.io/Data-Science-Notebook/qmd/association-copulas.html#sec-assoc-cop){style="color: green"}
     -   Measures non-linear association
     -   For Value-at-Risk (VAR) calculations, Gaussian copula is overly optimistic and Gumbel is too pessimistic
     -   Copulas with upper tail dependence: Gumbel, Joe, N13, N14, Student-t.
