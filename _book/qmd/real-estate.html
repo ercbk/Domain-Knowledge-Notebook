@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -32,6 +66,7 @@ ul.task-list li input[type="checkbox"] {
 <meta name="quarto:offset" content="../">
 <link href="../qmd/retail.html" rel="next">
 <link href="../qmd/product-development.html" rel="prev">
+<link href="../images/dk-favicon-32.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -252,14 +287,35 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#sec-rlest-misc" id="toc-sec-rlest-misc" class="nav-link active" data-scroll-target="#sec-rlest-misc"><span class="header-section-number">5.1</span> Misc</a></li>
+  <li><a href="#sec-rlest-terms" id="toc-sec-rlest-terms" class="nav-link" data-scroll-target="#sec-rlest-terms"><span class="header-section-number">5.2</span> Terms</a></li>
+  <li><a href="#sec-rlest-bizq" id="toc-sec-rlest-bizq" class="nav-link" data-scroll-target="#sec-rlest-bizq"><span class="header-section-number">5.3</span> Business Questions</a></li>
+  <li><a href="#sec-rlest-usecases" id="toc-sec-rlest-usecases" class="nav-link" data-scroll-target="#sec-rlest-usecases"><span class="header-section-number">5.4</span> Use Cases</a></li>
+  <li><a href="#sec-rlest-apprais" id="toc-sec-rlest-apprais" class="nav-link" data-scroll-target="#sec-rlest-apprais"><span class="header-section-number">5.5</span> Appraisal Methods (Price Estimation)</a>
+  <ul>
+  <li><a href="#sec-rlest-apprais-trad" id="toc-sec-rlest-apprais-trad" class="nav-link" data-scroll-target="#sec-rlest-apprais-trad"><span class="header-section-number">5.5.1</span> Traditional</a></li>
+  <li><a href="#sec-rlest-apprais-ml" id="toc-sec-rlest-apprais-ml" class="nav-link" data-scroll-target="#sec-rlest-apprais-ml"><span class="header-section-number">5.5.2</span> ML Approaches</a>
+  <ul class="collapse">
+  <li><a href="#sec-rlest-apprais-ml-misc" id="toc-sec-rlest-apprais-ml-misc" class="nav-link" data-scroll-target="#sec-rlest-apprais-ml-misc"><span class="header-section-number">5.5.2.1</span> Misc</a></li>
+  <li><a href="#sec-rlest-apprais-ml-feats" id="toc-sec-rlest-apprais-ml-feats" class="nav-link" data-scroll-target="#sec-rlest-apprais-ml-feats"><span class="header-section-number">5.5.2.2</span> Features</a></li>
+  <li><a href="#sec-rlest-apprais-ml-hedpric" id="toc-sec-rlest-apprais-ml-hedpric" class="nav-link" data-scroll-target="#sec-rlest-apprais-ml-hedpric"><span class="header-section-number">5.5.2.3</span> Hedonic Pricing Method</a></li>
+  <li><a href="#sec-rlest-apprais-ml-cmaprc" id="toc-sec-rlest-apprais-ml-cmaprc" class="nav-link" data-scroll-target="#sec-rlest-apprais-ml-cmaprc"><span class="header-section-number">5.5.2.4</span> CMA with Comp Price Adjustments</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#sec-rlest-feats" id="toc-sec-rlest-feats" class="nav-link" data-scroll-target="#sec-rlest-feats"><span class="header-section-number">5.6</span> Features</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Real Estate</span></h1>
+<h1 class="title"><span id="sec-rlest" class="quarto-section-identifier"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Real Estate</span></span></h1>
 </div>
 
 
@@ -274,15 +330,8 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>TOC</p>
-<ul>
-<li>Misc</li>
-<li>Business Questions</li>
-<li>Use Cases</li>
-<li>Appraisal Methods</li>
-<li>Features</li>
-</ul>
-<p>Misc</p>
+<section id="sec-rlest-misc" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="sec-rlest-misc"><span class="header-section-number">5.1</span> Misc</h2>
 <ul>
 <li>Listing Price
 <ul>
@@ -295,7 +344,9 @@ ul.task-list li input[type="checkbox"] {
 <li><span class="ribbon-highlight">Example</span>: Median house price in middle class suburbia in a very affordable region is $323,000. To maintain an price/income ratio of 3, that requires a household income of $107,000. In 2019, regional median HH income was $62,502. ~30% of HH make over $100K.</li>
 </ul></li>
 </ul>
-<p>Terms</p>
+</section>
+<section id="sec-rlest-terms" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="sec-rlest-terms"><span class="header-section-number">5.2</span> Terms</h2>
 <ul>
 <li><span style="color: #009499"><strong>Price Anchoring</strong></span> - a pricing strategy that plays on buyers’ inherent tendency to rely heavily on a piece of initial information to guide subsequent decisions. In the context of pricing, many businesses will set a visible initial price for a product but make a point of showing that it’s now being sold at a discount.</li>
 <li><span style="color: #009499"><strong>Price Index</strong></span> - a normalized average (typically a weighted average) of price relatives for a given class of goods or services in a given region, during a given interval of time
@@ -306,7 +357,9 @@ ul.task-list li input[type="checkbox"] {
 <li>If a price index rises 10%, it means the average level of prices has risen 10%</li>
 </ul></li>
 </ul>
-<p>Business Questions</p>
+</section>
+<section id="sec-rlest-bizq" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="sec-rlest-bizq"><span class="header-section-number">5.3</span> Business Questions</h2>
 <ul>
 <li>Agent
 <ul>
@@ -321,7 +374,9 @@ ul.task-list li input[type="checkbox"] {
 <li>appropriate mortgage</li>
 </ul></li>
 </ul>
-<p>Use Cases</p>
+</section>
+<section id="sec-rlest-usecases" class="level2" data-number="5.4">
+<h2 data-number="5.4" class="anchored" data-anchor-id="sec-rlest-usecases"><span class="header-section-number">5.4</span> Use Cases</h2>
 <ul>
 <li>Using computer vision and NLP to enhance searches
 <ul>
@@ -346,9 +401,11 @@ ul.task-list li input[type="checkbox"] {
 <li>A classic, yet constantly evolving, machine learning task is to set the price of a house based on MLS and alternative data (e.g.&nbsp;satellite imagery). The big iBuyers are all betting heavily on this since it’s key to their business model. An example of the level of detail obtainable is that of how Opendoor analyzed the impact of busy roads in their property valuation model.</li>
 </ul></li>
 </ul>
-<p>Appraisal Methods (Price Estimation)</p>
-<ul>
-<li>Traditional
+</section>
+<section id="sec-rlest-apprais" class="level2" data-number="5.5">
+<h2 data-number="5.5" class="anchored" data-anchor-id="sec-rlest-apprais"><span class="header-section-number">5.5</span> Appraisal Methods (Price Estimation)</h2>
+<section id="sec-rlest-apprais-trad" class="level3" data-number="5.5.1">
+<h3 data-number="5.5.1" class="anchored" data-anchor-id="sec-rlest-apprais-trad"><span class="header-section-number">5.5.1</span> Traditional</h3>
 <ul>
 <li>Comparative Market Analysis (CMA)
 <ul>
@@ -367,14 +424,18 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li>analysis is restricted to just comparing price changes on properties sold more than once</li>
 </ul></li>
-</ul></li>
-<li>ML Approaches
-<ul>
-<li><p>Misc</p>
+</ul>
+</section>
+<section id="sec-rlest-apprais-ml" class="level3" data-number="5.5.2">
+<h3 data-number="5.5.2" class="anchored" data-anchor-id="sec-rlest-apprais-ml"><span class="header-section-number">5.5.2</span> ML Approaches</h3>
+<section id="sec-rlest-apprais-ml-misc" class="level4" data-number="5.5.2.1">
+<h4 data-number="5.5.2.1" class="anchored" data-anchor-id="sec-rlest-apprais-ml-misc"><span class="header-section-number">5.5.2.1</span> Misc</h4>
 <ul>
 <li>Automated Valuation Models (also known as AVMs) were found to have an absolute error below 4% for homes and below 6% for commercial properties, which is much less than the error rates of traditional appraisals.</li>
-</ul></li>
-<li><p>Features</p>
+</ul>
+</section>
+<section id="sec-rlest-apprais-ml-feats" class="level4" data-number="5.5.2.2">
+<h4 data-number="5.5.2.2" class="anchored" data-anchor-id="sec-rlest-apprais-ml-feats"><span class="header-section-number">5.5.2.2</span> Features</h4>
 <ul>
 <li>Different predictors may be more valuable for each of the price models.
 <ul>
@@ -382,165 +443,207 @@ ul.task-list li input[type="checkbox"] {
 <li>Rental price: HomeUnion developed a tool called RENTestimate for this.</li>
 <li>Temporary rental price: Airbnb’s pricing tips use a mathematical model that learns how likely a guest is to book a specific listing, on specific dates, at a range of different prices.</li>
 </ul></li>
-<li>Adding nontraditional data sources can improve estimates<img src="./_resources/Real_Estate.resources/nontraditional-data.png" class="img-fluid"></li>
-</ul></li>
-<li><p>Hedonic Pricing Method: a typical regression that accounts for property features such as size, number of rooms, property age, home quality characteristics (granite countertops, air conditioning, pool, etc.), and location. {hpiR} (<a href="https://cran.r-project.org/web/packages/hpiR/vignettes/introduction.html">vignette</a>)</p>
-<pre><code>  It's just multivariable regression where log sale price (or ppsf, etc.) is the outcome and includes house characteristics and has dummy variables for the years (or days, weeks, etc.) when the house was sold
-
-  The exponential of the coefficients of the year dummy variables are the index and they represent the average change in the outcome variable from the reference year to the year represented by the dummy variable
-      1 is the index of the reference year</code></pre></li>
-<li><p>CMA with Comp Price Adjustments Process Data Scientist role Suggests good comparable properties for a CMA</p>
-<pre><code>      * Highlights the important differences between the comparable and the subject property (the fewer, the better)
-      * Suggests pricing adjustments for the differences
-      Real Estate Agent
-          Selects which properties to use as comps
-
-          Selects which adjustments are relevant and appropriate for their CMA report
-
-  Misc
-      Notes from
-      * [Pricing Homes like Agents Do: AI for Real Estate CMA Adjustments](https://medium.com/compass-true-north/pricing-homes-like-agents-do-ai-for-real-estate-cma-adjustments-c3de27a7ef)
-  * All models of adjustments seem to use Price per Square Foot (PPSF) for a local area as the outcome variable
-      * Probably want to go as small an area as you can depending on the amount of training data at that resolution
-  Market Price
-      Using the repeat sales model, we estimate how the price-per-square-foot evolved for each locality. Then we can use the model to estimate the difference in average price per square foot (PPSF) in the locality across any two-time points.
-
-  * If a price index rises 10%, it means the average level of prices has risen 10%
-          [Example]{.ribbon-highlight}:
-              CMA model produces a comp that sold for $1,100,000 almost a year ago in April 2019
-
-              Repeated Sales model's indexes say that property prices have decreased by 4.6% in area since the sale of this comp.
-
-              Thus, to make this comp comparable now, we would need to subtract $51K (1,100,000 \* 0.046 = 50,600) from the price it sold for back in April 2019.
-
-      In this description and the examples, I'm using sale price, but the same methods can be applied to PPSF.
-
-      The data is house id, year sold, sale price
-          There will be repeated measures because each house will need to have been sold multiple times.
-              Maybe can this be fudged a bit by using really good comps for the repeated measures
-
-          Only the data from the 1st and last sales are used
-
-          The first year in the sample data is NOT included as a variable in the regression
-              This is the reference or base year. This year automatically gets an index of 1.
-
-      Assumes homeoskedacity
-
-      Specification
-          log(last\_sale\_price / first\_sale\_price) = β1 \* I(year\_1) + β2 \* I(year\_2)&nbsp; + ...
-              where I(year\_\*) is an indicator variable with values of
-                  1 for year of last sale
-
-                  \-1 for year of first sale
-
-                  0 for years where the house wasn't sold
-
-                  "\*" is the year of the sale of the house.
-
-              Note that there is no intercept so will need `0 +` in the formula
-
-          exp(β\*) gives the index for that year
-              Index for the first year of the sample data is automatically set to 1.
-
-      [Example]{.ribbon-highlight}</code></pre></li>
+<li>Adding nontraditional data sources can improve estimates<br>
+<img src="./_resources/Real_Estate.resources/nontraditional-data.png" class="img-fluid"></li>
+</ul>
+</section>
+<section id="sec-rlest-apprais-ml-hedpric" class="level4" data-number="5.5.2.3">
+<h4 data-number="5.5.2.3" class="anchored" data-anchor-id="sec-rlest-apprais-ml-hedpric"><span class="header-section-number">5.5.2.3</span> Hedonic Pricing Method</h4>
+<ul>
+<li>A typical regression that accounts for property features such as size, number of rooms, property age, home quality characteristics (granite countertops, air conditioning, pool, etc.), and location</li>
+<li>{hpiR} (<a href="https://cran.r-project.org/web/packages/hpiR/vignettes/introduction.html">vignette</a>)</li>
+<li>It’s just multivariable regression where log sale price (or ppsf, etc.) is the outcome and includes house characteristics and has dummy variables for the years (or days, weeks, etc.) when the house was sold</li>
+<li>The exponential of the coefficients of the year dummy variables are the index and they represent the average change in the outcome variable from the reference year to the year represented by the dummy variable
+<ul>
+<li>1 is the index of the reference year</li>
 </ul></li>
 </ul>
-<pre><code>dat &lt;- tibble(
-&nbsp; y = rep(c(0.182, 0.041, 0.039), 3),
-&nbsp; year = rep(c("2013", "2014", "2015"), each = 3),
-&nbsp; value = c(-1, -1, 0, 0, 1, -1, 1, 0, 1)
-) %&gt;%&nbsp;
-&nbsp; tidyr::pivot_wider(names_from = year, values_from = value, names_prefix = "Y")
-&nbsp; &nbsp; &nbsp; y Y2013 Y2014 Y2015
-&nbsp; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
-1 0.182&nbsp; &nbsp; -1&nbsp; &nbsp; 0&nbsp; &nbsp; 1
-2 0.041&nbsp; &nbsp; -1&nbsp; &nbsp; 1&nbsp; &nbsp; 0
-3 0.039&nbsp; &nbsp; 0&nbsp; &nbsp; -1&nbsp; &nbsp; 1
-
-mod &lt;- lm(y ~ 0 + Y2014 + Y2015, data = dat)
-Coefficients:
-&nbsp; &nbsp; &nbsp; Estimate Std. Error t value Pr(&gt;|t|)
-Y2014&nbsp; 0.07500&nbsp; &nbsp; 0.04808&nbsp; 1.560&nbsp; &nbsp; 0.363
-Y2015&nbsp; 0.14800&nbsp; &nbsp; 0.04808&nbsp; 3.078&nbsp; &nbsp; 0.200
-
-exp(coef(mod))
-&nbsp; Y2014&nbsp; &nbsp; Y2015&nbsp;
-1.077884 1.159513</code></pre>
+</section>
+<section id="sec-rlest-apprais-ml-cmaprc" class="level4" data-number="5.5.2.4">
+<h4 data-number="5.5.2.4" class="anchored" data-anchor-id="sec-rlest-apprais-ml-cmaprc"><span class="header-section-number">5.5.2.4</span> CMA with Comp Price Adjustments</h4>
+<section id="sec-rlest-apprais-ml-cmaprc-proc" class="level5" data-number="5.5.2.4.1">
+<h5 data-number="5.5.2.4.1" class="anchored" data-anchor-id="sec-rlest-apprais-ml-cmaprc-proc"><span class="header-section-number">5.5.2.4.1</span> Process</h5>
 <ul>
-<li><p>“y” is the log of the sales price ratio</p></li>
-<li><p>Indexes:</p>
+<li>Data Scientist role
+<ul>
+<li>Suggests good comparable properties for a CMA</li>
+<li>Highlights the important differences between the comparable and the subject property (the fewer, the better)</li>
+<li>Suggests pricing adjustments for the differences</li>
+</ul></li>
+<li>Real Estate Agent
+<ul>
+<li>Selects which properties to use as comps</li>
+<li>Selects which adjustments are relevant and appropriate for their CMA report</li>
+</ul></li>
+</ul>
+</section>
+<section id="sec-rlest-apprais-ml-cmaprc-misc" class="level5" data-number="5.5.2.4.2">
+<h5 data-number="5.5.2.4.2" class="anchored" data-anchor-id="sec-rlest-apprais-ml-cmaprc-misc"><span class="header-section-number">5.5.2.4.2</span> Misc</h5>
+<ul>
+<li>Notes from
+<ul>
+<li><a href="https://medium.com/compass-true-north/pricing-homes-like-agents-do-ai-for-real-estate-cma-adjustments-c3de27a7ef">Pricing Homes like Agents Do: AI for Real Estate CMA Adjustments</a></li>
+</ul></li>
+<li>All models of adjustments seem to use Price per Square Foot (PPSF) for a local area as the outcome variable</li>
+<li>Probably want to go as small an area as you can depending on the amount of training data at that resolution</li>
+</ul>
+</section>
+<section id="sec-rlest-apprais-ml-cmaprc-marprc" class="level5" data-number="5.5.2.4.3">
+<h5 data-number="5.5.2.4.3" class="anchored" data-anchor-id="sec-rlest-apprais-ml-cmaprc-marprc"><span class="header-section-number">5.5.2.4.3</span> Market Price</h5>
+<ul>
+<li><p>Using the repeat sales model, we estimate how the price-per-square-foot evolved for each locality. Then we can use the model to estimate the difference in average price per square foot (PPSF) in the locality across any two-time points.</p></li>
+<li><p>If a price index rises 10%, it means the average level of prices has risen 10%</p>
+<ul>
+<li><span class="ribbon-highlight">Example</span>:
+<ul>
+<li>CMA model produces a comp that sold for $1,100,000 almost a year ago in April 2019</li>
+<li>Repeated Sales model’s indexes say that property prices have decreased by 4.6% in area since the sale of this comp.</li>
+<li>Thus, to make this comp comparable now, we would need to subtract $51K (1,100,000 * 0.046 = 50,600) from the price it sold for back in April 2019.</li>
+</ul></li>
+</ul></li>
+<li><p>In this description and the examples, I’m using sale price, but the same methods can be applied to PPSF.</p></li>
+<li><p>The data is house id, year sold, sale price</p>
+<ul>
+<li>There will be repeated measures because each house will need to have been sold multiple times.
+<ul>
+<li>Maybe can this be fudged a bit by using really good comps for the repeated measures</li>
+</ul></li>
+<li>Only the data from the 1st and last sales are used</li>
+<li>The first year in the sample data is NOT included as a variable in the regression
+<ul>
+<li>This is the reference or base year. This year automatically gets an index of 1.</li>
+</ul></li>
+</ul></li>
+<li><p>Assumes homeoskedacity</p></li>
+<li><p>Specification</p>
+<ul>
+<li>log(last_sale_price / first_sale_price) = β1 * I(year_1) + β2 * I(year_2)&nbsp; + …</li>
+<li>where I(year_*) is an indicator variable with values of
+<ul>
+<li>1 for year of last sale</li>
+<li>-1 for year of first sale</li>
+<li>0 for years where the house wasn’t sold</li>
+<li>“*” is the year of the sale of the house.</li>
+</ul></li>
+<li>Note that there is no intercept so will need <code>0 +</code> in the formula</li>
+<li>exp(β*) gives the index for that year Index for the first year of the sample data is automatically set to 1.</li>
+</ul></li>
+<li><p><span class="ribbon-highlight">Example</span></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>&nbsp; <span class="at">y =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="fl">0.182</span>, <span class="fl">0.041</span>, <span class="fl">0.039</span>), <span class="dv">3</span>),</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>&nbsp; <span class="at">year =</span> <span class="fu">rep</span>(<span class="fu">c</span>(<span class="st">"2013"</span>, <span class="st">"2014"</span>, <span class="st">"2015"</span>), <span class="at">each =</span> <span class="dv">3</span>),</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>&nbsp; <span class="at">value =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>, <span class="sc">-</span><span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="sc">-</span><span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>) <span class="sc">%&gt;%</span>&nbsp;</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>&nbsp; tidyr<span class="sc">::</span><span class="fu">pivot_wider</span>(<span class="at">names_from =</span> year, <span class="at">values_from =</span> value, <span class="at">names_prefix =</span> <span class="st">"Y"</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>&nbsp; &nbsp; &nbsp; y Y2013 Y2014 Y2015</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>&nbsp; <span class="sc">&lt;</span>dbl<span class="sc">&gt;</span> <span class="er">&lt;</span>dbl<span class="sc">&gt;</span> <span class="er">&lt;</span>dbl<span class="sc">&gt;</span> <span class="er">&lt;</span>dbl<span class="sc">&gt;</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="fl">0.182</span>&nbsp; &nbsp; <span class="sc">-</span>1&nbsp; &nbsp; 0&nbsp; &nbsp; <span class="dv">1</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="fl">0.041</span>&nbsp; &nbsp; <span class="sc">-</span>1&nbsp; &nbsp; 1&nbsp; &nbsp; <span class="dv">0</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="dv">3</span> <span class="fl">0.039</span>&nbsp; &nbsp; 0&nbsp; &nbsp; <span class="sc">-</span>1&nbsp; &nbsp; <span class="dv">1</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>mod <span class="ot">&lt;-</span> <span class="fu">lm</span>(y <span class="sc">~</span> <span class="dv">0</span> <span class="sc">+</span> Y2014 <span class="sc">+</span> Y2015, <span class="at">data =</span> dat)</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>Coefficients<span class="sc">:</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>&nbsp; &nbsp; &nbsp; Estimate Std. Error t value <span class="fu">Pr</span>(<span class="sc">&gt;</span><span class="er">|</span>t<span class="sc">|</span>)</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>Y2014&nbsp; <span class="fl">0.07500</span>&nbsp; &nbsp; <span class="fl">0.04808</span>&nbsp; <span class="fl">1.560</span>&nbsp; &nbsp; <span class="fl">0.363</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>Y2015&nbsp; <span class="fl">0.14800</span>&nbsp; &nbsp; <span class="fl">0.04808</span>&nbsp; <span class="fl">3.078</span>&nbsp; &nbsp; <span class="fl">0.200</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="fu">exp</span>(<span class="fu">coef</span>(mod))</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>&nbsp; Y2014&nbsp; &nbsp; Y2015&nbsp;</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="fl">1.077884</span> <span class="fl">1.159513</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>“y” is the log of the sales price ratio</li>
+<li>Indexes:
 <ul>
 <li>2013: 1</li>
 <li>2014: 1.08</li>
 <li>2015: 1.16</li>
-</ul>
-<p>Case-Shiller Method Handles heteroskedasticity by Weighted Least Squares</p>
-<pre><code>  Typically follows the same trend (highly correlated) as the regular repeated sales model but on a lower level
-
-  Packages
-      {hpiR} ([vignette](https://cran.r-project.org/web/packages/hpiR/vignettes/introduction.html))
-          Multiple modeling options, including weighted regression, robust regression, random forest
-
-          Also splits up houses with more than 2 sales into combinations of binary periods
-
-          \*Doesn't sqrt the residuals in the weighted regression like I think the original paper recommends\*
-
-  Process
-      First fit the repeated sales model:
-      log(last\_sale\_price / first\_sale\_price) = β1 \* I(year\_1) + β2 \* I(year\_2)&nbsp; + ...
-
-      Regress the squared residuals on the holding period
-      ε2 = β0 + β1 \* holding\_period
-          Holding Period: the period between the first sale and last sale
-
-      Calculate weights using fitted values
-      weights = 1 / sqrt(^ε2)
-
-  * Fit weighted repeated sales model</code></pre>
+</ul></li>
+</ul></li>
+<li><p>Case-Shiller Method</p>
 <ul>
-<li>Model</li>
+<li><p>Handles heteroskedasticity by Weighted Least Squares</p></li>
+<li><p>Typically follows the same trend (highly correlated) as the regular repeated sales model but on a lower level</p></li>
+<li><p>Packages</p>
+<ul>
+<li>{hpiR}(<a href="https://cran.r-project.org/web/packages/hpiR/vignettes/introduction.html">vignette</a>)
+<ul>
+<li>Multiple modeling options, including weighted regression, robust regression, random forest</li>
+<li>Also splits up houses with more than 2 sales into combinations of binary periods</li>
+<li>*Doesn’t sqrt the residuals in the weighted regression like I think the original paper recommends*</li>
+</ul></li>
+</ul></li>
+<li><p>Process</p>
+<ul>
+<li>First fit the repeated sales model:
+<ul>
+<li>log(last_sale_price / first_sale_price) = β1 * I(year_1) + β2 * I(year_2)&nbsp; + …</li>
+</ul></li>
+<li>Regress the squared residuals on the holding period
+<ul>
+<li>ε2 = β0 + β1 * holding_period</li>
+<li>Holding Period: the period between the first sale and last sale</li>
+</ul></li>
+<li>Calculate weights using fitted values
+<ul>
+<li>weights = 1 / sqrt(^ε2)</li>
+</ul></li>
+<li>Fit weighted repeated sales model</li>
+</ul></li>
+<li><p>Model</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>mod <span class="ot">&lt;-</span> <span class="fu">lm</span>(LogP <span class="sc">~</span> <span class="dv">0</span> <span class="sc">+</span> ., <span class="at">data =</span> dat <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="sc">-</span>HoldingPeriod))</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>mod_resids <span class="ot">&lt;-</span> <span class="fu">resid</span>(mod)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>holding_dat <span class="ot">&lt;-</span> dat <span class="sc">%&gt;%</span>&nbsp;</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>&nbsp; <span class="fu">select</span>(HoldingPeriod) <span class="sc">%&gt;%</span>&nbsp;</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>&nbsp; <span class="fu">mutate</span>(<span class="at">resids_sq =</span> mod_resids<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>resids_mod <span class="ot">&lt;-</span> <span class="fu">lm</span>(resids_sq <span class="sc">~</span> HoldingPeriod, <span class="at">data =</span> holding_dat)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>resid_preds <span class="ot">&lt;-</span> <span class="fu">fitted</span>(resids_mod)</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>wgts <span class="ot">&lt;-</span> <span class="fu">ifelse</span>(resid_preds <span class="sc">&gt;</span> <span class="dv">0</span>, <span class="dv">1</span> <span class="sc">/</span> <span class="fu">sqrt</span>(resid_preds), <span class="dv">0</span>)</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>final_mod <span class="ot">&lt;-</span> <span class="fu">lm</span>(LogP <span class="sc">~</span> <span class="dv">0</span> <span class="sc">+</span> .,&nbsp;</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="at">data =</span> dat <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="sc">-</span>HoldingPeriod),</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="at">weights =</span> wgts)</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="co"># indexes</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="fu">exp</span>(<span class="fu">coef</span>(final_mod))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>Holding Period: the period between the first sale and last sale</li>
+<li>“LogP”: See previous model’s Specification</li>
+</ul></li>
 </ul></li>
 </ul>
-<pre><code>mod &lt;- lm(LogP ~ 0 + ., data = dat %&gt;% select(-HoldingPeriod))
-mod_resids &lt;- resid(mod)
-
-holding_dat &lt;- dat %&gt;%&nbsp;
-&nbsp; select(HoldingPeriod) %&gt;%&nbsp;
-&nbsp; mutate(resids_sq = mod_resids^2)
-
-resids_mod &lt;- lm(resids_sq ~ HoldingPeriod, data = holding_dat)
-resid_preds &lt;- fitted(resids_mod)
-wgts &lt;- ifelse(resid_preds &gt; 0, 1 / sqrt(resid_preds), 0)
-
-final_mod &lt;- lm(LogP ~ 0 + .,&nbsp;
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; data = dat %&gt;% select(-HoldingPeriod),
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; weights = wgts)
-
-# indexes
-exp(coef(final_mod))</code></pre>
-<pre><code>Holding Period: the period between the first sale and last sale
-
-"LogP": See previous model's Specification
-
-
-Building-Floor
-    Higher floors in apartment building cost more
-    
-    Adjustment varies per building but there isn't enough training data to have a model per building
-        Solution: Bin apartment data by building size, then fit a model for each bin.
-        
-    Perform Market Price adjustment to prices before modeling price differences by floor
-    
-Location
-    Buildings are of different ages, have various contractual constraints, and offer vastly different amenities.
-        [Example]{.ribbon-highlight}: A subject propert in a very expensive building for this neighborhood. The comp property is in a building where similarly sized apartments tend to sell for lower prices. So an adjustment to the comp needs to be made.
-        
-    Spatial nearest neighbor models for ppsf.
-        To prepare the training data, we use the Market Price adjustment discussed already
-        
-        packages: {nngeo}
-        </code></pre>
-<p>Features</p>
+</section>
+<section id="sec-rlest-apprais-ml-cmaprc-bldflr" class="level5" data-number="5.5.2.4.4">
+<h5 data-number="5.5.2.4.4" class="anchored" data-anchor-id="sec-rlest-apprais-ml-cmaprc-bldflr"><span class="header-section-number">5.5.2.4.4</span> Building-Floor</h5>
+<ul>
+<li>Higher floors in apartment building cost more</li>
+<li>Adjustment varies per building but there isn’t enough training data to have a model per building
+<ul>
+<li>Solution: Bin apartment data by building size, then fit a model for each bin.</li>
+</ul></li>
+<li>Perform Market Price adjustment to prices before modeling price differences by floor</li>
+</ul>
+</section>
+<section id="sec-rlest-apprais-ml-cmaprc-loc" class="level5" data-number="5.5.2.4.5">
+<h5 data-number="5.5.2.4.5" class="anchored" data-anchor-id="sec-rlest-apprais-ml-cmaprc-loc"><span class="header-section-number">5.5.2.4.5</span> Location</h5>
+<ul>
+<li>Buildings are of different ages, have various contractual constraints, and offer vastly different amenities.
+<ul>
+<li><span class="ribbon-highlight">Example</span>: A subject propert in a very expensive building for this neighborhood. The comp property is in a building where similarly sized apartments tend to sell for lower prices. So an adjustment to the comp needs to be made.</li>
+</ul></li>
+<li>Spatial nearest neighbor models for ppsf.
+<ul>
+<li>To prepare the training data, we use the Market Price adjustment discussed already</li>
+<li>packages: {nngeo}</li>
+</ul></li>
+</ul>
+</section>
+</section>
+</section>
+</section>
+<section id="sec-rlest-feats" class="level2" data-number="5.6">
+<h2 data-number="5.6" class="anchored" data-anchor-id="sec-rlest-feats"><span class="header-section-number">5.6</span> Features</h2>
 <ul>
 <li>Scrape traditional variables (from websites?)
 <ul>
@@ -617,7 +720,8 @@ Location
 </ul></li>
 <li>NLP
 <ul>
-<li>Identify the most important words in a description and learn which words tend to be used to describe more expensive or affordable houses.<img src="./_resources/Real_Estate.resources/nlp-example.png" class="img-fluid"></li>
+<li>Identify the most important words in a description and learn which words tend to be used to describe more expensive or affordable houses.<br>
+<img src="./_resources/Real_Estate.resources/nlp-example.png" class="img-fluid"></li>
 </ul></li>
 <li>Sociodemographic
 <ul>
@@ -650,6 +754,7 @@ Location
 </ul>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
