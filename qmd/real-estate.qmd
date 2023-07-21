@@ -29,7 +29,7 @@
     -   find them a home
     -   appropriate mortgage
 
-## Use Cases{#sec-rlest-usecases}
+## Use Cases {#sec-rlest-usecases}
 
 -   Using computer vision and NLP to enhance searches
     -   Incorporating image search capabilities: extract information from pictures of the property utilizing object detection and image classification techniques, to be used in search matching.
@@ -83,7 +83,7 @@
 -   The exponential of the coefficients of the year dummy variables are the index and they represent the average change in the outcome variable from the reference year to the year represented by the dummy variable
     -   1 is the index of the reference year
 
-#### CMA with Comp Price Adjustments  {#sec-rlest-apprais-ml-cmaprc}
+#### CMA with Comp Price Adjustments {#sec-rlest-apprais-ml-cmaprc}
 
 ##### Process {#sec-rlest-apprais-ml-cmaprc-proc}
 
