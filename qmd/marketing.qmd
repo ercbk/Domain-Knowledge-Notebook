@@ -21,7 +21,7 @@
     -   Value Optimization (VO)
         -   looks for people who will spend a certain amount of money in your mobile app
 
-## Terms {#sec-mark-terms}
+## Terms {#sec-mark-terms .unnumbered}
 
 -   [**Action-Based**]{style="color: #009499"} - Clicks, impressions, and GRP data
 
@@ -126,7 +126,7 @@
         -   utm\_\_\_content - In case you have multiple links pointing to the same URL (such as an email with two CTA buttons), this code will help you track which link was clicked (e.g `utm_content=navlink` )
         -   utm_term - track which keyword term a website visitor came from. This parameter is specifically used for paid search ads. (e.g. `utm_term=growth+hacking+tactics`)
 
-## Use Cases {#sec-mark-usecases}
+## Use Cases {#sec-mark-usecases .unnumbered}
 
 -   Chatbots for lead development, customer support, and cross-selling or upselling
 -   Inbound call analysis and routing, and customer comment and email analysis, classification, and response
@@ -158,7 +158,7 @@
     -   Netflix - recommendations are on a separate standalone app where the customer needs to request recommendations
     -   ML that coaches a customer service rep through a call
 
-## Metrics {#sec-mark-metrics}
+## Metrics {#sec-mark-metrics .unnumbered}
 
 -   Conversion Rates, Bounce Rates, and Average Basket Sizes
 
@@ -168,7 +168,7 @@
     \mbox{ROAS} = \frac{\mbox{Sales Revenue}}{\mbox{Advertising Budget Spend}}
     $$
 
-## Conversion Lift Tests {#sec-mark-custlift}
+## Conversion Lift Tests {#sec-mark-custlift .unnumbered}
 
 -   Also see
 
@@ -224,7 +224,7 @@
     -   Less than 100% you can redistribute budgets to better-performing campaigns and channels
     -   Equal to or higher than 100% you know you are not cannibalizing organic traffic and that your ads are effective
 
-## Geo-experiments {#sec-mark-geoexp}
+## Geo-experiments {#sec-mark-geoexp .unnumbered}
 
 -   A quasi-experimental methodology where non-overlapping geographic regions (geos) are randomly assigned to a control or treatment group
     -   [Example]{.ribbon-highlight}: ads are served only in the geos of the treatment group while users in geos of the control group won't be exposed to the advert
@@ -245,9 +245,9 @@
         -   Example DiD\
             ![](./_resources/Marketing.resources/0-7mG9DH1XOy4T3g9G.png){width="532"}
 
-## Channel Attribution {#sec-mark-chanatt}
+## Channel Attribution {#sec-mark-chanatt .unnumbered}
 
-### Misc {#sec-mark-chanatt-misc}
+### Misc {#sec-mark-chanatt-misc .unnumbered}
 
 -   Also see UTM parameters in Terms on how to use URLs to track different ad accounts.
     -   When you start tracking the UTM parameters and tying it to the account creation, you can now measure the conversion rate from ad click to purchase.
@@ -290,14 +290,14 @@
         -   e.g. Two channels might be launched together to reinforce each other or to support a product launch
         -   Solutions: variable reduction techniques: PCA, ElasticNet, etc.
 
-### Unified Approach {#sec-mark-chanatt-unif}
+### Unified Approach {#sec-mark-chanatt-unif .unnumbered}
 
 -   Use experimentation results as priors for MMM and use MTA results to validate and calibrate MMM
     -   Experiment examples: Conversion Lift Tests, Geo-Experiments, A/B Tests, RCTS, etc.
     -   Use trustworthy priors obtained from experiments or external sources to inform a bayesian model
         -   A bayesian model with time-varying coefficients can handle violatility of marketing effects (particularly for new companies)
 
-### Marketing Mix Modeling (MMM) {#sec-mark-chanatt-mmm}
+### Marketing Mix Modeling (MMM) {#sec-mark-chanatt-mmm .unnumbered}
 
 -   `Sales (or ) ~ Channel_Spend` (`+ Trend + Seasonality(s) + Campaigns + Events + Holidays + Weather +… etc.`)
     -   Other outcome variables
@@ -315,7 +315,7 @@
 -   Tends to underestimate upper funnel channels and overestimate lower funnel channels.
 -   Less likely to get more granular level insights, and will not show the nuances of the user journey
 
-### Multi-Touch Attribution Modeling (MTA) {#sec-mark-chanatt-mta}
+### Multi-Touch Attribution Modeling (MTA) {#sec-mark-chanatt-mta .unnumbered}
 
 -   Also see
     -   [Multi-touch attribution: The fundamental to optimizing customer acquisition](https://ivylc.medium.com/multi-touch-attribution-the-fundamental-to-optimizing-customer-acquisition-7c77e4a49682) (only skimmed, haven't taken notes yet)
@@ -340,7 +340,7 @@
                 -   Analyze the available path data to develop conversion rate models for each of your conversion events
                 -   Use the conversion rate model predictions as input to an algorithm that attributes conversion credit to ad interactions
 
-### Mobile Channel Attribution {#sec-mark-chanatt-mca}
+### Mobile Channel Attribution {#sec-mark-chanatt-mca .unnumbered}
 
 -   Advertising Identifiers - helps mobile marketers attribute ad spend.
     -   Google's advertising identifier (GAID)
@@ -354,7 +354,7 @@
         -   Can't be used in Conversion Lift Tests
             -   Postbacks require a ad campaign ID for the conversion to be attributed to, so it's not possible to measure the conversion volume from a lift test's control group (since the control group isn't exposed to the ad)
 
-## Search Engine Marketing (SEM) {#sec-mark-sem}
+## Search Engine Marketing (SEM) {#sec-mark-sem .unnumbered}
 
 -   Marketing on search engines where you pay to place ads at the top so that the user sees your ads before the organic search results (e.g. Google, Bing, etc.)
 
@@ -395,9 +395,9 @@
             -   Pre-corona vs post-corona?
         -   Is there an optimal level of investment?
 
-## Customer Segmentation {#sec-mark-custseg}
+## Customer Segmentation {#sec-mark-custseg .unnumbered}
 
-### Misc {#sec-mark-custseg-misc}
+### Misc {#sec-mark-custseg-misc .unnumbered}
 
 -   Also see
     -   [Customer Journey](marketing.qmd#sec-mark-custjourn){style="color: green"}
@@ -411,7 +411,7 @@
     -   The company can achieve a higher return on ad spend with a smaller marketing budget, yielding a higher profit margin and more room for market expansion.
     -   Increases marketing efficiency by helping to indicate which campaigns are more likely to succeed with certain groups of customers
 
-### Process {#sec-mark-custseg-proc}
+### Process {#sec-mark-custseg-proc .unnumbered}
 
 -   Form marketing hypotheses based on cluster characteristics and test these hypotheses by varying campaigns based on the customer's cluster membership.
     -   e.g. Recommend a product they're likely to purchase, a multi-buy discount, or on-boarding them on a loyalty scheme (e.g. rewards program)
@@ -425,13 +425,13 @@
     -   Improve your chance to Cross-sell and Up-sell other products and services by reaching out for the right segment when they're more likely to respond
     -   Test which type of incentive a certain segment is more likely to respond to (e.g. pricing discounts, loyalty programs, product recommendation, etc.)
 
-### RFM Analysis {#sec-mark-custseg-rfm}
+### RFM Analysis {#sec-mark-custseg-rfm .unnumbered}
 
 ![](./_resources/Marketing.resources/image.2.png){width="632"}
 
 -   Recency, Frequency, and Monetary Value Analysis
 
-#### Data {#sec-mark-custseg-rfm-dat}
+#### Data {#sec-mark-custseg-rfm-dat .unnumbered}
 
 -   Just need a transactional database with client's orders over time (at least 2.5 to 3 yrs of data to capture enough behavior variation).\
     ![](./_resources/Marketing.resources/image.3.png){width="632"}
@@ -448,7 +448,7 @@
         -   Total price can be used to calculate the monetary value.
         -   Total monetary value of all purchases in a month
 
-#### Modeling {#sec-mark-custseg-rfm-mod}
+#### Modeling {#sec-mark-custseg-rfm-mod .unnumbered}
 
 -   Also see
     -   [Algorithms, Marketing \>\> Customer Lifetime Value](https://ercbk.github.io/Data-Science-Notebook/qmd/algorithms-marketing.html#sec-alg-mark-clv){style="color: green"} \>\> BG/NBD Gamma-Gamma model
@@ -481,7 +481,7 @@
             -   Interpretation --- Regular customers
             -   Strategy --- Create a loyalty program to keep them purchasing on a regular basis
 
-### Behavioral Segmentation {#sec-mark-custseg-behav}
+### Behavioral Segmentation {#sec-mark-custseg-behav .unnumbered}
 
 -   Tries to understand how customers interact with your product or website
 -   Misc
@@ -507,7 +507,7 @@
         -   The red cluster is basic customers with only phone service.
             -   A market strategy could be to educate them about the advantages of digital services and then upsell digital products.
 
-## Customer Journey {#sec-mark-custjourn}
+## Customer Journey {#sec-mark-custjourn .unnumbered}
 
 ![](./_resources/Marketing.resources/image.1.png){width="632"}![](./_resources/Marketing.resources/image.png){width="632"}
 
@@ -529,9 +529,9 @@
     -   AI-enabled service agents (chatbots) triage customers' requests---and are able to deal with fluctuating volumes of service requests better than human agents are
     -   Can handle simple queries about, say, delivery time or scheduling an appointment and can escalate more-complex issues to a human agent
 
-## Workflow {#sec-mark-wkflw}
+## Workflow {#sec-mark-wkflw .unnumbered}
 
-### Find the Ideal Customer Profile (ICP) and Target Them
+### Find the Ideal Customer Profile (ICP) and Target Them {#sec-mark-wkflw-icp .unnumbered}
 
 ![](./_resources/Marketing.resources/image.8.png){width="532"}
 
@@ -560,14 +560,14 @@
         -   Cohort 1 trusts YouTubers who talk about the latest and greatest tech products and make purchases after watching unboxing videos. Cohort 2 likes to shop at Costco and buy gadgets at a discount
             -   Partnering with tech influencers helps the company attract cohort 1 while working with wholesale stores speeds up selling to cohort 2.
 
--   [Use experimentation on High-Value cohorts to test which acquisition/marketing campaigns have high ROAS.]{.underline}  
+-   [Use experimentation on High-Value cohorts to test which acquisition/marketing campaigns have high ROAS.]{.underline}\
     ![](./_resources/Marketing.resources/image.9.png){width="632"}
 
     -   For cohort 3, campaign A seems to have more success than campaign B
 
 -   Future campaigns can now target high value cohorts with greater conversion and less expenditure.
 
-### Potential Pitfalls
+### Potential Pitfalls {#sec-mark-wkflw-pits .unnumbered}
 
 -   [Make sure the metric fits the business question]{.underline}
     -   [Example]{.ribbon-highlight}: Churn
@@ -589,7 +589,7 @@
 -   [Determine the optimal granularity of predictions]{.underline}
     -   Consider a marketing team deciding how to allocate its ad dollars on keyword searches on Google and Amazon. The data science team's current AI can predict the lifetime value of customers acquired through those channels. However, the marketers might get a higher return on ad dollars by using more-granular predictions about customer lifetime value per keyword per channel.
 
-### Refine the Business Question
+### Refine the Business Question {#sec-mark-wkflw-refbizq .unnumbered}
 
 -   When defining the problem, managers should get down to what we call the atomic level --- the most granular level at which it's possible to make a decision or undertake an intervention.
 -   A good business question captures the full impact of the decision on the Profit and Loss (P&L), recognizes any trade-offs, and spells out what a meaningful improvement might look like.
@@ -600,9 +600,6 @@
         -   What do we mean by "allocate"?
         -   Are we allocating across different retention campaigns?
     3.  "Given a budget of \$x million, which customers should we target with a retention campaign?"
-
-<!-- -->
-
 -   [Define Missed Opportunity metrics]{.underline}
     -   Identify sources of waste and missed opportunities
         -   Waste example: targeting a likely-to-churn customer with a promotion that is not persuadable
