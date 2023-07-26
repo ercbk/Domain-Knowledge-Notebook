@@ -17,9 +17,9 @@
             -   Platforms: Flywheel
 -   Facebook enables smart mobile user acquisition for mobile brands with 2 methods:
     -   App Event Optimization (AEO)
-        -   looks for new-to-you people who are similar to customers you already have in your apps at defined stages
+        -   Looks for new-to-you people who are similar to customers you already have in your apps at defined stages
     -   Value Optimization (VO)
-        -   looks for people who will spend a certain amount of money in your mobile app
+        -   Looks for people who will spend a certain amount of money in your mobile app
 
 ## Terms {#sec-mark-terms .unnumbered}
 
@@ -509,7 +509,8 @@
 
 ## Customer Journey {#sec-mark-custjourn .unnumbered}
 
-![](./_resources/Marketing.resources/image.1.png){width="632"}![](./_resources/Marketing.resources/image.png){width="632"}
+![](./_resources/Marketing.resources/image.1.png){width="632"}  
+![](./_resources/Marketing.resources/image.png){width="632"}
 
 -   Top Figure: Typical SaaS User Journey
 -   Bottom Figure: General User Journey
