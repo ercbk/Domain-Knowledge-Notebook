@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Domain Knowledge - 2&nbsp; Logistics</title>
+<title>Domain Knowledge - Logistics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -63,6 +63,8 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -76,7 +78,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../qmd/logistics.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Logistics</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../qmd/logistics.html">Logistics</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -185,7 +187,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../qmd/logistics.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Logistics</span></span></a>
+ <span class="menu-text">Logistics</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -233,7 +235,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../qmd/real-estate.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Real Estate</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Real Estate</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -258,18 +260,43 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#sec-log-misc" id="toc-sec-log-misc" class="nav-link active" data-scroll-target="#sec-log-misc"><span class="header-section-number">2.1</span> Misc</a></li>
-  <li><a href="#sec-log-terms" id="toc-sec-log-terms" class="nav-link" data-scroll-target="#sec-log-terms"><span class="header-section-number">2.2</span> Terms</a></li>
-  <li><a href="#sec-log-demfcast" id="toc-sec-log-demfcast" class="nav-link" data-scroll-target="#sec-log-demfcast"><span class="header-section-number">2.3</span> Demand Forecasting</a></li>
-  <li><a href="#sec-log-safstk" id="toc-sec-log-safstk" class="nav-link" data-scroll-target="#sec-log-safstk"><span class="header-section-number">2.4</span> Safety Stock (aka Buffer Stock)</a></li>
-  <li><a href="#sec-log-eoq" id="toc-sec-log-eoq" class="nav-link" data-scroll-target="#sec-log-eoq"><span class="header-section-number">2.5</span> Economic Order Quantity (EOQ) (aka Wilson Formula)</a></li>
-  <li><a href="#sec-log-outpol" id="toc-sec-log-outpol" class="nav-link" data-scroll-target="#sec-log-outpol"><span class="header-section-number">2.6</span> Order-Up-To (OUT) Level Policy</a></li>
-  <li><a href="#sec-log-reordpt" id="toc-sec-log-reordpt" class="nav-link" data-scroll-target="#sec-log-reordpt"><span class="header-section-number">2.7</span> Reorder Point</a></li>
-  <li><a href="#sec-log-dim" id="toc-sec-log-dim" class="nav-link" data-scroll-target="#sec-log-dim"><span class="header-section-number">2.8</span> Decision Impact Metrics</a></li>
-  <li><a href="#sec-log-pffpp" id="toc-sec-log-pffpp" class="nav-link" data-scroll-target="#sec-log-pffpp"><span class="header-section-number">2.9</span> Profit Functions for Perishable Products</a></li>
-  <li><a href="#sec-log-drdsh" id="toc-sec-log-drdsh" class="nav-link" data-scroll-target="#sec-log-drdsh"><span class="header-section-number">2.10</span> DoorDash</a></li>
-  <li><a href="#sec-log-supch" id="toc-sec-log-supch" class="nav-link" data-scroll-target="#sec-log-supch"><span class="header-section-number">2.11</span> Supply Chain</a></li>
-  <li><a href="#sec-log-warmang" id="toc-sec-log-warmang" class="nav-link" data-scroll-target="#sec-log-warmang"><span class="header-section-number">2.12</span> Warehouse Management</a></li>
+  <li><a href="#sec-log-misc" id="toc-sec-log-misc" class="nav-link active" data-scroll-target="#sec-log-misc">Misc</a></li>
+  <li><a href="#sec-log-terms" id="toc-sec-log-terms" class="nav-link" data-scroll-target="#sec-log-terms">Terms</a></li>
+  <li><a href="#sec-log-demfcast" id="toc-sec-log-demfcast" class="nav-link" data-scroll-target="#sec-log-demfcast">Demand Forecasting</a>
+  <ul>
+  <li><a href="#sec-log-demfcast-misc" id="toc-sec-log-demfcast-misc" class="nav-link" data-scroll-target="#sec-log-demfcast-misc">Misc</a></li>
+  <li><a href="#sec-log-demfcast-artnot" id="toc-sec-log-demfcast-artnot" class="nav-link" data-scroll-target="#sec-log-demfcast-artnot">Article Notes</a>
+  <ul class="collapse">
+  <li><a href="#sec-log-demfcast-artnot-apatdf" id="toc-sec-log-demfcast-artnot-apatdf" class="nav-link" data-scroll-target="#sec-log-demfcast-artnot-apatdf">Applying Prediction Adjustment to Demand Forecasts</a></li>
+  <li><a href="#sec-log-demfcast-artnot-csasr" id="toc-sec-log-demfcast-artnot-csasr" class="nav-link" data-scroll-target="#sec-log-demfcast-artnot-csasr">Case Study: Automating Stock Replenishment</a></li>
+  <li><a href="#sec-log-demfcast-artnot-dwshk" id="toc-sec-log-demfcast-artnot-dwshk" class="nav-link" data-scroll-target="#sec-log-demfcast-artnot-dwshk">Dealing with Shocks</a></li>
+  </ul></li>
+  <li><a href="#sec-log-demfcast-intdem-" id="toc-sec-log-demfcast-intdem-" class="nav-link" data-scroll-target="#sec-log-demfcast-intdem-">Intermittent Demand</a>
+  <ul class="collapse">
+  <li><a href="#sec-log-demfcast-intdem-misc" id="toc-sec-log-demfcast-intdem-misc" class="nav-link" data-scroll-target="#sec-log-demfcast-intdem-misc">Misc</a></li>
+  <li><a href="#sec-log-demfcast-intdem-compdist" id="toc-sec-log-demfcast-intdem-compdist" class="nav-link" data-scroll-target="#sec-log-demfcast-intdem-compdist">Compound Distributions</a></li>
+  <li><a href="#sec-log-demfcast-intdem-fcastmn" id="toc-sec-log-demfcast-intdem-fcastmn" class="nav-link" data-scroll-target="#sec-log-demfcast-intdem-fcastmn">Forecasting Mean Demand</a></li>
+  <li><a href="#sec-log-demfcast-intdem-fcastvar" id="toc-sec-log-demfcast-intdem-fcastvar" class="nav-link" data-scroll-target="#sec-log-demfcast-intdem-fcastvar">Forecasting Demand Variance</a></li>
+  <li><a href="#sec-log-demfcast-intdem-diag" id="toc-sec-log-demfcast-intdem-diag" class="nav-link" data-scroll-target="#sec-log-demfcast-intdem-diag">Diagnostics</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#sec-log-safstk" id="toc-sec-log-safstk" class="nav-link" data-scroll-target="#sec-log-safstk">Safety Stock (aka Buffer Stock)</a>
+  <ul>
+  <li><a href="#misc" id="toc-misc" class="nav-link" data-scroll-target="#misc">Misc</a></li>
+  <li><a href="#reasons-for-safety-stock" id="toc-reasons-for-safety-stock" class="nav-link" data-scroll-target="#reasons-for-safety-stock">Reasons for Safety Stock</a></li>
+  <li><a href="#stockouts" id="toc-stockouts" class="nav-link" data-scroll-target="#stockouts">Stockouts</a></li>
+  <li><a href="#cycle-service-level-z" id="toc-cycle-service-level-z" class="nav-link" data-scroll-target="#cycle-service-level-z">(Cycle) Service level (Z)</a></li>
+  <li><a href="#safety-stock-equations" id="toc-safety-stock-equations" class="nav-link" data-scroll-target="#safety-stock-equations">Safety Stock Equations</a></li>
+  <li><a href="#issues" id="toc-issues" class="nav-link" data-scroll-target="#issues">Issues</a></li>
+  </ul></li>
+  <li><a href="#sec-log-eoq" id="toc-sec-log-eoq" class="nav-link" data-scroll-target="#sec-log-eoq">Economic Order Quantity (EOQ)</a></li>
+  <li><a href="#sec-log-outpol" id="toc-sec-log-outpol" class="nav-link" data-scroll-target="#sec-log-outpol">Order-Up-To (OUT) Level Policy</a></li>
+  <li><a href="#sec-log-reordpt" id="toc-sec-log-reordpt" class="nav-link" data-scroll-target="#sec-log-reordpt">Reorder Point</a></li>
+  <li><a href="#sec-log-dim" id="toc-sec-log-dim" class="nav-link" data-scroll-target="#sec-log-dim">Decision Impact Metrics</a></li>
+  <li><a href="#sec-log-pffpp" id="toc-sec-log-pffpp" class="nav-link" data-scroll-target="#sec-log-pffpp">Profit Functions for Perishable Products</a></li>
+  <li><a href="#sec-log-drdsh" id="toc-sec-log-drdsh" class="nav-link" data-scroll-target="#sec-log-drdsh">DoorDash</a></li>
+  <li><a href="#sec-log-supch" id="toc-sec-log-supch" class="nav-link" data-scroll-target="#sec-log-supch">Supply Chain</a></li>
+  <li><a href="#sec-log-warmang" id="toc-sec-log-warmang" class="nav-link" data-scroll-target="#sec-log-warmang">Warehouse Management</a></li>
   </ul>
 </nav>
     </div>
@@ -278,7 +305,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span id="sec-log" class="quarto-section-identifier"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Logistics</span></span></h1>
+<h1 class="title"><span id="sec-log" class="quarto-section-identifier">Logistics</span></h1>
 </div>
 
 
@@ -293,17 +320,19 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="sec-log-misc" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="sec-log-misc"><span class="header-section-number">2.1</span> Misc</h2>
+<section id="sec-log-misc" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="sec-log-misc">Misc</h2>
 <ul>
-<li>Goal: develop a replenishment policy that will minimize your ordering, holding and shortage costs.</li>
-<li>Ordering Costs ($ per order): fixed cost to place an order due to administrative costs, system maintenance or manufacturing costs</li>
-<li>Holding Costs ($ per unit per unit of time): all the costs required to hold your inventory (storage, insurance, and capital costs)</li>
-<li>Shortage/Stock-out Costs ($ per unit): the costs of not having enough inventory to meet the customer demand (Lost Sales, Penalty)</li>
+<li>Goal: develop a replenishment policy that will minimize your ordering, holding and shortage costs.
+<ul>
+<li><u>Ordering Costs</u> ($ per order): Fixed cost to place an order due to administrative costs, system maintenance or manufacturing costs</li>
+<li><u>Holding Costs</u> ($ per unit per unit of time): All the costs required to hold your inventory (storage, insurance, and capital costs)</li>
+<li><u>Shortage/Stock-out Costs</u> ($ per unit): The costs of not having enough inventory to meet the customer demand (Lost Sales, Penalty)</li>
+</ul></li>
 <li>Forecast PI widths serve as a proxy for inventory holding costs and provides valuable input for setting a target service level</li>
 <li>Packages
 <ul>
-<li>{planr} - uses opening inventory, sales forecasts and supply variables to calculate projected inventory and projected coverage calculations (<a href="https://www.r-bloggers.com/2022/10/using-r-in-inventory-management-and-demand-forecasting/">article</a>)</li>
+<li><span style="color: #990000">{planr}</span> - uses opening inventory, sales forecasts and supply variables to calculate projected inventory and projected coverage calculations (<a href="https://www.r-bloggers.com/2022/10/using-r-in-inventory-management-and-demand-forecasting/">article</a>)</li>
 </ul></li>
 <li>Question: “Due to the complexity/cost of maintaining inventory management system. Would it be sufficient to just set a safety stock level and replenish once the SKU dips below that level?”
 <ul>
@@ -311,108 +340,151 @@ ul.task-list li input[type="checkbox"] {
 </ul></li>
 <li>Variables of interest that need to be forecasted for various decisions
 <ul>
-<li>Stock/No Stock - should we continue to stock a product or discontinue the product and just let the current stock dwindle to zero.
+<li><u>Stock/No Stock</u> - Should we continue to stock a product or discontinue the product and just let the current stock dwindle to zero.
 <ul>
 <li>Mean of Demand</li>
 </ul></li>
-<li>Replenishment - how much product should we restock
+<li><u>Replenishment</u> - How much product should we restock
 <ul>
 <li>Mean and Variance of Demand</li>
 <li>Forecasts in conjunction with a hypothesized demand distribution (parametric) vs build-up of the empircal distribution via bootstrapping (non-parametric)</li>
 </ul></li>
-<li>Returns - customer returning products
+<li><u>Returns</u> - Customer returning products
 <ul>
 <li>Net Demand which is equal to Demand - Returns
 <ul>
 <li>Can be forecasted itself or by forecasting Demand and Returns separately.</li>
 </ul></li>
 </ul></li>
-<li>Last Time Buy (LTB) - the supplier’s “last call” for a part or component. The final chance an enterprise will have to buy the part before the supplier stops producing it.
+<li><u>Last Time Buy (LTB)</u> - the supplier’s “last call” for a part or component. The final chance an enterprise will have to buy the part before the supplier stops producing it.
 <ul>
 <li>Rate of Demand Decline</li>
 </ul></li>
 </ul></li>
 </ul>
 </section>
-<section id="sec-log-terms" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="sec-log-terms"><span class="header-section-number">2.2</span> Terms</h2>
+<section id="sec-log-terms" class="level2">
+<h2 class="anchored" data-anchor-id="sec-log-terms">Terms</h2>
 <ul>
-<li><span style="color: #009499"><strong>Active References</strong></span> - a product may have multiple SKUs. All SKUs would be needed in order to calculate stats for that product. The active reference for a product is one SKU that encompasses all other SKUs.
+<li><p><span style="color: #009499"><strong>Active References</strong></span> - A product may have multiple SKUs. All SKUs would be needed in order to calculate stats for that product. The active reference for a product is one SKU that encompasses all other SKUs.</p>
 <ul>
 <li>e.g.&nbsp;Last season’s dress “C” has been replaced by the new dress “D”. Even though both dresses are identical, they have different SKUs. Dress D’s SKU will be the active reference. Therefore, if the retailer sold two units of C in the past and three units of D this week, Nextail will show D having sold five units.</li>
 <li>Also seen this term used when referring to all unique SKUs on an order sheet as the total active references.</li>
 </ul></li>
-<li><span style="color: #009499"><strong>Linked Lines</strong></span> (aka [<strong>Silent Switches</strong>) - refer to when several products in a retailer’s inventory are commercially equivalent. In other words, when identical products are identified by multiple SKUs.
+<li><p><span style="color: #009499"><strong>Fill rate</strong></span> (aka Fulfillment Rate)- The percentage of orders that you can ship from your available stock without any lost sales, backorders, or stockouts.<br>
+<img src="./_resources/Logistics.resources/Screenshot-(494).png" class="img-fluid" width="432"></p>
+<p><span class="math display">\[
+\text{Fill Rate} = \frac{\text{Total Orders Shipped}}{\text{Total Orders Placed}} \cdot 100
+\]</span></p>
 <ul>
-<li><span class="ribbon-highlight">Example</span>: continuity products are ordered over multiple seasons or years or when large orders are split among different suppliers</li>
+<li>On average, companies typically maintain a fill rate of about 85%-95%. But ideally, you should strive for a fill rate between 97% and 99%.</li>
 </ul></li>
-<li>Order Components<img src="./_resources/Logistics.resources/image.8.png" class="img-fluid">
+<li><p><span style="color: #009499"><strong>Fulfillment Rate</strong></span> - See Fill Rate</p></li>
+<li><p><span style="color: #009499"><strong>Lead Time</strong></span> (aka performance cycle) - Time required between the creation of a replenishment order and the effective store replenishment</p></li>
+<li><p><span style="color: #009499"><strong>Linked Lines</strong></span> (aka Silent Switches) - Refers to when several products in a retailer’s inventory are commercially equivalent. In other words, when identical products are identified by multiple SKUs.</p>
 <ul>
-<li>[<strong>Order</strong>: The “shopping basket” full of items you’ve just purchased.</li>
-<li>[<strong>Lines</strong>: The different products within your order, recognized by warehouses as each individual Stock Keeping Unit (SKU) or Universal Product Code (UPC) number.</li>
-<li>[<strong>Units</strong>: The quantity of each line.</li>
+<li><span class="ribbon-highlight">Example</span>: Continuity products are ordered over multiple seasons or years or when large orders are split among different suppliers</li>
 </ul></li>
-<li><span style="color: #009499"><strong>Reference</strong></span> - id for a product (e.g.&nbsp;SKU)</li>
-<li><span style="color: #009499"><strong>Rotations</strong></span> - speed at which products enter and exit the warehouse
+<li><p><span style="color: #009499"><strong>Order Components</strong></span><br>
+<img src="./_resources/Logistics.resources/image.8.png" class="img-fluid" width="282"></p>
 <ul>
-<li>High rotation: Units enter and exit continuously. These items are in high demand.</li>
-<li>Medium rotation: Units enter and exit in smaller volumes than those in High Rotation.</li>
-<li>Low rotation: These are the items that spend the most time in the warehouse, and are in low demand.</li>
+<li><span style="color: #009499"><strong>Order</strong></span>: The “shopping basket” full of items you’ve just purchased.</li>
+<li><span style="color: #009499"><strong>Lines</strong></span>: The different products within your order, recognized by warehouses as each individual Stock Keeping Unit (SKU) or Universal Product Code (UPC) number.</li>
+<li><span style="color: #009499"><strong>Units</strong></span>: The quantity of each line.</li>
 </ul></li>
-<li><span style="color: #009499"><strong>SKU</strong></span> - Stock Keeping Unit - Usually a bar code that has all the information to distinguish it from another product. These attributes can include manufacturer, description, material, size, color, packaging, and warranty terms. When a business takes inventory of its stock, it counts the quantity it has of each SKU.</li>
-<li><span style="color: #009499"><strong>Supply Chain</strong></span> - a network of processes and stock locations built to deliver services and goods to customers.</li>
-<li><span style="color: #009499"><strong>Wastage</strong></span> - where supply greatly outstrips demand, and the product expires</li>
-<li><span style="color: #009499"><strong>S&amp;OP</strong></span> - Sales &amp; Operations Planning</li>
+<li><p><span style="color: #009499"><strong>Performance Cycle</strong></span> - See Lead Time</p></li>
+<li><p><span style="color: #009499"><strong>Reference</strong></span> - ID for a product (e.g.&nbsp;SKU)</p></li>
+<li><p><span style="color: #009499"><strong>Replenishment cycle</strong></span> - Cycle between replenishment (i.e.&nbsp;restocking) orders</p></li>
+<li><p><span style="color: #009499"><strong>Rotations</strong></span> - Speed at which products enter and exit the warehouse</p>
+<ul>
+<li><u>High Rotation</u>: Units enter and exit continuously. These items are in high demand.</li>
+<li><u>Medium Rotation</u>: Units enter and exit in smaller volumes than those in High Rotation.</li>
+<li><u>Low Rotation</u>: These are the items that spend the most time in the warehouse, and are in low demand.</li>
+</ul></li>
+<li><p><span style="color: #009499"><strong>Safety stock</strong></span> - Extra inventory held by a retailer or a manufacturer in case demand increases unexpectedly. This means it’s additional stock above the desired inventory level that you would usually hold for day-to-day operations.</p></li>
+<li><p>(Cycle) <span style="color: #009499"><strong>Service Level</strong></span> (Z) - The probability that the amount of inventory on hand during the lead time is sufficient to meet expected demand – that is, the probability that a stockout will not occur.</p>
+<ul>
+<li>Also see figure in Fill Rate</li>
+</ul></li>
+<li><p><span style="color: #009499"><strong>Silent Switches</strong></span> - See Linked Lines</p></li>
+<li><p><span style="color: #009499"><strong>SKU</strong></span> - Stock Keeping Unit - Usually a bar code that has all the information to distinguish it from another product. These attributes can include manufacturer, description, material, size, color, packaging, and warranty terms. When a business takes inventory of its stock, it counts the quantity it has of each SKU.</p></li>
+<li><p><span style="color: #009499"><strong>Stock Outs</strong></span> - Out of stock events</p></li>
+<li><p><span style="color: #009499"><strong>Supply Chain</strong></span> - A network of processes and stock locations built to deliver services and goods to customers.</p></li>
+<li><p><span style="color: #009499"><strong>Wastage</strong></span> - Where supply greatly outstrips demand, and the product expires</p></li>
+<li><p><span style="color: #009499"><strong>S&amp;OP</strong></span> - Sales &amp; Operations Planning</p></li>
 </ul>
 </section>
-<section id="sec-log-demfcast" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="sec-log-demfcast"><span class="header-section-number">2.3</span> Demand Forecasting</h2>
+<section id="sec-log-demfcast" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="sec-log-demfcast">Demand Forecasting</h2>
+<section id="sec-log-demfcast-misc" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="sec-log-demfcast-misc">Misc</h3>
 <ul>
-<li><p>Misc</p>
+<li><p>Also see <a href="../qmd/logistics.html#sec-log-drdsh">DoorDash &gt;&gt; Forecast Supply and Demand</a></p></li>
+<li><p><a href="https://towardsdatascience.com/reinforcement-learning-for-inventory-optimization-series-iii-sim-to-real-transfer-for-the-rl-model-d260c3b8277d">Reinforcement Learning for Inventory Optimization Series III: Sim-to-Real Transfer for the RL Model | by Guangrui Xie | Jan, 2023 | Towards Data Science</a></p></li>
+<li><p>Metrics for judging demand forecasts<br>
+<img src="./_resources/Logistics.resources/1-ni6N2L4yp0ynlOzL01f8Fg.png" class="img-fluid" width="532"></p>
 <ul>
-<li>Also see DoorDash &gt;&gt; Forecast Supply and Demand</li>
-<li><a href="https://towardsdatascience.com/reinforcement-learning-for-inventory-optimization-series-iii-sim-to-real-transfer-for-the-rl-model-d260c3b8277d">Reinforcement Learning for Inventory Optimization Series III: Sim-to-Real Transfer for the RL Model | by Guangrui Xie | Jan, 2023 | Towards Data Science</a></li>
+<li>Change in the Number of Stock-Out Days</li>
+<li>Percent Change in Service Level</li>
+<li>Change in Profit</li>
+<li>Change in Wastage</li>
+<li>change in Inventory Costs</li>
 </ul></li>
-<li><p>Metrics for judging demand forecasts<img src="./_resources/Logistics.resources/1-ni6N2L4yp0ynlOzL01f8Fg.png" class="img-fluid"></p>
+</ul>
+</section>
+<section id="sec-log-demfcast-artnot" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="sec-log-demfcast-artnot">Article Notes</h3>
+<section id="sec-log-demfcast-artnot-apatdf" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="sec-log-demfcast-artnot-apatdf">Applying Prediction Adjustment to Demand Forecasts</h4>
 <ul>
-<li>change in the number of Stock-Out days</li>
-<li>percent change in Service Level</li>
-<li>change in Profit</li>
-<li>change in wastage</li>
-<li>change in inventory costs</li>
+<li><u>Misc</u>
+<ul>
+<li>Notes from <a href="https://towardsdatascience.com/are-your-demand-forecasts-hurting-profits-and-service-levels-f61af7c5ff">Are Your Demand Forecasts Hurting Profits and Service Levels</a></li>
+<li>Blue Dot Thinking’s <a href="http://www.bluedotthinking.com/">WasteNot API service</a> ($) WasteNot (logistics analytics firm) uses prophet for demand forecasting which consistently under-predicts, so they use an adjustment for better forecasts</li>
 </ul></li>
-<li><p>Notes from <a href="https://towardsdatascience.com/are-your-demand-forecasts-hurting-profits-and-service-levels-f61af7c5ff">Are Your Demand Forecasts Hurting Profits and Service Levels</a></p>
-<ul>
-<li><p>Blue Dot Thinking’s <a href="http://www.bluedotthinking.com/">WasteNot API service</a> ($) WasteNot (logistics analytics firm) uses prophet for demand forecasting which consistently under-predicts, so they use an adjustment for better forecasts</p></li>
-<li><p>Prediction adjustment - (e.g.&nbsp;for perishables) calculate an optimal “Buffer Multiplier” value — each predicted value from the statistical forecast is multiplied by the multiplier, resulting in a higher number of units replenished each day</p>
+<li><u>Prediction Adjustment</u> - (e.g.&nbsp;for perishables) Calculate an optimal “Buffer Multiplier” value — each predicted value from the statistical forecast is multiplied by the multiplier, resulting in a higher number of units replenished each day
 <ul>
 <li>Variables used:
 <ul>
-<li>unit_sale_price/unit_cost</li>
-<li>historical variability</li>
-<li>shelf-life (seconds)</li>
-<li>stock levels They didn’t show the formula, but I’m guessing their modeling residuals with these variables.</li>
+<li>Unit Sale Price/Unit Cost</li>
+<li>Historical Variability</li>
+<li>Shelf-Life (seconds)</li>
+<li>Stock Levels
+<ul>
+<li>They didn’t show the formula, but I’m guessing their modeling residuals with these variables.</li>
+</ul></li>
 </ul></li>
 </ul></li>
 </ul>
-<p>Notes from <a href="https://towardsdatascience.com/case-study-applying-a-data-science-process-model-to-a-real-world-scenario-93ae57b682bf">Case Study: Applying a Data Science Process Model to a Real-World Scenario</a> A VERY detailed article that goes through a scenario of step-by-step planning and execution of changing a manual stock replenishment process to an automated one</p>
-<pre><code>  As a guide, they use [DASC-PM](https://medium.com/towards-data-science/dasc-pm-a-novel-process-model-for-data-science-projects-9f872f2534b1) (DAta SCience - Process Model) - a structured and scientific process for project management</code></pre>
+</section>
+<section id="sec-log-demfcast-artnot-csasr" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="sec-log-demfcast-artnot-csasr">Case Study: Automating Stock Replenishment</h4>
 <ul>
-<li>Project manager tries to examine whether the project can fundamentally be classified as feasible and whether the requirements can be carried out with the available resources.
+<li><u>Misc</u>
 <ul>
+<li>Notes from <a href="https://towardsdatascience.com/case-study-applying-a-data-science-process-model-to-a-real-world-scenario-93ae57b682bf">Case Study: Applying a Data Science Process Model to a Real-World Scenario</a></li>
+<li>A VERY detailed article that goes through a scenario of step-by-step planning and execution of changing a manual stock replenishment process to an automated one</li>
+<li>As a guide, they use <a href="https://medium.com/towards-data-science/dasc-pm-a-novel-process-model-for-data-science-projects-9f872f2534b1">DASC-PM</a> (DAta SCience - Process Model) - a structured and scientific process for project management</li>
+</ul></li>
+<li><u>Determine Feasibility</u>
+<ul>
+<li>Project manager tries to examine whether the project can fundamentally be classified as feasible and whether the requirements can be carried out with the available resources.</li>
 <li>Expert Interviews: Is the problem in general is very well suited for the deployment of data science and are there corresponding projects that have already been undertaken externally and also published?</li>
 <li>Data science team: Are there a sufficient number of potentially suitable methods for this project and are the required data sources are available?</li>
-<li>IT department: check the available infrastructure and the expertise of the involved employees. Demand forecasting model</li>
+<li>IT department: check the available infrastructure and the expertise of the involved employees.</li>
+</ul></li>
+<li><u>Demand Forecasting Model</u>
+<ul>
 <li>Requirements:
 <ul>
 <li>Accuracy of 75%. This means that the forecasts for quantities of each product should deviate from actual requirements by no more than 25%.</li>
 <li>Produce monthly planning cycles and quantify the need for short-term and long-term materials</li>
 </ul></li>
-<li>Data sources: Order histories, inventory and sales figures for customers, and internal advertising plans</li>
+<li>Data sources: order histories, inventory and sales figures for customers, and internal advertising plans</li>
 <li>Features: seasonality, trends, and market developments</li>
 <li>Forecasts regenerated every month</li>
 </ul></li>
-<li>Forecasts loaded into internal planning software
+<li><u>Load Forecasts into Internal Planning Software</u>
 <ul>
 <li>Projections will be analyzed and, if need be, supplemented or corrected.
 <ul>
@@ -424,36 +496,43 @@ ul.task-list li input[type="checkbox"] {
 <li>Allows for the creation of flexible views where the users can personally choose their context (time reference, product groups, etc.)and adjust calculations in real-time.</li>
 <li>Sounds like expensive optimization software with a snazzy UI</li>
 </ul></li>
-</ul></li>
 <li>Final plans are loaded into the Data Lake after processing by the planning teams so they can be referenced in the future.</li>
-<li>User Integration
+</ul></li>
+<li><u>User Integration</u>
 <ul>
 <li>Users are included in the development from the beginning to ensure technical correctness and relevance and to ensure familiarity with the solution before the end of the development phase.</li>
 <li>Simple line and bar charts for processes and benchmarks are used, along with tables reduced to what is most important.</li>
 <li>Planners get training sessions to help them interpret the forecasts and classify their quality.</li>
 <li>Complete documentation is drafted
 <ul>
-<li>Technical part:&nbsp; data structures and connections</li>
+<li>Technical part: data structures and connections</li>
 <li>Content part: jointly prepared with the users to describe the usage of the data product</li>
 </ul></li>
 </ul></li>
-<li>Post-Development Phase (i.e.&nbsp;maintenance of the project)
+<li><u>Post-Development Phase</u>
 <ul>
+<li>i.e.&nbsp;Maintenance of the project</li>
 <li>Constant automated adjustment of the prediction model to new data</li>
 <li>Various parameters such as the forecast horizon or threshold values for the accuracy of the prediction can be made by the planners</li>
 <li>Problems occurring after the release of the first version are entered via the IT ticket system and assigned to the data science area</li>
 <li>At regular intervals, it is also checked whether the model still satisfies the expectations of the company or whether changes are necessary.</li>
 </ul></li>
-</ul></li>
-<li><p>Forecasting shocks is difficult for an algorithm</p>
+</ul>
+</section>
+<section id="sec-log-demfcast-artnot-dwshk" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="sec-log-demfcast-artnot-dwshk">Dealing with Shocks</h4>
 <ul>
+<li><u>Misc</u>
+<ul>
+<li>Forecasting shocks is difficult for an algorithm</li>
 <li>Notes from <a href="https://doordash.engineering/2021/02/24/why-good-forecasts-treat-human-input-as-part-of-the-model/">Why Good Forecasts Treat Human Input as Part of the Model</a></li>
-<li>Preprocessing
+</ul></li>
+<li><u>Preprocessing</u>
 <ul>
 <li>It can be better to smooth out (expected) shocks in the training data and then add an adjustment to the predictions during the dates of the shocks.</li>
 <li>The smoothed out data will help the algorithm produce more accurate predictions for days when there isn’t an expected shock.
 <ul>
-<li>e.g.&nbsp;kalman filter with parameters for seasonality, trends from {{tsmoothie}}
+<li>e.g.&nbsp;Kalman filter with parameters for seasonality, trends from <span style="color: goldenrod">{{tsmoothie}}</span>
 <ul>
 <li>Nothing special about this smoother. Probably just the method in tsmoothie that performed best for them (which is a good reason to use it).</li>
 </ul></li>
@@ -465,22 +544,23 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li>e.g.&nbsp;Marketing departiment is expecting 10% growth the week after it’s new promotion</li>
 </ul></li>
-<li>Replace with one of the previous methods, then apply a smoothing algorithm<img src="./_resources/Logistics.resources/image4-1.png" class="img-fluid">
+<li>Replace with one of the previous methods, then apply a smoothing algorithm<br>
+<img src="./_resources/Logistics.resources/image4-1.png" class="img-fluid" width="432">
 <ul>
 <li>Shows the Kalman filter by itself fails to replace the outlier dip with the normal, expected peak, but the manual adjustment + Kalman gives us what we want</li>
 </ul></li>
 </ul></li>
 <li>Examples of shocks that may need training data to have manual adjustments and not be smoothed by an algorithm
 <ul>
-<li>one-time spikes due to abnormal weather conditions</li>
-<li>one-off promotions
+<li>One-time spikes due to abnormal weather conditions</li>
+<li>One-off promotions
 <ul>
-<li>replace the outlier week with the most recent week prior to the dip as a proxy for what should have happened.</li>
+<li>Replace the outlier week with the most recent week prior to the dip as a proxy for what should have happened.</li>
 </ul></li>
-<li>a sustained marketing campaign that is indistinguishable from organic growth.</li>
+<li>A sustained marketing campaign that is indistinguishable from organic growth.</li>
 </ul></li>
 </ul></li>
-<li>Prediction Adjustment
+<li><u>Prediction Adjustment</u>
 <ul>
 <li>Extreme events (i.e.&nbsp;unprecedented promotions or weather), where the expected impact is well outside of any historical data, may prove impossible for forecasting methods to produce an adequate forecast
 <ul>
@@ -489,10 +569,13 @@ ul.task-list li input[type="checkbox"] {
 <li>Requires using domain expertise of the event to use to adjust the predictions</li>
 <li>Make sure to build-out the code infrastructure so that each manual adjustment should just feel like adding another input to the model.</li>
 </ul></li>
-</ul></li>
-<li><p>Intermittent Demand</p>
-<ul>
-<li>Misc
+</ul>
+</section>
+</section>
+<section id="sec-log-demfcast-intdem-" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="sec-log-demfcast-intdem-">Intermittent Demand</h3>
+<section id="sec-log-demfcast-intdem-misc" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="sec-log-demfcast-intdem-misc">Misc</h4>
 <ul>
 <li>Also see ADAM ebook <a href="https://openforecast.org/adam/ADAMIntermittent.html">chapter</a>, <a href="https://forecasting.svetunkov.ru/en/2018/09/18/smooth-package-for-r-intermittent-state-space-model-part-i-introducing-the-model/">post</a>, real world <a href="https://www.r-bloggers.com/2023/05/story-of-probabilistic-forecasting-of-hourly-emergency-department-arrivals/">use case</a> on adding an occurrence variable to an ETS model to handle intermittent data
 <ul>
@@ -512,12 +595,14 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li>Not always possible. For example, different SKUs have different lead times, so aggregating products into categories with the same protection intervals can be complicated.</li>
 </ul></li>
-</ul></li>
 <li>Protection Interval is your horizon, which equals the length of the review period + length of the lead time
 <ul>
 <li>See Order-Up-To (OUT) Level Policy for details</li>
 </ul></li>
-<li>Compound Distributions
+</ul>
+</section>
+<section id="sec-log-demfcast-intdem-compdist" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="sec-log-demfcast-intdem-compdist">Compound Distributions</h4>
 <ul>
 <li>Target
 <ul>
@@ -537,10 +622,12 @@ ul.task-list li input[type="checkbox"] {
 <li>Data that’s intermittent and has extreme variability in demand sizes</li>
 <li>Negative Binomial built to handle this type of data</li>
 </ul></li>
-</ul></li>
-<li>Forecasting Mean Demand
+</ul>
+</section>
+<section id="sec-log-demfcast-intdem-fcastmn" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="sec-log-demfcast-intdem-fcastmn">Forecasting Mean Demand</h4>
 <ul>
-<li>Parametric
+<li><u>Parametric</u>
 <ul>
 <li>Exponential Smoothing
 <ul>
@@ -566,7 +653,7 @@ ul.task-list li input[type="checkbox"] {
 <li>See video for details (although it wasn’t discussed in great detail)</li>
 </ul></li>
 </ul></li>
-<li>Non-Parametric (aka Empirical)
+<li><u>Non-Parametric (aka Empirical)</u>
 <ul>
 <li>Bootstrapping
 <ul>
@@ -577,15 +664,19 @@ ul.task-list li input[type="checkbox"] {
 </ul></li>
 </ul></li>
 </ul></li>
-</ul></li>
-<li>Forecasting Demand Variance
+</ul>
+</section>
+<section id="sec-log-demfcast-intdem-fcastvar" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="sec-log-demfcast-intdem-fcastvar">Forecasting Demand Variance</h4>
 <ul>
 <li>Using the variance of the forecast error of the protection interval to estimate the variance of demand over the protection interval
 <ul>
 <li>Classical method is to calculate the variance of the errors over each review period and aggregate to the get the variance over the protection interval, but the above method is better empirically and theoretically</li>
 </ul></li>
-</ul></li>
-<li>Diagnostics
+</ul>
+</section>
+<section id="sec-log-demfcast-intdem-diag" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="sec-log-demfcast-intdem-diag">Diagnostics</h4>
 <ul>
 <li>Do NOT use metrics based on absolute errors (e.g MASE, MAPE) <em>by themselves</em>
 <ul>
@@ -595,60 +686,58 @@ ul.task-list li input[type="checkbox"] {
 <li>Scaled Mean Squared Error</li>
 <li>Relative Root Mean Squared Error</li>
 <li>Look at the predictive distributions instead of just the point forecasts</li>
-<li>Accuracy Implication Metrics - measure the effect of the forecast on inventory<img src="./_resources/Logistics.resources/Screenshot-(1319).png" class="img-fluid">
+<li>Accuracy Implication Metrics - Measure the effect of the forecast on inventory<br>
+<img src="./_resources/Logistics.resources/Screenshot-(1319).png" class="img-fluid" width="432">
 <ul>
 <li>Y Axis: 1 - Fill_Rate; X Axis: Average on-hand inventory</li>
 <li>Each method is a forecasting model</li>
 <li>Think the Fill Rate is estimated from a simulation using the method’s forecast and a range of average SOH values as parameters</li>
 </ul></li>
+</ul>
+</section>
+</section>
+</section>
+<section id="sec-log-safstk" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="sec-log-safstk">Safety Stock (aka Buffer Stock)</h2>
+<section id="misc" class="level3">
+<h3 class="anchored" data-anchor-id="misc">Misc</h3>
+<ul>
+<li>Notes from <a href="https://web.mit.edu/2.810/www/files/readings/King_SafetyStock.pdf">Article</a></li>
+<li>Calculation of Safety Stock can be more useful than trying to improve forecast accuracy for intermittent(or sporadic) product time series (lotsa zeros).</li>
+</ul>
+</section>
+<section id="reasons-for-safety-stock" class="level3">
+<h3 class="anchored" data-anchor-id="reasons-for-safety-stock">Reasons for Safety Stock</h3>
+<ul>
+<li><u>Demand Uncertainty</u> - Every retailer and manufacturer will have products that sell well all year round and products that fluctuate in demand.</li>
+<li><u>Lead time Uncetrainty</u> - Deliveries arriving earlier or later than expected, a safety stock formula will help you to cover unexpected delays and demand fluctuation to maintain a consistent output.
+<ul>
+<li>The lead time is usually a distribution and not a constant, so it needs to be recorded in order to get a sample standard deviation thats used the safety stock formula</li>
+<li>Factors:
+<ul>
+<li>Deciding what to order or produce</li>
+<li>Approval time</li>
+<li>Submitting a purchase requisition</li>
+<li>Emailing vendors</li>
+<li>Manufacturing and processing of the product</li>
+<li>Delivery time from vendor</li>
+<li>Incoming inspection time</li>
+<li>Time it takes to put on the shelf</li>
+<li>Any additional time required to return to the start of the next cycle</li>
 </ul></li>
 </ul></li>
 </ul>
 </section>
-<section id="sec-log-safstk" class="level2" data-number="2.4">
-<h2 data-number="2.4" class="anchored" data-anchor-id="sec-log-safstk"><span class="header-section-number">2.4</span> Safety Stock (aka Buffer Stock)</h2>
+<section id="stockouts" class="level3">
+<h3 class="anchored" data-anchor-id="stockouts">Stockouts</h3>
 <ul>
-<li>Misc
-<ul>
-<li>Notes from <a href="https://web.mit.edu/2.810/www/files/readings/King_SafetyStock.pdf">Article</a></li>
-<li>Calculation of Safety Stock can be more useful than trying to improve forecast accuracy for intermittent(or sporadic) product time series (lotsa zeros).</li>
-</ul></li>
-<li><strong>Safety stock</strong> - extra inventory held by a retailer or a manufacturer in case demand increases unexpectedly. This means it’s additional stock above the desired inventory level that you would usually hold for day-to-day operations.</li>
-<li><strong>Replenishment cycle</strong> - cycle between replenishment (i.e.&nbsp;restocking) orders</li>
-<li><strong>Fill rate</strong> (aka <strong>Fulfillment Rate</strong>)- the percentage of orders that you can ship from your available stock without any lost sales, backorders, or stockouts.<img src="./_resources/Logistics.resources/Screenshot-(494).png" class="img-fluid">
-<ul>
-<li>Fill Rate = (Total Orders Shipped / Total Orders Placed) x 100</li>
-<li>On average, companies typically maintain a fill rate of about 85%-95%. But ideally, you should strive for a fill rate between 97% and 99%.</li>
-</ul></li>
-<li>Reasons for safety stock:
-<ul>
-<li>Demand uncertainty - Every retailer and manufacturer will have products that sell well all year round and products that fluctuate in demand.</li>
-<li>Lead time uncetrainty - deliveries arriving earlier or later than expected, a safety stock formula will help you to cover unexpected delays and demand fluctuation to maintain a consistent output.
-<ul>
-<li><strong>lead time</strong> (aka performance cycle)- time required between the creation of a replenishment order and the effective store replenishment
-<ul>
-<li>Usually a distribution and not a constant, so it needs to be recorded in order to get a sample standard deviation thats used the safety stock formula</li>
-<li>Factors:
-<ul>
-<li>deciding what to order or produce</li>
-<li>approval time</li>
-<li>submitting a purchase requisition</li>
-<li>emailing vendors</li>
-<li>manufacturing and processing of the product</li>
-<li>delivery time from vendor</li>
-<li>incoming inspection time</li>
-<li>time it takes to put on the shelf</li>
-<li>any additional time required to return to the start of the next cycle <strong>Stockouts</strong> - out of stock events</li>
-</ul></li>
-</ul></li>
-</ul></li>
-<li>Safety stock determinations are not intended to eliminate all stockouts—just the majority of them Usually caused by:
+<li>Safety stock determinations are not intended to eliminate all stockouts — just the majority of them Usually caused by:
 <ul>
 <li>Changes in consumer demand</li>
 <li>Incorrect stock forecasts</li>
 <li>Variability in lead times for raw materials</li>
 </ul></li>
-<li>Costs due to stockouts
+<li>Costs Due to Stockouts
 <ul>
 <li>Loss of revenue</li>
 <li>Loss of gross profit</li>
@@ -657,15 +746,18 @@ ul.task-list li input[type="checkbox"] {
 <li>Poor efficiency</li>
 <li>Strained supplier and retailer relationships</li>
 </ul></li>
-</ul></li>
-<li><strong>(Cycle) Service level (Z)</strong> - the probability that the amount of inventory on hand during the lead time is sufficient to meet expected demand – that is, the probability that a stockout will not occur.
+</ul>
+</section>
+<section id="cycle-service-level-z" class="level3">
+<h3 class="anchored" data-anchor-id="cycle-service-level-z">(Cycle) Service level (Z)</h3>
 <ul>
-<li>Higher service level –&gt; more safety stock</li>
+<li>Higher service level <span class="math inline">\(\rightarrow\)</span> more safety stock</li>
 <li>Independently choose a service level for groups of products based things such as strategic importance, profit margin, or dollar volume.
 <ul>
 <li>The retail industry aims to maintain a typical service level of between 90% and 95% depending on the product</li>
 </ul></li>
-<li><span class="ribbon-highlight">Example</span>: <img src="./_resources/Logistics.resources/Screenshot-(493).png" class="img-fluid">
+<li><span class="ribbon-highlight">Example</span>:<br>
+<img src="./_resources/Logistics.resources/Screenshot-(493).png" class="img-fluid" width="432">
 <ul>
 <li>At 95 percent service level, expect:
 <ul>
@@ -678,113 +770,131 @@ ul.task-list li input[type="checkbox"] {
 <li>Stock dwindles as product is sold as the cycle ends, then stock is replenished after an order and begins to dwindle again.</li>
 </ul></li>
 </ul></li>
+</ul>
+</section>
+<section id="safety-stock-equations" class="level3">
+<h3 class="anchored" data-anchor-id="safety-stock-equations">Safety Stock Equations</h3>
+<ul>
+<li><p><u>When the demand interval doesn’t equal lead time interval</u></p>
+<ul>
+<li><p>Used to mitigate demand variability and lead time variability (σLT see next formula) is very small or zero</p>
+<p><span class="math display">\[
+\text{Safety Stock} = Z \cdot \sigma_D \cdot \sqrt{\frac{PC}{T_I}}
+\]</span></p>
+<ul>
+<li><span class="math inline">\(Z\)</span>: z-score of the service level (1-sided, upper-tail)
+<ul>
+<li>e.g.&nbsp;95% service level <span class="math inline">\(\rightarrow\)</span> Z = 1.64; 90% service level <span class="math inline">\(\rightarrow\)</span> Z = 1.28</li>
+<li><code>qnorm(0.95)</code> = 1.644854, <code>qnorm(0.90)</code> = 1.281552</li>
 </ul></li>
-<li>Safety Stock equations
+<li><span class="math inline">\(PC\)</span>: Performance Cycle, another term for total lead time</li>
+<li><span class="math inline">\(T_I\)</span>: Time increment used for calculating standard deviation of demand</li>
+<li><span class="math inline">\(\sigma_D\)</span>: Standard Deviation of Demand.</li>
+</ul></li>
+<li><p><span class="ribbon-highlight">Example</span>: if the standard deviation of demand is calculated from weekly demand data and the total lead time including review period is three weeks.</p>
 <ul>
-<li>When the demand interval doesn’t equal lead time interval
-<ul>
-<li>used to mitigate demand variability and lead time variability (σLT see next formula) is very small or zero</li>
-<li><strong>Safety stock = Z × √[PC / T1] × σD</strong>
-<ul>
-<li>PC = performance cycle, another term for total lead time</li>
-<li>T1 = time increment used for calculating standard deviation of demand</li>
-<li>σD = standard deviation of demand.
-<ul>
-<li>(Partial) <span class="ribbon-highlight">Example</span>: if the standard deviation of demand is calculated from weekly demand data and the total lead time including review period is three weeks.
-<ul>
-<li>PC = 21 days (3 weeks)</li>
-<li>T1 = 7 days (weekly data)</li>
+<li><span class="math inline">\(PC\)</span> = 21 days (3 weeks)</li>
+<li><span class="math inline">\(T_I\)</span> = 7 days (weekly data)</li>
 <li>Safety Stock = Z * √3 * σD</li>
 </ul></li>
-<li><span class="ribbon-highlight">Example</span>: Desired service level = 95%; seven-day manufacturing time and the one day needed to arrive at the warehouse; Standard deviation of weekly demand = 10 rolls
+<li><p><span class="ribbon-highlight">Example</span>: Desired service level = 95%; seven-day manufacturing time and the one day needed to arrive at the warehouse; Standard deviation of weekly demand = 10 rolls</p>
 <ul>
-<li>Safety stock = 1.65 * √[8/7] * 10 rolls
+<li>Safety stock = 1.64 * √[8/7] * 10 rolls
 <ul>
 <li>Safety stock = 18 rolls</li>
 </ul></li>
 </ul></li>
 </ul></li>
-</ul></li>
-</ul></li>
-<li>When the lead time varies and demand variability (σD see previous formula) is very small or zero
+<li><p><u>When the lead time varies and demand variability (σD see previous formula) is very small or zero</u></p>
+<p><span class="math display">\[
+\text{Safety Stock} = Z \cdot \sigma_{LT} \cdot D_{\text{avg}}
+\]</span></p>
 <ul>
-<li><strong>Safety Stock = Z × σLT × Davg</strong>
+<li><span class="math inline">\(Z\)</span>: z-score of the service level (1-sided, upper-tail)
 <ul>
-<li>Z is the z-score of the service level (1-sided, upper-tail)
-<ul>
-<li>e.g.&nbsp;95% service level –&gt; Z = 1.64; 90% service level –&gt; Z = 1.28</li>
+<li>e.g.&nbsp;95% service level <span class="math inline">\(\rightarrow\)</span> Z = 1.64; 90% service level <span class="math inline">\(\rightarrow\)</span> Z = 1.28</li>
 <li><code>qnorm(0.95)</code> = 1.644854, <code>qnorm(0.90)</code> = 1.281552</li>
 </ul></li>
-<li>σLT is the standard deviation of the lead time</li>
-<li>Davg is the demand forecast
+<li><span class="math inline">\(\sigma_{LT}\)</span>: Standard Deviation of the Lead Time</li>
+<li><span class="math inline">\(D_{\text{avg}}\)</span>: Demand Forecast
 <ul>
 <li>Depends what the frequency of the series is, but you want an estimate of the total demand between orders</li>
+</ul></li>
 <li><span class="ribbon-highlight">Example</span>: If orders are made monthly and you forecast weekly sales, then your horizon is likely monthly and you sum around 4 weeks of point estimates to get D.</li>
 </ul></li>
-</ul></li>
-</ul></li>
-<li>When both demand variability and lead time variability are present
+<li><p><u>When both demand variability and lead time variability are present</u></p>
 <ul>
-<li>demand and lead time <em>variability</em> are independent
-<ul>
-<li><strong>Safety stock = Z ×</strong> <strong>√[(PC/T1&nbsp; ×&nbsp; σD2 ) + (σLT × Davg)2]</strong></li>
-</ul></li>
-<li>demand and lead time <em>variability</em> are not independent
-<ul>
-<li><strong>Safety stock = (Z × √[PC/T1] × σD) + ( Z × σLT × Davg)</strong></li>
-</ul></li>
-<li>Demand variability is the dominant influence on safety stock requirements.
+<li><p>Demand and lead time <em>variability</em> are independent</p>
+<p><span class="math display">\[
+\text{Safety Stock} = Z \cdot \sqrt{\frac{\sigma_D^2 PC}{T_I} + (\sigma_{LT}D_{\text{avg}})^2}
+\]</span></p></li>
+<li><p>Demand and lead time <em>variability</em> are not independent</p>
+<p><span class="math display">\[
+\text{Safety Stock} = \left(Z \cdot \sigma_D \cdot\sqrt{\frac{PC}{T_I}}\;\right) + (Z \cdot \sigma_{LT} \cdot D_{\text{avg}})
+\]</span></p></li>
+<li><p>Demand variability is the dominant influence on safety stock requirements.</p>
 <ul>
 <li>With the recognition of what factors dominate an equation, it becomes easier to focus improvement efforts</li>
 </ul></li>
 </ul></li>
-</ul></li>
-<li>Issues
+</ul>
+</section>
+<section id="issues" class="level3">
+<h3 class="anchored" data-anchor-id="issues">Issues</h3>
 <ul>
 <li>Sometimes recommended safety stock volumes are larger than business leaders are comfortable having
 <ul>
-<li>alternative/supplement: order expediting
+<li>Alternative or Supplement: Order Expediting
 <ul>
 <li>Reduce safety stock volume by keeping small amounts of expensive products and rely on air freight to cover peaks in demand. The cost of shipping a small percentage of total demand via air can be minimal compared to the cost of carrying large amounts of safety stock of the valuable material on an ongoing basis.</li>
 </ul></li>
-<li>alternative/supplement: make-to-order (MTO) or finish-to-order (FTO) production environment
+<li>Alternative or Supplement: Make-to-Order (MTO) or Finish-to-Order (FTO) production environment
 <ul>
 <li>If lead times allow, MTO eliminates the need for most safety stock. Meanwhile, FTO allows for less differentiation in safety stock than finished-product inventory, which lowers demand variability and reduces safety stock requirements.</li>
 <li>FTO and MTO also are well suited for situations where customers are willing to accept longer lead times for highly sporadic purchases.</li>
 </ul></li>
 </ul></li>
-</ul></li>
 </ul>
 </section>
-<section id="sec-log-eoq" class="level2" data-number="2.5">
-<h2 data-number="2.5" class="anchored" data-anchor-id="sec-log-eoq"><span class="header-section-number">2.5</span> Economic Order Quantity (EOQ) (aka Wilson Formula)</h2>
+</section>
+<section id="sec-log-eoq" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="sec-log-eoq">Economic Order Quantity (EOQ)</h2>
 <ul>
-<li>the ideal order quantity a company should purchase to minimize inventory costs such as holding costs, shortage costs, and order costs
+<li><p>AKA Wilson Formula</p>
+<p><span class="math display">\[
+Q = \sqrt{\frac{2DS}{H}}
+\]</span></p>
+<ul>
+<li><span class="math inline">\(Q\)</span>: EOQ units (i.e.&nbsp;quantity of product to be ordered)</li>
+<li><span class="math inline">\(D\)</span>: Demand in units (Typicall on an annual basis)</li>
+<li><span class="math inline">\(S\)</span>: Order Cost (per Purchase Order)</li>
+<li><span class="math inline">\(H\)</span>: Holding Costs (per unit, per year)</li>
+</ul></li>
+<li><p>The ideal order quantity a company should purchase to minimize inventory costs such as holding costs, shortage costs, and order costs</p>
 <ul>
 <li>Usually used for purchase ordering (not production)</li>
 <li><strong>Assumes demand, ordering, and holding costs remain constant over time</strong></li>
 </ul></li>
-<li>Goal: minimize the cost of ordering and holding stock, while still meeting demand and service level requirements</li>
-<li>Costs of ordering:
+<li><p>Goal: minimize the cost of ordering and holding stock, while still meeting demand and service level requirements</p></li>
+<li><p>Costs of Ordering</p>
 <ul>
-<li>placing your order</li>
-<li>delivery</li>
-<li>transportation</li>
-<li>receiving the order</li>
+<li>Placing your order</li>
+<li>Delivery</li>
+<li>Transportation</li>
+<li>Receiving the order</li>
 </ul></li>
-<li>Costs of holding stock:
+<li><p>Costs of Holding Stock</p>
 <ul>
-<li>paying for stock in advance</li>
-<li>warehousing</li>
-<li>storage</li>
-<li>depreciation</li>
+<li>Paying for stock in advance</li>
+<li>Warehousing</li>
+<li>Storage</li>
+<li>Depreciation</li>
 </ul></li>
-<li><img src="./_resources/Logistics.resources/ql_e515353171060899a1dc73b3daa97572_l3.png" class="img-fluid"></li>
 </ul>
 </section>
-<section id="sec-log-outpol" class="level2" data-number="2.6">
-<h2 data-number="2.6" class="anchored" data-anchor-id="sec-log-outpol"><span class="header-section-number">2.6</span> Order-Up-To (OUT) Level Policy</h2>
-<p><img src="./_resources/Logistics.resources/Screenshot-(1316).png" class="img-fluid"></p>
+<section id="sec-log-outpol" class="level2">
+<h2 class="anchored" data-anchor-id="sec-log-outpol">Order-Up-To (OUT) Level Policy</h2>
+<p><img src="./_resources/Logistics.resources/Screenshot-(1316).png" class="img-fluid" width="632"></p>
 <ul>
 <li>Time intervals (i.e.&nbsp;Review Interval) trigger a replenishment, not reorder points
 <ul>
@@ -818,7 +928,7 @@ ul.task-list li input[type="checkbox"] {
 <li>Mean and Variance of Demand are estimated</li>
 <li>Forecasts in conjunction with a hypothesized demand distribution (parametric) vs build-up of the empircal distribution via bootstrapping (non-parametric)
 <ul>
-<li>See Demand Forecasting &gt;&gt; Intermittent Demand &gt;&gt; Forecasting Mean Demand</li>
+<li>See <a href="../qmd/logistics.html#sec-log-demfcast-intdem-fcastmn" style="color: green">Demand Forecasting &gt;&gt; Intermittent Demand &gt;&gt; Forecasting Mean Demand</a></li>
 </ul></li>
 <li>Given updated variables, place order that raises IP to OUT level (S)</li>
 </ul></li>
@@ -840,8 +950,8 @@ ul.task-list li input[type="checkbox"] {
 </ul></li>
 </ul>
 </section>
-<section id="sec-log-reordpt" class="level2" data-number="2.7">
-<h2 data-number="2.7" class="anchored" data-anchor-id="sec-log-reordpt"><span class="header-section-number">2.7</span> Reorder Point</h2>
+<section id="sec-log-reordpt" class="level2">
+<h2 class="anchored" data-anchor-id="sec-log-reordpt">Reorder Point</h2>
 <ul>
 <li>The reorder point is the threshold amount of inventory at which you need place an replenishment order
 <ul>
@@ -856,8 +966,8 @@ ul.task-list li input[type="checkbox"] {
 <li><strong>Reorder Point = Safety Stock + (Davg × Lead time)</strong></li>
 </ul>
 </section>
-<section id="sec-log-dim" class="level2" data-number="2.8">
-<h2 data-number="2.8" class="anchored" data-anchor-id="sec-log-dim"><span class="header-section-number">2.8</span> Decision Impact Metrics</h2>
+<section id="sec-log-dim" class="level2">
+<h2 class="anchored" data-anchor-id="sec-log-dim">Decision Impact Metrics</h2>
 <ul>
 <li>Other methods for determining forecast performance have serious flaws
 <ul>
@@ -870,7 +980,7 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li>FVA: The change in a forecasting accuracy metric that can be attributed to a particular process or participant in the forecasting process.
 <ul>
-<li>Example<img src="./_resources/Logistics.resources/Screenshot-(807).png" class="img-fluid">
+<li>Example<img src="./_resources/Logistics.resources/Screenshot-(807).png" class="img-fluid" width="332">
 <ul>
 <li>Statistical model has 5% FVA vs Naive forecast</li>
 <li>Adjusted Statistical Forecast has 2% FVA vs Naive Forecast
@@ -1046,8 +1156,8 @@ ul.task-list li input[type="checkbox"] {
 </ul></li>
 </ul>
 </section>
-<section id="sec-log-pffpp" class="level2" data-number="2.9">
-<h2 data-number="2.9" class="anchored" data-anchor-id="sec-log-pffpp"><span class="header-section-number">2.9</span> Profit Functions for Perishable Products</h2>
+<section id="sec-log-pffpp" class="level2">
+<h2 class="anchored" data-anchor-id="sec-log-pffpp">Profit Functions for Perishable Products</h2>
 <ul>
 <li>The newsvendor problem is a class of problems, where the product can only be sold one day, after which it goes to waste. So this is appropriate, for example, for perishable products in retail</li>
 <li>Notes from An <a href="https://forecasting.svetunkov.ru/en/2021/09/03/an-integrated-method-for-estimation-and-optimisation/">Integrated Method for Estimation and Optimisation</a>; associated <a href="http://dx.doi.org/10.13140/RG.2.2.27057.81763">paper</a></li>
@@ -1113,8 +1223,8 @@ x2&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 3.3423&nbsp; &nbsp; 2.7810&nbsp; &nb
 </ul></li>
 </ul>
 </section>
-<section id="sec-log-drdsh" class="level2" data-number="2.10">
-<h2 data-number="2.10" class="anchored" data-anchor-id="sec-log-drdsh"><span class="header-section-number">2.10</span> DoorDash</h2>
+<section id="sec-log-drdsh" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="sec-log-drdsh">DoorDash</h2>
 <ul>
 <li>Notes from <a href="https://towardsdatascience.com/managing-supply-and-demand-balance-through-machine-learning-70d4f0808617" class="uri">https://towardsdatascience.com/managing-supply-and-demand-balance-through-machine-learning-70d4f0808617</a></li>
 <li>2-stage solution
@@ -1212,8 +1322,8 @@ x2&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 3.3423&nbsp; &nbsp; 2.7810&nbsp; &nb
 </ul></li>
 </ul>
 </section>
-<section id="sec-log-supch" class="level2" data-number="2.11">
-<h2 data-number="2.11" class="anchored" data-anchor-id="sec-log-supch"><span class="header-section-number">2.11</span> Supply Chain</h2>
+<section id="sec-log-supch" class="level2">
+<h2 class="anchored" data-anchor-id="sec-log-supch">Supply Chain</h2>
 <ul>
 <li><p>Misc</p>
 <ul>
@@ -1278,8 +1388,8 @@ x2&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 3.3423&nbsp; &nbsp; 2.7810&nbsp; &nb
 </ul></li>
 </ul>
 </section>
-<section id="sec-log-warmang" class="level2" data-number="2.12">
-<h2 data-number="2.12" class="anchored" data-anchor-id="sec-log-warmang"><span class="header-section-number">2.12</span> Warehouse Management</h2>
+<section id="sec-log-warmang" class="level2">
+<h2 class="anchored" data-anchor-id="sec-log-warmang">Warehouse Management</h2>
 <ul>
 <li>Misc
 <ul>
