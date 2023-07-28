@@ -365,14 +365,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li>Goal: develop a replenishment policy that will minimize your ordering, holding and shortage costs.
 <ul>
-<li><u>Ordering Costs</u> ($ per order): Fixed cost to place an order due to administrative costs, system maintenance or manufacturing costs</li>
-<li><u>Holding Costs</u> ($ per unit per unit of time): All the costs required to hold your inventory (storage, insurance, and capital costs)</li>
+<li><a href="../qmd/logistics.html#sec-log-outpol" style="color: green">OUT level policy</a> is widely recommended as a replenishment policy</li>
+<li>Costs (Also see <a href="../qmd/logistics.html#sec-log-eoq" style="color: green">EOQ</a>, <a href="../qmd/logistics.html#sec-log-dim-dicmp" style="color: green">DIM &gt;&gt; DI Components</a>)
+<ul>
+<li><u>Ordering Costs</u> ($ per order): Fixed cost to place an order due to administrative costs, system maintenance or manufacturing costs
+<ul>
+<li>Also see</li>
+</ul></li>
+<li><u>Holding Costs</u> ($ per unit per unit of time): All the costs required to hold your inventory (storage, insurance, and capital costs)
+<ul>
+<li>Forecast PI widths serve as a proxy for inventory holding costs and provides valuable input for setting a target service level</li>
+</ul></li>
 <li><u>Shortage/Stock-out Costs</u> ($ per unit): The costs of not having enough inventory to meet the customer demand (Lost Sales, Penalty)</li>
 </ul></li>
-<li>Forecast PI widths serve as a proxy for inventory holding costs and provides valuable input for setting a target service level</li>
+</ul></li>
 <li>Packages
 <ul>
-<li><span style="color: #990000">{planr}</span> - uses opening inventory, sales forecasts and supply variables to calculate projected inventory and projected coverage calculations (<a href="https://www.r-bloggers.com/2022/10/using-r-in-inventory-management-and-demand-forecasting/">article</a>)</li>
+<li><span style="color: #990000">{planr}</span> - Uses opening inventory, sales forecasts and supply variables to calculate projected inventory and projected coverage calculations (<a href="https://www.r-bloggers.com/2022/10/using-r-in-inventory-management-and-demand-forecasting/">article</a>)</li>
 </ul></li>
 <li>Question: “Due to the complexity/cost of maintaining inventory management system. Would it be sufficient to just set a safety stock level and replenish once the SKU dips below that level?”
 <ul>
@@ -641,7 +650,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul></li>
 <li>Protection Interval is your horizon, which equals the length of the review period + length of the lead time
 <ul>
-<li>See Order-Up-To (OUT) Level Policy for details</li>
+<li>See <a href="../qmd/logistics.html#sec-log-outpol" style="color: green">Order-Up-To (OUT) Level Policy</a> for details</li>
 </ul></li>
 </ul>
 </section>
@@ -722,6 +731,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="sec-log-demfcast-intdem-diag" class="level4 unnumbered">
 <h4 class="unnumbered anchored" data-anchor-id="sec-log-demfcast-intdem-diag">Diagnostics</h4>
 <ul>
+<li>Also see <a href="../qmd/logistics.html#sec-log-dim" style="color: green">Decision Impact Metrics</a></li>
 <li>Do NOT use metrics based on absolute errors (e.g MASE, MAPE) <em>by themselves</em>
 <ul>
 <li>Minimization of these metrics, by themselves, can result (i.e.&nbsp;over half of your values are zeros) in always recommending 0 value forecasts</li>
@@ -1015,9 +1025,10 @@ Q = \sqrt{\frac{2DS}{H}}
 <section id="sec-log-dim-misc" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="sec-log-dim-misc">Misc</h3>
 <ul>
+<li>Also see <a href="../qmd/logistics.html#sec-log-demfcast-intdem-diag" style="color: green">Demand Forecasting &gt;&gt; Intermittent Demand &gt;&gt; Diagnostics</a> &gt;&gt; Accuracy Implication Metrics</li>
 <li>DI metrics for all generated forecasts can be used to calculate a quarterly, semestrial, or annual ROI for the product planning department
 <ul>
-<li>ROI = sum(DIna)- (cost of people, tools, etc. used by department to generate forecasts)</li>
+<li>ROI = sum(<span class="math inline">\(DI_{na}\)</span>)- (cost of people, tools, etc. used by department to generate forecasts)</li>
 </ul></li>
 <li>Probabilistic Forecasts + DI metrics
 <ul>
