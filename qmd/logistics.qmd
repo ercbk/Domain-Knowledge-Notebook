@@ -3,12 +3,15 @@
 ## Misc {#sec-log-misc .unnumbered}
 
 -   Goal: develop a replenishment policy that will minimize your ordering, holding and shortage costs.
-    -   [Ordering Costs]{.underline} (\$ per order): Fixed cost to place an order due to administrative costs, system maintenance or manufacturing costs
-    -   [Holding Costs]{.underline} (\$ per unit per unit of time): All the costs required to hold your inventory (storage, insurance, and capital costs)
-    -   [Shortage/Stock-out Costs]{.underline} (\$ per unit): The costs of not having enough inventory to meet the customer demand (Lost Sales, Penalty)
--   Forecast PI widths serve as a proxy for inventory holding costs and provides valuable input for setting a target service level
+    -   [OUT level policy](logistics.qmd#sec-log-outpol){style="color: green"} is widely recommended as a replenishment policy
+    -   Costs (Also see [EOQ](logistics.qmd#sec-log-eoq){style="color: green"}, [DIM \>\> DI Components](logistics.qmd#sec-log-dim-dicmp){style="color: green"})
+        -   [Ordering Costs]{.underline} (\$ per order): Fixed cost to place an order due to administrative costs, system maintenance or manufacturing costs
+            -   Also see
+        -   [Holding Costs]{.underline} (\$ per unit per unit of time): All the costs required to hold your inventory (storage, insurance, and capital costs)
+            -   Forecast PI widths serve as a proxy for inventory holding costs and provides valuable input for setting a target service level
+        -   [Shortage/Stock-out Costs]{.underline} (\$ per unit): The costs of not having enough inventory to meet the customer demand (Lost Sales, Penalty)
 -   Packages
-    -   [{planr}]{style="color: #990000"} - uses opening inventory, sales forecasts and supply variables to calculate projected inventory and projected coverage calculations ([article](https://www.r-bloggers.com/2022/10/using-r-in-inventory-management-and-demand-forecasting/))
+    -   [{planr}]{style="color: #990000"} - Uses opening inventory, sales forecasts and supply variables to calculate projected inventory and projected coverage calculations ([article](https://www.r-bloggers.com/2022/10/using-r-in-inventory-management-and-demand-forecasting/))
 -   Question: "Due to the complexity/cost of maintaining inventory management system. Would it be sufficient to just set a safety stock level and replenish once the SKU dips below that level?"
     -   The more products you handle, the more an inventory management system matters. If you have 1000s or 10s of 1000s of different products, it makes a large difference whether you do demand forecasting along with implementing the Order-Up-To Level Policy, etc.
 -   Variables of interest that need to be forecasted for various decisions
@@ -201,7 +204,7 @@
 -   Preferrable to avoid intermittence by aggregating data to a category that's higher in the product hierarchy or lengthen the frequency.
     -   Not always possible. For example, different SKUs have different lead times, so aggregating products into categories with the same protection intervals can be complicated.
 -   Protection Interval is your horizon, which equals the length of the review period + length of the lead time
-    -   See Order-Up-To (OUT) Level Policy for details
+    -   See [Order-Up-To (OUT) Level Policy](logistics.qmd#sec-log-outpol){style="color: green"} for details
 
 #### Compound Distributions {#sec-log-demfcast-intdem-compdist .unnumbered}
 
@@ -245,6 +248,7 @@
 
 #### Diagnostics {#sec-log-demfcast-intdem-diag .unnumbered}
 
+-   Also see [Decision Impact Metrics](logistics.qmd#sec-log-dim){style="color: green"}
 -   Do NOT use metrics based on absolute errors (e.g MASE, MAPE) *by themselves*
     -   Minimization of these metrics, by themselves, can result (i.e. over half of your values are zeros) in always recommending 0 value forecasts
     -   Can be used in conjunction with bias correction measures
@@ -368,7 +372,7 @@
 
         -   With the recognition of what factors dominate an equation, it becomes easier to focus improvement efforts
 
-### Issues  {#sec-log-safstk-iss .unnumbered}
+### Issues {#sec-log-safstk-iss .unnumbered}
 
 -   Sometimes recommended safety stock volumes are larger than business leaders are comfortable having
     -   Alternative or Supplement: Order Expediting
@@ -456,8 +460,9 @@
 
 ### Misc {#sec-log-dim-misc .unnumbered}
 
+-   Also see [Demand Forecasting \>\> Intermittent Demand \>\> Diagnostics](logistics.qmd#sec-log-demfcast-intdem-diag){style="color: green"} \>\> Accuracy Implication Metrics
 -   DI metrics for all generated forecasts can be used to calculate a quarterly, semestrial, or annual ROI for the product planning department
-    -   ROI = sum(DIna)- (cost of people, tools, etc. used by department to generate forecasts)
+    -   ROI = sum($DI_{na}$)- (cost of people, tools, etc. used by department to generate forecasts)
 -   Probabilistic Forecasts + DI metrics
     -   Identify parameters (i.e. whatever value you're forecasting) with the highest economic risk
         -   Economic risk is *related* to the size of the PI of the forecast
