@@ -92,14 +92,18 @@
 
 -   [Reinforcement Learning for Inventory Optimization Series III: Sim-to-Real Transfer for the RL Model \| by Guangrui Xie \| Jan, 2023 \| Towards Data Science](https://towardsdatascience.com/reinforcement-learning-for-inventory-optimization-series-iii-sim-to-real-transfer-for-the-rl-model-d260c3b8277d)
 
--   Metrics for judging demand forecasts\
-    ![](./_resources/Logistics.resources/1-ni6N2L4yp0ynlOzL01f8Fg.png){width="532"}
+-   Metrics
 
-    -   Change in the Number of Stock-Out Days
-    -   Percent Change in Service Level
-    -   Change in Profit
-    -   Change in Wastage
-    -   change in Inventory Costs
+    -   See [Decision Impact Metrics](logistics.qmd#sec-log-dim){style="color: green"}
+
+    -   WasteNot method for judging its adjusted forecast model vs prophet\
+        ![](./_resources/Logistics.resources/1-ni6N2L4yp0ynlOzL01f8Fg.png){width="532"}
+
+        -   Change in the Number of Stock-Out Days (lower is better)
+        -   Percent Change in Service Level (higher is better)
+        -   Change in Profit (higher is better)
+        -   Change in Wastage (lower is better)
+        -   Change in Inventory Costs (lower is better)
 
 ### Article Notes {#sec-log-demfcast-artnot .unnumbered}
 
@@ -255,12 +259,12 @@
 
 ## Safety Stock (aka Buffer Stock) {#sec-log-safstk .unnumbered}
 
-### Misc
+### Misc {#sec-log-safstk-misc .unnumbered}
 
 -   Notes from [Article](https://web.mit.edu/2.810/www/files/readings/King_SafetyStock.pdf)
 -   Calculation of Safety Stock can be more useful than trying to improve forecast accuracy for intermittent(or sporadic) product time series (lotsa zeros).
 
-### Reasons for Safety Stock
+### Reasons for Safety Stock {#sec-log-safstk-rfss .unnumbered}
 
 -   [Demand Uncertainty]{.underline} - Every retailer and manufacturer will have products that sell well all year round and products that fluctuate in demand.
 -   [Lead time Uncetrainty]{.underline} - Deliveries arriving earlier or later than expected, a safety stock formula will help you to cover unexpected delays and demand fluctuation to maintain a consistent output.
@@ -276,7 +280,7 @@
         -   Time it takes to put on the shelf
         -   Any additional time required to return to the start of the next cycle
 
-### Stockouts
+### Stockouts {#sec-log-safstk-stkots .unnumbered}
 
 -   Safety stock determinations are not intended to eliminate all stockouts --- just the majority of them Usually caused by:
     -   Changes in consumer demand
@@ -290,7 +294,7 @@
     -   Poor efficiency
     -   Strained supplier and retailer relationships
 
-### (Cycle) Service level (Z)
+### (Cycle) Service level (Z) {#sec-log-safstk-cslz .unnumbered}
 
 -   Higher service level $\rightarrow$ more safety stock
 -   Independently choose a service level for groups of products based things such as strategic importance, profit margin, or dollar volume.
@@ -304,7 +308,7 @@
     -   Kind of a confusing diagram but I think the y-axis is total stock and x-axis represents time (kinda sorta)
         -   Stock dwindles as product is sold as the cycle ends, then stock is replenished after an order and begins to dwindle again.
 
-### Safety Stock Equations
+### Safety Stock Equations {#sec-log-safstk-sseqs .unnumbered}
 
 -   [When the demand interval doesn't equal lead time interval]{.underline}
 
@@ -364,7 +368,7 @@
 
         -   With the recognition of what factors dominate an equation, it becomes easier to focus improvement efforts
 
-### Issues
+### Issues  {#sec-log-safstk-iss .unnumbered}
 
 -   Sometimes recommended safety stock volumes are larger than business leaders are comfortable having
     -   Alternative or Supplement: Order Expediting
@@ -407,7 +411,7 @@
     -   Storage
     -   Depreciation
 
-## Order-Up-To (OUT) Level Policy {#sec-log-outpol}
+## Order-Up-To (OUT) Level Policy {#sec-log-outpol .unnumbered}
 
 ![](./_resources/Logistics.resources/Screenshot-(1316).png){width="632"}
 
@@ -438,7 +442,7 @@
             -   Fill Rate measures true service offered to customers, but more involved in its application
             -   Also see Safety Stock for more details on CSL and Fill Rate
 
-## Reorder Point {#sec-log-reordpt}
+## Reorder Point {#sec-log-reordpt .unnumbered}
 
 -   The reorder point is the threshold amount of inventory at which you need place an replenishment order
     -   once an item's stock falls below PAR level, an optimised order quantity is generated
@@ -448,60 +452,74 @@
     -   Periodic Automatic Replacement (PAR)
 -   **Reorder Point = Safety Stock + (Davg × Lead time)**
 
-## Decision Impact Metrics {#sec-log-dim}
+## Decision Impact Metrics {#sec-log-dim .unnumbered}
 
--   Other methods for determining forecast performance have serious flaws
-    -   Reasons industry benchmarks for forecast accuracy shouldn't be used
-        -   diversity of business strategies (size of portfolio, product & brand positioning)
-        -   the level at which the forecast accuracy is measured and even the metric's definition itself (especially with value-weighted formulas) may differ
-    -   [Forecast Value Added](https://www.youtube.com/watch?v=o70E_qMnT5s) (FVA)
-        -   FVA: The change in a forecasting accuracy metric that can be attributed to a particular process or participant in the forecasting process.
-            -   Example![](./_resources/Logistics.resources/Screenshot-(807).png){width="332"}
-                -   Statistical model has 5% FVA vs Naive forecast
-                -   Adjusted Statistical Forecast has 2% FVA vs Naive Forecast
-                    -   Forecast gets manually adjusted by management
-        -   Reasons why FVA shouldn't be used
-            -   The difference in Forecast Accuracy (FA) metrics (e.g. MAPE) of the production forecasting algorithm and the naive forecasting algorithm is usually weighted by portfolio revenue, volume or number of items
-            -   A FA metric is not a key business performance indicator (KPI)
-                -   FA has little correlation with business performance.
-                -   Improving FA does not mean you are generating value.
-                -   Costs may increase, decrease or remain the same as accuracy changes.
-            -   FA metrics can contradict each other
-                -   Switching from one FA metric to another could profoundly alter your FVA results.
+### Misc {#sec-log-dim-misc .unnumbered}
+
+-   DI metrics for all generated forecasts can be used to calculate a quarterly, semestrial, or annual ROI for the product planning department
+    -   ROI = sum(DIna)- (cost of people, tools, etc. used by department to generate forecasts)
+-   Probabilistic Forecasts + DI metrics
+    -   Identify parameters (i.e. whatever value you're forecasting) with the highest economic risk
+        -   Economic risk is *related* to the size of the PI of the forecast
+    -   Investigate potential causes for the risk and find solutions
+    -   [Example]{.ribbon-highlight}
+        -   Calculate
+
+            -   $\min(DI_a)$ - the costs associated with the forecast at the 5% percentile
+            -   $\max(DI_a)$ - the costs associated with the forecast at 95% percentile.
+
+        -   Calculate economic risk
+
+            $$
+            \text{risk}_{\text{econ}} = \left|\max(DI_a) - \min(DI_a)\right|
+            $$
+
+### Forecast Accuracy Metrics Are Flawed {#sec-log-dim-famaf .unnumbered}
+
+-   Industry benchmarks for these metrics aren't useful. Each business regardless whether they're in they're in the same industry has diverse business strategies (e.g. size of portfolio, product & brand positioning)
 -   Constraints and business rules have to be considered and not just a forecast metric
-    -   e.g. allowed pack sizes, the minimum order quantity, the storage finite capacity, holding/excess costs, shortage costs, fixed costs, etc.
+    -   e.g. Allowed pack sizes, the minimum order quantity, the storage finite capacity, holding/excess costs, shortage costs, fixed costs, etc.
 -   Forecast Accuracy (FA) metrics are difficult to understand for normals
     -   Using Decision Impact (DI) metrics can help eliminate:
         -   *"The forecast is always wrong!", "The forecast is too this", "The forecast is not enough that", "What does 70% FA mean?", "Is this good or bad?"*
--   Probabilistic Forecasts + DI metrics
-    -   Identify parameters (i.e. whatever value you're forecasting) with the highest economic risk
-        -   Economic risk is related to the size of the PI of the forecast
-    -   Investigate potential causes for the risk and find solutions
-    -   Example
-        -   Calculate
-            -   DIa min - the costs associated with the forecast at the 5% percentile
-            -   DIa max - the costs associated with the forecast at 95% percentile.
-        -   Calculate economic risk![](./_resources/Logistics.resources/1-NLRsAZ3syc39UldMkJ6BdQ.png)
--   Decision-based Components - components that takes into account the decision being made using the forecast
+-   [Forecast Value Added](https://www.youtube.com/watch?v=o70E_qMnT5s) (FVA)
+    -   FVA: The change in a forecasting accuracy metric that can be attributed to a particular process or participant in the forecasting process.
+        -   [Example]{.ribbon-highlight}\
+            ![](./_resources/Logistics.resources/Screenshot-(807).png){width="282"}
+            -   Statistical model has 5% FVA vs Naive forecast
+            -   Adjusted Statistical Forecast has 2% FVA vs Naive Forecast
+                -   Forecast gets manually adjusted by management
+    -   Reasons why FVA shouldn't be used by itself
+        -   The difference in Forecast Accuracy (FA) metrics (e.g. MAPE) of the production forecasting algorithm and the naive forecasting algorithm is usually weighted by portfolio revenue, volume or number of items
+        -   A FA metric is not a key business performance indicator (KPI)
+            -   FA has little correlation with business performance.
+            -   Therefore, improving FA does not mean you are generating value.
+            -   Costs may increase, decrease or remain the same as accuracy changes.
+        -   FA metrics can contradict each other
+            -   Switching from one FA metric to another could profoundly alter your FVA results.
+
+### DI Components {#sec-log-dim-dicmp .unnumbered}
+
+-   [Decision-based Components]{.underline} - components that take into account the decision being made using the forecast
     -   [Example]{.ribbon-highlight}: One weather forecast predicts 4 inches of rain but another forecast predicts 0 inches of rain. The next day it rains 1 inch.
         -   If the decision being made was whether to take an umbrella, the first forecast is the best forecast even though its error is worse than the second forecast.
     -   Components
-        -   Decision Function - for any forecast input, simulate the decision process and evaluate the quality of the final decision
-        -   Decision Impact (DI) - metric that defines how decision quality is measured
-            -   usually in terms of financial cost
+        -   **Decision Function** - For any forecast input, simulate the decision process and evaluate the quality of the final decision
+        -   **Decision Impact (DI)** - Metric that defines how decision quality is measured
+            -   Usually in terms of financial cost
             -   A "North Star" type metric
--   Decision Cost function: The cost function is used to score each stock replenishment decision based on its true business impact usually in terms of financial cost
-    -   [Example]{.ribbon-highlight}: Walmart retail data (M5)
+-   [Decision Cost Function]{.underline}: The cost function is used to score each stock replenishment decision based on its true business impact usually in terms of financial cost
+    -   [Example]{.ribbon-highlight}: Walmart Retail Data (M5)
         -   The Decision Cost is the sum of following factors:
             -   Ordering, shipping and handling cost (Fixed Costs)
                 -   Fulfilling an order generates costs for the ordering, preparation, expedition, transportation, etc.
-                -   Let's assume these costs represent \$40 per range of \$1000 of purchase value.
+                -   Let's assume these costs represent \$40 per \$1000 of purchase value.
             -   Holding cost (Excess Costs)
                 -   Holding costs are associated with the storage of unsold inventories.
-                -   Let's assume the annual holding cost is 10% of the inventory value (valued at purchase price), i.e. 0.19% per week.
+                -   Let's assume the annual holding cost is 10% of the inventory value (valued at purchase price), e.g. 0.19% per week.
             -   Shortage cost
                 -   When demand exceeds the available inventory, both the demand and customer goodwill may be lost.
-                -   As retailers propose a wide range of similar products, a part of the demand is carried to other products.
+                -   As retailers propose a wide range of similar products, a part of the excess demand is carried on to other products.
                 -   Let's assume that only half of the sales will effectively be lost. The shortage cost could then be measured as 50% of each lost sale gross margin.
     -   Other Considerations
         -   Replenishment Strategy
@@ -513,102 +531,134 @@
             -   Gross Margin
             -   Pack Sizes
             -   Initial Inventory
-                -   example: using the safety stock value
+                -   Example: Using the safety stock value
         -   Computational Costs
             -   Algorithm training time
             -   Compute size
             -   Data pipeline
--   Types of forecasts that are required
-    -   "actual" forecast: forecast from a candidate model that will potentially go into production
-    -   "naive" forecast: forecast from a simple method (e.g. seasonal-naive, simple moving average, etc.) or a previous used method
--   Steps
-    1.  Decide how best to measure the Decision Impact as related to the forecast
-        -   e.g. financial cost
-    2.  Formulate a decision cost function
-        -   e.g. fixed costs + excess costs + shortage costs (see above)
-    3.  Generate forecasts on a test/assessment set.
-    4.  Calculate decision impact costs:
-        -   Actual cost (DIa): cost after applying the decision cost function to the "actual" forecast (see above)
-        -   Naive cost (DIn): cost after applying the decision cost function to the "naive" forecast (see above)
-        -   Oracle cost (DIo): cost after applying the decision cost function to the observed values
-            -   This would be the costs of a forecast in which we had perfect knowledge. (So probably just fixed costs)
-    5.  Calculate Decision Impact metrics:
-        -   Earned Value (aka Forecast Value Added) (DIna)
-            -   DIna = DIn - DIa
-        -   Unearned Value (aka yet-to-be earned value)(DIao)
-            -   The value that could still be gained by improving forecasts
-            -   DIao = DIa -DIo
-        -   Total Earnable Value (DIno)
-            -   The range of earnable value
-            -   DIno = DIn - DIo
-        -   Proportion of the Earned Value
-            -   DIna/DIno
-        -   Proportion of yet-to-be earned value
-            -   DIao/DIno
--   DI metrics for all generated forecasts can be used to calculate a quarterly, semestrial, or annual ROI for the product planning department
-    -   ROI = sum(DIna)- (cost of people, tools, etc. used by department to generate forecasts)
+-   [Required Forecasts]{.underline}
+    -   "Actual" Forecast: Forecast from a candidate model that will potentially go into production
+    -   "Naive" Forecast: Forecast from a simple method (e.g. seasonal-naive, simple moving average, etc.) or a previous used method
 
-## Profit Functions for Perishable Products {#sec-log-pffpp}
+### Steps {#sec-log-dim-steps .unnumbered}
+
+1.  Decide how best to measure the Decision Impact as related to the forecast
+    -   e.g. Financial Cost
+2.  Formulate a decision cost function
+    -   e.g. Fixed Costs + Holding Costs + Shortage Costs (See Walmart example above)
+3.  Generate forecasts on a test/assessment set.
+4.  Calculate Decision Impact Costs
+    -   **Actual Cost** ($DI_a$): Cost after applying the decision cost function to the "actual" forecast (See above)
+    -   **Naive Cost** ($DI_n$): Cost after applying the decision cost function to the "naive" forecast (see above)
+    -   **Oracle Cost** ($DI_o$): Cost after applying the decision cost function to the observed values
+        -   This would be the costs of a forecast in which we had perfect knowledge. (So probably just Fixed Costs)
+5.  Calculate Decision Impact metrics:
+    -   **Earned Value** (aka **Forecast Value Added**) ($DI_{na}$)
+
+        $$
+        DI_{na} = DI_n - DI_a
+        $$
+
+    -   **Unearned Value** (aka **Yet-To-Be-Earned Value**)($DI_{ao}$)
+
+        $$
+        DI_{ao} = DI_a -DI_o
+        $$
+
+        -   The value that could still be gained by improving forecasts
+
+    -   **Total Earnable Value** ($DI_{no}$)
+
+        $$
+        DI_{no} = DI_n - DI_o
+        $$
+
+        -   The range of earnable value
+
+    -   **Proportion of the Earned Value**
+
+        $$
+        \frac{DI_{na}}{DI_{no}}
+        $$
+
+    -   **Proportion of Yet-To-Be-Earned value**
+
+        $$
+        \frac{DI_{ao}}{DI_{no}}
+        $$
+
+## Profit Functions for Perishable Products {#sec-log-pffpp .unnumbered}
 
 -   The newsvendor problem is a class of problems, where the product can only be sold one day, after which it goes to waste. So this is appropriate, for example, for perishable products in retail
+
 -   Notes from An [Integrated Method for Estimation and Optimisation](https://forecasting.svetunkov.ru/en/2021/09/03/an-integrated-method-for-estimation-and-optimisation/); associated [paper](http://dx.doi.org/10.13140/RG.2.2.27057.81763)
+
 -   If we order more than needed, we will have **holding costs**. In the opposite case, we will have **shortage costs**.
+
     -   Based on these costs and the price of product, we can find the optimal amount of product to order, that will give the maximum profit.
--   Instead of a two-stage problem (see DoorDash section): optimising the forecast model via MSE or any other conventional loss and then solving the optimisation problem, we could estimate the model via maximisation of the specific **profit function**, thus obtaining the required number of product orders directly.
--   Calculate profit as a linear
 
-*π*(\_q\_\_t\_,\_y\_\_t\_)={\_p\_\_y\_*t*−\_v\_\_q\_*t*−\_c\_\_h\_(\_q\_\_t\_−\_y\_\_t\_),\_p\_\_q\_*t*−\_v\_\_q\_*t*−\_c\_\_s\_(\_y\_\_t\_−\_q\_\_t\_),for ​\_q\_\_t\_≥\_y\_\_t_for ​\_q\_\_t\_\<\_y\_\_t\_,
+-   Instead of a two-stage problem (see DoorDash section): Optimising the forecast model via MSE or any other conventional loss and then solving the optimisation problem, we could estimate the model via maximization of the specific **profit function**, thus obtaining the required number of product orders directly.
 
--   Terms
-    -   yt is the actual sales
-    -   p is the price of the product
-    -   qt ​is the order quantity
-    -   v is the cost of production
-    -   ch is the holding cost
-    -   cs is the shortage cost
+-   Calculate profit as a linear function
 
-```         
-library(greybox)
-# Generate artificial data
-x1 <- rnorm(100,100,10)
-x2 <- rbinom(100,2,0.05)
-y <- 10 + 1.5*x1 + 5*x2 + rnorm(100,0,10)
-ourData <- cbind(y=y,x1=x1,x2=x2)
-# Define price and costs
-price <- 50
-costBasic <- 5
-costShort <- 15
-costHold <- 1
-# Define profit function for the linear case
-lossProfit <- function(actual, fitted, B, xreg){
-    # Minus sign is needed here, because we need to minimise the loss
-    profit <- -ifelse(actual >= fitted,
-                    (price - costBasic) * fitted - costShort * (actual - fitted),
-                    price * actual - costBasic * fitted - costHold * (fitted - actual));
-    return(sum(profit));
-}
-# Estimate the model
-model1 <- alm(y~x1+x2, ourData, loss=lossProfit)
-# Print summary of the model
-summary(model1, bootstrap=TRUE)
-Coefficients:
-            Estimate Std. Error Lower 2.5% Upper 97.5% 
-(Intercept)  36.5177    14.2840    2.7783    51.4844 *
-x1            1.3622    0.1622    1.1909      1.7528 *
-x2            3.3423    2.7810    -6.5997      5.9101
-```
+    $$
+    \pi(q_t,y_t) =
+    \left\{ \begin{array}{lcl}
+    py_t - vq_t - c_h(q_t - y_t) & \text{for}\;\; q_t \geq y_t \\
+    pq_t - vq_t - c_s(y_t-q_t) & \text{for}\;\; q_t < y_t
+    \end{array}\right.
+    $$
 
--   Interpretation: with the increase of the variable x1, the orders should change on average by 1.36
+    -   $y_t$: Actual Sales
+    -   $p$: Price of the Product
+    -   $q_t$: Order Quantity
+    -   $v$: Cost of Production
+    -   $c_h$: Holding Cost
+    -   $c_s$: Shortage Cost
 
--   Plot
+-   [Example]{.ribbon-highlight}
 
-```         
-plot(model1, 7)
-```
+    ``` r
+    library(greybox)
+    # Generate artificial data
+    x1 <- rnorm(100,100,10)
+    x2 <- rbinom(100,2,0.05)
+    y <- 10 + 1.5*x1 + 5*x2 + rnorm(100,0,10)
+    ourData <- cbind(y=y,x1=x1,x2=x2)
+    # Define price and costs
+    price <- 50
+    costBasic <- 5
+    costShort <- 15
+    costHold <- 1
+    # Define profit function for the linear case
+    lossProfit <- function(actual, fitted, B, xreg){
+        # Minus sign is needed here, because we need to minimise the loss
+        profit <- -ifelse(actual >= fitted,
+                        (price - costBasic) * fitted - costShort * (actual - fitted),
+                        price * actual - costBasic * fitted - costHold * (fitted - actual));
+        return(sum(profit));
+    }
+    # Estimate the model
+    model1 <- alm(y~x1+x2, ourData, loss=lossProfit)
+    # Print summary of the model
+    summary(model1, bootstrap=TRUE)
+    Coefficients:
+                Estimate Std. Error Lower 2.5% Upper 97.5% 
+    (Intercept)  36.5177    14.2840    2.7783    51.4844 *
+    x1            1.3622    0.1622    1.1909      1.7528 *
+    x2            3.3423    2.7810    -6.5997      5.9101
+    ```
 
-![](./_resources/Logistics.resources/ordersDynamics.png)
+    -   Interpretation: With the increase of the variable x1, the orders should change on average by 1.36
 
--   Figure above corresponds to the orders (purple) and would cover roughly 90.91% of cases (black), so that we would run out of product in approximately 10% of cases, which would still be more profitable than any other option.
+    -   Plot\
+        ![](./_resources/Logistics.resources/ordersDynamics.png){width="632"}
+
+        ``` r
+        plot(model1, 7)
+        ```
+
+        -   Figure above corresponds to the orders (purple) and would cover roughly 90.91% of cases (black), so that we would run out of product in approximately 10% of cases, which would still be more profitable than any other option.
 
 -   Nonlinear case
 

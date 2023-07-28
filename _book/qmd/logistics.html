@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -281,17 +315,23 @@ ul.task-list li input[type="checkbox"] {
   </ul></li>
   <li><a href="#sec-log-safstk" id="toc-sec-log-safstk" class="nav-link" data-scroll-target="#sec-log-safstk">Safety Stock (aka Buffer Stock)</a>
   <ul>
-  <li><a href="#misc" id="toc-misc" class="nav-link" data-scroll-target="#misc">Misc</a></li>
-  <li><a href="#reasons-for-safety-stock" id="toc-reasons-for-safety-stock" class="nav-link" data-scroll-target="#reasons-for-safety-stock">Reasons for Safety Stock</a></li>
-  <li><a href="#stockouts" id="toc-stockouts" class="nav-link" data-scroll-target="#stockouts">Stockouts</a></li>
-  <li><a href="#cycle-service-level-z" id="toc-cycle-service-level-z" class="nav-link" data-scroll-target="#cycle-service-level-z">(Cycle) Service level (Z)</a></li>
-  <li><a href="#safety-stock-equations" id="toc-safety-stock-equations" class="nav-link" data-scroll-target="#safety-stock-equations">Safety Stock Equations</a></li>
-  <li><a href="#issues" id="toc-issues" class="nav-link" data-scroll-target="#issues">Issues</a></li>
+  <li><a href="#sec-log-safstk-misc" id="toc-sec-log-safstk-misc" class="nav-link" data-scroll-target="#sec-log-safstk-misc">Misc</a></li>
+  <li><a href="#sec-log-safstk-rfss" id="toc-sec-log-safstk-rfss" class="nav-link" data-scroll-target="#sec-log-safstk-rfss">Reasons for Safety Stock</a></li>
+  <li><a href="#sec-log-safstk-stkots" id="toc-sec-log-safstk-stkots" class="nav-link" data-scroll-target="#sec-log-safstk-stkots">Stockouts</a></li>
+  <li><a href="#sec-log-safstk-cslz" id="toc-sec-log-safstk-cslz" class="nav-link" data-scroll-target="#sec-log-safstk-cslz">(Cycle) Service level (Z)</a></li>
+  <li><a href="#sec-log-safstk-sseqs" id="toc-sec-log-safstk-sseqs" class="nav-link" data-scroll-target="#sec-log-safstk-sseqs">Safety Stock Equations</a></li>
+  <li><a href="#sec-log-safstk-iss" id="toc-sec-log-safstk-iss" class="nav-link" data-scroll-target="#sec-log-safstk-iss">Issues</a></li>
   </ul></li>
   <li><a href="#sec-log-eoq" id="toc-sec-log-eoq" class="nav-link" data-scroll-target="#sec-log-eoq">Economic Order Quantity (EOQ)</a></li>
   <li><a href="#sec-log-outpol" id="toc-sec-log-outpol" class="nav-link" data-scroll-target="#sec-log-outpol">Order-Up-To (OUT) Level Policy</a></li>
   <li><a href="#sec-log-reordpt" id="toc-sec-log-reordpt" class="nav-link" data-scroll-target="#sec-log-reordpt">Reorder Point</a></li>
-  <li><a href="#sec-log-dim" id="toc-sec-log-dim" class="nav-link" data-scroll-target="#sec-log-dim">Decision Impact Metrics</a></li>
+  <li><a href="#sec-log-dim" id="toc-sec-log-dim" class="nav-link" data-scroll-target="#sec-log-dim">Decision Impact Metrics</a>
+  <ul>
+  <li><a href="#sec-log-dim-misc" id="toc-sec-log-dim-misc" class="nav-link" data-scroll-target="#sec-log-dim-misc">Misc</a></li>
+  <li><a href="#sec-log-dim-famaf" id="toc-sec-log-dim-famaf" class="nav-link" data-scroll-target="#sec-log-dim-famaf">Forecast Accuracy Metrics Are Flawed</a></li>
+  <li><a href="#sec-log-dim-dicmp" id="toc-sec-log-dim-dicmp" class="nav-link" data-scroll-target="#sec-log-dim-dicmp">DI Components</a></li>
+  <li><a href="#sec-log-dim-steps" id="toc-sec-log-dim-steps" class="nav-link" data-scroll-target="#sec-log-dim-steps">Steps</a></li>
+  </ul></li>
   <li><a href="#sec-log-pffpp" id="toc-sec-log-pffpp" class="nav-link" data-scroll-target="#sec-log-pffpp">Profit Functions for Perishable Products</a></li>
   <li><a href="#sec-log-drdsh" id="toc-sec-log-drdsh" class="nav-link" data-scroll-target="#sec-log-drdsh">DoorDash</a></li>
   <li><a href="#sec-log-supch" id="toc-sec-log-supch" class="nav-link" data-scroll-target="#sec-log-supch">Supply Chain</a></li>
@@ -420,14 +460,18 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li><p>Also see <a href="../qmd/logistics.html#sec-log-drdsh">DoorDash &gt;&gt; Forecast Supply and Demand</a></p></li>
 <li><p><a href="https://towardsdatascience.com/reinforcement-learning-for-inventory-optimization-series-iii-sim-to-real-transfer-for-the-rl-model-d260c3b8277d">Reinforcement Learning for Inventory Optimization Series III: Sim-to-Real Transfer for the RL Model | by Guangrui Xie | Jan, 2023 | Towards Data Science</a></p></li>
-<li><p>Metrics for judging demand forecasts<br>
+<li><p>Metrics</p>
+<ul>
+<li><p>See <a href="../qmd/logistics.html#sec-log-dim" style="color: green">Decision Impact Metrics</a></p></li>
+<li><p>WasteNot method for judging its adjusted forecast model vs prophet<br>
 <img src="./_resources/Logistics.resources/1-ni6N2L4yp0ynlOzL01f8Fg.png" class="img-fluid" width="532"></p>
 <ul>
-<li>Change in the Number of Stock-Out Days</li>
-<li>Percent Change in Service Level</li>
-<li>Change in Profit</li>
-<li>Change in Wastage</li>
-<li>change in Inventory Costs</li>
+<li>Change in the Number of Stock-Out Days (lower is better)</li>
+<li>Percent Change in Service Level (higher is better)</li>
+<li>Change in Profit (higher is better)</li>
+<li>Change in Wastage (lower is better)</li>
+<li>Change in Inventory Costs (lower is better)</li>
+</ul></li>
 </ul></li>
 </ul>
 </section>
@@ -698,15 +742,15 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="sec-log-safstk" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="sec-log-safstk">Safety Stock (aka Buffer Stock)</h2>
-<section id="misc" class="level3">
-<h3 class="anchored" data-anchor-id="misc">Misc</h3>
+<section id="sec-log-safstk-misc" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="sec-log-safstk-misc">Misc</h3>
 <ul>
 <li>Notes from <a href="https://web.mit.edu/2.810/www/files/readings/King_SafetyStock.pdf">Article</a></li>
 <li>Calculation of Safety Stock can be more useful than trying to improve forecast accuracy for intermittent(or sporadic) product time series (lotsa zeros).</li>
 </ul>
 </section>
-<section id="reasons-for-safety-stock" class="level3">
-<h3 class="anchored" data-anchor-id="reasons-for-safety-stock">Reasons for Safety Stock</h3>
+<section id="sec-log-safstk-rfss" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="sec-log-safstk-rfss">Reasons for Safety Stock</h3>
 <ul>
 <li><u>Demand Uncertainty</u> - Every retailer and manufacturer will have products that sell well all year round and products that fluctuate in demand.</li>
 <li><u>Lead time Uncetrainty</u> - Deliveries arriving earlier or later than expected, a safety stock formula will help you to cover unexpected delays and demand fluctuation to maintain a consistent output.
@@ -727,8 +771,8 @@ ul.task-list li input[type="checkbox"] {
 </ul></li>
 </ul>
 </section>
-<section id="stockouts" class="level3">
-<h3 class="anchored" data-anchor-id="stockouts">Stockouts</h3>
+<section id="sec-log-safstk-stkots" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="sec-log-safstk-stkots">Stockouts</h3>
 <ul>
 <li>Safety stock determinations are not intended to eliminate all stockouts — just the majority of them Usually caused by:
 <ul>
@@ -747,8 +791,8 @@ ul.task-list li input[type="checkbox"] {
 </ul></li>
 </ul>
 </section>
-<section id="cycle-service-level-z" class="level3">
-<h3 class="anchored" data-anchor-id="cycle-service-level-z">(Cycle) Service level (Z)</h3>
+<section id="sec-log-safstk-cslz" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="sec-log-safstk-cslz">(Cycle) Service level (Z)</h3>
 <ul>
 <li>Higher service level <span class="math inline">\(\rightarrow\)</span> more safety stock</li>
 <li>Independently choose a service level for groups of products based things such as strategic importance, profit margin, or dollar volume.
@@ -771,8 +815,8 @@ ul.task-list li input[type="checkbox"] {
 </ul></li>
 </ul>
 </section>
-<section id="safety-stock-equations" class="level3">
-<h3 class="anchored" data-anchor-id="safety-stock-equations">Safety Stock Equations</h3>
+<section id="sec-log-safstk-sseqs" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="sec-log-safstk-sseqs">Safety Stock Equations</h3>
 <ul>
 <li><p><u>When the demand interval doesn’t equal lead time interval</u></p>
 <ul>
@@ -838,8 +882,8 @@ ul.task-list li input[type="checkbox"] {
 </ul></li>
 </ul>
 </section>
-<section id="issues" class="level3">
-<h3 class="anchored" data-anchor-id="issues">Issues</h3>
+<section id="sec-log-safstk-iss" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="sec-log-safstk-iss">Issues</h3>
 <ul>
 <li>Sometimes recommended safety stock volumes are larger than business leaders are comfortable having
 <ul>
@@ -891,8 +935,8 @@ Q = \sqrt{\frac{2DS}{H}}
 </ul></li>
 </ul>
 </section>
-<section id="sec-log-outpol" class="level2">
-<h2 class="anchored" data-anchor-id="sec-log-outpol">Order-Up-To (OUT) Level Policy</h2>
+<section id="sec-log-outpol" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="sec-log-outpol">Order-Up-To (OUT) Level Policy</h2>
 <p><img src="./_resources/Logistics.resources/Screenshot-(1316).png" class="img-fluid" width="632"></p>
 <ul>
 <li>Time intervals (i.e.&nbsp;Review Interval) trigger a replenishment, not reorder points
@@ -949,8 +993,8 @@ Q = \sqrt{\frac{2DS}{H}}
 </ul></li>
 </ul>
 </section>
-<section id="sec-log-reordpt" class="level2">
-<h2 class="anchored" data-anchor-id="sec-log-reordpt">Reorder Point</h2>
+<section id="sec-log-reordpt" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="sec-log-reordpt">Reorder Point</h2>
 <ul>
 <li>The reorder point is the threshold amount of inventory at which you need place an replenishment order
 <ul>
@@ -965,48 +1009,44 @@ Q = \sqrt{\frac{2DS}{H}}
 <li><strong>Reorder Point = Safety Stock + (Davg × Lead time)</strong></li>
 </ul>
 </section>
-<section id="sec-log-dim" class="level2">
-<h2 class="anchored" data-anchor-id="sec-log-dim">Decision Impact Metrics</h2>
+<section id="sec-log-dim" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="sec-log-dim">Decision Impact Metrics</h2>
+<section id="sec-log-dim-misc" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="sec-log-dim-misc">Misc</h3>
 <ul>
-<li>Other methods for determining forecast performance have serious flaws
+<li>DI metrics for all generated forecasts can be used to calculate a quarterly, semestrial, or annual ROI for the product planning department
 <ul>
-<li>Reasons industry benchmarks for forecast accuracy shouldn’t be used
-<ul>
-<li>diversity of business strategies (size of portfolio, product &amp; brand positioning)</li>
-<li>the level at which the forecast accuracy is measured and even the metric’s definition itself (especially with value-weighted formulas) may differ</li>
+<li>ROI = sum(DIna)- (cost of people, tools, etc. used by department to generate forecasts)</li>
 </ul></li>
-<li><a href="https://www.youtube.com/watch?v=o70E_qMnT5s">Forecast Value Added</a> (FVA)
+<li>Probabilistic Forecasts + DI metrics
 <ul>
-<li>FVA: The change in a forecasting accuracy metric that can be attributed to a particular process or participant in the forecasting process.
+<li>Identify parameters (i.e.&nbsp;whatever value you’re forecasting) with the highest economic risk
 <ul>
-<li>Example<img src="./_resources/Logistics.resources/Screenshot-(807).png" class="img-fluid" width="332">
-<ul>
-<li>Statistical model has 5% FVA vs Naive forecast</li>
-<li>Adjusted Statistical Forecast has 2% FVA vs Naive Forecast
-<ul>
-<li>Forecast gets manually adjusted by management</li>
+<li>Economic risk is <em>related</em> to the size of the PI of the forecast</li>
 </ul></li>
-</ul></li>
-</ul></li>
-<li>Reasons why FVA shouldn’t be used
+<li>Investigate potential causes for the risk and find solutions</li>
+<li><span class="ribbon-highlight">Example</span>
 <ul>
-<li>The difference in Forecast Accuracy (FA) metrics (e.g.&nbsp;MAPE) of the production forecasting algorithm and the naive forecasting algorithm is usually weighted by portfolio revenue, volume or number of items</li>
-<li>A FA metric is not a key business performance indicator (KPI)
+<li><p>Calculate</p>
 <ul>
-<li>FA has little correlation with business performance.</li>
-<li>Improving FA does not mean you are generating value.</li>
-<li>Costs may increase, decrease or remain the same as accuracy changes.</li>
+<li><span class="math inline">\(\min(DI_a)\)</span> - the costs associated with the forecast at the 5% percentile</li>
+<li><span class="math inline">\(\max(DI_a)\)</span> - the costs associated with the forecast at 95% percentile.</li>
 </ul></li>
-<li>FA metrics can contradict each other
-<ul>
-<li>Switching from one FA metric to another could profoundly alter your FVA results.</li>
+<li><p>Calculate economic risk</p>
+<p><span class="math display">\[
+\text{risk}_{\text{econ}} = \left|\max(DI_a) - \min(DI_a)\right|
+\]</span></p></li>
 </ul></li>
 </ul></li>
-</ul></li>
-</ul></li>
+</ul>
+</section>
+<section id="sec-log-dim-famaf" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="sec-log-dim-famaf">Forecast Accuracy Metrics Are Flawed</h3>
+<ul>
+<li>Industry benchmarks for these metrics aren’t useful. Each business regardless whether they’re in they’re in the same industry has diverse business strategies (e.g.&nbsp;size of portfolio, product &amp; brand positioning)</li>
 <li>Constraints and business rules have to be considered and not just a forecast metric
 <ul>
-<li>e.g.&nbsp;allowed pack sizes, the minimum order quantity, the storage finite capacity, holding/excess costs, shortage costs, fixed costs, etc.</li>
+<li>e.g.&nbsp;Allowed pack sizes, the minimum order quantity, the storage finite capacity, holding/excess costs, shortage costs, fixed costs, etc.</li>
 </ul></li>
 <li>Forecast Accuracy (FA) metrics are difficult to understand for normals
 <ul>
@@ -1015,24 +1055,41 @@ Q = \sqrt{\frac{2DS}{H}}
 <li><em>“The forecast is always wrong!”, “The forecast is too this”, “The forecast is not enough that”, “What does 70% FA mean?”, “Is this good or bad?”</em></li>
 </ul></li>
 </ul></li>
-<li>Probabilistic Forecasts + DI metrics
+<li><a href="https://www.youtube.com/watch?v=o70E_qMnT5s">Forecast Value Added</a> (FVA)
 <ul>
-<li>Identify parameters (i.e.&nbsp;whatever value you’re forecasting) with the highest economic risk
+<li>FVA: The change in a forecasting accuracy metric that can be attributed to a particular process or participant in the forecasting process.
 <ul>
-<li>Economic risk is related to the size of the PI of the forecast</li>
-</ul></li>
-<li>Investigate potential causes for the risk and find solutions</li>
-<li>Example
+<li><span class="ribbon-highlight">Example</span><br>
+<img src="./_resources/Logistics.resources/Screenshot-(807).png" class="img-fluid" width="282">
 <ul>
-<li>Calculate
+<li>Statistical model has 5% FVA vs Naive forecast</li>
+<li>Adjusted Statistical Forecast has 2% FVA vs Naive Forecast
 <ul>
-<li>DIa min - the costs associated with the forecast at the 5% percentile</li>
-<li>DIa max - the costs associated with the forecast at 95% percentile.</li>
-</ul></li>
-<li>Calculate economic risk<img src="./_resources/Logistics.resources/1-NLRsAZ3syc39UldMkJ6BdQ.png" class="img-fluid"></li>
+<li>Forecast gets manually adjusted by management</li>
 </ul></li>
 </ul></li>
-<li>Decision-based Components - components that takes into account the decision being made using the forecast
+</ul></li>
+<li>Reasons why FVA shouldn’t be used by itself
+<ul>
+<li>The difference in Forecast Accuracy (FA) metrics (e.g.&nbsp;MAPE) of the production forecasting algorithm and the naive forecasting algorithm is usually weighted by portfolio revenue, volume or number of items</li>
+<li>A FA metric is not a key business performance indicator (KPI)
+<ul>
+<li>FA has little correlation with business performance.</li>
+<li>Therefore, improving FA does not mean you are generating value.</li>
+<li>Costs may increase, decrease or remain the same as accuracy changes.</li>
+</ul></li>
+<li>FA metrics can contradict each other
+<ul>
+<li>Switching from one FA metric to another could profoundly alter your FVA results.</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</section>
+<section id="sec-log-dim-dicmp" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="sec-log-dim-dicmp">DI Components</h3>
+<ul>
+<li><u>Decision-based Components</u> - components that take into account the decision being made using the forecast
 <ul>
 <li><span class="ribbon-highlight">Example</span>: One weather forecast predicts 4 inches of rain but another forecast predicts 0 inches of rain. The next day it rains 1 inch.
 <ul>
@@ -1040,34 +1097,34 @@ Q = \sqrt{\frac{2DS}{H}}
 </ul></li>
 <li>Components
 <ul>
-<li>Decision Function - for any forecast input, simulate the decision process and evaluate the quality of the final decision</li>
-<li>Decision Impact (DI) - metric that defines how decision quality is measured
+<li><strong>Decision Function</strong> - For any forecast input, simulate the decision process and evaluate the quality of the final decision</li>
+<li><strong>Decision Impact (DI)</strong> - Metric that defines how decision quality is measured
 <ul>
-<li>usually in terms of financial cost</li>
+<li>Usually in terms of financial cost</li>
 <li>A “North Star” type metric</li>
 </ul></li>
 </ul></li>
 </ul></li>
-<li>Decision Cost function: The cost function is used to score each stock replenishment decision based on its true business impact usually in terms of financial cost
+<li><u>Decision Cost Function</u>: The cost function is used to score each stock replenishment decision based on its true business impact usually in terms of financial cost
 <ul>
-<li><span class="ribbon-highlight">Example</span>: Walmart retail data (M5)
+<li><span class="ribbon-highlight">Example</span>: Walmart Retail Data (M5)
 <ul>
 <li>The Decision Cost is the sum of following factors:
 <ul>
 <li>Ordering, shipping and handling cost (Fixed Costs)
 <ul>
 <li>Fulfilling an order generates costs for the ordering, preparation, expedition, transportation, etc.</li>
-<li>Let’s assume these costs represent $40 per range of $1000 of purchase value.</li>
+<li>Let’s assume these costs represent $40 per $1000 of purchase value.</li>
 </ul></li>
 <li>Holding cost (Excess Costs)
 <ul>
 <li>Holding costs are associated with the storage of unsold inventories.</li>
-<li>Let’s assume the annual holding cost is 10% of the inventory value (valued at purchase price), i.e.&nbsp;0.19% per week.</li>
+<li>Let’s assume the annual holding cost is 10% of the inventory value (valued at purchase price), e.g.&nbsp;0.19% per week.</li>
 </ul></li>
 <li>Shortage cost
 <ul>
 <li>When demand exceeds the available inventory, both the demand and customer goodwill may be lost.</li>
-<li>As retailers propose a wide range of similar products, a part of the demand is carried to other products.</li>
+<li>As retailers propose a wide range of similar products, a part of the excess demand is carried on to other products.</li>
 <li>Let’s assume that only half of the sales will effectively be lost. The shortage cost could then be measured as 50% of each lost sale gross margin.</li>
 </ul></li>
 </ul></li>
@@ -1087,7 +1144,7 @@ Q = \sqrt{\frac{2DS}{H}}
 <li>Pack Sizes</li>
 <li>Initial Inventory
 <ul>
-<li>example: using the safety stock value</li>
+<li>Example: Using the safety stock value</li>
 </ul></li>
 </ul></li>
 <li>Computational Costs
@@ -1098,123 +1155,130 @@ Q = \sqrt{\frac{2DS}{H}}
 </ul></li>
 </ul></li>
 </ul></li>
-<li>Types of forecasts that are required
+<li><u>Required Forecasts</u>
 <ul>
-<li>“actual” forecast: forecast from a candidate model that will potentially go into production</li>
-<li>“naive” forecast: forecast from a simple method (e.g.&nbsp;seasonal-naive, simple moving average, etc.) or a previous used method</li>
+<li>“Actual” Forecast: Forecast from a candidate model that will potentially go into production</li>
+<li>“Naive” Forecast: Forecast from a simple method (e.g.&nbsp;seasonal-naive, simple moving average, etc.) or a previous used method</li>
 </ul></li>
-<li>Steps
+</ul>
+</section>
+<section id="sec-log-dim-steps" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="sec-log-dim-steps">Steps</h3>
 <ol type="1">
 <li>Decide how best to measure the Decision Impact as related to the forecast
 <ul>
-<li>e.g.&nbsp;financial cost</li>
+<li>e.g.&nbsp;Financial Cost</li>
 </ul></li>
 <li>Formulate a decision cost function
 <ul>
-<li>e.g.&nbsp;fixed costs + excess costs + shortage costs (see above)</li>
+<li>e.g.&nbsp;Fixed Costs + Holding Costs + Shortage Costs (See Walmart example above)</li>
 </ul></li>
 <li>Generate forecasts on a test/assessment set.</li>
-<li>Calculate decision impact costs:
+<li>Calculate Decision Impact Costs
 <ul>
-<li>Actual cost (DIa): cost after applying the decision cost function to the “actual” forecast (see above)</li>
-<li>Naive cost (DIn): cost after applying the decision cost function to the “naive” forecast (see above)</li>
-<li>Oracle cost (DIo): cost after applying the decision cost function to the observed values
+<li><strong>Actual Cost</strong> (<span class="math inline">\(DI_a\)</span>): Cost after applying the decision cost function to the “actual” forecast (See above)</li>
+<li><strong>Naive Cost</strong> (<span class="math inline">\(DI_n\)</span>): Cost after applying the decision cost function to the “naive” forecast (see above)</li>
+<li><strong>Oracle Cost</strong> (<span class="math inline">\(DI_o\)</span>): Cost after applying the decision cost function to the observed values
 <ul>
-<li>This would be the costs of a forecast in which we had perfect knowledge. (So probably just fixed costs)</li>
+<li>This would be the costs of a forecast in which we had perfect knowledge. (So probably just Fixed Costs)</li>
 </ul></li>
 </ul></li>
 <li>Calculate Decision Impact metrics:
 <ul>
-<li>Earned Value (aka Forecast Value Added) (DIna)
-<ul>
-<li>DIna = DIn - DIa</li>
-</ul></li>
-<li>Unearned Value (aka yet-to-be earned value)(DIao)
+<li><p><strong>Earned Value</strong> (aka <strong>Forecast Value Added</strong>) (<span class="math inline">\(DI_{na}\)</span>)</p>
+<p><span class="math display">\[
+DI_{na} = DI_n - DI_a
+\]</span></p></li>
+<li><p><strong>Unearned Value</strong> (aka <strong>Yet-To-Be-Earned Value</strong>)(<span class="math inline">\(DI_{ao}\)</span>)</p>
+<p><span class="math display">\[
+DI_{ao} = DI_a -DI_o
+\]</span></p>
 <ul>
 <li>The value that could still be gained by improving forecasts</li>
-<li>DIao = DIa -DIo</li>
 </ul></li>
-<li>Total Earnable Value (DIno)
+<li><p><strong>Total Earnable Value</strong> (<span class="math inline">\(DI_{no}\)</span>)</p>
+<p><span class="math display">\[
+DI_{no} = DI_n - DI_o
+\]</span></p>
 <ul>
 <li>The range of earnable value</li>
-<li>DIno = DIn - DIo</li>
 </ul></li>
-<li>Proportion of the Earned Value
-<ul>
-<li>DIna/DIno</li>
+<li><p><strong>Proportion of the Earned Value</strong></p>
+<p><span class="math display">\[
+\frac{DI_{na}}{DI_{no}}
+\]</span></p></li>
+<li><p><strong>Proportion of Yet-To-Be-Earned value</strong></p>
+<p><span class="math display">\[
+\frac{DI_{ao}}{DI_{no}}
+\]</span></p></li>
 </ul></li>
-<li>Proportion of yet-to-be earned value
-<ul>
-<li>DIao/DIno</li>
-</ul></li>
-</ul></li>
-</ol></li>
-<li>DI metrics for all generated forecasts can be used to calculate a quarterly, semestrial, or annual ROI for the product planning department
-<ul>
-<li>ROI = sum(DIna)- (cost of people, tools, etc. used by department to generate forecasts)</li>
-</ul></li>
-</ul>
+</ol>
 </section>
-<section id="sec-log-pffpp" class="level2">
-<h2 class="anchored" data-anchor-id="sec-log-pffpp">Profit Functions for Perishable Products</h2>
+</section>
+<section id="sec-log-pffpp" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="sec-log-pffpp">Profit Functions for Perishable Products</h2>
 <ul>
-<li>The newsvendor problem is a class of problems, where the product can only be sold one day, after which it goes to waste. So this is appropriate, for example, for perishable products in retail</li>
-<li>Notes from An <a href="https://forecasting.svetunkov.ru/en/2021/09/03/an-integrated-method-for-estimation-and-optimisation/">Integrated Method for Estimation and Optimisation</a>; associated <a href="http://dx.doi.org/10.13140/RG.2.2.27057.81763">paper</a></li>
-<li>If we order more than needed, we will have <strong>holding costs</strong>. In the opposite case, we will have <strong>shortage costs</strong>.
+<li><p>The newsvendor problem is a class of problems, where the product can only be sold one day, after which it goes to waste. So this is appropriate, for example, for perishable products in retail</p></li>
+<li><p>Notes from An <a href="https://forecasting.svetunkov.ru/en/2021/09/03/an-integrated-method-for-estimation-and-optimisation/">Integrated Method for Estimation and Optimisation</a>; associated <a href="http://dx.doi.org/10.13140/RG.2.2.27057.81763">paper</a></p></li>
+<li><p>If we order more than needed, we will have <strong>holding costs</strong>. In the opposite case, we will have <strong>shortage costs</strong>.</p>
 <ul>
 <li>Based on these costs and the price of product, we can find the optimal amount of product to order, that will give the maximum profit.</li>
 </ul></li>
-<li>Instead of a two-stage problem (see DoorDash section): optimising the forecast model via MSE or any other conventional loss and then solving the optimisation problem, we could estimate the model via maximisation of the specific <strong>profit function</strong>, thus obtaining the required number of product orders directly.</li>
-<li>Calculate profit as a linear</li>
-</ul>
-<p><em>π</em>(_q__t_,_y__t_)={_p__y_<em>t</em>−_v__q_<em>t</em>−_c__h_(_q__t_−_y__t_),_p__q_<em>t</em>−_v__q_<em>t</em>−_c__s_(_y__t_−_q__t_),for&nbsp;​_q__t_≥_y__t_for&nbsp;​_q__t_&lt;_y__t_,</p>
+<li><p>Instead of a two-stage problem (see DoorDash section): Optimising the forecast model via MSE or any other conventional loss and then solving the optimisation problem, we could estimate the model via maximization of the specific <strong>profit function</strong>, thus obtaining the required number of product orders directly.</p></li>
+<li><p>Calculate profit as a linear function</p>
+<p><span class="math display">\[
+\pi(q_t,y_t) =
+\left\{ \begin{array}{lcl}
+py_t - vq_t - c_h(q_t - y_t) &amp; \text{for}\;\; q_t \geq y_t \\
+pq_t - vq_t - c_s(y_t-q_t) &amp; \text{for}\;\; q_t &lt; y_t
+\end{array}\right.
+\]</span></p>
 <ul>
-<li>Terms
-<ul>
-<li>yt is the actual sales</li>
-<li>p is the price of the product</li>
-<li>qt ​is the order quantity</li>
-<li>v is the cost of production</li>
-<li>ch is the holding cost</li>
-<li>cs is the shortage cost</li>
+<li><span class="math inline">\(y_t\)</span>: Actual Sales</li>
+<li><span class="math inline">\(p\)</span>: Price of the Product</li>
+<li><span class="math inline">\(q_t\)</span>: Order Quantity</li>
+<li><span class="math inline">\(v\)</span>: Cost of Production</li>
+<li><span class="math inline">\(c_h\)</span>: Holding Cost</li>
+<li><span class="math inline">\(c_s\)</span>: Shortage Cost</li>
 </ul></li>
-</ul>
-<pre><code>library(greybox)
-# Generate artificial data
-x1 &lt;- rnorm(100,100,10)
-x2 &lt;- rbinom(100,2,0.05)
-y &lt;- 10 + 1.5*x1 + 5*x2 + rnorm(100,0,10)
-ourData &lt;- cbind(y=y,x1=x1,x2=x2)
-# Define price and costs
-price &lt;- 50
-costBasic &lt;- 5
-costShort &lt;- 15
-costHold &lt;- 1
-# Define profit function for the linear case
-lossProfit &lt;- function(actual, fitted, B, xreg){
-&nbsp; &nbsp; # Minus sign is needed here, because we need to minimise the loss
-&nbsp; &nbsp; profit &lt;- -ifelse(actual &gt;= fitted,
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (price - costBasic) * fitted - costShort * (actual - fitted),
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; price * actual - costBasic * fitted - costHold * (fitted - actual));
-&nbsp; &nbsp; return(sum(profit));
-}
-# Estimate the model
-model1 &lt;- alm(y~x1+x2, ourData, loss=lossProfit)
-# Print summary of the model
-summary(model1, bootstrap=TRUE)
-Coefficients:
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Estimate Std. Error Lower 2.5% Upper 97.5%&nbsp;
-(Intercept)&nbsp; 36.5177&nbsp; &nbsp; 14.2840&nbsp; &nbsp; 2.7783&nbsp; &nbsp; 51.4844 *
-x1&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 1.3622&nbsp; &nbsp; 0.1622&nbsp; &nbsp; 1.1909&nbsp; &nbsp; &nbsp; 1.7528 *
-x2&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 3.3423&nbsp; &nbsp; 2.7810&nbsp; &nbsp; -6.5997&nbsp; &nbsp; &nbsp; 5.9101</code></pre>
+<li><p><span class="ribbon-highlight">Example</span></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(greybox)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate artificial data</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>x1 <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">100</span>,<span class="dv">100</span>,<span class="dv">10</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>x2 <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(<span class="dv">100</span>,<span class="dv">2</span>,<span class="fl">0.05</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">10</span> <span class="sc">+</span> <span class="fl">1.5</span><span class="sc">*</span>x1 <span class="sc">+</span> <span class="dv">5</span><span class="sc">*</span>x2 <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">100</span>,<span class="dv">0</span>,<span class="dv">10</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>ourData <span class="ot">&lt;-</span> <span class="fu">cbind</span>(<span class="at">y=</span>y,<span class="at">x1=</span>x1,<span class="at">x2=</span>x2)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Define price and costs</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>price <span class="ot">&lt;-</span> <span class="dv">50</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>costBasic <span class="ot">&lt;-</span> <span class="dv">5</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>costShort <span class="ot">&lt;-</span> <span class="dv">15</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>costHold <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Define profit function for the linear case</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>lossProfit <span class="ot">&lt;-</span> <span class="cf">function</span>(actual, fitted, B, xreg){</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>&nbsp; &nbsp; <span class="co"># Minus sign is needed here, because we need to minimise the loss</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>&nbsp; &nbsp; profit <span class="ot">&lt;-</span> <span class="sc">-</span><span class="fu">ifelse</span>(actual <span class="sc">&gt;=</span> fitted,</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (price <span class="sc">-</span> costBasic) <span class="sc">*</span> fitted <span class="sc">-</span> costShort <span class="sc">*</span> (actual <span class="sc">-</span> fitted),</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; price <span class="sc">*</span> actual <span class="sc">-</span> costBasic <span class="sc">*</span> fitted <span class="sc">-</span> costHold <span class="sc">*</span> (fitted <span class="sc">-</span> actual));</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>&nbsp; &nbsp; <span class="fu">return</span>(<span class="fu">sum</span>(profit));</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Estimate the model</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>model1 <span class="ot">&lt;-</span> <span class="fu">alm</span>(y<span class="sc">~</span>x1<span class="sc">+</span>x2, ourData, <span class="at">loss=</span>lossProfit)</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Print summary of the model</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model1, <span class="at">bootstrap=</span><span class="cn">TRUE</span>)</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>Coefficients<span class="sc">:</span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Estimate Std. Error Lower <span class="fl">2.5</span><span class="sc">% Upper 97.5%</span>&nbsp;</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>(Intercept)&nbsp; <span class="fl">36.5177</span>&nbsp; &nbsp; <span class="fl">14.2840</span>&nbsp; &nbsp; <span class="fl">2.7783</span>&nbsp; &nbsp; <span class="fl">51.4844</span> <span class="sc">*</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>x1&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="fl">1.3622</span>&nbsp; &nbsp; <span class="fl">0.1622</span>&nbsp; &nbsp; <span class="fl">1.1909</span>&nbsp; &nbsp; &nbsp; <span class="fl">1.7528</span> <span class="sc">*</span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>x2&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="fl">3.3423</span>&nbsp; &nbsp; <span class="fl">2.7810</span>&nbsp; &nbsp; <span class="sc">-</span><span class="fl">6.5997</span>&nbsp; &nbsp; &nbsp; <span class="fl">5.9101</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
-<li><p>Interpretation: with the increase of the variable x1, the orders should change on average by 1.36</p></li>
-<li><p>Plot</p></li>
-</ul>
-<pre><code>plot(model1, 7)</code></pre>
-<p><img src="./_resources/Logistics.resources/ordersDynamics.png" class="img-fluid"></p>
+<li><p>Interpretation: With the increase of the variable x1, the orders should change on average by 1.36</p></li>
+<li><p>Plot<br>
+<img src="./_resources/Logistics.resources/ordersDynamics.png" class="img-fluid" width="632"></p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(model1, <span class="dv">7</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
-<li><p>Figure above corresponds to the orders (purple) and would cover roughly 90.91% of cases (black), so that we would run out of product in approximately 10% of cases, which would still be more profitable than any other option.</p></li>
+<li>Figure above corresponds to the orders (purple) and would cover roughly 90.91% of cases (black), so that we would run out of product in approximately 10% of cases, which would still be more profitable than any other option.</li>
+</ul></li>
+</ul></li>
 <li><p>Nonlinear case</p>
 <ul>
 <li>See link to associated paper above</li>
