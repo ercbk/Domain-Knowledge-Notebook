@@ -670,69 +670,69 @@
     -   See link to associated paper above
     -   The only thing that would change is the loss function, where the prices and costs would depend non-linearly on the order quantity and sales.
 
-## DoorDash {#sec-log-drdsh .unnumbered}
+## Case Study: DoorDash {#sec-log-drdsh .unnumbered}
 
 -   Notes from <https://towardsdatascience.com/managing-supply-and-demand-balance-through-machine-learning-70d4f0808617>
--   2-stage solution
-    -   forcasting supply and demand
-    -   optimizing supply of workers with demand of food orders
--   Define the problem
+-   [Problem Definition]{.underline}
     -   Supply and demand imbalance  (i.e. drivers and food orders)
     -   Effects
         -   For consumers, a lack of driver availability during peak demand is more likely to lead to order lateness, longer delivery times, or inability to request a delivery and having to opt for pick up.
         -   For Dashers, a lack of orders leads to lower earnings and longer and more frequent shifts in order to hit personal goals.
         -   For merchants, undersupply leads to delayed deliveries, which typically results in cold food and a decreased reorder rate.
--   Optimization Strategies
-    -   Balancing at the delivery level means every order has a Dasher available at the most optimal time
-        -   consumer preferences and other changing conditions in the environment, such as traffic and weather, make it difficult to balance supply and demand at the delivery level
-    -   Balancing at the market level means there are relatively equal numbers of Dashers and orders in a market but there are not necessarily optimal conditions for each of these groups at the delivery level.
--   Metric
+-   [2-Stage Solution]{.underline}
+    -   Forecast supply and demand
+    -   Optimize supply of workers with demand of food orders
+        -   Optimization Strategies
+            -   Balancing at the delivery level means every order has a Dasher available at the most optimal time
+                -   Consumer preferences and other changing conditions in the environment, such as traffic and weather, make it difficult to balance supply and demand at the delivery level
+            -   Balancing at the market level means there are relatively equal numbers of Dashers and orders in a market but there are not necessarily optimal conditions for each of these groups at the delivery level.
+-   [Metrics]{.underline}
     -   Number of hours required to make deliveries during a time period
-        -   Optimize keeping delivery durations low and Dasher (drivers) busyness high
+        -   Optimize keeping delivery durations low and Dasher (drivers) busy-ness high
         -   Able to account for regional variation driven by traffic conditions, batching rates, and food preparation times.
-    -   Units: hourly or day-parts (e.g. breakfast, lunch, dinner)
+    -   Units: hourly or parts-of-day (e.g. breakfast, lunch, dinner)
         -   There's too much variation during a day in order to aggregate to a higher level metric. Demand and supply would be artifically smoothed.
     -   [Example]{.ribbon-highlight}:
         -   Sunday at dinner time in New York City, and we estimate that 1,000 driver hours are needed to fulfill the expected demand. We might also estimate that unless we provide extra incentives, only 800 hours will likely be provided organically. Without mobilization actions we would be undersupplied by about 200 hours.
--   Optimization
-    -   Adjust supply of drivers by incentivizing with pay bonues during high demand hours
--   Forecast Supply and Demand
-    -   LightGBM
-    -   Predictors
-        -   Information about population size, general traffic conditions, number of available merchants, climate, and geography
-        -   character variables were replaced with embedding vectors
+    -   Optimization
+        -   Adjust supply of drivers by incentivizing with pay bonues during high demand hours
+-   [Forecast Supply and Demand]{.underline}
+    -   Demand
+        -   LightGBM
+        -   Predictors
+            -   Information about population size, general traffic conditions, number of available merchants, climate, and geography
+            -   Character variables were replaced with embedding vectors
     -   Supply
         -   Counterfactual to understand how to make tradeoffs between supply and costs
             -   How will supply levels change if we changed incentive levels so that we can ?
             -   I assume "incentive_level" is a variable in the supply forecast model, so this could just be adjusted in "newdata" and a  prediction (or maybe during a training session?) made to see the effects on supply.
--   Decision Making
-    -   consumes supply and demand predictions and attempts to generate a set of optimal actions
+-   [Optimization]{.underline}
+    -   Input supply and demand predictions and generate a set of optimal actions
     -   Mixed-Integer Programming (MIP)
-        -   linear optimization (see bkmks, ompr pkg)
-        -   easy to formalize, implement, and explain to stakeholders
+        -   Also see [Optimization, Equation Systems](https://ercbk.github.io/Data-Science-Notebook/qmd/optimization-equation-systems.html){style="color: green"}
+        -   Linear Optimization ([{ompr}]{style="color: #990000"})
+        -   Easy to formalize, implement, and explain to stakeholders
         -   Custom objective function for minimizing undersupply with several constraints.
             -   Can be configured to favor either profitability (profit per customer?) or growth (increase in orders per customer?)
-                -   or maybe its about drivers --- profitability (just enough incentive to get just enough drivers?) or growth (not sure what the "driver" angle is here)
+                -   Or maybe its about drivers --- profitability (just enough incentive to get just enough drivers?) or growth (not sure what the "driver" angle is here)
             -   Constraints
                 -   Never allocate more than one incentive in a particular region-time unit.
                 -   Never exceed the maximum allowable budget set by our finance and operations partners.
-                -   regional
-                    -   different budgets, custom penalties, exclusion criteria for which units should not be included in the optimization, or incentive constraints that are guided by variability of the inputs.
-        -   Optimizer must account for uncertainty![](./_resources/Logistics.resources/Screenshot-(363).png)
-            -   City B's forecast distribution has substantial uncertainty, and it's mean says it will have enough drivers (i.e. oversupply)
-            -   City A's forecast distribution is more certain, and it's more likely to be undersupplied.
-            -   W/o taking uncertainty into account, the optimizer will not take into account that there's a sizeable chance B will be undersupplied
-            -   Taking uncertainty into account sometimes causes an over-allocation of resources to these uncertain regions (small areas, fewer orders, fewer drivers, larger variance)
-            -   They do something with resampling to solve this but I didn't quite understand it.
+                -   Regional
+                    -   Different budgets, custom penalties, exclusion criteria for which units should not be included in the optimization, or incentive constraints that are guided by variability of the inputs.
+    -   Optimizer must account for uncertainty![](./_resources/Logistics.resources/Screenshot-(363).png){width="432"}
+        -   City B's forecast distribution has substantial uncertainty, and it's mean says it will have enough drivers (i.e. oversupply)
+        -   City A's forecast distribution is more certain, and it's more likely to be undersupplied.
+        -   W/o taking uncertainty into account, the optimizer will not take into account that there's a sizeable chance B will be undersupplied
+        -   Taking uncertainty into account sometimes causes an over-allocation of resources to these uncertain regions (small areas, fewer orders, fewer drivers, larger variance)
+        -   They do something with resampling to solve this but I didn't quite understand it.
 
-## Supply Chain {#sec-log-supch}
+## Supply Chain {#sec-log-supch .unnumbered}
 
 -   Misc
-
     -   Notes from: [4 Smart Visualizations for Supply Chain Descriptive Analytics](https://towardsdatascience.com/4-smart-visualizations-for-supply-chain-descriptive-analytics-fda4dfc2829a)
-
--   Flow Distribution of units between production areas and markets![](./_resources/Logistics.resources/image.png)
-
+-   [Flow Distribution of units between production areas and markets]{.underline}\
+    ![](./_resources/Logistics.resources/image.png){width="482"}
     -   Data 
         -   Source: the production facility name (left-side)
         -   Target: the market supplied (right-side)
@@ -741,36 +741,27 @@
         -   India is the biggest country for production output
         -   Japan market demand is mainly supplied locally
         -   USA and Germany do not have local production facilities
-
--   Network Optimization![](./_resources/Logistics.resources/image.1.png)
-
-    -   x-axis: each column represents a demand scenario (i.e. there are 50 demand scenarios in this example)
-
-    -   y-axis: are the production/supply locations
-
+-   [Network Optimization]{.underline}\
+    ![](./_resources/Logistics.resources/image.1.png){width="632"}
+    -   X-Axis: each column represents a demand scenario (i.e. there are 50 demand scenarios in this example)
+    -   Y-Axis: are the production/supply locations
     -   A blue box means that that location is included in the optimal configuration of locations for that scenario
-
         -   e.g. In scenario 1, having a low capacity facility in India and a high capacity facility in India is optimal for this scenario.
-
-    -   I think this viz can be done with {[waffle](https://github.com/hrbrmstr/waffle)} using `geom_waffle`*without* `theme_enhance_waffle`
-
+    -   I think this viz can be done with [{]{style="color: #990000"}[waffle](https://github.com/hrbrmstr/waffle){style="color: #990000"}[}]{style="color: #990000"} using `geom_waffle` *without* `theme_enhance_waffle`
     -   Simulate how the variability of demand in various markets (e.g. 50 scenarios) affects the optimal distribution of production/supply locations
-
         -   Hopefully a configuration of locations will be optimal for a preponderance of scenarios. Assuming each scenario is equally important, that configuration of locations is the optimal choice.
             -   Or I guess you could weight each scenario by frequency or something. Maybe you have a distribution of scenarios from which you drawing from.
-
     -   Linear programming
-
-        -   Also see [Optimization, general](Optimization,%20general)
+        -   Also see [Optimization, Equation Systems](https://ercbk.github.io/Data-Science-Notebook/qmd/optimization-equation-systems.html){style="color: green"}
         -   Set decision variable, objective function
-        -   list the constraints according to the demand for each market
+        -   List the constraints according to the demand for each market
         -   Solutions are indicator variables for production/supply locations and whether they are 1 or 0.
             -   There should be a boolean variable for a high capacity location and low capacity location in each country
             -   For each variable, 1 indicates that location should be built or that it should be in operation at that particular capacity
-
--   Pareto Plot
-
-    -   Data![](./_resources/Logistics.resources/image.7.png)
+-   [Pareto Plot]{.underline}
+    -   (Unfinished Note but I think there is an examle of a Pareto Plot in Warehouse Management)
+    -   Data\
+        ![](./_resources/Logistics.resources/image.7.png){width="332"}
         -   "BOX" is the number of box/packs picked of that product ("SKU") for that order ("ORDER_NUMBER") on that date ("DATE_FORMAT")
     -   Preprocessing
         -   Sum the number of boxes picked per SKU
@@ -778,16 +769,21 @@
         -   Calculate the cumulative sum of BOX
         -   Calculate the cumulative number of SKU
 
-## Warehouse Management {#sec-log-warmang}
+## Warehouse Management {#sec-log-warmang .unnumbered}
 
--   Misc
+-   [Misc]{.underline}
     -   Picking operations account for the largest proportion of the total warehouse costs (up to more than 60%). This is why the design of these areas is of such importance.
     -   The closer the high demand or large goods are to the loading and unloading docks, the lower the handling costs.
--   Material Flow Types
-    -   Simple flows: To understand how these movements work, we can examine the simplest possible flow, which takes place when units sent by the supplier are used, without dividing these up.![](./_resources/Logistics.resources/image.4.png)
-    -   Medium flows: Movements start to become more complex with this type of flow. It is normally found in warehouses with single or combined picking operations, generally with the supply of full pallets.![](./_resources/Logistics.resources/image.5.png)
-    -   Complex flows: There are warehouses with different working areas, depending on the types of product and their consumption. They normally have intermediate handling areas and can require various operations that in turn need flows of a certain (and at times great) complexity. This diagram shows an example of this type of facility and the loading movements that occur there.![](./_resources/Logistics.resources/image.6.png)
--   Warehouse Optimization![](./_resources/Logistics.resources/image.2.png)![](./_resources/Logistics.resources/image.3.png)
+-   [Material Flow Types]{.underline}
+    -   **Simple Flows**: To understand how these movements work, we can examine the simplest possible flow, which takes place when units sent by the supplier are used, without dividing these up.\
+        ![](./_resources/Logistics.resources/image.4.png){width="432"}
+    -   **Medium flows**: Movements start to become more complex with this type of flow. It is normally found in warehouses with single or combined picking operations, generally with the supply of full pallets.\
+        ![](./_resources/Logistics.resources/image.5.png){width="432"}
+    -   **Complex Flows**: There are warehouses with different working areas, depending on the types of product and their consumption. They normally have intermediate handling areas and can require various operations that in turn need flows of a certain (and at times great) complexity. This diagram shows an example of this type of facility and the loading movements that occur there.\
+        ![](./_resources/Logistics.resources/image.6.png){width="432"}
+-   [Warehouse Optimization]{.underline}\
+    ![](./_resources/Logistics.resources/image.2.png){width="432"}\
+    ![](./_resources/Logistics.resources/image.3.png){width="432"}
     -   A: High Rotation, B: Medium Rotation, C: Low Rotation
-    -   (Left) Pareto Plot shows how High Rotation products are classified as those accounting for 20% of total products but also 80% of sales (point on the curve)
-    -   (Right) Shows how the "A" products have been positioned closest to the loading and unloading area.
+    -   (Top) Pareto Plot shows how High Rotation products are classified as those accounting for 20% of total products but also 80% of sales (point on the curve)
+    -   (Bottom) Shows how the "A" products have been positioned closest to the loading and unloading area.

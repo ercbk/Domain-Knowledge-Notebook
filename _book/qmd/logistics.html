@@ -333,7 +333,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#sec-log-dim-steps" id="toc-sec-log-dim-steps" class="nav-link" data-scroll-target="#sec-log-dim-steps">Steps</a></li>
   </ul></li>
   <li><a href="#sec-log-pffpp" id="toc-sec-log-pffpp" class="nav-link" data-scroll-target="#sec-log-pffpp">Profit Functions for Perishable Products</a></li>
-  <li><a href="#sec-log-drdsh" id="toc-sec-log-drdsh" class="nav-link" data-scroll-target="#sec-log-drdsh">DoorDash</a></li>
+  <li><a href="#sec-log-drdsh" id="toc-sec-log-drdsh" class="nav-link" data-scroll-target="#sec-log-drdsh">Case Study: DoorDash</a></li>
   <li><a href="#sec-log-supch" id="toc-sec-log-supch" class="nav-link" data-scroll-target="#sec-log-supch">Supply Chain</a></li>
   <li><a href="#sec-log-warmang" id="toc-sec-log-warmang" class="nav-link" data-scroll-target="#sec-log-warmang">Warehouse Management</a></li>
   </ul>
@@ -364,14 +364,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li>Goal: develop a replenishment policy that will minimize your ordering, holding and shortage costs.
 <ul>
-<li><u>Ordering Costs</u> ($ per order): Fixed cost to place an order due to administrative costs, system maintenance or manufacturing costs</li>
-<li><u>Holding Costs</u> ($ per unit per unit of time): All the costs required to hold your inventory (storage, insurance, and capital costs)</li>
+<li><a href="../qmd/logistics.html#sec-log-outpol" style="color: green">OUT level policy</a> is widely recommended as a replenishment policy</li>
+<li>Costs (Also see <a href="../qmd/logistics.html#sec-log-eoq" style="color: green">EOQ</a>, <a href="../qmd/logistics.html#sec-log-dim-dicmp" style="color: green">DIM &gt;&gt; DI Components</a>)
+<ul>
+<li><u>Ordering Costs</u> ($ per order): Fixed cost to place an order due to administrative costs, system maintenance or manufacturing costs
+<ul>
+<li>Also see</li>
+</ul></li>
+<li><u>Holding Costs</u> ($ per unit per unit of time): All the costs required to hold your inventory (storage, insurance, and capital costs)
+<ul>
+<li>Forecast PI widths serve as a proxy for inventory holding costs and provides valuable input for setting a target service level</li>
+</ul></li>
 <li><u>Shortage/Stock-out Costs</u> ($ per unit): The costs of not having enough inventory to meet the customer demand (Lost Sales, Penalty)</li>
 </ul></li>
-<li>Forecast PI widths serve as a proxy for inventory holding costs and provides valuable input for setting a target service level</li>
+</ul></li>
 <li>Packages
 <ul>
-<li><span style="color: #990000">{planr}</span> - uses opening inventory, sales forecasts and supply variables to calculate projected inventory and projected coverage calculations (<a href="https://www.r-bloggers.com/2022/10/using-r-in-inventory-management-and-demand-forecasting/">article</a>)</li>
+<li><span style="color: #990000">{planr}</span> - Uses opening inventory, sales forecasts and supply variables to calculate projected inventory and projected coverage calculations (<a href="https://www.r-bloggers.com/2022/10/using-r-in-inventory-management-and-demand-forecasting/">article</a>)</li>
 </ul></li>
 <li>Question: “Due to the complexity/cost of maintaining inventory management system. Would it be sufficient to just set a safety stock level and replenish once the SKU dips below that level?”
 <ul>
@@ -640,7 +649,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul></li>
 <li>Protection Interval is your horizon, which equals the length of the review period + length of the lead time
 <ul>
-<li>See Order-Up-To (OUT) Level Policy for details</li>
+<li>See <a href="../qmd/logistics.html#sec-log-outpol" style="color: green">Order-Up-To (OUT) Level Policy</a> for details</li>
 </ul></li>
 </ul>
 </section>
@@ -721,6 +730,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="sec-log-demfcast-intdem-diag" class="level4 unnumbered">
 <h4 class="unnumbered anchored" data-anchor-id="sec-log-demfcast-intdem-diag">Diagnostics</h4>
 <ul>
+<li>Also see <a href="../qmd/logistics.html#sec-log-dim" style="color: green">Decision Impact Metrics</a></li>
 <li>Do NOT use metrics based on absolute errors (e.g MASE, MAPE) <em>by themselves</em>
 <ul>
 <li>Minimization of these metrics, by themselves, can result (i.e.&nbsp;over half of your values are zeros) in always recommending 0 value forecasts</li>
@@ -1014,9 +1024,10 @@ Q = \sqrt{\frac{2DS}{H}}
 <section id="sec-log-dim-misc" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="sec-log-dim-misc">Misc</h3>
 <ul>
+<li>Also see <a href="../qmd/logistics.html#sec-log-demfcast-intdem-diag" style="color: green">Demand Forecasting &gt;&gt; Intermittent Demand &gt;&gt; Diagnostics</a> &gt;&gt; Accuracy Implication Metrics</li>
 <li>DI metrics for all generated forecasts can be used to calculate a quarterly, semestrial, or annual ROI for the product planning department
 <ul>
-<li>ROI = sum(DIna)- (cost of people, tools, etc. used by department to generate forecasts)</li>
+<li>ROI = sum(<span class="math inline">\(DI_{na}\)</span>)- (cost of people, tools, etc. used by department to generate forecasts)</li>
 </ul></li>
 <li>Probabilistic Forecasts + DI metrics
 <ul>
@@ -1287,15 +1298,10 @@ pq_t - vq_t - c_s(y_t-q_t) &amp; \text{for}\;\; q_t &lt; y_t
 </ul>
 </section>
 <section id="sec-log-drdsh" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="sec-log-drdsh">DoorDash</h2>
+<h2 class="unnumbered anchored" data-anchor-id="sec-log-drdsh">Case Study: DoorDash</h2>
 <ul>
 <li>Notes from <a href="https://towardsdatascience.com/managing-supply-and-demand-balance-through-machine-learning-70d4f0808617" class="uri">https://towardsdatascience.com/managing-supply-and-demand-balance-through-machine-learning-70d4f0808617</a></li>
-<li>2-stage solution
-<ul>
-<li>forcasting supply and demand</li>
-<li>optimizing supply of workers with demand of food orders</li>
-</ul></li>
-<li>Define the problem
+<li><u>Problem Definition</u>
 <ul>
 <li>Supply and demand imbalance&nbsp; (i.e.&nbsp;drivers and food orders)</li>
 <li>Effects
@@ -1305,22 +1311,29 @@ pq_t - vq_t - c_s(y_t-q_t) &amp; \text{for}\;\; q_t &lt; y_t
 <li>For merchants, undersupply leads to delayed deliveries, which typically results in cold food and a decreased reorder rate.</li>
 </ul></li>
 </ul></li>
+<li><u>2-Stage Solution</u>
+<ul>
+<li>Forecast supply and demand</li>
+<li>Optimize supply of workers with demand of food orders
+<ul>
 <li>Optimization Strategies
 <ul>
 <li>Balancing at the delivery level means every order has a Dasher available at the most optimal time
 <ul>
-<li>consumer preferences and other changing conditions in the environment, such as traffic and weather, make it difficult to balance supply and demand at the delivery level</li>
+<li>Consumer preferences and other changing conditions in the environment, such as traffic and weather, make it difficult to balance supply and demand at the delivery level</li>
 </ul></li>
 <li>Balancing at the market level means there are relatively equal numbers of Dashers and orders in a market but there are not necessarily optimal conditions for each of these groups at the delivery level.</li>
 </ul></li>
-<li>Metric
+</ul></li>
+</ul></li>
+<li><u>Metrics</u>
 <ul>
 <li>Number of hours required to make deliveries during a time period
 <ul>
-<li>Optimize keeping delivery durations low and Dasher (drivers) busyness high</li>
+<li>Optimize keeping delivery durations low and Dasher (drivers) busy-ness high</li>
 <li>Able to account for regional variation driven by traffic conditions, batching rates, and food preparation times.</li>
 </ul></li>
-<li>Units: hourly or day-parts (e.g.&nbsp;breakfast, lunch, dinner)
+<li>Units: hourly or parts-of-day (e.g.&nbsp;breakfast, lunch, dinner)
 <ul>
 <li>There’s too much variation during a day in order to aggregate to a higher level metric. Demand and supply would be artifically smoothed.</li>
 </ul></li>
@@ -1328,18 +1341,21 @@ pq_t - vq_t - c_s(y_t-q_t) &amp; \text{for}\;\; q_t &lt; y_t
 <ul>
 <li>Sunday at dinner time in New York City, and we estimate that 1,000 driver hours are needed to fulfill the expected demand. We might also estimate that unless we provide extra incentives, only 800 hours will likely be provided organically. Without mobilization actions we would be undersupplied by about 200 hours.</li>
 </ul></li>
-</ul></li>
 <li>Optimization
 <ul>
 <li>Adjust supply of drivers by incentivizing with pay bonues during high demand hours</li>
 </ul></li>
-<li>Forecast Supply and Demand
+</ul></li>
+<li><u>Forecast Supply and Demand</u>
+<ul>
+<li>Demand
 <ul>
 <li>LightGBM</li>
 <li>Predictors
 <ul>
 <li>Information about population size, general traffic conditions, number of available merchants, climate, and geography</li>
-<li>character variables were replaced with embedding vectors</li>
+<li>Character variables were replaced with embedding vectors</li>
+</ul></li>
 </ul></li>
 <li>Supply
 <ul>
@@ -1350,30 +1366,32 @@ pq_t - vq_t - c_s(y_t-q_t) &amp; \text{for}\;\; q_t &lt; y_t
 </ul></li>
 </ul></li>
 </ul></li>
-<li>Decision Making
+<li><u>Optimization</u>
 <ul>
-<li>consumes supply and demand predictions and attempts to generate a set of optimal actions</li>
+<li>Input supply and demand predictions and generate a set of optimal actions</li>
 <li>Mixed-Integer Programming (MIP)
 <ul>
-<li>linear optimization (see bkmks, ompr pkg)</li>
-<li>easy to formalize, implement, and explain to stakeholders</li>
+<li>Also see <a href="https://ercbk.github.io/Data-Science-Notebook/qmd/optimization-equation-systems.html" style="color: green">Optimization, Equation Systems</a></li>
+<li>Linear Optimization (<span style="color: #990000">{ompr}</span>)</li>
+<li>Easy to formalize, implement, and explain to stakeholders</li>
 <li>Custom objective function for minimizing undersupply with several constraints.
 <ul>
 <li>Can be configured to favor either profitability (profit per customer?) or growth (increase in orders per customer?)
 <ul>
-<li>or maybe its about drivers — profitability (just enough incentive to get just enough drivers?) or growth (not sure what the “driver” angle is here)</li>
+<li>Or maybe its about drivers — profitability (just enough incentive to get just enough drivers?) or growth (not sure what the “driver” angle is here)</li>
 </ul></li>
 <li>Constraints
 <ul>
 <li>Never allocate more than one incentive in a particular region-time unit.</li>
 <li>Never exceed the maximum allowable budget set by our finance and operations partners.</li>
-<li>regional
+<li>Regional
 <ul>
-<li>different budgets, custom penalties, exclusion criteria for which units should not be included in the optimization, or incentive constraints that are guided by variability of the inputs.</li>
+<li>Different budgets, custom penalties, exclusion criteria for which units should not be included in the optimization, or incentive constraints that are guided by variability of the inputs.</li>
 </ul></li>
 </ul></li>
 </ul></li>
-<li>Optimizer must account for uncertainty<img src="./_resources/Logistics.resources/Screenshot-(363).png" class="img-fluid">
+</ul></li>
+<li>Optimizer must account for uncertainty<img src="./_resources/Logistics.resources/Screenshot-(363).png" class="img-fluid" width="432">
 <ul>
 <li>City B’s forecast distribution has substantial uncertainty, and it’s mean says it will have enough drivers (i.e.&nbsp;oversupply)</li>
 <li>City A’s forecast distribution is more certain, and it’s more likely to be undersupplied.</li>
@@ -1382,17 +1400,17 @@ pq_t - vq_t - c_s(y_t-q_t) &amp; \text{for}\;\; q_t &lt; y_t
 <li>They do something with resampling to solve this but I didn’t quite understand it.</li>
 </ul></li>
 </ul></li>
-</ul></li>
 </ul>
 </section>
-<section id="sec-log-supch" class="level2">
-<h2 class="anchored" data-anchor-id="sec-log-supch">Supply Chain</h2>
+<section id="sec-log-supch" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="sec-log-supch">Supply Chain</h2>
 <ul>
-<li><p>Misc</p>
+<li>Misc
 <ul>
 <li>Notes from: <a href="https://towardsdatascience.com/4-smart-visualizations-for-supply-chain-descriptive-analytics-fda4dfc2829a">4 Smart Visualizations for Supply Chain Descriptive Analytics</a></li>
 </ul></li>
-<li><p>Flow Distribution of units between production areas and markets<img src="./_resources/Logistics.resources/image.png" class="img-fluid"></p>
+<li><u>Flow Distribution of units between production areas and markets</u><br>
+<img src="./_resources/Logistics.resources/image.png" class="img-fluid" width="482">
 <ul>
 <li>Data&nbsp;
 <ul>
@@ -1407,27 +1425,28 @@ pq_t - vq_t - c_s(y_t-q_t) &amp; \text{for}\;\; q_t &lt; y_t
 <li>USA and Germany do not have local production facilities</li>
 </ul></li>
 </ul></li>
-<li><p>Network Optimization<img src="./_resources/Logistics.resources/image.1.png" class="img-fluid"></p>
+<li><u>Network Optimization</u><br>
+<img src="./_resources/Logistics.resources/image.1.png" class="img-fluid" width="632">
 <ul>
-<li><p>x-axis: each column represents a demand scenario (i.e.&nbsp;there are 50 demand scenarios in this example)</p></li>
-<li><p>y-axis: are the production/supply locations</p></li>
-<li><p>A blue box means that that location is included in the optimal configuration of locations for that scenario</p>
+<li>X-Axis: each column represents a demand scenario (i.e.&nbsp;there are 50 demand scenarios in this example)</li>
+<li>Y-Axis: are the production/supply locations</li>
+<li>A blue box means that that location is included in the optimal configuration of locations for that scenario
 <ul>
 <li>e.g.&nbsp;In scenario 1, having a low capacity facility in India and a high capacity facility in India is optimal for this scenario.</li>
 </ul></li>
-<li><p>I think this viz can be done with {<a href="https://github.com/hrbrmstr/waffle">waffle</a>} using <code>geom_waffle</code><em>without</em> <code>theme_enhance_waffle</code></p></li>
-<li><p>Simulate how the variability of demand in various markets (e.g.&nbsp;50 scenarios) affects the optimal distribution of production/supply locations</p>
+<li>I think this viz can be done with <span style="color: #990000">{</span><a href="https://github.com/hrbrmstr/waffle" style="color: #990000">waffle</a><span style="color: #990000">}</span> using <code>geom_waffle</code> <em>without</em> <code>theme_enhance_waffle</code></li>
+<li>Simulate how the variability of demand in various markets (e.g.&nbsp;50 scenarios) affects the optimal distribution of production/supply locations
 <ul>
 <li>Hopefully a configuration of locations will be optimal for a preponderance of scenarios. Assuming each scenario is equally important, that configuration of locations is the optimal choice.
 <ul>
 <li>Or I guess you could weight each scenario by frequency or something. Maybe you have a distribution of scenarios from which you drawing from.</li>
 </ul></li>
 </ul></li>
-<li><p>Linear programming</p>
+<li>Linear programming
 <ul>
-<li>Also see <a href="Optimization, general">Optimization, general</a></li>
+<li>Also see <a href="https://ercbk.github.io/Data-Science-Notebook/qmd/optimization-equation-systems.html" style="color: green">Optimization, Equation Systems</a></li>
 <li>Set decision variable, objective function</li>
-<li>list the constraints according to the demand for each market</li>
+<li>List the constraints according to the demand for each market</li>
 <li>Solutions are indicator variables for production/supply locations and whether they are 1 or 0.
 <ul>
 <li>There should be a boolean variable for a high capacity location and low capacity location in each country</li>
@@ -1435,9 +1454,11 @@ pq_t - vq_t - c_s(y_t-q_t) &amp; \text{for}\;\; q_t &lt; y_t
 </ul></li>
 </ul></li>
 </ul></li>
-<li><p>Pareto Plot</p>
+<li><u>Pareto Plot</u>
 <ul>
-<li>Data<img src="./_resources/Logistics.resources/image.7.png" class="img-fluid">
+<li>(Unfinished Note but I think there is an examle of a Pareto Plot in Warehouse Management)</li>
+<li>Data<br>
+<img src="./_resources/Logistics.resources/image.7.png" class="img-fluid" width="332">
 <ul>
 <li>“BOX” is the number of box/packs picked of that product (“SKU”) for that order (“ORDER_NUMBER”) on that date (“DATE_FORMAT”)</li>
 </ul></li>
@@ -1451,25 +1472,30 @@ pq_t - vq_t - c_s(y_t-q_t) &amp; \text{for}\;\; q_t &lt; y_t
 </ul></li>
 </ul>
 </section>
-<section id="sec-log-warmang" class="level2">
-<h2 class="anchored" data-anchor-id="sec-log-warmang">Warehouse Management</h2>
+<section id="sec-log-warmang" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="sec-log-warmang">Warehouse Management</h2>
 <ul>
-<li>Misc
+<li><u>Misc</u>
 <ul>
 <li>Picking operations account for the largest proportion of the total warehouse costs (up to more than 60%). This is why the design of these areas is of such importance.</li>
 <li>The closer the high demand or large goods are to the loading and unloading docks, the lower the handling costs.</li>
 </ul></li>
-<li>Material Flow Types
+<li><u>Material Flow Types</u>
 <ul>
-<li>Simple flows: To understand how these movements work, we can examine the simplest possible flow, which takes place when units sent by the supplier are used, without dividing these up.<img src="./_resources/Logistics.resources/image.4.png" class="img-fluid"></li>
-<li>Medium flows: Movements start to become more complex with this type of flow. It is normally found in warehouses with single or combined picking operations, generally with the supply of full pallets.<img src="./_resources/Logistics.resources/image.5.png" class="img-fluid"></li>
-<li>Complex flows: There are warehouses with different working areas, depending on the types of product and their consumption. They normally have intermediate handling areas and can require various operations that in turn need flows of a certain (and at times great) complexity. This diagram shows an example of this type of facility and the loading movements that occur there.<img src="./_resources/Logistics.resources/image.6.png" class="img-fluid"></li>
+<li><strong>Simple Flows</strong>: To understand how these movements work, we can examine the simplest possible flow, which takes place when units sent by the supplier are used, without dividing these up.<br>
+<img src="./_resources/Logistics.resources/image.4.png" class="img-fluid" width="432"></li>
+<li><strong>Medium flows</strong>: Movements start to become more complex with this type of flow. It is normally found in warehouses with single or combined picking operations, generally with the supply of full pallets.<br>
+<img src="./_resources/Logistics.resources/image.5.png" class="img-fluid" width="432"></li>
+<li><strong>Complex Flows</strong>: There are warehouses with different working areas, depending on the types of product and their consumption. They normally have intermediate handling areas and can require various operations that in turn need flows of a certain (and at times great) complexity. This diagram shows an example of this type of facility and the loading movements that occur there.<br>
+<img src="./_resources/Logistics.resources/image.6.png" class="img-fluid" width="432"></li>
 </ul></li>
-<li>Warehouse Optimization<img src="./_resources/Logistics.resources/image.2.png" class="img-fluid"><img src="./_resources/Logistics.resources/image.3.png" class="img-fluid">
+<li><u>Warehouse Optimization</u><br>
+<img src="./_resources/Logistics.resources/image.2.png" class="img-fluid" width="432"><br>
+<img src="./_resources/Logistics.resources/image.3.png" class="img-fluid" width="432">
 <ul>
 <li>A: High Rotation, B: Medium Rotation, C: Low Rotation</li>
-<li>(Left) Pareto Plot shows how High Rotation products are classified as those accounting for 20% of total products but also 80% of sales (point on the curve)</li>
-<li>(Right) Shows how the “A” products have been positioned closest to the loading and unloading area.</li>
+<li>(Top) Pareto Plot shows how High Rotation products are classified as those accounting for 20% of total products but also 80% of sales (point on the curve)</li>
+<li>(Bottom) Shows how the “A” products have been positioned closest to the loading and unloading area.</li>
 </ul></li>
 </ul>
 
