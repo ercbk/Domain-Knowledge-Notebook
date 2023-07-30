@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Domain Knowledge - 5&nbsp; Real Estate</title>
+<title>Domain Knowledge - Real Estate</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -96,6 +96,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -109,7 +111,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../qmd/real-estate.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Real Estate</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../qmd/real-estate.html">Real Estate</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -206,7 +208,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../qmd/kpis.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">KPIs</span></span></a>
+ <span class="menu-text">KPIs</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -218,7 +220,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../qmd/logistics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Logistics</span></span></a>
+ <span class="menu-text">Logistics</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -236,7 +238,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../qmd/marketing.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Marketing</span></span></a>
+ <span class="menu-text">Marketing</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -260,13 +262,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../qmd/product-development.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Product Development</span></span></a>
+ <span class="menu-text">Product Development</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../qmd/real-estate.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Real Estate</span></span></a>
+ <span class="menu-text">Real Estate</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -291,22 +293,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#sec-rlest-misc" id="toc-sec-rlest-misc" class="nav-link active" data-scroll-target="#sec-rlest-misc"><span class="header-section-number">5.1</span> Misc</a></li>
-  <li><a href="#sec-rlest-terms" id="toc-sec-rlest-terms" class="nav-link" data-scroll-target="#sec-rlest-terms"><span class="header-section-number">5.2</span> Terms</a></li>
-  <li><a href="#sec-rlest-bizq" id="toc-sec-rlest-bizq" class="nav-link" data-scroll-target="#sec-rlest-bizq"><span class="header-section-number">5.3</span> Business Questions</a></li>
-  <li><a href="#sec-rlest-usecases" id="toc-sec-rlest-usecases" class="nav-link" data-scroll-target="#sec-rlest-usecases"><span class="header-section-number">5.4</span> Use Cases</a></li>
-  <li><a href="#sec-rlest-apprais" id="toc-sec-rlest-apprais" class="nav-link" data-scroll-target="#sec-rlest-apprais"><span class="header-section-number">5.5</span> Appraisal Methods (Price Estimation)</a>
+  <li><a href="#sec-rlest-misc" id="toc-sec-rlest-misc" class="nav-link active" data-scroll-target="#sec-rlest-misc">Misc</a></li>
+  <li><a href="#sec-rlest-terms" id="toc-sec-rlest-terms" class="nav-link" data-scroll-target="#sec-rlest-terms">Terms</a></li>
+  <li><a href="#sec-rlest-bizq" id="toc-sec-rlest-bizq" class="nav-link" data-scroll-target="#sec-rlest-bizq">Business Questions</a></li>
+  <li><a href="#sec-rlest-usecases" id="toc-sec-rlest-usecases" class="nav-link" data-scroll-target="#sec-rlest-usecases">Use Cases</a></li>
+  <li><a href="#sec-rlest-apprais" id="toc-sec-rlest-apprais" class="nav-link" data-scroll-target="#sec-rlest-apprais">Appraisal Methods (Price Estimation)</a>
   <ul>
-  <li><a href="#sec-rlest-apprais-trad" id="toc-sec-rlest-apprais-trad" class="nav-link" data-scroll-target="#sec-rlest-apprais-trad"><span class="header-section-number">5.5.1</span> Traditional</a></li>
-  <li><a href="#sec-rlest-apprais-ml" id="toc-sec-rlest-apprais-ml" class="nav-link" data-scroll-target="#sec-rlest-apprais-ml"><span class="header-section-number">5.5.2</span> ML Approaches</a>
-  <ul class="collapse">
-  <li><a href="#sec-rlest-apprais-ml-misc" id="toc-sec-rlest-apprais-ml-misc" class="nav-link" data-scroll-target="#sec-rlest-apprais-ml-misc"><span class="header-section-number">5.5.2.1</span> Misc</a></li>
-  <li><a href="#sec-rlest-apprais-ml-feats" id="toc-sec-rlest-apprais-ml-feats" class="nav-link" data-scroll-target="#sec-rlest-apprais-ml-feats"><span class="header-section-number">5.5.2.2</span> Features</a></li>
-  <li><a href="#sec-rlest-apprais-ml-hedpric" id="toc-sec-rlest-apprais-ml-hedpric" class="nav-link" data-scroll-target="#sec-rlest-apprais-ml-hedpric"><span class="header-section-number">5.5.2.3</span> Hedonic Pricing Method</a></li>
-  <li><a href="#sec-rlest-apprais-ml-cmaprc" id="toc-sec-rlest-apprais-ml-cmaprc" class="nav-link" data-scroll-target="#sec-rlest-apprais-ml-cmaprc"><span class="header-section-number">5.5.2.4</span> CMA with Comp Price Adjustments</a></li>
+  <li><a href="#sec-rlest-apprais-trad" id="toc-sec-rlest-apprais-trad" class="nav-link" data-scroll-target="#sec-rlest-apprais-trad">Traditional</a></li>
+  <li><a href="#sec-rlest-apprais-ml" id="toc-sec-rlest-apprais-ml" class="nav-link" data-scroll-target="#sec-rlest-apprais-ml">ML Approaches</a>
+  <ul>
+  <li><a href="#sec-rlest-apprais-ml-misc" id="toc-sec-rlest-apprais-ml-misc" class="nav-link" data-scroll-target="#sec-rlest-apprais-ml-misc">Misc</a></li>
+  <li><a href="#sec-rlest-apprais-ml-feats" id="toc-sec-rlest-apprais-ml-feats" class="nav-link" data-scroll-target="#sec-rlest-apprais-ml-feats">Features</a></li>
+  </ul></li>
+  <li><a href="#sec-rlest-apprais-hedpric" id="toc-sec-rlest-apprais-hedpric" class="nav-link" data-scroll-target="#sec-rlest-apprais-hedpric">Hedonic Pricing Method</a></li>
+  <li><a href="#sec-rlest-apprais-cmaprc" id="toc-sec-rlest-apprais-cmaprc" class="nav-link" data-scroll-target="#sec-rlest-apprais-cmaprc">CMA with Comp Price Adjustments</a>
+  <ul>
+  <li><a href="#sec-rlest-apprais-cmaprc-misc" id="toc-sec-rlest-apprais-cmaprc-misc" class="nav-link" data-scroll-target="#sec-rlest-apprais-cmaprc-misc">Misc</a></li>
+  <li><a href="#sec-rlest-apprais-cmaprc-proc" id="toc-sec-rlest-apprais-cmaprc-proc" class="nav-link" data-scroll-target="#sec-rlest-apprais-cmaprc-proc">Process</a></li>
+  <li><a href="#sec-rlest-apprais-cmaprc-marprc" id="toc-sec-rlest-apprais-cmaprc-marprc" class="nav-link" data-scroll-target="#sec-rlest-apprais-cmaprc-marprc">Market Price</a></li>
+  <li><a href="#sec-rlest-apprais-cmaprc-bldflr" id="toc-sec-rlest-apprais-cmaprc-bldflr" class="nav-link" data-scroll-target="#sec-rlest-apprais-cmaprc-bldflr">Building-Floor</a></li>
+  <li><a href="#sec-rlest-apprais-cmaprc-loc" id="toc-sec-rlest-apprais-cmaprc-loc" class="nav-link" data-scroll-target="#sec-rlest-apprais-cmaprc-loc">Location</a></li>
   </ul></li>
   </ul></li>
-  <li><a href="#sec-rlest-feats" id="toc-sec-rlest-feats" class="nav-link" data-scroll-target="#sec-rlest-feats"><span class="header-section-number">5.6</span> Features</a></li>
+  <li><a href="#sec-rlest-feats" id="toc-sec-rlest-feats" class="nav-link" data-scroll-target="#sec-rlest-feats">Features</a></li>
   </ul>
 </nav>
     </div>
@@ -315,7 +324,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span id="sec-rlest" class="quarto-section-identifier"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Real Estate</span></span></h1>
+<h1 class="title"><span id="sec-rlest" class="quarto-section-identifier">Real Estate</span></h1>
 </div>
 
 
@@ -330,8 +339,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<section id="sec-rlest-misc" class="level2" data-number="5.1">
-<h2 data-number="5.1" class="anchored" data-anchor-id="sec-rlest-misc"><span class="header-section-number">5.1</span> Misc</h2>
+<section id="sec-rlest-misc" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="sec-rlest-misc">Misc</h2>
 <ul>
 <li>Listing Price
 <ul>
@@ -345,21 +354,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul></li>
 </ul>
 </section>
-<section id="sec-rlest-terms" class="level2" data-number="5.2">
-<h2 data-number="5.2" class="anchored" data-anchor-id="sec-rlest-terms"><span class="header-section-number">5.2</span> Terms</h2>
+<section id="sec-rlest-terms" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="sec-rlest-terms">Terms</h2>
 <ul>
 <li><span style="color: #009499"><strong>Price Anchoring</strong></span> - a pricing strategy that plays on buyers’ inherent tendency to rely heavily on a piece of initial information to guide subsequent decisions. In the context of pricing, many businesses will set a visible initial price for a product but make a point of showing that it’s now being sold at a discount.</li>
 <li><span style="color: #009499"><strong>Price Index</strong></span> - a normalized average (typically a weighted average) of price relatives for a given class of goods or services in a given region, during a given interval of time
 <ul>
-<li><a href="https://fred.stlouisfed.org/series/CSUSHPISA">Case-Shiller U.S. National Home Price Index</a> (also {fredr})</li>
+<li><a href="https://fred.stlouisfed.org/series/CSUSHPISA">Case-Shiller U.S. National Home Price Index</a> (also {fredr})
+<ul>
+<li>See <a href="../qmd/real-estate.html#sec-rlest-apprais-cmaprc-marprc" style="color: green">Appraisal Methods &gt;&gt; CMA &gt;&gt; Market Price</a> &gt;&gt; Case Shiller</li>
+</ul></li>
 <li><a href="https://en.wikipedia.org/wiki/Price_index">Wiki</a> has formulas</li>
-<li>See Appraisal Methods &gt;&gt; Prediction Adjustments &gt;&gt; Repeat Sales Model</li>
+<li>See <a href="../qmd/real-estate.html#sec-rlest-apprais-cmaprc-marprc" style="color: green">Appraisal Methods &gt;&gt; CMA</a> &gt;&gt; Repeat Sales Model</li>
 <li>If a price index rises 10%, it means the average level of prices has risen 10%</li>
 </ul></li>
 </ul>
 </section>
-<section id="sec-rlest-bizq" class="level2" data-number="5.3">
-<h2 data-number="5.3" class="anchored" data-anchor-id="sec-rlest-bizq"><span class="header-section-number">5.3</span> Business Questions</h2>
+<section id="sec-rlest-bizq" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="sec-rlest-bizq">Business Questions</h2>
 <ul>
 <li>Agent
 <ul>
@@ -370,20 +382,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Buyer
 <ul>
 <li>Match them with agent</li>
-<li>find them a home</li>
-<li>appropriate mortgage</li>
+<li>Find them a home</li>
+<li>Appropriate mortgage</li>
 </ul></li>
 </ul>
 </section>
-<section id="sec-rlest-usecases" class="level2" data-number="5.4">
-<h2 data-number="5.4" class="anchored" data-anchor-id="sec-rlest-usecases"><span class="header-section-number">5.4</span> Use Cases</h2>
+<section id="sec-rlest-usecases" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="sec-rlest-usecases">Use Cases</h2>
 <ul>
 <li>Using computer vision and NLP to enhance searches
 <ul>
-<li>Incorporating image search capabilities: extract information from pictures of the property utilizing object detection and image classification techniques, to be used in search matching.</li>
-<li>Recommendation-engine-powered rankings: search results could be ranked according to the likelihood that the specific user will interact with the results, based on previous searches, profile characteristics, and contextual information.</li>
-<li>Search intent matching: enhance the user experience by adding the ability to write (or dictate) their home preference(s) instead of manually filtering the results. It may be very wise to incorporate such a feature given the rise of home assistants.</li>
-<li>Visual search: perform a search based purely on images of homes. This would enhance the search experience or complement the keyword search and produce more accurate and useful results.</li>
+<li><em>Incorporating Image Search Capabilities</em>: Extract information from pictures of the property utilizing object detection and image classification techniques, to be used in search matching.</li>
+<li><em>Recommendation-Engine-Powered Rankings</em>: Search results could be ranked according to the likelihood that the specific user will interact with the results, based on previous searches, profile characteristics, and contextual information.</li>
+<li><em>Search Intent Matching</em>: Enhance the user experience by adding the ability to write (or dictate) their home preference(s) instead of manually filtering the results. It may be very wise to incorporate such a feature given the rise of home assistants.</li>
+<li><em>Visual Search</em>: Perform a search based purely on images of homes. This would enhance the search experience or complement the keyword search and produce more accurate and useful results.</li>
 </ul></li>
 <li>Identify homeowners who are more likely to sell and estimate their selling price using publicly available data</li>
 <li>Find correlations between past sellers and current homeowners, in order to help predict the likelihood that a given owner is willing to sell.</li>
@@ -402,40 +414,40 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul></li>
 </ul>
 </section>
-<section id="sec-rlest-apprais" class="level2" data-number="5.5">
-<h2 data-number="5.5" class="anchored" data-anchor-id="sec-rlest-apprais"><span class="header-section-number">5.5</span> Appraisal Methods (Price Estimation)</h2>
-<section id="sec-rlest-apprais-trad" class="level3" data-number="5.5.1">
-<h3 data-number="5.5.1" class="anchored" data-anchor-id="sec-rlest-apprais-trad"><span class="header-section-number">5.5.1</span> Traditional</h3>
+<section id="sec-rlest-apprais" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="sec-rlest-apprais">Appraisal Methods (Price Estimation)</h2>
+<section id="sec-rlest-apprais-trad" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="sec-rlest-apprais-trad">Traditional</h3>
 <ul>
-<li>Comparative Market Analysis (CMA)
+<li><u>Comparative Market Analysis (CMA)</u>
 <ul>
 <li>a collection of recently sold “comparable” homes (“comps”) that, taken in aggregate, can provide a view on the value distribution of the appraised home (the “subject” home)</li>
 <li>selecting similar properties (in terms of attributes and location) and inferring the target value from the comparables</li>
 </ul></li>
-<li>Cost Approach
+<li><u>Cost Approach</u>
 <ul>
 <li>The “replacement cost” is determined by totaling values such as the value of raw land (again, using comparison), the cost of rebuilding a new building that could perform the function of the existing property, and then making necessary adjustments (e.g., deprecation of the existing building).</li>
 </ul></li>
-<li>Profits Method (or income approach)
+<li><u>Profits Method</u> (or <u>Income Approach</u>)
 <ul>
 <li>estimates the value of the property based on the income it generates. The value is linked to the business carried out within that property. For example, the market value of a hotel depends on the potential cash flow derived from ownership.</li>
 </ul></li>
-<li>Repeat sales method
+<li><u>Repeat Sales Method</u>
 <ul>
 <li>analysis is restricted to just comparing price changes on properties sold more than once</li>
 </ul></li>
 </ul>
 </section>
-<section id="sec-rlest-apprais-ml" class="level3" data-number="5.5.2">
-<h3 data-number="5.5.2" class="anchored" data-anchor-id="sec-rlest-apprais-ml"><span class="header-section-number">5.5.2</span> ML Approaches</h3>
-<section id="sec-rlest-apprais-ml-misc" class="level4" data-number="5.5.2.1">
-<h4 data-number="5.5.2.1" class="anchored" data-anchor-id="sec-rlest-apprais-ml-misc"><span class="header-section-number">5.5.2.1</span> Misc</h4>
+<section id="sec-rlest-apprais-ml" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="sec-rlest-apprais-ml">ML Approaches</h3>
+<section id="sec-rlest-apprais-ml-misc" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="sec-rlest-apprais-ml-misc">Misc</h4>
 <ul>
 <li>Automated Valuation Models (also known as AVMs) were found to have an absolute error below 4% for homes and below 6% for commercial properties, which is much less than the error rates of traditional appraisals.</li>
 </ul>
 </section>
-<section id="sec-rlest-apprais-ml-feats" class="level4" data-number="5.5.2.2">
-<h4 data-number="5.5.2.2" class="anchored" data-anchor-id="sec-rlest-apprais-ml-feats"><span class="header-section-number">5.5.2.2</span> Features</h4>
+<section id="sec-rlest-apprais-ml-feats" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="sec-rlest-apprais-ml-feats">Features</h4>
 <ul>
 <li>Different predictors may be more valuable for each of the price models.
 <ul>
@@ -444,14 +456,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Temporary rental price: Airbnb’s pricing tips use a mathematical model that learns how likely a guest is to book a specific listing, on specific dates, at a range of different prices.</li>
 </ul></li>
 <li>Adding nontraditional data sources can improve estimates<br>
-<img src="./_resources/Real_Estate.resources/nontraditional-data.png" class="img-fluid"></li>
+<img src="./_resources/Real_Estate.resources/nontraditional-data.png" class="img-fluid" width="532"></li>
 </ul>
 </section>
-<section id="sec-rlest-apprais-ml-hedpric" class="level4" data-number="5.5.2.3">
-<h4 data-number="5.5.2.3" class="anchored" data-anchor-id="sec-rlest-apprais-ml-hedpric"><span class="header-section-number">5.5.2.3</span> Hedonic Pricing Method</h4>
+</section>
+<section id="sec-rlest-apprais-hedpric" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="sec-rlest-apprais-hedpric">Hedonic Pricing Method</h3>
 <ul>
 <li>A typical regression that accounts for property features such as size, number of rooms, property age, home quality characteristics (granite countertops, air conditioning, pool, etc.), and location</li>
-<li>{hpiR} (<a href="https://cran.r-project.org/web/packages/hpiR/vignettes/introduction.html">vignette</a>)</li>
+<li><span style="color: #990000">{hpiR}</span> (<a href="https://cran.r-project.org/web/packages/hpiR/vignettes/introduction.html">vignette</a>)</li>
 <li>It’s just multivariable regression where log sale price (or ppsf, etc.) is the outcome and includes house characteristics and has dummy variables for the years (or days, weeks, etc.) when the house was sold</li>
 <li>The exponential of the coefficients of the year dummy variables are the index and they represent the average change in the outcome variable from the reference year to the year represented by the dummy variable
 <ul>
@@ -459,26 +472,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul></li>
 </ul>
 </section>
-<section id="sec-rlest-apprais-ml-cmaprc" class="level4" data-number="5.5.2.4">
-<h4 data-number="5.5.2.4" class="anchored" data-anchor-id="sec-rlest-apprais-ml-cmaprc"><span class="header-section-number">5.5.2.4</span> CMA with Comp Price Adjustments</h4>
-<section id="sec-rlest-apprais-ml-cmaprc-proc" class="level5" data-number="5.5.2.4.1">
-<h5 data-number="5.5.2.4.1" class="anchored" data-anchor-id="sec-rlest-apprais-ml-cmaprc-proc"><span class="header-section-number">5.5.2.4.1</span> Process</h5>
-<ul>
-<li>Data Scientist role
-<ul>
-<li>Suggests good comparable properties for a CMA</li>
-<li>Highlights the important differences between the comparable and the subject property (the fewer, the better)</li>
-<li>Suggests pricing adjustments for the differences</li>
-</ul></li>
-<li>Real Estate Agent
-<ul>
-<li>Selects which properties to use as comps</li>
-<li>Selects which adjustments are relevant and appropriate for their CMA report</li>
-</ul></li>
-</ul>
-</section>
-<section id="sec-rlest-apprais-ml-cmaprc-misc" class="level5" data-number="5.5.2.4.2">
-<h5 data-number="5.5.2.4.2" class="anchored" data-anchor-id="sec-rlest-apprais-ml-cmaprc-misc"><span class="header-section-number">5.5.2.4.2</span> Misc</h5>
+<section id="sec-rlest-apprais-cmaprc" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="sec-rlest-apprais-cmaprc">CMA with Comp Price Adjustments</h3>
+<section id="sec-rlest-apprais-cmaprc-misc" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="sec-rlest-apprais-cmaprc-misc">Misc</h4>
 <ul>
 <li>Notes from
 <ul>
@@ -488,10 +485,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Probably want to go as small an area as you can depending on the amount of training data at that resolution</li>
 </ul>
 </section>
-<section id="sec-rlest-apprais-ml-cmaprc-marprc" class="level5" data-number="5.5.2.4.3">
-<h5 data-number="5.5.2.4.3" class="anchored" data-anchor-id="sec-rlest-apprais-ml-cmaprc-marprc"><span class="header-section-number">5.5.2.4.3</span> Market Price</h5>
+<section id="sec-rlest-apprais-cmaprc-proc" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="sec-rlest-apprais-cmaprc-proc">Process</h4>
 <ul>
-<li><p>Using the repeat sales model, we estimate how the price-per-square-foot evolved for each locality. Then we can use the model to estimate the difference in average price per square foot (PPSF) in the locality across any two-time points.</p></li>
+<li><u>Data Scientist Role</u>
+<ul>
+<li>Suggests good comparable properties for a CMA</li>
+<li>Highlights the important differences between the comparable and the subject property (the fewer, the better)</li>
+<li>Suggests pricing adjustments for the differences</li>
+</ul></li>
+<li><u>Real Estate Agent Role</u>
+<ul>
+<li>Selects which properties to use as comps</li>
+<li>Selects which adjustments are relevant and appropriate for their CMA report</li>
+</ul></li>
+</ul>
+</section>
+<section id="sec-rlest-apprais-cmaprc-marprc" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="sec-rlest-apprais-cmaprc-marprc">Market Price</h4>
+<ul>
+<li><p><u>Repeat Sales Model</u></p>
+<ul>
+<li><p>Estimates how the price-per-square-foot evolved for each locality. Then we can use the model to estimate the difference in average price per square foot (PPSF) in the locality across any two-time points.</p></li>
 <li><p>If a price index rises 10%, it means the average level of prices has risen 10%</p>
 <ul>
 <li><span class="ribbon-highlight">Example</span>:
@@ -517,16 +532,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p>Assumes homeoskedacity</p></li>
 <li><p>Specification</p>
 <ul>
-<li>log(last_sale_price / first_sale_price) = β1 * I(year_1) + β2 * I(year_2)&nbsp; + …</li>
-<li>where I(year_*) is an indicator variable with values of
+<li><p>Formula:</p>
+<p><span class="math display">\[
+\log\left(\frac{\mbox{Last Sale Price}}{\mbox{First Sale Price}}\right) = \beta_0 + \beta_1 I(\mbox{year}_1) + \beta_2I(\mbox{year}_2) + \cdots
+\]</span></p></li>
+<li><p>Where <span class="math inline">\(I(\mbox{year}\_*)\)</span> is an indicator variable with values of</p>
 <ul>
 <li>1 for year of last sale</li>
 <li>-1 for year of first sale</li>
 <li>0 for years where the house wasn’t sold</li>
 <li>“*” is the year of the sale of the house.</li>
 </ul></li>
-<li>Note that there is no intercept so will need <code>0 +</code> in the formula</li>
-<li>exp(β*) gives the index for that year Index for the first year of the sample data is automatically set to 1.</li>
+<li><p>Note that there is no intercept so will need <code>0 +</code> in the formula</p></li>
+<li><p><span class="math inline">\(e^{β_*}\)</span> gives the index for that year Index for the first year of the sample data is automatically set to 1.</p></li>
 </ul></li>
 <li><p><span class="ribbon-highlight">Example</span></p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
@@ -559,13 +577,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>2015: 1.16</li>
 </ul></li>
 </ul></li>
-<li><p>Case-Shiller Method</p>
+</ul></li>
+<li><p><u>Case-Shiller Method</u></p>
 <ul>
 <li><p>Handles heteroskedasticity by Weighted Least Squares</p></li>
 <li><p>Typically follows the same trend (highly correlated) as the regular repeated sales model but on a lower level</p></li>
 <li><p>Packages</p>
 <ul>
-<li>{hpiR}(<a href="https://cran.r-project.org/web/packages/hpiR/vignettes/introduction.html">vignette</a>)
+<li>Also see <a href="https://ercbk.github.io/Data-Science-Notebook/qmd/regression-other.html#sec-reg-other-wls" style="color: green">Regression, Other &gt;&gt; Weighted Least Squares</a></li>
+<li><span style="color: #990000">{hpiR}</span>(<a href="https://cran.r-project.org/web/packages/hpiR/vignettes/introduction.html">vignette</a>)
 <ul>
 <li>Multiple modeling options, including weighted regression, robust regression, random forest</li>
 <li>Also splits up houses with more than 2 sales into combinations of binary periods</li>
@@ -574,20 +594,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul></li>
 <li><p>Process</p>
 <ul>
-<li>First fit the repeated sales model:
+<li><p>First fit the Repeated Sales Model</p></li>
+<li><p>Regress the squared residuals on the holding period</p>
+<p><span class="math display">\[
+\epsilon^2 = \beta_0 + \beta_1 \cdot \mbox{Holding Period}
+\]</span></p>
 <ul>
-<li>log(last_sale_price / first_sale_price) = β1 * I(year_1) + β2 * I(year_2)&nbsp; + …</li>
+<li><em>Holding Period</em>: The period between the first sale and last sale</li>
 </ul></li>
-<li>Regress the squared residuals on the holding period
-<ul>
-<li>ε2 = β0 + β1 * holding_period</li>
-<li>Holding Period: the period between the first sale and last sale</li>
-</ul></li>
-<li>Calculate weights using fitted values
-<ul>
-<li>weights = 1 / sqrt(^ε2)</li>
-</ul></li>
-<li>Fit weighted repeated sales model</li>
+<li><p>Calculate weights using fitted values</p>
+<p><span class="math display">\[
+\mbox{weights} = \frac{1}{\sqrt{\hat{ε^2}}}
+\]</span></p></li>
+<li><p>Fit Weighted Repeated Sales Model</p></li>
 </ul></li>
 <li><p>Model</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>mod <span class="ot">&lt;-</span> <span class="fu">lm</span>(LogP <span class="sc">~</span> <span class="dv">0</span> <span class="sc">+</span> ., <span class="at">data =</span> dat <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="sc">-</span>HoldingPeriod))</span>
@@ -614,8 +633,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul></li>
 </ul>
 </section>
-<section id="sec-rlest-apprais-ml-cmaprc-bldflr" class="level5" data-number="5.5.2.4.4">
-<h5 data-number="5.5.2.4.4" class="anchored" data-anchor-id="sec-rlest-apprais-ml-cmaprc-bldflr"><span class="header-section-number">5.5.2.4.4</span> Building-Floor</h5>
+<section id="sec-rlest-apprais-cmaprc-bldflr" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="sec-rlest-apprais-cmaprc-bldflr">Building-Floor</h4>
 <ul>
 <li>Higher floors in apartment building cost more</li>
 <li>Adjustment varies per building but there isn’t enough training data to have a model per building
@@ -625,8 +644,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Perform Market Price adjustment to prices before modeling price differences by floor</li>
 </ul>
 </section>
-<section id="sec-rlest-apprais-ml-cmaprc-loc" class="level5" data-number="5.5.2.4.5">
-<h5 data-number="5.5.2.4.5" class="anchored" data-anchor-id="sec-rlest-apprais-ml-cmaprc-loc"><span class="header-section-number">5.5.2.4.5</span> Location</h5>
+<section id="sec-rlest-apprais-cmaprc-loc" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="sec-rlest-apprais-cmaprc-loc">Location</h4>
 <ul>
 <li>Buildings are of different ages, have various contractual constraints, and offer vastly different amenities.
 <ul>
@@ -635,95 +654,100 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Spatial nearest neighbor models for ppsf.
 <ul>
 <li>To prepare the training data, we use the Market Price adjustment discussed already</li>
-<li>packages: {nngeo}</li>
+<li>Packages: <span style="color: #990000">{nngeo}</span></li>
 </ul></li>
 </ul>
 </section>
 </section>
 </section>
-</section>
-<section id="sec-rlest-feats" class="level2" data-number="5.6">
-<h2 data-number="5.6" class="anchored" data-anchor-id="sec-rlest-feats"><span class="header-section-number">5.6</span> Features</h2>
+<section id="sec-rlest-feats" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="sec-rlest-feats">Features</h2>
 <ul>
-<li>Scrape traditional variables (from websites?)
+<li>Also see <a href="https://ercbk.github.io/Data-Science-Notebook/qmd/feature-engineering-geospatial.html" style="color: green">Feature Engineering, Geospatial</a></li>
+<li><u>Scrape Traditional Variables</u>
 <ul>
 <li>Number of bedrooms</li>
 <li>Number of bathrooms</li>
-<li>Living area, square footage</li>
-<li>price per square foot (PPSF)</li>
-<li>Number of stories</li>
-<li>Year built</li>
-<li>property type (e.g.&nbsp;condo, house)</li>
-<li>Furnished/not furnished</li>
-<li>Fireplace/no fireplace</li>
-<li>Heating/no heating</li>
-<li>pool/no pool</li>
-<li>garage space</li>
-<li>ZIP code</li>
-<li>Latitude and longitude</li>
-<li>listing price of comparable homes in the area</li>
-<li>sale price</li>
-<li>days on the market</li>
+<li>Living area (square footage)</li>
+<li>Price per Square Foot (PPSF)</li>
+<li>Number of Stories</li>
+<li>Year Built</li>
+<li>Property Type (e.g.&nbsp;Condo, House)</li>
+<li>Furnished/Not Furnished</li>
+<li>Fireplace/No Fireplace</li>
+<li>Heating/No Heating</li>
+<li>Pool/No Pool</li>
+<li>Garage Space</li>
+<li>ZIP Code</li>
+<li>Latitude and Longitude</li>
+<li>Listing Price of comparable homes in the area</li>
+<li>Sale Price</li>
+<li>Days on the Market</li>
 </ul></li>
-<li>Off-market data
+<li><u>Off-Market Data</u>
 <ul>
-<li>tax assessments</li>
-<li>prior sales and other publicly available records</li>
-<li>Resident surveys</li>
-<li>mobile phone signal patterns</li>
-<li>Yelp reviews of local restaurants help identify “hyperlocal” patterns—granular trends at the city block level rather than at the city level.</li>
+<li>Tax Assessments</li>
+<li>Prior Sales and other publicly available records</li>
+<li>Resident Surveys</li>
+<li>Mobile Phone Signal Patterns</li>
+<li>Yelp Reviews of local restaurants help identify “hyperlocal” patterns—granular trends at the city block level rather than at the city level.</li>
 </ul></li>
-<li>Market trends
+<li><u>Market Trends</u>
 <ul>
-<li>inflation</li>
-<li>seasonality in demand</li>
-<li>economic shocks</li>
+<li>Inflation</li>
+<li>Seasonality in Demand</li>
+<li>Economic Shocks</li>
 </ul></li>
-<li>Geographic indicators
+<li><u>Geographic Indicators</u>
 <ul>
-<li><a href="https://eng.uber.com/h3/">Uber’s H3 grid system</a> instead of zip codes, etc.</li>
+<li><a href="https://eng.uber.com/h3/">Uber’s H3 grid system</a> instead of zip codes, etc. (Also see <a href="https://ercbk.github.io/Data-Science-Notebook/qmd/geospatial-general.html" style="color: green">Geospatial, General</a>)</li>
 <li>The quality of local schools</li>
-<li>Employment opportunities</li>
+<li>Employment Opportunities</li>
 <li>Proximity to shopping, entertainment,&nbsp;and recreational centers</li>
 <li>Sources Google Places, Yelp, or SchoolDigger</li>
 </ul></li>
-<li>Image data
+<li><u>Image data</u>
 <ul>
-<li>Satellite imagery
+<li>Satellite Imagery
 <ul>
 <li><a href="https://www.mapbox.com/maps/satellite">Mapbox’s Satellite API</a>
 <ul>
-<li>allows you to query any location by its latitude and longitude coordinates</li>
-<li>select from 20 different zoom levels</li>
+<li>Allows you to query any location by its latitude and longitude coordinates</li>
+<li>Select from 20 different zoom levels</li>
 <li>50,000 free requests each month!!</li>
 </ul></li>
-<li>number of roads and their condition and houses with pools</li>
+<li>Number of roads and their condition</li>
+<li>Houses with Pools</li>
 </ul></li>
 <li>Method
 <ul>
 <li>Convolutional Neural Networks (CNNs) can extract visual features, revealing underlying information captured in photos</li>
-<li>satellite
+<li>Satellite
 <ul>
 <li>A classification network can distinguish between the top and bottom 15% of houses in a dataset to test this. A model achieved an outstanding 91% accuracy, using only satellite images. After interpreting the model to understand which visual patterns governed its decision process, we saw that it placed high importance on recreational areas such as parks and lakes.</li>
 </ul></li>
-<li>exterior frontal images and interior photos</li>
+<li>Exterior Frontal Images</li>
+<li>Interior Photos</li>
 </ul></li>
 <li>Features
 <ul>
-<li>the activeness of a street frontage</li>
-<li>accessibility of the area (number of roads, condition of the roads)</li>
-<li>amount of urbanization</li>
-<li>proximity to parks, lakes and beaches (recreational areas)</li>
-<li>amount of greenery</li>
-<li>population density</li>
+<li>The activeness of a street frontage</li>
+<li>Accessibility of the Area (number of roads, condition of the roads)</li>
+<li>Amount of Urbanization
+<ul>
+<li><span style="color: #990000">{uci}</span> (Urban Centrality Index) - measures the extent to which the spatial organization of a city or region varies from extreme polycentric to extreme monocentric in a continuous scale from 0 to 1.</li>
+</ul></li>
+<li>Proximity to parks, lakes and beaches (recreational areas)</li>
+<li>Amount of Greenery</li>
+<li>Population Density</li>
 </ul></li>
 </ul></li>
-<li>NLP
+<li><u>NLP</u>
 <ul>
 <li>Identify the most important words in a description and learn which words tend to be used to describe more expensive or affordable houses.<br>
-<img src="./_resources/Real_Estate.resources/nlp-example.png" class="img-fluid"></li>
+<img src="./_resources/Real_Estate.resources/nlp-example.png" class="img-fluid" width="532"></li>
 </ul></li>
-<li>Sociodemographic
+<li><u>Sociodemographic</u>
 <ul>
 <li>Misc
 <ul>
@@ -731,25 +755,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Official government data sources are best (consistent, unbiased, and up-to-date indicators, with the largest sample sizes)</li>
 </ul></li>
 <li>Median Household Income</li>
-<li>Unemployment rate</li>
-<li>crime rate</li>
+<li>Unemployment Rate</li>
+<li>Crime Rate</li>
 <li>Ethnicity</li>
-<li>Number of inhabitants</li>
-<li>Average age</li>
-<li>Poverty level</li>
+<li>Number of Inhabitants</li>
+<li>Average Age</li>
+<li>Poverty Level</li>
 <li>Source: American Community Survey (ACS) at census tract level
 <ul>
-<li>small subdivisions of a county (around 4,000 inhabitants on average),</li>
-<li>designed to be relatively homogeneous units concerning population characteristics, economic status, and living conditions</li>
+<li>Small subdivisions of a county (around 4,000 inhabitants on average),</li>
+<li>Designed to be relatively homogeneous units concerning population characteristics, economic status, and living conditions</li>
 </ul></li>
-<li>Total population</li>
-<li>Total employed population</li>
-<li>population median age</li>
-<li>Median household income</li>
-<li>Population with income below poverty level</li>
-<li>Minority percentage</li>
-<li>Vacant housing units for rent</li>
-<li>Median value for all owner-occupied housing units</li>
+<li>Total Population</li>
+<li>Total Employed Population</li>
+<li>Population Median Age</li>
+<li>Median Household Income</li>
+<li>Population with Income Below Poverty Level</li>
+<li>Minority Percentage</li>
+<li>Vacant Housing Units for Rent</li>
+<li>Median Value for all owner-occupied housing units</li>
 </ul></li>
 </ul>
 
@@ -993,7 +1017,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="../qmd/product-development.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Product Development</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Product Development</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

@@ -359,6 +359,7 @@
 ### Growth Metrics (AARRR) {#sec-proddev-metrics-growth .unnumbered}
 
 -   Are responsible for enlarging a product's user base and keeping current users engaged
+-   Also see KPIs \>\> Product Metrics \>\> AARRR
 
 #### AARRR {#sec-proddev-metrics-growth-aarrr .unnumbered}
 
