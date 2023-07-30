@@ -8,25 +8,6 @@
         -   Makes data suitable for a RNN (see Processing for details)
 -   Also see
     -   [Epidemiology \>\> Disease Mapping](epidemiology.qmd#sec-epidemi-dismap){style="color: green"}
--   Bias in Healthcare Claims Data ([article](https://towardsdatascience.com/healthcare-is-inherently-biased-b60bf00d4af7), (mini) [paper](https://jamanetwork.com/journals/jamanetworkopen/article-abstract/2800118))
-    -   Imbalance of patients or members represented in large healthcare datasets can make your results non-generalizable or (in some cases) flat out invalid.\
-    -   Goals should be: investigate the biases, mitigate as well as possible, and decide which insights are still valuable or meaningful despite these nuances\
-    -   Characteristics of data that lead to biases\
-        -   Only includes any members/patients who actually *had* an incident/event for which the insurer processed a subsequent claim\
-        -   Tends to over/underrepresent certain groups who are more likely to have chronic health problems, adverse social determinants of health, seek care,\
-        -   Groups are reflective of the type of demographics your organization tends to serve or that you have a larger book of business in\
-            -   Can cause over-and-under-representation of certain diseases
-        -   Even companies within the same insurance sector may not have similar populations. Company business practices affect the types of populations within their data.\
-            -   Our \[patients / members / employees / residents / etc.\] may not act similarly or even represent \[all patients / other groups / other types of employer s / other regions / etc.\]\
-        -   Data is years old. Effects sizes in data that's 5 or 6yrs old may not be valid now.\
-    -   Types\
-        -   Undercoverage bias - occurs when a part of the population is excluded from your sample.\
-        -   Historical bias - occurs when socio-cultural prejudices and beliefs are mirrored into systematic processes \[that are then reflected in the data\].\
-        -   Systemic biases - result from institutions operating in ways that disadvantage certain groups.\
-    -   Solutions\
-        -   Augment or compare with outside data:  data sharing/collaboration or tapping into additional feeds such as health information exchange (HIE)\
-        -   Social Determinants of Health (SDOH) - (see definition below) compare socio-economics and demographics of your dataset with  Census estimates and the SDOH variability seen for said zip codes.\
-            -   Will determine the amount of reweighting/normalizing the data requires
 -   Populations within Healthcare Claims Data\
     -   Lines of business (LOB) such as patients with coverage from a government payer (Medicaid, Medicare); commercial lines (employer groups, retail or purchased via the exchange); self-insured (self-funded groups, usually large employers paying for their own healthcare claims of employees), etc.\
     -   Sub-lines of business, or groups. For instance, Medicaid may consist of multiple sub-groups representing different levels of eligibility, coverage, benefits, or types of people/why they qualified for the program (Temporary Assistance for Needy Families (TANF) vs. Medicaid expansion for adults)\
@@ -36,40 +17,6 @@
     -   Cross-group comparison of some combination of the above, for instance: Medicaid, TANF, new mothers and their cost/utilization/outcomes trends vs. Commercial, self-insured, new mothers and their cost/utilization/outcomes\
 -   ICU's data is usually the most complete and available for research compared to other healthcare data
 -   Recognized cutpoints - 25 kg/m2 to define "overweight" based on body mass index.
--   DS Use Cases:
-    -   [Clinical Outcomes]{.underline}
-        -   Mortality (death) events
-        -   Early warning score (EWS) - likelihood of death
-            -   Features: respiratory rate, oxygen saturation, temperature, blood pressure, heart rate, and consciousness rating
-            -   Each variable has a normal range as established by common medical knowledge. A score is computed based on a lookup table to characterize how far away the variable is from its normal range. If the sum of all scores surpasses a threshold, it means a high likelihood of death
-        -   Early warning system for patient deterioration (CHARTwatch at Toronto hospital system, [video](https://www.youtube.com/watch?v=3PSNMV7SdNE))
-            -   Deployed to General Internal Medicine ward (GIM)
-            -   Slides with links to papers that discuss the model on the youtube website
-            -   Predicts risk score of a patient "at risk"
-                -   "At Risk" - transfer to ICU or transfer to Palliative Care unit or Death (composite endpoint, see [Terms](healthcare.qmd#sec-health-terms){style="color: green"})
-                -   Probability score then thresholded into "high," "medium," and "low" risk (color coded) labels
-            -   Features: laboratory values, vital measurements, and demographics
-            -   Prediction delivery
-                -   Email to nurses, palliative care unit, etc.
-                    -   Table with name, bed #,... , Status (aka prediction) for each patient
-                -   "Front-End Tool" - software for people that sign out patients, has general patient information, includes column for Status
-                -   Phone alerts for patients with High risk labels get sent to clinicians
-    -   [Resource Utilization]{.underline}
-        -   Planning for hospital bed capacity
-        -   Score for long length of stay (i.e. larger than 7 days)
-            -   Commonly computed 24 hours after admission
-            -   Logistic regression model (with proper regularization techniques)
-            -   Features: age, gender, condition category, diagnosis code, hospital service received, and lab tests of vital signs to produce a probability number for long length of stay.
-        -   Assignment/Scheduling
-        -   Forecast daily Emergency Department arrivals
-    -   [Quality of Care]{.underline}
-        -   30 days readmission after discharge
-        -   Hospital score for readmission
-            -   Typically calculated at discharge time
-            -   Features: hemoglobin level, sodium level, type of the admission, number of previous admissions, length of stay, whether the hospital stay is cancer related, and whether medical procedures were performed during the stay
-            -   Based on established medical knowledge, the values of each factor is translated to a risk score, and the sum of which depicts the overall risk of readmission
-    -   [Medical Imaging AI tools]{.underline}
-    -   [Dashboard to compute dosage]{.underline} (e.g. blood thinner) based on patient health factors
 
 ## Terms {#sec-health-terms .unnumbered}
 
@@ -96,6 +43,42 @@
 -   [**Progression-Free Survival Rate**]{style="color: #009499"} - The percentage of people who did not have new tumor growth or cancer spread during or after treatment. The disease may have responded to treatment completely or partially, or the disease may be stable. This means the cancer is still there but not growing or spreading.
 -   [**Social Determinants of Health (SDOH)**]{style="color: #009499"} - conditions in the environments where people are born, live, learn, work, play, worship, and age that affect a wide range of health, functioning, and quality-of-life outcomes and risks. (US Health and Human Services [article](https://health.gov/healthypeople/priority-areas/social-determinants-health))
     -   Five Categories: Economic Stability, Education Access and Quality, Health Care Access and Quality, Neighborhood and Built Environment, Social and Community Context
+
+## Use Cases
+
+-   [Clinical Outcomes]{.underline}
+    -   Mortality (death) events
+    -   Early warning score (EWS) - likelihood of death
+        -   Features: respiratory rate, oxygen saturation, temperature, blood pressure, heart rate, and consciousness rating
+        -   Each variable has a normal range as established by common medical knowledge. A score is computed based on a lookup table to characterize how far away the variable is from its normal range. If the sum of all scores surpasses a threshold, it means a high likelihood of death
+    -   Early warning system for patient deterioration (CHARTwatch at Toronto hospital system, [video](https://www.youtube.com/watch?v=3PSNMV7SdNE))
+        -   Deployed to General Internal Medicine ward (GIM)
+        -   Slides with links to papers that discuss the model on the youtube website
+        -   Predicts risk score of a patient "at risk"
+            -   "At Risk" - transfer to ICU or transfer to Palliative Care unit or Death (composite endpoint, see [Terms](healthcare.qmd#sec-health-terms){style="color: green"})
+            -   Probability score then thresholded into "high," "medium," and "low" risk (color coded) labels
+        -   Features: laboratory values, vital measurements, and demographics
+        -   Prediction delivery
+            -   Email to nurses, palliative care unit, etc.
+                -   Table with name, bed #,... , Status (aka prediction) for each patient
+            -   "Front-End Tool" - software for people that sign out patients, has general patient information, includes column for Status
+            -   Phone alerts for patients with High risk labels get sent to clinicians
+-   [Resource Utilization]{.underline}
+    -   Planning for hospital bed capacity
+    -   Score for long length of stay (i.e. larger than 7 days)
+        -   Commonly computed 24 hours after admission
+        -   Logistic regression model (with proper regularization techniques)
+        -   Features: age, gender, condition category, diagnosis code, hospital service received, and lab tests of vital signs to produce a probability number for long length of stay.
+    -   Assignment/Scheduling
+    -   Forecast daily Emergency Department arrivals
+-   [Quality of Care]{.underline}
+    -   30 days readmission after discharge
+    -   Hospital score for readmission
+        -   Typically calculated at discharge time
+        -   Features: hemoglobin level, sodium level, type of the admission, number of previous admissions, length of stay, whether the hospital stay is cancer related, and whether medical procedures were performed during the stay
+        -   Based on established medical knowledge, the values of each factor is translated to a risk score, and the sum of which depicts the overall risk of readmission
+-   [Medical Imaging AI tools]{.underline}
+-   [Dashboard to compute dosage]{.underline} (e.g. blood thinner) based on patient health factors
 
 ## Prepocessing {#sec-health-preproc .unnumbered}
 
@@ -129,6 +112,28 @@
             -   This part isn't completely clear to me. Need to check the Google AI paper
             -   I think it means average all the timestamps within each aggregated embedding and append it to the embedding
                 -   Seems like the averaged timestame would need to be transformed into a numerical before being appended.
+
+## Bias in Healthcare Claims Data
+
+-   Notes from [article](https://towardsdatascience.com/healthcare-is-inherently-biased-b60bf00d4af7), (mini) [paper](https://jamanetwork.com/journals/jamanetworkopen/article-abstract/2800118)
+-   Imbalance of patients or members represented in large healthcare datasets can make your results non-generalizable or (in some cases) flat out invalid.\
+-   Goals should be: investigate the biases, mitigate as well as possible, and decide which insights are still valuable or meaningful despite these nuances\
+-   Characteristics of data that lead to biases\
+    -   Only includes any members/patients who actually *had* an incident/event for which the insurer processed a subsequent claim\
+    -   Tends to over/underrepresent certain groups who are more likely to have chronic health problems, adverse social determinants of health, seek care,\
+    -   Groups are reflective of the type of demographics your organization tends to serve or that you have a larger book of business in\
+        -   Can cause over-and-under-representation of certain diseases
+    -   Even companies within the same insurance sector may not have similar populations. Company business practices affect the types of populations within their data.\
+        -   Our \[patients / members / employees / residents / etc.\] may not act similarly or even represent \[all patients / other groups / other types of employer s / other regions / etc.\]\
+    -   Data is years old. Effects sizes in data that's 5 or 6yrs old may not be valid now.\
+-   Types\
+    -   Undercoverage bias - occurs when a part of the population is excluded from your sample.\
+    -   Historical bias - occurs when socio-cultural prejudices and beliefs are mirrored into systematic processes \[that are then reflected in the data\].\
+    -   Systemic biases - result from institutions operating in ways that disadvantage certain groups.\
+-   Solutions\
+    -   Augment or compare with outside data:  data sharing/collaboration or tapping into additional feeds such as health information exchange (HIE)\
+    -   Social Determinants of Health (SDOH) - (see definition below) compare socio-economics and demographics of your dataset with  Census estimates and the SDOH variability seen for said zip codes.\
+        -   Will determine the amount of reweighting/normalizing the data requires
 
 ## Fairness and Privacy {#sec-health-fairpriv .unnumbered}
 

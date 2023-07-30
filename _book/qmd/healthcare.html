@@ -32,6 +32,7 @@ ul.task-list li input[type="checkbox"] {
 <meta name="quarto:offset" content="../">
 <link href="../qmd/insurance.html" rel="next">
 <link href="../qmd/finance.html" rel="prev">
+<link href="../images/dk-favicon-32.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -171,7 +172,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../qmd/kpis.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">KPIs</span></span></a>
+ <span class="menu-text">KPIs</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -183,7 +184,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../qmd/logistics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Logistics</span></span></a>
+ <span class="menu-text">Logistics</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -201,7 +202,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../qmd/marketing.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Marketing</span></span></a>
+ <span class="menu-text">Marketing</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -225,13 +226,13 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../qmd/product-development.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Product Development</span></span></a>
+ <span class="menu-text">Product Development</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../qmd/real-estate.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Real Estate</span></span></a>
+ <span class="menu-text">Real Estate</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -258,7 +259,9 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#sec-health-misc" id="toc-sec-health-misc" class="nav-link active" data-scroll-target="#sec-health-misc">Misc</a></li>
   <li><a href="#sec-health-terms" id="toc-sec-health-terms" class="nav-link" data-scroll-target="#sec-health-terms">Terms</a></li>
+  <li><a href="#use-cases" id="toc-use-cases" class="nav-link" data-scroll-target="#use-cases">Use Cases</a></li>
   <li><a href="#sec-health-preproc" id="toc-sec-health-preproc" class="nav-link" data-scroll-target="#sec-health-preproc">Prepocessing</a></li>
+  <li><a href="#bias-in-healthcare-claims-data" id="toc-bias-in-healthcare-claims-data" class="nav-link" data-scroll-target="#bias-in-healthcare-claims-data">Bias in Healthcare Claims Data</a></li>
   <li><a href="#sec-health-fairpriv" id="toc-sec-health-fairpriv" class="nav-link" data-scroll-target="#sec-health-fairpriv">Fairness and Privacy</a></li>
   </ul>
 </nav>
@@ -298,55 +301,6 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li><a href="../qmd/epidemiology.html#sec-epidemi-dismap" style="color: green">Epidemiology &gt;&gt; Disease Mapping</a></li>
 </ul></li>
-<li>Bias in Healthcare Claims Data (<a href="https://towardsdatascience.com/healthcare-is-inherently-biased-b60bf00d4af7">article</a>, (mini) <a href="https://jamanetwork.com/journals/jamanetworkopen/article-abstract/2800118">paper</a>)
-<ul>
-<li>Imbalance of patients or members represented in large healthcare datasets can make your results non-generalizable or (in some cases) flat out invalid.<br>
-</li>
-<li>Goals should be: investigate the biases, mitigate as well as possible, and decide which insights are still valuable or meaningful despite these nuances<br>
-</li>
-<li>Characteristics of data that lead to biases<br>
-
-<ul>
-<li>Only includes any members/patients who actually <em>had</em> an incident/event for which the insurer processed a subsequent claim<br>
-</li>
-<li>Tends to over/underrepresent certain groups who are more likely to have chronic health problems, adverse social determinants of health, seek care,<br>
-</li>
-<li>Groups are reflective of the type of demographics your organization tends to serve or that you have a larger book of business in<br>
-
-<ul>
-<li>Can cause over-and-under-representation of certain diseases</li>
-</ul></li>
-<li>Even companies within the same insurance sector may not have similar populations. Company business practices affect the types of populations within their data.<br>
-
-<ul>
-<li>Our [patients / members / employees / residents / etc.] may not act similarly or even represent [all patients / other groups / other types of employer s / other regions / etc.]<br>
-</li>
-</ul></li>
-<li>Data is years old. Effects sizes in data that’s 5 or 6yrs old may not be valid now.<br>
-</li>
-</ul></li>
-<li>Types<br>
-
-<ul>
-<li>Undercoverage bias - occurs when a part of the population is excluded from your sample.<br>
-</li>
-<li>Historical bias - occurs when socio-cultural prejudices and beliefs are mirrored into systematic processes [that are then reflected in the data].<br>
-</li>
-<li>Systemic biases - result from institutions operating in ways that disadvantage certain groups.<br>
-</li>
-</ul></li>
-<li>Solutions<br>
-
-<ul>
-<li>Augment or compare with outside data:&nbsp; data sharing/collaboration or tapping into additional feeds such as health information exchange (HIE)<br>
-</li>
-<li>Social Determinants of Health (SDOH) - (see definition below) compare socio-economics and demographics of your dataset with&nbsp; Census estimates and the SDOH variability seen for said zip codes.<br>
-
-<ul>
-<li>Will determine the amount of reweighting/normalizing the data requires</li>
-</ul></li>
-</ul></li>
-</ul></li>
 <li>Populations within Healthcare Claims Data<br>
 
 <ul>
@@ -365,7 +319,54 @@ ul.task-list li input[type="checkbox"] {
 </ul></li>
 <li>ICU’s data is usually the most complete and available for research compared to other healthcare data</li>
 <li>Recognized cutpoints - 25 kg/m2 to define “overweight” based on body mass index.</li>
-<li>DS Use Cases:
+</ul>
+</section>
+<section id="sec-health-terms" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="sec-health-terms">Terms</h2>
+<ul>
+<li><span style="color: #009499"><strong>Biomedical Informatics</strong></span> - involves carrying out analysis on large-scale biological datasets in order to understand and profer solutions to health-related problems. Focuses on the optimal use of biomedical information, data, and knowledge for problem-solving and decision-making by employing computational and traditional approaches</li>
+<li><span style="color: #009499"><strong>Calibration</strong></span> - the agreement between the estimated and the “true” risk of an outcome. A well-calibrated model is one that minimizes residuals, which is equivalent to saying that the model fits the test data well. (This is just GoF. How well the model generalizes.)</li>
+<li><span style="color: #009499"><strong>Clinical Data Science</strong></span> - focuses on applying data science to healthcare with the goal of improving the overall well-being of patients and the healthcare system</li>
+<li><span style="color: #009499"><strong>Discrimination</strong></span> - the ability of a model to rank patients according to risk (Often measured by AUROC)</li>
+<li><span style="color: #009499"><strong>Electronic Health Record (EHR)</strong></span> -&nbsp; comprehensive collection of all information by the individuals involved in patient care. This includes records from clinicians, laboratories, radiology imaging, health insurance, socio-demographics, genetic sequencing data, etc.</li>
+<li><span style="color: #009499"><strong>Electronic Medical Record (EMR)</strong></span> - patient medical and treatment history within a single practice. EMR is the electronic version of the traditional paper records found in clinicians’ offices.</li>
+<li><span style="color: #009499"><strong>Endpoint</strong></span> - Outcome variable measured in a medical study. e.g.&nbsp;Death, stroke, or quality of life are good endpoints. Blood tests and images on scans are not good endpoints.
+<ul>
+<li>A <span style="color: #009499"><strong>composite endpoint</strong></span> is one that consists of two or more events
+<ul>
+<li>Example: death due to cardiovascular causes or hospitalization due to heart failure
+<ul>
+<li>So the binary outcome would be a 1 if either of those events took place or a 0 if they did not. Or in a survival model, time until either of those events.</li>
+<li>Issues
+<ul>
+<li>See <a href="https://johnmandrola.substack.com/p/the-all-important-endpoint-of-a-medical">The All-Important Endpoint of a Medical Study</a> for details
+<ul>
+<li>See Harrell in the comments for the solution</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><span style="color: #009499"><strong>FHIR</strong></span> - Fast Healthcare Interoperability Resources - open healthcare data standard (also sets standards for other things)
+<ul>
+<li>One JSON data schema per healthcare concept — e.g.&nbsp;Patient, Observation, Condition, MedicationRequest, etc.</li>
+</ul></li>
+<li><span style="color: #009499"><strong>Healthcare Analytics</strong></span> - analytics activities that can be undertaken as a result of data generated from core areas of healthcare including claims and cost data, pharmaceutical and research &amp; development data, clinical data, patient behavior &amp; sentiment data (narrower in scope compared to clinical data science)</li>
+<li><span style="color: #009499"><strong>Life Expectancy</strong></span> - a snapshot of the current mortality (“expenctancy” comes from “expected value”)
+<ul>
+<li>Assumes that assumes that the observed age-specific death rates at the time of birth for a cohort stay unchanged for their entire lifetimes.</li>
+</ul></li>
+<li><span style="color: #009499"><strong>Line of Business (LOB)</strong></span> - a statutory set of heath insurance policies</li>
+<li><span style="color: #009499"><strong>Progression-Free Survival (PFS)</strong></span> - The length of time during and after the treatment of a disease, such as cancer, that a patient lives with the disease but it does not get worse. In a clinical trial, measuring the PFS is one way to see how well a new treatment works.</li>
+<li><span style="color: #009499"><strong>Progression-Free Survival Rate</strong></span> - The percentage of people who did not have new tumor growth or cancer spread during or after treatment. The disease may have responded to treatment completely or partially, or the disease may be stable. This means the cancer is still there but not growing or spreading.</li>
+<li><span style="color: #009499"><strong>Social Determinants of Health (SDOH)</strong></span> - conditions in the environments where people are born, live, learn, work, play, worship, and age that affect a wide range of health, functioning, and quality-of-life outcomes and risks. (US Health and Human Services <a href="https://health.gov/healthypeople/priority-areas/social-determinants-health">article</a>)
+<ul>
+<li>Five Categories: Economic Stability, Education Access and Quality, Health Care Access and Quality, Neighborhood and Built Environment, Social and Community Context</li>
+</ul></li>
+</ul>
+</section>
+<section id="use-cases" class="level2">
+<h2 class="anchored" data-anchor-id="use-cases">Use Cases</h2>
 <ul>
 <li><u>Clinical Outcomes</u>
 <ul>
@@ -420,51 +421,6 @@ ul.task-list li input[type="checkbox"] {
 </ul></li>
 <li><u>Medical Imaging AI tools</u></li>
 <li><u>Dashboard to compute dosage</u> (e.g.&nbsp;blood thinner) based on patient health factors</li>
-</ul></li>
-</ul>
-</section>
-<section id="sec-health-terms" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="sec-health-terms">Terms</h2>
-<ul>
-<li><span style="color: #009499"><strong>Biomedical Informatics</strong></span> - involves carrying out analysis on large-scale biological datasets in order to understand and profer solutions to health-related problems. Focuses on the optimal use of biomedical information, data, and knowledge for problem-solving and decision-making by employing computational and traditional approaches</li>
-<li><span style="color: #009499"><strong>Calibration</strong></span> - the agreement between the estimated and the “true” risk of an outcome. A well-calibrated model is one that minimizes residuals, which is equivalent to saying that the model fits the test data well. (This is just GoF. How well the model generalizes.)</li>
-<li><span style="color: #009499"><strong>Clinical Data Science</strong></span> - focuses on applying data science to healthcare with the goal of improving the overall well-being of patients and the healthcare system</li>
-<li><span style="color: #009499"><strong>Discrimination</strong></span> - the ability of a model to rank patients according to risk (Often measured by AUROC)</li>
-<li><span style="color: #009499"><strong>Electronic Health Record (EHR)</strong></span> -&nbsp; comprehensive collection of all information by the individuals involved in patient care. This includes records from clinicians, laboratories, radiology imaging, health insurance, socio-demographics, genetic sequencing data, etc.</li>
-<li><span style="color: #009499"><strong>Electronic Medical Record (EMR)</strong></span> - patient medical and treatment history within a single practice. EMR is the electronic version of the traditional paper records found in clinicians’ offices.</li>
-<li><span style="color: #009499"><strong>Endpoint</strong></span> - Outcome variable measured in a medical study. e.g.&nbsp;Death, stroke, or quality of life are good endpoints. Blood tests and images on scans are not good endpoints.
-<ul>
-<li>A <span style="color: #009499"><strong>composite endpoint</strong></span> is one that consists of two or more events
-<ul>
-<li>Example: death due to cardiovascular causes or hospitalization due to heart failure
-<ul>
-<li>So the binary outcome would be a 1 if either of those events took place or a 0 if they did not. Or in a survival model, time until either of those events.</li>
-<li>Issues
-<ul>
-<li>See <a href="https://johnmandrola.substack.com/p/the-all-important-endpoint-of-a-medical">The All-Important Endpoint of a Medical Study</a> for details
-<ul>
-<li>See Harrell in the comments for the solution</li>
-</ul></li>
-</ul></li>
-</ul></li>
-</ul></li>
-</ul></li>
-<li><span style="color: #009499"><strong>FHIR</strong></span> - Fast Healthcare Interoperability Resources - open healthcare data standard (also sets standards for other things)
-<ul>
-<li>One JSON data schema per healthcare concept — e.g.&nbsp;Patient, Observation, Condition, MedicationRequest, etc.</li>
-</ul></li>
-<li><span style="color: #009499"><strong>Healthcare Analytics</strong></span> - analytics activities that can be undertaken as a result of data generated from core areas of healthcare including claims and cost data, pharmaceutical and research &amp; development data, clinical data, patient behavior &amp; sentiment data (narrower in scope compared to clinical data science)</li>
-<li><span style="color: #009499"><strong>Life Expectancy</strong></span> - a snapshot of the current mortality (“expenctancy” comes from “expected value”)
-<ul>
-<li>Assumes that assumes that the observed age-specific death rates at the time of birth for a cohort stay unchanged for their entire lifetimes.</li>
-</ul></li>
-<li><span style="color: #009499"><strong>Line of Business (LOB)</strong></span> - a statutory set of heath insurance policies</li>
-<li><span style="color: #009499"><strong>Progression-Free Survival (PFS)</strong></span> - The length of time during and after the treatment of a disease, such as cancer, that a patient lives with the disease but it does not get worse. In a clinical trial, measuring the PFS is one way to see how well a new treatment works.</li>
-<li><span style="color: #009499"><strong>Progression-Free Survival Rate</strong></span> - The percentage of people who did not have new tumor growth or cancer spread during or after treatment. The disease may have responded to treatment completely or partially, or the disease may be stable. This means the cancer is still there but not growing or spreading.</li>
-<li><span style="color: #009499"><strong>Social Determinants of Health (SDOH)</strong></span> - conditions in the environments where people are born, live, learn, work, play, worship, and age that affect a wide range of health, functioning, and quality-of-life outcomes and risks. (US Health and Human Services <a href="https://health.gov/healthypeople/priority-areas/social-determinants-health">article</a>)
-<ul>
-<li>Five Categories: Economic Stability, Education Access and Quality, Health Care Access and Quality, Neighborhood and Built Environment, Social and Community Context</li>
-</ul></li>
 </ul>
 </section>
 <section id="sec-health-preproc" class="level2 unnumbered">
@@ -522,6 +478,58 @@ ul.task-list li input[type="checkbox"] {
 <li>Seems like the averaged timestame would need to be transformed into a numerical before being appended.</li>
 </ul></li>
 </ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</section>
+<section id="bias-in-healthcare-claims-data" class="level2">
+<h2 class="anchored" data-anchor-id="bias-in-healthcare-claims-data">Bias in Healthcare Claims Data</h2>
+<ul>
+<li>Notes from <a href="https://towardsdatascience.com/healthcare-is-inherently-biased-b60bf00d4af7">article</a>, (mini) <a href="https://jamanetwork.com/journals/jamanetworkopen/article-abstract/2800118">paper</a></li>
+<li>Imbalance of patients or members represented in large healthcare datasets can make your results non-generalizable or (in some cases) flat out invalid.<br>
+</li>
+<li>Goals should be: investigate the biases, mitigate as well as possible, and decide which insights are still valuable or meaningful despite these nuances<br>
+</li>
+<li>Characteristics of data that lead to biases<br>
+
+<ul>
+<li>Only includes any members/patients who actually <em>had</em> an incident/event for which the insurer processed a subsequent claim<br>
+</li>
+<li>Tends to over/underrepresent certain groups who are more likely to have chronic health problems, adverse social determinants of health, seek care,<br>
+</li>
+<li>Groups are reflective of the type of demographics your organization tends to serve or that you have a larger book of business in<br>
+
+<ul>
+<li>Can cause over-and-under-representation of certain diseases</li>
+</ul></li>
+<li>Even companies within the same insurance sector may not have similar populations. Company business practices affect the types of populations within their data.<br>
+
+<ul>
+<li>Our [patients / members / employees / residents / etc.] may not act similarly or even represent [all patients / other groups / other types of employer s / other regions / etc.]<br>
+</li>
+</ul></li>
+<li>Data is years old. Effects sizes in data that’s 5 or 6yrs old may not be valid now.<br>
+</li>
+</ul></li>
+<li>Types<br>
+
+<ul>
+<li>Undercoverage bias - occurs when a part of the population is excluded from your sample.<br>
+</li>
+<li>Historical bias - occurs when socio-cultural prejudices and beliefs are mirrored into systematic processes [that are then reflected in the data].<br>
+</li>
+<li>Systemic biases - result from institutions operating in ways that disadvantage certain groups.<br>
+</li>
+</ul></li>
+<li>Solutions<br>
+
+<ul>
+<li>Augment or compare with outside data:&nbsp; data sharing/collaboration or tapping into additional feeds such as health information exchange (HIE)<br>
+</li>
+<li>Social Determinants of Health (SDOH) - (see definition below) compare socio-economics and demographics of your dataset with&nbsp; Census estimates and the SDOH variability seen for said zip codes.<br>
+
+<ul>
+<li>Will determine the amount of reweighting/normalizing the data requires</li>
 </ul></li>
 </ul></li>
 </ul>
