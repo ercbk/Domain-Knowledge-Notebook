@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Domain Knowledge - 1&nbsp; KPIs</title>
+<title>Domain Knowledge - KPIs</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -63,6 +63,8 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -76,7 +78,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../qmd/kpis.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">KPIs</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../qmd/kpis.html">KPIs</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -173,7 +175,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../qmd/kpis.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">KPIs</span></span></a>
+ <span class="menu-text">KPIs</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -233,7 +235,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../qmd/real-estate.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Real Estate</span></span></a>
+ <span class="menu-text">Real Estate</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -258,10 +260,17 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#misc" id="toc-misc" class="nav-link active" data-scroll-target="#misc"><span class="header-section-number">1.1</span> Misc</a></li>
-  <li><a href="#terms" id="toc-terms" class="nav-link" data-scroll-target="#terms"><span class="header-section-number">1.2</span> Terms</a></li>
-  <li><a href="#general" id="toc-general" class="nav-link" data-scroll-target="#general"><span class="header-section-number">1.3</span> General</a></li>
-  <li><a href="#product-metrics" id="toc-product-metrics" class="nav-link" data-scroll-target="#product-metrics"><span class="header-section-number">1.4</span> Product Metrics</a></li>
+  <li><a href="#sec-kpis-misc" id="toc-sec-kpis-misc" class="nav-link active" data-scroll-target="#sec-kpis-misc">Misc</a></li>
+  <li><a href="#sec-kpis-terms" id="toc-sec-kpis-terms" class="nav-link" data-scroll-target="#sec-kpis-terms">Terms</a></li>
+  <li><a href="#sec-kpis-gen" id="toc-sec-kpis-gen" class="nav-link" data-scroll-target="#sec-kpis-gen">General</a></li>
+  <li><a href="#sec-kpis-prod" id="toc-sec-kpis-prod" class="nav-link" data-scroll-target="#sec-kpis-prod">Product Metrics</a>
+  <ul>
+  <li><a href="#sec-kpis-prod-nsm" id="toc-sec-kpis-prod-nsm" class="nav-link" data-scroll-target="#sec-kpis-prod-nsm">North Star Metric (NSM)</a></li>
+  <li><a href="#sec-kpis-prod-prim" id="toc-sec-kpis-prod-prim" class="nav-link" data-scroll-target="#sec-kpis-prod-prim">Primary</a></li>
+  <li><a href="#sec-kpis-prod-suppti" id="toc-sec-kpis-prod-suppti" class="nav-link" data-scroll-target="#sec-kpis-prod-suppti">Supporting/Tracking/Input Metrics</a></li>
+  <li><a href="#sec-kpis-prod-countg" id="toc-sec-kpis-prod-countg" class="nav-link" data-scroll-target="#sec-kpis-prod-countg">Counter Metrics/Guardrails</a></li>
+  <li><a href="#sec-kpis-prod-aarrr" id="toc-sec-kpis-prod-aarrr" class="nav-link" data-scroll-target="#sec-kpis-prod-aarrr">AARRR (or Pirate Metric) Framework</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -270,7 +279,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span id="sec-kpis" class="quarto-section-identifier"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">KPIs</span></span></h1>
+<h1 class="title"><span id="sec-kpis" class="quarto-section-identifier">KPIs</span></h1>
 </div>
 
 
@@ -285,48 +294,48 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="misc" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="misc"><span class="header-section-number">1.1</span> Misc</h2>
+<section id="sec-kpis-misc" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="sec-kpis-misc">Misc</h2>
 <ul>
 <li>Also see
 <ul>
-<li><a href="Job, Organizational and Team Development">Job, Organizational and Team Development</a> &gt;&gt; Developing a data strategy &gt;&gt; Objectives and Key Results (OKRs)</li>
-<li><a href="Product Development">Product Development</a> &gt;&gt; Metrics</li>
+<li><a href="https://ercbk.github.io/Data-Science-Notebook/qmd/job-organizational-and-team-development.html#sec-job-orgdev-datstrat-okr" style="color: green">Job, Organizational and Team Development &gt;&gt; Developing a Data Strategy &gt;&gt; Objectives and Key Results (OKRs)</a></li>
 </ul></li>
 <li>Leaders should focus on 3 to 6 KPIs that will drive growth.</li>
 <li>When a KPI’s growth begins to stagnate, break up the KPI monolith into smaller, more meaningful (and hopefully, easier to optimize) segments</li>
 </ul>
 </section>
-<section id="terms" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="terms"><span class="header-section-number">1.2</span> Terms</h2>
+<section id="sec-kpis-terms" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="sec-kpis-terms">Terms</h2>
 <ul>
-<li><span style="color: #009499"><strong>Operationalization</strong></span> - a process of defining the measurement of a phenomenon that is not directly measurable (e.g.&nbsp;happiness), though its existence is indicated by other phenomena. It is the process of defining a fuzzy concept so as to make the theoretical concept clearly distinguishable or measurable, and to understand it in terms of empirical observations.</li>
+<li><span style="color: #009499"><strong>Operationalization</strong></span> - A process of defining the measurement of a phenomenon that is not directly measurable (e.g.&nbsp;happiness), though its existence is indicated by other phenomena. It is the process of defining a fuzzy concept so as to make the theoretical concept clearly distinguishable or measurable, and to understand it in terms of empirical observations.</li>
 </ul>
 </section>
-<section id="general" class="level2" data-number="1.3">
-<h2 data-number="1.3" class="anchored" data-anchor-id="general"><span class="header-section-number">1.3</span> General</h2>
+<section id="sec-kpis-gen" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="sec-kpis-gen">General</h2>
 <ul>
-<li><p>KPI characteristics</p>
+<li><u>KPI characteristics</u>
 <ul>
 <li>Monotonic: you always want to drive them higher or lower</li>
 <li>Typically a summary statistic or rate</li>
 </ul></li>
-<li><p>Question that you should ask when determining which metrics should be your KPIs What do you want to know?</p>
-<pre><code>  How much do you need to know?
-
-  Why do you want to know this?
-
-  What is the value or impact between not knowing and knowing?</code></pre></li>
-<li><p>“Input –&gt; Output –&gt; Outcome” framework</p>
+<li><u>Question that you should ask when determining which metrics should be your KPIs</u>
 <ul>
-<li>Input Metrics
+<li>What do you want to know?</li>
+<li>How much do you need to know?</li>
+<li>Why do you want to know this?</li>
+<li>What is the value or impact between not knowing and knowing?</li>
+</ul></li>
+<li><u>Input <span class="math inline">\(\rightarrow\)</span> Output <span class="math inline">\(\rightarrow\)</span> Outcome Framework</u>
+<ul>
+<li><strong>Input Metrics</strong>
 <ul>
 <li>Provide information about the resources used to create a system or process</li>
 <li>Useful for evaluating the efficiency of a system or process</li>
 <li>What you control: amount of time you spend on a task, the quantity of materials used to produce something, etc.</li>
 <li>Outputs should be highly responsive to your inputs</li>
 </ul></li>
-<li>Output Metrics
+<li><strong>Output Metrics</strong>
 <ul>
 <li>Provide information about the immediate results of a system or process</li>
 <li>Useful for evaluating the performance of a system or process
@@ -341,7 +350,7 @@ ul.task-list li input[type="checkbox"] {
 </ul></li>
 <li>Typically tracked daily</li>
 </ul></li>
-<li>Outcome Metrics
+<li><strong>Outcome Metrics</strong>
 <ul>
 <li>North Star metrics (See Product Metrics &gt;&gt; Types)</li>
 <li>What you are aiming to move with all your activities.</li>
@@ -350,17 +359,18 @@ ul.task-list li input[type="checkbox"] {
 </ul></li>
 <li><span class="ribbon-highlight">Example</span>: Educational Program
 <ul>
-<li>The # of teachers, their average seniority, the funding of the school (inputs) help drive the grades of the students and their consistency over time higher (output) which ultimately lead to more students graduating high school (outcomes).</li>
+<li>The number of teachers, their average seniority, the funding of the school (inputs) help drive the grades of the students and their consistency over time higher (output) which ultimately lead to more students graduating high school (outcomes).</li>
 </ul></li>
 </ul></li>
-<li><p>Industry examples</p>
+<li><u>Industry Examples</u>
 <ul>
-<li>Financial — Revenue growth, cash flow, burn rate, gross profit</li>
-<li>Customer — Engagement rates, net promoter scores, acquisition costs, conversion rates</li>
-<li>Support &amp; Service — Turnaround time, mean time to resolve, SLA compliance, quality</li>
-<li>Employee — Attrition and retention, satisfaction, engagement</li>
-<li>Governance, Risk, &amp; Compliance — Percent compliance to process, audit compliance, non-security incidents Issues</li>
-<li>Avoid incentivizing the wrong behavior
+<li><em>Financial</em> — Revenue growth, cash flow, burn rate, gross profit</li>
+<li><em>Customer</em> — Engagement rates, net promoter scores, acquisition costs, conversion rates</li>
+<li><em>Support &amp; Service</em> — Turnaround time, mean time to resolve, SLA compliance, quality</li>
+<li><em>Employee</em> — Attrition and retention, satisfaction, engagement</li>
+<li><em>Governance, Risk, &amp; Compliance</em> — Percent compliance to process, audit compliance, non-security incidents Issues</li>
+</ul></li>
+<li><u>Avoid incentivizing the wrong behavior</u>
 <ul>
 <li>As soon as someone’s performance is linked to a metric — it is fair game to expect them to try to move the metric, so it is up to the metric designer to make sure the ‘rules of the game’ are clearly articulated.</li>
 <li><span class="ribbon-highlight">Example</span>: Reducing the number of support tickets opened via email
@@ -378,8 +388,8 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li>Examples
 <ul>
-<li>quantity (sales) + quality (retention rate)</li>
-<li>short term metric (inventory level) + long term metric (# of shortages)</li>
+<li>Quantity (sales) + quality (retention rate)</li>
+<li>Short term metric (inventory level) + long term metric (# of shortages)</li>
 </ul></li>
 </ul></li>
 <li>Design a compound metric
@@ -390,49 +400,49 @@ ul.task-list li input[type="checkbox"] {
 </ul></li>
 </ul></li>
 </ul></li>
-<li>Beware of Deceptive Metrics
+<li><u>Beware of Deceptive Metrics</u>
 <ul>
 <li>Correlation does not equal causation</li>
-<li><span class="ribbon-highlight">Example</span>: Someone discovers that the # of transactions is correlated w/higher revenue
+<li><span class="ribbon-highlight">Example</span>: Someone discovers that the number of transactions is correlated w/higher revenue
 <ul>
-<li>Company decides to make # of transactions a metric and starts trying to increase it.
+<li>Company decides to make number of transactions a metric and starts trying to increase it.
 <ul>
-<li>e.g.&nbsp;re-targeting former customers, offering discounts, etc.</li>
+<li>e.g.&nbsp;Retargeting former customers, offering discounts, etc.</li>
 </ul></li>
 <li>Revenue doesn’t substantially increase after considerable effort and resources</li>
 <li>Analysis reveals that the revenue is being mostly driven by a few whales buying high-ticket items while the team’s increase in transactions was mostly low-ticket items</li>
-<li>So, the strategy should’ve been to target more whales and not just trying to increase the # of transactions</li>
+<li>So, the strategy should’ve been to target more whales and not just trying to increase the number of transactions</li>
 </ul></li>
 </ul></li>
-</ul></li>
-<li><p>Checks</p>
+<li><u>Checks</u>
 <ul>
 <li>Metric is precise (i.e.&nbsp;measurement isn’t noisy)</li>
 <li>Metric is accurate (i.e.&nbsp;it properly depicts the phenomenon it is supposed to depict).</li>
 </ul></li>
-<li><p>Next Steps</p>
+<li><u>Next Steps</u>
 <ul>
 <li>Figure out the best way to calculate these metrics</li>
 <li>Create dashboards to monitor them over time</li>
 <li>Set up alerts when thresholds are crossed
 <ul>
-<li>anomaly detection</li>
+<li>Anomaly detection</li>
 </ul></li>
 </ul></li>
 </ul>
 </section>
-<section id="product-metrics" class="level2" data-number="1.4">
-<h2 data-number="1.4" class="anchored" data-anchor-id="product-metrics"><span class="header-section-number">1.4</span> Product Metrics</h2>
+<section id="sec-kpis-prod" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="sec-kpis-prod">Product Metrics</h2>
 <ul>
+<li>Also see <a href="../qmd/product-development.html#sec-proddev-metrics" style="color: green">Product Development &gt;&gt; Metrics</a></li>
 <li>Why are they important?
 <ul>
 <li>Metrics help companies have clarity, alignment and prioritization in what to build.</li>
 <li>Metrics help a company decide how to build the product once they’ve prioritized what to build.</li>
 <li>Metrics help a company determine how successful they are and hold them accountable to an outcome.</li>
 </ul></li>
-<li>Types
-<ul>
-<li><strong>North Star Metric (NSM)</strong>
+</ul>
+<section id="sec-kpis-prod-nsm" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="sec-kpis-prod-nsm">North Star Metric (NSM)</h3>
 <ul>
 <li>Long-term metric focused on the desired outcome for the entire company</li>
 <li>Examples of potential NSMs
@@ -445,18 +455,20 @@ ul.task-list li input[type="checkbox"] {
 <li>Customer happiness (e.g.&nbsp;revenue, Net Promoter Score (NPS), and customer satisfaction)</li>
 <li>Quora: Questions Answered</li>
 </ul></li>
-</ul></li>
-<li><strong>Primary</strong>
+</ul>
+</section>
+<section id="sec-kpis-prod-prim" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="sec-kpis-prod-prim">Primary</h3>
 <ul>
 <li>Ask
 <ul>
-<li>“what is the desired outcome for this product?” (keeping the company’s mission in mind)
+<li>“What is the desired outcome for this product?” (keeping the company’s mission in mind)
 <ul>
-<li><span class="ribbon-highlight">Example</span>: number of high quality sellers that join the platform as a result of the email outreach</li>
+<li>Example: Number of high quality sellers that join the platform as a result of the email outreach</li>
 </ul></li>
 <li>“What do our customers care about, and how do we solve it as fast as possible?”
 <ul>
-<li>Example
+<li><span class="ribbon-highlight">Example</span>
 <ul>
 <li>Engineering, product, and marketing agree that onboarding is a pain point, you decide to build goals and KPIs around making it easier for new customers to get started.</li>
 <li>Align the company around the shared goal of reducing new tool onboarding from five days to three days
@@ -470,25 +482,25 @@ ul.task-list li input[type="checkbox"] {
 </ul></li>
 <li>Map this outcome to a metric that is meaningful, measurable, and movable
 <ul>
-<li>Meaningful
+<li><u>Meaningful</u>
 <ul>
-<li><p>Should reflect the way a company intends to drive value for its customers (based on the company’s <em>mission</em>)</p></li>
-<li><p>Avoid <em>vanity</em> metrics.</p>
+<li>Should reflect the way a company intends to drive value for its customers (based on the company’s <em>mission</em>)</li>
+<li>Avoid <em>vanity</em> metrics.
 <ul>
 <li><span class="ribbon-highlight">Example</span>: Quora uses push notifications to alert users when they would be best suited to answer a question. However, the number of times users click on the notification and open the app is a vanity metric. It may make Quora feel good to see open rates going up. But Quora didn’t release push notifications to drive open rates. The outcome they were aiming for was to get high quality answers to questions asked on their platform. So an outcome oriented metric would focus on answer rates, not open rates.</li>
 </ul></li>
 </ul></li>
-<li>Measurable
+<li><u>Measurable</u>
 <ul>
 <li>Each component of that metric’s formula should be a datapoint that you can collect with high confidence and precision. And remember to add a time frame to your metric.</li>
 <li>Some aspects of a company’s or product’s mission/goal aren’t measurable directly but may be measured through latent variables, proxy, or highly associated variable or group of variables</li>
 </ul></li>
-<li>Moveable
+<li><u>Moveable</u>
 <ul>
 <li>Basically means the metric shouldn’t be so noisy as to inhibit being able to measure changes when you take actions to change it.</li>
 <li>The metric should measure something that as directly under control of the company as possible.
 <ul>
-<li><span class="ribbon-highlight">Example</span>: Page Load Time - time difference between a user clicking on a link or typing the URL in the browser and the page being rendered to the user.
+<li>Example: Page Load Time - Time difference between a user clicking on a link or typing the URL in the browser and the page being rendered to the user.
 <ul>
 <li>This is affected substantially by the user’s computer, ISP, browser, etc. along with the app/website code. So asis, it wouldn’t be a good metric to track.</li>
 </ul></li>
@@ -496,28 +508,30 @@ ul.task-list li input[type="checkbox"] {
 </ul></li>
 <li>Other Desirables
 <ul>
-<li>Quick Feedback
+<li><u>Quick Feedback</u>
 <ul>
 <li>Actions taken to influence the metric should be (almost) immediately observable</li>
 <li><span class="ribbon-highlight">Example</span>: Measuring (subscription) retention would require you to wait until the end of the month in order to be able to judge the effect of your action. Daily Active Users might be a better alternative</li>
 </ul></li>
-<li>Easily Interpretted
+<li><u>Easily Interpretted</u>
 <ul>
 <li>The role of a metric is to align teams around a specific goal so that they can take the right steps towards achieving that goal. If people can’t understand the metric, they can’t take the right steps to optimize for it.</li>
 <li>Examples:
 <ul>
 <li>Complicated: the median of a weighted combination of viewing time, comments, likes, shares per user (with each action having different weights based on its importance)</li>
-<li>Simpler: average watch time per user.</li>
+<li>Simpler: Average Watch Time per user.</li>
 </ul></li>
 </ul></li>
-<li>Not Gameable
+<li><u>Not Gameable</u>
 <ul>
-<li>I.e. picking an easily moveable metric that has no real value leads to bad incentives.</li>
+<li>I.e. Picking an easily moveable metric that has no real value leads to bad incentives.</li>
 </ul></li>
 </ul></li>
 </ul></li>
-</ul></li>
-<li><strong>Supporting/Tracking/Input Metrics</strong>
+</ul>
+</section>
+<section id="sec-kpis-prod-suppti" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="sec-kpis-prod-suppti">Supporting/Tracking/Input Metrics</h3>
 <ul>
 <li>Leading indicators that the NSM or the primary metric is moving in the right direction</li>
 <li>Inputs into the NSM and are directly correlated to its value</li>
@@ -528,73 +542,79 @@ ul.task-list li input[type="checkbox"] {
 <li>The number of people that opened the email</li>
 <li>Number of businesses that signed up to sell on the platform</li>
 </ul></li>
-</ul></li>
-<li><strong>Counter Metrics/Guardrails</strong>
+</ul>
+</section>
+<section id="sec-kpis-prod-countg" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="sec-kpis-prod-countg">Counter Metrics/Guardrails</h3>
 <ul>
 <li>Other outcomes that the business cares about, which may be negatively affected by a positive change in the primary metric (or NSM)</li>
 <li>They exist to make sure that in the pursuit of your primary metric, you are not doing harm to another aspect of the business</li>
-<li>Example (email marketing to obtain quality sellers for Amazon)
+<li><span class="ribbon-highlight">Example</span>: Email marketing to obtain quality sellers for Amazon)
 <ul>
-<li>if your primary metric focuses on product <em>quantity</em>, your guardrail metric might be around product <em>quality</em></li>
+<li>If your primary metric focuses on product <em>quantity</em>, your guardrail metric might be around product <em>quality</em></li>
 <li>The guardrail, average number of purchases a user makes in a day, ensures that the influx of sellers that the primary metric optimizes for doesn’t result in consumers becoming so overwhelmed by choice, that they end up not buying anything at all</li>
 </ul></li>
-</ul></li>
-</ul></li>
-<li>User journey: <strong>AARRR</strong> (or Pirate Metric) Framework
+</ul>
+</section>
+<section id="sec-kpis-prod-aarrr" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="sec-kpis-prod-aarrr">AARRR (or Pirate Metric) Framework</h3>
 <ul>
 <li><strong>Awareness</strong>: How many people are aware your brand exists?
 <ul>
-<li>metric examples: number of website visits, social media metrics (number of likes, shares, impressions, reach), time spent on a website, email open rate</li>
+<li>Metric Examples: number of website visits, social media metrics (number of likes, shares, impressions, reach), time spent on a website, email open rate</li>
 </ul></li>
 <li><strong>Acquisition</strong>: How many people are interacting with your product?
 <ul>
-<li>A <strong>lead</strong> is any potential user who’s information you’ve been able to capture in some shape or form.
+<li>A <em>lead</em> is any potential user who’s information you’ve been able to capture in some shape or form.
 <ul>
-<li>e.g.&nbsp;people who give you their email addresses when they sign up for your mailing list are considered to be leads.</li>
+<li>e.g.&nbsp;People who give you their email addresses when they sign up for your mailing list are considered to be leads.</li>
 </ul></li>
-<li>A <strong>qualified lead</strong> when they show additional interest in your product beyond giving you their information.
+<li>A <em>qualified lead</em> when they show additional interest in your product beyond giving you their information.
 <ul>
-<li>e.g.&nbsp;in addition to signing up for your mailing list they also watch a webinar or sign up for a demo</li>
+<li>e.g.&nbsp;In addition to signing up for your mailing list they also watch a webinar or sign up for a demo</li>
 </ul></li>
-<li>metric examples: number of leads, number of qualified leads, sign ups, downloads, install, chatbot interactions</li>
+<li>Metric Examples: number of leads, number of qualified leads, sign ups, downloads, install, chatbot interactions</li>
 </ul></li>
 <li><strong>Activation</strong>: How many people are realizing the value of your product?
 <ul>
-<li>typically in the form of an <em>action taken x times with in a period of y days</em></li>
+<li>Typically in the form of an action taken x times with in a period of y days</li>
 <li>When the activation hurdle is crossed, an individual goes from unknown entity to actual user.</li>
-<li>Example (Dropbox): Their activation metric is the number of users that have stored at least one file in one dropbox folder on one device</li>
-<li>metric examples: number of connections made, number of times an action is performed, number of steps completed</li>
+<li><span class="ribbon-highlight">Example</span>: Dropbox
+<ul>
+<li>Their activation metric is the number of users that have stored at least one file in one dropbox folder on one device</li>
+</ul></li>
+<li>Metric Examples: number of connections made, number of times an action is performed, number of steps completed</li>
 </ul></li>
 <li><strong>Engagement</strong>: What is the breadth and frequency of user engagement?
 <ul>
 <li>Depth of their usage: How often are they using your product? Is it above or below the average users frequency?</li>
 <li>Breadth of their usage: Are they performing every action that’s possible with your product? Are they favoring some more than others? What if you have multiple products? Are they using all of them?</li>
-<li>metric examples: daily, weekly and monthly active users, time spent in a session, session frequency, actions taken in the product</li>
+<li>Metric Examples: daily, weekly and monthly active users, time spent in a session, session frequency, actions taken in the product</li>
 </ul></li>
 <li><strong>Revenue</strong>: How many people are paying for your product?
 <ul>
 <li>** Remember, a business should optimize for the value they bring to their customers, not the revenue they generate. And, if their customers are deriving a lot of value from the business, willingness to pay will be a natural byproduct</li>
-<li>metric examples: % of paid customers; average revenue per customer; conversion rate of trial to paid customers; number of transactions completed; shopping cart abandonment rates; ad-metrics like click-through-rate and conversion rate (crucial for ads based businesses)</li>
+<li>Metric Examples: % of paid customers; average revenue per customer; conversion rate of trial to paid customers; number of transactions completed; shopping cart abandonment rates; ad-metrics like click-through-rate and conversion rate (crucial for ads based businesses)</li>
 </ul></li>
 <li><strong>Retention/Renewal</strong>: How often are your people coming back?
 <ul>
-<li>metric examples: % of users coming back to your platform each day, month, year (product dependent); churn rates; customer lifetime value</li>
+<li>Metric Examples: % of users coming back to your platform each day, month, year (product dependent); churn rates; customer lifetime value</li>
 </ul></li>
 <li><strong>Referral</strong>: How many customers are becoming advocates?
 <ul>
-<li>metric examples: <a href="https://www.netpromoter.com/know/"><em>Net Promoter Score</em></a>, <a href="https://www.questionpro.com/blog/viral-coefficient/">viral coefficient</a> i.e.&nbsp;the average number of people that your users refer you to
+<li>Metric Examples: <a href="https://www.netpromoter.com/know/">Net Promoter Score</a>, <a href="https://www.questionpro.com/blog/viral-coefficient/">Viral Coefficient</a> i.e.&nbsp;the average number of people that your users refer you to
 <ul>
 <li>Also see
 <ul>
-<li><a href="Survey, Design">Survey, Design</a> &gt;&gt; Response Scales &gt;&gt; Net Promoter Score</li>
-<li><a href="Algorithms, Product">Algorithms, Product</a> &gt;&gt; Net Promoter Score</li>
-</ul></li>
+<li><a href="https://ercbk.github.io/Data-Science-Notebook/qmd/surveys-design.html#sec-surv-design-respsc-nps" style="color: green">Survey, Design &gt;&gt; Response Scales &gt;&gt; Net Promoter Score</a></li>
+<li><a href="https://ercbk.github.io/Data-Science-Notebook/qmd/algorithms-product.html#sec-alg-prod-nps" style="color: green">Algorithms, Product &gt;&gt; Net Promoter Score</a></li>
 </ul></li>
 </ul></li>
 </ul></li>
 </ul>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
