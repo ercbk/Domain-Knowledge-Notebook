@@ -1,6 +1,6 @@
-# Low Hanging Fruit  {#sec-lhf .unnumbered}
+# Low Hanging Fruit {#sec-lhf .unnumbered}
 
-## Misc  {#sec-lhf-misc .unnumbered}
+## Misc {#sec-lhf-misc .unnumbered}
 
 -   Most companies don't have a holistic view of their business performance
     -   Large proportion of the budget is spent on campaigns that generate little to no return
@@ -21,12 +21,14 @@
     -   Making better decisions
         -   Allows you to make better decisions about business changes, hiring new employees, marketing, and advertising strategies
 
-## What you offer  {#sec-lhf-wyo .unnumbered}
+## What you offer {#sec-lhf-wyo .unnumbered}
 
 -   See [Job, Organizational and Team Development](https://ercbk.github.io/Data-Science-Notebook/qmd/job-organizational-and-team-development.html){style="color: green"}
 -   In the beginning the value comes from creating a more automated, streamlined, and reliable process and developing metrics that better measure aspects of the business.
 -   Insights are an iterative process which depends heavily on the quality, quantity, and predictiveness of the data
 -   A data scientist automates and improves data-centric processes such as collecting, storing, accessing, analyzing, and reporting.
+-   DS shrinks the haystack rather than finds the needle
+    -   "Using machine learning or data science to predict \<thing\> is just really hard. There are tons of reasons \<thing\> may not happen, many of which you have no chance of observing in your data. What you CAN do with comparative ease is predict relative likelihoods though. So you say find me the 20000 records most likely to do \<thing\> according to my model. Within them you're going to find more of \<thing\> than you would in a random sample. If you can make / save money doing this, you win." *McBain*
 
 ## Report Automation and Alerts {#sec-lhf-raaa .unnumbered}
 
@@ -40,14 +42,14 @@
         -   When an overtime limit is reached, send alert to department head
         -   When inventory reaches a limit, send alert
 
-## Churn  {#sec-lhf-churn .unnumbered}
+## Churn {#sec-lhf-churn .unnumbered}
 
 -   See [Algorithms, Marketing \>\> Churn](https://ercbk.github.io/Data-Science-Notebook/qmd/algorithms-marketing.html#sec-alg-mark-churn){style="color: green"}
 -   Why are customers leaving and how much is it costing
 -   Logistic regression if just a probability of whether a customer will churn is wanted
 -   Decision tree if it needs to presented to an executive or stakeholder not familiar with statistics
 
-## Monitoring Operational metrics  {#sec-lhf-mom .unnumbered}
+## Monitoring Operational metrics {#sec-lhf-mom .unnumbered}
 
 -   See
     -   [Job, Organizational and Team Development \>\> Developing a data strategy \>\> OKRs](https://ercbk.github.io/Data-Science-Notebook/qmd/job-organizational-and-team-development.html#sec-job-orgdev-datstrat-okr){style="color: green"}
@@ -63,9 +65,9 @@
     -   Is there a drop in conversion rate?
     -   Are we meeting our KPIs?
 
-## Product Demand Forecasting  {#sec-lhf-pdf .unnumbered}
+## Product Demand Forecasting {#sec-lhf-pdf .unnumbered}
 
--   See [Logistics  \>\> Demand Forecasting](logistics.qmd#sec-log-demfcast){style="color: green"}
+-   See [Logistics \>\> Demand Forecasting](logistics.qmd#sec-log-demfcast){style="color: green"}
 -   <https://www.remixinstitute.com/blog/automated-demand-forecasts-using-autocatboostcarma-in-r/#.XX_q6ShKi1s> (some pitch material)
 -   "Over 20% of Amazon's North American retail revenue can be attributed to customers who first tried to buy the product at a local store but found it out-of-stock"
 -   A demand forecasting system can help save a lot of dollars in term of workforce management, inventory cost and out of stock loss.
@@ -76,7 +78,7 @@
     -   Daily or Weekly Visits by Channel, Source, and/or Medium using Google Analytics data
     -   Daily Customers, New Customers, Revenue, and Units Sold by Channel
 
-## Customer Segmentation  {#sec-lhf-custseg .unnumbered}
+## Customer Segmentation {#sec-lhf-custseg .unnumbered}
 
 -   See [Marketing \>\> Workflow](marketing.qmd#sec-mark-wkflw){style="color: green"} \>\> Find the Ideal Customer Profile (ICP) and target them
 -   Increases marketing efficiency by helping to indicate which campaigns are more likely to succeed with certain groups of customers
