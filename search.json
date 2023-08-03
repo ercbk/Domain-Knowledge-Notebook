@@ -347,7 +347,7 @@
     "href": "qmd/low-hanging-fruit.html#sec-lhf-wyo",
     "title": "Low Hanging Fruit",
     "section": "What you offer",
-    "text": "What you offer\n\nSee Job, Organizational and Team Development\nIn the beginning the value comes from creating a more automated, streamlined, and reliable process and developing metrics that better measure aspects of the business.\nInsights are an iterative process which depends heavily on the quality, quantity, and predictiveness of the data\nA data scientist automates and improves data-centric processes such as collecting, storing, accessing, analyzing, and reporting."
+    "text": "What you offer\n\nSee Job, Organizational and Team Development\nIn the beginning the value comes from creating a more automated, streamlined, and reliable process and developing metrics that better measure aspects of the business.\nInsights are an iterative process which depends heavily on the quality, quantity, and predictiveness of the data\nA data scientist automates and improves data-centric processes such as collecting, storing, accessing, analyzing, and reporting.\nDS shrinks the haystack rather than finds the needle\n\n“Using machine learning or data science to predict &lt;thing&gt; is just really hard. There are tons of reasons &lt;thing&gt; may not happen, many of which you have no chance of observing in your data. What you CAN do with comparative ease is predict relative likelihoods though. So you say find me the 20000 records most likely to do &lt;thing&gt; according to my model. Within them you’re going to find more of &lt;thing&gt; than you would in a random sample. If you can make / save money doing this, you win.” McBain"
   },
   {
     "objectID": "qmd/low-hanging-fruit.html#sec-lhf-raaa",
