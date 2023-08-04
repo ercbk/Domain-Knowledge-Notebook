@@ -8,6 +8,7 @@
         -   Makes data suitable for a RNN (see Processing for details)
 -   Also see
     -   [Epidemiology \>\> Disease Mapping](epidemiology.qmd#sec-epidemi-dismap){style="color: green"}
+-   False negatives are often more important than false positives. (e.g. detecting diseases)
 -   Populations within Healthcare Claims Data\
     -   Lines of business (LOB) such as patients with coverage from a government payer (Medicaid, Medicare); commercial lines (employer groups, retail or purchased via the exchange); self-insured (self-funded groups, usually large employers paying for their own healthcare claims of employees), etc.\
     -   Sub-lines of business, or groups. For instance, Medicaid may consist of multiple sub-groups representing different levels of eligibility, coverage, benefits, or types of people/why they qualified for the program (Temporary Assistance for Needy Families (TANF) vs. Medicaid expansion for adults)\
@@ -46,6 +47,9 @@
 
 ## Use Cases
 
+-   Misc
+    -   In most cases, these tools are not meant to replace a doctor in a particular situation. They're meant supplement the doctor's toolbox.
+    -   Benefits: cost-effectiveness, first-line screening, longer term monitoring, speeds up detection and therefore referral process
 -   [Clinical Outcomes]{.underline}
     -   Mortality (death) events
     -   Early warning score (EWS) - likelihood of death
@@ -63,6 +67,9 @@
                 -   Table with name, bed #,... , Status (aka prediction) for each patient
             -   "Front-End Tool" - software for people that sign out patients, has general patient information, includes column for Status
             -   Phone alerts for patients with High risk labels get sent to clinicians
+    -   Diagnostic Tool
+        -   Example: Heart Murmur Detection ([video](https://www.youtube.com/watch?v=xyxbhLb_aEs), [slides](https://nrennie.rbind.io/talks/r-medicine-2023-tidymodels/slides#/calculating-time-series-features))
+            -   Takes phonocardiographic data (audio sensor/time series) to predict heart murmur (binary) outcome.
 -   [Resource Utilization]{.underline}
     -   Planning for hospital bed capacity
     -   Score for long length of stay (i.e. larger than 7 days)
@@ -139,6 +146,8 @@
 
 -   Misc
     -   Notes from - [Algorithmic Bias in Healthcare and Some Strategies for Mitigating It](https://towardsdatascience.com/algorithmic-bias-in-healthcare-and-some-strategies-for-mitigating-it-835abe28df7)
+    -   Bias - Systematic error due to incorrect assumptions
+    -   Under-represented groups are most susceptible to the impacts of bias
     -   Deidentified clinical data sets are collections of observational patient data that have been stripped of all direct Patient Health Information (PHI) components. IRB permission is not necessary for access to deidentified clinical data sets.
     -   Clinical data sets with HIPAA restrictions include observational patient information such as dates of admission, discharge, service, and birth and death as well as city, state, zip codes with five digits or more, and ages expressed in years, months, days, or hours. Without a patient's consent or a HIPAA waiver, HIPAA-restricted clinical data sets may be used or shared for research, public health, or healthcare operations.
 -   Biases to fairness
@@ -152,10 +161,11 @@
         -   e.g. "non-white patients receive fewer cardiovascular interventions and fewer renal transplants", and "Black women are more likely to die after being diagnosed with breast cancer". [Source](https://www.jointcommission.org/resources/news-and-multimedia/newsletters/newsletters/quick-safety/quick-safety-issue-23-implicit-bias-in-health-care/implicit-bias-in-health-care/#.Y4VE3uzMJTY)
 -   Strategies to mitigate bias
     -   Collecting and using diverse training data:
-        -   Data on-representative of the real-world population is a common cause of bias.
+        -   Data non-representative of the real-world population is a common cause of bias.
         -   Collect and use diverse training data that accurately reflects the demographics, backgrounds, and characteristics of the population the algorithm will be used on.
     -   Test the algorithm for bias:
         -   Can be done using a variety of methods, including conducting bias audits and using fairness metrics to measure the algorithm's performance.
+        -   Evaluate performance of model across demographic groups and not just the whole population.
     -   Use algorithmic fairness techniques:
         -   Pre-processing algorithms that adjust the data to reduce bias
         -   In-processing algorithms that make adjustments during the training process
