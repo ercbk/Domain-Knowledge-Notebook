@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.433">
+<meta name="generator" content="quarto-1.3.450">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -302,6 +302,7 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li><a href="../qmd/epidemiology.html#sec-epidemi-dismap" style="color: green">Epidemiology &gt;&gt; Disease Mapping</a></li>
 </ul></li>
+<li>False negatives are often more important than false positives. (e.g.&nbsp;detecting diseases)</li>
 <li>Populations within Healthcare Claims Data<br>
 
 <ul>
@@ -369,6 +370,11 @@ ul.task-list li input[type="checkbox"] {
 <section id="use-cases" class="level2">
 <h2 class="anchored" data-anchor-id="use-cases">Use Cases</h2>
 <ul>
+<li>Misc
+<ul>
+<li>In most cases, these tools are not meant to replace a doctor in a particular situation. They’re meant supplement the doctor’s toolbox.</li>
+<li>Benefits: cost-effectiveness, first-line screening, longer term monitoring, speeds up detection and therefore referral process</li>
+</ul></li>
 <li><u>Clinical Outcomes</u>
 <ul>
 <li>Mortality (death) events</li>
@@ -395,6 +401,13 @@ ul.task-list li input[type="checkbox"] {
 </ul></li>
 <li>“Front-End Tool” - software for people that sign out patients, has general patient information, includes column for Status</li>
 <li>Phone alerts for patients with High risk labels get sent to clinicians</li>
+</ul></li>
+</ul></li>
+<li>Diagnostic Tool
+<ul>
+<li>Example: Heart Murmur Detection (<a href="https://www.youtube.com/watch?v=xyxbhLb_aEs">video</a>, <a href="https://nrennie.rbind.io/talks/r-medicine-2023-tidymodels/slides#/calculating-time-series-features">slides</a>)
+<ul>
+<li>Takes phonocardiographic data (audio sensor/time series) to predict heart murmur (binary) outcome.</li>
 </ul></li>
 </ul></li>
 </ul></li>
@@ -541,6 +554,8 @@ ul.task-list li input[type="checkbox"] {
 <li>Misc
 <ul>
 <li>Notes from - <a href="https://towardsdatascience.com/algorithmic-bias-in-healthcare-and-some-strategies-for-mitigating-it-835abe28df7">Algorithmic Bias in Healthcare and Some Strategies for Mitigating It</a></li>
+<li>Bias - Systematic error due to incorrect assumptions</li>
+<li>Under-represented groups are most susceptible to the impacts of bias</li>
 <li>Deidentified clinical data sets are collections of observational patient data that have been stripped of all direct Patient Health Information (PHI) components. IRB permission is not necessary for access to deidentified clinical data sets.</li>
 <li>Clinical data sets with HIPAA restrictions include observational patient information such as dates of admission, discharge, service, and birth and death as well as city, state, zip codes with five digits or more, and ages expressed in years, months, days, or hours. Without a patient’s consent or a HIPAA waiver, HIPAA-restricted clinical data sets may be used or shared for research, public health, or healthcare operations.</li>
 </ul></li>
@@ -567,12 +582,13 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li>Collecting and using diverse training data:
 <ul>
-<li>Data on-representative of the real-world population is a common cause of bias.</li>
+<li>Data non-representative of the real-world population is a common cause of bias.</li>
 <li>Collect and use diverse training data that accurately reflects the demographics, backgrounds, and characteristics of the population the algorithm will be used on.</li>
 </ul></li>
 <li>Test the algorithm for bias:
 <ul>
 <li>Can be done using a variety of methods, including conducting bias audits and using fairness metrics to measure the algorithm’s performance.</li>
+<li>Evaluate performance of model across demographic groups and not just the whole population.</li>
 </ul></li>
 <li>Use algorithmic fairness techniques:
 <ul>
