@@ -103,6 +103,25 @@
     -   At the end of every month the strategy calculates the holding period return (HPR) based momentum of all of the SPDR sector ETFs (the ticker symbols of which begin with the prefix XL) and selects the top N to invest in for the forthcoming month, where N is usually between 3 and 6.
     -   In the implementation given here the HPR momentum is calculated over the previous 126 days (approximately six months of business days) and the top three sector ETFs are chosen for the portfolio. The portfolio allocation is equally weighted between each of these three sector ETFs. Irrespective of changes in signal the portfolio is rebalanced once per month to weight the assets equally.
 
+## Volatility Targeting Portfolio 
+
+-   Misc
+    -   The Impact of Volatility Targeting ([paper](https://www.man.com/maninstitute/the-impact-of-volatility-targeting#:~:text=Volatility%20targeting%20seeks%20to%20counter%20the%20fluctuations%20in%20volatility%3A,than%20a%20constant%20notional%20exposure.))
+    -   Quant Science [article](https://www.quantscience.io/newsletter/b/automating-trades-interactive-brokers-and-python?ck_subscriber_id=2259292279) uses {{riskfolio}} to generate volatility weights for equities. ([code](https://github.com/quant-science/sunday-quant-scientist/blob/main/QS002-automate-trades/automate-trades.py?ck_subscriber_id=2259292279))
+        -   [{{]{style="color: goldenrod"}[riskfolio](https://riskfolio-lib.readthedocs.io/en/latest/index.html){style="color: goldenrod"}[}}]{style="color: goldenrod"} - Good docs with plenty of examples
+-   Volatility targeting seeks to counter the fluctuations in volatility:
+    -   It leads to leveraging a portfolio at times of low volatility, and scaling down exposures at times of high volatility.
+    -   This approach targets a constant level of volatility, rather than a constant notional exposure.
+-   Volatility clustering is a key feature of financial asset returns:
+    -   High volatility over the recent past tends to be followed by high volatility in the near future.
+-   Impact on Sharpe ratio
+    -   Volatility targeting improves the Sharpe ratio of \"risk assets\" (equities and credit), and that of \"balanced\" and \"risk parity\" portfolios that have a substantial allocation to these risk assets.
+    -   For equity and credit, volatility targeting effectively introduces some momentum overlay due to the so-called leverage effect: the negative relationship between returns and changes in volatility.
+    -   In contrast, for bonds, currencies, and commodities the impact on the Sharpe ratio is negligible.
+-   Impact on likelihood of tail events
+    -   Volatility targeting reduces the likelihood of extreme returns for all asset classes.
+    -   Importantly, \"left-tail\" events tend to be less severe, as they typically occur at times of elevated volatility, when a target-volatility portfolio has a scaled-down notional exposure.
+
 ## Mean Reversion Strategy or Pairs Trading {#sec-finance-meanrev .unnumbered}
 
 -   Match two trading vehicles that are highly correlated, trading one long and the other short when the pair's price ratio diverges "x" number of standard deviations - "x" is optimized using historical data. If the pair reverts to its mean trend, a profit is made on one or both of the positions.
