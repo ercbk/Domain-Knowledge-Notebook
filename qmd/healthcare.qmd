@@ -125,6 +125,7 @@
 -   Notes from [article](https://towardsdatascience.com/healthcare-is-inherently-biased-b60bf00d4af7), (mini) [paper](https://jamanetwork.com/journals/jamanetworkopen/article-abstract/2800118)
 -   Packages
     -   [{]{style="color: #990000"}[fairmodels](https://fairmodels.drwhy.ai/){style="color: #990000"}[}]{style="color: #990000"} - From Dalex group
+    -   [{{]{style="color: goldenrod"}[biaslyze](https://biaslyze.org/){style="color: goldenrod"}[}}]{style="color: goldenrod"} - NLP Bias Identification Toolkit
 -   Imbalance of patients or members represented in large healthcare datasets can make your results non-generalizable or (in some cases) flat out invalid.\
 -   Goals should be: investigate the biases, mitigate as well as possible, and decide which insights are still valuable or meaningful despite these nuances\
 -   Characteristics of data that lead to biases\
