@@ -250,6 +250,12 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">SaaS</span></a>
   </div>
 </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../qmd/sports-betting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Sports Betting</span></a>
+  </div>
+</li>
     </ul>
     </div>
 </nav>
@@ -929,6 +935,7 @@ eCPM = \frac{\mbox{Estimated Earnings} \cdot 1000}{\mbox{Total Impressions}}
 <p><img src="./_resources/Marketing.resources/image.2.png" class="img-fluid" width="632"></p>
 <ul>
 <li>Recency, Frequency, and Monetary Value Analysis</li>
+<li>The most profitable segments will have low recency, high frequency, and high monetary value.</li>
 </ul>
 <section id="sec-mark-custseg-rfm-dat" class="level4 unnumbered">
 <h4 class="unnumbered anchored" data-anchor-id="sec-mark-custseg-rfm-dat">Data</h4>
@@ -972,6 +979,23 @@ eCPM = \frac{\mbox{Estimated Earnings} \cdot 1000}{\mbox{Total Impressions}}
 <li>python customer lifetime value, rfm + xgboost (<a href="https://www.youtube.com/watch?v=s-32u6XdY7c">youtube</a>)</li>
 </ul></li>
 </ul></li>
+<li>Group into Quantiles
+<ul>
+<li>Process
+<ul>
+<li>For each RFM variable, rank customers based on values</li>
+<li>For each customer, add up the ranks to get a RFM score</li>
+<li>Bin each customer into a quantile based on their RFM score</li>
+</ul></li>
+<li>Issues
+<ul>
+<li>Correlation between RFM variables
+<ul>
+<li>e.g.&nbsp;Someone who bought a lot a long time ago could be in the same bin as someone who bought a little recently.</li>
+</ul></li>
+<li>Should look at the distribution of RFM scores. Grouping into a particular quantiling schema may not be informative</li>
+</ul></li>
+</ul></li>
 <li>Clustering (k-means is popular)
 <ul>
 <li>Cluster Customer IDs based on Recency, Frequency, and Monetary Value variables
@@ -980,13 +1004,10 @@ eCPM = \frac{\mbox{Estimated Earnings} \cdot 1000}{\mbox{Total Impressions}}
 <li>If you end up with too many variables for the amount of data you have, then perform PCA before clustering</li>
 </ul></li>
 </ul></li>
-</ul>
-<!-- -->
-<ul>
 <li>Interpret clusters and create strategy for each cluster
 <ul>
-<li><span class="ribbon-highlight">Example</span><br>
-<img src="./_resources/Marketing.resources/image.6.png" class="img-fluid" width="632"><img src="./_resources/Marketing.resources/image.5.png" class="img-fluid" width="632">
+<li><p><span class="ribbon-highlight">Example</span><br>
+<img src="./_resources/Marketing.resources/image.6.png" class="img-fluid" width="632"><img src="./_resources/Marketing.resources/image.5.png" class="img-fluid" width="632"></p>
 <ul>
 <li>Charts
 <ul>
@@ -996,16 +1017,34 @@ eCPM = \frac{\mbox{Estimated Earnings} \cdot 1000}{\mbox{Total Impressions}}
 <li>Cluster 0
 <ul>
 <li>Interpretation — Customers who have not made purchases recently</li>
-<li>Strategy — Make offers to bring them back to purchasing Cluster 1</li>
+<li>Strategy — Make offers to bring them back to purchasing</li>
+</ul></li>
+<li>Cluster 1
+<ul>
 <li>Interpretation — Customers who have a high monitory value</li>
-<li>Strategy — Create a loyalty program so that they can continue spending more Cluster 2</li>
+<li>Strategy — Create a loyalty program so that they can continue spending more</li>
+</ul></li>
+<li>Cluster 2
+<ul>
 <li>Interpretation — Customers who have not made purchases recently</li>
-<li>Strategy — Make offers to bring them back to purchasing Cluster 3</li>
+<li>Strategy — Make offers to bring them back to purchasing</li>
+</ul></li>
+<li>Cluster 3
+<ul>
 <li>Interpretation — Customers who are likely to churn</li>
-<li>Strategy — Retain them with exciting offers Cluster 4</li>
+<li>Strategy — Retain them with exciting offers</li>
+</ul></li>
+<li>Cluster 4
+<ul>
 <li>Interpretation — Regular customers</li>
 <li>Strategy — Create a loyalty program to keep them purchasing on a regular basis</li>
 </ul></li>
+</ul></li>
+<li><p><span class="ribbon-highlight">Example</span></p>
+<p><img src="_resources/Marketing.resources/custseg-clust-bar-1.png" class="img-fluid" width="354"></p>
+<p><img src="_resources/Marketing.resources/custseg-clust-mark-recom-1.webp" class="img-fluid" width="632"></p>
+<ul>
+<li>From <a href="https://towardsdatascience.com/a-data-science-project-with-chatgpt-code-interpreter-e9beb8705dac">A Data Science Project with ChatGPT Code Interpreter</a></li>
 </ul></li>
 </ul></li>
 </ul>
