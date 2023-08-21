@@ -430,6 +430,7 @@
 ![](./_resources/Marketing.resources/image.2.png){width="632"}
 
 -   Recency, Frequency, and Monetary Value Analysis
+-   The most profitable segments will have low recency, high frequency, and high monetary value.
 
 #### Data {#sec-mark-custseg-rfm-dat .unnumbered}
 
@@ -456,30 +457,49 @@
         -   lab-49-feature-engineering-customer-segmentation
         -   lab-58-customer-lifetime-value-rfm-calc
         -   python customer lifetime value, rfm + xgboost ([youtube](https://www.youtube.com/watch?v=s-32u6XdY7c))
+-   Group into Quantiles
+    -   Process
+        -   For each RFM variable, rank customers based on values
+        -   For each customer, add up the ranks to get a RFM score
+        -   Bin each customer into a quantile based on their RFM score
+    -   Issues
+        -   Correlation between RFM variables
+            -   e.g. Someone who bought a lot a long time ago could be in the same bin as someone who bought a little recently.
+        -   Should look at the distribution of RFM scores. Grouping into a particular quantiling schema may not be informative
 -   Clustering (k-means is popular)
     -   Cluster Customer IDs based on Recency, Frequency, and Monetary Value variables
         -   Add additional variables if relevant to helping you choose a market strategy
         -   If you end up with too many variables for the amount of data you have, then perform PCA before clustering
-
-<!-- -->
-
 -   Interpret clusters and create strategy for each cluster
     -   [Example]{.ribbon-highlight}\
         ![](./_resources/Marketing.resources/image.6.png){width="632"}![](./_resources/Marketing.resources/image.5.png){width="632"}
+
         -   Charts
             -   Both charts have the same info, right shows the patterns better but you can't read the values
             -   RFM variables were standardized between 0 and 100 before clustering
         -   Cluster 0
             -   Interpretation --- Customers who have not made purchases recently
-            -   Strategy --- Make offers to bring them back to purchasing Cluster 1
+            -   Strategy --- Make offers to bring them back to purchasing
+        -   Cluster 1
             -   Interpretation --- Customers who have a high monitory value
-            -   Strategy --- Create a loyalty program so that they can continue spending more Cluster 2
+            -   Strategy --- Create a loyalty program so that they can continue spending more
+        -   Cluster 2
             -   Interpretation --- Customers who have not made purchases recently
-            -   Strategy --- Make offers to bring them back to purchasing Cluster 3
+            -   Strategy --- Make offers to bring them back to purchasing
+        -   Cluster 3
             -   Interpretation --- Customers who are likely to churn
-            -   Strategy --- Retain them with exciting offers Cluster 4
+            -   Strategy --- Retain them with exciting offers
+        -   Cluster 4
             -   Interpretation --- Regular customers
             -   Strategy --- Create a loyalty program to keep them purchasing on a regular basis
+
+    -   [Example]{.ribbon-highlight}
+
+        ![](_resources/Marketing.resources/custseg-clust-bar-1.png){width="354"}
+
+        ![](_resources/Marketing.resources/custseg-clust-mark-recom-1.webp){width="632"}
+
+        -   From [A Data Science Project with ChatGPT Code Interpreter](https://towardsdatascience.com/a-data-science-project-with-chatgpt-code-interpreter-e9beb8705dac)
 
 ### Behavioral Segmentation {#sec-mark-custseg-behav .unnumbered}
 
@@ -509,7 +529,7 @@
 
 ## Customer Journey {#sec-mark-custjourn .unnumbered}
 
-![](./_resources/Marketing.resources/image.1.png){width="632"}  
+![](./_resources/Marketing.resources/image.1.png){width="632"}\
 ![](./_resources/Marketing.resources/image.png){width="632"}
 
 -   Top Figure: Typical SaaS User Journey

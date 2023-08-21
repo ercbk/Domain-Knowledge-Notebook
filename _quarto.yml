@@ -39,6 +39,7 @@ book:
     - qmd/real-estate.qmd
     - qmd/retail.qmd
     - qmd/saas.qmd
+    - qmd/sports-betting.qmd
 
 format:
   html:
