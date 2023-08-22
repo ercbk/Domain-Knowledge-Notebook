@@ -2,10 +2,19 @@
 
 ## Misc
 
--   
+-   Steps to avoid getting picked off by bookmakers
+    -   These are actions that sharp bettors take that bookmakers used to help identify them.
+    -   Notes from [Eliminate These Five Sharp Betting Tells From Your Game](https://unabated.com/articles/eliminate-these-five-sharp-betting-tells-from-your-game?ref=thepowerrank)
+    -   Sharps tend to bet early and help shape a stronger line for books to present to the less-knowledgeable public betting crowd who will bet later.
+        -   Solution: Instead of always betting when the opening line is published, bet when key events for that sport take place (e.g. when NFL injury report is published, when an informative site/person posts their report/info, etc.).
+    -   Sharps tend to bet more underdogs than the public
+    -   Sharps tend to bet in amounts that return round numbers (e.g. bet \$110 to win \$100)
+    -   Sharps tend to bet straight bets only
+    -   Sharps tend to get good closing line value
 
 ## Terms {#sec-spbet-terms .unnumbered}
 
+-   [**Closing Line Value (CLV)**]{style="color: #009499"} - 
 -   [**Picking Off**]{style="color: #009499"} (aka [**Stake Factoring**]{style="color: #009499"}) - The limiting of the maximum wager or even banning of a sharp bettor by a bookmaker. This is done by the bookmaker to optimize profitability. Bettors can be flagged as unprofitable not only by how much or how often they win, but by betting actions determined to be predictive according to the algorithm used by the bookmaker.
 -   [**Sharp Bettors**]{style="color: #009499"} - Informed, experienced, successful sports bettors
 
