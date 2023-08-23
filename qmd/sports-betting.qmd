@@ -8,15 +8,43 @@
     -   Sharps tend to bet early and help shape a stronger line for books to present to the less-knowledgeable public betting crowd who will bet later.
         -   Solution: Instead of always betting when the opening line is published, bet when key events for that sport take place (e.g. when NFL injury report is published, when an informative site/person posts their report/info, etc.).
     -   Sharps tend to bet more underdogs than the public
+        -   Public bettors like to bet on overs or the expected favorite to win the game. As a result, sharp bettors often find value in betting unders or underdogs
+        -   Due to betting markets becoming more efficient, the Unders/Underdogs value is dissipating. In major sports, the underdog is covering right around 50-51% of the time. As a result, finding value on Overs/Favorites is possible.
+        -   Solution: Keep records of the types of bets you make with each book. If you're betting more underdogs at a book, change your behavior which can be as simple as not betting there for a few days. Perhaps betting something in an unrelated sport. Or, when necessary, bet something without getting the best number in the market.
     -   Sharps tend to bet in amounts that return round numbers (e.g. bet \$110 to win \$100)
+        -   Solution: Toss in some weird bet amounts make you look like you have less of a system.
     -   Sharps tend to bet straight bets only
-    -   Sharps tend to get good closing line value
+        -   Solution: Mix in some parlays in positive expected value situations
+    -   Sharps tend to get good Closing Line Value
 
 ## Terms {#sec-spbet-terms .unnumbered}
 
--   [**Closing Line Value (CLV)**]{style="color: #009499"} - 
+-   [**Closing Line Value (CLV)**]{style="color: #009499"} - A measure of the value of a bet at the time it is placed compared to the closing odds. You can calculate it by comparing the odds you received when you placed your bet to the final odds when the event starts. If the odds you received were better than the closing odds, then the bet has positive CLV. If the odds you received were worse than the closing odds, then the bet has negative CLV.
+
+-   [**Implied Probability**]{style="color: #009499"} - Probability from a converted Moneyline odds
+
+    $$
+    p = \frac{-\text{Odds}}{-\text{Odds} + 100}
+    $$
+
+-   [**Moneyline**]{style="color: #009499"} - A moneyline bet functions as a straight-up wager on which team will win a game. This kind of bet doesn't involve a point spread.
+
+    -   The underdog on the moneyline pays out at greater odds than the favorite.
+    -   Sportsbooks generally display the moneyline, point spread, and total (Over/Under) odds for a game, but all three function as separate bets.
+
+-   [**Originators**]{style="color: #009499"} - A sharp that generates their own odds --- the quants of sports betting.
+
 -   [**Picking Off**]{style="color: #009499"} (aka [**Stake Factoring**]{style="color: #009499"}) - The limiting of the maximum wager or even banning of a sharp bettor by a bookmaker. This is done by the bookmaker to optimize profitability. Bettors can be flagged as unprofitable not only by how much or how often they win, but by betting actions determined to be predictive according to the algorithm used by the bookmaker.
--   [**Sharp Bettors**]{style="color: #009499"} - Informed, experienced, successful sports bettors
+
+-   [**Sharp Bettors**]{style="color: #009499"} (aka [**Sharps**]{style="color: #009499"}) - Informed, experienced, successful sports bettors. Someone who is consistently making positive Expected Value (EV) bets or bets that are expected to be profitable in the long term which is typically means winning about 55% to 60% of the time.
+
+-   [**Tissue**]{style="color: #009499"} - A list of odds representing the chance of the various possible outcomes of a sporting event occurring.
+
+-   [**Totals**]{style="color: #009499"} - The Over/Under
+
+-   [**Tout**]{style="color: #009499"} - An individual (handicapper) who sells picks often in exchange for an up-front payment. Touts either sell picks by themselves or are part of a service, which is composed of numerous touts, selling different kinds of packages
+
+    -   Can also refer to public handicappers in a public forum, such as in a digital or print newspaper, on social media or on broadcast outlets
 
 ## Betting Strategies
 
