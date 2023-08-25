@@ -7,6 +7,9 @@
 -   Beware of survivorship bias when backtesting algorithms
     -   Example: S&P 500
         -   A trader is creating an algorithm to predict prices of all the stocks in the S&P 500. If the trader uses the current roster of companies, the list only includes companies that have made it to now without shutting down or losing so much value they drop off the list. The trader should use the list of companies as it was at the start of the training data.
+-   Technical vs Fundamental Analysis
+    -   *Technical analysis* in many cases tends to amplify stock price trends because many technical traders buy when stocks are rising and sell when they fall.
+    -   *Fundamental analysis* on the contrary often shows mean-reverting behaviour because its adherents try to buy undervalued stocks and sell overvalued ones
 -   435 choices for start and end dates of each monthly investment cycle
     -   i.e. Easy to have a selective endpoints fallacy for an investment strategy.
 -   Strategies
