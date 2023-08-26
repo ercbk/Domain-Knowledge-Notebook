@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Domain Knowledge - Economics</title>
+<title>Domain Knowledge - Sports Betting</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../qmd/environment.html" rel="next">
-<link href="../qmd/budget-allocation.html" rel="prev">
+<link href="../qmd/saas.html" rel="prev">
 <link href="../images/dk-favicon-32.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -62,6 +61,8 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -75,7 +76,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../qmd/economics.html">Economics</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../qmd/sports-betting.html">Sports Betting</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -135,7 +136,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../qmd/economics.html" class="sidebar-item-text sidebar-link active">
+  <a href="../qmd/economics.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Economics</span></a>
   </div>
 </li>
@@ -249,7 +250,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../qmd/sports-betting.html" class="sidebar-item-text sidebar-link">
+  <a href="../qmd/sports-betting.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Sports Betting</span></a>
   </div>
 </li>
@@ -263,9 +264,10 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#sec-econ-misc" id="toc-sec-econ-misc" class="nav-link active" data-scroll-target="#sec-econ-misc">Misc</a></li>
-  <li><a href="#sec-econ-terms" id="toc-sec-econ-terms" class="nav-link" data-scroll-target="#sec-econ-terms">Terms</a></li>
-  <li><a href="#sec-econ-pricelas" id="toc-sec-econ-pricelas" class="nav-link" data-scroll-target="#sec-econ-pricelas">Price Elasticity</a></li>
+  <li><a href="#sec-spbet-misc" id="toc-sec-spbet-misc" class="nav-link active" data-scroll-target="#sec-spbet-misc">Misc</a></li>
+  <li><a href="#sec-spbet-terms" id="toc-sec-spbet-terms" class="nav-link" data-scroll-target="#sec-spbet-terms">Terms</a></li>
+  <li><a href="#sec-spbet-calcclv" id="toc-sec-spbet-calcclv" class="nav-link" data-scroll-target="#sec-spbet-calcclv">Calculating CLV</a></li>
+  <li><a href="#sec-spbet-betstrat" id="toc-sec-spbet-betstrat" class="nav-link" data-scroll-target="#sec-spbet-betstrat">Betting Strategies</a></li>
   </ul>
 </nav>
     </div>
@@ -274,7 +276,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span id="sec-econ" class="quarto-section-identifier">Economics</span></h1>
+<h1 class="title"><span id="sec-spbet" class="quarto-section-identifier">Sports Betting</span></h1>
 </div>
 
 
@@ -289,63 +291,121 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="sec-econ-misc" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="sec-econ-misc">Misc</h2>
+<section id="sec-spbet-misc" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="sec-spbet-misc">Misc</h2>
 <ul>
-<li><strong>Dynamic stochastic general equilibrium (DSGE)</strong> models, which are popular in macroeconomic modeling, are garbage (<a href="https://marginalrevolution.com/marginalrevolution/2022/11/a-big-and-embarrassing-challenge-to-dsge-models.html">article</a>)
+<li>Steps to avoid getting picked off by bookmakers
 <ul>
-<li>Even under extremely ideal conditions they don’t retrieve the parameters and using them to forecast is no better than chance.</li>
+<li>These are actions that sharp bettors take that bookmakers used to help identify them.</li>
+<li>Notes from <a href="https://unabated.com/articles/eliminate-these-five-sharp-betting-tells-from-your-game?ref=thepowerrank">Eliminate These Five Sharp Betting Tells From Your Game</a></li>
+<li>Sharps tend to bet early and help shape a stronger line for books to present to the less-knowledgeable public betting crowd who will bet later.
+<ul>
+<li>Solution: Instead of always betting when the opening line is published, bet when key events for that sport take place (e.g.&nbsp;when NFL injury report is published, when an informative site/person posts their report/info, etc.).</li>
+</ul></li>
+<li>Sharps tend to bet more underdogs than the public
+<ul>
+<li>Public bettors like to bet on overs or the expected favorite to win the game. As a result, sharp bettors often find value in betting unders or underdogs</li>
+<li>Due to betting markets becoming more efficient, the Unders/Underdogs value is dissipating. In major sports, the underdog is covering right around 50-51% of the time. As a result, finding value on Overs/Favorites is possible.</li>
+<li>Solution: Keep records of the types of bets you make with each book. If you’re betting more underdogs at a book, change your behavior which can be as simple as not betting there for a few days. Perhaps betting something in an unrelated sport. Or, when necessary, bet something without getting the best number in the market.</li>
+</ul></li>
+<li>Sharps tend to bet in amounts that return round numbers (e.g.&nbsp;bet $110 to win $100)
+<ul>
+<li>Solution: Toss in some weird bet amounts make you look like you have less of a system.</li>
+</ul></li>
+<li>Sharps tend to bet straight bets only
+<ul>
+<li>Solution: Mix in some parlays in positive expected value situations</li>
+</ul></li>
+<li>Sharps tend to get good Closing Line Value</li>
 </ul></li>
 </ul>
 </section>
-<section id="sec-econ-terms" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="sec-econ-terms">Terms</h2>
+<section id="sec-spbet-terms" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="sec-spbet-terms">Terms</h2>
 <ul>
-<li><p><span style="color: #009499"><strong>Adverse Selection</strong></span> - a market situation where buyers and sellers have different information. The result is that participants with key information might participate selectively in trades at the expense of other parties who do not have the same information</p>
+<li><p><span style="color: #009499"><strong>Closing Line Value (CLV)</strong></span> - A measure of the value of a bet at the time it is placed compared to the closing odds. You can calculate it by comparing the odds you received when you placed your bet to the final odds when the event starts. If the odds you received were better than the closing odds, then the bet has positive CLV. If the odds you received were worse than the closing odds, then the bet has negative CLV.</p>
+<p><span class="math display">\[
+\text{CLV} = \frac{p_{\text{imp}}^{\text{cl}} - p_{\text{imp}}^{\text{bet}}}{p_{\text{imp}}^{\text{bet}}}
+\]</span></p>
 <ul>
-<li>e.g.&nbsp;A person waits until he knows he is sick and in need of health care before applying for a health insurance policy. The buyer has more knowledge (i.e., about their health). To fight adverse selection, insurance companies reduce exposure to large claims by limiting coverage or raising premiums</li>
+<li><span class="math inline">\(p_{\text{imp}}^{\text{cl}}\)</span>: Implied probability of the closing line</li>
+<li><span class="math inline">\(p_{\text{imp}}^{\text{bet}}\)</span>: Implied probability of your bet</li>
 </ul></li>
-<li><p><span style="color: #009499"><strong>Consumer Price Index (CPI)</strong></span> - A common index that is used to measure inflation, the&nbsp;<a href="https://www.bls.gov/cpi/questions-and-answers.htm">Bureau of Labor Statistics constructs the market basket</a>&nbsp;using more than 80,000 items.</p></li>
-<li><p><span style="color: #009499"><strong>Deflation</strong></span> - A sustained decrease in the price level of goods and services.</p>
-<p><img src="_resources/Economics.resources/term-deflation-1.png" class="img-fluid" width="432"></p></li>
-<li><p><span style="color: #009499"><strong>Disinflation</strong></span> - A decrease in the rate of inflation.</p></li>
-<li><p><span style="color: #009499"><strong>Inflation</strong></span> - A sustained increase in the price level of goods and services.</p></li>
-<li><p><span style="color: #009499"><strong>Intertemporal Price Discrimination</strong></span> - charging a high price initially, then lowering price after time passes.</p>
+<li><p><span style="color: #009499"><strong>Implied Probability</strong></span> - Is Risk/Reward. Used in betting to obtain a probability converted from a <u>Moneyline</u> odds</p>
 <ul>
-<li>A method for firms to separate consumer groups based on willingness to pay</li>
-<li>e.g.&nbsp;last minute travel bookings (opposite direction since last minute bookings usually cost more)</li>
+<li><p>For a negative Moneyline Odds</p>
+<p><span class="math display">\[
+p_{\text{imp}} = \frac{\text{Risk}}{\text{Reward}} = \frac{-\text{Odds}_{\text{mon}}}{-\text{Odds}_{\text{mon}} + 100}
+\]</span></p></li>
+<li><p>For a positive Moneline Odds</p>
+<p><span class="math display">\[
+p_{\text{imp}} = \frac{\text{Risk}}{\text{Reward}} = \frac{100}{\text{Odds}_{\text{mon}} + 100}
+\]</span></p></li>
 </ul></li>
-<li><p><span style="color: #009499"><strong>Price Elasticity</strong></span> <span style="color: #009499"><strong>of Demand</strong></span> <strong>(PED)</strong>- the percent change in demand given the percent change in price assuming that everything else doesn’t change</p>
+<li><p><span style="color: #009499"><strong>Moneyline</strong></span> - A moneyline bet functions as a straight-up wager on which team will win a game. This kind of bet doesn’t involve a point spread.</p>
 <ul>
-<li>How sensitive the quantity demanded is to its price. When the price rises, quantity demanded falls for almost any good, but it falls more for some than for others.</li>
-<li>The elasticity of a good or service can vary according to the number of close substitutes available, its relative cost, and the amount of time that has elapsed since the price change occurred.</li>
-<li>When the price of a good or service has reached the [<strong>point of elasticity</strong>, sellers and buyers quickly adjust their demand for that good or service.</li>
-<li>An <span style="color: #009499"><strong>inelastic</strong></span> product is one that consumers continue to purchase even after a change in price</li>
-<li>Products or services that are elastic are either unnecessary or can be easily replaced with a substitute.</li>
+<li>The underdog on the moneyline pays out at greater odds than the favorite.</li>
+<li>Sportsbooks generally display the moneyline, point spread, and total (Over/Under) odds for a game, but all three function as separate bets.</li>
 </ul></li>
-<li><p><span style="color: #009499"><strong>Second Degree Price Discrimination</strong></span> - charging a different price for different quantities at the same time</p></li>
+<li><p><span style="color: #009499"><strong>Originators</strong></span> - A sharp that generates their own odds — the quants of sports betting.</p></li>
+<li><p><span style="color: #009499"><strong>Picking Off</strong></span> (aka <span style="color: #009499"><strong>Stake Factoring</strong></span>) - The limiting of the maximum wager or even banning of a sharp bettor by a bookmaker. This is done by the bookmaker to optimize profitability. Bettors can be flagged as unprofitable not only by how much or how often they win, but by betting actions determined to be predictive according to the algorithm used by the bookmaker.</p></li>
+<li><p><span style="color: #009499"><strong>Sharp Bettors</strong></span> (aka <span style="color: #009499"><strong>Sharps</strong></span>) - Informed, experienced, successful sports bettors. Someone who is consistently making positive Expected Value (EV) bets or bets that are expected to be profitable in the long term which is typically means winning about 55% to 60% of the time.</p></li>
+<li><p><span style="color: #009499"><strong>Tissue</strong></span> - A list of odds representing the chance of the various possible outcomes of a sporting event occurring.</p></li>
+<li><p><span style="color: #009499"><strong>Totals</strong></span> - The Over/Under</p></li>
+<li><p><span style="color: #009499"><strong>Tout</strong></span> - An individual (handicapper) who sells picks often in exchange for an up-front payment. Touts either sell picks by themselves or are part of a service, which is composed of numerous touts, selling different kinds of packages</p></li>
+<li><p><span style="color: #009499"><strong>Vigorish</strong></span> (aka <span style="color: #009499"><strong>Vig</strong></span> or <span style="color: #009499"><strong>Juice</strong></span>) - The house edge. Sports betting sites need to turn a profit, so they work a slight advantage into each bet.</p>
+<ul>
+<li>Can also refer to public handicappers in a public forum, such as in a digital or print newspaper, on social media or on broadcast outlets</li>
+</ul></li>
 </ul>
 </section>
-<section id="sec-econ-pricelas" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="sec-econ-pricelas">Price Elasticity</h2>
+<section id="sec-spbet-calcclv" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="sec-spbet-calcclv">Calculating CLV</h2>
 <ul>
-<li>Also see <a href="https://ercbk.github.io/Data-Science-Notebook/qmd/algorithms-product.html#sec-alg-prod-prcopt" style="color: green">Algorithms, Products &gt;&gt; Price Optimization</a></li>
-<li>By identifying the price elasticity of demand, you can try to determine the amount of price you can increase without hurting the demand, as well as check at what point an increase in price starts to affect the market.</li>
-<li>Price is NOT the only variable that influences whether you purchase a product or service. Therefore, looking at quantity purchased at each price to determine price elasticity is not enough.</li>
-<li>Guidelines
+<li><p>Misc</p>
 <ul>
-<li>If the PED is greater than one (PED &gt; 1), it is known as “<strong>elastic</strong>”, meaning changes in price causes a significant change in demand.</li>
-<li>If the PED is equal to 1 (PED = 1), then this means any change in price causes equivalent changes in demand.</li>
-<li>If the PED is less than one (PED &lt; 1), it is known as “<strong>inelastic</strong>”. This means changes in price don’t affect the demand that much.</li>
-<li>If the PED is equal to 0 (PED = 0), known as “<strong>perfectly inelastic</strong>”, meaning any change in price doesn’t cause a change in demand.</li>
+<li><u>Using CLV as a metric is only useful when the betting market is efficient.</u>
+<ul>
+<li>If there aren’t enough bettors, in general, betting a particular sport, then it will <strong>not</strong> be efficient</li>
+<li>If there aren’t enough sharps betting a particular sport, then it will <strong>not</strong> be efficient</li>
 </ul></li>
-<li>Process
+</ul></li>
+<li><p>Steps</p></li>
+<li><p><span class="ribbon-highlight">Example</span>: Calculate CV</p>
 <ul>
-<li>Filter on the specific subset of sales data relevant to the dimension which you are estimating elasticity (e.g.&nbsp;if estimating the price elasticity for red wine, filter on only red wine sales)</li>
-<li>Perform a log transformation on the future sales target variable and on the current price feature</li>
-<li>Train a multivariable linear regression model to accurately predict future sales</li>
-<li>The price elasticity estimate will be the coefficient of the log transformed, price feature</li>
-<li>Repeat steps 1–4 for each elasticity estimate</li>
+<li><p>We bet the Tampa Bay Lightning at -195 (Moneyline) odds to beat the Kraken which are at +190. Right before puck drops, what’s our CLV if the line shifts to Tampa Bay -220?</p></li>
+<li><p>Calculate implied probabilities</p>
+<p><span class="math display">\[
+\begin{align}
+p_{\text{imp}}^{\text{bet}} &amp;= \frac{-(-195)}{-(-195) + 100} = 0.661\\
+p_{\text{imp}}^{\text{cl}} &amp;= \frac{-(-220)}{-(-220) + 100} = 0.688\\
+\end{align}
+\]</span></p></li>
+<li><p>Calculate the total implied probability</p>
+<p><span class="math display">\[
+\begin{align}
+p_{\text{imp}}^{\text{opp}} &amp;= \frac{100}{190+100} =  0.345\\
+p_{\text{tot}} &amp;= 0.661 + 0.345 = 1.006
+\end{align}
+\]</span></p></li>
+<li><p>Calculate adjusted closing implied probability</p>
+<p><span class="math display">\[
+p_{\text{adj}}^{\text{cl}} = \frac{0.688}{1.006} = 0.684
+\]</span></p></li>
+<li><p>Calculate CLV</p>
+<p><span class="math display">\[
+\text{CLV} = \frac{0.684 - 0.661}{0.661} = 0.035 \;\;\text{or}\;\; 3.5\%
+\]</span></p></li>
+</ul></li>
+<li><p><span class="ribbon-highlight">Example</span>: Calculate Fair Value Odds</p></li>
+</ul>
+</section>
+<section id="sec-spbet-betstrat" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="sec-spbet-betstrat">Betting Strategies</h2>
+<ul>
+<li><u>Round-Robin</u>
+<ul>
+<li>Parlay betting strategy</li>
 </ul></li>
 </ul>
 
@@ -588,14 +648,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../qmd/budget-allocation.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Budget Allocation</span>
+      <a href="../qmd/saas.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">SaaS</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../qmd/environment.html" class="pagination-link">
-        <span class="nav-page-text">Environment</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->

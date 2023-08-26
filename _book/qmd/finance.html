@@ -174,7 +174,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../qmd/kpis.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">KPIs</span></span></a>
+ <span class="menu-text">KPIs</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -186,7 +186,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../qmd/logistics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Logistics</span></span></a>
+ <span class="menu-text">Logistics</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -228,13 +228,13 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../qmd/product-development.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Product Development</span></span></a>
+ <span class="menu-text">Product Development</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../qmd/real-estate.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Real Estate</span></span></a>
+ <span class="menu-text">Real Estate</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -247,6 +247,12 @@ ul.task-list li input[type="checkbox"] {
   <div class="sidebar-item-container"> 
   <a href="../qmd/saas.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">SaaS</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../qmd/sports-betting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Sports Betting</span></a>
   </div>
 </li>
     </ul>
@@ -263,6 +269,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#sec-finance-terms" id="toc-sec-finance-terms" class="nav-link" data-scroll-target="#sec-finance-terms">Terms</a></li>
   <li><a href="#sec-finance-6040" id="toc-sec-finance-6040" class="nav-link" data-scroll-target="#sec-finance-6040">60/40 Portfolio Strategy</a></li>
   <li><a href="#sec-finance--momassallo" id="toc-sec-finance--momassallo" class="nav-link" data-scroll-target="#sec-finance--momassallo">Momentum Tactical Asset Allocation Strategy</a></li>
+  <li><a href="#sec-finance-vtp" id="toc-sec-finance-vtp" class="nav-link" data-scroll-target="#sec-finance-vtp">Volatility Targeting Portfolio</a></li>
   <li><a href="#sec-finance-meanrev" id="toc-sec-finance-meanrev" class="nav-link" data-scroll-target="#sec-finance-meanrev">Mean Reversion Strategy or Pairs Trading</a></li>
   </ul>
 </nav>
@@ -300,6 +307,11 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li>A trader is creating an algorithm to predict prices of all the stocks in the S&amp;P 500. If the trader uses the current roster of companies, the list only includes companies that have made it to now without shutting down or losing so much value they drop off the list. The trader should use the list of companies as it was at the start of the training data.</li>
 </ul></li>
+</ul></li>
+<li>Technical vs Fundamental Analysis
+<ul>
+<li><em>Technical analysis</em> in many cases tends to amplify stock price trends because many technical traders buy when stocks are rising and sell when they fall.</li>
+<li><em>Fundamental analysis</em> on the contrary often shows mean-reverting behaviour because its adherents try to buy undervalued stocks and sell overvalued ones</li>
 </ul></li>
 <li>435 choices for start and end dates of each monthly investment cycle
 <ul>
@@ -442,6 +454,39 @@ ul.task-list li input[type="checkbox"] {
 <li>The US sector momentum strategy is a long-only dynamic tactical asset allocation strategy that attempts to exceed the performance of simply going long the S&amp;P500.</li>
 <li>At the end of every month the strategy calculates the holding period return (HPR) based momentum of all of the SPDR sector ETFs (the ticker symbols of which begin with the prefix XL) and selects the top N to invest in for the forthcoming month, where N is usually between 3 and 6.</li>
 <li>In the implementation given here the HPR momentum is calculated over the previous 126 days (approximately six months of business days) and the top three sector ETFs are chosen for the portfolio. The portfolio allocation is equally weighted between each of these three sector ETFs. Irrespective of changes in signal the portfolio is rebalanced once per month to weight the assets equally.</li>
+</ul></li>
+</ul>
+</section>
+<section id="sec-finance-vtp" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="sec-finance-vtp">Volatility Targeting Portfolio</h2>
+<ul>
+<li>Misc
+<ul>
+<li>The Impact of Volatility Targeting (<a href="https://www.man.com/maninstitute/the-impact-of-volatility-targeting#:~:text=Volatility%20targeting%20seeks%20to%20counter%20the%20fluctuations%20in%20volatility%3A,than%20a%20constant%20notional%20exposure.">paper</a>)</li>
+<li>Quant Science <a href="https://www.quantscience.io/newsletter/b/automating-trades-interactive-brokers-and-python?ck_subscriber_id=2259292279">article</a> uses {{riskfolio}} to generate volatility weights for equities. (<a href="https://github.com/quant-science/sunday-quant-scientist/blob/main/QS002-automate-trades/automate-trades.py?ck_subscriber_id=2259292279">code</a>)
+<ul>
+<li><span style="color: goldenrod">{{</span><a href="https://riskfolio-lib.readthedocs.io/en/latest/index.html" style="color: goldenrod">riskfolio</a><span style="color: goldenrod">}}</span> - Good docs with plenty of examples</li>
+</ul></li>
+</ul></li>
+<li>Volatility targeting seeks to counter the fluctuations in volatility:
+<ul>
+<li>It leads to leveraging a portfolio at times of low volatility, and scaling down exposures at times of high volatility.</li>
+<li>This approach targets a constant level of volatility, rather than a constant notional exposure.</li>
+</ul></li>
+<li>Volatility clustering is a key feature of financial asset returns:
+<ul>
+<li>High volatility over the recent past tends to be followed by high volatility in the near future.</li>
+</ul></li>
+<li>Impact on Sharpe ratio
+<ul>
+<li>Volatility targeting improves the Sharpe ratio of “risk assets” (equities and credit), and that of “balanced” and “risk parity” portfolios that have a substantial allocation to these risk assets.</li>
+<li>For equity and credit, volatility targeting effectively introduces some momentum overlay due to the so-called leverage effect: the negative relationship between returns and changes in volatility.</li>
+<li>In contrast, for bonds, currencies, and commodities the impact on the Sharpe ratio is negligible.</li>
+</ul></li>
+<li>Impact on likelihood of tail events
+<ul>
+<li>Volatility targeting reduces the likelihood of extreme returns for all asset classes.</li>
+<li>Importantly, “left-tail” events tend to be less severe, as they typically occur at times of elevated volatility, when a target-volatility portfolio has a scaled-down notional exposure.</li>
 </ul></li>
 </ul>
 </section>

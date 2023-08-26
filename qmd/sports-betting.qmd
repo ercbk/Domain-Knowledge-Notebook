@@ -1,6 +1,6 @@
 # Sports Betting {#sec-spbet .unnumbered}
 
-## Misc
+## Misc {#sec-spbet-misc .unnumbered}
 
 -   Steps to avoid getting picked off by bookmakers
     -   These are actions that sharp bettors take that bookmakers used to help identify them.
@@ -21,11 +21,26 @@
 
 -   [**Closing Line Value (CLV)**]{style="color: #009499"} - A measure of the value of a bet at the time it is placed compared to the closing odds. You can calculate it by comparing the odds you received when you placed your bet to the final odds when the event starts. If the odds you received were better than the closing odds, then the bet has positive CLV. If the odds you received were worse than the closing odds, then the bet has negative CLV.
 
--   [**Implied Probability**]{style="color: #009499"} - Probability from a converted Moneyline odds
+    $$
+    \text{CLV} = \frac{p_{\text{imp}}^{\text{cl}} - p_{\text{imp}}^{\text{bet}}}{p_{\text{imp}}^{\text{bet}}}
+    $$
 
-    $$
-    p = \frac{-\text{Odds}}{-\text{Odds} + 100}
-    $$
+    -   $p_{\text{imp}}^{\text{cl}}$: Implied probability of the closing line
+    -   $p_{\text{imp}}^{\text{bet}}$: Implied probability of your bet
+
+-   [**Implied Probability**]{style="color: #009499"} - Is Risk/Reward. Used in betting to obtain a probability converted from a [Moneyline]{.underline} odds
+
+    -   For a negative Moneyline Odds
+
+        $$
+        p_{\text{imp}} = \frac{\text{Risk}}{\text{Reward}} = \frac{-\text{Odds}_{\text{mon}}}{-\text{Odds}_{\text{mon}} + 100}
+        $$
+
+    -   For a positive Moneline Odds
+
+        $$
+        p_{\text{imp}} = \frac{\text{Risk}}{\text{Reward}} = \frac{100}{\text{Odds}_{\text{mon}} + 100}
+        $$
 
 -   [**Moneyline**]{style="color: #009499"} - A moneyline bet functions as a straight-up wager on which team will win a game. This kind of bet doesn't involve a point spread.
 
@@ -44,9 +59,87 @@
 
 -   [**Tout**]{style="color: #009499"} - An individual (handicapper) who sells picks often in exchange for an up-front payment. Touts either sell picks by themselves or are part of a service, which is composed of numerous touts, selling different kinds of packages
 
+-   [**Vigorish**]{style="color: #009499"} (aka [**Vig**]{style="color: #009499"} or [**Juice**]{style="color: #009499"}) - The house edge. Sports betting sites need to turn a profit, so they work a slight advantage into each bet.
+
     -   Can also refer to public handicappers in a public forum, such as in a digital or print newspaper, on social media or on broadcast outlets
 
-## Betting Strategies
+## Calculating CLV {#sec-spbet-calcclv .unnumbered}
+
+-   Misc
+
+    -   [Using CLV as a metric is only useful when the betting market is efficient.]{.underline}
+        -   If there aren't enough bettors, in general, betting a particular sport, then it will **not** be efficient
+        -   If there aren't enough sharps betting a particular sport, then it will **not** be efficient
+
+-   Steps
+
+    1.  Calculate implied probabilities for moneyline odds you bet and the moneyline odds at close
+
+    2.  Remove the vig from the closing line implied probability
+
+    3.  Calculate the CLV
+
+-   [Example]{.ribbon-highlight}: Calculate CLV
+
+    -   We bet the Tampa Bay Lightning at -195 (Moneyline) odds to beat the Kraken which are at +190. Right before puck drops, what's our CLV if the line shifts to Tampa Bay -220?
+
+    -   Calculate implied probabilities
+
+        $$
+        \begin{align}
+        p_{\text{imp}}^{\text{bet}} &= \frac{-(-195)}{-(-195) + 100} = 0.661\\
+        p_{\text{imp}}^{\text{cl}} &= \frac{-(-220)}{-(-220) + 100} = 0.688\\
+        \end{align}
+        $$
+
+    -   Calculate the total implied probability
+
+        $$
+        \begin{align}
+        p_{\text{imp}}^{\text{opp}} &= \frac{100}{190+100} =  0.345\\
+        p_{\text{tot}} &= 0.661 + 0.345 = 1.006
+        \end{align}
+        $$
+
+    -   Calculate adjusted closing implied probability
+
+        $$
+        p_{\text{adj}}^{\text{cl}} = \frac{0.688}{1.006} = 0.684
+        $$
+
+    -   Calculate CLV
+
+        $$
+        \text{CLV} = \frac{0.684 - 0.661}{0.661} = 0.035 \;\;\text{or}\;\; 3.5\%
+        $$
+
+-   [Example]{.ribbon-highlight}: Calculate Fair Value Odds and Interpret
+
+    -   Calculate adjusted implied probability for each team
+
+        $$
+        \begin{align}
+        \text{(Lightning)}\: p_{\text{adj}}^{\text{}} &= \frac{0.661}{1.006} = 0.657 \\ 
+        \text{(Krakens)}\: p_{\text{adj}}^{\text{}} &= \frac{0.345}{1.006} = 0.343
+        \end{align}
+        $$
+
+    -   Convert to probabilities to Moneyline odds
+
+        $$
+        \begin{align}
+        \text{(Lightning/Favorite)}\: \text{Odds}_{\text{mon}} &= -100 \cdot \frac{p_{\text{adj}}}{1-p_{\text{adj}}} = -100 \cdot \frac{0.657}{1-0.657} = -192\\
+        \text{(Krakens/Underdog)}\: \text{Odds}_{\text{mon}} &= 100 \cdot \frac{1-p_{\text{adj}}}{p_{\text{adj}}} = 100 \cdot \frac{1-0.343}{0.343} = 192
+        \end{align}
+        $$
+
+    -   This means that any moneyline odds
+
+        -   For the favorite with odds \> -192 (e.g. -191) has a positive Expected Value (EV)
+
+        -   For the underdog, odds \> 192 has a positive Expected Value (EV)
+
+## Betting Strategies {#sec-spbet-betstrat .unnumbered}
 
 -   [Round-Robin]{.underline}
     -   Parlay betting strategy
