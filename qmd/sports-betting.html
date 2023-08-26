@@ -265,9 +265,10 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#misc" id="toc-misc" class="nav-link active" data-scroll-target="#misc">Misc</a></li>
+  <li><a href="#sec-spbet-misc" id="toc-sec-spbet-misc" class="nav-link active" data-scroll-target="#sec-spbet-misc">Misc</a></li>
   <li><a href="#sec-spbet-terms" id="toc-sec-spbet-terms" class="nav-link" data-scroll-target="#sec-spbet-terms">Terms</a></li>
-  <li><a href="#betting-strategies" id="toc-betting-strategies" class="nav-link" data-scroll-target="#betting-strategies">Betting Strategies</a></li>
+  <li><a href="#sec-spbet-calcclv" id="toc-sec-spbet-calcclv" class="nav-link" data-scroll-target="#sec-spbet-calcclv">Calculating CLV</a></li>
+  <li><a href="#sec-spbet-betstrat" id="toc-sec-spbet-betstrat" class="nav-link" data-scroll-target="#sec-spbet-betstrat">Betting Strategies</a></li>
   </ul>
 </nav>
     </div>
@@ -291,8 +292,8 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="misc" class="level2">
-<h2 class="anchored" data-anchor-id="misc">Misc</h2>
+<section id="sec-spbet-misc" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="sec-spbet-misc">Misc</h2>
 <ul>
 <li>Steps to avoid getting picked off by bookmakers
 <ul>
@@ -323,11 +324,25 @@ ul.task-list li input[type="checkbox"] {
 <section id="sec-spbet-terms" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="sec-spbet-terms">Terms</h2>
 <ul>
-<li><p><span style="color: #009499"><strong>Closing Line Value (CLV)</strong></span> - A measure of the value of a bet at the time it is placed compared to the closing odds. You can calculate it by comparing the odds you received when you placed your bet to the final odds when the event starts. If the odds you received were better than the closing odds, then the bet has positive CLV. If the odds you received were worse than the closing odds, then the bet has negative CLV.</p></li>
-<li><p><span style="color: #009499"><strong>Implied Probability</strong></span> - Probability from a converted Moneyline odds</p>
+<li><p><span style="color: #009499"><strong>Closing Line Value (CLV)</strong></span> - A measure of the value of a bet at the time it is placed compared to the closing odds. You can calculate it by comparing the odds you received when you placed your bet to the final odds when the event starts. If the odds you received were better than the closing odds, then the bet has positive CLV. If the odds you received were worse than the closing odds, then the bet has negative CLV.</p>
 <p><span class="math display">\[
-p = \frac{-\text{Odds}}{-\text{Odds} + 100}
+\text{CLV} = \frac{p_{\text{imp}}^{\text{cl}} - p_{\text{imp}}^{\text{bet}}}{p_{\text{imp}}^{\text{bet}}}
+\]</span></p>
+<ul>
+<li><span class="math inline">\(p_{\text{imp}}^{\text{cl}}\)</span>: Implied probability of the closing line</li>
+<li><span class="math inline">\(p_{\text{imp}}^{\text{bet}}\)</span>: Implied probability of your bet</li>
+</ul></li>
+<li><p><span style="color: #009499"><strong>Implied Probability</strong></span> - Is Risk/Reward. Used in betting to obtain a probability converted from a <u>Moneyline</u> odds</p>
+<ul>
+<li><p>For a negative Moneyline Odds</p>
+<p><span class="math display">\[
+p_{\text{imp}} = \frac{\text{Risk}}{\text{Reward}} = \frac{-\text{Odds}_{\text{mon}}}{-\text{Odds}_{\text{mon}} + 100}
 \]</span></p></li>
+<li><p>For a positive Moneline Odds</p>
+<p><span class="math display">\[
+p_{\text{imp}} = \frac{\text{Risk}}{\text{Reward}} = \frac{100}{\text{Odds}_{\text{mon}} + 100}
+\]</span></p></li>
+</ul></li>
 <li><p><span style="color: #009499"><strong>Moneyline</strong></span> - A moneyline bet functions as a straight-up wager on which team will win a game. This kind of bet doesn’t involve a point spread.</p>
 <ul>
 <li>The underdog on the moneyline pays out at greater odds than the favorite.</li>
@@ -338,14 +353,82 @@ p = \frac{-\text{Odds}}{-\text{Odds} + 100}
 <li><p><span style="color: #009499"><strong>Sharp Bettors</strong></span> (aka <span style="color: #009499"><strong>Sharps</strong></span>) - Informed, experienced, successful sports bettors. Someone who is consistently making positive Expected Value (EV) bets or bets that are expected to be profitable in the long term which is typically means winning about 55% to 60% of the time.</p></li>
 <li><p><span style="color: #009499"><strong>Tissue</strong></span> - A list of odds representing the chance of the various possible outcomes of a sporting event occurring.</p></li>
 <li><p><span style="color: #009499"><strong>Totals</strong></span> - The Over/Under</p></li>
-<li><p><span style="color: #009499"><strong>Tout</strong></span> - An individual (handicapper) who sells picks often in exchange for an up-front payment. Touts either sell picks by themselves or are part of a service, which is composed of numerous touts, selling different kinds of packages</p>
+<li><p><span style="color: #009499"><strong>Tout</strong></span> - An individual (handicapper) who sells picks often in exchange for an up-front payment. Touts either sell picks by themselves or are part of a service, which is composed of numerous touts, selling different kinds of packages</p></li>
+<li><p><span style="color: #009499"><strong>Vigorish</strong></span> (aka <span style="color: #009499"><strong>Vig</strong></span> or <span style="color: #009499"><strong>Juice</strong></span>) - The house edge. Sports betting sites need to turn a profit, so they work a slight advantage into each bet.</p>
 <ul>
 <li>Can also refer to public handicappers in a public forum, such as in a digital or print newspaper, on social media or on broadcast outlets</li>
 </ul></li>
 </ul>
 </section>
-<section id="betting-strategies" class="level2">
-<h2 class="anchored" data-anchor-id="betting-strategies">Betting Strategies</h2>
+<section id="sec-spbet-calcclv" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="sec-spbet-calcclv">Calculating CLV</h2>
+<ul>
+<li><p>Misc</p>
+<ul>
+<li><u>Using CLV as a metric is only useful when the betting market is efficient.</u>
+<ul>
+<li>If there aren’t enough bettors, in general, betting a particular sport, then it will <strong>not</strong> be efficient</li>
+<li>If there aren’t enough sharps betting a particular sport, then it will <strong>not</strong> be efficient</li>
+</ul></li>
+</ul></li>
+<li><p>Steps</p>
+<ol type="1">
+<li><p>Calculate implied probabilities for moneyline odds you bet and the moneyline odds at close</p></li>
+<li><p>Remove the vig from the closing line implied probability</p></li>
+<li><p>Calculate the CLV</p></li>
+</ol></li>
+<li><p><span class="ribbon-highlight">Example</span>: Calculate CLV</p>
+<ul>
+<li><p>We bet the Tampa Bay Lightning at -195 (Moneyline) odds to beat the Kraken which are at +190. Right before puck drops, what’s our CLV if the line shifts to Tampa Bay -220?</p></li>
+<li><p>Calculate implied probabilities</p>
+<p><span class="math display">\[
+\begin{align}
+p_{\text{imp}}^{\text{bet}} &amp;= \frac{-(-195)}{-(-195) + 100} = 0.661\\
+p_{\text{imp}}^{\text{cl}} &amp;= \frac{-(-220)}{-(-220) + 100} = 0.688\\
+\end{align}
+\]</span></p></li>
+<li><p>Calculate the total implied probability</p>
+<p><span class="math display">\[
+\begin{align}
+p_{\text{imp}}^{\text{opp}} &amp;= \frac{100}{190+100} =  0.345\\
+p_{\text{tot}} &amp;= 0.661 + 0.345 = 1.006
+\end{align}
+\]</span></p></li>
+<li><p>Calculate adjusted closing implied probability</p>
+<p><span class="math display">\[
+p_{\text{adj}}^{\text{cl}} = \frac{0.688}{1.006} = 0.684
+\]</span></p></li>
+<li><p>Calculate CLV</p>
+<p><span class="math display">\[
+\text{CLV} = \frac{0.684 - 0.661}{0.661} = 0.035 \;\;\text{or}\;\; 3.5\%
+\]</span></p></li>
+</ul></li>
+<li><p><span class="ribbon-highlight">Example</span>: Calculate Fair Value Odds and Interpret</p>
+<ul>
+<li><p>Calculate adjusted implied probability for each team</p>
+<p><span class="math display">\[
+\begin{align}
+\text{(Lightning)}\: p_{\text{adj}}^{\text{}} &amp;= \frac{0.661}{1.006} = 0.657 \\
+\text{(Krakens)}\: p_{\text{adj}}^{\text{}} &amp;= \frac{0.345}{1.006} = 0.343
+\end{align}
+\]</span></p></li>
+<li><p>Convert to probabilities to Moneyline odds</p>
+<p><span class="math display">\[
+\begin{align}
+\text{(Lightning/Favorite)}\: \text{Odds}_{\text{mon}} &amp;= -100 \cdot \frac{p_{\text{adj}}}{1-p_{\text{adj}}} = -100 \cdot \frac{0.657}{1-0.657} = -192\\
+\text{(Krakens/Underdog)}\: \text{Odds}_{\text{mon}} &amp;= 100 \cdot \frac{1-p_{\text{adj}}}{p_{\text{adj}}} = 100 \cdot \frac{1-0.343}{0.343} = 192
+\end{align}
+\]</span></p></li>
+<li><p>This means that any moneyline odds</p>
+<ul>
+<li><p>For the favorite with odds &gt; -192 (e.g.&nbsp;-191) has a positive Expected Value (EV)</p></li>
+<li><p>For the underdog, odds &gt; 192 has a positive Expected Value (EV)</p></li>
+</ul></li>
+</ul></li>
+</ul>
+</section>
+<section id="sec-spbet-betstrat" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="sec-spbet-betstrat">Betting Strategies</h2>
 <ul>
 <li><u>Round-Robin</u>
 <ul>
