@@ -2,6 +2,8 @@
 
 ## Misc {#sec-spbet-misc .unnumbered}
 
+-   BetCris, Bookmaker, and Pinnacle are market makers. Best to use their closing lines.
+    -   Also, if at any time you find a line better at Bookmaker or another site than is offered at Pinnacle you might have a smart bet. The next step would be to return to this page and calculate Pinnacle's No-Vig price. If the odds you're getting are better than Pinnacle's no-vig price chances are you have a +EV (positive expected value) wager.
 -   Steps to avoid getting picked off by bookmakers
     -   These are actions that sharp bettors take that bookmakers used to help identify them.
     -   Notes from [Eliminate These Five Sharp Betting Tells From Your Game](https://unabated.com/articles/eliminate-these-five-sharp-betting-tells-from-your-game?ref=thepowerrank)
@@ -67,16 +69,26 @@
 
 -   Misc
 
-    -   [Using CLV as a metric is only useful when the betting market is efficient.]{.underline}
-        -   If there aren't enough bettors, in general, betting a particular sport, then it will **not** be efficient
-        -   If there aren't enough sharps betting a particular sport, then it will **not** be efficient
+    -   Notes from
+        -   [What is Closing Line Value (CLV)?](https://www.dratings.com/what-is-closing-line-value-clv-and-how-do-you-calculate-it/)
+        -   [No-Vig Fair Odds Calculator](https://sportsbettingsites.org/betting-tools/no-vig-calculator/)
+        -   [Getting Precise About Closing Line Value](https://unabated.com/articles/getting-precise-about-closing-line-value)
+    -   [Using CLV as a metric is only useful when the betting market is efficient.]{.underline} When the true price of the bet isn't actually being discovered, any CLV you see is, at best, an informed guess. When the market is efficient, the closing line converted into probabilities is the most accurate prediction of a match up.
+        -   The efficient market hypothesis says that markets eventually reveal the true price of an asset by accounting for all relevant information.
+        -   In an efficient market, a negative ROI but a positive CLV says I'm on the right track.
+        -   If there aren't enough bettors, in general, betting a particular sport or a particular sportsbook, then it will **not** be efficient
+        -   If there aren't enough sharps betting a particular sport or particular sportsbook, then it will **not** be efficient
+    -   Examples of efficient betting markets
+        -   NFL
+    -   Examples of inefficient betting markets
+        -   Non-conference season in NCAA basketball (fewer books, low quality info about teams keeps sharps away)
+        -   WNBA (low limits keep sharps away)
+        -   NBA Player Props (low limits keep sharps away)
 
 -   Steps
 
     1.  Calculate implied probabilities for moneyline odds you bet and the moneyline odds at close
-
     2.  Remove the vig from the closing line implied probability
-
     3.  Calculate the CLV
 
 -   [Example]{.ribbon-highlight}: Calculate CLV
@@ -100,6 +112,8 @@
         p_{\text{tot}} &= 0.661 + 0.345 = 1.006
         \end{align}
         $$
+
+        -   $p_{\text{imp}}^{\text{opp}}$ is the implied probability of the team you bet against (i.e. opponent).
 
     -   Calculate adjusted closing implied probability
 
@@ -135,8 +149,7 @@
 
     -   This means that any moneyline odds
 
-        -   For the favorite with odds \> -192 (e.g. -191) has a positive Expected Value (EV)
-
+        -   For the favorite, with odds \> -192 (e.g. -191) has a positive Expected Value (EV)
         -   For the underdog, odds \> 192 has a positive Expected Value (EV)
 
 ## Betting Strategies {#sec-spbet-betstrat .unnumbered}
