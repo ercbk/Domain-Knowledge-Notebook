@@ -336,6 +336,10 @@ ul.task-list li input[type="checkbox"] {
 <li><span class="math inline">\(p_{\text{imp}}^{\text{cl}}\)</span>: Implied probability of the closing line</li>
 <li><span class="math inline">\(p_{\text{imp}}^{\text{bet}}\)</span>: Implied probability of your bet</li>
 </ul></li>
+<li><p><span style="color: #009499"><strong>First Five</strong></span> - Betting an event will happen at the end of five innings of a baseball game</p>
+<ul>
+<li>e.g.&nbsp;Over 5.5 points, Braves leading, etc.</li>
+</ul></li>
 <li><p><span style="color: #009499"><strong>Implied Probability</strong></span> - Is Risk/Reward. Used in betting to obtain a probability converted from a <u>Moneyline</u> odds</p>
 <ul>
 <li><p>For a negative Moneyline Odds</p>
@@ -455,9 +459,78 @@ p_{\text{adj}}^{\text{cl}} = \frac{0.688}{1.006} = 0.684
 <section id="sec-spbet-betstrat" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="sec-spbet-betstrat">Betting Strategies</h2>
 <ul>
-<li><u>Round-Robin</u>
+<li><u>Round Robin</u>
 <ul>
-<li>Parlay betting strategy</li>
+<li><p>Notes from <a href="https://unabated.com/articles/the-round-robin-bet-the-variance-reducing-parlay-play">The Round Robin Bet: The Variance-Reducing Parlay Play</a></p></li>
+<li><p>Parlay betting strategy</p></li>
+<li><p>Probably won’t reach the dexponential returns of a parlay, but it’s a solid workhorse than can help bettors reduce the substantial variance inherent in parlay betting while still keeping them alive in the hunt for a more significant payday.</p>
+<ul>
+<li>Variance in Parlay Betting
+<ul>
+<li>Parlays are hard to hit. In a five-leg parlay, there are 31 ways to lose and only one way to win.</li>
+<li>If every leg of a 5-leg parlay had a 50% probability of hitting, you’d win 3.13 percent of the time — for 3-leg, 12.5% of the time.</li>
+<li>Betting round robins just reduces the variance while maintaining the edge for sportsbook. On the flip side, they’re good for the player because they reduce variance.</li>
+</ul></li>
+<li>Drawbacks
+<ul>
+<li>Likely less of a payout than a regular parlay</li>
+<li>You’re putting substantially more money on the line
+<ul>
+<li>If you want to keep to your original stake, you have to divide it by the number of combinations you’re betting.</li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><p>You create combinations of a group of bets where the total number of combinations is:</p>
+<p><span class="math display">\[
+_nC_r = \frac{n!}{r!(n-r)!}
+\]</span></p>
+<ul>
+<li><span class="math inline">\(n\)</span>: The total number of bets</li>
+<li><span class="math inline">\(r\)</span>: The number of bets in each combination</li>
+</ul></li>
+<li><p>Choosing the optimal number of bets for each combination</p>
+<ul>
+<li>If you want to maximize plus-EV spots in a way that decreases fluctuations in your bankroll, choosing round robins with fewer combinations can be a viable path. (e.g.&nbsp;2 at a time)</li>
+</ul></li>
+<li><p><span class="ribbon-highlight">Example</span>: 3-Bet Round Robin by Twos (i.e.&nbsp;3 bets chosen 2 at a time)</p>
+<ul>
+<li>Bet Team A &amp; Team B</li>
+<li>Bet Team A &amp; Team C</li>
+<li>Bet Team B &amp; Team C</li>
+</ul></li>
+<li><p><span class="ribbon-highlight">Example</span>: 5 bets chosen 3 at time</p>
+<ul>
+<li><p>Bets</p>
+<ul>
+<li>Minnesota Twins moneyline (+102)</li>
+<li>New York Yankees moneyline (-158)</li>
+<li>Dodgers-Cubs Over 11 (-110)</li>
+<li>Rockies-Philles first 5 Over 5.5 (+106)</li>
+<li>Luke Weaver (CIN) Over 3.5 strikeouts (-126)</li>
+</ul></li>
+<li><p>Together as a five-leg parlay, these bets would pay +2226. Bet $10 to win $222.67.</p></li>
+<li><p>Total number of combinations</p>
+<p><span class="math display">\[
+_5C_3 = \frac{5!}{3!(5-3)!} = \frac{120}{6(2)} = 10
+\]</span></p></li>
+<li><p>Round Robin (Bets, payout):</p>
+<ol type="1">
+<li>Twins-Yankees-Cubs Over, which pays $52.97</li>
+<li>Twins-Yankees-Rockies Over, $57.95</li>
+<li>Twins-Yankees-Weaver, $49.16</li>
+<li>Twins-Cubs Over-Rockies Over, $69.44</li>
+<li>Twins-Cubs Over-Weaver, $59.17</li>
+<li>Twins-Rockies Over-Weaver, $64.64</li>
+<li>Yankees-Cubs Over-Rockies Over, $54.22</li>
+<li>Yankees-Cubs Over-Weaver, $45.91</li>
+<li>Yankees-Rockies Over-Weaver, $50.33</li>
+<li>Cubs Over-Rockies Over-Weaver, $60.54</li>
+</ol></li>
+<li><p>If every leg comes in the max payout is $564.34. Hit four legs but not Weaver and that would pay $234.58.</p>
+<ul>
+<li>If Weaver and the Rockies miss, you'd only get back $52.97 for the one combination that connected.</li>
+</ul></li>
+</ul></li>
 </ul></li>
 </ul>
 
