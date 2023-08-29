@@ -4,6 +4,7 @@
 
 -   BetCris, Bookmaker, and Pinnacle are market makers. Best to use their closing lines.
     -   Also, if at any time you find a line better at Bookmaker or another site than is offered at Pinnacle you might have a smart bet. The next step would be to return to this page and calculate Pinnacle's No-Vig price. If the odds you're getting are better than Pinnacle's no-vig price chances are you have a +EV (positive expected value) wager.
+-   A move from -110 to -120 raises the break-even point from 52.38% to 54.55% (i.e Fair Value Odds but given as implied probabilities here)
 -   Steps to avoid getting picked off by bookmakers
     -   These are actions that sharp bettors take that bookmakers used to help identify them.
     -   Notes from [Eliminate These Five Sharp Betting Tells From Your Game](https://unabated.com/articles/eliminate-these-five-sharp-betting-tells-from-your-game?ref=thepowerrank)
@@ -21,7 +22,7 @@
 
 ## Terms {#sec-spbet-terms .unnumbered}
 
--   [**Closing Line Value (CLV)**]{style="color: #009499"} - A measure of the value of a bet at the time it is placed compared to the closing odds. You can calculate it by comparing the odds you received when you placed your bet to the final odds when the event starts. If the odds you received were better than the closing odds, then the bet has positive CLV. If the odds you received were worse than the closing odds, then the bet has negative CLV.
+-   [**Closing Line Value (CLV)**]{style="color: #009499"} - A measure of the value of a bet at the time it is placed compared to the closing odds. You can calculate it by comparing the odds you received when you placed your bet to the final odds when the event starts. If the odds you received were better than the closing odds, then the bet has positive CLV. If the odds you received were worse than the closing odds, then the bet has negative CLV. This is the formula used by the [Unabated](https://unabated.com/articles/getting-precise-about-closing-line-value) website.
 
     $$
     \text{CLV} = \frac{p_{\text{imp}}^{\text{cl}} - p_{\text{imp}}^{\text{bet}}}{p_{\text{imp}}^{\text{bet}}}
@@ -63,11 +64,12 @@
 
 -   [**Totals**]{style="color: #009499"} - The Over/Under
 
--   [**Tout**]{style="color: #009499"} - An individual (handicapper) who sells picks often in exchange for an up-front payment. Touts either sell picks by themselves or are part of a service, which is composed of numerous touts, selling different kinds of packages
-
--   [**Vigorish**]{style="color: #009499"} (aka [**Vig**]{style="color: #009499"} or [**Juice**]{style="color: #009499"}) - The house edge. Sports betting sites need to turn a profit, so they work a slight advantage into each bet.
+-   [**Tout**]{style="color: #009499"} - An individual (handicapper) who sells picks often in exchange for an up-front payment. Touts either sell picks by themselves or are part of a service, which is composed of numerous touts, selling different kinds of packages.
 
     -   Can also refer to public handicappers in a public forum, such as in a digital or print newspaper, on social media or on broadcast outlets
+    -   Almost never a good idea to buy picks from a tout. Although, if they're good and move lines, you can take advantage of the information to hedge. (See [Is There Ever a Good Reason To Buy Sports Picks?](https://unabated.com/articles/buying-sports-picks-reasons))
+
+-   [**Vigorish**]{style="color: #009499"} (aka [**Vig**]{style="color: #009499"} or [**Juice**]{style="color: #009499"}) - The house edge. Sports betting sites need to turn a profit, so they work a slight advantage into each bet.
 
 ## Calculating CLV {#sec-spbet-calcclv .unnumbered}
 
@@ -186,6 +188,8 @@
     -   Choosing the optimal number of bets for each combination
 
         -   If you want to maximize plus-EV spots in a way that decreases fluctuations in your bankroll, choosing round robins with fewer combinations can be a viable path. (e.g. 2 at a time)
+        -   No matter how many legs per combination you choose, you'll have to win the same proportion of bets to be profitable.
+            -   e.g. For five bets, whether you use 2-leg or 3-leg parlays per combination, you still have to win 4 out 5 bets to be profitable. (See examples)
 
     -   [Example]{.ribbon-highlight}: 3-Bet Round Robin by Twos (i.e. 3 bets chosen 2 at a time)
 
@@ -208,7 +212,7 @@
         -   Total number of combinations
 
             $$
-            _5C_3 = \frac{5!}{3!(5-3)!} = \frac{120}{6(2)} = 10
+            _5\text{C}_3 = \frac{5!}{3!(5-3)!} = \frac{120}{6(2)} = 10
             $$
 
         -   Round Robin (Bets, payout):
@@ -226,4 +230,33 @@
 
         -   If every leg comes in the max payout is \$564.34. Hit four legs but not Weaver and that would pay \$234.58.
 
-            -   If Weaver and the Rockies miss, you\'d only get back \$52.97 for the one combination that connected.
+            -   If Weaver and the Rockies miss, you'd only get back \$52.97 for the one combination that connected or you could get back as much as \$69.44 if Yankees and Weaver don't cover.
+
+    -   [Example]{.ribbon-highlight}: 5 bets chosen 2 at a time
+
+        -   Same bets as previous example
+
+        -   Total number of combinations remains the same
+
+        -   For a straight 5 team parlay, assume payout of \$253 for a \$10 stake
+
+            -   I googled the average payouts to get these numbers
+
+        -   Round Robin (Bets, Assuming payout of \$2.60 per \$1 bet for each leg):
+
+            1.  Twins-Yankees, which pays \$26.00
+            2.  Twins-Cubs Over
+            3.  Twins-Rockies Over
+            4.  Twins-Weaver
+            5.  Yankees-Cubs Over
+            6.  Yankees-Rockies Over
+            7.  Yankees-Weaver
+            8.  Cubs Over-Rockies Over
+            9.  Cubs Over-Weaver
+            10. Rockies Over-Weaver
+
+        -   If every leg comes in, the max payout is \$260
+
+        -   If one bet misses(e.g. Twins), the payout is \$156.
+
+        -   If two bets miss (e.g. Twins, Yankees), the payout is \$78 which is still a loss and is probably about \$10 less than the 3-leg approach, but substantially less of a payout if you only miss either 0 or 1 bets.

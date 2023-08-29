@@ -298,6 +298,7 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li>Also, if at any time you find a line better at Bookmaker or another site than is offered at Pinnacle you might have a smart bet. The next step would be to return to this page and calculate Pinnacle’s No-Vig price. If the odds you’re getting are better than Pinnacle’s no-vig price chances are you have a +EV (positive expected value) wager.</li>
 </ul></li>
+<li>A move from -110 to -120 raises the break-even point from 52.38% to 54.55% (i.e Fair Value Odds but given as implied probabilities here)</li>
 <li>Steps to avoid getting picked off by bookmakers
 <ul>
 <li>These are actions that sharp bettors take that bookmakers used to help identify them.</li>
@@ -327,7 +328,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="sec-spbet-terms" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="sec-spbet-terms">Terms</h2>
 <ul>
-<li><p><span style="color: #009499"><strong>Closing Line Value (CLV)</strong></span> - A measure of the value of a bet at the time it is placed compared to the closing odds. You can calculate it by comparing the odds you received when you placed your bet to the final odds when the event starts. If the odds you received were better than the closing odds, then the bet has positive CLV. If the odds you received were worse than the closing odds, then the bet has negative CLV.</p>
+<li><p><span style="color: #009499"><strong>Closing Line Value (CLV)</strong></span> - A measure of the value of a bet at the time it is placed compared to the closing odds. You can calculate it by comparing the odds you received when you placed your bet to the final odds when the event starts. If the odds you received were better than the closing odds, then the bet has positive CLV. If the odds you received were worse than the closing odds, then the bet has negative CLV. This is the formula used by the <a href="https://unabated.com/articles/getting-precise-about-closing-line-value">Unabated</a> website.</p>
 <p><span class="math display">\[
 \text{CLV} = \frac{p_{\text{imp}}^{\text{cl}} - p_{\text{imp}}^{\text{bet}}}{p_{\text{imp}}^{\text{bet}}}
 \]</span></p>
@@ -360,11 +361,12 @@ p_{\text{imp}} = \frac{\text{Risk}}{\text{Reward}} = \frac{100}{\text{Odds}_{\te
 <li><p><span style="color: #009499"><strong>Sharp Bettors</strong></span> (aka <span style="color: #009499"><strong>Sharps</strong></span>) - Informed, experienced, successful sports bettors. Someone who is consistently making positive Expected Value (EV) bets or bets that are expected to be profitable in the long term which is typically means winning about 55% to 60% of the time.</p></li>
 <li><p><span style="color: #009499"><strong>Tissue</strong></span> - A list of odds representing the chance of the various possible outcomes of a sporting event occurring.</p></li>
 <li><p><span style="color: #009499"><strong>Totals</strong></span> - The Over/Under</p></li>
-<li><p><span style="color: #009499"><strong>Tout</strong></span> - An individual (handicapper) who sells picks often in exchange for an up-front payment. Touts either sell picks by themselves or are part of a service, which is composed of numerous touts, selling different kinds of packages</p></li>
-<li><p><span style="color: #009499"><strong>Vigorish</strong></span> (aka <span style="color: #009499"><strong>Vig</strong></span> or <span style="color: #009499"><strong>Juice</strong></span>) - The house edge. Sports betting sites need to turn a profit, so they work a slight advantage into each bet.</p>
+<li><p><span style="color: #009499"><strong>Tout</strong></span> - An individual (handicapper) who sells picks often in exchange for an up-front payment. Touts either sell picks by themselves or are part of a service, which is composed of numerous touts, selling different kinds of packages.</p>
 <ul>
 <li>Can also refer to public handicappers in a public forum, such as in a digital or print newspaper, on social media or on broadcast outlets</li>
+<li>Almost never a good idea to buy picks from a tout. Although, if they’re good and move lines, you can take advantage of the information to hedge. (See <a href="https://unabated.com/articles/buying-sports-picks-reasons">Is There Ever a Good Reason To Buy Sports Picks?</a>)</li>
 </ul></li>
+<li><p><span style="color: #009499"><strong>Vigorish</strong></span> (aka <span style="color: #009499"><strong>Vig</strong></span> or <span style="color: #009499"><strong>Juice</strong></span>) - The house edge. Sports betting sites need to turn a profit, so they work a slight advantage into each bet.</p></li>
 </ul>
 </section>
 <section id="sec-spbet-calcclv" class="level2 unnumbered">
@@ -490,6 +492,10 @@ _nC_r = \frac{n!}{r!(n-r)!}
 <li><p>Choosing the optimal number of bets for each combination</p>
 <ul>
 <li>If you want to maximize plus-EV spots in a way that decreases fluctuations in your bankroll, choosing round robins with fewer combinations can be a viable path. (e.g.&nbsp;2 at a time)</li>
+<li>No matter how many legs per combination you choose, you’ll have to win the same proportion of bets to be profitable.
+<ul>
+<li>e.g.&nbsp;For five bets, whether you use 2-leg or 3-leg parlays per combination, you still have to win 4 out 5 bets to be profitable. (See examples)</li>
+</ul></li>
 </ul></li>
 <li><p><span class="ribbon-highlight">Example</span>: 3-Bet Round Robin by Twos (i.e.&nbsp;3 bets chosen 2 at a time)</p>
 <ul>
@@ -510,7 +516,7 @@ _nC_r = \frac{n!}{r!(n-r)!}
 <li><p>Together as a five-leg parlay, these bets would pay +2226. Bet $10 to win $222.67.</p></li>
 <li><p>Total number of combinations</p>
 <p><span class="math display">\[
-_5C_3 = \frac{5!}{3!(5-3)!} = \frac{120}{6(2)} = 10
+_5\text{C}_3 = \frac{5!}{3!(5-3)!} = \frac{120}{6(2)} = 10
 \]</span></p></li>
 <li><p>Round Robin (Bets, payout):</p>
 <ol type="1">
@@ -527,8 +533,33 @@ _5C_3 = \frac{5!}{3!(5-3)!} = \frac{120}{6(2)} = 10
 </ol></li>
 <li><p>If every leg comes in the max payout is $564.34. Hit four legs but not Weaver and that would pay $234.58.</p>
 <ul>
-<li>If Weaver and the Rockies miss, you'd only get back $52.97 for the one combination that connected.</li>
+<li>If Weaver and the Rockies miss, you’d only get back $52.97 for the one combination that connected or you could get back as much as $69.44 if Yankees and Weaver don’t cover.</li>
 </ul></li>
+</ul></li>
+<li><p><span class="ribbon-highlight">Example</span>: 5 bets chosen 2 at a time</p>
+<ul>
+<li><p>Same bets as previous example</p></li>
+<li><p>Total number of combinations remains the same</p></li>
+<li><p>For a straight 5 team parlay, assume payout of $253 for a $10 stake</p>
+<ul>
+<li>I googled the average payouts to get these numbers</li>
+</ul></li>
+<li><p>Round Robin (Bets, Assuming payout of $2.60 per $1 bet for each leg):</p>
+<ol type="1">
+<li>Twins-Yankees, which pays $26.00</li>
+<li>Twins-Cubs Over</li>
+<li>Twins-Rockies Over</li>
+<li>Twins-Weaver</li>
+<li>Yankees-Cubs Over</li>
+<li>Yankees-Rockies Over</li>
+<li>Yankees-Weaver</li>
+<li>Cubs Over-Rockies Over</li>
+<li>Cubs Over-Weaver</li>
+<li>Rockies Over-Weaver</li>
+</ol></li>
+<li><p>If every leg comes in, the max payout is $260</p></li>
+<li><p>If one bet misses(e.g.&nbsp;Twins), the payout is $156.</p></li>
+<li><p>If two bets miss (e.g.&nbsp;Twins, Yankees), the payout is $78 which is still a loss and is probably about $10 less than the 3-leg approach, but substantially less of a payout if you only miss either 0 or 1 bets.</p></li>
 </ul></li>
 </ul></li>
 </ul>
