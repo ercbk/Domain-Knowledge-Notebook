@@ -2,6 +2,8 @@
 
 ## Misc {#sec-finance-misc .unnumbered}
 
+-   Packages
+    -   [CRAN Task View](https://cran.r-project.org/web/views/Finance.html)
 -   [OpenBB](https://my.openbb.co/login) - Open source bloomberg terminal (overview [article](https://www.quantscience.io/newsletter/b/how-to-get-free-financial-data))
     -   Free data and seemingly hundreds of different tools including some decent forecast methods.
 -   Beware of survivorship bias when backtesting algorithms

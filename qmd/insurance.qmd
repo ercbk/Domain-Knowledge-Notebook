@@ -2,6 +2,8 @@
 
 ## Misc {#sec-insur-misc .unnumbered}
 
+-   Packages
+    -   [CRAN Task View](https://cran.r-project.org/web/views/ActuarialScience.html)
 -   DS Use Cases
     -   Predict insurance claims frequency (see bkmk)
 
