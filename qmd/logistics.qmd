@@ -195,9 +195,7 @@
 
 #### Misc {#sec-log-demfcast-intdem-misc .unnumbered}
 
--   Also see ADAM ebook [chapter](https://openforecast.org/adam/ADAMIntermittent.html), [post](https://forecasting.svetunkov.ru/en/2018/09/18/smooth-package-for-r-intermittent-state-space-model-part-i-introducing-the-model/), real world [use case](https://www.r-bloggers.com/2023/05/story-of-probabilistic-forecasting-of-hourly-emergency-department-arrivals/) on adding an occurrence variable to an ETS model to handle intermittent data
-    -   The use case paper also includes a GAMLSS with truncated Normal distribution model with code that performed well
-        -   Uses {[probcast](https://github.com/jbrowell/ProbCast)} which has functions around gams, gamlss, and boosted gamlss models from {mgcv}, {mboost}, {gamlss}, etc.
+-   Also see
 -   Notes from
     -   CMAF FFT: Intermittent Demand Forecasting ([Video](https://www.youtube.com/watch?v=PRidAjQRtCs&list=WL&index=1))
         -   From authors of "Intermittent Demand Forecasting. Context, Methods and Applications" (see your book shelf)
@@ -222,19 +220,120 @@
 #### Forecasting Mean Demand {#sec-log-demfcast-intdem-fcastmn .unnumbered}
 
 -   [Parametric]{.underline}
-    -   Exponential Smoothing
-        -   Popular method but bad for intermittent forecasting
-            -   ADAM extends ETS by adding an occurence variable to the model, so this might not be the case.
-        -   Biased on "issue points" (see video for more details)
-    -   Croston Method
-        -   Inversion Bias: we believe the mean demand is higher than predicted
-    -   SBA (Syntetos-Boylan Approximation)
-        -   \*Recommended\*
-        -   Corrects Croston bias
-        -   Supported by empirical evidence
-    -   Temporal Aggregation: Overlapping vs Non-Overlapping
-        -   self-improving mechanism
-        -   See video for details (although it wasn't discussed in great detail)
+    -   Modeling
+        -   Exponential Smoothing
+            -   Popular method but bad for intermittent forecasting
+            -   Biased on "issue points" (see video for more details)
+        -   iETS
+            -   Captures multiplicative seasonality in data that has zeroes (as long as seasonal indices can be estimated somehow)
+
+            -   ADAM ebook [chapter](https://openforecast.org/adam/ADAMIntermittent.html), [post](https://forecasting.svetunkov.ru/en/2018/09/18/smooth-package-for-r-intermittent-state-space-model-part-i-introducing-the-model/), real world [use case](https://www.r-bloggers.com/2023/05/story-of-probabilistic-forecasting-of-hourly-emergency-department-arrivals/) on adding an occurrence variable to an ETS model to handle intermittent data
+
+                -   The use case paper also includes a GAMLSS with truncated Normal distribution model with code that performed well
+                    -   Uses {[probcast](https://github.com/jbrowell/ProbCast)} which has functions around gams, gamlss, and boosted gamlss models from {mgcv}, {mboost}, {gamlss}, etc.
+
+            -   [Example]{.ribbon-highlight}: From [iETS: State space model for intermittent demand forecasting](https://forecasting.svetunkov.ru/en/2023/09/08/iets-state-space-model-for-intermittent-demand-forecasting/)
+
+                -   Model
+
+                    ``` r
+                    set.seed(7)
+                    y <- c(rpois(10,3),rpois(10,2),rpois(10,1),rpois(10,0.5),rpois(10,0.1)) |>
+                        ts(frequency=12)
+
+                    library(smooth)
+                    iETSModel <- adam(y, "YYN", occurrence="direct", h=5, holdout=TRUE)
+                    ```
+
+                    -   [model = "YYN"]{.arg-text}: Tells function to select the best pure multiplicative ETS model based on the information criterion
+                        -   AICc used by default, see discussion in [Section 15.1](https://openforecast.org/adam/ETSSelection.html) of the ADAM book
+                    -   [occurrence = "direct"]{.arg-text}: Specifies which of the demand occurrence models to build.
+                        -   "direct" by default, the function will use the same model for the demand probability as the selected for the demand sizes.
+                            -   So, for example, if we end up with ETS(M,M,N) for demand sizes, the function will use ETS(M,M,N) for the probability of occurrence.
+                        -   To change this, you would need to use the `oes()` to specify the model to predict the probability of occurrence
+                            -   See examples in [Section 13.4](https://openforecast.org/adam/IntermittentExample.html) of the ADAM book.
+                    -   [h = 5]{.arg-text}: Sets the forecast horizon to 5 steps ahead
+                    -   [holdout = TRUE]{.arg-text}: Says to keep the last 5 observations in the holdout sample
+
+                -   Results
+
+                    ``` r
+                    summary(iETSModel)
+
+                    #> Model estimated using adam() function: iETS(MMN)
+                    #> Response variable: y
+                    #> Occurrence model type: Direct
+                    #> Distribution used in the estimation: 
+                    #> Mixture of Bernoulli and Gamma
+                    #> Loss function type: likelihood; Loss function value: 71.0549
+                    #> Coefficients:
+                    #>       Estimate Std. Error Lower 2.5% Upper 97.5%  
+                    #> alpha   0.1049     0.0925     0.0000      0.2903  
+                    #> beta    0.1049     0.0139     0.0767      0.1049 *
+                    #> level   4.3722     1.1801     1.9789      6.7381 *
+                    #> trend   0.9517     0.0582     0.8336      1.0685 *
+
+                    #> Error standard deviation: 1.0548
+                    #> Sample size: 45
+                    #> Number of estimated parameters: 9
+                    #> Number of degrees of freedom: 36
+                    #> Information criteria:
+                    #>      AIC     AICc      BIC     BICc 
+                    #> 202.6527 204.1911 218.9126 206.6142 
+                    ```
+
+                    -   Selected the iETS(M,M,N) model
+
+                    -   "Mixture of Bernoulli and Gamma" tells us that the Bernoulli distribution was used for the demand occurrence (this is the only option), while the Gamma distribution was used for the demand sizes (this is the default option, but you can change this via the [distribution]{.arg-text} argument).
+
+                -   Demand Forecast
+
+                    ![](_resources/Logistics.resources/iets-forecast-1.webp){width="532"}
+
+                    ``` r
+                    forecast(iETSModel, h=5, interval="prediction", side="upper") |>
+                        plot()
+                    ```
+
+                    -   [side = "upper"]{.arg-text}: Says we only want the upper prediction interval
+
+                        -   For pure multiplicative models, [simulations are used](https://openforecast.org/adam/ADAMForecastingPI.html#ADAMForecastingPISimulations).
+
+                        -   Since the *lowest* bound is zero, the upper bound is what's useful for stocking decisions
+
+                -   Occurence Forecast (i.e. Stock or Not)
+
+                    ![](_resources/Logistics.resources/iets-forecast-occurence-1.webp){width="532"}
+
+                    ``` r
+                    forecast(iETSModel$occurrence, h=5) |> plot()
+                    ```
+
+                    -   Probability reaches roughly 0.2 over the next 5 months (i.e. we might sale once every 5 months).
+
+                    -   If we think that this is too low then we should discontinue the product. Otherwise, if we decide to continue selling the product, then it makes more sense to generate the desired quantile of the cumulative demand over the lead time.
+
+                -   Cumulative Demand Forecast
+
+                    ``` r
+                    forecast(iETSModel, h=5, interval="prediction", side="upper", cumulative=TRUE)
+
+                    #>       Point forecast Upper bound (95%)
+                    #> Oct 4      0.3055742          1.208207
+                    ```
+
+                    -   Based on the estimated model, we need to have two items in stock to satisfy the demand over the next 5 months with the confidence level of 95%.
+    -   Methods
+        -   Since these are methods they can't incorporate predictive variables or produce prediction intervals
+        -   [Croston Method](https://doi.org/10.2307/3007885)
+            -   Inversion Bias: we believe the mean demand is higher than predicted
+        -   SBA ([Syntetos-Boylan Approximation](https://doi.org/10.1057/palgrave.jors.2601841))
+            -   Recommended method
+            -   Corrects Croston bias
+            -   Supported by empirical evidence
+        -   Temporal Aggregation: Overlapping vs Non-Overlapping
+            -   self-improving mechanism
+            -   See video for details (although it wasn't discussed in great detail)
 -   [Non-Parametric (aka Empirical)]{.underline}
     -   Bootstrapping
         -   resample in blocks or resample independently
