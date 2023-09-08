@@ -636,13 +636,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="sec-log-demfcast-intdem-misc" class="level4 unnumbered">
 <h4 class="unnumbered anchored" data-anchor-id="sec-log-demfcast-intdem-misc">Misc</h4>
 <ul>
-<li>Also see ADAM ebook <a href="https://openforecast.org/adam/ADAMIntermittent.html">chapter</a>, <a href="https://forecasting.svetunkov.ru/en/2018/09/18/smooth-package-for-r-intermittent-state-space-model-part-i-introducing-the-model/">post</a>, real world <a href="https://www.r-bloggers.com/2023/05/story-of-probabilistic-forecasting-of-hourly-emergency-department-arrivals/">use case</a> on adding an occurrence variable to an ETS model to handle intermittent data
-<ul>
-<li>The use case paper also includes a GAMLSS with truncated Normal distribution model with code that performed well
-<ul>
-<li>Uses {<a href="https://github.com/jbrowell/ProbCast">probcast</a>} which has functions around gams, gamlss, and boosted gamlss models from {mgcv}, {mboost}, {gamlss}, etc.</li>
-</ul></li>
-</ul></li>
+<li>Also see</li>
 <li>Notes from
 <ul>
 <li>CMAF FFT: Intermittent Demand Forecasting (<a href="https://www.youtube.com/watch?v=PRidAjQRtCs&amp;list=WL&amp;index=1">Video</a>)
@@ -688,21 +682,117 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li><u>Parametric</u>
 <ul>
+<li>Modeling
+<ul>
 <li>Exponential Smoothing
 <ul>
-<li>Popular method but bad for intermittent forecasting
-<ul>
-<li>ADAM extends ETS by adding an occurence variable to the model, so this might not be the case.</li>
-</ul></li>
+<li>Popular method but bad for intermittent forecasting</li>
 <li>Biased on “issue points” (see video for more details)</li>
 </ul></li>
-<li>Croston Method
+<li>iETS
+<ul>
+<li><p>Captures multiplicative seasonality in data that has zeroes (as long as seasonal indices can be estimated somehow)</p></li>
+<li><p>ADAM ebook <a href="https://openforecast.org/adam/ADAMIntermittent.html">chapter</a>, <a href="https://forecasting.svetunkov.ru/en/2018/09/18/smooth-package-for-r-intermittent-state-space-model-part-i-introducing-the-model/">post</a>, real world <a href="https://www.r-bloggers.com/2023/05/story-of-probabilistic-forecasting-of-hourly-emergency-department-arrivals/">use case</a> on adding an occurrence variable to an ETS model to handle intermittent data</p>
+<ul>
+<li>The use case paper also includes a GAMLSS with truncated Normal distribution model with code that performed well
+<ul>
+<li>Uses {<a href="https://github.com/jbrowell/ProbCast">probcast</a>} which has functions around gams, gamlss, and boosted gamlss models from {mgcv}, {mboost}, {gamlss}, etc.</li>
+</ul></li>
+</ul></li>
+<li><p><span class="ribbon-highlight">Example</span>: From <a href="https://forecasting.svetunkov.ru/en/2023/09/08/iets-state-space-model-for-intermittent-demand-forecasting/">iETS: State space model for intermittent demand forecasting</a></p>
+<ul>
+<li><p>Model</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">7</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">rpois</span>(<span class="dv">10</span>,<span class="dv">3</span>),<span class="fu">rpois</span>(<span class="dv">10</span>,<span class="dv">2</span>),<span class="fu">rpois</span>(<span class="dv">10</span>,<span class="dv">1</span>),<span class="fu">rpois</span>(<span class="dv">10</span>,<span class="fl">0.5</span>),<span class="fu">rpois</span>(<span class="dv">10</span>,<span class="fl">0.1</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ts</span>(<span class="at">frequency=</span><span class="dv">12</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(smooth)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>iETSModel <span class="ot">&lt;-</span> <span class="fu">adam</span>(y, <span class="st">"YYN"</span>, <span class="at">occurrence=</span><span class="st">"direct"</span>, <span class="at">h=</span><span class="dv">5</span>, <span class="at">holdout=</span><span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><span class="arg-text">model = “YYN”</span>: Tells function to select the best pure multiplicative ETS model based on the information criterion
+<ul>
+<li>AICc used by default, see discussion in <a href="https://openforecast.org/adam/ETSSelection.html">Section 15.1</a> of the ADAM book</li>
+</ul></li>
+<li><span class="arg-text">occurrence = “direct”</span>: Specifies which of the demand occurrence models to build.
+<ul>
+<li>“direct” by default, the function will use the same model for the demand probability as the selected for the demand sizes.
+<ul>
+<li>So, for example, if we end up with ETS(M,M,N) for demand sizes, the function will use ETS(M,M,N) for the probability of occurrence.</li>
+</ul></li>
+<li>To change this, you would need to use the <code>oes()</code> to specify the model to predict the probability of occurrence
+<ul>
+<li>See examples in <a href="https://openforecast.org/adam/IntermittentExample.html">Section 13.4</a> of the ADAM book.</li>
+</ul></li>
+</ul></li>
+<li><span class="arg-text">h = 5</span>: Sets the forecast horizon to 5 steps ahead</li>
+<li><span class="arg-text">holdout = TRUE</span>: Says to keep the last 5 observations in the holdout sample</li>
+</ul></li>
+<li><p>Results</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(iETSModel)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Model estimated using adam() function: iETS(MMN)</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Response variable: y</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Occurrence model type: Direct</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Distribution used in the estimation: </span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Mixture of Bernoulli and Gamma</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Loss function type: likelihood; Loss function value: 71.0549</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Coefficients:</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;       Estimate Std. Error Lower 2.5% Upper 97.5%  </span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; alpha   0.1049     0.0925     0.0000      0.2903  </span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; beta    0.1049     0.0139     0.0767      0.1049 *</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; level   4.3722     1.1801     1.9789      6.7381 *</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; trend   0.9517     0.0582     0.8336      1.0685 *</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Error standard deviation: 1.0548</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Sample size: 45</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Number of estimated parameters: 9</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Number of degrees of freedom: 36</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Information criteria:</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;      AIC     AICc      BIC     BICc </span></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 202.6527 204.1911 218.9126 206.6142 </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><p>Selected the iETS(M,M,N) model</p></li>
+<li><p>“Mixture of Bernoulli and Gamma” tells us that the Bernoulli distribution was used for the demand occurrence (this is the only option), while the Gamma distribution was used for the demand sizes (this is the default option, but you can change this via the <span class="arg-text">distribution</span> argument).</p></li>
+</ul></li>
+<li><p>Demand Forecast</p>
+<p><img src="_resources/Logistics.resources/iets-forecast-1.webp" class="img-fluid" width="532"></p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">forecast</span>(iETSModel, <span class="at">h=</span><span class="dv">5</span>, <span class="at">interval=</span><span class="st">"prediction"</span>, <span class="at">side=</span><span class="st">"upper"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">plot</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><p><span class="arg-text">side = “upper”</span>: Says we only want the upper prediction interval</p>
+<ul>
+<li><p>For pure multiplicative models, <a href="https://openforecast.org/adam/ADAMForecastingPI.html#ADAMForecastingPISimulations">simulations are used</a>.</p></li>
+<li><p>Since the <em>lowest</em> bound is zero, the upper bound is what’s useful for stocking decisions</p></li>
+</ul></li>
+</ul></li>
+<li><p>Occurence Forecast (i.e.&nbsp;Stock or Not)</p>
+<p><img src="_resources/Logistics.resources/iets-forecast-occurence-1.webp" class="img-fluid" width="532"></p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">forecast</span>(iETSModel<span class="sc">$</span>occurrence, <span class="at">h=</span><span class="dv">5</span>) <span class="sc">|&gt;</span> <span class="fu">plot</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><p>Probability reaches roughly 0.2 over the next 5 months (i.e.&nbsp;we might sale once every 5 months).</p></li>
+<li><p>If we think that this is too low then we should discontinue the product. Otherwise, if we decide to continue selling the product, then it makes more sense to generate the desired quantile of the cumulative demand over the lead time.</p></li>
+</ul></li>
+<li><p>Cumulative Demand Forecast</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">forecast</span>(iETSModel, <span class="at">h=</span><span class="dv">5</span>, <span class="at">interval=</span><span class="st">"prediction"</span>, <span class="at">side=</span><span class="st">"upper"</span>, <span class="at">cumulative=</span><span class="cn">TRUE</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;       Point forecast Upper bound (95%)</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Oct 4      0.3055742          1.208207</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>Based on the estimated model, we need to have two items in stock to satisfy the demand over the next 5 months with the confidence level of 95%.</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li>Methods
+<ul>
+<li>Since these are methods they can’t incorporate predictive variables or produce prediction intervals</li>
+<li><a href="https://doi.org/10.2307/3007885">Croston Method</a>
 <ul>
 <li>Inversion Bias: we believe the mean demand is higher than predicted</li>
 </ul></li>
-<li>SBA (Syntetos-Boylan Approximation)
+<li>SBA (<a href="https://doi.org/10.1057/palgrave.jors.2601841">Syntetos-Boylan Approximation</a>)
 <ul>
-<li>*Recommended*</li>
+<li>Recommended method</li>
 <li>Corrects Croston bias</li>
 <li>Supported by empirical evidence</li>
 </ul></li>
@@ -710,6 +800,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li>self-improving mechanism</li>
 <li>See video for details (although it wasn’t discussed in great detail)</li>
+</ul></li>
 </ul></li>
 </ul></li>
 <li><u>Non-Parametric (aka Empirical)</u>
@@ -1260,39 +1351,39 @@ pq_t - vq_t - c_s(y_t-q_t) &amp; \text{for}\;\; q_t &lt; y_t
 <li><span class="math inline">\(c_s\)</span>: Shortage Cost</li>
 </ul></li>
 <li><p><span class="ribbon-highlight">Example</span></p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(greybox)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate artificial data</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>x1 <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">100</span>,<span class="dv">100</span>,<span class="dv">10</span>)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>x2 <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(<span class="dv">100</span>,<span class="dv">2</span>,<span class="fl">0.05</span>)</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">10</span> <span class="sc">+</span> <span class="fl">1.5</span><span class="sc">*</span>x1 <span class="sc">+</span> <span class="dv">5</span><span class="sc">*</span>x2 <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">100</span>,<span class="dv">0</span>,<span class="dv">10</span>)</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>ourData <span class="ot">&lt;-</span> <span class="fu">cbind</span>(<span class="at">y=</span>y,<span class="at">x1=</span>x1,<span class="at">x2=</span>x2)</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Define price and costs</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>price <span class="ot">&lt;-</span> <span class="dv">50</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>costBasic <span class="ot">&lt;-</span> <span class="dv">5</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>costShort <span class="ot">&lt;-</span> <span class="dv">15</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>costHold <span class="ot">&lt;-</span> <span class="dv">1</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Define profit function for the linear case</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>lossProfit <span class="ot">&lt;-</span> <span class="cf">function</span>(actual, fitted, B, xreg){</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>&nbsp; &nbsp; <span class="co"># Minus sign is needed here, because we need to minimise the loss</span></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>&nbsp; &nbsp; profit <span class="ot">&lt;-</span> <span class="sc">-</span><span class="fu">ifelse</span>(actual <span class="sc">&gt;=</span> fitted,</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (price <span class="sc">-</span> costBasic) <span class="sc">*</span> fitted <span class="sc">-</span> costShort <span class="sc">*</span> (actual <span class="sc">-</span> fitted),</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; price <span class="sc">*</span> actual <span class="sc">-</span> costBasic <span class="sc">*</span> fitted <span class="sc">-</span> costHold <span class="sc">*</span> (fitted <span class="sc">-</span> actual));</span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>&nbsp; &nbsp; <span class="fu">return</span>(<span class="fu">sum</span>(profit));</span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Estimate the model</span></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>model1 <span class="ot">&lt;-</span> <span class="fu">alm</span>(y<span class="sc">~</span>x1<span class="sc">+</span>x2, ourData, <span class="at">loss=</span>lossProfit)</span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Print summary of the model</span></span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model1, <span class="at">bootstrap=</span><span class="cn">TRUE</span>)</span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>Coefficients<span class="sc">:</span></span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Estimate Std. Error Lower <span class="fl">2.5</span><span class="sc">% Upper 97.5%</span>&nbsp;</span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>(Intercept)&nbsp; <span class="fl">36.5177</span>&nbsp; &nbsp; <span class="fl">14.2840</span>&nbsp; &nbsp; <span class="fl">2.7783</span>&nbsp; &nbsp; <span class="fl">51.4844</span> <span class="sc">*</span></span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>x1&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="fl">1.3622</span>&nbsp; &nbsp; <span class="fl">0.1622</span>&nbsp; &nbsp; <span class="fl">1.1909</span>&nbsp; &nbsp; &nbsp; <span class="fl">1.7528</span> <span class="sc">*</span></span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>x2&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="fl">3.3423</span>&nbsp; &nbsp; <span class="fl">2.7810</span>&nbsp; &nbsp; <span class="sc">-</span><span class="fl">6.5997</span>&nbsp; &nbsp; &nbsp; <span class="fl">5.9101</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(greybox)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate artificial data</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>x1 <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">100</span>,<span class="dv">100</span>,<span class="dv">10</span>)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>x2 <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(<span class="dv">100</span>,<span class="dv">2</span>,<span class="fl">0.05</span>)</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">10</span> <span class="sc">+</span> <span class="fl">1.5</span><span class="sc">*</span>x1 <span class="sc">+</span> <span class="dv">5</span><span class="sc">*</span>x2 <span class="sc">+</span> <span class="fu">rnorm</span>(<span class="dv">100</span>,<span class="dv">0</span>,<span class="dv">10</span>)</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>ourData <span class="ot">&lt;-</span> <span class="fu">cbind</span>(<span class="at">y=</span>y,<span class="at">x1=</span>x1,<span class="at">x2=</span>x2)</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Define price and costs</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>price <span class="ot">&lt;-</span> <span class="dv">50</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>costBasic <span class="ot">&lt;-</span> <span class="dv">5</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>costShort <span class="ot">&lt;-</span> <span class="dv">15</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>costHold <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Define profit function for the linear case</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>lossProfit <span class="ot">&lt;-</span> <span class="cf">function</span>(actual, fitted, B, xreg){</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>&nbsp; &nbsp; <span class="co"># Minus sign is needed here, because we need to minimise the loss</span></span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>&nbsp; &nbsp; profit <span class="ot">&lt;-</span> <span class="sc">-</span><span class="fu">ifelse</span>(actual <span class="sc">&gt;=</span> fitted,</span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (price <span class="sc">-</span> costBasic) <span class="sc">*</span> fitted <span class="sc">-</span> costShort <span class="sc">*</span> (actual <span class="sc">-</span> fitted),</span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; price <span class="sc">*</span> actual <span class="sc">-</span> costBasic <span class="sc">*</span> fitted <span class="sc">-</span> costHold <span class="sc">*</span> (fitted <span class="sc">-</span> actual));</span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>&nbsp; &nbsp; <span class="fu">return</span>(<span class="fu">sum</span>(profit));</span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Estimate the model</span></span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>model1 <span class="ot">&lt;-</span> <span class="fu">alm</span>(y<span class="sc">~</span>x1<span class="sc">+</span>x2, ourData, <span class="at">loss=</span>lossProfit)</span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Print summary of the model</span></span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model1, <span class="at">bootstrap=</span><span class="cn">TRUE</span>)</span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>Coefficients<span class="sc">:</span></span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Estimate Std. Error Lower <span class="fl">2.5</span><span class="sc">% Upper 97.5%</span>&nbsp;</span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a>(Intercept)&nbsp; <span class="fl">36.5177</span>&nbsp; &nbsp; <span class="fl">14.2840</span>&nbsp; &nbsp; <span class="fl">2.7783</span>&nbsp; &nbsp; <span class="fl">51.4844</span> <span class="sc">*</span></span>
+<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a>x1&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="fl">1.3622</span>&nbsp; &nbsp; <span class="fl">0.1622</span>&nbsp; &nbsp; <span class="fl">1.1909</span>&nbsp; &nbsp; &nbsp; <span class="fl">1.7528</span> <span class="sc">*</span></span>
+<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a>x2&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="fl">3.3423</span>&nbsp; &nbsp; <span class="fl">2.7810</span>&nbsp; &nbsp; <span class="sc">-</span><span class="fl">6.5997</span>&nbsp; &nbsp; &nbsp; <span class="fl">5.9101</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li><p>Interpretation: With the increase of the variable x1, the orders should change on average by 1.36</p></li>
 <li><p>Plot<br>
 <img src="./_resources/Logistics.resources/ordersDynamics.png" class="img-fluid" width="632"></p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(model1, <span class="dv">7</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(model1, <span class="dv">7</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li>Figure above corresponds to the orders (purple) and would cover roughly 90.91% of cases (black), so that we would run out of product in approximately 10% of cases, which would still be more profitable than any other option.</li>
 </ul></li>
