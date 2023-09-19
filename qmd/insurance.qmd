@@ -4,6 +4,8 @@
 
 -   Packages
     -   [CRAN Task View](https://cran.r-project.org/web/views/ActuarialScience.html)
+-   Also see
+    -   [Regression, Other \>\> Censored and Truncated Data](https://ercbk.github.io/Data-Science-Notebook/qmd/regression-other.html#sec-reg-other-censtrunc){style="color: green"} \>\> Examples
 -   DS Use Cases
     -   Predict insurance claims frequency (see bkmk)
 
