@@ -186,7 +186,7 @@
     "href": "qmd/insurance.html#sec-insur-misc",
     "title": "Insurance",
     "section": "Misc",
-    "text": "Misc\n\nPackages\n\nCRAN Task View\n\nDS Use Cases\n\nPredict insurance claims frequency (see bkmk)"
+    "text": "Misc\n\nPackages\n\nCRAN Task View\n\nAlso see\n\nRegression, Other &gt;&gt; Censored and Truncated Data &gt;&gt; Examples\n\nDS Use Cases\n\nPredict insurance claims frequency (see bkmk)"
   },
   {
     "objectID": "qmd/insurance.html#sec-insur-risk",
