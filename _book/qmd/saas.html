@@ -30,7 +30,9 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../qmd/sports-betting.html" rel="next">
 <link href="../qmd/retail.html" rel="prev">
+<link href="../images/dk-favicon-32.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -170,7 +172,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../qmd/kpis.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">KPIs</span></span></a>
+ <span class="menu-text">KPIs</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -182,7 +184,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../qmd/logistics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Logistics</span></span></a>
+ <span class="menu-text">Logistics</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -200,7 +202,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../qmd/marketing.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Marketing</span></span></a>
+ <span class="menu-text">Marketing</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -224,13 +226,13 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../qmd/product-development.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Product Development</span></span></a>
+ <span class="menu-text">Product Development</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../qmd/real-estate.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Real Estate</span></span></a>
+ <span class="menu-text">Real Estate</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -243,6 +245,12 @@ ul.task-list li input[type="checkbox"] {
   <div class="sidebar-item-container"> 
   <a href="../qmd/saas.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">SaaS</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../qmd/sports-betting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Sports Betting</span></a>
   </div>
 </li>
     </ul>
@@ -286,6 +294,34 @@ ul.task-list li input[type="checkbox"] {
 <li>Notes from
 <ul>
 <li><a href="https://blog.duolingo.com/growth-model-duolingo/">Meaningful metrics: How data sharpened the focus of product teams</a></li>
+<li><a href="https://github.com/getlago/lago/wiki/Open-Source-does-not-win-by-being-cheaper">Open Source does not win by being cheaper</a></li>
+</ul></li>
+<li>Open-Source solutions are great when a transparency problem is present
+<ul>
+<li>SaaS tools need to process sensitive client data such as IP addresses, names, session recordings, etc., and in a world of increasing data regulations (e.g., GDPR and CCPA), it can be daunting for third parties to store that data.</li>
+<li>Example: PostHog
+<ul>
+<li>Options
+<ul>
+<li>Self-host an analytics solution yourself</li>
+<li>Hire PostHog as a third party to do it, but with transparency into how that data is stored and how possibly migrating to self-hosted in the future would work.</li>
+</ul></li>
+<li>Many companies will still opt for a hosted model, but they do so now with assurances of how the software works—line by line—and the process of migrating to a self-hosted model in the future if necessary. It’s not that open-source companies win by preventing the need for a third party; they win by allowing for the open audit of how it works.</li>
+</ul></li>
+</ul></li>
+<li>Open Source can lean on the community to develop connections and extensions
+<ul>
+<li>While the core product is typically maintained by a central engineering team, integrations or plugins are often built by community developers and then occasionally merged into the main branch.</li>
+<li>Conversely, closed-source solutions struggle with this because they rely on their engineering team. By tapping the community for feedback and help, open-source projects can also accelerate past closed-source solutions</li>
+</ul></li>
+<li>Larger companies aren’t worried about going out of business because a piece of software is too expensive. They might be price-conscious in terms of negotiating a contract in context of their budget, but most SaaS software is just a line item at the end of the day.
+<ul>
+<li>What matters more is that the solution is (a) a good solution, (b) around for the long haul, and (c) easy to manage. And, unfortunately, deploying an open-source solution can be tricky to manage.</li>
+<li>Most open-source solutions aren’t replacing a top-three line item, and therefore price isn’t the north star deciding factor.</li>
+</ul></li>
+<li>MongoDB eventually switched to a special SSPL license to add specific restrictions on Cloud Providers from distributing a service without contributing to the project, which isn’t OSI approved, but is open-source practically).
+<ul>
+<li>But why make this point? Well, splitting the hair between profit and usage is important to measuring long-term success. If a project gets great adoption but cannot drive revenue, it will die.</li>
 </ul></li>
 </ul>
 </section>
@@ -598,6 +634,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="../qmd/sports-betting.html" class="pagination-link">
+        <span class="nav-page-text">Sports Betting</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->

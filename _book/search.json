@@ -165,7 +165,7 @@
     "href": "qmd/insurance.html#sec-insur-misc",
     "title": "Insurance",
     "section": "Misc",
-    "text": "Misc\n\nPackages\n\nCRAN Task View\n\nDS Use Cases\n\nPredict insurance claims frequency (see bkmk)"
+    "text": "Misc\n\nPackages\n\nCRAN Task View\n\nAlso see\n\nRegression, Other &gt;&gt; Censored and Truncated Data &gt;&gt; Examples\n\nDS Use Cases\n\nPredict insurance claims frequency (see bkmk)"
   },
   {
     "objectID": "qmd/insurance.html#sec-insur-risk",
@@ -585,7 +585,7 @@
     "href": "qmd/saas.html#sec-saas-misc",
     "title": "SaaS",
     "section": "Misc",
-    "text": "Misc\n\nNotes from\n\nMeaningful metrics: How data sharpened the focus of product teams"
+    "text": "Misc\n\nNotes from\n\nMeaningful metrics: How data sharpened the focus of product teams\nOpen Source does not win by being cheaper\n\nOpen-Source solutions are great when a transparency problem is present\n\nSaaS tools need to process sensitive client data such as IP addresses, names, session recordings, etc., and in a world of increasing data regulations (e.g., GDPR and CCPA), it can be daunting for third parties to store that data.\nExample: PostHog\n\nOptions\n\nSelf-host an analytics solution yourself\nHire PostHog as a third party to do it, but with transparency into how that data is stored and how possibly migrating to self-hosted in the future would work.\n\nMany companies will still opt for a hosted model, but they do so now with assurances of how the software works—line by line—and the process of migrating to a self-hosted model in the future if necessary. It’s not that open-source companies win by preventing the need for a third party; they win by allowing for the open audit of how it works.\n\n\nOpen Source can lean on the community to develop connections and extensions\n\nWhile the core product is typically maintained by a central engineering team, integrations or plugins are often built by community developers and then occasionally merged into the main branch.\nConversely, closed-source solutions struggle with this because they rely on their engineering team. By tapping the community for feedback and help, open-source projects can also accelerate past closed-source solutions\n\nLarger companies aren’t worried about going out of business because a piece of software is too expensive. They might be price-conscious in terms of negotiating a contract in context of their budget, but most SaaS software is just a line item at the end of the day.\n\nWhat matters more is that the solution is (a) a good solution, (b) around for the long haul, and (c) easy to manage. And, unfortunately, deploying an open-source solution can be tricky to manage.\nMost open-source solutions aren’t replacing a top-three line item, and therefore price isn’t the north star deciding factor.\n\nMongoDB eventually switched to a special SSPL license to add specific restrictions on Cloud Providers from distributing a service without contributing to the project, which isn’t OSI approved, but is open-source practically).\n\nBut why make this point? Well, splitting the hair between profit and usage is important to measuring long-term success. If a project gets great adoption but cannot drive revenue, it will die."
   },
   {
     "objectID": "qmd/saas.html#sec-saas-userseg",
