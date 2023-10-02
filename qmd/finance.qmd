@@ -60,6 +60,7 @@
     -   Also see [What Is a Capital Expenditure (CapEx)? Definition and Guide](https://www.shopify.com/blog/what-is-capex#:~:text=A%20CapEx%20is%20amortized%2C%20or,a%20new%20building's%20is%2039.) (example, calculations, relation to operating expenditure (OpEx)
 -   [**Cost of Carry**]{style="color: #009499"} or [**Carrying Charge**]{style="color: #009499"} - the cost of holding a security or a physical commodity over a period of time. The carrying charge includes insurance, storage and interest on the invested funds as well as other incidental costs
     -   For a stock, it's is the opportunity cost of the capital that goes into it plus the risk you take on for holding it (this is what the idea of risk neutral valuation is based on).
+-   [**Coupon**]{style="color: #009499"} - Bonds pay a set return each year, called a coupon, over a set period ending on a maturity date. The amound of the coupon depends on the interest rate that was determined when the bond was issued.
 -   [**Derivatives**]{style="color: #009499"} are securities that move in correspondence to one or more underlying assets. They include options, swaps, futures and forward contracts. The underlying assets can be stocks, bonds, commodities, currencies, indices or interest rates. Derivatives can be effective hedges against their underlying assets, since the relationship between the two is more or less clearly defined (if they're negatively correlated? Or maybe if the underlying asset goes down, there's a lag between the asset going down and the derivative going down. Therefore, you can sell the derivative before it goes down. Thus, hedging your risk). Knowing the value of an underlying asset helps traders determine the appropriate action (buy, sell, or hold) with their derivative.
 -   [**Exchange Traded Fund (ETF)**]{style="color: #009499"} - A mutual fund that may be traded daily like a stock or bond.
 -   [**False Strategy Theorem**]{style="color: #009499"} - Gives the threshold for which a Sharpe Ratio would be significant.
@@ -206,3 +207,59 @@
         -   WTI crude oil and Brent crude oil.
         -   AUD/USD and NZD/USD.
         -   Yield curves and futures calendar spreads
+
+## Bonds
+
+-   Misc
+    -   Resources
+        -   [NerdWallet Compound Interest Calculator](https://www.nerdwallet.com/calculator/compound-interest-calculator?trk=nw_gn_5.0)
+            -   [Example]{.ribbon-highlight}: if you put \$5,000 in a (5yr) bond with a 4% yield, assuming you reinvest your interest payments, you will have \$6083 by the time it matures.\
+                ![](_resources/Finance.resources/nerdwallet-compound-interest-1.png){width="432"}
+    -   Notes from
+        -   [It's a Good Time to Buy Bonds. Just Know What You're Getting Into.](https://www.wsj.com/finance/investing/investing-bonds-what-to-know-98e6f138?mod=e2twg)
+    -   The price of a bond moves in the opposite direction to interest rates.
+        -   As rates rise, the value of older bonds with lower coupons declines. 
+    -   Most often, people will compare the 2-year Treasury with the 10-year. So, any generic mention of the spread, in a bond context, refers to the difference in yield between these two bonds.
+    -   Bond traders buy existing bonds in the secondary bond market, and sell them at a discount to their face value.
+        -   The amount of the discount depends partially on how many payments are still due before the bond reaches maturity.
+        -   The price also is a bet on the direction of interest rates. If a trader thinks interest rates on new bond issues will be lower, the existing bonds may be worth a little more.
+    -   Zero-Coupon Bonds (aka Discount Bonds)
+        -   Owners receive no payments for their money until the bond has matured.
+        -   They buy the bond for an amount that is less than its face value. When it reaches its maturity, they are paid the full face value of the bond.
+        -   Most zero-coupon bonds have a pre-set face value and therefore pay a pre-set amount of money at maturity.
+            -   Some bonds are inflation-indexed, meaning the face value is determined at maturity. The amount paid will be based on a standard measure such as the consumer price index plus a premium.
+        -   Considered short-term investments that typically have a maturity of no more than one year. These short-term bonds are usually called **bills**.
+-   Questions
+    -   Should you buy the highest-yielding bonds, or is it better to lock in good rates for longer?
+    -   Is it better to buy bonds directly from the government, a brokerage or as part of a bond fund?
+    -   How much do I make on bonds after taxes and fees?
+    -   How many bonds should I buy?
+-   Short-Term Bonds (e.g. 2-year Treasury)
+    -   Pros:
+        -   Higher yields (i.e. return) than long term bonds (e.g. 10-year Treasury)
+    -   Cons:
+        -   When interest rates are high, you lose the opportunity (i.e. by not buying longer term bonds) to lock in a potentially higher return for longer should rates drop in the future.
+-   Bond Ladder
+    -   Divide your investments among bonds with progressively later maturity dates.
+        -   Investors should also choose bonds based on savings goals and how soon they will need the money
+    -   This takes advantage of both higher short term coupons and longer term yields.
+-   Considerations
+    -   Check a bond's credit ratings before you buy. A poor rating means the bond issuer, such as a corporation, is less likely to pay you back.
+        -   This can be enticing because the issuer will likely offer you a higher interest rate. It also means they are more likely to default, which would mean you lose money.
+    -   Watch out for hidden expenses like markup fees for purchasing an individual bond
+        -   Can be anywhere from 1% to 5%, depending on the broker.
+    -   You are often not buying directly from the issuer. Instead, you are buying from another investor and the price of that bond probably has shifted since it was initially issued.
+        -   One advantage of using a brokerage is that their sites will take the guesswork out of how much the change in the market price of your bond will affect your final return.
+    -   Taxes
+        -   CD interest, which may at time near bond yields, is taxed as ordinary income, as high as 37%.
+        -   The interest on Treasurys is exempt from state taxes.
+        -   Municipal bonds are exempt from both state and local taxes if an investor buys the bond from the same state they live in.
+        -   Corporate bonds have no tax benefits, so investors still need to pay both state and federal taxes on them.
+        -   Bonds within a tax-sheltered account like a 401(k) or an IRA aren't taxed until you withdraw the money
+        -   If a zero-coupon bond is issued by a U.S. local or state government entity, interest is free from federal tax and generally exempt from state and local tax as well.
+            -   Zero-Coupon bonds subject to taxation in the U.S. can be held in a tax-deferred retirement account, allowing their investors to avoid tax on future income.
+-   Purchasing
+    -   Treasurys and most other bonds through a brokerage such as Charles Schwab, Fidelity or Vanguard.
+    -   Government bonds can also be bought directly from [TreasuryDirect](https://www.treasurydirect.gov/), a government website.
+    -   Bond funds and ETFs allow you to diversify your investment.
+        -   Bonds funds often don't hold bonds until maturity.
