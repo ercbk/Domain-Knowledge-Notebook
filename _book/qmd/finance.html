@@ -267,6 +267,7 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#sec-finance-misc" id="toc-sec-finance-misc" class="nav-link active" data-scroll-target="#sec-finance-misc">Misc</a></li>
   <li><a href="#sec-finance-terms" id="toc-sec-finance-terms" class="nav-link" data-scroll-target="#sec-finance-terms">Terms</a></li>
+  <li><a href="#considerations" id="toc-considerations" class="nav-link" data-scroll-target="#considerations">Considerations</a></li>
   <li><a href="#sec-finance-6040" id="toc-sec-finance-6040" class="nav-link" data-scroll-target="#sec-finance-6040">60/40 Portfolio Strategy</a></li>
   <li><a href="#sec-finance--momassallo" id="toc-sec-finance--momassallo" class="nav-link" data-scroll-target="#sec-finance--momassallo">Momentum Tactical Asset Allocation Strategy</a></li>
   <li><a href="#sec-finance-vtp" id="toc-sec-finance-vtp" class="nav-link" data-scroll-target="#sec-finance-vtp">Volatility Targeting Portfolio</a></li>
@@ -297,39 +298,44 @@ ul.task-list li input[type="checkbox"] {
 <section id="sec-finance-misc" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="sec-finance-misc">Misc</h2>
 <ul>
-<li>Packages
+<li><p>Resources</p>
+<ul>
+<li>Advances in Financial Machine Learning - de Prado (R &gt;&gt; Documents &gt;&gt; Financial)</li>
+<li><a href="https://ml4trading.io/">Machine Learning for Algorithmic Trading</a>
+<ul>
+<li>Github <a href="https://github.com/stefan-jansen/machine-learning-for-trading">repo</a> with the code that’s referred to in the book</li>
+</ul></li>
+</ul></li>
+<li><p>Packages</p>
 <ul>
 <li><a href="https://cran.r-project.org/web/views/Finance.html">CRAN Task View</a></li>
+<li><span style="color: goldenrod">{{</span><a href="https://pypi.org/project/zipline-reloaded/" style="color: goldenrod">zipline-reloaded</a><span style="color: goldenrod">}}</span> - Backtesting and live-trading engine by crowd-sourced investment fund Quantopian</li>
+<li><span style="color: goldenrod">{{</span><a href="https://pyfolio.ml4trading.io/" style="color: goldenrod">pyfolio</a><span style="color: goldenrod">}}</span> - Performance and risk analysis for financial portfolios</li>
+<li><span style="color: goldenrod">{{</span><a href="https://alphalens.ml4trading.io/" style="color: goldenrod">alphalens</a><span style="color: goldenrod">}}</span> - Performance analysis of predictive stock factors</li>
 </ul></li>
-<li><a href="https://my.openbb.co/login">OpenBB</a> - Open source bloomberg terminal (overview <a href="https://www.quantscience.io/newsletter/b/how-to-get-free-financial-data">article</a>)
+<li><p><a href="https://my.openbb.co/login">OpenBB</a> - Open source bloomberg terminal (overview <a href="https://www.quantscience.io/newsletter/b/how-to-get-free-financial-data">article</a>)</p>
 <ul>
 <li>Free data and seemingly hundreds of different tools including some decent forecast methods.</li>
 </ul></li>
-<li>Beware of survivorship bias when backtesting algorithms
-<ul>
-<li>Example: S&amp;P 500
-<ul>
-<li>A trader is creating an algorithm to predict prices of all the stocks in the S&amp;P 500. If the trader uses the current roster of companies, the list only includes companies that have made it to now without shutting down or losing so much value they drop off the list. The trader should use the list of companies as it was at the start of the training data.</li>
-</ul></li>
-</ul></li>
-<li>Technical vs Fundamental Analysis
+<li><p>Technical vs Fundamental Analysis</p>
 <ul>
 <li><em>Technical analysis</em> in many cases tends to amplify stock price trends because many technical traders buy when stocks are rising and sell when they fall.</li>
 <li><em>Fundamental analysis</em> on the contrary often shows mean-reverting behaviour because its adherents try to buy undervalued stocks and sell overvalued ones</li>
 </ul></li>
-<li>435 choices for start and end dates of each monthly investment cycle
+<li><p>Smoothers</p>
 <ul>
-<li>i.e.&nbsp;Easy to have a selective endpoints fallacy for an investment strategy.</li>
+<li>Simple Moving Average (SMA) is simple, easy to implement but reacts slowly to recent price changes due to equal weighting of all prices in the window.</li>
+<li>Exponential Moving Average (EMA) reacts faster to recent price changes due to more weight to the latest prices.</li>
+<li>Kalman Filter is more sophisticated and can adaptively weigh incoming measurements based on their estimated noise level, potentially providing superior results in many applications. However, it has key parameters that must be tuned to get good results.</li>
 </ul></li>
-<li>Strategies
+<li><p>Strategies</p>
 <ul>
 <li>Hedgefund - factor rotations (longer term)</li>
 <li>Something about futures - factor tilts (shorter term)</li>
 </ul></li>
-<li>Resources - Advances in Financial Machine Learning - de Prado (R &gt;&gt; Documents &gt;&gt; Financial)</li>
-<li>Misleading chart (<a href="https://twitter.com/choffstein/status/1640034865817985024">Thread</a>)<br>
+<li><p>Misleading chart (<a href="https://twitter.com/choffstein/status/1640034865817985024">Thread</a>)<br>
 <img src="./_resources/Finance.resources/image.png" class="img-fluid" width="448"><br>
-
+</p>
 <ul>
 <li>No transaction costs</li>
 <li>No fees</li>
@@ -341,6 +347,8 @@ ul.task-list li input[type="checkbox"] {
 </ul></li>
 <li>Nominal vs real returns - Time weighted vs dollar weighted returns</li>
 </ul></li>
+<li><p>Workflow</p>
+<img src="_resources/Finance.resources/ml4t_workflow-1.png" class="img-fluid" width="532" alt="From Machine Learning for Algorithmic Trading"></li>
 </ul>
 </section>
 <section id="sec-finance-terms" class="level2 unnumbered">
@@ -417,7 +425,12 @@ ul.task-list li input[type="checkbox"] {
 </ul></li>
 <li><p>Returns from investment strategies often exhibit autocorrelation, fat tails, and negative skewness which further “deflates” the deflated sharpe ratio</p></li>
 </ul></li>
-<li><span style="color: #009499"><strong>Spread</strong></span> (<span style="color: #009499"><strong>Bid-Ask</strong>)</span>: the difference between two prices, rates or yields. - the gap between the bid and the ask prices of a security or asset, like a stock, bond or commodity. - the gap between a short position (that is, selling) in one futures contract or currency and a long position (that is, buying) in another. This is officially known as a spread trade</li>
+<li><span style="color: #009499"><strong>Slippage</strong></span>- The difference between where the computer signaled the entry and exit for a trade and where actual clients, with actual money, entered and exited the market using the computer’s signals. Along with transaction costs, it’s a cost that needs to be taken into account when analyzing the profitability of a strategy.</li>
+<li><span style="color: #009499"><strong>Spread</strong></span> (<span style="color: #009499"><strong>Bid-Ask</strong></span>): The difference between two prices, rates or yields.
+<ul>
+<li>The gap between the bid and the ask prices of a security or asset, like a stock, bond or commodity.</li>
+<li>The gap between a short position (that is, selling) in one futures contract or currency and a long position (that is, buying) in another. This is officially known as a spread trade</li>
+</ul></li>
 <li><span style="color: #009499"><strong>Volatility</strong></span>:
 <ul>
 <li>Parkinson Range (PR) = ln(closing_price) - ln(opening_price)</li>
@@ -426,6 +439,33 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li>Includes price increases as well as any dividends paid, calculated as the net realized return divided by the principal amount (i.e.&nbsp;amount invested).</li>
 <li>Higher yields are perceived to be an indicator of lower risk and higher income, but a high yield may not always be a positive, such as the case of a rising dividend yield due to a falling stock price.</li>
+</ul></li>
+</ul>
+</section>
+<section id="considerations" class="level2">
+<h2 class="anchored" data-anchor-id="considerations">Considerations</h2>
+<ul>
+<li>Costs that need to be accounted for when backtesting
+<ul>
+<li>Transaction costs</li>
+<li>Fees</li>
+<li>Slippage</li>
+<li>Taxes</li>
+</ul></li>
+<li>A model that performs well in a specific market condition may incur substantial losses when the market shifts, be it due to news, events, or economic changes.</li>
+<li>Beware of survivorship bias when backtesting algorithms
+<ul>
+<li>Example: S&amp;P 500
+<ul>
+<li>A trader is creating an algorithm to predict prices of all the stocks in the S&amp;P 500. If the trader uses the current roster of companies, the list only includes companies that have made it to now without shutting down or losing so much value they drop off the list. The trader should use the list of companies as it was at the start of the training data.</li>
+</ul></li>
+</ul></li>
+<li>Use proper stop-loss and position sizing strategies to manage risk</li>
+<li>Iteratively using the <em>same</em> data to design and modify a strategy can lead to overfitting, where the strategy becomes overly tailored to the data and performs poorly in real-world trading.</li>
+<li>Ignorance of macro-economic indicators and trends can result in unexpected market moves, significantly impacting algorithmic strategies and their performance.\</li>
+<li>There are 435 choices for start and end dates of each monthly investment cycle
+<ul>
+<li>i.e.&nbsp;Easy to have a selective endpoints fallacy for an investment strategy.</li>
 </ul></li>
 </ul>
 </section>

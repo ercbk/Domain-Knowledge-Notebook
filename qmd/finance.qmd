@@ -2,24 +2,42 @@
 
 ## Misc {#sec-finance-misc .unnumbered}
 
+-   Resources
+
+    -   Advances in Financial Machine Learning - de Prado (R \>\> Documents \>\> Financial)
+    -   [Machine Learning for Algorithmic Trading](https://ml4trading.io/)
+        -   Github [repo](https://github.com/stefan-jansen/machine-learning-for-trading) with the code that's referred to in the book
+
 -   Packages
+
     -   [CRAN Task View](https://cran.r-project.org/web/views/Finance.html)
+    -   [{{]{style="color: goldenrod"}[zipline-reloaded](https://pypi.org/project/zipline-reloaded/){style="color: goldenrod"}[}}]{style="color: goldenrod"} - Backtesting and live-trading engine by crowd-sourced investment fund Quantopian
+    -   [{{]{style="color: goldenrod"}[pyfolio](https://pyfolio.ml4trading.io/){style="color: goldenrod"}[}}]{style="color: goldenrod"} - Performance and risk analysis for financial portfolios
+    -   [{{]{style="color: goldenrod"}[alphalens](https://alphalens.ml4trading.io/){style="color: goldenrod"}[}}]{style="color: goldenrod"} - Performance analysis of predictive stock factors
+
 -   [OpenBB](https://my.openbb.co/login) - Open source bloomberg terminal (overview [article](https://www.quantscience.io/newsletter/b/how-to-get-free-financial-data))
+
     -   Free data and seemingly hundreds of different tools including some decent forecast methods.
--   Beware of survivorship bias when backtesting algorithms
-    -   Example: S&P 500
-        -   A trader is creating an algorithm to predict prices of all the stocks in the S&P 500. If the trader uses the current roster of companies, the list only includes companies that have made it to now without shutting down or losing so much value they drop off the list. The trader should use the list of companies as it was at the start of the training data.
+
 -   Technical vs Fundamental Analysis
+
     -   *Technical analysis* in many cases tends to amplify stock price trends because many technical traders buy when stocks are rising and sell when they fall.
     -   *Fundamental analysis* on the contrary often shows mean-reverting behaviour because its adherents try to buy undervalued stocks and sell overvalued ones
--   435 choices for start and end dates of each monthly investment cycle
-    -   i.e. Easy to have a selective endpoints fallacy for an investment strategy.
+
+-   Smoothers
+
+    -   Simple Moving Average (SMA) is simple, easy to implement but reacts slowly to recent price changes due to equal weighting of all prices in the window.
+    -   Exponential Moving Average (EMA) reacts faster to recent price changes due to more weight to the latest prices.
+    -   Kalman Filter is more sophisticated and can adaptively weigh incoming measurements based on their estimated noise level, potentially providing superior results in many applications. However, it has key parameters that must be tuned to get good results.
+
 -   Strategies
+
     -   Hedgefund - factor rotations (longer term)
     -   Something about futures - factor tilts (shorter term)
--   Resources - Advances in Financial Machine Learning - de Prado (R \>\> Documents \>\> Financial)
+
 -   Misleading chart ([Thread](https://twitter.com/choffstein/status/1640034865817985024))\
     ![](./_resources/Finance.resources/image.png){width="448"}\
+
     -   No transaction costs
     -   No fees
     -   No taxes
@@ -27,6 +45,10 @@
     -   Overlapping time period analysis
         -   Example: if I look at 1920-1950 and then 1921-1951, twenty eight of the thirty data points are overlapping. So there's not a lot of "unique" data in this set.
     -   Nominal vs real returns - Time weighted vs dollar weighted returns
+
+-   Workflow
+
+    ![From Machine Learning for Algorithmic Trading](_resources/Finance.resources/ml4t_workflow-1.png){width="532"}
 
 ## Terms {#sec-finance-terms .unnumbered}
 
@@ -81,12 +103,32 @@
         -   Shows that if a strategy has a maximum sharpe ratio of 1 but had 3 variations backtested, it's deflated sharpe ratio drops below the 95% CI for a sharpe ratio = 1.
 
     -   Returns from investment strategies often exhibit autocorrelation, fat tails, and negative skewness which further "deflates" the deflated sharpe ratio
--   [**Spread**]{style="color: #009499"} ([**Bid-Ask**)]{style="color: #009499"}: the difference between two prices, rates or yields. - the gap between the bid and the ask prices of a security or asset, like a stock, bond or commodity. - the gap between a short position (that is, selling) in one futures contract or currency and a long position (that is, buying) in another. This is officially known as a spread trade
+-   [**Slippage**]{style="color: #009499"}- The difference between where the computer signaled the entry and exit for a trade and where actual clients, with actual money, entered and exited the market using the computer's signals. Along with transaction costs, it's a cost that needs to be taken into account when analyzing the profitability of a strategy.
+-   [**Spread**]{style="color: #009499"} ([**Bid-Ask**]{style="color: #009499"}): The difference between two prices, rates or yields.
+    -   The gap between the bid and the ask prices of a security or asset, like a stock, bond or commodity.
+    -   The gap between a short position (that is, selling) in one futures contract or currency and a long position (that is, buying) in another. This is officially known as a spread trade
 -   [**Volatility**]{style="color: #009499"}:
     -   Parkinson Range (PR) = ln(closing_price) - ln(opening_price)
 -   [**Yield**]{style="color: #009499"} a return measure for an investment over a set period of time, expressed as a percentage.
     -   Includes price increases as well as any dividends paid, calculated as the net realized return divided by the principal amount (i.e. amount invested).
     -   Higher yields are perceived to be an indicator of lower risk and higher income, but a high yield may not always be a positive, such as the case of a rising dividend yield due to a falling stock price.
+
+## Considerations
+
+-   Costs that need to be accounted for when backtesting
+    -   Transaction costs
+    -   Fees
+    -   Slippage
+    -   Taxes
+-   A model that performs well in a specific market condition may incur substantial losses when the market shifts, be it due to news, events, or economic changes.
+-   Beware of survivorship bias when backtesting algorithms
+    -   Example: S&P 500
+        -   A trader is creating an algorithm to predict prices of all the stocks in the S&P 500. If the trader uses the current roster of companies, the list only includes companies that have made it to now without shutting down or losing so much value they drop off the list. The trader should use the list of companies as it was at the start of the training data.
+-   Use proper stop-loss and position sizing strategies to manage risk
+-   Iteratively using the *same* data to design and modify a strategy can lead to overfitting, where the strategy becomes overly tailored to the data and performs poorly in real-world trading.
+-   Ignorance of macro-economic indicators and trends can result in unexpected market moves, significantly impacting algorithmic strategies and their performance.\\
+-   There are 435 choices for start and end dates of each monthly investment cycle
+    -   i.e. Easy to have a selective endpoints fallacy for an investment strategy.
 
 ## 60/40 Portfolio Strategy {#sec-finance-6040 .unnumbered}
 
