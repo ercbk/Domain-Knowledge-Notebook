@@ -8,6 +8,11 @@ book:
   favicon: images/dk-favicon-32.png
   reader-mode: true
   repo-url: https://github.com/ercbk/Domain-Knowledge-Notebook
+  page-footer:
+    background: "#fffaf0"
+    foreground: "#1E4477"
+    center: 
+      - href: LICENSE.qmd
   sidebar: 
     collapse-level: 1
     background: "#fffaf0"
