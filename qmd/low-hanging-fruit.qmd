@@ -2,6 +2,8 @@
 
 ## Misc {#sec-lhf-misc .unnumbered}
 
+-   What is a data scientist? (GPT-3)
+    -   A data scientist analyzes and interprets complex data sets to inform business decision-making. They use statistical techniques, programming, and machine learning to extract insights and patterns from data. Data scientists often clean and preprocess data, create models, and develop algorithms to solve specific problems. They collaborate with cross-functional teams to identify business challenges and formulate questions that can be addressed through data analysis. They also communicate findings to non-technical stakeholders through visualizations and reports, aiding in strategic decision-making. Additionally, data scientists may be involved in designing experiments, testing hypotheses, and continuously improving models to enhance predictive accuracy. Their role requires a combination of analytical skills, domain knowledge, and proficiency in programming languages such as Python or R.
 -   Most companies don't have a holistic view of their business performance
     -   Large proportion of the budget is spent on campaigns that generate little to no return
     -   Monitoring business performance in real-time and swiftly halting initiatives with negative returns will give a company more time and cash to survive the unstable economy.
