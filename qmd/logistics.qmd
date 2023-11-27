@@ -91,9 +91,29 @@
 
 ### Misc {#sec-log-demfcast-misc .unnumbered}
 
--   Also see [DoorDash \>\> Forecast Supply and Demand](logistics.qmd#sec-log-drdsh)
+-   Also see
 
--   [Reinforcement Learning for Inventory Optimization Series III: Sim-to-Real Transfer for the RL Model \| by Guangrui Xie \| Jan, 2023 \| Towards Data Science](https://towardsdatascience.com/reinforcement-learning-for-inventory-optimization-series-iii-sim-to-real-transfer-for-the-rl-model-d260c3b8277d)
+    -   [DoorDash \>\> Forecast Supply and Demand](logistics.qmd#sec-log-drdsh)
+
+    -   [Reinforcement Learning for Inventory Optimization Series III: Sim-to-Real Transfer for the RL Model \| by Guangrui Xie \| Jan, 2023 \| Towards Data Science](https://towardsdatascience.com/reinforcement-learning-for-inventory-optimization-series-iii-sim-to-real-transfer-for-the-rl-model-d260c3b8277d)
+
+-   Used in Sales & Operations Planning (S&OP) process where the forecasts generated in this stage trickle down to other stages including supply planning, production scheduling, logistics planning, and inventory optimization.
+
+    -   Over-Forecasting can lead to excess working capital being tied up in inventory.
+    -   Under-Forecasting can stock out customers or lead to a scramble to make orders using more expensive raw materials and ship on short notice with more expensive transportation
+
+-   Challenges
+
+    -   Changes in the business environment --- for instance, substitutes may replace a product, driving its demand down. Alternatively, new applications for a product may cause demand to go up compared to historical trends.
+    -   Shifts in business model --- an organization may change its operating model and business strategy. For example, a chemical company may choose to shift their business from commodity chemicals to more specialty products, and so the historical demand patterns may not hold anymore.
+    -   Data availability --- historical sales data, customer and product hierarchy data, and real-time orders data may be stored on disparate systems.
+    -   Data quality --- this may include issues such as inaccurate data due to entry errors or data being captured at different and inconsistent granularity across data elements.
+
+-   Horizons (Typical)
+
+    -   Short-Term: 1 - 3 months
+    -   Mid-Term: 6 - 18 months
+    -   Long-Term: 3 - 5 years
 
 -   Metrics
 
