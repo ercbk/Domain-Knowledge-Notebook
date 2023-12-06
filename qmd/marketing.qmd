@@ -226,6 +226,8 @@
 
 ## Geo-experiments {#sec-mark-geoexp .unnumbered}
 
+-   Packages
+    -   [{]{style="color: #990000"}[GeoLift](https://github.com/facebookincubator/GeoLift){style="color: #990000"}[}]{style="color: #990000"} - Facebook package for end-to-end geo-experimental methodology based on Synthetic Control Methods used to measure the true incremental effect (Lift) of ad campaign.
 -   A quasi-experimental methodology where non-overlapping geographic regions (geos) are randomly assigned to a control or treatment group
     -   [Example]{.ribbon-highlight}: ads are served only in the geos of the treatment group while users in geos of the control group won't be exposed to the advert
 -   All the major ad networks/tracking platforms allow for targeting ads to the relevant level of location (neighbourhood, city, state, etc.)
