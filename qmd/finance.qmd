@@ -54,6 +54,7 @@
 
 -   [**Basis Point**]{style="color: #009499"} - 1/100th of a percentage point
 -   [**Basis Risk**]{style="color: #009499"} - the risk that an asset and a hedge will not move in opposite directions as expected; "basis" refers to the discrepancy.
+-   [**Beta**]{style="color: #009499"} - A measure of a stock's or a portfolio's sensitivity to market movements. It quantifies the relationship between the price movements of a security and the overall market. A beta of 1 indicates that the security tends to move in line with the market, while a beta greater than 1 implies that the security is more volatile than the market. A beta less than 1 suggests that the security is less volatile than the market. Often used as a tool to assess the risk or volatility of a particular stock or portfolio in comparison to the overall market
 -   [**Capital expenditure (CapEx)**]{style="color: #009499"} - money that is spent to acquire, repair, update, or improve a fixed company asset, such as a building, business, or equipment. For assets to fall under the CapEx destination, the investments must have a useful life of one year or more. A CapEx is amortized, or its value is deducted a little each year based on the total cost and its expected useful life.
     -   Useful life refers to the estimated and generally agreed upon shelf life of a specific business asset.
         -   According the IRS, Car's useful life is 5yrs and new building's is 39yrs
@@ -173,13 +174,13 @@
 ## Mean Reversion Strategy or Pairs Trading {#sec-finance-meanrev .unnumbered}
 
 -   Match two trading vehicles that are highly correlated, trading one long and the other short when the pair's price ratio diverges "x" number of standard deviations - "x" is optimized using historical data. If the pair reverts to its mean trend, a profit is made on one or both of the positions.
--   Chart relative performance (price ratio)
+-   Chart the relative performance (price ratio)
     -   The center white line represents the mean price ratio over the past two years. The yellow and red lines represent one and two standard deviations from the mean ratio, respectively.
     -   The potential for profit can be identified when the price ratio hits its first or second deviation. When these profitable divergences occur it is time to take a long position in the underperformer and a short position in the overachiever. (i.e. shorting the stock that's rising in relation to the other, and buying the other stock that hasn't risen yet)
     -   The revenue from the short sale can help cover the cost of the long position, making the pairs trade inexpensive to put on.
     -   Position size of the pair should be matched by dollar value rather than number of shares; this way a 5% move in one equals a 5% move in the other.
     -   As with all investments, there is a risk that the trades could move into the red, so it is important to determine optimized stop-loss points before implementing the pairs trade.
--   Chart spreads between returns
+-   Chart the spreads between returns
 -   Look for stocks that move closely together and their:
     -   Spreads zig-zag around zero
     -   Prices separately (marginally) are normally distributed and joint-normally distributed (assumes linear correlation)
@@ -189,6 +190,10 @@
     -   Look to cover the remaining data points and research why correlations broke down during those periods. If you can derive a mathematical relationship you could possibly formulate an approach in which you make adjustments to the hedge ratio through an adjustment in your beta/correlation coefficient.
     -   Figure out the optimal time interval to retrain model due to data drift
     -   Rolling 20-day correlation is a common way to monitor stock correlation
+-   Beware of two correlated stocks that have similar Beta or some other confounding variable
+    -   Graphical LASSO can help remove effects such as market Beta and recover real, direct relationships between stocks.
+        -   It makes intuitive sense that in a large universe, most stocks would be conditionally independent, and Graphical LASSO is able to refine this sparsity condition by tuning it's only parameter
+        -   See [Association, General \>\> Partial Correlation](https://ercbk.github.io/Data-Science-Notebook/qmd/association-general.html#sec-assoc-gen-partcor){style="color: green"} for a stock example
 -   Copulas
     -   See [Association, Copulas](https://ercbk.github.io/Data-Science-Notebook/qmd/association-copulas.html#sec-assoc-cop){style="color: green"}
     -   Measures non-linear association
