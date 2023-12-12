@@ -28,7 +28,10 @@ book:
     - qmd/economics.qmd
     - qmd/environment.qmd
     - qmd/epidemiology.qmd
-    - qmd/finance.qmd
+    - part: "Finance"
+      chapters: 
+        - qmd/finance-glossary.qmd
+        - qmd/finance-investing.qmd
     - qmd/healthcare.qmd
     - qmd/insurance.qmd
     - qmd/kpis.qmd 
