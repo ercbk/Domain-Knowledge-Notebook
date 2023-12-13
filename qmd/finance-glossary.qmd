@@ -59,7 +59,7 @@
 -   [**Holding Period Return (HPR)**]{style="color: #009499"} - The total return (%) received from holding an asset or portfolio of assets over a period of time.
 
     $$
-    \text{HPR} = \frac{(\operatorname{End\_Value} - \operatorname{Initial\_Value}) + \operatorname{Income}}{\operatorname{Initial\_Value}}
+    \text{HPR} = \frac{(\text{End Value} - \text{Initial Value}) + \text{Income}}{\text{Initial Value}}
     $$
 
     -   [Example]{.ribbon-highlight}: What is the HPR for an investor who bought a stock a year ago at \$50 and received \$5 in dividends over the year if the stock is now trading at \$60?
@@ -88,10 +88,10 @@
     -   Formula
 
         $$
-        NPV = \sum_{t=0}^T \frac{C_t}{(1-r)^t} = 0
+        NPV = \sum_{t=0}^T \frac{C_t}{(1+r)^t} = 0
         $$
 
-        -   $r$ is solved for.
+        -   Solve for $r$ to get IRR
         -   Note that $t=0$ is the initial investment which makes the denominator 1 and therefore that particular $\text{PV}$ (Present Value) is just $C_0$. Since it's a cash outlay (i.e. cost), it will be a negative value.
         -   Variables
             -   $T$: Total number of time periods
@@ -126,21 +126,64 @@
     -   Variables
 
         -   $n$: Project horizon, i.e. number of periods where cashflows occur
-        -   $\text{PV}$: The [absolute]{.underline} sum of the present values of each cash outflow, aka Cash Outlay (e.g. costs, investments). Each cash outflow is projected (i.e. discounted) back to year 0 value. (See IRR for the formula)
+        -   $\text{PV}$: The [absolute]{.underline} sum of the present values of each cash outflow, aka Cash Outlay (e.g. costs, investments). Each cash outlay is projected (i.e. discounted) back to year 0 value. (See IRR for the formula, NPV is the sum of PVs)
         -   $\text{FV}$: The sum of the future values of each cash inflow, aka Terminal Cash Flow. Using the company's cost of capital, each positive cash inflow is projeced forward (i.e. compounded) to the value at the last year of the project. (See Time Value of Money for the formula)
             -   e.g. For a project with a 5yr horizon, a future value for the cash inflow of year 2 is its projected value at year 5.
 
-    -   [Example]{.ribbon-highlight}: [link](https://www.youtube.com/watch?v=Z-CUSIGLk2U&t=342s)
+    -   [Example]{.ribbon-highlight}: 7 year Project ([link](https://www.youtube.com/watch?v=Z-CUSIGLk2U&t=342s))
 
-        | Timeline     | Year 0   | Year 1  | Year 2 | Year 3  | Year 4   | Year 5  | Year 6  | Year 7   |
-        |--------------|----------|---------|--------|---------|----------|---------|---------|----------|
-        | Cash Outlay  | 10000.00 | 4500.00 | 950.00 |         |          |         |         |          |
-        | Cash Flow    |          |         |        | 6000.00 | 7500.00  | 1250.00 | 8010.00 | 9000.00  |
-        | FV at 12.5%  |          | 4000.00 | 750.62 | 9610.84 | 10678.71 | 1582.03 | 9011.25 |          |
-        | Total CF     |          |         |        |         |          |         |         | 39882.83 |
-        | Total Outlay |          |         |        |         |          |         |         | 14750.62 |
+        | Timeline       | Year 0   | Year 1  | Year 2 | Year 3  | Year 4   | Year 5  | Year 6  | Year 7   |
+        |--------|--------|--------|--------|--------|--------|--------|--------|--------|
+        | Cash Outlay    | 10000.00 | 4500.00 | 950.00 |         |          |         |         |          |
+        | Cash Flow      |          |         |        | 6000.00 | 7500.00  | 1250.00 | 8010.00 | 9000.00  |
+        | FV,PV at 12.5% |          | 4000.00 | 750.62 | 9610.84 | 10678.71 | 1582.03 | 9011.25 |          |
+        | Total CF       |          |         |        |         |          |         |         | 39882.83 |
+        | Total Outlay   |          |         |        |         |          |         |         | 14750.62 |
 
-        -   
+        ``` r
+        cost_of_capital <- 0.125
+        first_co <- 10000.00
+        cash_outlays <- c(4500.00, 950.00)
+        cash_flows <- c(6000.00, 7500.00, 1250.00, 8010.00)
+        final_cf <- 9000.00
+        project_horizon <- length(c(cash_outlays, cash_flows, final_cf)) # 7yrs
+
+        calc_pv <- function(c, disc_t, r) {
+          c / ((1 + r)^disc_t)
+        }
+
+        calc_fv <- function(c, comp_t, r) {
+          c * ((1 + r)^comp_t)
+        }
+
+        pv_vec <- purrr::map2_dbl(
+          cash_outlays,
+          seq(length(cash_outlays)), # 1, 2
+          calc_pv,
+          r = cost_of_capital
+        )
+
+        fv_vec <- purrr::map2_dbl(
+          cash_flows,
+          rev(seq(length(cash_flows))), # 4, 3, 2, 1
+          calc_fv,
+          r = cost_of_capital
+        )
+
+        total_cf_adj <- sum(fv_vec) + final_cf
+        total_co_adj <- sum(pv_vec) + first_co
+
+        mirr <- function(fv, pv, T) {
+          ((fv / pv)^(1/T)) - 1
+        }
+
+        mirr(total_cf_adj, total_co_adj, project_horizon)
+        #> [1] 0.1526855
+        ```
+
+        -   Note the opposite order used for [disc_t]{.var-text} and [comp_t]{.var-text} when iterating through the cash outlays and cash flows.
+
+            -   e.g. 4500 needs to be discounted 1 year to Year 0 dollars and 6000 needs to be compounded 4 years to Year 7 dollars
 
 -   [**Options**]{style="color: #009499"} - An option on stock XYZ gives the holder the right to buy or sell XYZ at the strike price up until expiration. The underlying asset for the option is the stock of XYZ. The writer must either buy or sell the underlying asset to the buyer on the specified date at the agreed-upon price. The buyer is not obligated to purchase the underlying asset, but they can exercise their right if they choose to do so. If the option is about to expire, and the underlying asset has not moved favorably enough to make exercising the option worthwhile, the buyer can let the expire and they will lose the amount they paid for the option.
 
