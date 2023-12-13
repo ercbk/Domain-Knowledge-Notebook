@@ -359,7 +359,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul></li>
 <li><p><span style="color: #009499"><strong>Coupon</strong></span> - Bonds pay a set return each year, called a coupon, over a set period ending on a maturity date. The amound of the coupon depends on the interest rate that was determined when the bond was issued.</p></li>
 <li><p><span style="color: #009499"><strong>Derivatives</strong></span> - Securities that move in correspondence to one or more underlying assets. They include options, swaps, futures and forward contracts. The underlying assets can be stocks, bonds, commodities, currencies, indices or interest rates. Derivatives can be effective hedges against their underlying assets, since the relationship between the two is more or less clearly defined (if they’re negatively correlated? Or maybe if the underlying asset goes down, there’s a lag between the asset going down and the derivative going down. Therefore, you can sell the derivative before it goes down. Thus, hedging your risk). Knowing the value of an underlying asset helps traders determine the appropriate action (buy, sell, or hold) with their derivative.</p></li>
-<li><p><span style="color: #009499"><strong>Discount Rate</strong></span> - Represents a minimum rate of return acceptable to the investor, or an assumed rate of inflation.</p></li>
+<li><p><span style="color: #009499"><strong>Discount Rate</strong></span> - Represents a minimum rate of return acceptable to the investor, generally considered to be the investor’s cost of capital.</p></li>
 <li><p><span style="color: #009499"><strong>Discounted Cash Flow</strong></span> - Takes the earnings of an investment and discounts each of the cash flows based on a discount rate.</p>
 <ul>
 <li><span class="ribbon-highlight">Example</span>:</li>
@@ -659,6 +659,51 @@ NPV = \sum_{t=0}^T \frac{C_t}{(1+r)^t} = 0
 <li><p><span style="color: #009499"><strong>Volatility</strong></span>:</p>
 <ul>
 <li>Parkinson Range (PR) = ln(closing_price) - ln(opening_price)</li>
+</ul></li>
+<li><p><span style="color: #009499"><strong>Weighted Average Cost of Capital (WACC)</strong></span> - The average cost of financing a company’s debt and equity. Most commonly used as a discount rate.</p>
+<p><span class="math display">\[\text{WACC} = w_e \cdot K_e + w_d \cdot K_d\]</span></p>
+<ul>
+<li><span class="math inline">\(w_e\)</span>: The proportion of equity to the company’s market value of capital</li>
+<li><span class="math inline">\(w_d\)</span>: The proportion of debt to the company’s market value of capital</li>
+<li><span class="math inline">\(K_e\)</span>: The cost of equity approximated using capital asset pricing model (CAPM)
+<ul>
+<li><span class="math inline">\(\text{CAPM} = R_f + \beta\; (R_m - R_f)\)</span>
+<ul>
+<li><span class="math inline">\(R_f\)</span>: Risk-free rate of return</li>
+<li><span class="math inline">\(R_m\)</span>: Market rate of return</li>
+<li><span class="math inline">\(\beta\)</span>: Risk estimate or a company’s stock beta or a similar public company’s stock beta</li>
+</ul></li>
+</ul></li>
+<li><span class="math inline">\(K_d\)</span>: The after-tax cost of debt
+<ul>
+<li><p>Methods<br>
+<img src="_resources/Finance.resources/cost-of-debt-methods-1.png" class="img-fluid" width="532"></p></li>
+<li><p>Yield-to-Maturity (Best Method)</p>
+<ul>
+<li><p>Rate at which the current market price of the bond is equal to the present value of all the cash flows from the bond</p></li>
+<li><p>Morningstar has this data. Google “&lt;company&gt; bonds”.</p></li>
+<li><p>Steps</p>
+<ul>
+<li><p>Calculate Yield-to-Maturity (YTM) of all publicly traded company debt</p></li>
+<li><p>Calculate the weighted average of all debt instruments</p></li>
+<li><p>Multiply result by (1 - Tax Rate) to get <span class="math inline">\(K_d\)</span></p></li>
+</ul></li>
+<li><p>Example: Say that Apple has 3 bonds</p>
+<ul>
+<li></li>
+</ul></li>
+</ul></li>
+<li><p>Interest Rate on Bank Debt</p>
+<p><span class="math display">\[K_d = \frac{\text{interest expense}\times (1-T)}{\text{total debt}}\]</span></p>
+<ul>
+<li>Method of last resort if the other methods are not available. Since bank debt isn’t traded, the market value of this debt is unknown. The WACC formula weights are market value based, so a method that take into account the market value would be preferrable.</li>
+<li><span class="math inline">\(\text{interest expense}\)</span>: Interest paid on company’s current debt
+<ul>
+<li>Since interest expense is tax-deductible, the debt is calculated on an after-tax basis</li>
+</ul></li>
+<li><span class="math inline">\(T\)</span>: Company’s marginal tax rate</li>
+</ul></li>
+</ul></li>
 </ul></li>
 <li><p><span style="color: #009499"><strong>Yield</strong></span> - A return measure for an investment over a set period of time, expressed as a percentage.</p>
 <ul>

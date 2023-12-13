@@ -28,7 +28,7 @@
 
 -   [**Derivatives**]{style="color: #009499"} - Securities that move in correspondence to one or more underlying assets. They include options, swaps, futures and forward contracts. The underlying assets can be stocks, bonds, commodities, currencies, indices or interest rates. Derivatives can be effective hedges against their underlying assets, since the relationship between the two is more or less clearly defined (if they're negatively correlated? Or maybe if the underlying asset goes down, there's a lag between the asset going down and the derivative going down. Therefore, you can sell the derivative before it goes down. Thus, hedging your risk). Knowing the value of an underlying asset helps traders determine the appropriate action (buy, sell, or hold) with their derivative.
 
--   [**Discount Rate**]{style="color: #009499"} - Represents a minimum rate of return acceptable to the investor, or an assumed rate of inflation.
+-   [**Discount Rate**]{style="color: #009499"} - Represents a minimum rate of return acceptable to the investor, generally considered to be the investor's cost of capital.
 
 -   [**Discounted Cash Flow**]{style="color: #009499"} - Takes the earnings of an investment and discounts each of the cash flows based on a discount rate.
 
@@ -262,6 +262,48 @@
 -   [**Volatility**]{style="color: #009499"}:
 
     -   Parkinson Range (PR) = ln(closing_price) - ln(opening_price)
+
+-   [**Weighted Average Cost of Capital (WACC)**]{style="color: #009499"} - The average cost of financing a company's debt and equity. Most commonly used as a discount rate.
+
+    $$\text{WACC} = w_e \cdot K_e + w_d \cdot K_d$$
+
+    -   $w_e$: The proportion of equity to the company's market value of capital
+    -   $w_d$: The proportion of debt to the company's market value of capital
+    -   $K_e$: The cost of equity approximated using capital asset pricing model (CAPM)
+        -   $\text{CAPM} = R_f + \beta\; (R_m - R_f)$
+            -   $R_f$: Risk-free rate of return
+            -   $R_m$: Market rate of return
+            -   $\beta$: Risk estimate or a company's stock beta or a similar public company's stock beta
+    -   $K_d$: The after-tax cost of debt
+        -   Methods\
+            ![](_resources/Finance.resources/cost-of-debt-methods-1.png){width="532"}
+
+        -   Yield-to-Maturity (Best Method)
+
+            -   Rate at which the current market price of the bond is equal to the present value of all the cash flows from the bond
+
+            -   Morningstar has this data. Google "\<company\> bonds".
+
+            -   Steps
+
+                -   Calculate Yield-to-Maturity (YTM) of all publicly traded company debt
+
+                -   Calculate the weighted average of all debt instruments
+
+                -   Multiply result by (1 - Tax Rate) to get $K_d$
+
+            -   Example: Say that Apple has 3 bonds
+
+                -   
+
+        -   Interest Rate on Bank Debt
+
+            $$K_d = \frac{\text{interest expense}\times (1-T)}{\text{total debt}}$$
+
+            -   Method of last resort if the other methods are not available. Since bank debt isn't traded, the market value of this debt is unknown. The WACC formula weights are market value based, so a method that take into account the market value would be preferrable.
+            -   $\text{interest expense}$: Interest paid on company's current debt
+                -   Since interest expense is tax-deductible, the debt is calculated on an after-tax basis
+            -   $T$: Company's marginal tax rate
 
 -   [**Yield**]{style="color: #009499"} - A return measure for an investment over a set period of time, expressed as a percentage.
 
