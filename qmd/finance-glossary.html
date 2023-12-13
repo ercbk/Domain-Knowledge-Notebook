@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -353,7 +387,7 @@ ul.task-list li input[type="checkbox"] {
 <li><p><span style="color: #009499"><strong>Hedge Ratio</strong></span> (<span style="color: #009499"><strong>delta</strong></span>) - The effectiveness of a derivative hedge, delta, is the amount the price of a derivative moves per $1 movement in the price of the underlying asset.</p></li>
 <li><p><span style="color: #009499"><strong>Holding Period Return (HPR)</strong></span> - The total return (%) received from holding an asset or portfolio of assets over a period of time.</p>
 <p><span class="math display">\[
-\text{HPR} = \frac{(\operatorname{End\_Value} - \operatorname{Initial\_Value}) + \operatorname{Income}}{\operatorname{Initial\_Value}}
+\text{HPR} = \frac{(\text{End Value} - \text{Initial Value}) + \text{Income}}{\text{Initial Value}}
 \]</span></p>
 <ul>
 <li><p><span class="ribbon-highlight">Example</span>: What is the HPR for an investor who bought a stock a year ago at $50 and received $5 in dividends over the year if the stock is now trading at $60?</p>
@@ -375,10 +409,10 @@ ul.task-list li input[type="checkbox"] {
 <li><p>The internal rate of return is a <em>discount rate</em> that makes the net present value (NPV) of all cash flows from a particular project or investment equal to zero. In general, projects with higher IRRs are more favorable than projects with lower IRRs, as the expected rate of return on these projects is greater.</p></li>
 <li><p>Formula</p>
 <p><span class="math display">\[
-NPV = \sum_{t=0}^T \frac{C_t}{(1-r)^t} = 0
+NPV = \sum_{t=0}^T \frac{C_t}{(1+r)^t} = 0
 \]</span></p>
 <ul>
-<li><span class="math inline">\(r\)</span> is solved for.</li>
+<li>Solve for <span class="math inline">\(r\)</span> to get IRR</li>
 <li>Note that <span class="math inline">\(t=0\)</span> is the initial investment which makes the denominator 1 and therefore that particular <span class="math inline">\(\text{PV}\)</span> (Present Value) is just <span class="math inline">\(C_0\)</span>. Since it’s a cash outlay (i.e.&nbsp;cost), it will be a negative value.</li>
 <li>Variables
 <ul>
@@ -415,23 +449,23 @@ NPV = \sum_{t=0}^T \frac{C_t}{(1-r)^t} = 0
 <li><p>Variables</p>
 <ul>
 <li><span class="math inline">\(n\)</span>: Project horizon, i.e.&nbsp;number of periods where cashflows occur</li>
-<li><span class="math inline">\(\text{PV}\)</span>: The <u>absolute</u> sum of the present values of each cash outflow, aka Cash Outlay (e.g.&nbsp;costs, investments). Each cash outflow is projected (i.e.&nbsp;discounted) back to year 0 value. (See IRR for the formula)</li>
+<li><span class="math inline">\(\text{PV}\)</span>: The <u>absolute</u> sum of the present values of each cash outflow, aka Cash Outlay (e.g.&nbsp;costs, investments). Each cash outlay is projected (i.e.&nbsp;discounted) back to year 0 value. (See IRR for the formula, NPV is the sum of PVs)</li>
 <li><span class="math inline">\(\text{FV}\)</span>: The sum of the future values of each cash inflow, aka Terminal Cash Flow. Using the company’s cost of capital, each positive cash inflow is projeced forward (i.e.&nbsp;compounded) to the value at the last year of the project. (See Time Value of Money for the formula)
 <ul>
 <li>e.g.&nbsp;For a project with a 5yr horizon, a future value for the cash inflow of year 2 is its projected value at year 5.</li>
 </ul></li>
 </ul></li>
-<li><p><span class="ribbon-highlight">Example</span>: <a href="https://www.youtube.com/watch?v=Z-CUSIGLk2U&amp;t=342s">link</a></p>
+<li><p><span class="ribbon-highlight">Example</span>: 7 year Project (<a href="https://www.youtube.com/watch?v=Z-CUSIGLk2U&amp;t=342s">link</a>)</p>
 <table class="table">
 <colgroup>
-<col style="width: 15%">
 <col style="width: 11%">
-<col style="width: 10%">
-<col style="width: 9%">
-<col style="width: 10%">
 <col style="width: 11%">
-<col style="width: 10%">
-<col style="width: 10%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
 <col style="width: 11%">
 </colgroup>
 <thead>
@@ -471,7 +505,7 @@ NPV = \sum_{t=0}^T \frac{C_t}{(1-r)^t} = 0
 <td>9000.00</td>
 </tr>
 <tr class="odd">
-<td>FV at 12.5%</td>
+<td>FV,PV at 12.5%</td>
 <td></td>
 <td>4000.00</td>
 <td>750.62</td>
@@ -505,8 +539,49 @@ NPV = \sum_{t=0}^T \frac{C_t}{(1-r)^t} = 0
 </tr>
 </tbody>
 </table>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>cost_of_capital <span class="ot">&lt;-</span> <span class="fl">0.125</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>first_co <span class="ot">&lt;-</span> <span class="fl">10000.00</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>cash_outlays <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">4500.00</span>, <span class="fl">950.00</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>cash_flows <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">6000.00</span>, <span class="fl">7500.00</span>, <span class="fl">1250.00</span>, <span class="fl">8010.00</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>final_cf <span class="ot">&lt;-</span> <span class="fl">9000.00</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>project_horizon <span class="ot">&lt;-</span> <span class="fu">length</span>(<span class="fu">c</span>(cash_outlays, cash_flows, final_cf)) <span class="co"># 7yrs</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>calc_pv <span class="ot">&lt;-</span> <span class="cf">function</span>(c, disc_t, r) {</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  c <span class="sc">/</span> ((<span class="dv">1</span> <span class="sc">+</span> r)<span class="sc">^</span>disc_t)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>calc_fv <span class="ot">&lt;-</span> <span class="cf">function</span>(c, comp_t, r) {</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  c <span class="sc">*</span> ((<span class="dv">1</span> <span class="sc">+</span> r)<span class="sc">^</span>comp_t)</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>pv_vec <span class="ot">&lt;-</span> purrr<span class="sc">::</span><span class="fu">map2_dbl</span>(</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  cash_outlays,</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">seq</span>(<span class="fu">length</span>(cash_outlays)), <span class="co"># 1, 2</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>  calc_pv,</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>  <span class="at">r =</span> cost_of_capital</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>fv_vec <span class="ot">&lt;-</span> purrr<span class="sc">::</span><span class="fu">map2_dbl</span>(</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>  cash_flows,</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rev</span>(<span class="fu">seq</span>(<span class="fu">length</span>(cash_flows))), <span class="co"># 4, 3, 2, 1</span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>  calc_fv,</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>  <span class="at">r =</span> cost_of_capital</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>total_cf_adj <span class="ot">&lt;-</span> <span class="fu">sum</span>(fv_vec) <span class="sc">+</span> final_cf</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>total_co_adj <span class="ot">&lt;-</span> <span class="fu">sum</span>(pv_vec) <span class="sc">+</span> first_co</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>mirr <span class="ot">&lt;-</span> <span class="cf">function</span>(fv, pv, T) {</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>  ((fv <span class="sc">/</span> pv)<span class="sc">^</span>(<span class="dv">1</span><span class="sc">/</span>T)) <span class="sc">-</span> <span class="dv">1</span></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a><span class="fu">mirr</span>(total_cf_adj, total_co_adj, project_horizon)</span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 0.1526855</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
-<li></li>
+<li><p>Note the opposite order used for <span class="var-text">disc_t</span> and <span class="var-text">comp_t</span> when iterating through the cash outlays and cash flows.</p>
+<ul>
+<li>e.g.&nbsp;4500 needs to be discounted 1 year to Year 0 dollars and 6000 needs to be compounded 4 years to Year 7 dollars</li>
+</ul></li>
 </ul></li>
 </ul></li>
 <li><p><span style="color: #009499"><strong>Options</strong></span> - An option on&nbsp;stock XYZ gives the holder the right to buy or sell XYZ at the strike price up until expiration. The underlying asset for the&nbsp;option is the stock of XYZ. The&nbsp;writer must either buy&nbsp;or sell the underlying asset to the buyer on the specified date at the agreed-upon price. The buyer is not obligated to purchase the underlying asset, but they can exercise their right if they choose to do so. If the option is about to expire, and the underlying asset has not moved favorably enough to make exercising the option worthwhile, the buyer can let the expire and they will lose the amount they paid for the option.</p>
