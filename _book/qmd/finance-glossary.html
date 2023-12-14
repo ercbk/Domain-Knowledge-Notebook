@@ -368,6 +368,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li>The larger the drawdown (%), the larger uptick (%) needed to get back to initial peak. (e.g.&nbsp;dd of 1% requires 1.01% uptick while 20% dd requires a 25% uptick). Some investors choose to avoid drawdowns of greater than 20% before cutting their losses and turning the position into cash instead.</li>
 </ul></li>
+<li><p><span style="color: #009499"><strong>Earnings Before Interest and Taxes (EBIT)</strong></span>: (aka Operating Income, Operating Profit) Common method for measuring profitability. <span class="math inline">\(\text{EBIT} = \text{Operating Expenses} - \text{Sales Revenue}\)</span> where the sales revenue excludes tax and interest. Located in the company’s income statement.</p></li>
+<li><p><span style="color: #009499"><strong>Effective Tax Rate</strong></span>: An average rate of tax payable. Useful to compare individuals or corporations. <span class="math inline">\(\text{Tax Rate}_{\text{eff}} = \text{Tax Payed} / \text{Pre-Tax Earnings}\)</span> As of 2022, the average (nonfinancial) S&amp;P 500 corporate effective tax rate was around 19%. Contrast with Marginal Tax Rate.</p></li>
 <li><p><span style="color: #009499"><strong>Exchange Traded Fund (ETF)</strong></span> - A mutual fund that may be traded daily like a stock or bond.</p></li>
 <li><p><span style="color: #009499"><strong>False Strategy Theorem</strong></span> - Gives the threshold for which a Sharpe Ratio greater than this threshold would be significant.</p>
 <ul>
@@ -438,6 +440,7 @@ NPV = \sum_{t=0}^T \frac{C_t}{(1+r)^t} = 0
 </ul></li>
 <li><p><span style="color: #009499"><strong>Leg</strong></span> - One part or one side of a multistep trade. Legs should be exercised at the same time in order to avoid any risks associated with fluctuations in the price of the related security. So a purchase and sale should be made around the same time to avoid any price risk. Strategy often associated with derivatives trading.</p></li>
 <li><p><span style="color: #009499"><strong>Limited Liability Corporation (LLC)</strong></span> - A corporation is a business organization that issues stock to its shareholders. A limited liability company is a business organization composed of members with membership interests. a type of legal entity that can be used when forming a business that offers protection to the owner(s) from personal liability for debts and other obligations that a business might incur. In other words, the personal assets of the owner cannot be used for legal claims against the business.The differences don’t really matter much at the taxation or day-to-day corporate level except in scale: LLCs tend to be smaller than corporations (more or less; a lot of people form small business corporations for good reasons and ignorant ones). (See <a href="https://www.investopedia.com/articles/personal-finance/011216/s-corp-vs-llc-which-should-i-choose.asp">Differences between a LLC and S Corp</a>)</p></li>
+<li><p><span style="color: #009499"><strong>Marginal Tax Rate</strong></span>: The maximum percentage of income tax that anyone is liable to pay in a system that applies tax burdens to people depending on their respective actual taxable incomes (i.e your tax bracket). As of 2023, the corporate tax rate is 25%.</p></li>
 <li><p><span style="color: #009499"><strong>Market Capitalization</strong></span> - The total dollar market value of a company’s outstanding shares. Calculated by multiplying the total number of a company’s shares by the current market price of one share.</p></li>
 <li><p><span style="color: #009499"><strong>Market Momentum</strong></span> - The rate of acceleration of a security’s price—that is, the speed at which the price is changing. In general, Momentum = Today’s price - Price from X days ago. Positive: bullish, Negative: bearish. More sophisticated indicators can be calculated, see <a href="https://www.investopedia.com/terms/m/marketmomentum.asp" class="uri">https://www.investopedia.com/terms/m/marketmomentum.asp</a></p></li>
 <li><p><span style="color: #009499"><strong>Modified Internal Rate of Return (MIRR)</strong></span> - Better alternative to IRR that assumes the cash inflows are reinvested at cost of capital of the company instead of at the IRR. (<a href="https://www.youtube.com/watch?v=f0IJegvYPKk">video1</a>, <a href="https://www.youtube.com/watch?v=Z-CUSIGLk2U">video2</a>)</p>
@@ -676,26 +679,31 @@ NPV = \sum_{t=0}^T \frac{C_t}{(1+r)^t} = 0
 </ul></li>
 <li><span class="math inline">\(K_d\)</span>: The after-tax cost of debt
 <ul>
+<li><p>Notes from Video: <a href="https://www.youtube.com/watch?v=CSkPlxEe-dY&amp;list=PLAoukTI-9JbeRyMdcaqACHD9ZzT3STwZQ&amp;index=3">Estimating The Cost Of Debt For WACC - DCF Model Insights</a></p></li>
+<li><p>List of instruments that should be considered as <em>Debt</em> in the calculations below:</p>
+<ul>
+<li><p>Long and Short-Term interest-bearing obligations (e.g Loans, Bonds)</p></li>
+<li><p>Operating Leases (e.g.&nbsp;An airline that leases out its planes.)</p></li>
+</ul></li>
 <li><p>Methods<br>
 <img src="_resources/Finance.resources/cost-of-debt-methods-1.png" class="img-fluid" width="532"></p></li>
 <li><p><u>Yield-to-Maturity</u> (Most Accurate)</p>
 <ul>
 <li>Variables required for each bond:
 <ul>
-<li>Market Price: The Price the bond is being traded at</li>
-<li>Amount: The amount the bond was issued for</li>
-<li>Yield to Maturity: Rate at which the current market price of the bond is equal to the present value of all the cash flows from the bond</li>
+<li><span class="var-text">Market Price</span>: The Price the bond is being traded at</li>
+<li><span class="var-text">Amount</span>: The amount the bond was issued for</li>
+<li><span class="var-text">Yield to Maturity</span>: Rate at which the current market price of the bond is equal to the present value of all the cash flows from the bond</li>
 </ul></li>
+<li><span class="var-text">Amount</span> was difficult to find. I found it along with the other variables by using a combination of websites, <a href="https://www.finra.org/finra-data/fixed-income/corp-and-agency">finra.org</a> and <a href="https://www.bondsupermart.com/bsm/portfolio-builder">bondsupermart.com</a>. Each bond has a few different ids, so I suspect the amount can obtained through the SEC or somewhere using them if those websites die.</li>
 <li>Overall Process
-<ul>
+<ol type="1">
 <li>Calculate Yield-to-Maturity (YTM) of all publicly traded company debt</li>
 <li>Calculate the weighted average of all debt instruments</li>
 <li>Multiply result by (1 - Tax Rate) to get <span class="math inline">\(K_d\)</span></li>
-</ul></li>
+</ol></li>
 <li>Steps
-<ul>
-<li>Market Value of Debt (MVD)
-<ul>
+<ol type="1">
 <li><p>Calculate each bond’s discount rate (DR)</p>
 <p><span class="math display">\[
 \text{DR}_i = \frac{\text{Price}_i}{100}
@@ -722,14 +730,43 @@ NPV = \sum_{t=0}^T \frac{C_t}{(1+r)^t} = 0
 </ul></li>
 <li><p>Calculate After-Tax Cost of Debt</p>
 <p><span class="math display">\[
-K_{d} = (1- \text{tax rate}) \times \sum_{i = 1}^N \text{pMVD}_i \times \text{YTM}_i
+K_{d} = (1- \text{Tax Rate}) \times \sum_{i = 1}^N \text{pMVD}_i \times \text{YTM}_i
 \]</span></p>
 <ul>
 <li><span class="math inline">\(\text{YTM}\)</span>: Yield to Maturity</li>
+<li><span class="math inline">\(\text{Tax Rate}\)</span>: The company’s effective tax rate in its most recent quarter.</li>
 <li>The proportion (pMVD) <span class="math inline">\(\times\)</span> the bond’s yield to maturity (YTM) is its weighted YTM.</li>
 </ul></li>
+</ol></li>
 </ul></li>
+<li><p><u>Debt Rating</u> (Recommended)</p>
+<p><span class="math display">\[
+K_d = (\operatorname{Risk Free Rate} + \operatorname{Default Spread}) \times (1 - \operatorname{Tax Rate})
+\]</span></p>
+<ul>
+<li>For cases where the company’s debt may not have market prices readily available. (e.g a mix of bonds and bank debt)</li>
+<li><span class="math inline">\(\text{Default Spread}\)</span>: Associated with the company’s credit rating (e.g.&nbsp;AAA, BB+, etc.). Get the company’s rating and look-up the spread for that rating. The company credit ratings seem readily availabe just by googling, but the spreads are a little harder to find. NYU Stern Business School has a <a href="https://pages.stern.nyu.edu/~adamodar/New_Home_Page/datafile/ratings.html">page</a>.
+<ul>
+<li>For foreign corporations or corporations that get much of their revenue from other countries (adds in geopolitical risk), you need to add the add the “country spread” to the default spread. NYU Stern’s country spread <a href="https://pages.stern.nyu.edu/~adamodar/New_Home_Page/datafile/ctryprem.html">page</a>.</li>
 </ul></li>
+<li><span class="math inline">\(\text{Risk Free Rate}\)</span>: Value that’s used depends upon length of bank loan or maturity date of the bond. (e.g for a 12-year bond or a 12-year loan, use the 10-year treasury yield since it is the closest benchmark)
+<ul>
+<li>Not sure how this works if a company has multiple debt instruments that get payed off at different time intervals.</li>
+</ul></li>
+<li><span class="math inline">\(\text{Tax Rate}\)</span>: The company’s effective tax rate in its most recent quarter.</li>
+</ul></li>
+<li><p><u>Synthetic Rating</u></p>
+<ul>
+<li><p>Estimate the credit rating using a company’s financial characteristics</p>
+<p><span class="math display">\[
+\text{Interest Coverage Ratio} = \frac{\text{EBIT}}{\text{Interest Expenses}}
+\]</span></p>
+<ul>
+<li><span class="math inline">\(\text{EBIT}\)</span>: Typically reported in a company’s income statement</li>
+<li><span class="math inline">\(\text{Interest Expense}\)</span>: How much interest was payed on its debt (long and short term). Most likely also reported in the company’s financials.</li>
+<li><span class="math inline">\(\text{Interest Coverage Ratio}\)</span>: The relationship to the rating and therefore the default spread is also on the NYT Stern <a href="https://pages.stern.nyu.edu/~adamodar/New_Home_Page/datafile/ratings.html">page</a></li>
+</ul></li>
+<li><p>Then, use Debt Rating method to get <span class="math inline">\(K_d\)</span></p></li>
 </ul></li>
 <li><p><u>Interest Rate on Bank Debt</u></p>
 <p><span class="math display">\[K_d = \frac{\text{interest expense}\times (1-T)}{\text{total debt}}\]</span></p>
@@ -739,7 +776,7 @@ K_{d} = (1- \text{tax rate}) \times \sum_{i = 1}^N \text{pMVD}_i \times \text{YT
 <ul>
 <li>Since interest expense is tax-deductible, the debt is calculated on an after-tax basis</li>
 </ul></li>
-<li><span class="math inline">\(T\)</span>: Company’s marginal tax rate</li>
+<li><span class="math inline">\(T\)</span>: Company’s effective tax rate</li>
 </ul></li>
 </ul></li>
 </ul></li>

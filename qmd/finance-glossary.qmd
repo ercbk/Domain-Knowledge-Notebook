@@ -38,6 +38,10 @@
 
     -   The larger the drawdown (%), the larger uptick (%) needed to get back to initial peak. (e.g. dd of 1% requires 1.01% uptick while 20% dd requires a 25% uptick). Some investors choose to avoid drawdowns of greater than 20% before cutting their losses and turning the position into cash instead.
 
+-   [**Earnings Before Interest and Taxes (EBIT)**]{style="color: #009499"}: (aka Operating Income, Operating Profit) Common method for measuring profitability. $\text{EBIT} = \text{Operating Expenses} - \text{Sales Revenue}$ where the sales revenue excludes tax and interest. Located in the company's income statement.
+
+-   [**Effective Tax Rate**]{style="color: #009499"}: An average rate of tax payable. Useful to compare individuals or corporations. $\text{Tax Rate}_{\text{eff}} = \text{Tax Payed} / \text{Pre-Tax Earnings}$ As of 2022, the average (nonfinancial) S&P 500 corporate effective tax rate was around 19%. Contrast with Marginal Tax Rate.
+
 -   [**Exchange Traded Fund (ETF)**]{style="color: #009499"} - A mutual fund that may be traded daily like a stock or bond.
 
 -   [**False Strategy Theorem**]{style="color: #009499"} - Gives the threshold for which a Sharpe Ratio greater than this threshold would be significant.
@@ -112,6 +116,8 @@
 -   [**Leg**]{style="color: #009499"} - One part or one side of a multistep trade. Legs should be exercised at the same time in order to avoid any risks associated with fluctuations in the price of the related security. So a purchase and sale should be made around the same time to avoid any price risk. Strategy often associated with derivatives trading.
 
 -   [**Limited Liability Corporation (LLC)**]{style="color: #009499"} - A corporation is a business organization that issues stock to its shareholders. A limited liability company is a business organization composed of members with membership interests. a type of legal entity that can be used when forming a business that offers protection to the owner(s) from personal liability for debts and other obligations that a business might incur. In other words, the personal assets of the owner cannot be used for legal claims against the business.The differences don't really matter much at the taxation or day-to-day corporate level except in scale: LLCs tend to be smaller than corporations (more or less; a lot of people form small business corporations for good reasons and ignorant ones). (See [Differences between a LLC and S Corp](https://www.investopedia.com/articles/personal-finance/011216/s-corp-vs-llc-which-should-i-choose.asp))
+
+-   [**Marginal Tax Rate**]{style="color: #009499"}: The maximum percentage of income tax that anyone is liable to pay in a system that applies tax burdens to people depending on their respective actual taxable incomes (i.e your tax bracket). As of 2023, the corporate tax rate is 25%.
 
 -   [**Market Capitalization**]{style="color: #009499"} - The total dollar market value of a company's outstanding shares. Calculated by multiplying the total number of a company's shares by the current market price of one share.
 
@@ -275,56 +281,92 @@
             -   $R_m$: Market rate of return
             -   $\beta$: Risk estimate or a company's stock beta or a similar public company's stock beta
     -   $K_d$: The after-tax cost of debt
+        -   Notes from Video: [Estimating The Cost Of Debt For WACC - DCF Model Insights](https://www.youtube.com/watch?v=CSkPlxEe-dY&list=PLAoukTI-9JbeRyMdcaqACHD9ZzT3STwZQ&index=3)
+
+        -   List of instruments that should be considered as *Debt* in the calculations below:
+
+            -   Long and Short-Term interest-bearing obligations (e.g Loans, Bonds)
+
+            -   Operating Leases (e.g. An airline that leases out its planes.)
+
         -   Methods\
             ![](_resources/Finance.resources/cost-of-debt-methods-1.png){width="532"}
 
         -   [Yield-to-Maturity]{.underline} (Most Accurate)
 
             -   Variables required for each bond:
-                -   Market Price: The Price the bond is being traded at
-                -   Amount: The amount the bond was issued for
-                -   Yield to Maturity: Rate at which the current market price of the bond is equal to the present value of all the cash flows from the bond
+                -   [Market Price]{.var-text}: The Price the bond is being traded at
+                -   [Amount]{.var-text}: The amount the bond was issued for
+                -   [Yield to Maturity]{.var-text}: Rate at which the current market price of the bond is equal to the present value of all the cash flows from the bond
+            -   [Amount]{.var-text} was difficult to find. I found it along with the other variables by using a combination of websites, [finra.org](https://www.finra.org/finra-data/fixed-income/corp-and-agency) and [bondsupermart.com](https://www.bondsupermart.com/bsm/portfolio-builder). Each bond has a few different ids, so I suspect the amount can obtained through the SEC or somewhere using them if those websites die.
             -   Overall Process
-                -   Calculate Yield-to-Maturity (YTM) of all publicly traded company debt
-                -   Calculate the weighted average of all debt instruments
-                -   Multiply result by (1 - Tax Rate) to get $K_d$
+                1.  Calculate Yield-to-Maturity (YTM) of all publicly traded company debt
+                2.  Calculate the weighted average of all debt instruments
+                3.  Multiply result by (1 - Tax Rate) to get $K_d$
             -   Steps
-                -   Market Value of Debt (MVD)
-                    -   Calculate each bond's discount rate (DR)
+                1.  Calculate each bond's discount rate (DR)
 
-                        $$
-                        \text{DR}_i = \frac{\text{Price}_i}{100}
-                        $$
+                    $$
+                    \text{DR}_i = \frac{\text{Price}_i}{100}
+                    $$
 
-                        -   $i$: The index for each bond the company has issued
-                        -   Prices below 100 are trading below market value
-                        -   Prices above 100 are trading above market value (aka at a premium)
+                    -   $i$: The index for each bond the company has issued
+                    -   Prices below 100 are trading below market value
+                    -   Prices above 100 are trading above market value (aka at a premium)
 
-                    -   Calculate the Market Value of Debt (MVD)
+                2.  Calculate the Market Value of Debt (MVD)
 
-                        $$
-                        \text{MVD} = \sum_{i=1}^N \text{MVB}_i = \sum_{i=1}^N \text{DR}_i \times \text{A}_i
-                        $$
+                    $$
+                    \text{MVD} = \sum_{i=1}^N \text{MVB}_i = \sum_{i=1}^N \text{DR}_i \times \text{A}_i
+                    $$
 
-                        -   $A$: The amount of the bond
-                        -   The market value of a bond (MVB) is the discount rate (DR) $\times$ the amount of the bond (A). Therefore, the sum is the market value of the company's debt.
+                    -   $A$: The amount of the bond
+                    -   The market value of a bond (MVB) is the discount rate (DR) $\times$ the amount of the bond (A). Therefore, the sum is the market value of the company's debt.
 
-                    -   For each bond, calculate Proportion of MVD (pMVD)
+                3.  For each bond, calculate Proportion of MVD (pMVD)
 
-                        $$
-                        \text{pMVD}_i = \frac{\text{MVB}_i}{\text{MVD}}
-                        $$
+                    $$
+                    \text{pMVD}_i = \frac{\text{MVB}_i}{\text{MVD}}
+                    $$
 
-                        -   Calculates each bond's proportion of the total debt
+                    -   Calculates each bond's proportion of the total debt
 
-                    -   Calculate After-Tax Cost of Debt
+                4.  Calculate After-Tax Cost of Debt
 
-                        $$
-                        K_{d} = (1- \text{tax rate}) \times \sum_{i = 1}^N \text{pMVD}_i \times \text{YTM}_i
-                        $$
+                    $$
+                    K_{d} = (1- \text{Tax Rate}) \times \sum_{i = 1}^N \text{pMVD}_i \times \text{YTM}_i
+                    $$
 
-                        -   $\text{YTM}$: Yield to Maturity
-                        -   The proportion (pMVD) $\times$ the bond's yield to maturity (YTM) is its weighted YTM.
+                    -   $\text{YTM}$: Yield to Maturity
+                    -   $\text{Tax Rate}$: The company's effective tax rate in its most recent quarter.
+                    -   The proportion (pMVD) $\times$ the bond's yield to maturity (YTM) is its weighted YTM.
+
+        -   [Debt Rating]{.underline} (Recommended)
+
+            $$
+            K_d = (\operatorname{Risk Free Rate} + \operatorname{Default Spread}) \times (1 - \operatorname{Tax Rate})
+            $$
+
+            -   For cases where the company's debt may not have market prices readily available. (e.g a mix of bonds and bank debt)
+            -   $\text{Default Spread}$: Associated with the company's credit rating (e.g. AAA, BB+, etc.). Get the company's rating and look-up the spread for that rating. The company credit ratings seem readily availabe just by googling, but the spreads are a little harder to find. NYU Stern Business School has a [page](https://pages.stern.nyu.edu/~adamodar/New_Home_Page/datafile/ratings.html).
+                -   For foreign corporations or corporations that get much of their revenue from other countries (adds in geopolitical risk), you need to add the add the "country spread" to the default spread. NYU Stern's country spread [page](https://pages.stern.nyu.edu/~adamodar/New_Home_Page/datafile/ctryprem.html).
+            -   $\text{Risk Free Rate}$: Value that's used depends upon length of bank loan or maturity date of the bond. (e.g for a 12-year bond or a 12-year loan, use the 10-year treasury yield since it is the closest benchmark)
+                -   Not sure how this works if a company has multiple debt instruments that get payed off at different time intervals.
+            -   $\text{Tax Rate}$: The company's effective tax rate in its most recent quarter.
+
+        -   [Synthetic Rating]{.underline}
+
+            -   Estimate the credit rating using a company's financial characteristics
+
+                $$
+                \text{Interest Coverage Ratio} = \frac{\text{EBIT}}{\text{Interest Expenses}}
+                $$
+
+                -   $\text{EBIT}$: Typically reported in a company's income statement
+                -   $\text{Interest Expense}$: How much interest was payed on its debt (long and short term). Most likely also reported in the company's financials.
+                -   $\text{Interest Coverage Ratio}$: The relationship to the rating and therefore the default spread is also on the NYT Stern [page](https://pages.stern.nyu.edu/~adamodar/New_Home_Page/datafile/ratings.html)
+
+            -   Then, use Debt Rating method to get $K_d$
 
         -   [Interest Rate on Bank Debt]{.underline}
 
@@ -333,7 +375,7 @@
             -   Method of last resort if the other methods are not available. Since bank debt isn't traded, the market value of this debt is unknown. The WACC formula weights are market value based, so a method that take into account the market value would be preferrable.
             -   $\text{interest expense}$: Interest paid on company's current debt
                 -   Since interest expense is tax-deductible, the debt is calculated on an after-tax basis
-            -   $T$: Company's marginal tax rate
+            -   $T$: Company's effective tax rate
 
 -   [**Yield**]{style="color: #009499"} - A return measure for an investment over a set period of time, expressed as a percentage.
 
