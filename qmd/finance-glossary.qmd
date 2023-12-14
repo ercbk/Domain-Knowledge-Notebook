@@ -278,25 +278,55 @@
         -   Methods\
             ![](_resources/Finance.resources/cost-of-debt-methods-1.png){width="532"}
 
-        -   Yield-to-Maturity (Best Method)
+        -   [Yield-to-Maturity]{.underline} (Most Accurate)
 
-            -   Rate at which the current market price of the bond is equal to the present value of all the cash flows from the bond
-
-            -   Morningstar has this data. Google "\<company\> bonds".
-
-            -   Steps
-
+            -   Variables required for each bond:
+                -   Market Price: The Price the bond is being traded at
+                -   Amount: The amount the bond was issued for
+                -   Yield to Maturity: Rate at which the current market price of the bond is equal to the present value of all the cash flows from the bond
+            -   Overall Process
                 -   Calculate Yield-to-Maturity (YTM) of all publicly traded company debt
-
                 -   Calculate the weighted average of all debt instruments
-
                 -   Multiply result by (1 - Tax Rate) to get $K_d$
+            -   Steps
+                -   Market Value of Debt (MVD)
+                    -   Calculate each bond's discount rate (DR)
 
-            -   Example: Say that Apple has 3 bonds
+                        $$
+                        \text{DR}_i = \frac{\text{Price}_i}{100}
+                        $$
 
-                -   
+                        -   $i$: The index for each bond the company has issued
+                        -   Prices below 100 are trading below market value
+                        -   Prices above 100 are trading above market value (aka at a premium)
 
-        -   Interest Rate on Bank Debt
+                    -   Calculate the Market Value of Debt (MVD)
+
+                        $$
+                        \text{MVD} = \sum_{i=1}^N \text{MVB}_i = \sum_{i=1}^N \text{DR}_i \times \text{A}_i
+                        $$
+
+                        -   $A$: The amount of the bond
+                        -   The market value of a bond (MVB) is the discount rate (DR) $\times$ the amount of the bond (A). Therefore, the sum is the market value of the company's debt.
+
+                    -   For each bond, calculate Proportion of MVD (pMVD)
+
+                        $$
+                        \text{pMVD}_i = \frac{\text{MVB}_i}{\text{MVD}}
+                        $$
+
+                        -   Calculates each bond's proportion of the total debt
+
+                    -   Calculate After-Tax Cost of Debt
+
+                        $$
+                        K_{d} = (1- \text{tax rate}) \times \sum_{i = 1}^N \text{pMVD}_i \times \text{YTM}_i
+                        $$
+
+                        -   $\text{YTM}$: Yield to Maturity
+                        -   The proportion (pMVD) $\times$ the bond's yield to maturity (YTM) is its weighted YTM.
+
+        -   [Interest Rate on Bank Debt]{.underline}
 
             $$K_d = \frac{\text{interest expense}\times (1-T)}{\text{total debt}}$$
 
