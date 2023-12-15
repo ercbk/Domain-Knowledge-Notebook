@@ -269,24 +269,64 @@
 
     -   Parkinson Range (PR) = ln(closing_price) - ln(opening_price)
 
--   [**Weighted Average Cost of Capital (WACC)**]{style="color: #009499"} - The average cost of financing a company's debt and equity. Most commonly used as a discount rate.
+-   [**Weighted Average Cost of Capital (WACC)**]{style="color: #009499"} - The weighted cost of a company's invested capital (both debt and equity). Most commonly used as a discount rate.
 
     $$\text{WACC} = w_e \cdot K_e + w_d \cdot K_d$$
 
     -   $w_e$: The proportion of equity to the company's market value of capital
     -   $w_d$: The proportion of debt to the company's market value of capital
-    -   $K_e$: The cost of equity approximated using capital asset pricing model (CAPM)
-        -   $\text{CAPM} = R_f + \beta\; (R_m - R_f)$
-            -   $R_f$: Risk-free rate of return
-            -   $R_m$: Market rate of return
-            -   $\beta$: Risk estimate or a company's stock beta or a similar public company's stock beta
-    -   $K_d$: The after-tax cost of debt
+    -   $K_e$: The **Cost of Equity** which is approximated using:
+        -   Notes from Video: [Estimating Cost Of Equity For WACC - DCF Model Insights](https://www.youtube.com/watch?v=ZigyWoDAMrE&list=PLAoukTI-9JbeRyMdcaqACHD9ZzT3STwZQ&index=4)
+
+        -   [(Basic) Capital Asset Pricing Model (CAPM)]{.underline}
+
+            $$
+            K_e = R_f + \beta_a\; (R_m - R_f)
+            $$
+
+            -   $R_f$: Risk-free rate of return (Time Value of Money)
+            -   $R_m$: Expected Market rate of return
+            -   $\beta_a$: Risk estimate or a company's stock beta or a similar public company's stock beta (Reward for bearing systematic risk)
+                -   Systematic Risk: The market risk that all companies are exposed to (i.e. economy).
+            -   $R_m - R_f$ is the amount of systemic risk.
+
+        -   [(Advanced) Capital Asset Pricing Model (CAPM)]{.underline}
+
+            $$
+            K_e = R_f + \beta_a\; (R_m - R_f) + R_s + \text{CRP} + R_z
+            $$
+
+            -   $R_s$: Size Risk Premium - The smaller the company, the riskier it is, and the higher the risk size premium. Larger companies are generally more diversified (e.g. more stores to offset local busines conditions)
+                -   Use Ibbotson/Kroll SBBI yearbook's "Size Premium" value. Provides consistency among analysts. (See R \>\> Documents \>\> Finance \>\> 2016 SBBI, Ch.7, pg 7-16 (pg140)) Kroll now puts out a monthly version for \$1200 🙄.
+            -   $\text{CRP}$: Country Risk Premium - Risk associated with investing in an international company. (e.g. political instability, volatile exchange rates, economic turmoil)
+                -   Use Default Spread from NYU Stern's country spread [page](https://pages.stern.nyu.edu/~adamodar/New_Home_Page/datafile/ctryprem.html)
+            -   $R_z$: Specific Company Risk Premium (SCRP) (Reward for bearing unsystematic risk)
+                -   Unsystematic Risk: The risk that affects a single company or a small group of companies.
+                -   No standardized formula for calculating this risk and is usually based on the analyst's judgement. Factors include the financial statement, comparative ratio analysis, and qualitative matters such as a site visit and management interviews.
+                -   Highland Global Method
+
+        -   [Build-Up Approach Model (BAM)]{.underline}
+
+            $$
+            K_e = R_f + R_m + \text{IRP}_i + R_s + CRP + R_z
+            $$
+
+            -   $\text{IRP}_i$: Industry Risk Premium - The amount investors expect the future return of this industry to exceed the market as a whole.
+
+                $$
+                \text{IRP}_i = (Ri_i \times \text{ERP}) - \text{ERP}
+                $$
+
+                -   $Ri_i$: The risk index for the industry.
+                -   $\text{ERP}$: The expected equity risk premium
+                -   Replaces the $\beta_a$ in the CAPM to take into account systemic risk.
+                -   Use Valuation Handbook -- Guide to Cost of Capital's "Industry Risk Premia" value. (See R \>\> Documents \>\> Finance \>\> 2016 Valuation Handbook, Appendix 3a) Kroll now puts out a monthly version for \$1200 🙄.
+    -   $K_d$: The **After-Tax Cost of Debt** which is approximated using**:**
         -   Notes from Video: [Estimating The Cost Of Debt For WACC - DCF Model Insights](https://www.youtube.com/watch?v=CSkPlxEe-dY&list=PLAoukTI-9JbeRyMdcaqACHD9ZzT3STwZQ&index=3)
 
         -   List of instruments that should be considered as *Debt* in the calculations below:
 
             -   Long and Short-Term interest-bearing obligations (e.g Loans, Bonds)
-
             -   Operating Leases (e.g. An airline that leases out its planes.)
 
         -   Methods\

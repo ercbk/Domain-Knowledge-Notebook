@@ -663,27 +663,71 @@ NPV = \sum_{t=0}^T \frac{C_t}{(1+r)^t} = 0
 <ul>
 <li>Parkinson Range (PR) = ln(closing_price) - ln(opening_price)</li>
 </ul></li>
-<li><p><span style="color: #009499"><strong>Weighted Average Cost of Capital (WACC)</strong></span> - The average cost of financing a company’s debt and equity. Most commonly used as a discount rate.</p>
+<li><p><span style="color: #009499"><strong>Weighted Average Cost of Capital (WACC)</strong></span> - The weighted cost of a company’s invested capital (both debt and equity). Most commonly used as a discount rate.</p>
 <p><span class="math display">\[\text{WACC} = w_e \cdot K_e + w_d \cdot K_d\]</span></p>
 <ul>
 <li><span class="math inline">\(w_e\)</span>: The proportion of equity to the company’s market value of capital</li>
 <li><span class="math inline">\(w_d\)</span>: The proportion of debt to the company’s market value of capital</li>
-<li><span class="math inline">\(K_e\)</span>: The cost of equity approximated using capital asset pricing model (CAPM)
+<li><span class="math inline">\(K_e\)</span>: The <strong>Cost of Equity</strong> which is approximated using:
 <ul>
-<li><span class="math inline">\(\text{CAPM} = R_f + \beta\; (R_m - R_f)\)</span>
+<li><p>Notes from Video: <a href="https://www.youtube.com/watch?v=ZigyWoDAMrE&amp;list=PLAoukTI-9JbeRyMdcaqACHD9ZzT3STwZQ&amp;index=4">Estimating Cost Of Equity For WACC - DCF Model Insights</a></p></li>
+<li><p><u>(Basic) Capital Asset Pricing Model (CAPM)</u></p>
+<p><span class="math display">\[
+K_e = R_f + \beta_a\; (R_m - R_f)
+\]</span></p>
 <ul>
-<li><span class="math inline">\(R_f\)</span>: Risk-free rate of return</li>
-<li><span class="math inline">\(R_m\)</span>: Market rate of return</li>
-<li><span class="math inline">\(\beta\)</span>: Risk estimate or a company’s stock beta or a similar public company’s stock beta</li>
+<li><span class="math inline">\(R_f\)</span>: Risk-free rate of return (Time Value of Money)</li>
+<li><span class="math inline">\(R_m\)</span>: Expected Market rate of return</li>
+<li><span class="math inline">\(\beta_a\)</span>: Risk estimate or a company’s stock beta or a similar public company’s stock beta (Reward for bearing systematic risk)
+<ul>
+<li>Systematic Risk: The market risk that all companies are exposed to (i.e.&nbsp;economy).</li>
+</ul></li>
+<li><span class="math inline">\(R_m - R_f\)</span> is the amount of systemic risk.</li>
+</ul></li>
+<li><p><u>(Advanced) Capital Asset Pricing Model (CAPM)</u></p>
+<p><span class="math display">\[
+K_e = R_f + \beta_a\; (R_m - R_f) + R_s + \text{CRP} + R_z
+\]</span></p>
+<ul>
+<li><span class="math inline">\(R_s\)</span>: Size Risk Premium - The smaller the company, the riskier it is, and the higher the risk size premium. Larger companies are generally more diversified (e.g.&nbsp;more stores to offset local busines conditions)
+<ul>
+<li>Use Ibbotson/Kroll SBBI yearbook’s “Size Premium” value. Provides consistency among analysts. (See R &gt;&gt; Documents &gt;&gt; Finance &gt;&gt; 2016 SBBI, Ch.7, pg 7-16 (pg140)) Kroll now puts out a monthly version for $1200 🙄.</li>
+</ul></li>
+<li><span class="math inline">\(\text{CRP}\)</span>: Country Risk Premium - Risk associated with investing in an international company. (e.g.&nbsp;political instability, volatile exchange rates, economic turmoil)
+<ul>
+<li>Use Default Spread from NYU Stern’s country spread <a href="https://pages.stern.nyu.edu/~adamodar/New_Home_Page/datafile/ctryprem.html">page</a></li>
+</ul></li>
+<li><span class="math inline">\(R_z\)</span>: Specific Company Risk Premium (SCRP) (Reward for bearing unsystematic risk)
+<ul>
+<li>Unsystematic Risk: The risk that affects a single company or a small group of companies.</li>
+<li>No standardized formula for calculating this risk and is usually based on the analyst’s judgement. Factors include the financial statement, comparative ratio analysis, and qualitative matters such as a site visit and management interviews.</li>
+<li>Highland Global Method</li>
 </ul></li>
 </ul></li>
-<li><span class="math inline">\(K_d\)</span>: The after-tax cost of debt
+<li><p><u>Build-Up Approach Model (BAM)</u></p>
+<p><span class="math display">\[
+K_e = R_f + R_m + \text{IRP}_i + R_s + CRP + R_z
+\]</span></p>
+<ul>
+<li><p><span class="math inline">\(\text{IRP}_i\)</span>: Industry Risk Premium - The amount investors expect the future return of this industry to exceed the market as a whole.</p>
+<p><span class="math display">\[
+\text{IRP}_i = (Ri_i \times \text{ERP}) - \text{ERP}
+\]</span></p>
+<ul>
+<li><span class="math inline">\(Ri_i\)</span>: The risk index for the industry.</li>
+<li><span class="math inline">\(\text{ERP}\)</span>: The expected equity risk premium</li>
+<li>Replaces the <span class="math inline">\(\beta_a\)</span> in the CAPM to take into account systemic risk.</li>
+<li>Use Valuation Handbook – Guide to Cost of Capital’s “Industry Risk Premia” value. (See R &gt;&gt; Documents &gt;&gt; Finance &gt;&gt; 2016 Valuation Handbook, Appendix 3a) Kroll now puts out a monthly version for $1200 🙄.</li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><span class="math inline">\(K_d\)</span>: The <strong>After-Tax Cost of Debt</strong> which is approximated using<strong>:</strong>
 <ul>
 <li><p>Notes from Video: <a href="https://www.youtube.com/watch?v=CSkPlxEe-dY&amp;list=PLAoukTI-9JbeRyMdcaqACHD9ZzT3STwZQ&amp;index=3">Estimating The Cost Of Debt For WACC - DCF Model Insights</a></p></li>
 <li><p>List of instruments that should be considered as <em>Debt</em> in the calculations below:</p>
 <ul>
-<li><p>Long and Short-Term interest-bearing obligations (e.g Loans, Bonds)</p></li>
-<li><p>Operating Leases (e.g.&nbsp;An airline that leases out its planes.)</p></li>
+<li>Long and Short-Term interest-bearing obligations (e.g Loans, Bonds)</li>
+<li>Operating Leases (e.g.&nbsp;An airline that leases out its planes.)</li>
 </ul></li>
 <li><p>Methods<br>
 <img src="_resources/Finance.resources/cost-of-debt-methods-1.png" class="img-fluid" width="532"></p></li>
