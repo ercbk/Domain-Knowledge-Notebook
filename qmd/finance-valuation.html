@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Domain Knowledge - Valuation</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../qmd/healthcare.html" rel="next">
+<link href="../qmd/finance-investing.html" rel="prev">
+<link href="../images/dk-favicon-32.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../qmd/finance-glossary.html">Finance</a></li><li class="breadcrumb-item"><a href="../qmd/finance-valuation.html">Valuation</a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">Domain Knowledge</a> 
+        <div class="sidebar-tools-main tools-wide">
+    <a href="https://ericbook.netlify.app/" rel="" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-house-fill"></i></a>
+    <a href="https://github.com/ercbk/Domain-Knowledge-Notebook" rel="" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../qmd/agriculture.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Agriculture</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../qmd/banking-credit.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Banking/Credit</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../qmd/budget-allocation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Budget Allocation</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../qmd/economics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Economics</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../qmd/environment.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Environment</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../qmd/epidemiology.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Epidemiology</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">Finance</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../qmd/finance-glossary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Glossary</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../qmd/finance-investing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Investing</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../qmd/finance-valuation.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Valuation</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../qmd/healthcare.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Healthcare</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../qmd/insurance.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Insurance</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../qmd/kpis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">KPIs</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../qmd/location-selection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Location Selection</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../qmd/logistics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Logistics</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../qmd/low-hanging-fruit.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Low Hanging Fruit</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../qmd/manufacturing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Manufacturing</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../qmd/marketing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Marketing</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../qmd/meteorology.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Meteorology</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../qmd/nonprofits.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Nonprofits</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../qmd/politics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Politics</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../qmd/product-development.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Product Development</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../qmd/real-estate.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Real Estate</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../qmd/retail.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Retail</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../qmd/saas.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">SaaS</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../qmd/sports-betting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Sports Betting</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#sec-finance-val-ror" id="toc-sec-finance-val-ror" class="nav-link active" data-scroll-target="#sec-finance-val-ror">Rates of Return</a></li>
+  <li><a href="#sec-finance-val-coc" id="toc-sec-finance-val-coc" class="nav-link" data-scroll-target="#sec-finance-val-coc">Cost of Capital</a>
+  <ul>
+  <li><a href="#sec-finance-val-coc-wacc" id="toc-sec-finance-val-coc-wacc" class="nav-link" data-scroll-target="#sec-finance-val-coc-wacc">Weighted Average Cost of Capital (WACC)</a>
+  <ul>
+  <li><a href="#sec-finance-val-coc-wacc-coe" id="toc-sec-finance-val-coc-wacc-coe" class="nav-link" data-scroll-target="#sec-finance-val-coc-wacc-coe">Cost of Equity</a></li>
+  <li><a href="#sec-finance-val-coc-wacc-cod" id="toc-sec-finance-val-coc-wacc-cod" class="nav-link" data-scroll-target="#sec-finance-val-coc-wacc-cod">After-Tax Cost of Debt</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span id="sec-finance-val" class="quarto-section-identifier">Valuation</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="sec-finance-val-ror" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="sec-finance-val-ror">Rates of Return</h2>
+<ul>
+<li><p><u>Rate of Return (RoR)</u></p>
+<p><span class="math display">\[
+\text{RoR} = \frac{\operatorname{current\_value - \operatorname{initial\_value}}}{\operatorname{initial\_value}} \times 100
+\]</span></p>
+<ul>
+<li>The net gain or loss of an investment over a specified time period, expressed as a percentage of the investment’s initial cost. The rate of return disregards some key factors in an investment, like the time value of money, the timing and size of cash flows, and the risk and uncertainty associated with any investment or in the case of stocks — taxes and investing fees.</li>
+<li>To adjust for inflation, just subtract the inflation rate (aka <strong>Real Rate of Return</strong>).</li>
+</ul></li>
+<li><p><u>Internal Rate of Return (IRR)</u></p>
+<ul>
+<li><p>A flawed indicator of strength for capital projects. It should only be used when a project has no interim cashflows or is somehow able reinvest those interim cashflows at the same IRR for the duration of the project (See disadvantages).</p></li>
+<li><p>The internal rate of return is a <em>discount rate</em> that makes the net present value (NPV) of all cash flows from a particular project or investment equal to zero. In general, projects with higher IRRs are more favorable than projects with lower IRRs, as the expected rate of return on these projects is greater.</p></li>
+<li><p>Formula</p>
+<p><span class="math display">\[
+NPV = \sum_{t=0}^T \frac{C_t}{(1+r)^t} = 0
+\]</span></p>
+<ul>
+<li>Solve for <span class="math inline">\(r\)</span> to get IRR</li>
+<li>Note that <span class="math inline">\(t=0\)</span> is the initial investment which makes the denominator 1 and therefore that particular <span class="math inline">\(\text{PV}\)</span> (Present Value) is just <span class="math inline">\(C_0\)</span>. Since it’s a cash outlay (i.e.&nbsp;cost), it will be a negative value.</li>
+<li>Variables
+<ul>
+<li><span class="math inline">\(T\)</span>: Total number of time periods</li>
+<li><span class="math inline">\(t\)</span>: Time Period</li>
+<li><span class="math inline">\(C_t\)</span>: Net cash inflow (or outflow) for time period, t</li>
+<li><span class="math inline">\(r\)</span>: Internal Rate of Return</li>
+</ul></li>
+</ul></li>
+<li><p>Disadvantages</p>
+<ul>
+<li>Larger projects with lower yields but higher net cash proceeds may be put at an analytical disadvantage when using IRR since IRR is a percentage and not in dollars.</li>
+<li>Assumes cash flows will be reinvested into projects with same IRR for each compounding year of the project. Business enviroments change, so it’s not reasonable to assume investment opportuniities with the samee IRR will be available every year. This leads to a more optimistic projection than there should be. (<a href="https://www.youtube.com/watch?v=f0IJegvYPKk">Video</a>)
+<ul>
+<li>e.g.&nbsp;the cash flow recieved in year 1 is automatically invested into another project with same IRR.</li>
+<li>Using MIRR instead of IRR solves this issue.<br>
+<img src="_resources/Finance.resources/irr-mirr-change-1.png" class="img-fluid" width="432">
+<ul>
+<li>Shows how IRR gets inflated as the cost of capital increases.</li>
+</ul></li>
+</ul></li>
+<li>Does not consider differences in the duration of projects. A longer term project may be more favorable even if it has a lower IRR, because it is generating a substantial cash flow for a longer period that would be difficult to replace if the shorter term project was chosen.</li>
+</ul></li>
+</ul></li>
+<li><p><u>Modified Internal Rate of Return (MIRR)</u></p>
+<p><span class="math display">\[
+\text{MIRR} = \left(\frac{\text{FV}}{\text{PV}} \right)^{\LARGE{\frac{1}{n}}} - 1
+\]</span></p>
+<ul>
+<li><p>Better alternative to IRR that assumes the cash inflows are reinvested at cost of capital of the company instead of at the IRR. (<a href="https://www.youtube.com/watch?v=f0IJegvYPKk">video1</a>, <a href="https://www.youtube.com/watch?v=Z-CUSIGLk2U">video2</a>)</p></li>
+<li><p>Variables</p>
+<ul>
+<li><span class="math inline">\(n\)</span>: Project horizon, i.e.&nbsp;number of periods where cashflows occur</li>
+<li><span class="math inline">\(\text{PV}\)</span>: The <u>absolute</u> sum of the present values of each cash outflow, aka Cash Outlay (e.g.&nbsp;costs, investments). Each cash outlay is projected (i.e.&nbsp;discounted) back to year 0 value. (See IRR for the formula, NPV is the sum of PVs)</li>
+<li><span class="math inline">\(\text{FV}\)</span>: The sum of the future values of each cash inflow, aka Terminal Cash Flow. Using the company’s cost of capital, each positive cash inflow is projeced forward (i.e.&nbsp;compounded) to the value at the last year of the project. (See Time Value of Money for the formula)
+<ul>
+<li>e.g.&nbsp;For a project with a 5yr horizon, a future value for the cash inflow of year 2 is its projected value at year 5.</li>
+</ul></li>
+</ul></li>
+<li><p><span class="ribbon-highlight">Example</span>: 7 year Project (<a href="https://www.youtube.com/watch?v=Z-CUSIGLk2U&amp;t=342s">link</a>)</p>
+<table class="table">
+<colgroup>
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Timeline</th>
+<th>Year 0</th>
+<th>Year 1</th>
+<th>Year 2</th>
+<th>Year 3</th>
+<th>Year 4</th>
+<th>Year 5</th>
+<th>Year 6</th>
+<th>Year 7</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Cash Outlay</td>
+<td>10000.00</td>
+<td>4500.00</td>
+<td>950.00</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Cash Flow</td>
+<td></td>
+<td></td>
+<td></td>
+<td>6000.00</td>
+<td>7500.00</td>
+<td>1250.00</td>
+<td>8010.00</td>
+<td>9000.00</td>
+</tr>
+<tr class="odd">
+<td>FV,PV at 12.5%</td>
+<td></td>
+<td>4000.00</td>
+<td>750.62</td>
+<td>9610.84</td>
+<td>10678.71</td>
+<td>1582.03</td>
+<td>9011.25</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Total CF</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>39882.83</td>
+</tr>
+<tr class="odd">
+<td>Total Outlay</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>14750.62</td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>cost_of_capital <span class="ot">&lt;-</span> <span class="fl">0.125</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>first_co <span class="ot">&lt;-</span> <span class="fl">10000.00</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>cash_outlays <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">4500.00</span>, <span class="fl">950.00</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>cash_flows <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">6000.00</span>, <span class="fl">7500.00</span>, <span class="fl">1250.00</span>, <span class="fl">8010.00</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>final_cf <span class="ot">&lt;-</span> <span class="fl">9000.00</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>project_horizon <span class="ot">&lt;-</span> <span class="fu">length</span>(<span class="fu">c</span>(cash_outlays, cash_flows, final_cf)) <span class="co"># 7yrs</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>calc_pv <span class="ot">&lt;-</span> <span class="cf">function</span>(c, disc_t, r) {</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  c <span class="sc">/</span> ((<span class="dv">1</span> <span class="sc">+</span> r)<span class="sc">^</span>disc_t)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>calc_fv <span class="ot">&lt;-</span> <span class="cf">function</span>(c, comp_t, r) {</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  c <span class="sc">*</span> ((<span class="dv">1</span> <span class="sc">+</span> r)<span class="sc">^</span>comp_t)</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>pv_vec <span class="ot">&lt;-</span> purrr<span class="sc">::</span><span class="fu">map2_dbl</span>(</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  cash_outlays,</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">seq</span>(<span class="fu">length</span>(cash_outlays)), <span class="co"># 1, 2</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>  calc_pv,</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>  <span class="at">r =</span> cost_of_capital</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>fv_vec <span class="ot">&lt;-</span> purrr<span class="sc">::</span><span class="fu">map2_dbl</span>(</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>  cash_flows,</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rev</span>(<span class="fu">seq</span>(<span class="fu">length</span>(cash_flows))), <span class="co"># 4, 3, 2, 1</span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>  calc_fv,</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>  <span class="at">r =</span> cost_of_capital</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>total_cf_adj <span class="ot">&lt;-</span> <span class="fu">sum</span>(fv_vec) <span class="sc">+</span> final_cf</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>total_co_adj <span class="ot">&lt;-</span> <span class="fu">sum</span>(pv_vec) <span class="sc">+</span> first_co</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>mirr <span class="ot">&lt;-</span> <span class="cf">function</span>(fv, pv, T) {</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>  ((fv <span class="sc">/</span> pv)<span class="sc">^</span>(<span class="dv">1</span><span class="sc">/</span>T)) <span class="sc">-</span> <span class="dv">1</span></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a><span class="fu">mirr</span>(total_cf_adj, total_co_adj, project_horizon)</span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; [1] 0.1526855</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>Note the opposite order used for <span class="var-text">disc_t</span> and <span class="var-text">comp_t</span> when iterating through the cash outlays and cash flows.
+<ul>
+<li>e.g.&nbsp;4500 needs to be discounted 1 year to Year 0 dollars and 6000 needs to be compounded 4 years to Year 7 dollars</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</section>
+<section id="sec-finance-val-coc" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="sec-finance-val-coc">Cost of Capital</h2>
+<section id="sec-finance-val-coc-wacc" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="sec-finance-val-coc-wacc">Weighted Average Cost of Capital (WACC)</h3>
+<ul>
+<li><p>The weighted cost of a company’s invested capital (both debt and equity). Most commonly used as a discount rate.</p>
+<p><span class="math display">\[\text{WACC} = w_e \cdot K_e + w_d \cdot K_d\]</span></p>
+<ul>
+<li><span class="math inline">\(w_e\)</span>: The proportion of equity to the company’s market value of capital</li>
+<li><span class="math inline">\(w_d\)</span>: The proportion of debt to the company’s market value of capital</li>
+<li><span class="math inline">\(K_e\)</span>: Cost of Equity</li>
+<li><span class="math inline">\(K_d\)</span>: After-Tax Cost of Debt</li>
+</ul></li>
+</ul>
+<section id="sec-finance-val-coc-wacc-coe" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="sec-finance-val-coc-wacc-coe">Cost of Equity</h4>
+<ul>
+<li><p>Notes from Video: <a href="https://www.youtube.com/watch?v=ZigyWoDAMrE&amp;list=PLAoukTI-9JbeRyMdcaqACHD9ZzT3STwZQ&amp;index=4">Estimating Cost Of Equity For WACC - DCF Model Insights</a></p></li>
+<li><p><u>(Basic) Capital Asset Pricing Model (CAPM)</u></p>
+<p><span class="math display">\[
+K_e = R_f + \beta_a\; (R_m - R_f)
+\]</span></p>
+<ul>
+<li><span class="math inline">\(R_f\)</span>: Risk-free rate of return (Time Value of Money)</li>
+<li><span class="math inline">\(R_m\)</span>: Expected Market rate of return</li>
+<li><span class="math inline">\(\beta_a\)</span>: Risk estimate or a company’s stock beta or a similar public company’s stock beta (Reward for bearing systematic risk)
+<ul>
+<li>Systematic Risk: The market risk that all companies are exposed to (i.e.&nbsp;economy).</li>
+</ul></li>
+<li><span class="math inline">\(R_m - R_f\)</span> is the amount of systemic risk.</li>
+</ul></li>
+<li><p><u>(Advanced) Capital Asset Pricing Model (CAPM)</u></p>
+<p><span class="math display">\[
+K_e = R_f + \beta_a\; (R_m - R_f) + R_s + \text{CRP} + R_z
+\]</span></p>
+<ul>
+<li><span class="math inline">\(R_s\)</span>: Size Risk Premium - The smaller the company, the riskier it is, and the higher the risk size premium. Larger companies are generally more diversified (e.g.&nbsp;more stores to offset local busines conditions)
+<ul>
+<li>Use Ibbotson/Kroll SBBI yearbook’s “Size Premium” value. Provides consistency among analysts. (See R &gt;&gt; Documents &gt;&gt; Finance &gt;&gt; 2016 SBBI, Ch.7, pg 7-16 (pg140)) Kroll now puts out a monthly version for $1200 🙄.</li>
+</ul></li>
+<li><span class="math inline">\(\text{CRP}\)</span>: Country Risk Premium - Risk associated with investing in an international company. (e.g.&nbsp;political instability, volatile exchange rates, economic turmoil)
+<ul>
+<li>Use Default Spread from NYU Stern’s country spread <a href="https://pages.stern.nyu.edu/~adamodar/New_Home_Page/datafile/ctryprem.html">page</a></li>
+</ul></li>
+<li><span class="math inline">\(R_z\)</span>: Specific Company Risk Premium (SCRP) (Reward for bearing unsystematic risk)
+<ul>
+<li><p>Unsystematic Risk: The risk that affects a single company or a small group of companies.</p></li>
+<li><p>No standardized formula for calculating this risk and is usually based on the analyst’s judgement. Factors include the financial statement, comparative ratio analysis, and qualitative matters such as a site visit and management interviews.</p></li>
+<li><p>Highland Global method for estimating SCRP</p>
+<p><img src="_resources/Finance.resources/specific-co-risk-prem-1.png" class="img-fluid" width="532"></p>
+<ul>
+<li><a href="https://csbweb01.uncw.edu/people/farinellaj/Classes/Fin430/Handouts/Company%20Risk%20Premium.pdf">Link</a> to white paper (Also in R &gt;&gt; Documents &gt;&gt; Finance)</li>
+<li>More appropiate for older industrial companies than new companies. (See Issues section)</li>
+<li>Process
+<ol type="1">
+<li>For each factor’s value of the company, get the appropriate Assignment Rating in the left-most column
+<ul>
+<li>Example shows this value at the bottom of each factor column where the highlighted cell’s are the company’s factor values.</li>
+</ul></li>
+<li>Average all the Assignment Ratings to get the SCRP estimate
+<ul>
+<li>For this example, estimated SCRP = 3.86%</li>
+</ul></li>
+</ol></li>
+<li>Factors
+<ul>
+<li>Revenue Growth measured by either Compound Annual Growth Rate over the last 3 to 5yrs or Forecasted Growth Rate</li>
+<li>Financial Risk measured by Total Debt Ratio
+<ul>
+<li>Use the most recent fiscal year-end balance sheet, unless there’s significant interim or projected change in teh firm’s capital structure</li>
+</ul></li>
+<li>Operation Risk measured by Fixed Costs/Sales
+<ul>
+<li>In absence of a major cost cutting intitative to be implemented in the foreseeable future, use the most recent fiscal year data.</li>
+</ul></li>
+<li>Profitability measured by Net Profit Margin
+<ul>
+<li>For stable firms, use the most recent fiscal year net profit margin on an adjusted basis.</li>
+<li>For firms with erratic earnings or profitability, use a 3 to 4yr average of the net profit margin or the projected net profit margin if the erratic behavior is expected to subside.</li>
+<li>If earnings are not adjusted for the previous 3 to 5yrs, use the most recent fiscal year.</li>
+</ul></li>
+<li>Industry Risk measured by Firm Return on Asset (ROA)/ Industry ROA
+<ul>
+<li>Return on Asset measures the ability of the firm to generate revenues with its asset base.</li>
+</ul></li>
+<li>Economic Risk measured by Firm ROA/GDP Change
+<ul>
+<li>Ratio suggests that economic risk for the firm is a function of its ability to generate a return on its asset bas relative to the overall economy’s ability.</li>
+<li>Use most recent GDP change (i.e growth or contraction %)</li>
+</ul></li>
+<li>Customer Concentration measured by Total Sales to Top 5 Customers/Firm’s Total Sales
+<ul>
+<li>Use most recent fiscal year’s sales figures unless there’s an anticipated change for the future (e.g.&nbsp;loss of the one of the top five customers in the next year)</li>
+</ul></li>
+</ul></li>
+<li>Issues
+<ul>
+<li>Needs adjustment for Tech companies.
+<ul>
+<li>Tech companies don’t have many fixed costs because they don’t have a lot of tangible assets. So, there would need to be some sort of replacement measure for Operational Risk</li>
+<li>Return on Equity would be more appropriate for estimating Industry Risk (and Economic?)</li>
+</ul></li>
+<li>Econoomic Risk is essentially Country Risk, so using this measure in the Advanced CAPM is potentially double counting.</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><p><u>Build-Up Approach Model (BAM)</u></p>
+<p><span class="math display">\[
+K_e = R_f + R_m + \text{IRP}_i + R_s + CRP + R_z
+\]</span></p>
+<ul>
+<li><p><span class="math inline">\(\text{IRP}_i\)</span>: Industry Risk Premium - The amount investors expect the future return of this industry to exceed the market as a whole.</p>
+<p><span class="math display">\[
+\text{IRP}_i = (Ri_i \times \text{ERP}) - \text{ERP}
+\]</span></p>
+<ul>
+<li><span class="math inline">\(Ri_i\)</span>: The risk index for the industry.</li>
+<li><span class="math inline">\(\text{ERP}\)</span>: The expected equity risk premium</li>
+<li>Replaces the <span class="math inline">\(\beta_a\)</span> in the CAPM to take into account systemic risk.</li>
+<li>Use Valuation Handbook – Guide to Cost of Capital’s “Industry Risk Premia” value. (See R &gt;&gt; Documents &gt;&gt; Finance &gt;&gt; 2016 Valuation Handbook, Appendix 3a) Kroll now puts out a monthly version for $1200 🙄.</li>
+</ul></li>
+</ul></li>
+</ul>
+</section>
+<section id="sec-finance-val-coc-wacc-cod" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="sec-finance-val-coc-wacc-cod">After-Tax Cost of Debt</h4>
+<ul>
+<li><p>Notes from Video: <a href="https://www.youtube.com/watch?v=CSkPlxEe-dY&amp;list=PLAoukTI-9JbeRyMdcaqACHD9ZzT3STwZQ&amp;index=3">Estimating The Cost Of Debt For WACC - DCF Model Insights</a></p></li>
+<li><p>List of instruments that should be considered as <em>Debt</em> in the calculations below:</p>
+<ul>
+<li>Long and Short-Term interest-bearing obligations (e.g Loans, Bonds)</li>
+<li>Operating Leases (e.g.&nbsp;An airline that leases out its planes.)</li>
+</ul></li>
+<li><p>Methods<br>
+<img src="_resources/Finance.resources/cost-of-debt-methods-1.png" class="img-fluid" width="532"></p></li>
+<li><p><u>Yield-to-Maturity</u> (Most Accurate)</p>
+<ul>
+<li>Variables required for each bond:
+<ul>
+<li><span class="var-text">Market Price</span>: The Price the bond is being traded at</li>
+<li><span class="var-text">Amount</span>: The amount the bond was issued for</li>
+<li><span class="var-text">Yield to Maturity</span>: Rate at which the current market price of the bond is equal to the present value of all the cash flows from the bond</li>
+</ul></li>
+<li><span class="var-text">Amount</span> was difficult to find. I found it along with the other variables by using a combination of websites, <a href="https://www.finra.org/finra-data/fixed-income/corp-and-agency">finra.org</a> and <a href="https://www.bondsupermart.com/bsm/portfolio-builder">bondsupermart.com</a>. Each bond has a few different ids, so I suspect the amount can obtained through the SEC or somewhere using them if those websites die.</li>
+<li>Overall Process
+<ol type="1">
+<li>Calculate Yield-to-Maturity (YTM) of all publicly traded company debt</li>
+<li>Calculate the weighted average of all debt instruments</li>
+<li>Multiply result by (1 - Tax Rate) to get <span class="math inline">\(K_d\)</span></li>
+</ol></li>
+<li>Steps
+<ol type="1">
+<li><p>Calculate each bond’s discount rate (DR)</p>
+<p><span class="math display">\[
+\text{DR}_i = \frac{\text{Price}_i}{100}
+\]</span></p>
+<ul>
+<li><span class="math inline">\(i\)</span>: The index for each bond the company has issued</li>
+<li>Prices below 100 are trading below market value</li>
+<li>Prices above 100 are trading above market value (aka at a premium)</li>
+</ul></li>
+<li><p>Calculate the Market Value of Debt (MVD)</p>
+<p><span class="math display">\[
+\text{MVD} = \sum_{i=1}^N \text{MVB}_i = \sum_{i=1}^N \text{DR}_i \times \text{A}_i
+\]</span></p>
+<ul>
+<li><span class="math inline">\(A\)</span>: The amount of the bond</li>
+<li>The market value of a bond (MVB) is the discount rate (DR) <span class="math inline">\(\times\)</span> the amount of the bond (A). Therefore, the sum is the market value of the company’s debt.</li>
+</ul></li>
+<li><p>For each bond, calculate Proportion of MVD (pMVD)</p>
+<p><span class="math display">\[
+\text{pMVD}_i = \frac{\text{MVB}_i}{\text{MVD}}
+\]</span></p>
+<ul>
+<li>Calculates each bond’s proportion of the total debt</li>
+</ul></li>
+<li><p>Calculate After-Tax Cost of Debt</p>
+<p><span class="math display">\[
+K_{d} = (1- \text{Tax Rate}) \times \sum_{i = 1}^N \text{pMVD}_i \times \text{YTM}_i
+\]</span></p>
+<ul>
+<li><span class="math inline">\(\text{YTM}\)</span>: Yield to Maturity</li>
+<li><span class="math inline">\(\text{Tax Rate}\)</span>: The company’s effective tax rate in its most recent quarter.</li>
+<li>The proportion (pMVD) <span class="math inline">\(\times\)</span> the bond’s yield to maturity (YTM) is its weighted YTM.</li>
+</ul></li>
+</ol></li>
+</ul></li>
+<li><p><u>Debt Rating</u> (Recommended)</p>
+<p><span class="math display">\[
+K_d = (\operatorname{Risk Free Rate} + \operatorname{Default Spread}) \times (1 - \operatorname{Tax Rate})
+\]</span></p>
+<ul>
+<li>For cases where the company’s debt may not have market prices readily available. (e.g a mix of bonds and bank debt)</li>
+<li><span class="math inline">\(\text{Default Spread}\)</span>: Associated with the company’s credit rating (e.g.&nbsp;AAA, BB+, etc.). Get the company’s rating and look-up the spread for that rating. The company credit ratings seem readily availabe just by googling, but the spreads are a little harder to find. NYU Stern Business School has a <a href="https://pages.stern.nyu.edu/~adamodar/New_Home_Page/datafile/ratings.html">page</a>.
+<ul>
+<li>For foreign corporations or corporations that get much of their revenue from other countries (adds in geopolitical risk), you need to add the add the “country spread” to the default spread. NYU Stern’s country spread <a href="https://pages.stern.nyu.edu/~adamodar/New_Home_Page/datafile/ctryprem.html">page</a>.</li>
+</ul></li>
+<li><span class="math inline">\(\text{Risk Free Rate}\)</span>: Value that’s used depends upon length of bank loan or maturity date of the bond. (e.g for a 12-year bond or a 12-year loan, use the 10-year treasury yield since it is the closest benchmark)
+<ul>
+<li>Not sure how this works if a company has multiple debt instruments that get payed off at different time intervals.</li>
+</ul></li>
+<li><span class="math inline">\(\text{Tax Rate}\)</span>: The company’s effective tax rate in its most recent quarter.</li>
+</ul></li>
+<li><p><u>Synthetic Rating</u></p>
+<ul>
+<li><p>Estimate the credit rating using a company’s financial characteristics</p>
+<p><span class="math display">\[
+\text{Interest Coverage Ratio} = \frac{\text{EBIT}}{\text{Interest Expenses}}
+\]</span></p>
+<ul>
+<li><span class="math inline">\(\text{EBIT}\)</span>: Typically reported in a company’s income statement</li>
+<li><span class="math inline">\(\text{Interest Expense}\)</span>: How much interest was payed on its debt (long and short term). Most likely also reported in the company’s financials.</li>
+<li><span class="math inline">\(\text{Interest Coverage Ratio}\)</span>: The relationship to the rating and therefore the default spread is also on the NYT Stern <a href="https://pages.stern.nyu.edu/~adamodar/New_Home_Page/datafile/ratings.html">page</a></li>
+</ul></li>
+<li><p>Then, use Debt Rating method to get <span class="math inline">\(K_d\)</span></p></li>
+</ul></li>
+<li><p><u>Interest Rate on Bank Debt</u></p>
+<p><span class="math display">\[K_d = \frac{\text{interest expense}\times (1-T)}{\text{total debt}}\]</span></p>
+<ul>
+<li>Method of last resort if the other methods are not available. Since bank debt isn’t traded, the market value of this debt is unknown. The WACC formula weights are market value based, so a method that take into account the market value would be preferrable.</li>
+<li><span class="math inline">\(\text{interest expense}\)</span>: Interest paid on company’s current debt
+<ul>
+<li>Since interest expense is tax-deductible, the debt is calculated on an after-tax basis</li>
+</ul></li>
+<li><span class="math inline">\(T\)</span>: Company’s effective tax rate</li>
+</ul></li>
+</ul>
+
+
+</section>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../qmd/finance-investing.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Investing</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../qmd/healthcare.html" class="pagination-link">
+        <span class="nav-page-text">Healthcare</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+    <a class="nav-link" href="../LICENSE.html">Creative Commons Attribution-NonCommercial 4.0 International Public License</a>
+  </li>  
+</ul>
+    </div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+</body></html>
