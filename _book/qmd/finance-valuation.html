@@ -322,7 +322,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#sec-finance-val-ror" id="toc-sec-finance-val-ror" class="nav-link active" data-scroll-target="#sec-finance-val-ror">Rates of Return</a></li>
+  <li><a href="#misc" id="toc-misc" class="nav-link active" data-scroll-target="#misc">Misc</a></li>
+  <li><a href="#sec-finance-val-ror" id="toc-sec-finance-val-ror" class="nav-link" data-scroll-target="#sec-finance-val-ror">Rates of Return</a></li>
   <li><a href="#sec-finance-val-coc" id="toc-sec-finance-val-coc" class="nav-link" data-scroll-target="#sec-finance-val-coc">Cost of Capital</a>
   <ul>
   <li><a href="#sec-finance-val-coc-wacc" id="toc-sec-finance-val-coc-wacc" class="nav-link" data-scroll-target="#sec-finance-val-coc-wacc">Weighted Average Cost of Capital (WACC)</a>
@@ -354,6 +355,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
+<section id="misc" class="level2">
+<h2 class="anchored" data-anchor-id="misc">Misc</h2>
+<ul>
+<li><strong>TL;DR;</strong>
+<ul>
+<li>In order to be considered, a project’s <em>Rate of Return</em> must exceed the company’s <em>Cost of Capital</em> which deems it as a good investment. Then, out of the projects that exceed the company’s <em>Cost of Capital</em>, the project with the largest <em>Rate of Return</em> is, in general, considered the best project to invest in.
+<ul>
+<li>Other Factors
+<ul>
+<li>Net Present Value (NPV): While the rate of return for a project may be less than another, its NPV might be greater due its duration being longer. Therefore, its total value might be greater.</li>
+<li>Payment Schedule: Due to the Time Value of Money, a project that pays earlier rather than later, with all else being equal, is more valuable.</li>
+<li>Payout duration: A project with payouts over a longer time period may be more desirable for a given business environment.</li>
+</ul></li>
+</ul></li>
+<li>Recommended
+<ul>
+<li>Rates of Return: MIRR &gt; IRR</li>
+<li>Cost of Capital: WACC</li>
+</ul></li>
+<li>For private companys, I haven’t seen anything to use in place of Cost of Capital (ie. WACC), but MIRR is still available to compare projects.</li>
+</ul></li>
+</ul>
+</section>
 <section id="sec-finance-val-ror" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="sec-finance-val-ror">Rates of Return</h2>
 <ul>
@@ -364,6 +388,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li>The net gain or loss of an investment over a specified time period, expressed as a percentage of the investment’s initial cost. The rate of return disregards some key factors in an investment, like the time value of money, the timing and size of cash flows, and the risk and uncertainty associated with any investment or in the case of stocks — taxes and investing fees.</li>
 <li>To adjust for inflation, just subtract the inflation rate (aka <strong>Real Rate of Return</strong>).</li>
+<li>Types
+<ul>
+<li>Arithmetic: <span class="math inline">\(\sum_{i=1}^T r_i\)</span> where <span class="math inline">\(r_i\)</span> is the return for the time period, <span class="math inline">\(i\)</span>.</li>
+<li>Geometric (aka Compound Annual Growth Rate): <span class="math inline">\([(1+r_1) \times (1+r_2) \times \cdots \times (1+r_T)]^{1/T} - 1\)</span>
+<ul>
+<li>Includes compounding effect.</li>
+<li>At most is the Arithmetic average but usually less</li>
+</ul></li>
+<li>Annual Percentage Rate (APR): <span class="math inline">\(m \times k_m\)</span> where <span class="math inline">\(m\)</span> is the number of compounding periods in a year and <span class="math inline">\(k_m\)</span> is the periodic rate
+<ul>
+<li>Conventional method of quoting interest rates</li>
+<li>Ignores compounding effect</li>
+<li>e.g.&nbsp;a credit card with a 1% monthly interest rate has an <span class="math inline">\(\text{APR} = 0.01 \times 12 = 0.12 \;\operatorname{or}\; 12\%\)</span></li>
+</ul></li>
+<li>Effective Annual Rate (EAR): <span class="math inline">\((1+k_m)^m - 1\)</span>
+<ul>
+<li>APR that takes into account the compounding effect.</li>
+<li>e.g.&nbsp;a credit card with a monthly interest rate of 1.25%, what is the EAR? <span class="math inline">\(\text{EAR} = (1 + 0.0125)^{12}-1 = 0.1608 \;\text{or}\; 16.08\%\)</span></li>
+</ul></li>
+</ul></li>
 </ul></li>
 <li><p><u>Internal Rate of Return (IRR)</u></p>
 <ul>
@@ -547,10 +591,13 @@ NPV = \sum_{t=0}^T \frac{C_t}{(1+r)^t} = 0
 </section>
 <section id="sec-finance-val-coc" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="sec-finance-val-coc">Cost of Capital</h2>
+<ul>
+<li>The purpose of calculating Cost of Capital is to determine the minimum rate of return that a company should generate to satisfy its investors and creditors. It is commonly used in capital budgeting and valuation processes. When a company is considering new investment projects, the Cost of Capital is often used as the discount rate to evaluate the project’s feasibility. If the project’s expected rate of return is higher than the Cost of Capital, it may be considered a worthwhile investment.</li>
+</ul>
 <section id="sec-finance-val-coc-wacc" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="sec-finance-val-coc-wacc">Weighted Average Cost of Capital (WACC)</h3>
 <ul>
-<li><p>The weighted cost of a company’s invested capital (both debt and equity). Most commonly used as a discount rate.</p>
+<li><p>The weighted cost of a company’s invested capital (both debt and equity). Recommend method to calculate Cost of Capital.</p>
 <p><span class="math display">\[\text{WACC} = w_e \cdot K_e + w_d \cdot K_d\]</span></p>
 <ul>
 <li><span class="math inline">\(w_e\)</span>: The proportion of equity to the company’s market value of capital</li>
@@ -733,20 +780,21 @@ K_{d} = (1- \text{Tax Rate}) \times \sum_{i = 1}^N \text{pMVD}_i \times \text{YT
 </ul></li>
 </ol></li>
 </ul></li>
-<li><p><u>Debt Rating</u> (Recommended)</p>
+<li><p><u>Debt Rating</u> (Best of the Rest)</p>
 <p><span class="math display">\[
 K_d = (\operatorname{Risk Free Rate} + \operatorname{Default Spread}) \times (1 - \operatorname{Tax Rate})
 \]</span></p>
 <ul>
 <li>For cases where the company’s debt may not have market prices readily available. (e.g a mix of bonds and bank debt)</li>
+<li>Not sure how this works if a company has multiple debt instruments that get payed off at different time intervals.
+<ul>
+<li>Maybe compute this value for each debt instrument. Then, multiply each <span class="math inline">\(K_{d,i}\)</span> by its instrument’s proportion of overall debt as in YTD method above. Then, add them all together.</li>
+</ul></li>
 <li><span class="math inline">\(\text{Default Spread}\)</span>: Associated with the company’s credit rating (e.g.&nbsp;AAA, BB+, etc.). Get the company’s rating and look-up the spread for that rating. The company credit ratings seem readily availabe just by googling, but the spreads are a little harder to find. NYU Stern Business School has a <a href="https://pages.stern.nyu.edu/~adamodar/New_Home_Page/datafile/ratings.html">page</a>.
 <ul>
 <li>For foreign corporations or corporations that get much of their revenue from other countries (adds in geopolitical risk), you need to add the add the “country spread” to the default spread. NYU Stern’s country spread <a href="https://pages.stern.nyu.edu/~adamodar/New_Home_Page/datafile/ctryprem.html">page</a>.</li>
 </ul></li>
-<li><span class="math inline">\(\text{Risk Free Rate}\)</span>: Value that’s used depends upon length of bank loan or maturity date of the bond. (e.g for a 12-year bond or a 12-year loan, use the 10-year treasury yield since it is the closest benchmark)
-<ul>
-<li>Not sure how this works if a company has multiple debt instruments that get payed off at different time intervals.</li>
-</ul></li>
+<li><span class="math inline">\(\text{Risk Free Rate}\)</span>: Value that’s used depends upon length of bank loan or maturity date of the bond. (e.g for a 12-year bond or a 12-year loan, use the 10-year treasury yield since it is the closest benchmark)</li>
 <li><span class="math inline">\(\text{Tax Rate}\)</span>: The company’s effective tax rate in its most recent quarter.</li>
 </ul></li>
 <li><p><u>Synthetic Rating</u></p>

@@ -1,5 +1,18 @@
 # Valuation {#sec-finance-val .unnumbered}
 
+## Misc
+
+-   **TL;DR;**
+    -   In order to be considered, a project's *Rate of Return* must exceed the company's *Cost of Capital* which deems it as a good investment. Then, out of the projects that exceed the company's *Cost of Capital*, the project with the largest *Rate of Return* is, in general, considered the best project to invest in.
+        -   Other Factors
+            -   Net Present Value (NPV): While the rate of return for a project may be less than another, its NPV might be greater due its duration being longer. Therefore, its total value might be greater.
+            -   Payment Schedule: Due to the Time Value of Money, a project that pays earlier rather than later, with all else being equal, is more valuable.
+            -   Payout duration: A project with payouts over a longer time period may be more desirable for a given business environment.
+    -   Recommended
+        -   Rates of Return: MIRR \> IRR
+        -   Cost of Capital: WACC
+    -   For private companys, I haven't seen anything to use in place of Cost of Capital (ie. WACC), but MIRR is still available to compare projects.
+
 ## Rates of Return {#sec-finance-val-ror .unnumbered}
 
 -   [Rate of Return (RoR)]{.underline}
@@ -10,6 +23,18 @@
 
     -   The net gain or loss of an investment over a specified time period, expressed as a percentage of the investment's initial cost. The rate of return disregards some key factors in an investment, like the time value of money, the timing and size of cash flows, and the risk and uncertainty associated with any investment or in the case of stocks --- taxes and investing fees.
     -   To adjust for inflation, just subtract the inflation rate (aka **Real Rate of Return**).
+    -   Types
+        -   Arithmetic: $\sum_{i=1}^T r_i$ where $r_i$ is the return for the time period, $i$.
+        -   Geometric (aka Compound Annual Growth Rate): $[(1+r_1) \times (1+r_2) \times \cdots \times (1+r_T)]^{1/T} - 1$
+            -   Includes compounding effect.
+            -   At most is the Arithmetic average but usually less
+        -   Annual Percentage Rate (APR): $m \times k_m$ where $m$ is the number of compounding periods in a year and $k_m$ is the periodic rate
+            -   Conventional method of quoting interest rates
+            -   Ignores compounding effect
+            -   e.g. a credit card with a 1% monthly interest rate has an $\text{APR} = 0.01 \times 12 = 0.12 \;\operatorname{or}\; 12\%$
+        -   Effective Annual Rate (EAR): $(1+k_m)^m - 1$
+            -   APR that takes into account the compounding effect.
+            -   e.g. a credit card with a monthly interest rate of 1.25%, what is the EAR? $\text{EAR} = (1 + 0.0125)^{12}-1 = 0.1608 \;\text{or}\; 16.08\%$
 
 -   [Internal Rate of Return (IRR)]{.underline}
 
@@ -112,9 +137,11 @@
 
 ## Cost of Capital {#sec-finance-val-coc .unnumbered}
 
+-   The purpose of calculating Cost of Capital is to determine the minimum rate of return that a company should generate to satisfy its investors and creditors. It is commonly used in capital budgeting and valuation processes. When a company is considering new investment projects, the Cost of Capital is often used as the discount rate to evaluate the project's feasibility. If the project's expected rate of return is higher than the Cost of Capital, it may be considered a worthwhile investment.
+
 ### Weighted Average Cost of Capital (WACC) {#sec-finance-val-coc-wacc .unnumbered}
 
--   The weighted cost of a company's invested capital (both debt and equity). Most commonly used as a discount rate.
+-   The weighted cost of a company's invested capital (both debt and equity). Recommend method to calculate Cost of Capital.
 
     $$\text{WACC} = w_e \cdot K_e + w_d \cdot K_d$$
 
@@ -266,17 +293,18 @@
             -   $\text{Tax Rate}$: The company's effective tax rate in its most recent quarter.
             -   The proportion (pMVD) $\times$ the bond's yield to maturity (YTM) is its weighted YTM.
 
--   [Debt Rating]{.underline} (Recommended)
+-   [Debt Rating]{.underline} (Best of the Rest)
 
     $$
     K_d = (\operatorname{Risk Free Rate} + \operatorname{Default Spread}) \times (1 - \operatorname{Tax Rate})
     $$
 
     -   For cases where the company's debt may not have market prices readily available. (e.g a mix of bonds and bank debt)
+    -   Not sure how this works if a company has multiple debt instruments that get payed off at different time intervals.
+        -   Maybe compute this value for each debt instrument. Then, multiply each $K_{d,i}$ by its instrument's proportion of overall debt as in YTD method above. Then, add them all together.
     -   $\text{Default Spread}$: Associated with the company's credit rating (e.g. AAA, BB+, etc.). Get the company's rating and look-up the spread for that rating. The company credit ratings seem readily availabe just by googling, but the spreads are a little harder to find. NYU Stern Business School has a [page](https://pages.stern.nyu.edu/~adamodar/New_Home_Page/datafile/ratings.html).
         -   For foreign corporations or corporations that get much of their revenue from other countries (adds in geopolitical risk), you need to add the add the "country spread" to the default spread. NYU Stern's country spread [page](https://pages.stern.nyu.edu/~adamodar/New_Home_Page/datafile/ctryprem.html).
     -   $\text{Risk Free Rate}$: Value that's used depends upon length of bank loan or maturity date of the bond. (e.g for a 12-year bond or a 12-year loan, use the 10-year treasury yield since it is the closest benchmark)
-        -   Not sure how this works if a company has multiple debt instruments that get payed off at different time intervals.
     -   $\text{Tax Rate}$: The company's effective tax rate in its most recent quarter.
 
 -   [Synthetic Rating]{.underline}

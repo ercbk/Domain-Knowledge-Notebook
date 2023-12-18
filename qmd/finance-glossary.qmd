@@ -30,9 +30,11 @@
 
 -   [**Discount Rate**]{style="color: #009499"} - Represents a minimum rate of return acceptable to the investor, generally considered to be the investor's cost of capital.
 
--   [**Discounted Cash Flow**]{style="color: #009499"} - Takes the earnings of an investment and discounts each of the cash flows based on a discount rate.
+    -   For stock dividend valuation ([video](https://www.youtube.com/watch?v=7T8sgT-otDU&list=PLAoukTI-9Jbckb10abJjE_O7goUrHaNHe&index=5)), the discount rate, $k = \text{90-day T-Bill Rate} + (\text{Stock Beta} \times \text{Stock Market Risk Premium})$
+        -   $\text{Stock Market Risk Premium}$ might be the equity risk premium which is the expected return on stocks - risk free rate (e.g. S&P average return rate - 10yr treasury bill rate)
+    -   For project valuation, see [Finance, Valuation](finance-valuation.qmd#sec-finance-val){style="color: green"}
 
-    -   [Example]{.ribbon-highlight}:
+-   [**Discounted Cash Flow**]{style="color: #009499"} - Takes the earnings of an investment and discounts each of the cash flows based on a discount rate.
 
 -   [**Drawdown**]{style="color: #009499"} - A peak-to-trough decline during a specific period for an investment, trading account, or fund. If a trading account has \$10,000 in it, and the funds drop to \$9,000 before moving back above \$10,000, then the trading account witnessed a 10% drawdown.
 
@@ -85,7 +87,7 @@
         [(1 + 0.8)\times (1 - 0.5)\times (1 + 0.6)\times (1 + 0.4)] - 1 = 13.1\%
         $$
 
--   [**Internal Rate of Return (IRR)**]{style="color: #009499"} - A flawed indicator of strength for capital projects. It should only be used when a project has no interim cashflows or is somehow able reinvest those interim cashflows at the same IRR for the duration of the project (See disadvantages). (Also see MIRR and [Finance, Valuation >> Rates of Return](finance-valuation.qmd#sec-finance-val-ror){style="color: green"})
+-   [**Internal Rate of Return (IRR)**]{style="color: #009499"} - A flawed indicator of strength for capital projects. It should only be used when a project has no interim cashflows or is somehow able reinvest those interim cashflows at the same IRR for the duration of the project (See disadvantages). (Also see MIRR and [Finance, Valuation \>\> Rates of Return](finance-valuation.qmd#sec-finance-val-ror){style="color: green"})
 
     -   The internal rate of return is a *discount rate* that makes the net present value (NPV) of all cash flows from a particular project or investment equal to zero. In general, projects with higher IRRs are more favorable than projects with lower IRRs, as the expected rate of return on these projects is greater.
 
@@ -99,7 +101,7 @@
 
 -   [**Market Momentum**]{style="color: #009499"} - The rate of acceleration of a security's price---that is, the speed at which the price is changing. In general, Momentum = Today's price - Price from X days ago. Positive: bullish, Negative: bearish. More sophisticated indicators can be calculated, see <https://www.investopedia.com/terms/m/marketmomentum.asp>
 
--   [**Modified Internal Rate of Return (MIRR)**]{style="color: #009499"} - Better alternative to IRR that assumes the cash inflows are reinvested at cost of capital of the company instead of at the IRR. (Also see [Finance, Valuation >> Rates of Return](finance-valuation.qmd#sec-finance-val-ror){style="color: green"})
+-   [**Modified Internal Rate of Return (MIRR)**]{style="color: #009499"} - Better alternative to IRR that assumes the cash inflows are reinvested at cost of capital of the company instead of at the IRR. (Also see [Finance, Valuation \>\> Rates of Return](finance-valuation.qmd#sec-finance-val-ror){style="color: green"})
 
 -   [**Options**]{style="color: #009499"} - An option on stock XYZ gives the holder the right to buy or sell XYZ at the strike price up until expiration. The underlying asset for the option is the stock of XYZ. The writer must either buy or sell the underlying asset to the buyer on the specified date at the agreed-upon price. The buyer is not obligated to purchase the underlying asset, but they can exercise their right if they choose to do so. If the option is about to expire, and the underlying asset has not moved favorably enough to make exercising the option worthwhile, the buyer can let the expire and they will lose the amount they paid for the option.
 
@@ -110,7 +112,7 @@
 
 -   [**Outstanding Shares**]{style="color: #009499"} - The number of stocks that a company has issued. This number represents all the shares that can be bought and sold by the public, as well as all the restricted shares that require special permission before being transacted.
 
--   [**Rate of Return (RoR)**]{style="color: #009499"} - The net gain or loss of an investment over a specified time period, expressed as a percentage of the investment's initial cost. The rate of return disregards some key factors in an investment, like the time value of money, the timing and size of cash flows, and the risk and uncertainty associated with any investment or in the case of stocks --- taxes and investing fees. (See Internal Rate of Return, MIRR, and [Finance, Valuation >> Rates of Return](finance-valuation.qmd#sec-finance-val-ror){style="color: green"})
+-   [**Rate of Return (RoR)**]{style="color: #009499"} - The net gain or loss of an investment over a specified time period, expressed as a percentage of the investment's initial cost. The rate of return disregards some key factors in an investment, like the time value of money, the timing and size of cash flows, and the risk and uncertainty associated with any investment or in the case of stocks --- taxes and investing fees. (See Internal Rate of Return, MIRR, and [Finance, Valuation \>\> Rates of Return](finance-valuation.qmd#sec-finance-val-ror){style="color: green"})
 
 -   [**Relative Performance**]{style="color: #009499"} - The price ratio of two stocks
 
