@@ -1,12 +1,14 @@
 # Glossary {#sec-finance-gloss .unnumbered}
 
+-   [**Amortization**]{style="color: #009499"} - Similar to depreciation except for intangible assets. A non-cash expense that reduces the value of a company's *definite life* intangible assets and also reduces reported earnings
+
 -   [**Basis Point**]{style="color: #009499"} - 1/100th of a percentage point
 
 -   [**Basis Risk**]{style="color: #009499"} - The risk that an asset and a hedge will not move in opposite directions as expected; "basis" refers to the discrepancy.
 
 -   [**Beta**]{style="color: #009499"} - A measure of a stock's or a portfolio's sensitivity to market movements. It quantifies the relationship between the price movements of a security and the overall market. A beta of 1 indicates that the security tends to move in line with the market, while a beta greater than 1 implies that the security is more volatile than the market. A beta less than 1 suggests that the security is less volatile than the market. Often used as a tool to assess the risk or volatility of a particular stock or portfolio in comparison to the overall market
 
--   [**Capital expenditure (CapEx)**]{style="color: #009499"} - Money that is spent to acquire, repair, update, or improve a fixed company asset, such as a building, business, or equipment. For assets to fall under the CapEx designation, the investments must have a useful life of one year or more. A CapEx is amortized, or its value is deducted a little each year based on the total cost and its expected useful life.
+-   [**Capital Expenditure (CapEx)**]{style="color: #009499"} - Money that is spent to acquire, repair, update, or improve a fixed company asset, such as a building, business, or equipment. For assets to fall under the CapEx designation, the investments must have a useful life of one year or more. A CapEx is amortized, or its value is deducted a little each year based on the total cost and its expected useful life.
 
     -   Useful life refers to the estimated and generally agreed upon shelf life of a specific business asset.
         -   According the IRS, Car's useful life is 5yrs and new building's is 39yrs
@@ -28,6 +30,12 @@
 
 -   [**Coupon**]{style="color: #009499"} - Bonds pay a set return each year, called a coupon, over a set period ending on a maturity date. The amound of the coupon depends on the interest rate that was determined when the bond was issued.
 
+-   [**Depreciation**]{style="color: #009499"} - A non-cash expense that approximates the reduction of the book value of a company's long-term fixed assets or property, plant, and equipment (PP&E) over an estimated *useful life* and reduces reported earnings. (see CAPEX for details on Useful Life)
+
+    -   **Straight-Line Depreciation** assumes a constant depreciation expense over the estimated useful life of the asset
+    -   **Accelerated Depreciation** assumes the asset loses most of its value in the early years of its life.
+    -   If two equal companies are using the same depreciation method but have different useful life lengths, then the company with the shorter useful life on its equipment will have a lower EBIT multiple. So, it's an apples to oranges comparison if your using multiples.
+
 -   [**Derivatives**]{style="color: #009499"} - Securities that move in correspondence to one or more underlying assets. They include options, swaps, futures and forward contracts. The underlying assets can be stocks, bonds, commodities, currencies, indices or interest rates. Derivatives can be effective hedges against their underlying assets, since the relationship between the two is more or less clearly defined (if they're negatively correlated? Or maybe if the underlying asset goes down, there's a lag between the asset going down and the derivative going down. Therefore, you can sell the derivative before it goes down. Thus, hedging your risk). Knowing the value of an underlying asset helps traders determine the appropriate action (buy, sell, or hold) with their derivative.
 
 -   [**Discount Rate**]{style="color: #009499"} - Represents a minimum rate of return acceptable to the investor, generally considered to be the investor's cost of capital.
@@ -47,6 +55,8 @@
 -   [**Effective Tax Rate**]{style="color: #009499"}: An average rate of tax payable. Useful to compare individuals or corporations. $\text{Tax Rate}_{\text{eff}} = \text{Tax Payed} / \text{Pre-Tax Earnings}$ As of 2022, the average (nonfinancial) S&P 500 corporate effective tax rate was around 19%. Contrast with Marginal Tax Rate.
 
 -   [**Exchange Traded Fund (ETF)**]{style="color: #009499"} - A mutual fund that may be traded daily like a stock or bond.
+
+-   [**Expenditure**]{style="color: #009499"} - Management has discretion on whether to increase or decrease it. Which is different from an expense since management has no such control.
 
 -   [**False Strategy Theorem**]{style="color: #009499"} - Gives the threshold for which a Sharpe Ratio greater than this threshold would be significant.
 
@@ -187,9 +197,9 @@
 
 -   [**Weighted Average Cost of Capital (WACC)**]{style="color: #009499"} - The weighted cost of a company's invested capital (both debt and equity). Most commonly used as a discount rate. (Also see [Finance, Valuation](finance-valuation.qmd#sec-finance-val-coc-wacc){style="color: green"})
 
--   [**Working Capital**]{style="color: #009499"} or [**Net Working Capital (NWC)**]{style="color: #009499"} - A measure of a company's liquidity, operational efficiency, and short-term financial health. The difference between a company's current assets and its current liabilities
+-   [**Working Capital**]{style="color: #009499"} or [**Net Working Capital (NWC)**]{style="color: #009499"} - A measure of a company's liquidity, operational efficiency, and short-term financial health. Also, its a measure of how much cash a company needs to fund its operations on an ongoing basis. The NWC is the difference between a company's *non-cash/cash equivalent* current assets and its *non-interest-bearing* current liabilities (i.e. no long term debt)
 
-    -   Current assets include cash, accounts receivable, inventory, and other assets that are expected to be liquidated or turned into cash in less than one year.
+    -   Current assets include accounts receivable, inventory, prepaid expenses, and other assets that are expected to be liquidated or turned into cash in less than one year.
     -   Current liabilities include accounts payable, wages, taxes payable, and the current portion of long-term debt that's due within one year.
 
 -   [**Yield**]{style="color: #009499"} - A return measure for an investment over a set period of time, expressed as a percentage.
