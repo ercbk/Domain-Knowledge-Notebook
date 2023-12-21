@@ -30,6 +30,14 @@
 
 -   [**Coupon**]{style="color: #009499"} - Bonds pay a set return each year, called a coupon, over a set period ending on a maturity date. The amound of the coupon depends on the interest rate that was determined when the bond was issued.
 
+-   [**Days Sales Outstanding (DSO)**]{style="color: #009499"} - An accounting metric that measures how long it takes a company to collect payment for goods and services purchased on credit. DSO can also represent the average number of days it takes credit sales to be converted into cash. Lower is better.
+
+    $$
+    \text{DSO Ratio} = \frac{\text{AR}}{\text{Sales}} \times 365
+    $$
+    
+    -   $AR$ is accounts receivable.
+
 -   [**Depreciation**]{style="color: #009499"} - A non-cash expense that approximates the reduction of the book value of a company's long-term fixed assets or property, plant, and equipment (PP&E) over an estimated *useful life* and reduces reported earnings. (see CAPEX for details on Useful Life)
 
     -   **Straight-Line Depreciation** assumes a constant depreciation expense over the estimated useful life of the asset
@@ -199,8 +207,9 @@
 
 -   [**Working Capital**]{style="color: #009499"} or [**Net Working Capital (NWC)**]{style="color: #009499"} - A measure of a company's liquidity, operational efficiency, and short-term financial health. Also, its a measure of how much cash a company needs to fund its operations on an ongoing basis. The NWC is the difference between a company's *non-cash/cash equivalent* current assets and its *non-interest-bearing* current liabilities (i.e. no long term debt)
 
-    -   Current assets include accounts receivable, inventory, prepaid expenses, and other assets that are expected to be liquidated or turned into cash in less than one year.
-    -   Current liabilities include accounts payable, wages, taxes payable, and the current portion of long-term debt that's due within one year.
+    -   Current assets include accounts receivable (A/R), inventory, prepaid expenses, and other assets that are expected to be liquidated or turned into cash in less than one year.
+    -   Current liabilities include accounts payable (A/P), wages, taxes payable, and the current portion of long-term debt that's due within one year.
+    -   An increase in year-to-year NWC is typical for a growing company wishing to support sales growth while a decrease represents a source of cash that is retained as opposed to being paid out.
 
 -   [**Yield**]{style="color: #009499"} - A return measure for an investment over a set period of time, expressed as a percentage.
 

@@ -889,8 +889,8 @@ K_d = (\operatorname{Risk Free Rate} + \operatorname{Default Spread}) \times (1 
 <li><p>Horizon Guidelines</p>
 <table class="table">
 <colgroup>
-<col style="width: 73%">
-<col style="width: 26%">
+<col style="width: 68%">
+<col style="width: 31%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -917,7 +917,7 @@ K_d = (\operatorname{Risk Free Rate} + \operatorname{Default Spread}) \times (1 
 <li>Companies with long-term contracted revenue streams such as natural resources, satellite communications, or utilites should be forecasted out to 10+ years.</li>
 </ul></li>
 </ul></li>
-<li>Steps
+<li><span class="ribbon-highlight">Example</span>: Percentage of Sales Method for COGS, Gross Margin, and SG&amp;A
 <ul>
 <li>Get historical data for Sales (aka Revenue), COGS, Gross Margin, SG&amp;A, EBITDA, D&amp;A, and EBIT for the last 3 to 5 years. Get a consensus of projected estimates for Sales, EBITDA, and EBIT.<br>
 <img src="_resources/Finance.resources/dcf-varproj-1.png" class="img-fluid" width="532">
@@ -930,14 +930,53 @@ K_d = (\operatorname{Risk Free Rate} + \operatorname{Default Spread}) \times (1 
 </ul></li>
 <li>Transform variable amounts to a percentage of sales for each year<br>
 <img src="_resources/Finance.resources/dcf-varproj-perc-1.png" class="img-fluid" width="532"></li>
-<li>For COGS, Gross Margin, and SG&amp;A, calculate the average percentage (last column). Then, multiply each variable’s average percentage times each projected Sales estimate to get each variable projected estimate for each period of the horizon.<br>
+<li>For <strong>COGS</strong>, <strong>Gross Margin</strong>, and <strong>SG&amp;A</strong>, calculate the average percentage (last column). Then, multiply each variable’s average percentage times each projected Sales estimate to get each variable projected estimate for each period of the horizon.<br>
 <img src="_resources/Finance.resources/dcf-varproj-fillin-1.png" class="img-fluid" width="532">
 <ul>
 <li>For projecting COGS and SG&amp;A further, it’s typical to hold Gross Margin and SG&amp;A (as a percentage of Sales) constant. Although, you may want to make a slight adjustment due to company trends or the outlook of the market.</li>
 </ul></li>
-<li>For D&amp;A projected estimates, subtract EBIT from EBITDA for each period of the horizon to get D&amp;A. The projected D&amp;A values should be consistent with CAPEX projections and D&amp;A historical values (i.e.&nbsp;compare as a percentage of Sales).</li>
-<li>CAPEX can be projected using consensus estimates from analysts’ reports or in the same manner as COGS, Gross Margin, and SG&amp;A by the average percentage of sales methodology.</li>
-<li>Net Working Capital</li>
+<li>For <strong>D&amp;A</strong> projected estimates, subtract EBIT from EBITDA for each period of the horizon to get D&amp;A. The projected D&amp;A values should be consistent with CAPEX projections and D&amp;A historical values (i.e.&nbsp;compare as a percentage of Sales or as a percentage of CAPEX).</li>
+</ul></li>
+<li>Projecting Other Variables
+<ul>
+<li>CAPEX can be projected using consensus estimates from analysts’ reports or in the same manner as COGS, Gross Margin, and SG&amp;A by the average percentage of sales methodology.
+<ul>
+<li>If a business is going through unusual circumstances (e.g.&nbsp;merger) analyst reports are recommended.</li>
+</ul></li>
+<li>Year-over-Year (YoY) Changes in Net Working Capital can be projected in a couple different ways:
+<ol type="1">
+<li>The same manner as COGS, Gross Margin, and SG&amp;A by the average percentage of sales methodology</li>
+<li>(Recommended) By projecting individual components of both current assets and current liabilities for each year in the horizon and calculating YoY NWC from them.
+<ul>
+<li>Accounts Receivable (A/R): <span class="math inline">\(\text{DSO Ratio} = \frac{\text{AR}}{\text{Sales}} \times 365\)</span>
+<ul>
+<li>Calculate the DSO Ratio for the previous years using the historical data</li>
+<li>Calculate the average DSO Ratio over the previous years.</li>
+<li>Solve for AR to get: <span class="math inline">\(AR = \frac{\text{DSO Ratio}}{365} \times \text{Sales}\)</span></li>
+<li>For each year in the horizon, input the average DSO Ratio for <span class="math inline">\(\text{DSO Ratio}\)</span> and the consensus projected estimate of sales for <span class="math inline">\(\text{Sales}\)</span>. Then, calculate the projected <span class="math inline">\(AR\)</span>.</li>
+</ul></li>
+<li>Use the same method for:
+<ul>
+<li><p>Inventory:</p>
+<p><span class="math display">\[
+\text{DIH Ratio} = \left(\frac{\text{Inventory}}{COGS}\right) \times 365
+\]</span></p>
+<ul>
+<li>Or</li>
+</ul>
+<p><span class="math display">\[
+\text{Inventory Turns} = \left(\frac{\text{COGS}}{\text{Inventory}}\right)
+\]</span></p></li>
+<li><p>Accounts Payable (A/P): <span class="math inline">\(\text{DPO Ratio} = \left(\frac{\text{AP}}{\text{COGS}}\right) \times 365\)</span></p></li>
+</ul></li>
+<li>Use the Percentage of Sales method for:
+<ul>
+<li>Prepaid Expenses and Other Current Assets</li>
+<li>Accrued Liabilities and Other Liabilities</li>
+</ul></li>
+<li>Use these projected values to calculate projected Current Assets and projected Current Liabilities. Then the difference is the projected YoY NWC for each period in the horizon</li>
+</ul></li>
+</ol></li>
 </ul></li>
 </ul></li>
 </ul>
