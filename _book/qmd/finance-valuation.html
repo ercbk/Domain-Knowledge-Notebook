@@ -375,7 +375,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Rates of Return: MIRR &gt; IRR</li>
 <li>Cost of Capital: WACC</li>
 </ul></li>
-<li>For private companys, I haven’t seen anything to use in place of Cost of Capital (ie. WACC), but MIRR is still available to compare projects.</li>
+<li>For small businesses, I haven’t seen anything to use in place of Cost of Capital (ie. WACC), but MIRR is still available to compare projects.</li>
 </ul></li>
 </ul>
 </section>
@@ -594,6 +594,11 @@ NPV = \sum_{t=0}^T \frac{C_t}{(1+r)^t} = 0
 <h2 class="unnumbered anchored" data-anchor-id="sec-finance-val-coc">Cost of Capital</h2>
 <ul>
 <li>The purpose of calculating Cost of Capital is to determine the minimum rate of return that a company should generate to satisfy its investors and creditors. It is commonly used in capital budgeting and valuation processes. When a company is considering new investment projects, the Cost of Capital is often used as the discount rate to evaluate the project’s feasibility. If the project’s expected rate of return is higher than the Cost of Capital, it may be considered a worthwhile investment.</li>
+<li>For DCF analysis
+<ul>
+<li>For diverse companies (e.g.&nbsp;GE), it’s better to calculate a CoC for each division.</li>
+<li>The lower the CoC, the more valuable the business.</li>
+</ul></li>
 </ul>
 <section id="sec-finance-val-coc-wacc" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="sec-finance-val-coc-wacc">Weighted Average Cost of Capital (WACC)</h3>
@@ -601,10 +606,18 @@ NPV = \sum_{t=0}^T \frac{C_t}{(1+r)^t} = 0
 <li><p>The weighted cost of a company’s invested capital (both debt and equity). Recommend method to calculate Cost of Capital.</p>
 <p><span class="math display">\[\text{WACC} = w_e \cdot K_e + w_d \cdot K_d\]</span></p>
 <ul>
-<li><span class="math inline">\(w_e\)</span>: The proportion of equity to the company’s market value of capital</li>
-<li><span class="math inline">\(w_d\)</span>: The proportion of debt to the company’s market value of capital</li>
-<li><span class="math inline">\(K_e\)</span>: Cost of Equity</li>
-<li><span class="math inline">\(K_d\)</span>: After-Tax Cost of Debt</li>
+<li><span class="math inline">\(w_e\)</span>: The proportion of equity to the company’s market value of capital, <span class="math inline">\(\frac{E}{E+D}\)</span>
+<ul>
+<li><span class="math inline">\(D\)</span> is the market value of Debt</li>
+<li><span class="math inline">\(E\)</span> is the market value of Equity</li>
+</ul></li>
+<li><span class="math inline">\(w_d\)</span>: The proportion of debt to the company’s market value of capital, <span class="math inline">\(\frac{D}{D + E}\)</span></li>
+<li><span class="math inline">\(K_e\)</span>: <strong>Cost of Equity</strong> - The required annual rate of return that a company’s equity investors expect to receive (includes dividends).</li>
+<li><span class="math inline">\(K_d\)</span>: <strong>After-Tax Cost of Debt</strong></li>
+</ul></li>
+<li><p>The current proportions, <span class="math inline">\(w_e\)</span> and <span class="math inline">\(w_d\)</span>, should be compared with historical weight values of the company and a decision should be made on whether these proportions accurately represent the future capital structure (i.e the proportions) of the company over the next 5-10 years.</p>
+<ul>
+<li>Example: A company has recently made an acquisition of another company, therefore, temporarily inflating it’s debt proportion. This debt might be payed off within a few years which will reduced its debt proportion of capital. Using the debt proportion prior to the debt being paid would bias the WACC.</li>
 </ul></li>
 </ul>
 <section id="sec-finance-val-coc-wacc-coe" class="level4 unnumbered">
@@ -613,20 +626,50 @@ NPV = \sum_{t=0}^T \frac{C_t}{(1+r)^t} = 0
 <li><p>Notes from Video: <a href="https://www.youtube.com/watch?v=ZigyWoDAMrE&amp;list=PLAoukTI-9JbeRyMdcaqACHD9ZzT3STwZQ&amp;index=4">Estimating Cost Of Equity For WACC - DCF Model Insights</a></p></li>
 <li><p><u>(Basic) Capital Asset Pricing Model (CAPM)</u></p>
 <p><span class="math display">\[
-K_e = R_f + \beta_a\; (R_m - R_f)
+K_e = R_f + \beta_L\; (R_m - R_f)
 \]</span></p>
 <ul>
-<li><span class="math inline">\(R_f\)</span>: Risk-free rate of return (Time Value of Money)</li>
+<li><span class="math inline">\(R_f\)</span>: Risk-free rate of return (Time Value of Money). A rate of a U.S. T-Bill, T-Note, or T-Bond is typically used.</li>
 <li><span class="math inline">\(R_m\)</span>: Expected Market rate of return</li>
-<li><span class="math inline">\(\beta_a\)</span>: Risk estimate or a company’s stock beta or a similar public company’s stock beta (Reward for bearing systematic risk)
+<li><span class="math inline">\(\beta_L\)</span>: (Levered Beta) Risk estimate or a company’s stock beta or a similar public company’s stock beta (Reward for bearing systematic risk). Companies with higher betas will have higher values of <span class="math inline">\(K_e\)</span>
 <ul>
-<li>Systematic Risk: The market risk that all companies are exposed to (i.e.&nbsp;economy).</li>
+<li>For private companies, the beta from a peer publicly traded company or the average beta of a group of peer publicly traded companies can be used. Private companies may have differenct capital structures (see WACC weights), so each peer company’s beta from the peer group of companies needs be <em>unlevered</em> (i.e.&nbsp;remove influence of leverage) to obtain their <strong>Asset Betas</strong>.
+<ul>
+<li><p>Beta on places like Yahoo Finance is a Levered Beta. That beta is affected by that companies capital structure and its stock price’s day-to-day fluctuations. The asset beta is the beta of the industry or sector.</p></li>
+<li><p>Unlevering Beta</p>
+<p><span class="math display">\[
+\beta_U = \frac{\beta_L}{1 + \frac{D}{E}(1-\text{tax rate})}
+\]</span></p>
+<ul>
+<li><span class="math inline">\(\beta_U\)</span>: Unlevered Beta</li>
+<li><span class="math inline">\(\beta_L\)</span>: Levered Beta</li>
+<li><span class="math inline">\(D/E\)</span>: Debt to Equity Ratio</li>
+<li><span class="math inline">\(\text{tax rate}\)</span>: The marginal tax rate</li>
 </ul></li>
-<li><span class="math inline">\(R_m - R_f\)</span> is the amount of systemic risk.</li>
+<li><p>After unlevering the beta for each company in the peer group, the average is taken to get the peer group’s asset beta.</p></li>
+<li><p>Finally the peer group’s asset beta is relevered using the company’s target capital structure</p>
+<p><span class="math display">\[
+\beta_L = \beta_U(1+\frac{D}{E}(1-\text{tax rate}))
+\]</span></p>
+<ul>
+<li>The company’s <em>target</em> capital structure is oftentimes its <em>current</em> capital structure<br>
+<img src="_resources/Finance.resources/opt-cap-struct-1.png" class="img-fluid" width="432">
+<ul>
+<li>The middle yellow line shows how the WACC goes down as the company takes on a small amount debt which increases its value (lower WACC) since the interest on the debt is tax deductible. But, if the company takes on too much debt, its WACC increases which decreases its value since its risk of default gets higher.</li>
+<li>The optimal amount of debt is difficult to determine by the analyst, so it’s <em>assumed</em> that management’s goal is to optimize value. Therefore, unless under unusual circumstances (e.g.&nbsp;post-acquisition period), the company should be at its target capital structure (i.e.&nbsp;optimal <span class="math inline">\(w_d\)</span>) or moving towards it.</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><span class="math inline">\(R_m - R_f\)</span> The market risk premium is the amount of systemic risk.
+<ul>
+<li><strong>Systematic Risk</strong> (aka <strong>Non-Diversifiable Risk</strong>): The market risk that all companies are exposed to (i.e.&nbsp;economy).</li>
+<li>From 1926 to 2011, Ibbotson calculate the market risk premium to be 6.62%. Various Wall Street firms calculated it to be between 5-8%.</li>
+</ul></li>
 </ul></li>
 <li><p><u>(Advanced) Capital Asset Pricing Model (CAPM)</u></p>
 <p><span class="math display">\[
-K_e = R_f + \beta_a\; (R_m - R_f) + R_s + \text{CRP} + R_z
+K_e = R_f + \beta_L\; (R_m - R_f) + R_s + \text{CRP} + R_z
 \]</span></p>
 <ul>
 <li><span class="math inline">\(R_s\)</span>: Size Risk Premium - The smaller the company, the riskier it is, and the higher the risk size premium. Larger companies are generally more diversified (e.g.&nbsp;more stores to offset local busines conditions)
@@ -639,7 +682,7 @@ K_e = R_f + \beta_a\; (R_m - R_f) + R_s + \text{CRP} + R_z
 </ul></li>
 <li><span class="math inline">\(R_z\)</span>: Specific Company Risk Premium (SCRP) (Reward for bearing unsystematic risk)
 <ul>
-<li><p>Unsystematic Risk: The risk that affects a single company or a small group of companies.</p></li>
+<li><p><strong>Unsystematic Risk</strong>: The risk that affects a single company or a small group of companies. Unsystematic risk is lowered through diversification. Larger companies are typically more diversified than smaller companies.</p></li>
 <li><p>No standardized formula for calculating this risk and is usually based on the analyst’s judgement. Factors include the financial statement, comparative ratio analysis, and qualitative matters such as a site visit and management interviews.</p></li>
 <li><p>Highland Global method for estimating SCRP</p>
 <p><img src="_resources/Finance.resources/specific-co-risk-prem-1.png" class="img-fluid" width="532"></p>
@@ -828,37 +871,39 @@ K_d = (\operatorname{Risk Free Rate} + \operatorname{Default Spread}) \times (1 
 <section id="sec-finance-val-dcf" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="sec-finance-val-dcf">Discount Cash Flow Model</h2>
 <ul>
-<li>Fundamental valuation methodology that’s based on the principal that the value of a company can be derived from the <strong>Present Value (PV)</strong> of it’s projected <strong>Free Cash Flow (FCF)</strong>
+<li><p>Fundamental valuation methodology that’s based on the principal that the value of a company can be derived from the <strong>Present Value (PV)</strong> of it’s projected <strong>Free Cash Flow (FCF)</strong></p>
 <ul>
 <li>The valuation implied for a target by a DCF is known as it’s <strong>Intrinsic Value</strong>, as opposed to its market value.</li>
-<li><strong>Free Cash Flow (FCF)</strong> - The cash generated by a company after paying all cash operating expenses and associated taxes, as well as the funding of capex and working capital, but prior to the payment of any interest expense.
-<ul>
-<li>Net Operating Profit After Taxes (NOPAT) = EBIT - Taxes
-<ul>
-<li>If the company had been losing money but is expected to become more profitable, then effective tax rate will be too low.</li>
-<li>Use effective tax rate if the company is large and stable or already growing and doesn’t use tax credits, nondeductible expenses (e.g.&nbsp;gov’t fines), deferred tax asset valuation allowances, or other company-specific tax policies. Otherwise, you should use the marginal tax rate.</li>
+<li><strong>Free Cash Flow (FCF)</strong> - The cash generated by a company after paying all cash operating expenses and associated taxes, as well as the funding of capex and working capital, but prior to the payment of any interest expense.</li>
 </ul></li>
-<li>FCF = NOPAT - CAPEX - Net Working Capital + Depreciation and Amortization (D&amp;A)</li>
-</ul></li>
-</ul></li>
-<li>Misc
+<li><p>Misc</p>
 <ul>
 <li>Notes from
 <ul>
 <li>Video: <a href="https://www.youtube.com/watch?v=y4dEH8Zu-H0">Discounted Cash Flow (DCF) Model – CH 3 Investment Banking Valuation, Leveraged Buyouts, and M&amp;A - Rosenbaum, Pearl</a></li>
 <li>Video: <a href="https://www.youtube.com/watch?v=ByyK0AMuLxc">Why Is My DCF Model Incorrect? Common Errors</a></li>
 </ul></li>
+<li>Advantages
+<ul>
+<li>Cash Flow based: A more fundamental approach to valuation than using multiple-based methodologies</li>
+<li>Market Independent: More insulated from market aberrations such as bubbles and distressed periods</li>
+<li>Self-Sufficient: Doesn’t rely entirely upon truly comparable companies which is important when there are no “pure play” comparables. (e.g.&nbsp;precedent transactions analysis and comparable companies analysis)</li>
+<li>Flexibility: Allows the you to run multiple scenarios (See Sensitivity Analysis)</li>
+</ul></li>
+<li>Disadvantages
+<ul>
+<li>Depends on Projections: Accurate forecasting is a challenge especially as the forecast horizon lengthens</li>
+<li>Sensitivity to Assumptions: Relatively small changes in variable values can (but not always) result in significant changes to results</li>
+<li>Terminal Value: Can represent 3/4 or more of the valuation, and this value depends on the final period of the forecast horizon which is the most uncertain.</li>
+<li>Assumes a Constant Capital Structure: Capital structure is not allowed to change over the entire entire horizon. (See WACC)</li>
 </ul></li>
 <li>Pitfalls
 <ul>
 <li>Forecast no less than 7yr (recommended 10+) of cash flows</li>
 <li>Forecasted cash flows should represent no less than 1/3 of the corporate value</li>
 </ul></li>
-<li>A <strong>Terminal Value</strong> is used to capture the remaining value of the target beyond the projection period - 2/3 of the overall valuation depends on this terminal value. - Determined by the <strong>Exit Multiple</strong> or the <strong>Gordon Growth</strong> method</li>
-<li>FCFs are discounted to the PV using WACC</li>
-<li>The terminal value is added to the PV of the FCFs to get the <strong>Enterpise Value</strong></li>
-<li>DCF output is a range of values determined by a range of variable values. The effect of these variable values are determined by sensitivity analysis.</li>
-<li>Process
+</ul></li>
+<li><p><u>Process</u></p>
 <ol type="1">
 <li>Study the target and determine key performance drivers</li>
 <li>Project FCF</li>
@@ -866,7 +911,7 @@ K_d = (\operatorname{Risk Free Rate} + \operatorname{Default Spread}) \times (1 
 <li>Determine the terminal value</li>
 <li>Calculate PV and determine valuation</li>
 </ol></li>
-<li>Determine Key Performance Drivers
+<li><p><u>Determine Key Performance Drivers</u></p>
 <ul>
 <li>Study the target and its sector which includes its business model, financial profie, value proposition for customers, end markets, competitors, and key risks.</li>
 <li>Analyze drivers of sales growth, profitability, and FCF generation with the goal of crafting FCF projections.
@@ -875,13 +920,13 @@ K_d = (\operatorname{Risk Free Rate} + \operatorname{Default Spread}) \times (1 
 <li>External Drivers: acquisitions, end market trends, consumer buying pattern, macroeconomic factors, legislative/regulatory changes, etc.</li>
 </ul></li>
 </ul></li>
-<li>Project FCF
+<li><p><u>Project Necessary Variables</u></p>
 <ul>
-<li>Historical Performance such as past growth rates, profit margins, and other ratios are good indicators of future performance especially for mature companies in non-cyclical sectors.
+<li><p>Historical Performance such as past growth rates, profit margins, and other ratios are good indicators of future performance especially for mature companies in non-cyclical sectors.</p>
 <ul>
 <li>3 years of historical data for growing or mid-size companies or 5 years for blue chip companies is typically representative enough to be predictive of future performance.</li>
 </ul></li>
-<li>FCF forecast horizon is typically 5yrs but may be longer depending on its sector, stage of development, and performance predictability.
+<li><p>FCF forecast horizon is typically 5yrs but may be longer depending on its sector, stage of development, and performance predictability.</p>
 <ul>
 <li><p>The chosen horizon should reach to where the target’s performance reaches a stead-state or normalized level.</p></li>
 <li><p>The terminal value depends heavily on the last forecasted value of FCF, so that value needs to be as accurate as possible and representative of the steady-state performance of the company (i.e not much volatility in its earnings)</p></li>
@@ -889,8 +934,8 @@ K_d = (\operatorname{Risk Free Rate} + \operatorname{Default Spread}) \times (1 
 <li><p>Horizon Guidelines</p>
 <table class="table">
 <colgroup>
-<col style="width: 68%">
-<col style="width: 31%">
+<col style="width: 63%">
+<col style="width: 36%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -917,7 +962,7 @@ K_d = (\operatorname{Risk Free Rate} + \operatorname{Default Spread}) \times (1 
 <li>Companies with long-term contracted revenue streams such as natural resources, satellite communications, or utilites should be forecasted out to 10+ years.</li>
 </ul></li>
 </ul></li>
-<li><span class="ribbon-highlight">Example</span>: Percentage of Sales Method for COGS, Gross Margin, and SG&amp;A
+<li><p><span class="ribbon-highlight">Example</span>: Percentage of Sales Method for COGS, Gross Margin, and SG&amp;A</p>
 <ul>
 <li>Get historical data for Sales (aka Revenue), COGS, Gross Margin, SG&amp;A, EBITDA, D&amp;A, and EBIT for the last 3 to 5 years. Get a consensus of projected estimates for Sales, EBITDA, and EBIT.<br>
 <img src="_resources/Finance.resources/dcf-varproj-1.png" class="img-fluid" width="532">
@@ -937,13 +982,13 @@ K_d = (\operatorname{Risk Free Rate} + \operatorname{Default Spread}) \times (1 
 </ul></li>
 <li>For <strong>D&amp;A</strong> projected estimates, subtract EBIT from EBITDA for each period of the horizon to get D&amp;A. The projected D&amp;A values should be consistent with CAPEX projections and D&amp;A historical values (i.e.&nbsp;compare as a percentage of Sales or as a percentage of CAPEX).</li>
 </ul></li>
-<li>Projecting Other Variables
+<li><p>Projecting Other Variables</p>
 <ul>
-<li>CAPEX can be projected using consensus estimates from analysts’ reports or in the same manner as COGS, Gross Margin, and SG&amp;A by the average percentage of sales methodology.
+<li><strong>CAPEX</strong> can be projected using consensus estimates from analysts’ reports or in the same manner as COGS, Gross Margin, and SG&amp;A by the average percentage of sales methodology.
 <ul>
 <li>If a business is going through unusual circumstances (e.g.&nbsp;merger) analyst reports are recommended.</li>
 </ul></li>
-<li>Year-over-Year (YoY) Changes in Net Working Capital can be projected in a couple different ways:
+<li><strong>Year-over-Year (YoY) Changes in Net Working Capital</strong> can be projected in a couple different ways:
 <ol type="1">
 <li>The same manner as COGS, Gross Margin, and SG&amp;A by the average percentage of sales methodology</li>
 <li>(Recommended) By projecting individual components of both current assets and current liabilities for each year in the horizon and calculating YoY NWC from them.
@@ -977,6 +1022,118 @@ K_d = (\operatorname{Risk Free Rate} + \operatorname{Default Spread}) \times (1 
 <li>Use these projected values to calculate projected Current Assets and projected Current Liabilities. Then the difference is the projected YoY NWC for each period in the horizon</li>
 </ul></li>
 </ol></li>
+</ul></li>
+</ul></li>
+<li><p><u>Calculate FCF from projected variables for each year to the horizon</u></p>
+<p><span class="math display">\[
+\text{FCF}_i = \text{NOPAT}_i - \text{CAPEX}_i - \text{Net Working Capital}_i + \text{D\&amp;A}_i
+\]</span></p>
+<ul>
+<li>Net Operating Profit After Taxes (NOPAT): <span class="math inline">\(\text{NOPAT} = \text{EBIT} - \text{Taxes}\)</span>
+<ul>
+<li>If the company had been losing money but is expected to become more profitable, then effective tax rate will be too low. Therefore the marginal tax rate should be used</li>
+<li>Use effective tax rate if the company is large and stable or already growing and doesn’t use tax credits, nondeductible expenses (e.g.&nbsp;gov’t fines), deferred tax asset valuation allowances, or other company-specific tax policies. Otherwise, you should use the marginal tax rate.</li>
+</ul></li>
+</ul></li>
+<li><p><u>Determining the Terminal Value</u></p>
+<ul>
+<li><p>A <strong>Terminal Value</strong> is used to capture the remaining value of the FCF beyond the projection period - 2/3 of the overall valuation depends on this terminal value.</p></li>
+<li><p>It’s based on the value of FCF or EBITDA in the final year of the projection period (i.e.&nbsp;final year in the horizon). Therefore, the projected values in the final year are very important</p></li>
+<li><p>End-of-Year vs.&nbsp;Mid-Year calculations</p>
+<ul>
+<li>Formulas for both End-of-Year and Mid-Year are given in these last two sections, but FCF are usually generated throughout the year rather than at year-end. So, it’s typically discounted using the mid-year convention.
+<ul>
+<li>The exception is the EMM calculation, since it uses LTM trading multiples for a calendar year end EBITDA (or EBIT). So it’s recommended to use the End-of-Year convention.</li>
+</ul></li>
+<li>Using the Mid-Year convention results in a slightly higher valuation due to the fact that FCF is received sooner.</li>
+<li>If a company does only receive its cash flows at the end of the year, then the End-of-Year convention should be used.</li>
+</ul></li>
+<li><p>Exit Multiple Method (EMM)</p>
+<p><span class="math display">\[
+\text{Terminal Value} = \text{EBITDA}_T \times \text{Exit Multiple}
+\]</span></p>
+<ul>
+<li><p><span class="math inline">\(T\)</span>: The final year of the projected period (aka horizon)</p></li>
+<li><p>Determines the remaining FCF by means of a multiple. This multiple is typically based on the Last-Twelve-Month (LTM) trading multiples of comparable companies.</p>
+<ul>
+<li>As current multiples may be affected by sector or economic cycles, it is important to use both a steady-state trading multiple. (e.g.&nbsp;Don’t use a LLM mulitple from year where the company was at a cyclical high)</li>
+</ul></li>
+<li><p>Perform a sanity check by comparing EMM’s implied growth rate to the PGM implied growth rate</p>
+<ul>
+<li><p>End-of-Year Discounting</p>
+<p><span class="math display">\[
+r_{\text{emm}} = \frac{(\text{Terminal Value} \times \text{WACC}) - \text{FCF}_T}{\text{Terminal Value} + \text{FCF}_T}
+\]</span></p></li>
+<li><p>Mid-Year Discounting</p>
+<p><span class="math display">\[
+r_{\text{emm}} = \frac{(\text{Terminal Value} \times \text{WACC}) - \text{FCF}_T \sqrt{1 + \text{WACC}}}{\text{Terminal Value} + \text{FCF}_T \sqrt{1 + \text{WACC}}}
+\]</span></p></li>
+<li><p>If <span class="math inline">\(r_{\text{emm}}\)</span> is not close to the PGM growth rate, <span class="math inline">\(g\)</span>, then this could indicate that the EMM assumptions are not realistic</p></li>
+</ul></li>
+</ul></li>
+<li><p>Gordon Growth Method aka Perpetuity Growth Method (PGM)<br>
+<span class="math display">\[
+\text{Terminal Value} = \frac{\text{FCF}_T (1 + g)}{\text{WACC - g}}
+\]</span></p>
+<ul>
+<li><p><span class="math inline">\(T\)</span>: The final year of the projected period (aka horizon)</p></li>
+<li><p><span class="math inline">\(g\)</span>: The perpetuity growth rate</p></li>
+<li><p>Treats final projected year as a perpetuity that grows as some assumed rate.</p></li>
+<li><p>The perpetuity growth rate is typically chosen on teh basis of the company’s expected lont-term industry growth rate which generally tends to be around the nominal GDP growth (2% - 4%)</p></li>
+<li><p>If <span class="math inline">\(g \ge \text{WACC}\)</span>, then you must use the EMM method instead.</p></li>
+<li><p>Perform a sanity check by comparing PGM’s implied exit multiple with EMM’s exit multiple</p>
+<ul>
+<li><p>End-of-Year Discounting</p>
+<p><span class="math display">\[
+\text{Exit Multiple}_{\text{PGM}} = \frac{\text{Terminal Value}}{\text{EBITDA}_T}
+\]</span></p></li>
+<li><p>Mid-Year Discounting</p>
+<p><span class="math display">\[
+\text{Exit Multiple}_{\text{PGM}} = \frac{\text{Terminal Value}\times \sqrt{1+\text{WACC}}}{\text{EBITDA}_T}
+\]</span></p></li>
+<li><p>If the <span class="math inline">\(\text{Exit Multiple}_{\text{PGM}}\)</span> is not close to EMM’s <span class="math inline">\(\text{Exit Multiple}\)</span>, then could indicate that the PGM assumptions are not realistic.</p></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><p><u>Determine the Valuation</u></p>
+<ul>
+<li>See “End-of-Year vs.&nbsp;Mid-Year calculations” in the Terminal Value section for further details</li>
+<li>Calculate the Discount Factor:
+<ul>
+<li>End-of-Year: <span class="math inline">\(\frac{1}{(1+\text{WACC})^i}\)</span>
+<ul>
+<li><span class="math inline">\(i\)</span> is the projected period</li>
+<li>So later periods have a smaller discount factor</li>
+</ul></li>
+<li>Mid-Year: <span class="math inline">\(\frac{1}{(1+\text{WACC})^{i-0.5}}\)</span></li>
+</ul></li>
+<li>Calculate the Present Value (PV) of FCF<sub>i</sub>: <span class="math inline">\(\text{FCF}_i \times \text{Discount Factor}_i\)</span></li>
+<li>Calculate the Enterpise Value
+<ul>
+<li><p><span class="ribbon-highlight">Example</span>: 5-Year Horizon with Mid-Year Discounting</p>
+<p><span class="math display">\[
+\text{Enterprise Value} = \frac{\text{FCF}_1}{(1+\text{WACC})^{0.5}} + \frac{\text{FCF}_2}{(1+\text{WACC})^{1.5}} + \frac{\text{FCF}_3}{(1+\text{WACC})^{2.5}} + \frac{\text{FCF}_4}{(1+\text{WACC})^{3.5}} + \frac{\text{FCF}_5}{(1+\text{WACC})^{4.5}} + \frac{\text{EBTDA}_5 \times \text{Exit Multiple}}{(1+\text{WACC})^{5}}
+\]</span></p>
+<ul>
+<li>All FCF values and the Terminal Value is discounted to present and summed to get the Enterprise Value.</li>
+</ul></li>
+</ul></li>
+<li>Derive Implied Share Price
+<ul>
+<li>Calculate Implied Equity Value (IEV): <span class="math inline">\(\text{IEV} = \text{Enterprise Value} - \text{Net Debt} + \text{Preferred Stock} + \text{Noncontrolling Interest}\)</span></li>
+<li>Calculate Implied Share Price (ISP): <span class="math inline">\(\text{ISP} = \frac{\text{IEV}}{\text{Fully Diluted Shares Outstanding}}\)</span></li>
+<li>The implied share price can be compared to the market price to determine whether a stock is being undervalued or overvalued</li>
+</ul></li>
+</ul></li>
+<li><p><u>Perform Sensitivity Analysis</u></p>
+<ul>
+<li>There are various assumptions is DCF analysis, therefore it’s prudent to select a range of values at various stages and see how much the output is changed. This should result in a range of Enterprise Values.</li>
+<li>If slight changes in varibles result in large changes in enterprise value, then something is wrong with your model</li>
+<li><span class="ribbon-highlight">Example</span>: Trying Different WACC and Exit Multiple Values<br>
+<img src="_resources/Finance.resources/sens-ex-1.png" class="img-fluid" width="432">
+<ul>
+<li>6000 is the result of the DCF analysis and the rest of cells are the results of the sensitivity analysis.</li>
+<li>Relatively minor effects result from changes in WACC and the Exit Multiple.</li>
 </ul></li>
 </ul></li>
 </ul>
