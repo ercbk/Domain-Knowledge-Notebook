@@ -275,7 +275,7 @@
 -   List of instruments that should be considered as *Debt* in the calculations below:
 
     -   Long and Short-Term interest-bearing obligations (e.g Loans, Bonds)
-    -   Operating Leases (e.g. An airline that leases out its planes.)
+    -   Operating Leases (e.g. An airline that leases out its planes.) ([Video](https://www.youtube.com/watch?v=Wu-jRgHUc4Q))
 
 -   Methods\
     ![](_resources/Finance.resources/cost-of-debt-methods-1.png){width="532"}
@@ -386,11 +386,12 @@
     -   Disadvantages
         -   Depends on Projections: Accurate forecasting is a challenge especially as the forecast horizon lengthens
         -   Sensitivity to Assumptions: Relatively small changes in variable values can (but not always) result in significant changes to results
-        -   Terminal Value: Can represent 3/4 or more of the valuation, and this value depends on the final period of the forecast horizon which is the most uncertain.
+        -   Terminal Value: Can represent 2/3 or more of the valuation, and this value depends on the final period of the forecast horizon which is the most uncertain.
         -   Assumes a Constant Capital Structure: Capital structure is not allowed to change over the entire entire horizon. (See WACC)
     -   Pitfalls
         -   Forecast no less than 7yr (recommended 10+) of cash flows
-        -   Forecasted cash flows should represent no less than 1/3 of the corporate value
+            -   Some contracting companies or resource companies like mining corporations can project cash flows out a decade or more.
+            -   Forecasted cash flows should represent no less than 1/3. By extending the horizon as far out as you reasonably can, you lessen the influence of the terminal value in the enterpise value calculation.
 
 -   [Process]{.underline}
 
@@ -482,13 +483,13 @@
     \text{FCF}_i = \text{NOPAT}_i - \text{CAPEX}_i - \text{Net Working Capital}_i + \text{D\&A}_i
     $$
 
-    -   Net Operating Profit After Taxes (NOPAT): $\text{NOPAT} = \text{EBIT} - \text{Taxes}$
+    -   **Net Operating Profit After Taxes (NOPAT)**: $\text{NOPAT} = \text{EBIT} - \text{Taxes}$
         -   If the company had been losing money but is expected to become more profitable, then effective tax rate will be too low. Therefore the marginal tax rate should be used
         -   Use effective tax rate if the company is large and stable or already growing and doesn't use tax credits, nondeductible expenses (e.g. gov't fines), deferred tax asset valuation allowances, or other company-specific tax policies. Otherwise, you should use the marginal tax rate.
 
 -   [Determining the Terminal Value]{.underline}
 
-    -   A **Terminal Value** is used to capture the remaining value of the FCF beyond the projection period - 2/3 of the overall valuation depends on this terminal value.
+    -   A **Terminal Value** is used to capture the remaining value of the FCF beyond the projection period. Typically, around 2/3 of the overall valuation depends on this terminal value.
 
     -   It's based on the value of FCF or EBITDA in the final year of the projection period (i.e. final year in the horizon). Therefore, the projected values in the final year are very important
 
@@ -507,7 +508,7 @@
 
         -   $T$: The final year of the projected period (aka horizon)
 
-        -   Determines the remaining FCF by means of a multiple. This multiple is typically based on the Last-Twelve-Month (LTM) trading multiples of comparable companies.
+        -   Determines the remaining FCF by means of a multiple. This multiple is typically the average of the Last-Twelve-Month (LTM) EBITDA multiples of comparable companies.
 
             -   As current multiples may be affected by sector or economic cycles, it is important to use both a steady-state trading multiple. (e.g. Don't use a LLM mulitple from year where the company was at a cyclical high)
 
@@ -536,9 +537,11 @@
 
         -   $g$: The perpetuity growth rate
 
-        -   Treats final projected year as a perpetuity that grows as some assumed rate.
+        -   Treats final projected year as a *perpetuity* that grows as some assumed rate.
 
-        -   The perpetuity growth rate is typically chosen on teh basis of the company's expected lont-term industry growth rate which generally tends to be around the nominal GDP growth (2% - 4%)
+        -   The perpetuity growth rate is typically chosen on theh basis of the company's expected long-term industry growth rate which generally tends to be around the nominal GDP growth (2% - 4%)
+
+        -   Assumes the company's rate of return on capital will always be more than the cost of capital which doesn't jive with microeconomic Life Cycle theory. Life Cycle theory says that eventually the rate of return will equal the cost of capital due to other competitors entering the market to capture the growth rate of the industry.
 
         -   If $g \ge \text{WACC}$, then you must use the EMM method instead.
 
@@ -558,16 +561,30 @@
 
             -   If the $\text{Exit Multiple}_{\text{PGM}}$ is not close to EMM's $\text{Exit Multiple}$, then could indicate that the PGM assumptions are not realistic.
 
+    -   PGM with correction
+
+        $$
+        \text{Terminal Value} = \frac{\text{NOPAT}_T}{\text{WACC}}
+        $$
+
+        -   Follows Life Cycle theory that the rate of return on capital will eventually equal the cost of capital due competitors entering the market. It more closely represents the reality that net profit on these cash flows will eventually be zero.
+
+            ![](_resources/Finance.resources/life-cyc-1.png){width="332"}
+
+            -   Explicit Forecast represents the projected FCFs, and after the vertical line, the downward sloping diagonal represents the corrected terminal value.
+
+                -   In uncorrected pgm, the diagonal line for terminal value would be sloping upwards.
+
 -   [Determine the Valuation]{.underline}
 
-    -   See "End-of-Year vs. Mid-Year calculations" in the Terminal Value section for further details
-    -   Calculate the Discount Factor:
+    1.  Calculate the Discount Factor:
+        -   See "End-of-Year vs. Mid-Year calculations" in the Terminal Value section for further details
         -   End-of-Year: $\frac{1}{(1+\text{WACC})^i}$
             -   $i$ is the projected period
             -   So later periods have a smaller discount factor
         -   Mid-Year: $\frac{1}{(1+\text{WACC})^{i-0.5}}$
-    -   Calculate the Present Value (PV) of FCF~i~: $\text{FCF}_i \times \text{Discount Factor}_i$
-    -   Calculate the Enterpise Value
+    2.  Calculate the Present Value (PV) of FCF~i~: $\text{FCF}_i \times \text{Discount Factor}_i$
+    3.  Calculate the Enterpise Value
         -   [Example]{.ribbon-highlight}: 5-Year Horizon with Mid-Year Discounting
 
             $$
@@ -575,7 +592,7 @@
             $$
 
             -   All FCF values and the Terminal Value is discounted to present and summed to get the Enterprise Value.
-    -   Derive Implied Share Price
+    4.  Derive Implied Share Price
         -   Calculate Implied Equity Value (IEV): $\text{IEV} = \text{Enterprise Value} - \text{Net Debt} + \text{Preferred Stock} + \text{Noncontrolling Interest}$
         -   Calculate Implied Share Price (ISP): $\text{ISP} = \frac{\text{IEV}}{\text{Fully Diluted Shares Outstanding}}$
         -   The implied share price can be compared to the market price to determine whether a stock is being undervalued or overvalued
@@ -584,7 +601,15 @@
 
     -   There are various assumptions is DCF analysis, therefore it's prudent to select a range of values at various stages and see how much the output is changed. This should result in a range of Enterprise Values.
     -   If slight changes in varibles result in large changes in enterprise value, then something is wrong with your model
+    -   Make sure to include variables that are directly related to business drivers such as sales, operating costs, and investment (e.g. Gross Margin, CAPEX, and other financial statment line items). These are the variables that stakeholders will want to see when they look at your analysis. They want to know what levers they can pull to increase the valuation of their business.\
+        ![](_resources/Finance.resources/sens-biz-drivers-1.png){width="325"}
+    -   Simple Solutions: Lengthen horizon; adjust values in terminal value calculation
     -   [Example]{.ribbon-highlight}: Trying Different WACC and Exit Multiple Values\
         ![](_resources/Finance.resources/sens-ex-1.png){width="432"}
         -   6000 is the result of the DCF analysis and the rest of cells are the results of the sensitivity analysis.
-        -   Relatively minor effects result from changes in WACC and the Exit Multiple.
+        -   Relatively minor effects result from changes in WACC and the Exit Multiple. Therefore there is no indication that the model is flawed is aspects regarding these two variables.
+    -   [Example]{.ribbon-highlight}: Trying different Terminal Value Growth Rates and Gross Margins\
+        ![](_resources/Finance.resources/sens-ex-2.png){width="502"}
+        -   Shows a decrease in Gross Margin by 0.5% results in around a 40% decrease of enterpise value (\$15.39 $\rightarrow$ \$9.32)! Indicates something is wrong with the model.
+        -   Maybe the model is being overly influenced by Gross Margin or maybe the other variables aren't influencial enough.
+        -   Also terminal growth rate is from the PGM method for calculating Terminal Value. The PGM-corrected version of that model should be used which doesn't have a growth rate.

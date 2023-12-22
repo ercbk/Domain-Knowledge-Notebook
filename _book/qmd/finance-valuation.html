@@ -768,7 +768,7 @@ K_e = R_f + R_m + \text{IRP}_i + R_s + CRP + R_z
 <li><p>List of instruments that should be considered as <em>Debt</em> in the calculations below:</p>
 <ul>
 <li>Long and Short-Term interest-bearing obligations (e.g Loans, Bonds)</li>
-<li>Operating Leases (e.g.&nbsp;An airline that leases out its planes.)</li>
+<li>Operating Leases (e.g.&nbsp;An airline that leases out its planes.) (<a href="https://www.youtube.com/watch?v=Wu-jRgHUc4Q">Video</a>)</li>
 </ul></li>
 <li><p>Methods<br>
 <img src="_resources/Finance.resources/cost-of-debt-methods-1.png" class="img-fluid" width="532"></p></li>
@@ -894,13 +894,16 @@ K_d = (\operatorname{Risk Free Rate} + \operatorname{Default Spread}) \times (1 
 <ul>
 <li>Depends on Projections: Accurate forecasting is a challenge especially as the forecast horizon lengthens</li>
 <li>Sensitivity to Assumptions: Relatively small changes in variable values can (but not always) result in significant changes to results</li>
-<li>Terminal Value: Can represent 3/4 or more of the valuation, and this value depends on the final period of the forecast horizon which is the most uncertain.</li>
+<li>Terminal Value: Can represent 2/3 or more of the valuation, and this value depends on the final period of the forecast horizon which is the most uncertain.</li>
 <li>Assumes a Constant Capital Structure: Capital structure is not allowed to change over the entire entire horizon. (See WACC)</li>
 </ul></li>
 <li>Pitfalls
 <ul>
-<li>Forecast no less than 7yr (recommended 10+) of cash flows</li>
-<li>Forecasted cash flows should represent no less than 1/3 of the corporate value</li>
+<li>Forecast no less than 7yr (recommended 10+) of cash flows
+<ul>
+<li>Some contracting companies or resource companies like mining corporations can project cash flows out a decade or more.</li>
+<li>Forecasted cash flows should represent no less than 1/3. By extending the horizon as far out as you reasonably can, you lessen the influence of the terminal value in the enterpise value calculation.</li>
+</ul></li>
 </ul></li>
 </ul></li>
 <li><p><u>Process</u></p>
@@ -1029,7 +1032,7 @@ K_d = (\operatorname{Risk Free Rate} + \operatorname{Default Spread}) \times (1 
 \text{FCF}_i = \text{NOPAT}_i - \text{CAPEX}_i - \text{Net Working Capital}_i + \text{D\&amp;A}_i
 \]</span></p>
 <ul>
-<li>Net Operating Profit After Taxes (NOPAT): <span class="math inline">\(\text{NOPAT} = \text{EBIT} - \text{Taxes}\)</span>
+<li><strong>Net Operating Profit After Taxes (NOPAT)</strong>: <span class="math inline">\(\text{NOPAT} = \text{EBIT} - \text{Taxes}\)</span>
 <ul>
 <li>If the company had been losing money but is expected to become more profitable, then effective tax rate will be too low. Therefore the marginal tax rate should be used</li>
 <li>Use effective tax rate if the company is large and stable or already growing and doesn’t use tax credits, nondeductible expenses (e.g.&nbsp;gov’t fines), deferred tax asset valuation allowances, or other company-specific tax policies. Otherwise, you should use the marginal tax rate.</li>
@@ -1037,7 +1040,7 @@ K_d = (\operatorname{Risk Free Rate} + \operatorname{Default Spread}) \times (1 
 </ul></li>
 <li><p><u>Determining the Terminal Value</u></p>
 <ul>
-<li><p>A <strong>Terminal Value</strong> is used to capture the remaining value of the FCF beyond the projection period - 2/3 of the overall valuation depends on this terminal value.</p></li>
+<li><p>A <strong>Terminal Value</strong> is used to capture the remaining value of the FCF beyond the projection period. Typically, around 2/3 of the overall valuation depends on this terminal value.</p></li>
 <li><p>It’s based on the value of FCF or EBITDA in the final year of the projection period (i.e.&nbsp;final year in the horizon). Therefore, the projected values in the final year are very important</p></li>
 <li><p>End-of-Year vs.&nbsp;Mid-Year calculations</p>
 <ul>
@@ -1054,7 +1057,7 @@ K_d = (\operatorname{Risk Free Rate} + \operatorname{Default Spread}) \times (1 
 \]</span></p>
 <ul>
 <li><p><span class="math inline">\(T\)</span>: The final year of the projected period (aka horizon)</p></li>
-<li><p>Determines the remaining FCF by means of a multiple. This multiple is typically based on the Last-Twelve-Month (LTM) trading multiples of comparable companies.</p>
+<li><p>Determines the remaining FCF by means of a multiple. This multiple is typically the average of the Last-Twelve-Month (LTM) EBITDA multiples of comparable companies.</p>
 <ul>
 <li>As current multiples may be affected by sector or economic cycles, it is important to use both a steady-state trading multiple. (e.g.&nbsp;Don’t use a LLM mulitple from year where the company was at a cyclical high)</li>
 </ul></li>
@@ -1078,8 +1081,9 @@ r_{\text{emm}} = \frac{(\text{Terminal Value} \times \text{WACC}) - \text{FCF}_T
 <ul>
 <li><p><span class="math inline">\(T\)</span>: The final year of the projected period (aka horizon)</p></li>
 <li><p><span class="math inline">\(g\)</span>: The perpetuity growth rate</p></li>
-<li><p>Treats final projected year as a perpetuity that grows as some assumed rate.</p></li>
-<li><p>The perpetuity growth rate is typically chosen on teh basis of the company’s expected lont-term industry growth rate which generally tends to be around the nominal GDP growth (2% - 4%)</p></li>
+<li><p>Treats final projected year as a <em>perpetuity</em> that grows as some assumed rate.</p></li>
+<li><p>The perpetuity growth rate is typically chosen on theh basis of the company’s expected long-term industry growth rate which generally tends to be around the nominal GDP growth (2% - 4%)</p></li>
+<li><p>Assumes the company’s rate of return on capital will always be more than the cost of capital which doesn’t jive with microeconomic Life Cycle theory. Life Cycle theory says that eventually the rate of return will equal the cost of capital due to other competitors entering the market to capture the growth rate of the industry.</p></li>
 <li><p>If <span class="math inline">\(g \ge \text{WACC}\)</span>, then you must use the EMM method instead.</p></li>
 <li><p>Perform a sanity check by comparing PGM’s implied exit multiple with EMM’s exit multiple</p>
 <ul>
@@ -1094,12 +1098,26 @@ r_{\text{emm}} = \frac{(\text{Terminal Value} \times \text{WACC}) - \text{FCF}_T
 <li><p>If the <span class="math inline">\(\text{Exit Multiple}_{\text{PGM}}\)</span> is not close to EMM’s <span class="math inline">\(\text{Exit Multiple}\)</span>, then could indicate that the PGM assumptions are not realistic.</p></li>
 </ul></li>
 </ul></li>
+<li><p>PGM with correction</p>
+<p><span class="math display">\[
+\text{Terminal Value} = \frac{\text{NOPAT}_T}{\text{WACC}}
+\]</span></p>
+<ul>
+<li><p>Follows Life Cycle theory that the rate of return on capital will eventually equal the cost of capital due competitors entering the market. It more closely represents the reality that net profit on these cash flows will eventually be zero.</p>
+<p><img src="_resources/Finance.resources/life-cyc-1.png" class="img-fluid" width="332"></p>
+<ul>
+<li><p>Explicit Forecast represents the projected FCFs, and after the vertical line, the downward sloping diagonal represents the corrected terminal value.</p>
+<ul>
+<li>In uncorrected pgm, the diagonal line for terminal value would be sloping upwards.</li>
+</ul></li>
+</ul></li>
+</ul></li>
 </ul></li>
 <li><p><u>Determine the Valuation</u></p>
-<ul>
-<li>See “End-of-Year vs.&nbsp;Mid-Year calculations” in the Terminal Value section for further details</li>
+<ol type="1">
 <li>Calculate the Discount Factor:
 <ul>
+<li>See “End-of-Year vs.&nbsp;Mid-Year calculations” in the Terminal Value section for further details</li>
 <li>End-of-Year: <span class="math inline">\(\frac{1}{(1+\text{WACC})^i}\)</span>
 <ul>
 <li><span class="math inline">\(i\)</span> is the projected period</li>
@@ -1124,16 +1142,26 @@ r_{\text{emm}} = \frac{(\text{Terminal Value} \times \text{WACC}) - \text{FCF}_T
 <li>Calculate Implied Share Price (ISP): <span class="math inline">\(\text{ISP} = \frac{\text{IEV}}{\text{Fully Diluted Shares Outstanding}}\)</span></li>
 <li>The implied share price can be compared to the market price to determine whether a stock is being undervalued or overvalued</li>
 </ul></li>
-</ul></li>
+</ol></li>
 <li><p><u>Perform Sensitivity Analysis</u></p>
 <ul>
 <li>There are various assumptions is DCF analysis, therefore it’s prudent to select a range of values at various stages and see how much the output is changed. This should result in a range of Enterprise Values.</li>
 <li>If slight changes in varibles result in large changes in enterprise value, then something is wrong with your model</li>
+<li>Make sure to include variables that are directly related to business drivers such as sales, operating costs, and investment (e.g.&nbsp;Gross Margin, CAPEX, and other financial statment line items). These are the variables that stakeholders will want to see when they look at your analysis. They want to know what levers they can pull to increase the valuation of their business.<br>
+<img src="_resources/Finance.resources/sens-biz-drivers-1.png" class="img-fluid" width="325"></li>
+<li>Simple Solutions: Lengthen horizon; adjust values in terminal value calculation</li>
 <li><span class="ribbon-highlight">Example</span>: Trying Different WACC and Exit Multiple Values<br>
 <img src="_resources/Finance.resources/sens-ex-1.png" class="img-fluid" width="432">
 <ul>
 <li>6000 is the result of the DCF analysis and the rest of cells are the results of the sensitivity analysis.</li>
-<li>Relatively minor effects result from changes in WACC and the Exit Multiple.</li>
+<li>Relatively minor effects result from changes in WACC and the Exit Multiple. Therefore there is no indication that the model is flawed is aspects regarding these two variables.</li>
+</ul></li>
+<li><span class="ribbon-highlight">Example</span>: Trying different Terminal Value Growth Rates and Gross Margins<br>
+<img src="_resources/Finance.resources/sens-ex-2.png" class="img-fluid" width="502">
+<ul>
+<li>Shows a decrease in Gross Margin by 0.5% results in around a 40% decrease of enterpise value ($15.39 <span class="math inline">\(\rightarrow\)</span> $9.32)! Indicates something is wrong with the model.</li>
+<li>Maybe the model is being overly influenced by Gross Margin or maybe the other variables aren’t influencial enough.</li>
+<li>Also terminal growth rate is from the PGM method for calculating Terminal Value. The PGM-corrected version of that model should be used which doesn’t have a growth rate.</li>
 </ul></li>
 </ul></li>
 </ul>

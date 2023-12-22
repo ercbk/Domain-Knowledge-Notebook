@@ -8,6 +8,8 @@
 
 -   [**Beta**]{style="color: #009499"} - A measure of a stock's or a portfolio's sensitivity to market movements. It quantifies the relationship between the price movements of a security and the overall market. A beta of 1 indicates that the security tends to move in line with the market, while a beta greater than 1 implies that the security is more volatile than the market. A beta less than 1 suggests that the security is less volatile than the market. Often used as a tool to assess the risk or volatility of a particular stock or portfolio in comparison to the overall market
 
+    -   Calculated as the covariance between the rate of return of a company's stock and the overall market return.
+
 -   [**Capital Expenditure (CapEx)**]{style="color: #009499"} - Money that is spent to acquire, repair, update, or improve a fixed company asset, such as a building, business, or equipment. For assets to fall under the CapEx designation, the investments must have a useful life of one year or more. A CapEx is amortized, or its value is deducted a little each year based on the total cost and its expected useful life.
 
     -   Useful life refers to the estimated and generally agreed upon shelf life of a specific business asset.
@@ -35,7 +37,7 @@
     $$
     \text{DSO Ratio} = \frac{\text{AR}}{\text{Sales}} \times 365
     $$
-    
+
     -   $AR$ is accounts receivable.
 
 -   [**Depreciation**]{style="color: #009499"} - A non-cash expense that approximates the reduction of the book value of a company's long-term fixed assets or property, plant, and equipment (PP&E) over an estimated *useful life* and reduces reported earnings. (see CAPEX for details on Useful Life)
@@ -58,7 +60,17 @@
 
     -   The larger the drawdown (%), the larger uptick (%) needed to get back to initial peak. (e.g. dd of 1% requires 1.01% uptick while 20% dd requires a 25% uptick). Some investors choose to avoid drawdowns of greater than 20% before cutting their losses and turning the position into cash instead.
 
--   [**Earnings Before Interest and Taxes (EBIT)**]{style="color: #009499"}: (aka Operating Income, Operating Profit) Common method for measuring profitability. $\text{EBIT} = \text{Operating Expenses} - \text{Sales Revenue}$ where the sales revenue excludes tax and interest. Located in the company's income statement.
+-   [**Earnings**]{style="color: #009499"} or [**Net Income**]{style="color: #009499"} - Represents after-tax profit. Typically the bottom line of the income statement. EBIT and EBITDA are better for comparing companies.$\text{Earnings} = \text{Revenue} - \text{Expenses} - \text{Interest} - \text{Taxes}$
+
+    ![](_resources/Finance.resources/apple-fin-stat-1.webp){width="532"}
+
+-   [**Earnings Before Interest and Taxes (EBIT)**]{style="color: #009499"} - (aka Operating Income, Operating Profit) Common method for measuring profitability. $\text{EBIT} = \text{Operating Expenses} - \text{Sales Revenue}$ where the sales revenue excludes tax and interest. Located in the company's income statement.
+
+-   [**Earnings Before Interest Tax Depreciation Amortization (EBITDA)**]{style="color: #009499"} - Metric used to analyze and compare pre-tax cash flow of a business. It eliminates non-cash factors (depreciation and amortization) and backs out financing costs (interest). Using net profit (aka earnings) would not be an apples-to-apples comparison. Preferred over EBIT in industries with a high level of fixed assets.
+
+    -   **Adjusted EBITDA** - Normalizes expenses by adding back any personal and non-business related expenses by owners who include these for tax purposes and isn't truly a business cost. Used when selling a business.
+
+    -   **Sellers Discretionary Earnings** - Alternative to Adjusted EBITDA ([Video](https://www.youtube.com/watch?v=YysM_c-DL1k)). Adjusted EBITDA more commonly used.
 
 -   [**Effective Tax Rate**]{style="color: #009499"}: An average rate of tax payable. Useful to compare individuals or corporations. $\text{Tax Rate}_{\text{eff}} = \text{Tax Payed} / \text{Pre-Tax Earnings}$ As of 2022, the average (nonfinancial) S&P 500 corporate effective tax rate was around 19%. Contrast with Marginal Tax Rate.
 
@@ -83,6 +95,8 @@
     $$
     \text{Gross Margin} = \frac{\text{Revenue} - \text{COGS}}{\text{Revenue}}
     $$
+
+-   [**Growth Rate**]{style="color: #009499"} - $r = \frac{\text{Ending Value} - \text{Before Value}}{\text{Before Value}}$
 
 -   [**Hedge**]{style="color: #009499"} - An investment that is made with the intention of reducing the risk of adverse price movements in an asset. Normally, a hedge consists of taking an offsetting or opposite position in a related security. An example could be investing in both cyclical and counter-cyclical stocks.
 
@@ -141,6 +155,10 @@
 -   [**Rate of Return (RoR)**]{style="color: #009499"} - The net gain or loss of an investment over a specified time period, expressed as a percentage of the investment's initial cost. The rate of return disregards some key factors in an investment, like the time value of money, the timing and size of cash flows, and the risk and uncertainty associated with any investment or in the case of stocks --- taxes and investing fees. (See Internal Rate of Return, MIRR, and [Finance, Valuation \>\> Rates of Return](finance-valuation.qmd#sec-finance-val-ror){style="color: green"})
 
 -   [**Relative Performance**]{style="color: #009499"} - The price ratio of two stocks
+
+-   [**Return on Investment (ROI)**]{style="color: #009499"} - $\text{ROI} = \frac{\text{Net Profit}}{\text{Investment}}$ where investment can include working capital, R&D, capital spending, acquisitions, etc.
+
+-   [**Revenue**]{style="color: #009499"} aka [**Sales**]{style="color: #009499"} - The income a company generates before deducting expenses. Usually the top line of the income statement
 
 -   [**Selling, General, and Administrative Expenses (SG&A)**]{style="color: #009499"} - Includes all general and administrative expenses (G&A) as well as the direct and indirect selling expenses of the business. This line item includes nearly all business costs not directly attributable to making a product or performing a service. SG&A includes the costs of managing the company and the expenses of delivering its products or services.
 
