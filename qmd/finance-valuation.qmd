@@ -84,7 +84,7 @@
     -   [Example]{.ribbon-highlight}: 7 year Project ([link](https://www.youtube.com/watch?v=Z-CUSIGLk2U&t=342s))
 
         | Timeline       | Year 0   | Year 1  | Year 2 | Year 3  | Year 4   | Year 5  | Year 6  | Year 7   |
-        |--------|--------|--------|--------|--------|--------|--------|--------|--------|
+        |----------------|----------|---------|--------|---------|----------|---------|---------|----------|
         | Cash Outlay    | 10000.00 | 4500.00 | 950.00 |         |          |         |         |          |
         | Cash Flow      |          |         |        | 6000.00 | 7500.00  | 1250.00 | 8010.00 | 9000.00  |
         | FV,PV at 12.5% |          | 4000.00 | 750.62 | 9610.84 | 10678.71 | 1582.03 | 9011.25 |          |
@@ -392,6 +392,8 @@
         -   Forecast no less than 7yr (recommended 10+) of cash flows
             -   Some contracting companies or resource companies like mining corporations can project cash flows out a decade or more.
             -   Forecasted cash flows should represent no less than 1/3. By extending the horizon as far out as you reasonably can, you lessen the influence of the terminal value in the enterpise value calculation.
+        -   Under-projecting CAPEX
+            -   For companies with a recent acquisition, sometimes analysts under-project CAPEX values which inflates FCF projections. Add an ROI line and see if there's a lot of volatility (I think this supposed to be projected ROI that you get from analyst reports). If there is a volatility, then your model is unreliable. I guess you're then supposed to choose another model.
 
 -   [Process]{.underline}
 
@@ -425,7 +427,7 @@
         -   Horizon Guidelines
 
             | Company's Competitive Position                                                                                      | Excess Returns/Forecast Horizon |
-            |----------------------------------------------|--------------------------|
+            |---------------------------------------------------------------------------------------------------------------------|---------------------------------|
             | Slow Growing; Operates in a highly competitive, low margin industry                                                 | 1 Year                          |
             | Solid company that has advantages such as strong marketing channels, brand recognition, regulatory advantages, etc. | 5 Years                         |
             | Early stages of rapid growth; Operates with high barriers to entry; dominant market position or prospects           | 10 Years                        |
