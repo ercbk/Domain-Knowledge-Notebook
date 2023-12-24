@@ -324,7 +324,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#misc" id="toc-misc" class="nav-link active" data-scroll-target="#misc">Misc</a></li>
-  <li><a href="#sec-finance-val-ror" id="toc-sec-finance-val-ror" class="nav-link" data-scroll-target="#sec-finance-val-ror">Rates of Return</a></li>
+  <li><a href="#sec-finance-val-ror" id="toc-sec-finance-val-ror" class="nav-link" data-scroll-target="#sec-finance-val-ror">Rates of Return</a>
+  <ul>
+  <li><a href="#rate-of-return-ror" id="toc-rate-of-return-ror" class="nav-link" data-scroll-target="#rate-of-return-ror">Rate of Return (RoR)</a></li>
+  <li><a href="#internal-rate-of-return-irr" id="toc-internal-rate-of-return-irr" class="nav-link" data-scroll-target="#internal-rate-of-return-irr">Internal Rate of Return (IRR)</a></li>
+  <li><a href="#modified-internal-rate-of-return-mirr" id="toc-modified-internal-rate-of-return-mirr" class="nav-link" data-scroll-target="#modified-internal-rate-of-return-mirr">Modified Internal Rate of Return (MIRR)</a></li>
+  <li><a href="#average-internal-rate-of-return-airr" id="toc-average-internal-rate-of-return-airr" class="nav-link" data-scroll-target="#average-internal-rate-of-return-airr">Average Internal Rate of Return (AIRR)</a></li>
+  </ul></li>
   <li><a href="#sec-finance-val-coc" id="toc-sec-finance-val-coc" class="nav-link" data-scroll-target="#sec-finance-val-coc">Cost of Capital</a>
   <ul>
   <li><a href="#sec-finance-val-coc-wacc" id="toc-sec-finance-val-coc-wacc" class="nav-link" data-scroll-target="#sec-finance-val-coc-wacc">Weighted Average Cost of Capital (WACC)</a>
@@ -382,8 +388,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="sec-finance-val-ror" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="sec-finance-val-ror">Rates of Return</h2>
-<ul>
-<li><p><u>Rate of Return (RoR)</u></p>
+<section id="rate-of-return-ror" class="level3">
+<h3 class="anchored" data-anchor-id="rate-of-return-ror">Rate of Return (RoR)</h3>
 <p><span class="math display">\[
 \text{RoR} = \frac{\operatorname{current\_value - \operatorname{initial\_value}}}{\operatorname{initial\_value}} \times 100
 \]</span></p>
@@ -392,26 +398,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>To adjust for inflation, just subtract the inflation rate (aka <strong>Real Rate of Return</strong>).</li>
 <li>Types
 <ul>
-<li>Arithmetic: <span class="math inline">\(\sum_{i=1}^T r_i\)</span> where <span class="math inline">\(r_i\)</span> is the return for the time period, <span class="math inline">\(i\)</span>.</li>
-<li>Geometric (aka Compound Annual Growth Rate): <span class="math inline">\([(1+r_1) \times (1+r_2) \times \cdots \times (1+r_T)]^{1/T} - 1\)</span>
+<li><u>Arithmetic</u>: <span class="math inline">\(\sum_{i=1}^T r_i\)</span> where <span class="math inline">\(r_i\)</span> is the return for the time period, <span class="math inline">\(i\)</span>.</li>
+<li><u>Geometric</u> (aka <u>Compound Annual Growth Rate</u>): <span class="math inline">\([(1+r_1) \times (1+r_2) \times \cdots \times (1+r_T)]^{1/T} - 1\)</span>
 <ul>
 <li>Includes compounding effect.</li>
 <li>At most is the Arithmetic average but usually less</li>
 </ul></li>
-<li>Annual Percentage Rate (APR): <span class="math inline">\(m \times k_m\)</span> where <span class="math inline">\(m\)</span> is the number of compounding periods in a year and <span class="math inline">\(k_m\)</span> is the periodic rate
+<li><u>Annual Percentage Rate (APR)</u>: <span class="math inline">\(m \times k_m\)</span> where <span class="math inline">\(m\)</span> is the number of compounding periods in a year and <span class="math inline">\(k_m\)</span> is the periodic rate
 <ul>
 <li>Conventional method of quoting interest rates</li>
 <li>Ignores compounding effect</li>
 <li>e.g.&nbsp;a credit card with a 1% monthly interest rate has an <span class="math inline">\(\text{APR} = 0.01 \times 12 = 0.12 \;\operatorname{or}\; 12\%\)</span></li>
 </ul></li>
-<li>Effective Annual Rate (EAR): <span class="math inline">\((1+k_m)^m - 1\)</span>
+<li><u>Effective Annual Rate (EAR)</u>: <span class="math inline">\((1+k_m)^m - 1\)</span>
 <ul>
 <li>APR that takes into account the compounding effect.</li>
 <li>e.g.&nbsp;a credit card with a monthly interest rate of 1.25%, what is the EAR? <span class="math inline">\(\text{EAR} = (1 + 0.0125)^{12}-1 = 0.1608 \;\text{or}\; 16.08\%\)</span></li>
 </ul></li>
 </ul></li>
-</ul></li>
-<li><p><u>Internal Rate of Return (IRR)</u></p>
+</ul>
+</section>
+<section id="internal-rate-of-return-irr" class="level3">
+<h3 class="anchored" data-anchor-id="internal-rate-of-return-irr">Internal Rate of Return (IRR)</h3>
 <ul>
 <li><p>A flawed indicator of strength for capital projects. It should only be used when a project has no interim cashflows or is somehow able reinvest those interim cashflows at the same IRR for the duration of the project (See disadvantages).</p></li>
 <li><p>The internal rate of return is a <em>discount rate</em> that makes the net present value (NPV) of all cash flows from a particular project or investment equal to zero. In general, projects with higher IRRs are more favorable than projects with lower IRRs, as the expected rate of return on these projects is greater.</p></li>
@@ -444,8 +452,10 @@ NPV = \sum_{t=0}^T \frac{C_t}{(1+r)^t} = 0
 </ul></li>
 <li>Does not consider differences in the duration of projects. A longer term project may be more favorable even if it has a lower IRR, because it is generating a substantial cash flow for a longer period that would be difficult to replace if the shorter term project was chosen.</li>
 </ul></li>
-</ul></li>
-<li><p><u>Modified Internal Rate of Return (MIRR)</u></p>
+</ul>
+</section>
+<section id="modified-internal-rate-of-return-mirr" class="level3">
+<h3 class="anchored" data-anchor-id="modified-internal-rate-of-return-mirr">Modified Internal Rate of Return (MIRR)</h3>
 <p><span class="math display">\[
 \text{MIRR} = \left(\frac{\text{FV}}{\text{PV}} \right)^{\LARGE{\frac{1}{n}}} - 1
 \]</span></p>
@@ -588,10 +598,13 @@ NPV = \sum_{t=0}^T \frac{C_t}{(1+r)^t} = 0
 <li>e.g.&nbsp;4500 needs to be discounted 1 year to Year 0 dollars and 6000 needs to be compounded 4 years to Year 7 dollars</li>
 </ul></li>
 </ul></li>
-</ul></li>
-<li><p><u>Average Internal Rate of Return</u></p>
+</ul>
+</section>
+<section id="average-internal-rate-of-return-airr" class="level3">
+<h3 class="anchored" data-anchor-id="average-internal-rate-of-return-airr">Average Internal Rate of Return (AIRR)</h3>
 <ul>
-<li>Formula using income and capital<u><br>
+<li>Notes from Videos: <a href="https://www.youtube.com/playlist?list=PL66j5y1ZGZ9FpUbgouPUgiZDFEONAJ1N8">AIRR: A Comprehensive Approach to Rate of Return and Investment Decisions</a></li>
+<li><u>Formula Using Income and Capital<br>
 <br>
 </u><span class="math display">\[
 \begin{align}
@@ -605,9 +618,9 @@ NPV = \sum_{t=0}^T \frac{C_t}{(1+r)^t} = 0
 <li><span class="math inline">\(I\)</span>: The income of the project</li>
 <li><span class="math inline">\(C\)</span>: The capital invested in the project where <span class="math inline">\(C_0\)</span> is the initial investment. While the final period of the project will have a cashflow, it will not have a capital investment.</li>
 <li><span class="math inline">\(r\)</span>: The cost of capital</li>
-<li><span class="math inline">\(n\)</span>: The length of the project (i.e.&nbsp;from the first period of income to the last period of income)</li>
+<li><span class="math inline">\(n\)</span>: The total number of periods of the project not including the initial investment period.</li>
 </ul></li>
-<li>Formula using Net Present Value and Cash Flows<br>
+<li><u>Formula Using Net Present Value and Cash Flows</u><br>
 <span class="math display">\[
 \text{AIRR} = r + \frac{\text{NPV}(1+r)}{\text{PV[C]}}
 \]</span>
@@ -616,9 +629,41 @@ NPV = \sum_{t=0}^T \frac{C_t}{(1+r)^t} = 0
 <li><span class="math inline">\(NPV\)</span>: Net Present Value of the cash flows</li>
 <li><span class="math inline">\(PV[C]\)</span>: The total cost of capital discounted the present value (i.e.&nbsp;Present Value of Total Capital)</li>
 <li><span class="math inline">\(\frac{\text{NPV}}{\text{PV[C]}}\)</span>: This is the net present value return per unit of capital</li>
-<li><span class="math inline">\(\frac{\text{NPV}(1+r)}{\text{PV[C]}}\)</span>: This is the excess return rate. It tells investors how much <em>more</em> they are making beyond the cost of capital rate.</li>
+<li><span class="math inline">\(\frac{\text{NPV}(1+r)}{\text{PV[C]}}\)</span>: This is the <strong>Excess Return Rate</strong>. It tells investors how much <em>more</em> they are making beyond the cost of capital rate.</li>
 </ul></li>
-<li><span class="ribbon-highlight">Example</span>:
+<li><u>Formula Using Time-Varying Cost of Capital</u><br>
+<span class="math display">\[
+\begin{align}
+\text{AIRR} &amp;= (1+r_1) \cdot \frac{\frac{I_1}{1+r_1} + \cdots + \frac{I_n}{(1+r_1) \cdots (1+r_n)}}{C_0 + \frac{C_1}{1+r_1} + \frac{C_{n-1}}{(1+r_1)\cdots(1+r_{n-1})}}\\
+&amp;= (1+r_1) \cdot \frac{\text{PV[I]}}{\text{PV[C]}}
+\end{align}
+\]</span>
+<ul>
+<li><p><span class="math inline">\(\text{PV[I]}\)</span>: Total income of the project that has been discounted to the present value (i.e.&nbsp;Present Value of Total Income)</p></li>
+<li><p><span class="math inline">\(r_i\)</span>: The time-varying cost of capital where <span class="math inline">\(i\)</span> represents the period of the project.</p></li>
+<li><p><span class="math inline">\(n\)</span>: The total number of periods of the project not including the initial investment period.</p></li>
+<li><p>The <strong>Minimal Attractive Cost of Capital (MARR)</strong> replaces the cost of capital (since we now have multiple CoCs) as the threshold for an acceptable investment<br>
+<span class="math display">\[
+\begin{align}
+\text{MARR} &amp;= (1+r_1) \cdot \frac{\frac{r_1C_0}{1+r_1}+\cdots+\frac{r_n C_{n-1}}{(1+r_1)\cdots(1+r_n)}}{C_0 + \frac{C_1}{1+r_1}+\cdots+\frac{C_{n-1}}{(1+r_1)\cdots(1+r_{n-1})}} \\
+&amp;= (1+r_1) \cdot \frac{\text{PV[R]}}{\text{PV[C]}}
+\end{align}
+\]</span></p>
+<ul>
+<li><span class="math inline">\(\text{PV[R]}\)</span>: The time-varying market return discounted to the present value. The amount of return you’d expect from a minimally-acceptable, alternative investment using these capitals and these costs of capital over the same length of time.</li>
+</ul></li>
+<li><p>Net Present Value using a Time-Varying CoC</p>
+<p><span class="math display">\[
+\text{NPV} = \text{PV[C]} \times \frac{\text{AIRR}-\text{MARR}}{1+r_1}
+\]</span></p>
+<ul>
+<li>The amount of value that exceeds the minimally acceptable investment’s return.</li>
+<li>This is a reformulation of the “Formula using Net Present Value and Cash Flows”</li>
+<li><span class="math inline">\(\text{PV[C]}\)</span> represents the size of the investment</li>
+<li><span class="math inline">\(\frac{\text{AIRR}-\text{MARR}}{1+r_1}\)</span> represents the efficiency of the project</li>
+</ul></li>
+</ul></li>
+<li><span class="ribbon-highlight">Example</span>: Net Present Value and Cash Flows Formula for AIRR
 <ul>
 <li><p>Calculate Cash Flows</p>
 <table class="table">
@@ -671,8 +716,8 @@ NPV = \sum_{t=0}^T \frac{C_t}{(1+r)^t} = 0
 \text{AIRR} = 0.15 + \frac{372.60 \times (1+0.15)}{600 + \frac{400}{1 + 0.15}}= 0.602 = 60.2\%
 \]</span></p></li>
 </ul></li>
-</ul></li>
 </ul>
+</section>
 </section>
 <section id="sec-finance-val-coc" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="sec-finance-val-coc">Cost of Capital</h2>
@@ -960,7 +1005,7 @@ K_d = (\operatorname{Risk Free Rate} + \operatorname{Default Spread}) \times (1 
 <li>The valuation implied for a target by a DCF is known as it’s <strong>Intrinsic Value</strong>, as opposed to its market value.</li>
 <li><strong>Free Cash Flow (FCF)</strong> - The cash generated by a company after paying all cash operating expenses and associated taxes, as well as the funding of capex and working capital, but prior to the payment of any interest expense.</li>
 </ul></li>
-<li><p>Misc</p>
+<li><p><u>Misc</u></p>
 <ul>
 <li>Notes from
 <ul>
@@ -1025,8 +1070,8 @@ K_d = (\operatorname{Risk Free Rate} + \operatorname{Default Spread}) \times (1 
 <li><p>Horizon Guidelines</p>
 <table class="table">
 <colgroup>
-<col style="width: 70%">
-<col style="width: 29%">
+<col style="width: 69%">
+<col style="width: 30%">
 </colgroup>
 <thead>
 <tr class="header">
