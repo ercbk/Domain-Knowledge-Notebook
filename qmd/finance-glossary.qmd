@@ -16,6 +16,13 @@
         -   According the IRS, Car's useful life is 5yrs and new building's is 39yrs
     -   Also see [What Is a Capital Expenditure (CapEx)? Definition and Guide](https://www.shopify.com/blog/what-is-capex#:~:text=A%20CapEx%20is%20amortized%2C%20or,a%20new%20building's%20is%2039.) (example, calculations, relation to operating expenditure (OpEx)
 
+-   [**Cash Flow**]{style="color: #009499"} - The net balance of cash moving into (positive) and out (negative) of a business at a specific point in time. Cash flow is not profit. A negative profit means expenses \> revenue while a negative cashflow could mean an investment \> return in a project. ([link](https://online.hbs.edu/blog/post/cash-flow-vs-profit))
+
+    -   Operating cash flow: This refers to the net cash generated from a company’s normal business operations. In actively growing and expanding companies, **positive** cash flow is required to maintain business growth.
+    -   Investing cash flow: This refers to the net cash generated from a company’s investment-related activities, such as investments in securities, the purchase of physical assets like equipment or property, or the sale of assets. In healthy companies that are actively investing in their businesses, this number will often be in the **negative**.
+    -   Financing cash flow: This refers specifically to how cash moves between a company and its investors, owners, or creditors. It’s the net cash generated to finance the company and may include debt, equity, and dividend payments.
+    -   Free cash flow: The net amount of cash left over after taxes are paid; depreciation, amortization, and changes in working capital are accounted for; and capital expenditures (property, equipment, and technology investments) are subtracted. In short: It’s the cash left over that doesn’t need to be allocated anywhere.
+
 -   [**Compound Annual Growth Rate (CAGR)**]{style="color: #009499"} - The rate of return (RoR) that would be required for an investment to grow from its beginning value (BV) to its ending value (EV), assuming the profits were reinvested at the end of each period of the investment's life span (t).
 
     $$
@@ -40,7 +47,7 @@
 
     -   $AR$ is accounts receivable.
 
--   [**Depreciation**]{style="color: #009499"} - A non-cash expense that approximates the reduction of the book value of a company's long-term fixed assets or property, plant, and equipment (PP&E) over an estimated *useful life* and reduces reported earnings. (see CAPEX for details on Useful Life)
+-   [**Depreciation**]{style="color: #009499"} - A non-cash expense that approximates the reduction of the book value of a company's long-term fixed assets or property, plant, and equipment (PP&E) over an estimated *useful life* (i.e. amount of time where the asset is expected to contribute to company operations) and reduces reported earnings. (see CAPEX for details on Useful Life)
 
     -   **Straight-Line Depreciation** assumes a constant depreciation expense over the estimated useful life of the asset
     -   **Accelerated Depreciation** assumes the asset loses most of its value in the early years of its life.
@@ -54,7 +61,7 @@
         -   $\text{Stock Market Risk Premium}$ might be the equity risk premium which is the expected return on stocks - risk free rate (e.g. S&P average return rate - 10yr treasury bill rate)
     -   For project valuation, see [Finance, Valuation](finance-valuation.qmd#sec-finance-val){style="color: green"}
 
--   [**Discounted Cash Flow**]{style="color: #009499"} - Takes the earnings of an investment and discounts each of the cash flows based on a discount rate. The goal of a DCF model is to buy a stream of cashflows (i.e. a stock) for less than they are worth. It values the cash flows of a company and determines whether they are over or under-valued via the stock price.
+-   [**Discounted Cash Flow**]{style="color: #009499"} - Takes the earnings of an investment and discounts each of the cash flows based on a discount rate. The goal of a DCF model is to buy a stream of cashflows (i.e. via a stock) for less than they are worth. It values the cash flows of a company and determines whether they are over or under-valued via the stock price.
 
 -   [**Drawdown**]{style="color: #009499"} - A peak-to-trough decline during a specific period for an investment, trading account, or fund. If a trading account has \$10,000 in it, and the funds drop to \$9,000 before moving back above \$10,000, then the trading account witnessed a 10% drawdown.
 
@@ -64,7 +71,7 @@
 
     ![](_resources/Finance.resources/apple-fin-stat-1.webp){width="532"}
 
--   [**Earnings Before Interest and Taxes (EBIT)**]{style="color: #009499"} - (aka Operating Income, Operating Profit) Common method for measuring profitability. $\text{EBIT} = \text{Operating Expenses} - \text{Sales Revenue}$ where the sales revenue excludes tax and interest. Located in the company's income statement.
+-   [**Earnings Before Interest and Taxes (EBIT)**]{style="color: #009499"} - (aka **Operating Income**, **Operating Profit**) Common method for measuring profitability. $\text{EBIT} = \text{Operating Expenses} - \text{Sales Revenue}$ where the sales revenue excludes tax and interest. Located in the company's income statement. (Also see Profit)
 
 -   [**Earnings Before Interest Tax Depreciation Amortization (EBITDA)**]{style="color: #009499"} - Metric used to analyze and compare pre-tax cash flow of a business. It eliminates non-cash factors (depreciation and amortization) and backs out financing costs (interest). Using net profit (aka earnings) would not be an apples-to-apples comparison. Preferred over EBIT in industries with a high level of fixed assets.
 
@@ -76,7 +83,15 @@
 
 -   [**Exchange Traded Fund (ETF)**]{style="color: #009499"} - A mutual fund that may be traded daily like a stock or bond.
 
--   [**Expenditure**]{style="color: #009499"} - Management has discretion on whether to increase or decrease it. Which is different from an expense since management has no such control.
+-   [**Expenditure**]{style="color: #009499"} - A payment or the incurrence of a liability in exchange for goods or services. Evidence of the documentation triggered by an expenditure is a sales receipt or an invoice. ([link](https://www.accountingtools.com/articles/the-difference-between-an-expense-and-an-expenditure), [link](https://www.indeed.com/career-advice/career-development/expenditures-vs-expenses))
+
+    -   The key difference between an expense and an expenditure is that an expense recognizes the consumption of a cost, while an expenditure represents the disbursement of funds. An expense is usually recognized when a related sale is recognized or when the item in question has no future utility. An expenditure is usually recognized either when cash is paid out or a liability is incurred. (Also see Expense for an example)
+    -   My idea is that an expenditure is something coming into the company. It's the payment for something tangible that is used by the company for a period of time. Although, expenditures can also be a payment to reduce the outstanding balance of a loan, and a payment to distribute dividends to shareholders (¯\\\_(ツ)\_/¯).
+
+-   [**Expense**]{style="color: #009499"} - The reduction in value of an asset as it is used to generate revenue. If the underlying asset is to be used over a long period of time, the expense takes the form of depreciation, and is charged ratably over the useful life of the asset. If the expense is for an immediately consumed item, such as a salary. ([link](https://www.accountingtools.com/articles/the-difference-between-an-expense-and-an-expenditure), [link](https://www.indeed.com/career-advice/career-development/expenditures-vs-expenses))
+
+    -   My idea of an expense is something that's leaving a company. It occurs immediately as an asset gets used or sold. When something dissipates, I think of an expense (e.g value of an asset disappearing as depreciation, electricity being used in the building, salary being paid).
+    -   [Example]{.ribbon-highlight}: An organization makes an expenditure of \$3,000 for a desktop computer. It then charges the computer to expense over the next three years, which results in an annual depreciation expense of \$1,000.
 
 -   [**False Strategy Theorem**]{style="color: #009499"} - Gives the threshold for which a Sharpe Ratio greater than this threshold would be significant.
 
@@ -87,6 +102,8 @@
         -   $e$ is the exponential constant (i.e. 2.71...)
         -   $\gamma$ is the Euler-Mascheroni constant (approx. 0.5772156649...)
     -   Useful for backtesting multiple strategies and deciding whether the strategy with the maximum sharpe ratio is significant (mitigates multiple testing bias)
+
+-   [**Fixed Asset**]{style="color: #009499"} - Property with a useful life greater than one reporting period (i.e. period covered by finanacial statments), and which exceeds an entity's minimum capitalization limit (i.e. paid amount threshold to classify it as a long-term asset).
 
 -   [**Futures**]{style="color: #009499"} - An obligation to the buyer and a seller. The seller of the future agrees to provide the underlying asset at expiry, and the buyer of the contract agrees to buy the underlying at expiry. The price they receive and pay, respectively, is the price they entered the futures contract at. Most futures traders close out their positions prior to expiration since retail traders and hedge funds have little need to take physical possession of barrels of oil, for example. But, they can buy or sell the contract at one price, and if it moves favorably they can exit the trade and make a profit that way. Futures are a derivative because the price of an oil futures contract is based on the price movement of oil, for example.
 
@@ -143,7 +160,17 @@
 
 -   [**Modified Internal Rate of Return (MIRR)**]{style="color: #009499"} - Better alternative to IRR that assumes the cash inflows are reinvested at cost of capital of the company instead of at the IRR. (Also see [Finance, Valuation \>\> Rates of Return](finance-valuation.qmd#sec-finance-val-ror){style="color: green"})
 
--   [**Options**]{style="color: #009499"} - An option on stock XYZ gives the holder the right to buy or sell XYZ at the strike price up until expiration. The underlying asset for the option is the stock of XYZ. The writer must either buy or sell the underlying asset to the buyer on the specified date at the agreed-upon price. The buyer is not obligated to purchase the underlying asset, but they can exercise their right if they choose to do so. If the option is about to expire, and the underlying asset has not moved favorably enough to make exercising the option worthwhile, the buyer can let the expire and they will lose the amount they paid for the option.
+-   [**Net Present Value**]{style="color: #009499"} - A way to compare potential investments or projects in today's dollars. It's the difference between the present value of a future stream of cash inflows and outflows. Used in capital budgeting and investment planning to analyze the profitability of a projected investment or project.
+
+    $$
+    \text{NPV} = F_0 + \frac{F_1}{1+r} + \cdots + \frac{F_n}{(1+r)^n}
+    $$
+
+    -   $F_*$: Cash Flows
+    -   $r$: Cost of Capital
+    -   $n$: Last period of the project
+
+-   [**Options**]{style="color: #009499"} - An option on stock XYZ gives the holder the right to buy or sell XYZ at the strike price up until expiration. The underlying asset for the option is the stock of XYZ. The writer must either buy or sell the underlying asset to the buyer on the specified date at the agreed-upon price. The buyer is not obligated to purchase the underlying asset, but they can exercise their right if they choose to do so. If the option is about to expire, and the underlying asset has not moved favorably enough to make exercising the option worthwhile, the buyer can let the expire and they will lose the amount they paid for the option.
 
     -   [**Put option**]{style="color: #009499"} - If Morty buys 100 shares of Stock plc (STOCK) at \$10 per share, he might hedge his investment by buying an American put option with a strike price of \$8 expiring in one year. This option gives Morty the right to sell 100 shares of STOCK for \$8 any time in the next year. Let's assume he pays \$1 for the option, or \$100 in premium. If one year later STOCK is trading at \$12, Morty will not exercise the option and will be out \$100. He's unlikely to fret, though, since his unrealized gain is \$100 (\$100 including the price of the put). If STOCK is trading at \$0, on the other hand, Morty will exercise the option and sell his shares for \$8, for a loss of \$300 (\$300 including the price of the put). Without the option, he stood to lose his entire investment.
     -   [**Call options**]{style="color: #009499"} - Contract giving the owner the right, but not the obligation, to buy a specified amount of an underlying security at a specified price within a specified time. The specified price is known as the [**strike price**]{style="color: #009499"} and the specified time during which a sale is made is its expiration (expiry) or time to maturity. As the price of the stock goes up, the value of the call option contract goes up. The contract can be sold at any time or you can purchase the stock at the guaranteed price on the expiration date. The price of the call option is called the premium.
@@ -151,6 +178,12 @@
         -   Suppose that Microsoft shares are trading at \$108 per share. You own 100 shares of the stock and want to generate an income above and beyond the stock's dividend. You also believe that shares are unlikely to rise above \$115.00 per share over the next month. You take a look at the call options for the following month and see that there's a 115.00 call trading at \$0.37 per contract. So, you sell one call option and collect the \$37 premium (\$0.37 x 100 shares), representing a roughly four percent annualized income. If the stock rises above \$115.00, the option buyer will exercise the option and you will have to deliver the 100 shares of stock at \$115.00 per share. You still generated a profit of \$7.00 per share, but you will have missed out on any upside above \$115.00. If the stock doesn't rise above \$115.00, you keep the shares and the \$37 in premium income.
 
 -   [**Outstanding Shares**]{style="color: #009499"} - The number of stocks that a company has issued. This number represents all the shares that can be bought and sold by the public, as well as all the restricted shares that require special permission before being transacted.
+
+-   [**Profit**]{style="color: #009499"} - The balance that remains when all of a business’s operating expenses are subtracted from its revenues. ([link](https://online.hbs.edu/blog/post/cash-flow-vs-profit))
+
+    -   Gross profit: Gross profit is defined as revenue minus the cost of goods sold. It includes variable costs, which are dependent upon the level of output, such as cost of materials and labor directly associated with producing the product. It doesn’t include other fixed costs, which a company must pay regardless of output, such as rent and the salary of individuals not involved in producing a product.
+    -   Operating profit: Like operating cash flow, operating profit refers only to the net profit that a company generates from its normal business operations. It typically excludes negative cash flows like tax payments or interest payments on debt. Similarly, it excludes positive cash flows from areas outside of the core business. It’s sometimes referred to as earnings before interest and tax (EBIT).
+    -   Net profit: This is the net income after all expenses have been deducted from all revenues. Typically, this includes expenses like tax and interest payments.
 
 -   [**Rate of Return (RoR)**]{style="color: #009499"} - The net gain or loss of an investment over a specified time period, expressed as a percentage of the investment's initial cost. The rate of return disregards some key factors in an investment, like the time value of money, the timing and size of cash flows, and the risk and uncertainty associated with any investment or in the case of stocks --- taxes and investing fees. (See Internal Rate of Return, MIRR, and [Finance, Valuation \>\> Rates of Return](finance-valuation.qmd#sec-finance-val-ror){style="color: green"})
 

@@ -84,7 +84,7 @@
     -   [Example]{.ribbon-highlight}: 7 year Project ([link](https://www.youtube.com/watch?v=Z-CUSIGLk2U&t=342s))
 
         | Timeline       | Year 0   | Year 1  | Year 2 | Year 3  | Year 4   | Year 5  | Year 6  | Year 7   |
-        |----------------|----------|---------|--------|---------|----------|---------|---------|----------|
+        |--------|--------|--------|--------|--------|--------|--------|--------|--------|
         | Cash Outlay    | 10000.00 | 4500.00 | 950.00 |         |          |         |         |          |
         | Cash Flow      |          |         |        | 6000.00 | 7500.00  | 1250.00 | 8010.00 | 9000.00  |
         | FV,PV at 12.5% |          | 4000.00 | 750.62 | 9610.84 | 10678.71 | 1582.03 | 9011.25 |          |
@@ -134,6 +134,58 @@
 
         -   Note the opposite order used for [disc_t]{.var-text} and [comp_t]{.var-text} when iterating through the cash outlays and cash flows.
             -   e.g. 4500 needs to be discounted 1 year to Year 0 dollars and 6000 needs to be compounded 4 years to Year 7 dollars
+
+-   [Average Internal Rate of Return]{.underline}
+
+    -   Formula using income and capital[\
+        \
+        ]{.underline}$$
+        \begin{align}
+        \text{AIRR} &= \frac{\text{Total Income}}{\text{Total Capital}}\\
+        &= \frac{I_1 + \frac{I_2}{1+r} + \frac{I_2}{(1+r)^2} + \cdots + \frac{I_n}{(1+r)^n-1}}{C_0 + \frac{C_1}{1+r} + \frac{C_2}{(1+r)^2} + \cdots + \frac{C_{n-1}}{(1+r)^{n-1}}} \\
+        &= \frac{\sum_{i = 1}^n 
+        \frac{I_i}{(1+r)^{i-1}}}{\sum_{j = 1}^{n} \frac{C_{j-1}}{(1+r)^{j-1}}}
+        \end{align}
+        $$
+        -   $I$: The income of the project
+        -   $C$: The capital invested in the project where $C_0$ is the initial investment. While the final period of the project will have a cashflow, it will not have a capital investment.
+        -   $r$: The cost of capital
+        -   $n$: The length of the project (i.e. from the first period of income to the last period of income)
+    -   Formula using Net Present Value and Cash Flows\
+        $$
+        \text{AIRR} = r + \frac{\text{NPV}(1+r)}{\text{PV[C]}}
+        $$
+        -   $r$: The cost of capital
+        -   $NPV$: Net Present Value of the cash flows
+        -   $PV[C]$: The total cost of capital discounted the present value (i.e. Present Value of Total Capital)
+        -   $\frac{\text{NPV}}{\text{PV[C]}}$: This is the net present value return per unit of capital
+        -   $\frac{\text{NPV}(1+r)}{\text{PV[C]}}$: This is the excess return rate. It tells investors how much *more* they are making beyond the cost of capital rate.
+    -   [Example]{.ribbon-highlight}:
+        -   Calculate Cash Flows
+
+            |              |      |     |     |
+            |--------------|------|-----|-----|
+            | Time         | 0    | 1   | 2   |
+            | Income       |      | 375 | 225 |
+            | Capital      | 600  | 400 |     |
+            | Depreciation |      | 200 | 400 |
+            | Cash Flow    | -600 | 575 | 625 |
+
+            -   There is an initial capital investment of \$600 that depreciates each year of the project. Capital decreases from 600 to 400 which is a depreciation of \$200 and then from \$400 to 0 which is a depreciation of \$400.
+            -   Depreciation is added to Income (aka earnings) to get Cash Flow (See [Discount Cash Flow Model](finance-valuation.qmd#sec-finance-val-dcf){style="color: green"} \>\> Calculate FCF from projected variables for each year to the horizon)
+
+        -   Calculate NPV
+
+            $$
+            \text{NPV} = -600 + \frac{575}{1+0.15} + \frac{625}{(1 + 0.15)^2} = 372.60 
+            $$
+
+            -   Where the cost of capital is 15%
+
+        -   Calculate AIRR\
+            $$
+            \text{AIRR} = 0.15 + \frac{372.60 \times (1+0.15)}{600 + \frac{400}{1 + 0.15}}= 0.602 = 60.2\%
+            $$
 
 ## Cost of Capital {#sec-finance-val-coc .unnumbered}
 
@@ -427,7 +479,7 @@
         -   Horizon Guidelines
 
             | Company's Competitive Position                                                                                      | Excess Returns/Forecast Horizon |
-            |---------------------------------------------------------------------------------------------------------------------|---------------------------------|
+            |---------------------------------------------------|---------------------|
             | Slow Growing; Operates in a highly competitive, low margin industry                                                 | 1 Year                          |
             | Solid company that has advantages such as strong marketing channels, brand recognition, regulatory advantages, etc. | 5 Years                         |
             | Early stages of rapid growth; Operates with high barriers to entry; dominant market position or prospects           | 10 Years                        |
