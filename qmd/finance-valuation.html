@@ -463,14 +463,14 @@ NPV = \sum_{t=0}^T \frac{C_t}{(1+r)^t} = 0
 <li><p><span class="ribbon-highlight">Example</span>: 7 year Project (<a href="https://www.youtube.com/watch?v=Z-CUSIGLk2U&amp;t=342s">link</a>)</p>
 <table class="table">
 <colgroup>
-<col style="width: 17%">
 <col style="width: 11%">
-<col style="width: 10%">
-<col style="width: 8%">
-<col style="width: 10%">
 <col style="width: 11%">
-<col style="width: 10%">
-<col style="width: 10%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
+<col style="width: 11%">
 <col style="width: 11%">
 </colgroup>
 <thead>
@@ -587,6 +587,89 @@ NPV = \sum_{t=0}^T \frac{C_t}{(1+r)^t} = 0
 <ul>
 <li>e.g.&nbsp;4500 needs to be discounted 1 year to Year 0 dollars and 6000 needs to be compounded 4 years to Year 7 dollars</li>
 </ul></li>
+</ul></li>
+</ul></li>
+<li><p><u>Average Internal Rate of Return</u></p>
+<ul>
+<li>Formula using income and capital<u><br>
+<br>
+</u><span class="math display">\[
+\begin{align}
+\text{AIRR} &amp;= \frac{\text{Total Income}}{\text{Total Capital}}\\
+&amp;= \frac{I_1 + \frac{I_2}{1+r} + \frac{I_2}{(1+r)^2} + \cdots + \frac{I_n}{(1+r)^n-1}}{C_0 + \frac{C_1}{1+r} + \frac{C_2}{(1+r)^2} + \cdots + \frac{C_{n-1}}{(1+r)^{n-1}}} \\
+&amp;= \frac{\sum_{i = 1}^n
+\frac{I_i}{(1+r)^{i-1}}}{\sum_{j = 1}^{n} \frac{C_{j-1}}{(1+r)^{j-1}}}
+\end{align}
+\]</span>
+<ul>
+<li><span class="math inline">\(I\)</span>: The income of the project</li>
+<li><span class="math inline">\(C\)</span>: The capital invested in the project where <span class="math inline">\(C_0\)</span> is the initial investment. While the final period of the project will have a cashflow, it will not have a capital investment.</li>
+<li><span class="math inline">\(r\)</span>: The cost of capital</li>
+<li><span class="math inline">\(n\)</span>: The length of the project (i.e.&nbsp;from the first period of income to the last period of income)</li>
+</ul></li>
+<li>Formula using Net Present Value and Cash Flows<br>
+<span class="math display">\[
+\text{AIRR} = r + \frac{\text{NPV}(1+r)}{\text{PV[C]}}
+\]</span>
+<ul>
+<li><span class="math inline">\(r\)</span>: The cost of capital</li>
+<li><span class="math inline">\(NPV\)</span>: Net Present Value of the cash flows</li>
+<li><span class="math inline">\(PV[C]\)</span>: The total cost of capital discounted the present value (i.e.&nbsp;Present Value of Total Capital)</li>
+<li><span class="math inline">\(\frac{\text{NPV}}{\text{PV[C]}}\)</span>: This is the net present value return per unit of capital</li>
+<li><span class="math inline">\(\frac{\text{NPV}(1+r)}{\text{PV[C]}}\)</span>: This is the excess return rate. It tells investors how much <em>more</em> they are making beyond the cost of capital rate.</li>
+</ul></li>
+<li><span class="ribbon-highlight">Example</span>:
+<ul>
+<li><p>Calculate Cash Flows</p>
+<table class="table">
+<tbody>
+<tr class="odd">
+<td>Time</td>
+<td>0</td>
+<td>1</td>
+<td>2</td>
+</tr>
+<tr class="even">
+<td>Income</td>
+<td></td>
+<td>375</td>
+<td>225</td>
+</tr>
+<tr class="odd">
+<td>Capital</td>
+<td>600</td>
+<td>400</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Depreciation</td>
+<td></td>
+<td>200</td>
+<td>400</td>
+</tr>
+<tr class="odd">
+<td>Cash Flow</td>
+<td>-600</td>
+<td>575</td>
+<td>625</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>There is an initial capital investment of $600 that depreciates each year of the project. Capital decreases from 600 to 400 which is a depreciation of $200 and then from $400 to 0 which is a depreciation of $400.</li>
+<li>Depreciation is added to Income (aka earnings) to get Cash Flow (See <a href="../qmd/finance-valuation.html#sec-finance-val-dcf" style="color: green">Discount Cash Flow Model</a> &gt;&gt; Calculate FCF from projected variables for each year to the horizon)</li>
+</ul></li>
+<li><p>Calculate NPV</p>
+<p><span class="math display">\[
+\text{NPV} = -600 + \frac{575}{1+0.15} + \frac{625}{(1 + 0.15)^2} = 372.60
+\]</span></p>
+<ul>
+<li>Where the cost of capital is 15%</li>
+</ul></li>
+<li><p>Calculate AIRR<br>
+<span class="math display">\[
+\text{AIRR} = 0.15 + \frac{372.60 \times (1+0.15)}{600 + \frac{400}{1 + 0.15}}= 0.602 = 60.2\%
+\]</span></p></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -942,8 +1025,8 @@ K_d = (\operatorname{Risk Free Rate} + \operatorname{Default Spread}) \times (1 
 <li><p>Horizon Guidelines</p>
 <table class="table">
 <colgroup>
-<col style="width: 78%">
-<col style="width: 22%">
+<col style="width: 70%">
+<col style="width: 29%">
 </colgroup>
 <thead>
 <tr class="header">
