@@ -15,177 +15,211 @@
 
 ## Rates of Return {#sec-finance-val-ror .unnumbered}
 
--   [Rate of Return (RoR)]{.underline}
+### Rate of Return (RoR)
+
+$$
+\text{RoR} = \frac{\operatorname{current\_value - \operatorname{initial\_value}}}{\operatorname{initial\_value}} \times 100
+$$
+
+-   The net gain or loss of an investment over a specified time period, expressed as a percentage of the investment's initial cost. The rate of return disregards some key factors in an investment, like the time value of money, the timing and size of cash flows, and the risk and uncertainty associated with any investment or in the case of stocks --- taxes and investing fees.
+-   To adjust for inflation, just subtract the inflation rate (aka **Real Rate of Return**).
+-   Types
+    -   [Arithmetic]{.underline}: $\sum_{i=1}^T r_i$ where $r_i$ is the return for the time period, $i$.
+    -   [Geometric]{.underline} (aka [Compound Annual Growth Rate]{.underline}): $[(1+r_1) \times (1+r_2) \times \cdots \times (1+r_T)]^{1/T} - 1$
+        -   Includes compounding effect.
+        -   At most is the Arithmetic average but usually less
+    -   [Annual Percentage Rate (APR)]{.underline}: $m \times k_m$ where $m$ is the number of compounding periods in a year and $k_m$ is the periodic rate
+        -   Conventional method of quoting interest rates
+        -   Ignores compounding effect
+        -   e.g. a credit card with a 1% monthly interest rate has an $\text{APR} = 0.01 \times 12 = 0.12 \;\operatorname{or}\; 12\%$
+    -   [Effective Annual Rate (EAR)]{.underline}: $(1+k_m)^m - 1$
+        -   APR that takes into account the compounding effect.
+        -   e.g. a credit card with a monthly interest rate of 1.25%, what is the EAR? $\text{EAR} = (1 + 0.0125)^{12}-1 = 0.1608 \;\text{or}\; 16.08\%$
+
+### Internal Rate of Return (IRR)
+
+-   A flawed indicator of strength for capital projects. It should only be used when a project has no interim cashflows or is somehow able reinvest those interim cashflows at the same IRR for the duration of the project (See disadvantages).
+
+-   The internal rate of return is a *discount rate* that makes the net present value (NPV) of all cash flows from a particular project or investment equal to zero. In general, projects with higher IRRs are more favorable than projects with lower IRRs, as the expected rate of return on these projects is greater.
+
+-   Formula
 
     $$
-    \text{RoR} = \frac{\operatorname{current\_value - \operatorname{initial\_value}}}{\operatorname{initial\_value}} \times 100
+    NPV = \sum_{t=0}^T \frac{C_t}{(1+r)^t} = 0
     $$
 
-    -   The net gain or loss of an investment over a specified time period, expressed as a percentage of the investment's initial cost. The rate of return disregards some key factors in an investment, like the time value of money, the timing and size of cash flows, and the risk and uncertainty associated with any investment or in the case of stocks --- taxes and investing fees.
-    -   To adjust for inflation, just subtract the inflation rate (aka **Real Rate of Return**).
-    -   Types
-        -   Arithmetic: $\sum_{i=1}^T r_i$ where $r_i$ is the return for the time period, $i$.
-        -   Geometric (aka Compound Annual Growth Rate): $[(1+r_1) \times (1+r_2) \times \cdots \times (1+r_T)]^{1/T} - 1$
-            -   Includes compounding effect.
-            -   At most is the Arithmetic average but usually less
-        -   Annual Percentage Rate (APR): $m \times k_m$ where $m$ is the number of compounding periods in a year and $k_m$ is the periodic rate
-            -   Conventional method of quoting interest rates
-            -   Ignores compounding effect
-            -   e.g. a credit card with a 1% monthly interest rate has an $\text{APR} = 0.01 \times 12 = 0.12 \;\operatorname{or}\; 12\%$
-        -   Effective Annual Rate (EAR): $(1+k_m)^m - 1$
-            -   APR that takes into account the compounding effect.
-            -   e.g. a credit card with a monthly interest rate of 1.25%, what is the EAR? $\text{EAR} = (1 + 0.0125)^{12}-1 = 0.1608 \;\text{or}\; 16.08\%$
-
--   [Internal Rate of Return (IRR)]{.underline}
-
-    -   A flawed indicator of strength for capital projects. It should only be used when a project has no interim cashflows or is somehow able reinvest those interim cashflows at the same IRR for the duration of the project (See disadvantages).
-
-    -   The internal rate of return is a *discount rate* that makes the net present value (NPV) of all cash flows from a particular project or investment equal to zero. In general, projects with higher IRRs are more favorable than projects with lower IRRs, as the expected rate of return on these projects is greater.
-
-    -   Formula
-
-        $$
-        NPV = \sum_{t=0}^T \frac{C_t}{(1+r)^t} = 0
-        $$
-
-        -   Solve for $r$ to get IRR
-        -   Note that $t=0$ is the initial investment which makes the denominator 1 and therefore that particular $\text{PV}$ (Present Value) is just $C_0$. Since it's a cash outlay (i.e. cost), it will be a negative value.
-        -   Variables
-            -   $T$: Total number of time periods
-            -   $t$: Time Period
-            -   $C_t$: Net cash inflow (or outflow) for time period, t
-            -   $r$: Internal Rate of Return
-
-    -   Disadvantages
-
-        -   Larger projects with lower yields but higher net cash proceeds may be put at an analytical disadvantage when using IRR since IRR is a percentage and not in dollars.
-        -   Assumes cash flows will be reinvested into projects with same IRR for each compounding year of the project. Business enviroments change, so it's not reasonable to assume investment opportuniities with the samee IRR will be available every year. This leads to a more optimistic projection than there should be. ([Video](https://www.youtube.com/watch?v=f0IJegvYPKk))
-            -   e.g. the cash flow recieved in year 1 is automatically invested into another project with same IRR.
-            -   Using MIRR instead of IRR solves this issue.\
-                ![](_resources/Finance.resources/irr-mirr-change-1.png){width="432"}
-                -   Shows how IRR gets inflated as the cost of capital increases.
-        -   Does not consider differences in the duration of projects. A longer term project may be more favorable even if it has a lower IRR, because it is generating a substantial cash flow for a longer period that would be difficult to replace if the shorter term project was chosen.
-
--   [Modified Internal Rate of Return (MIRR)]{.underline}
-
-    $$
-    \text{MIRR} = \left(\frac{\text{FV}}{\text{PV}} \right)^{\LARGE{\frac{1}{n}}} - 1
-    $$
-
-    -   Better alternative to IRR that assumes the cash inflows are reinvested at cost of capital of the company instead of at the IRR. ([video1](https://www.youtube.com/watch?v=f0IJegvYPKk), [video2](https://www.youtube.com/watch?v=Z-CUSIGLk2U))
-
+    -   Solve for $r$ to get IRR
+    -   Note that $t=0$ is the initial investment which makes the denominator 1 and therefore that particular $\text{PV}$ (Present Value) is just $C_0$. Since it's a cash outlay (i.e. cost), it will be a negative value.
     -   Variables
+        -   $T$: Total number of time periods
+        -   $t$: Time Period
+        -   $C_t$: Net cash inflow (or outflow) for time period, t
+        -   $r$: Internal Rate of Return
 
-        -   $n$: Project horizon, i.e. number of periods where cashflows occur
-        -   $\text{PV}$: The [absolute]{.underline} sum of the present values of each cash outflow, aka Cash Outlay (e.g. costs, investments). Each cash outlay is projected (i.e. discounted) back to year 0 value. (See IRR for the formula, NPV is the sum of PVs)
-        -   $\text{FV}$: The sum of the future values of each cash inflow, aka Terminal Cash Flow. Using the company's cost of capital, each positive cash inflow is projeced forward (i.e. compounded) to the value at the last year of the project. (See Time Value of Money for the formula)
-            -   e.g. For a project with a 5yr horizon, a future value for the cash inflow of year 2 is its projected value at year 5.
+-   Disadvantages
 
-    -   [Example]{.ribbon-highlight}: 7 year Project ([link](https://www.youtube.com/watch?v=Z-CUSIGLk2U&t=342s))
+    -   Larger projects with lower yields but higher net cash proceeds may be put at an analytical disadvantage when using IRR since IRR is a percentage and not in dollars.
+    -   Assumes cash flows will be reinvested into projects with same IRR for each compounding year of the project. Business enviroments change, so it's not reasonable to assume investment opportuniities with the samee IRR will be available every year. This leads to a more optimistic projection than there should be. ([Video](https://www.youtube.com/watch?v=f0IJegvYPKk))
+        -   e.g. the cash flow recieved in year 1 is automatically invested into another project with same IRR.
+        -   Using MIRR instead of IRR solves this issue.\
+            ![](_resources/Finance.resources/irr-mirr-change-1.png){width="432"}
+            -   Shows how IRR gets inflated as the cost of capital increases.
+    -   Does not consider differences in the duration of projects. A longer term project may be more favorable even if it has a lower IRR, because it is generating a substantial cash flow for a longer period that would be difficult to replace if the shorter term project was chosen.
 
-        | Timeline       | Year 0   | Year 1  | Year 2 | Year 3  | Year 4   | Year 5  | Year 6  | Year 7   |
-        |--------|--------|--------|--------|--------|--------|--------|--------|--------|
-        | Cash Outlay    | 10000.00 | 4500.00 | 950.00 |         |          |         |         |          |
-        | Cash Flow      |          |         |        | 6000.00 | 7500.00  | 1250.00 | 8010.00 | 9000.00  |
-        | FV,PV at 12.5% |          | 4000.00 | 750.62 | 9610.84 | 10678.71 | 1582.03 | 9011.25 |          |
-        | Total CF       |          |         |        |         |          |         |         | 39882.83 |
-        | Total Outlay   |          |         |        |         |          |         |         | 14750.62 |
+### Modified Internal Rate of Return (MIRR)
 
-        ``` r
-        cost_of_capital <- 0.125
-        first_co <- 10000.00
-        cash_outlays <- c(4500.00, 950.00)
-        cash_flows <- c(6000.00, 7500.00, 1250.00, 8010.00)
-        final_cf <- 9000.00
-        project_horizon <- length(c(cash_outlays, cash_flows, final_cf)) # 7yrs
+$$
+\text{MIRR} = \left(\frac{\text{FV}}{\text{PV}} \right)^{\LARGE{\frac{1}{n}}} - 1
+$$
 
-        calc_pv <- function(c, disc_t, r) {
-          c / ((1 + r)^disc_t)
-        }
+-   Better alternative to IRR that assumes the cash inflows are reinvested at cost of capital of the company instead of at the IRR. ([video1](https://www.youtube.com/watch?v=f0IJegvYPKk), [video2](https://www.youtube.com/watch?v=Z-CUSIGLk2U))
 
-        calc_fv <- function(c, comp_t, r) {
-          c * ((1 + r)^comp_t)
-        }
+-   Variables
 
-        pv_vec <- purrr::map2_dbl(
-          cash_outlays,
-          seq(length(cash_outlays)), # 1, 2
-          calc_pv,
-          r = cost_of_capital
-        )
+    -   $n$: Project horizon, i.e. number of periods where cashflows occur
+    -   $\text{PV}$: The [absolute]{.underline} sum of the present values of each cash outflow, aka Cash Outlay (e.g. costs, investments). Each cash outlay is projected (i.e. discounted) back to year 0 value. (See IRR for the formula, NPV is the sum of PVs)
+    -   $\text{FV}$: The sum of the future values of each cash inflow, aka Terminal Cash Flow. Using the company's cost of capital, each positive cash inflow is projeced forward (i.e. compounded) to the value at the last year of the project. (See Time Value of Money for the formula)
+        -   e.g. For a project with a 5yr horizon, a future value for the cash inflow of year 2 is its projected value at year 5.
 
-        fv_vec <- purrr::map2_dbl(
-          cash_flows,
-          rev(seq(length(cash_flows))), # 4, 3, 2, 1
-          calc_fv,
-          r = cost_of_capital
-        )
+-   [Example]{.ribbon-highlight}: 7 year Project ([link](https://www.youtube.com/watch?v=Z-CUSIGLk2U&t=342s))
 
-        total_cf_adj <- sum(fv_vec) + final_cf
-        total_co_adj <- sum(pv_vec) + first_co
+    | Timeline       | Year 0   | Year 1  | Year 2 | Year 3  | Year 4   | Year 5  | Year 6  | Year 7   |
+    |--------|--------|--------|--------|--------|--------|--------|--------|--------|
+    | Cash Outlay    | 10000.00 | 4500.00 | 950.00 |         |          |         |         |          |
+    | Cash Flow      |          |         |        | 6000.00 | 7500.00  | 1250.00 | 8010.00 | 9000.00  |
+    | FV,PV at 12.5% |          | 4000.00 | 750.62 | 9610.84 | 10678.71 | 1582.03 | 9011.25 |          |
+    | Total CF       |          |         |        |         |          |         |         | 39882.83 |
+    | Total Outlay   |          |         |        |         |          |         |         | 14750.62 |
 
-        mirr <- function(fv, pv, T) {
-          ((fv / pv)^(1/T)) - 1
-        }
+    ``` r
+    cost_of_capital <- 0.125
+    first_co <- 10000.00
+    cash_outlays <- c(4500.00, 950.00)
+    cash_flows <- c(6000.00, 7500.00, 1250.00, 8010.00)
+    final_cf <- 9000.00
+    project_horizon <- length(c(cash_outlays, cash_flows, final_cf)) # 7yrs
 
-        mirr(total_cf_adj, total_co_adj, project_horizon)
-        #> [1] 0.1526855
-        ```
+    calc_pv <- function(c, disc_t, r) {
+      c / ((1 + r)^disc_t)
+    }
 
-        -   Note the opposite order used for [disc_t]{.var-text} and [comp_t]{.var-text} when iterating through the cash outlays and cash flows.
-            -   e.g. 4500 needs to be discounted 1 year to Year 0 dollars and 6000 needs to be compounded 4 years to Year 7 dollars
+    calc_fv <- function(c, comp_t, r) {
+      c * ((1 + r)^comp_t)
+    }
 
--   [Average Internal Rate of Return]{.underline}
+    pv_vec <- purrr::map2_dbl(
+      cash_outlays,
+      seq(length(cash_outlays)), # 1, 2
+      calc_pv,
+      r = cost_of_capital
+    )
 
-    -   Formula using income and capital[\
-        \
-        ]{.underline}$$
+    fv_vec <- purrr::map2_dbl(
+      cash_flows,
+      rev(seq(length(cash_flows))), # 4, 3, 2, 1
+      calc_fv,
+      r = cost_of_capital
+    )
+
+    total_cf_adj <- sum(fv_vec) + final_cf
+    total_co_adj <- sum(pv_vec) + first_co
+
+    mirr <- function(fv, pv, T) {
+      ((fv / pv)^(1/T)) - 1
+    }
+
+    mirr(total_cf_adj, total_co_adj, project_horizon)
+    #> [1] 0.1526855
+    ```
+
+    -   Note the opposite order used for [disc_t]{.var-text} and [comp_t]{.var-text} when iterating through the cash outlays and cash flows.
+        -   e.g. 4500 needs to be discounted 1 year to Year 0 dollars and 6000 needs to be compounded 4 years to Year 7 dollars
+
+### Average Internal Rate of Return (AIRR)
+
+-   Notes from Videos: [AIRR: A Comprehensive Approach to Rate of Return and Investment Decisions](https://www.youtube.com/playlist?list=PL66j5y1ZGZ9FpUbgouPUgiZDFEONAJ1N8)
+-   [Formula Using Income and Capital\
+    \
+    ]{.underline}$$
+    \begin{align}
+    \text{AIRR} &= \frac{\text{Total Income}}{\text{Total Capital}}\\
+    &= \frac{I_1 + \frac{I_2}{1+r} + \frac{I_2}{(1+r)^2} + \cdots + \frac{I_n}{(1+r)^n-1}}{C_0 + \frac{C_1}{1+r} + \frac{C_2}{(1+r)^2} + \cdots + \frac{C_{n-1}}{(1+r)^{n-1}}} \\
+    &= \frac{\sum_{i = 1}^n 
+    \frac{I_i}{(1+r)^{i-1}}}{\sum_{j = 1}^{n} \frac{C_{j-1}}{(1+r)^{j-1}}}
+    \end{align}
+    $$
+    -   $I$: The income of the project
+    -   $C$: The capital invested in the project where $C_0$ is the initial investment. While the final period of the project will have a cashflow, it will not have a capital investment.
+    -   $r$: The cost of capital
+    -   $n$: The total number of periods of the project not including the initial investment period.
+-   [Formula Using Net Present Value and Cash Flows]{.underline}\
+    $$
+    \text{AIRR} = r + \frac{\text{NPV}(1+r)}{\text{PV[C]}}
+    $$
+    -   $r$: The cost of capital
+    -   $NPV$: Net Present Value of the cash flows
+    -   $PV[C]$: The total cost of capital discounted the present value (i.e. Present Value of Total Capital)
+    -   $\frac{\text{NPV}}{\text{PV[C]}}$: This is the net present value return per unit of capital
+    -   $\frac{\text{NPV}(1+r)}{\text{PV[C]}}$: This is the **Excess Return Rate**. It tells investors how much *more* they are making beyond the cost of capital rate.
+-   [Formula Using Time-Varying Cost of Capital]{.underline}\
+    $$
+    \begin{align}
+    \text{AIRR} &= (1+r_1) \cdot \frac{\frac{I_1}{1+r_1} + \cdots + \frac{I_n}{(1+r_1) \cdots (1+r_n)}}{C_0 + \frac{C_1}{1+r_1} + \frac{C_{n-1}}{(1+r_1)\cdots(1+r_{n-1})}}\\
+    &= (1+r_1) \cdot \frac{\text{PV[I]}}{\text{PV[C]}}
+    \end{align}
+    $$
+    -   $\text{PV[I]}$: Total income of the project that has been discounted to the present value (i.e. Present Value of Total Income)
+
+    -   $r_i$: The time-varying cost of capital where $i$ represents the period of the project.
+
+    -   $n$: The total number of periods of the project not including the initial investment period.
+
+    -   The **Minimal Attractive Cost of Capital (MARR)** replaces the cost of capital (since we now have multiple CoCs) as the threshold for an acceptable investment\
+        $$
         \begin{align}
-        \text{AIRR} &= \frac{\text{Total Income}}{\text{Total Capital}}\\
-        &= \frac{I_1 + \frac{I_2}{1+r} + \frac{I_2}{(1+r)^2} + \cdots + \frac{I_n}{(1+r)^n-1}}{C_0 + \frac{C_1}{1+r} + \frac{C_2}{(1+r)^2} + \cdots + \frac{C_{n-1}}{(1+r)^{n-1}}} \\
-        &= \frac{\sum_{i = 1}^n 
-        \frac{I_i}{(1+r)^{i-1}}}{\sum_{j = 1}^{n} \frac{C_{j-1}}{(1+r)^{j-1}}}
+        \text{MARR} &= (1+r_1) \cdot \frac{\frac{r_1C_0}{1+r_1}+\cdots+\frac{r_n C_{n-1}}{(1+r_1)\cdots(1+r_n)}}{C_0 + \frac{C_1}{1+r_1}+\cdots+\frac{C_{n-1}}{(1+r_1)\cdots(1+r_{n-1})}} \\
+        &= (1+r_1) \cdot \frac{\text{PV[R]}}{\text{PV[C]}}
         \end{align}
         $$
-        -   $I$: The income of the project
-        -   $C$: The capital invested in the project where $C_0$ is the initial investment. While the final period of the project will have a cashflow, it will not have a capital investment.
-        -   $r$: The cost of capital
-        -   $n$: The length of the project (i.e. from the first period of income to the last period of income)
-    -   Formula using Net Present Value and Cash Flows\
+
+        -   $\text{PV[R]}$: The time-varying market return discounted to the present value. The amount of return you'd expect from a minimally-acceptable, alternative investment using these capitals and these costs of capital over the same length of time.
+
+    -   Net Present Value using a Time-Varying CoC
+
         $$
-        \text{AIRR} = r + \frac{\text{NPV}(1+r)}{\text{PV[C]}}
+        \text{NPV} = \text{PV[C]} \times \frac{\text{AIRR}-\text{MARR}}{1+r_1}
         $$
-        -   $r$: The cost of capital
-        -   $NPV$: Net Present Value of the cash flows
-        -   $PV[C]$: The total cost of capital discounted the present value (i.e. Present Value of Total Capital)
-        -   $\frac{\text{NPV}}{\text{PV[C]}}$: This is the net present value return per unit of capital
-        -   $\frac{\text{NPV}(1+r)}{\text{PV[C]}}$: This is the excess return rate. It tells investors how much *more* they are making beyond the cost of capital rate.
-    -   [Example]{.ribbon-highlight}:
-        -   Calculate Cash Flows
 
-            |              |      |     |     |
-            |--------------|------|-----|-----|
-            | Time         | 0    | 1   | 2   |
-            | Income       |      | 375 | 225 |
-            | Capital      | 600  | 400 |     |
-            | Depreciation |      | 200 | 400 |
-            | Cash Flow    | -600 | 575 | 625 |
+        -   The amount of value that exceeds the minimally acceptable investment's return.
+        -   This is a reformulation of the "Formula using Net Present Value and Cash Flows"
+        -   $\text{PV[C]}$ represents the size of the investment
+        -   $\frac{\text{AIRR}-\text{MARR}}{1+r_1}$ represents the efficiency of the project
+-   [Example]{.ribbon-highlight}: Net Present Value and Cash Flows Formula for AIRR
+    -   Calculate Cash Flows
 
-            -   There is an initial capital investment of \$600 that depreciates each year of the project. Capital decreases from 600 to 400 which is a depreciation of \$200 and then from \$400 to 0 which is a depreciation of \$400.
-            -   Depreciation is added to Income (aka earnings) to get Cash Flow (See [Discount Cash Flow Model](finance-valuation.qmd#sec-finance-val-dcf){style="color: green"} \>\> Calculate FCF from projected variables for each year to the horizon)
+        |              |      |     |     |
+        |--------------|------|-----|-----|
+        | Time         | 0    | 1   | 2   |
+        | Income       |      | 375 | 225 |
+        | Capital      | 600  | 400 |     |
+        | Depreciation |      | 200 | 400 |
+        | Cash Flow    | -600 | 575 | 625 |
 
-        -   Calculate NPV
+        -   There is an initial capital investment of \$600 that depreciates each year of the project. Capital decreases from 600 to 400 which is a depreciation of \$200 and then from \$400 to 0 which is a depreciation of \$400.
+        -   Depreciation is added to Income (aka earnings) to get Cash Flow (See [Discount Cash Flow Model](finance-valuation.qmd#sec-finance-val-dcf){style="color: green"} \>\> Calculate FCF from projected variables for each year to the horizon)
 
-            $$
-            \text{NPV} = -600 + \frac{575}{1+0.15} + \frac{625}{(1 + 0.15)^2} = 372.60 
-            $$
+    -   Calculate NPV
 
-            -   Where the cost of capital is 15%
+        $$
+        \text{NPV} = -600 + \frac{575}{1+0.15} + \frac{625}{(1 + 0.15)^2} = 372.60 
+        $$
 
-        -   Calculate AIRR\
-            $$
-            \text{AIRR} = 0.15 + \frac{372.60 \times (1+0.15)}{600 + \frac{400}{1 + 0.15}}= 0.602 = 60.2\%
-            $$
+        -   Where the cost of capital is 15%
+
+    -   Calculate AIRR\
+        $$
+        \text{AIRR} = 0.15 + \frac{372.60 \times (1+0.15)}{600 + \frac{400}{1 + 0.15}}= 0.602 = 60.2\%
+        $$
 
 ## Cost of Capital {#sec-finance-val-coc .unnumbered}
 
@@ -425,7 +459,7 @@
     -   The valuation implied for a target by a DCF is known as it's **Intrinsic Value**, as opposed to its market value.
     -   **Free Cash Flow (FCF)** - The cash generated by a company after paying all cash operating expenses and associated taxes, as well as the funding of capex and working capital, but prior to the payment of any interest expense.
 
--   Misc
+-   [Misc]{.underline}
 
     -   Notes from
         -   Video: [Discounted Cash Flow (DCF) Model -- CH 3 Investment Banking Valuation, Leveraged Buyouts, and M&A - Rosenbaum, Pearl](https://www.youtube.com/watch?v=y4dEH8Zu-H0)
@@ -479,7 +513,7 @@
         -   Horizon Guidelines
 
             | Company's Competitive Position                                                                                      | Excess Returns/Forecast Horizon |
-            |---------------------------------------------------|---------------------|
+            |-------------------------------------------------|----------------------|
             | Slow Growing; Operates in a highly competitive, low margin industry                                                 | 1 Year                          |
             | Solid company that has advantages such as strong marketing channels, brand recognition, regulatory advantages, etc. | 5 Years                         |
             | Early stages of rapid growth; Operates with high barriers to entry; dominant market position or prospects           | 10 Years                        |
