@@ -160,7 +160,7 @@
 
 -   [**Modified Internal Rate of Return (MIRR)**]{style="color: #009499"} - Better alternative to IRR that assumes the cash inflows are reinvested at cost of capital of the company instead of at the IRR. (Also see [Finance, Valuation \>\> Rates of Return](finance-valuation.qmd#sec-finance-val-ror){style="color: green"})
 
--   [**Net Present Value**]{style="color: #009499"} - A way to compare potential investments or projects in today's dollars. It's the difference between the present value of a future stream of cash inflows and outflows. Used in capital budgeting and investment planning to analyze the profitability of a projected investment or project.
+-   [**Net Present Value**]{style="color: #009499"} - A way to compare potential investments or projects in today's dollars. It's the difference between the present value of a future stream of cash inflows and outflows. Used in capital budgeting and investment planning to analyze the profitability of a projected investment or project. (Also see [Finance, Valuation \>\> Rates of Return \>\> AIRR](finance-valuation.qmd#average-internal-rate-of-return-airr){style="color: green"} \>\> Formula Using Time-Varying Cost of Capital)
 
     $$
     \text{NPV} = F_0 + \frac{F_1}{1+r} + \cdots + \frac{F_n}{(1+r)^n}
@@ -250,9 +250,18 @@
 
     -   In the case of annuity or perpetuity payments, the generalized formula has additional or fewer factors (See [wiki](https://en.wikipedia.org/wiki/Time_value_of_money), [Investopedia](https://www.investopedia.com/terms/f/futurevalue.asp))
 
--   [**Volatility**]{style="color: #009499"}:
+-   [**Volatility**]{style="color: #009499"} - Typical measured by the standard deviation of a stock over a specified time period. A higher standard deviation indicates higher volatility, meaning larger price swings in either direction. Recommended to compare the volatility of a specific stock to its historical levels and the overall market to understand its relative risk.
 
-    -   Parkinson Range (PR) = ln(closing_price) - ln(opening_price)
+    -   [Average True Range (ATR)]{.underline}: This method focuses on the absolute size of price changes, regardless of direction. It calculates the average difference between the highest and lowest price of a specific period for each observation. Typically calculated using a 14-period moving average.
+        -   Steps
+            -   Calculate the True Range (TR) over each period (1-day) which is the greatest value of either of the following
+                -   Current High - Current Low
+                -   Absolute Value (Current High - Previous Close)
+                -   Absolute Value (Current Low - Previous Close)
+            -   Calculate the moving average of the TRs.
+    -   [Bollinger Bands]{.underline} - These bands are drawn around a stock's moving average, with the width of the bands reflecting volatility. Wider bands represent higher volatility, suggesting larger potential price swings.
+    -   [Implied Volatility]{.underline} - This measure is derived from option prices and reflects the market's expectation of future volatility for a particular stock. Higher implied volatility signifies greater uncertainty and possible larger price movements.
+    -   [Parkinson Range (PR)]{.underline} - Uses the naturnal logarithm to account for the uses the natural logarithm to account for the non-linear nature of price movements. Higher PR means more volatility. Often used in conjunction with other volatility measures like Average True Range (ATR) to provide a more comprehensive view of price fluctuations. $\text{PR} = \ln(\text{closing price}) - \ln(\text{opening price})$
 
 -   [**Weighted Average Cost of Capital (WACC)**]{style="color: #009499"} - The weighted cost of a company's invested capital (both debt and equity). Most commonly used as a discount rate. (Also see [Finance, Valuation](finance-valuation.qmd#sec-finance-val-coc-wacc){style="color: green"})
 
