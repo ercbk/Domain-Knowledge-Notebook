@@ -609,7 +609,7 @@ NPV = \sum_{t=0}^T \frac{C_t}{(1+r)^t} = 0
 </u><span class="math display">\[
 \begin{align}
 \text{AIRR} &amp;= \frac{\text{Total Income}}{\text{Total Capital}}\\
-&amp;= \frac{I_1 + \frac{I_2}{1+r} + \frac{I_2}{(1+r)^2} + \cdots + \frac{I_n}{(1+r)^n-1}}{C_0 + \frac{C_1}{1+r} + \frac{C_2}{(1+r)^2} + \cdots + \frac{C_{n-1}}{(1+r)^{n-1}}} \\
+&amp;= \frac{I_1 + \frac{I_2}{1+r} + \frac{I_2}{(1+r)^2} + \cdots + \frac{I_n}{(1+r)^{n-1}}}{C_0 + \frac{C_1}{1+r} + \frac{C_2}{(1+r)^2} + \cdots + \frac{C_{n-1}}{(1+r)^{n-1}}} \\
 &amp;= \frac{\sum_{i = 1}^n
 \frac{I_i}{(1+r)^{i-1}}}{\sum_{j = 1}^{n} \frac{C_{j-1}}{(1+r)^{j-1}}}
 \end{align}
@@ -634,7 +634,8 @@ NPV = \sum_{t=0}^T \frac{C_t}{(1+r)^t} = 0
 <li><u>Formula Using Time-Varying Cost of Capital</u><br>
 <span class="math display">\[
 \begin{align}
-\text{AIRR} &amp;= (1+r_1) \cdot \frac{\frac{I_1}{1+r_1} + \cdots + \frac{I_n}{(1+r_1) \cdots (1+r_n)}}{C_0 + \frac{C_1}{1+r_1} + \frac{C_{n-1}}{(1+r_1)\cdots(1+r_{n-1})}}\\
+\text{AIRR} &amp;= \frac{I_1 + \frac{I_2}{1+r_2} + \cdots + \frac{I_n}{(1+r_2)\cdots(1+r_n)}}{C_0 + \frac{C_1}{1+r_1} + \cdots + \frac{C_{n-1}}{(1+r_1)\cdots(1+r_{n-1})}} \\
+&amp;= (1+r_1) \cdot \frac{\frac{I_1}{1+r_1} + \cdots + \frac{I_n}{(1+r_1) \cdots (1+r_n)}}{C_0 + \frac{C_1}{1+r_1} + \frac{C_{n-1}}{(1+r_1)\cdots(1+r_{n-1})}}\\
 &amp;= (1+r_1) \cdot \frac{\text{PV[I]}}{\text{PV[C]}}
 \end{align}
 \]</span>
@@ -646,15 +647,19 @@ NPV = \sum_{t=0}^T \frac{C_t}{(1+r)^t} = 0
 <span class="math display">\[
 \begin{align}
 \text{MARR} &amp;= (1+r_1) \cdot \frac{\frac{r_1C_0}{1+r_1}+\cdots+\frac{r_n C_{n-1}}{(1+r_1)\cdots(1+r_n)}}{C_0 + \frac{C_1}{1+r_1}+\cdots+\frac{C_{n-1}}{(1+r_1)\cdots(1+r_{n-1})}} \\
-&amp;= (1+r_1) \cdot \frac{\text{PV[R]}}{\text{PV[C]}}
+&amp;= (1+r_1) \cdot \frac{\text{PV[R]}}{\text{PV[C]}} \\
+&amp;= \text{AIRR} - \frac{\text{NPV}(1+r_1)}{\text{PV[C]}}
 \end{align}
 \]</span></p>
 <ul>
-<li><span class="math inline">\(\text{PV[R]}\)</span>: The time-varying market return discounted to the present value. The amount of return you’d expect from a minimally-acceptable, alternative investment using these capitals and these costs of capital over the same length of time.</li>
+<li><span class="math inline">\(\text{PV[R]}\)</span>: The time-varying market return discounted to the present value. The amount of return you’d expect from a minimally-acceptable, alternative investment using these capitals and these costs of capital over the same length of time (e.g.&nbsp;treasury bonds).</li>
 </ul></li>
 <li><p>Net Present Value using a Time-Varying CoC</p>
 <p><span class="math display">\[
-\text{NPV} = \text{PV[C]} \times \frac{\text{AIRR}-\text{MARR}}{1+r_1}
+\begin{align}
+\text{NPV} &amp;= F_0 + \frac{F_1}{1+r_1} + \cdots + \frac{F_n}{(1+r_1)\cdots(1+r_n)} \\
+&amp;= \text{PV[C]} \times \frac{\text{AIRR}-\text{MARR}}{1+r_1}
+\end{align}
 \]</span></p>
 <ul>
 <li>The amount of value that exceeds the minimally acceptable investment’s return.</li>
@@ -1070,8 +1075,8 @@ K_d = (\operatorname{Risk Free Rate} + \operatorname{Default Spread}) \times (1 
 <li><p>Horizon Guidelines</p>
 <table class="table">
 <colgroup>
-<col style="width: 69%">
-<col style="width: 30%">
+<col style="width: 68%">
+<col style="width: 31%">
 </colgroup>
 <thead>
 <tr class="header">
