@@ -9,9 +9,19 @@
             -   Payment Schedule: Due to the Time Value of Money, a project that pays earlier rather than later, with all else being equal, is more valuable.
             -   Payout duration: A project with payouts over a longer time period may be more desirable for a given business environment.
     -   Recommended
-        -   Rates of Return: MIRR \> IRR
+        -   Rates of Return: AIRR,MIRR \> IRR
+            -   Comparison
+
+                | Feature                  | AIRR                                    | MIRR                                    |
+                |------------------|---------------------------|---------------------------|
+                | Calculation method       | Average return on each invested dollar  | IRR of the terminal value of cash flows |
+                | Multiple solutions       | No                                      | Possible                                |
+                | Compatibility with NPV   | Consistent                              | May not be                              |
+                | Reinvestment rate        | Assumes constant rate                   | Explicitly factors in                   |
+                | Ease of understanding    | Simple and intuitive                    | Complex and less intuitive              |
+                | Computational complexity | Can be expensive for complex cash flows | Less computationally intensive          |
         -   Cost of Capital: WACC
-    -   For small businesses, I haven't seen anything to use in place of Cost of Capital (ie. WACC), but MIRR is still available to compare projects.
+    -   For small businesses, I haven't seen anything to use in place of Cost of Capital (ie. WACC), but AIRR and MIRR is still available to compare projects.
 
 ## Rates of Return {#sec-finance-val-ror .unnumbered}
 
@@ -68,18 +78,40 @@ $$
 
 ### Modified Internal Rate of Return (MIRR)
 
-$$
-\text{MIRR} = \left(\frac{\text{FV}}{\text{PV}} \right)^{\LARGE{\frac{1}{n}}} - 1
-$$
-
 -   Better alternative to IRR that assumes the cash inflows are reinvested at cost of capital of the company instead of at the IRR. ([video1](https://www.youtube.com/watch?v=f0IJegvYPKk), [video2](https://www.youtube.com/watch?v=Z-CUSIGLk2U))
 
--   Variables
+-   Weaknesses
 
-    -   $n$: Project horizon, i.e. number of periods where cashflows occur
-    -   $\text{PV}$: The [absolute]{.underline} sum of the present values of each cash outflow, aka Cash Outlay (e.g. costs, investments). Each cash outlay is projected (i.e. discounted) back to year 0 value. (See IRR for the formula, NPV is the sum of PVs)
-    -   $\text{FV}$: The sum of the future values of each cash inflow, aka Terminal Cash Flow. Using the company's cost of capital, each positive cash inflow is projeced forward (i.e. compounded) to the value at the last year of the project. (See Time Value of Money for the formula)
-        -   e.g. For a project with a 5yr horizon, a future value for the cash inflow of year 2 is its projected value at year 5.
+    -   Involves calculating the IRR of the terminal value of the cash flows,making it less transparent than AIRR.
+    -   Similar to IRR, MIRR can sometimes have multiple solutions, leading to confusion.
+        -   Situations:
+            -   Sign changes in non-periodic cash flows:
+                -   If a project has non-periodic cash flows that switch between positive and negative, it can create multiple points where the present value of the terminal value equals the initial investment. Each of these points corresponds to a potential MIRR solution.
+            -   Large initial investment followed by small positive cash flows:
+                -   When a project has a significant initial investment followed by a series of small positive cash flows, there might be multiple interest rates at which the present value of the terminal value (discounted future cash flows) equals the initial investment.
+            -   High discount rates and long-term negative cash flows:
+                -   If a project has a high discount rate and experiences prolonged negative cash flows, there might be multiple points where the present value of the terminal value (discounted future cash flows) equals the initial investment.
+            -   Projects with high variability in cash flows:
+                -   Projects with highly variable and unpredictable cash flows, especially those with large spikes or dips, can be more susceptible to having multiple MIRR solutions due to the difficulty in accurately estimating the terminal value.
+            -   Rounding errors in calculations
+        -   Solutions:
+            -   Analyze the cash flow pattern**:** Understand the underlying reasons for multiple solutions and whether they represent realistic scenarios.
+            -   Perform sensitivity analysis on how changing the discount rate or reinvestment rate affects the number and value of MIRR solutions.
+            -   Consider alternative metrics
+    -   In some cases, MIRR can lead to different decisions than NPV, creating inconsistencies.
+
+-   Formula
+
+    $$
+    \text{MIRR} = \left(\frac{\text{FV}}{\text{PV}} \right)^{\LARGE{\frac{1}{n}}} - 1
+    $$
+
+    -   Variables
+
+        -   $n$: Project horizon, i.e. number of periods where cashflows occur
+        -   $\text{PV}$: The [absolute]{.underline} sum of the present values of each cash outflow, aka Cash Outlay (e.g. costs, investments). Each cash outlay is projected (i.e. discounted) back to year 0 value. (See IRR for the formula, NPV is the sum of PVs)
+        -   $\text{FV}$: The sum of the future values of each cash inflow, aka Terminal Cash Flow. Using the company's cost of capital, each positive cash inflow is projeced forward (i.e. compounded) to the value at the last year of the project. (See Time Value of Money for the formula)
+            -   e.g. For a project with a 5yr horizon, a future value for the cash inflow of year 2 is its projected value at year 5.
 
 -   [Example]{.ribbon-highlight}: 7 year Project ([link](https://www.youtube.com/watch?v=Z-CUSIGLk2U&t=342s))
 
@@ -137,6 +169,12 @@ $$
 
 ### Average Internal Rate of Return (AIRR)
 
+-   AIRR overcomes many of the limitations of IRR by calculating the average rate of return on each invested dollar at each point in time, resulting in a single, unambiguous measure of project profitability. It addresses the issues with multiplicity, complex numbers, and incompatibility with NPV, providing a more reliable and interpretable measure for investment decisions. (Magni, 2010)
+    -   Magni listed 21 flaws of IRR, see his paper "Average Internal Rate of Return and Investment Decisions: A New Perspective" for details.
+    -   I didn't include the formulation here, but AIRR can be represented as weighted average. See video for details.
+    -   Weaknesses:
+        -   Assumes a constant reinvestment rate, which may not be realistic for all situations.
+        -   Can be computationally expensive for complex cash flows
 -   Notes from Videos: [AIRR: A Comprehensive Approach to Rate of Return and Investment Decisions](https://www.youtube.com/playlist?list=PL66j5y1ZGZ9FpUbgouPUgiZDFEONAJ1N8)
 -   [Formula Using Income and Capital\
     \
@@ -518,7 +556,7 @@ $$
         -   Horizon Guidelines
 
             | Company's Competitive Position                                                                                      | Excess Returns/Forecast Horizon |
-            |-------------------------------------------------|-----------------------|
+            |-----------------------------------------------|-------------------------|
             | Slow Growing; Operates in a highly competitive, low margin industry                                                 | 1 Year                          |
             | Solid company that has advantages such as strong marketing channels, brand recognition, regulatory advantages, etc. | 5 Years                         |
             | Early stages of rapid growth; Operates with high barriers to entry; dominant market position or prospects           | 10 Years                        |
