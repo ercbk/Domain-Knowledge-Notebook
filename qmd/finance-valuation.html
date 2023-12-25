@@ -379,10 +379,59 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul></li>
 <li>Recommended
 <ul>
-<li>Rates of Return: MIRR &gt; IRR</li>
+<li>Rates of Return: AIRR,MIRR &gt; IRR
+<ul>
+<li><p>Comparison</p>
+<table class="table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 37%">
+<col style="width: 37%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Feature</th>
+<th>AIRR</th>
+<th>MIRR</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Calculation method</td>
+<td>Average return on each invested dollar</td>
+<td>IRR of the terminal value of cash flows</td>
+</tr>
+<tr class="even">
+<td>Multiple solutions</td>
+<td>No</td>
+<td>Possible</td>
+</tr>
+<tr class="odd">
+<td>Compatibility with NPV</td>
+<td>Consistent</td>
+<td>May not be</td>
+</tr>
+<tr class="even">
+<td>Reinvestment rate</td>
+<td>Assumes constant rate</td>
+<td>Explicitly factors in</td>
+</tr>
+<tr class="odd">
+<td>Ease of understanding</td>
+<td>Simple and intuitive</td>
+<td>Complex and less intuitive</td>
+</tr>
+<tr class="even">
+<td>Computational complexity</td>
+<td>Can be expensive for complex cash flows</td>
+<td>Less computationally intensive</td>
+</tr>
+</tbody>
+</table></li>
+</ul></li>
 <li>Cost of Capital: WACC</li>
 </ul></li>
-<li>For small businesses, I haven’t seen anything to use in place of Cost of Capital (ie. WACC), but MIRR is still available to compare projects.</li>
+<li>For small businesses, I haven’t seen anything to use in place of Cost of Capital (ie. WACC), but AIRR and MIRR is still available to compare projects.</li>
 </ul></li>
 </ul>
 </section>
@@ -456,11 +505,47 @@ NPV = \sum_{t=0}^T \frac{C_t}{(1+r)^t} = 0
 </section>
 <section id="modified-internal-rate-of-return-mirr" class="level3">
 <h3 class="anchored" data-anchor-id="modified-internal-rate-of-return-mirr">Modified Internal Rate of Return (MIRR)</h3>
+<ul>
+<li><p>Better alternative to IRR that assumes the cash inflows are reinvested at cost of capital of the company instead of at the IRR. (<a href="https://www.youtube.com/watch?v=f0IJegvYPKk">video1</a>, <a href="https://www.youtube.com/watch?v=Z-CUSIGLk2U">video2</a>)</p></li>
+<li><p>Weaknesses</p>
+<ul>
+<li>Involves calculating the IRR of the terminal value of the cash flows,making it less transparent than AIRR.</li>
+<li>Similar to IRR, MIRR can sometimes have multiple solutions, leading to confusion.
+<ul>
+<li>Situations:
+<ul>
+<li>Sign changes in non-periodic cash flows:
+<ul>
+<li>If a project has non-periodic cash flows that switch between positive and negative, it can create multiple points where the present value of the terminal value equals the initial investment. Each of these points corresponds to a potential MIRR solution.</li>
+</ul></li>
+<li>Large initial investment followed by small positive cash flows:
+<ul>
+<li>When a project has a significant initial investment followed by a series of small positive cash flows, there might be multiple interest rates at which the present value of the terminal value (discounted future cash flows) equals the initial investment.</li>
+</ul></li>
+<li>High discount rates and long-term negative cash flows:
+<ul>
+<li>If a project has a high discount rate and experiences prolonged negative cash flows, there might be multiple points where the present value of the terminal value (discounted future cash flows) equals the initial investment.</li>
+</ul></li>
+<li>Projects with high variability in cash flows:
+<ul>
+<li>Projects with highly variable and unpredictable cash flows, especially those with large spikes or dips, can be more susceptible to having multiple MIRR solutions due to the difficulty in accurately estimating the terminal value.</li>
+</ul></li>
+<li>Rounding errors in calculations</li>
+</ul></li>
+<li>Solutions:
+<ul>
+<li>Analyze the cash flow pattern<strong>:</strong> Understand the underlying reasons for multiple solutions and whether they represent realistic scenarios.</li>
+<li>Perform sensitivity analysis on how changing the discount rate or reinvestment rate affects the number and value of MIRR solutions.</li>
+<li>Consider alternative metrics</li>
+</ul></li>
+</ul></li>
+<li>In some cases, MIRR can lead to different decisions than NPV, creating inconsistencies.</li>
+</ul></li>
+<li><p>Formula</p>
 <p><span class="math display">\[
 \text{MIRR} = \left(\frac{\text{FV}}{\text{PV}} \right)^{\LARGE{\frac{1}{n}}} - 1
 \]</span></p>
 <ul>
-<li><p>Better alternative to IRR that assumes the cash inflows are reinvested at cost of capital of the company instead of at the IRR. (<a href="https://www.youtube.com/watch?v=f0IJegvYPKk">video1</a>, <a href="https://www.youtube.com/watch?v=Z-CUSIGLk2U">video2</a>)</p></li>
 <li><p>Variables</p>
 <ul>
 <li><span class="math inline">\(n\)</span>: Project horizon, i.e.&nbsp;number of periods where cashflows occur</li>
@@ -468,6 +553,7 @@ NPV = \sum_{t=0}^T \frac{C_t}{(1+r)^t} = 0
 <li><span class="math inline">\(\text{FV}\)</span>: The sum of the future values of each cash inflow, aka Terminal Cash Flow. Using the company’s cost of capital, each positive cash inflow is projeced forward (i.e.&nbsp;compounded) to the value at the last year of the project. (See Time Value of Money for the formula)
 <ul>
 <li>e.g.&nbsp;For a project with a 5yr horizon, a future value for the cash inflow of year 2 is its projected value at year 5.</li>
+</ul></li>
 </ul></li>
 </ul></li>
 <li><p><span class="ribbon-highlight">Example</span>: 7 year Project (<a href="https://www.youtube.com/watch?v=Z-CUSIGLk2U&amp;t=342s">link</a>)</p>
@@ -603,6 +689,16 @@ NPV = \sum_{t=0}^T \frac{C_t}{(1+r)^t} = 0
 <section id="average-internal-rate-of-return-airr" class="level3">
 <h3 class="anchored" data-anchor-id="average-internal-rate-of-return-airr">Average Internal Rate of Return (AIRR)</h3>
 <ul>
+<li>AIRR overcomes many of the limitations of IRR by calculating the average rate of return on each invested dollar at each point in time, resulting in a single, unambiguous measure of project profitability. It addresses the issues with multiplicity, complex numbers, and incompatibility with NPV, providing a more reliable and interpretable measure for investment decisions. (Magni, 2010)
+<ul>
+<li>Magni listed 21 flaws of IRR, see his paper “Average Internal Rate of Return and Investment Decisions: A New Perspective” for details.</li>
+<li>I didn’t include the formulation here, but AIRR can be represented as weighted average. See video for details.</li>
+<li>Weaknesses:
+<ul>
+<li>Assumes a constant reinvestment rate, which may not be realistic for all situations.</li>
+<li>Can be computationally expensive for complex cash flows</li>
+</ul></li>
+</ul></li>
 <li>Notes from Videos: <a href="https://www.youtube.com/playlist?list=PL66j5y1ZGZ9FpUbgouPUgiZDFEONAJ1N8">AIRR: A Comprehensive Approach to Rate of Return and Investment Decisions</a></li>
 <li><u>Formula Using Income and Capital<br>
 <br>
@@ -1075,8 +1171,8 @@ K_d = (\operatorname{Risk Free Rate} + \operatorname{Default Spread}) \times (1 
 <li><p>Horizon Guidelines</p>
 <table class="table">
 <colgroup>
-<col style="width: 68%">
-<col style="width: 31%">
+<col style="width: 65%">
+<col style="width: 34%">
 </colgroup>
 <thead>
 <tr class="header">
