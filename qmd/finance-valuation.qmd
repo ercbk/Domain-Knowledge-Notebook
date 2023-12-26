@@ -109,22 +109,23 @@ $$
     -   Variables
 
         -   $n$: Project horizon, i.e. number of periods where cashflows occur
-        -   $\text{PV}$: The [absolute]{.underline} sum of the present values of each cash outflow, aka Cash Outlay (e.g. costs, investments). Each cash outlay is projected (i.e. discounted) back to year 0 value. (See IRR for the formula, NPV is the sum of PVs)
-        -   $\text{FV}$: The sum of the future values of each cash inflow, aka Terminal Cash Flow. Using the company's cost of capital, each positive cash inflow is projeced forward (i.e. compounded) to the value at the last year of the project. (See Time Value of Money for the formula)
+        -   $\text{FV}$: The sum of the future values of each cash inflow (i.e. positive cash flow), aka Terminal Cash Flow. Using an assumed reinvestment rate which is realistically different than the company's cost of capital, each positive cash inflow is projeced forward (i.e. compounded) to the value at the last year of the project. (See Time Value of Money for the formula)
             -   e.g. For a project with a 5yr horizon, a future value for the cash inflow of year 2 is its projected value at year 5.
+        -   $\text{PV}$: The [absolute]{.underline} sum of the present values of each cash outflow (i.e. negative cash flow), aka Cash Outlay (e.g. costs, investments). Each cash outlay is projected (i.e. discounted) back to year 0 value using the company's borrowing rate. (See IRR for the formula, NPV is the sum of PVs)
 
 -   [Example]{.ribbon-highlight}: 7 year Project ([link](https://www.youtube.com/watch?v=Z-CUSIGLk2U&t=342s))
 
     | Timeline       | Year 0   | Year 1  | Year 2 | Year 3  | Year 4   | Year 5  | Year 6  | Year 7   |
     |--------|--------|--------|--------|--------|--------|--------|--------|--------|
     | Cash Outlay    | 10000.00 | 4500.00 | 950.00 |         |          |         |         |          |
-    | Cash Flow      |          |         |        | 6000.00 | 7500.00  | 1250.00 | 8010.00 | 9000.00  |
+    | Cash Inflow    |          |         |        | 6000.00 | 7500.00  | 1250.00 | 8010.00 | 9000.00  |
     | FV,PV at 12.5% |          | 4000.00 | 750.62 | 9610.84 | 10678.71 | 1582.03 | 9011.25 |          |
     | Total CF       |          |         |        |         |          |         |         | 39882.83 |
     | Total Outlay   |          |         |        |         |          |         |         | 14750.62 |
 
     ``` r
-    cost_of_capital <- 0.125
+    reinvestment_rate <- 0.125
+    borrowing_rate <- 0.08
     first_co <- 10000.00
     cash_outlays <- c(4500.00, 950.00)
     cash_flows <- c(6000.00, 7500.00, 1250.00, 8010.00)
@@ -143,14 +144,14 @@ $$
       cash_outlays,
       seq(length(cash_outlays)), # 1, 2
       calc_pv,
-      r = cost_of_capital
+      r = borrowing_rate
     )
 
     fv_vec <- purrr::map2_dbl(
       cash_flows,
       rev(seq(length(cash_flows))), # 4, 3, 2, 1
       calc_fv,
-      r = cost_of_capital
+      r = reinvestment_rate
     )
 
     total_cf_adj <- sum(fv_vec) + final_cf
@@ -161,11 +162,72 @@ $$
     }
 
     mirr(total_cf_adj, total_co_adj, project_horizon)
-    #> [1] 0.1526855
+    #> [1] 0.1501348
     ```
 
+    -   If the cost of capital is less the 15%, then this is a good investment.
     -   Note the opposite order used for [disc_t]{.var-text} and [comp_t]{.var-text} when iterating through the cash outlays and cash flows.
         -   e.g. 4500 needs to be discounted 1 year to Year 0 dollars and 6000 needs to be compounded 4 years to Year 7 dollars
+
+-   [Example]{.ribbon-highlight}:
+
+    -   Description:
+
+        -   The US Auto Company, maker of the AerTron hovercar, bought a new die press for the lift propeller housing of their new model. The die press, installed, costs \$24 M and a set of dies costs an additional \$12 M and has a life of 4 years. The net revenue for this machine is \$8 M annually. USAC plans to replace the die set during year 4 for the same \$12 M that the original cost, and then run the system for another 4 years. USAC pays 9.5% for borrowed money and expects to earn 16.5% on invested money. What is the MIRR for this system?
+
+    -   Data and Code:\
+
+        |             | Year 0 | Year 1 | Year 2 | Year 3 | Year 4 | Year 5 | Year 6 | Year 7 | Year 8 |
+        |--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|
+        | Cash Outlay | 36     |        |        |        | 4      |        |        |        |        |
+        | Cash Inflow |        | 8      | 8      | 8      |        | 8      | 8      | 8      | 8      |
+
+        ``` r
+        reinvestment_rate <- 0.165
+        borrowing_rate <- 0.095
+        first_co <- 36
+        cash_outlays <- 4
+        cash_flows <- c(8, 8, 8, 8, 8, 8)
+        final_cf <- 8
+        project_horizon <- length(c(cash_outlays, cash_flows, final_cf)) # 8yrs
+
+        calc_pv <- function(c, disc_t, r) {
+          c / ((1 + r)^disc_t)
+        }
+
+        calc_fv <- function(c, comp_t, r) {
+          c * ((1 + r)^comp_t)
+        }
+
+        pv_vec <- purrr::map2_dbl(
+          cash_outlays,
+          4,
+          calc_pv,
+          r = borrowing_rate
+        )
+
+        fv_vec <- purrr::map2_dbl(
+          cash_flows,
+          c(7,6,5,3,2,1),
+          calc_fv,
+          r = reinvestment_rate
+        )
+
+        total_cf_adj <- sum(fv_vec) + final_cf
+        total_co_adj <- sum(pv_vec) + first_co
+
+        mirr <- function(fv, pv, T) {
+          ((fv / pv)^(1/T)) - 1
+        }
+
+        mirr(total_cf_adj, total_co_adj, project_horizon)
+        #> [1] 0.1275095
+        ```
+
+        -   In Year 0, there is an initial investment of \$36M since the cost of the die press plus installation cost is \$24M and set of dies cost \$12M.
+        -   In Year 4, the die set is replaced. The question says the die set is replaced "during year 4." Since the answer is what it is, this evidently means the company gets the positive cash flow of the \$8M and incurs the cost of the new die set of \$12M which leads to an outflow of \$4M.
+            -   Would've made more sense if they would've said the die set was replaced at the end of year 4 IMO. My first attempt assumed they didn't receive the cash inflow \$8M for that year.
+        -   The Year 4 outflow is discounted 4 years, and each cash inflow (except the last one) is compounded to Year 8. Note that in the code, Year 4 is skipped since it's an outflow year.
 
 ### Average Internal Rate of Return (AIRR)
 
@@ -556,7 +618,7 @@ $$
         -   Horizon Guidelines
 
             | Company's Competitive Position                                                                                      | Excess Returns/Forecast Horizon |
-            |-----------------------------------------------|-------------------------|
+            |----------------------------------------------|--------------------------|
             | Slow Growing; Operates in a highly competitive, low margin industry                                                 | 1 Year                          |
             | Solid company that has advantages such as strong marketing channels, brand recognition, regulatory advantages, etc. | 5 Years                         |
             | Early stages of rapid growth; Operates with high barriers to entry; dominant market position or prospects           | 10 Years                        |
