@@ -88,6 +88,39 @@
     -   In the implementation given here the HPR momentum is calculated over the previous 126 days (approximately six months of business days) and the top three sector ETFs are chosen for the portfolio.
     -   The portfolio allocation is equally weighted between each of these three sector ETFs. Irrespective of changes in signal the portfolio is rebalanced once per month to weight the assets equally.
 
+## Dual Momentum Sector Rotation
+
+-   Notes from [Simulation of Gary Antonacci’s Dual Momentum Sector Rotation Strategy](https://nlxfinance.wordpress.com/2023/11/22/simulation-of-gary-antonaccis-dual-momentum-sector-rotation-strategy/)
+-   Characteristics
+    -   Conditions for investing offensively or defensively: the 12-month momentum of the S&P500 (absolute mom)
+    -   List of offensive investment vehicles: the 11 sectors that make up the S&P500 index (relative strength)
+    -   Number of sectors to be selected when the strategy is invested offensively: 4
+    -   Sector selection criteria: 12-month momentum
+    -   List of defensive investment vehicles: US Aggregate Global Bond or Money Market (Cash)
+    -   Number of instruments to be selected when the strategy is invested defensively: 1
+-   Process
+    -   12-month momentum of the S&P500 used to decide whether the market is in an uptrend or a downtrend, i.e. to invest offensively or defensively.
+    -   If the S&P500 is in an uptrend, invest offensively. In this case, the allocation is spread evenly over the 4 sectors with the highest 12-month momentum, 25% each.
+        -   If fewer than 4 sectors have positive momentum, then the remainder not invested offensively is allocated to a defensive position.
+    -   If the S&P500 is trending downwards (negative momentum), I invest defensively. In this case, I allocate the entire portfolio to US government bonds or the money market, depending on which market has offered the highest returns over the last 12 months.
+        -   Those familiar with the GEM strategy will note that the author initially recommended using only US government bonds as a defensive asset. However, since interest rates have fallen so much over the last 10 years, since the publication of his study, it now seems more reasonable to compare the US government bond market with the performance of the money market, in order to select the market that offers the best risk/return trade-off.
+    -   Calculate 12-month momentum: ( Price at the end of the month – Price 12 months ago ) / ( Price 12 months ago )
+    -   Momentum calculations and any arbitrages are carried out at the end of each month.
+-   Comparison
+    -   Cumulative Performance: DMSR vs. SPY vs. GEM\
+        ![](_resources/Finance.resources/dmsr-spy-gem-comp-1.png){width="532"}
+        -   Simple Cumulative Performance (%) is computed every month (I think)
+            -   Rate of Return\
+                $$
+                \text{RoR} = \frac{\text{Ending Value} - \text{Starting Value}}{\text{Starting Value}} \times 100
+                $$
+            -   Cumulative Performance (CP)\
+                $$
+                \text{CP} = (1 + \text{RoR}_1) \times (1 + \text{RoR}_2) \times \cdots \times (1 + \text{RoR}_n) - 1
+                $$
+    -   Statistics\
+        ![](_resources/Finance.resources/dmsr-spy-gem-stats-1.png){width="532"}
+
 ## Volatility Targeting Portfolio {#sec-finance-invest-vtp .unnumbered}
 
 -   Misc

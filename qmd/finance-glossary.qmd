@@ -156,9 +156,15 @@
 
 -   [**Market Capitalization**]{style="color: #009499"} - The total dollar market value of a company's outstanding shares. Calculated by multiplying the total number of a company's shares by the current market price of one share.
 
--   [**Market Momentum**]{style="color: #009499"} - The rate of acceleration of a security's price---that is, the speed at which the price is changing. In general, Momentum = Today's price - Price from X days ago. Positive: bullish, Negative: bearish. More sophisticated indicators can be calculated, see <https://www.investopedia.com/terms/m/marketmomentum.asp>
-
 -   [**Modified Internal Rate of Return (MIRR)**]{style="color: #009499"} - Better alternative to IRR that assumes the cash inflows are reinvested at cost of capital of the company instead of at the IRR. (Also see [Finance, Valuation \>\> Rates of Return](finance-valuation.qmd#sec-finance-val-ror){style="color: green"})
+
+-   [**Momentum**]{style="color: #009499"} - The rate of acceleration of a security's price---that is, the speed at which the price is changing. In general, Momentum = Today's price - Price from X days ago. Positive: bullish, Negative: bearish. More sophisticated indicators can be calculated, see <https://www.investopedia.com/terms/m/marketmomentum.asp>
+
+    -   12-Month Momementum:
+
+        $$
+        M = \frac{\text{Closing Price}_{\text{end of month}}- \text{Closing Price}_{\text{12 months ago}}}{\text{Closing Price}_{\text{12 months ago}}}
+        $$
 
 -   [**Net Present Value**]{style="color: #009499"} - A way to compare potential investments or projects in today's dollars. It's the difference between the present value of a future stream of cash inflows and outflows. Used in capital budgeting and investment planning to analyze the profitability of a projected investment or project. (Also see [Finance, Valuation \>\> Rates of Return \>\> AIRR](finance-valuation.qmd#average-internal-rate-of-return-airr){style="color: green"} \>\> Formula Using Time-Varying Cost of Capital)
 
