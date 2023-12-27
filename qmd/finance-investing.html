@@ -63,6 +63,8 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -291,6 +293,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#sec-finance-invest-consid" id="toc-sec-finance-invest-consid" class="nav-link" data-scroll-target="#sec-finance-invest-consid">Considerations</a></li>
   <li><a href="#sec-finance-invest-6040" id="toc-sec-finance-invest-6040" class="nav-link" data-scroll-target="#sec-finance-invest-6040">60/40 Portfolio Strategy</a></li>
   <li><a href="#sec-finance-invest-momassallo" id="toc-sec-finance-invest-momassallo" class="nav-link" data-scroll-target="#sec-finance-invest-momassallo">Momentum Tactical Asset Allocation Strategy</a></li>
+  <li><a href="#dual-momentum-sector-rotation" id="toc-dual-momentum-sector-rotation" class="nav-link" data-scroll-target="#dual-momentum-sector-rotation">Dual Momentum Sector Rotation</a></li>
   <li><a href="#sec-finance-invest-vtp" id="toc-sec-finance-invest-vtp" class="nav-link" data-scroll-target="#sec-finance-invest-vtp">Volatility Targeting Portfolio</a></li>
   <li><a href="#sec-finance-invest-meanrev" id="toc-sec-finance-invest-meanrev" class="nav-link" data-scroll-target="#sec-finance-invest-meanrev">Mean Reversion Strategy or Pairs Trading</a></li>
   <li><a href="#sec-finance-invest-bonds" id="toc-sec-finance-invest-bonds" class="nav-link" data-scroll-target="#sec-finance-invest-bonds">Bonds</a></li>
@@ -435,6 +438,55 @@ ul.task-list li input[type="checkbox"] {
 <li>At the end of every month the strategy calculates the holding period return (HPR) based momentum of all of the SPDR sector ETFs (the ticker symbols of which begin with the prefix XL) and selects the top N to invest in for the forthcoming month, where N is usually between 3 and 6.</li>
 <li>In the implementation given here the HPR momentum is calculated over the previous 126 days (approximately six months of business days) and the top three sector ETFs are chosen for the portfolio.</li>
 <li>The portfolio allocation is equally weighted between each of these three sector ETFs. Irrespective of changes in signal the portfolio is rebalanced once per month to weight the assets equally.</li>
+</ul></li>
+</ul>
+</section>
+<section id="dual-momentum-sector-rotation" class="level2">
+<h2 class="anchored" data-anchor-id="dual-momentum-sector-rotation">Dual Momentum Sector Rotation</h2>
+<ul>
+<li>Notes from <a href="https://nlxfinance.wordpress.com/2023/11/22/simulation-of-gary-antonaccis-dual-momentum-sector-rotation-strategy/">Simulation of Gary Antonacci’s Dual Momentum Sector Rotation&nbsp;Strategy</a></li>
+<li>Characteristics
+<ul>
+<li>Conditions for investing offensively or defensively: the 12-month momentum of the S&amp;P500 (absolute mom)</li>
+<li>List of offensive investment vehicles: the 11 sectors that make up the S&amp;P500 index (relative strength)</li>
+<li>Number of sectors to be selected when the strategy is invested offensively: 4</li>
+<li>Sector selection criteria: 12-month momentum</li>
+<li>List of defensive investment vehicles: US Aggregate Global Bond or Money Market (Cash)</li>
+<li>Number of instruments to be selected when the strategy is invested defensively: 1</li>
+</ul></li>
+<li>Process
+<ul>
+<li>12-month momentum of the S&amp;P500 used to decide whether the market is in an uptrend or a downtrend, i.e.&nbsp;to invest offensively or defensively.</li>
+<li>If the S&amp;P500 is in an uptrend, invest offensively. In this case, the allocation is spread evenly over the 4 sectors with the highest 12-month momentum, 25% each.
+<ul>
+<li>If fewer than 4 sectors have positive momentum, then the remainder not invested offensively is allocated to a defensive position.</li>
+</ul></li>
+<li>If the S&amp;P500 is trending downwards (negative momentum), I invest defensively. In this case, I allocate the entire portfolio to US government bonds or the money market, depending on which market has offered the highest returns over the last 12 months.
+<ul>
+<li>Those familiar with the GEM strategy will note that the author initially recommended using only US government bonds as a defensive asset. However, since interest rates have fallen so much over the last 10 years, since the publication of his study, it now seems more reasonable to compare the US government bond market with the performance of the money market, in order to select the market that offers the best risk/return trade-off.</li>
+</ul></li>
+<li>Calculate 12-month momentum: ( Price at the end of the month – Price 12 months ago ) / ( Price 12 months ago )</li>
+<li>Momentum calculations and any arbitrages are carried out at the end of each month.</li>
+</ul></li>
+<li>Comparison
+<ul>
+<li>Cumulative Performance: DMSR vs.&nbsp;SPY vs.&nbsp;GEM<br>
+<img src="_resources/Finance.resources/dmsr-spy-gem-comp-1.png" class="img-fluid" width="532">
+<ul>
+<li>Simple Cumulative Performance (%) is computed every month (I think)
+<ul>
+<li>Rate of Return<br>
+<span class="math display">\[
+\text{RoR} = \frac{\text{Ending Value} - \text{Starting Value}}{\text{Starting Value}} \times 100
+\]</span></li>
+<li>Cumulative Performance (CP)<br>
+<span class="math display">\[
+\text{CP} = (1 + \text{RoR}_1) \times (1 + \text{RoR}_2) \times \cdots \times (1 + \text{RoR}_n) - 1
+\]</span></li>
+</ul></li>
+</ul></li>
+<li>Statistics<br>
+<img src="_resources/Finance.resources/dmsr-spy-gem-stats-1.png" class="img-fluid" width="532"></li>
 </ul></li>
 </ul>
 </section>
