@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Domain Knowledge - Inventory Management</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../qmd/logistics-supply-chain.html" rel="next">
+<link href="../qmd/logistics-demand-planning.html" rel="prev">
+<link href="../images/dk-favicon-32.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../qmd/logistics-demand-planning.html">Logistics</a></li><li class="breadcrumb-item"><a href="../qmd/logistics-inventory-management.html">Inventory Management</a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">Domain Knowledge</a> 
+        <div class="sidebar-tools-main tools-wide">
+    <a href="https://ericbook.netlify.app/" rel="" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-house-fill"></i></a>
+    <a href="https://github.com/ercbk/Domain-Knowledge-Notebook" rel="" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+  <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
+  <div class="quarto-reader-toggle-btn">
+  <i class="bi"></i>
+  </div>
+</a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../qmd/agriculture.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Agriculture</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../qmd/banking-credit.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Banking/Credit</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../qmd/budget-allocation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Budget Allocation</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../qmd/economics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Economics</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../qmd/environment.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Environment</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../qmd/epidemiology.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Epidemiology</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">
+ <span class="menu-text">Finance</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../qmd/finance-glossary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Glossary</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../qmd/finance-investing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Investing</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../qmd/finance-valuation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Valuation</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../qmd/healthcare.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Healthcare</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../qmd/insurance.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Insurance</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../qmd/kpis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">KPIs</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../qmd/location-selection.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Location Selection</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+ <span class="menu-text">Logistics</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../qmd/logistics-demand-planning.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Demand Planning</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../qmd/logistics-inventory-management.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Inventory Management</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../qmd/logistics-supply-chain.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Supply Chain</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../qmd/low-hanging-fruit.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Low Hanging Fruit</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../qmd/manufacturing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Manufacturing</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../qmd/marketing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Marketing</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../qmd/meteorology.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Meteorology</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../qmd/nonprofits.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Nonprofits</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../qmd/politics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Politics</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../qmd/product-development.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Product Development</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../qmd/real-estate.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Real Estate</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../qmd/retail.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Retail</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../qmd/saas.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">SaaS</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../qmd/sports-betting.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Sports Betting</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#sec-log-invman-misc" id="toc-sec-log-invman-misc" class="nav-link active" data-scroll-target="#sec-log-invman-misc">Misc</a></li>
+  <li><a href="#sec-log-invman-terms" id="toc-sec-log-invman-terms" class="nav-link" data-scroll-target="#sec-log-invman-terms">Terms</a></li>
+  <li><a href="#sec-log-invman-safstk" id="toc-sec-log-invman-safstk" class="nav-link" data-scroll-target="#sec-log-invman-safstk">Safety Stock (aka Buffer Stock)</a>
+  <ul>
+  <li><a href="#sec-log-invman-safstk-misc" id="toc-sec-log-invman-safstk-misc" class="nav-link" data-scroll-target="#sec-log-invman-safstk-misc">Misc</a></li>
+  <li><a href="#sec-log-invman-safstk-rfss" id="toc-sec-log-invman-safstk-rfss" class="nav-link" data-scroll-target="#sec-log-invman-safstk-rfss">Reasons for Safety Stock</a></li>
+  <li><a href="#sec-log-invman-safstk-stkots" id="toc-sec-log-invman-safstk-stkots" class="nav-link" data-scroll-target="#sec-log-invman-safstk-stkots">Stockouts</a></li>
+  <li><a href="#sec-log-invman-safstk-cslz" id="toc-sec-log-invman-safstk-cslz" class="nav-link" data-scroll-target="#sec-log-invman-safstk-cslz">(Cycle) Service level (Z)</a></li>
+  <li><a href="#sec-log-invman-safstk-sseqs" id="toc-sec-log-invman-safstk-sseqs" class="nav-link" data-scroll-target="#sec-log-invman-safstk-sseqs">Safety Stock Equations</a></li>
+  <li><a href="#sec-log-invman-safstk-iss" id="toc-sec-log-invman-safstk-iss" class="nav-link" data-scroll-target="#sec-log-invman-safstk-iss">Issues</a></li>
+  </ul></li>
+  <li><a href="#sec-log-invman-eoq" id="toc-sec-log-invman-eoq" class="nav-link" data-scroll-target="#sec-log-invman-eoq">Economic Order Quantity (EOQ)</a></li>
+  <li><a href="#sec-log-invman-outpol" id="toc-sec-log-invman-outpol" class="nav-link" data-scroll-target="#sec-log-invman-outpol">Order-Up-To (OUT) Level Policy</a></li>
+  <li><a href="#sec-log-invman-reordpt" id="toc-sec-log-invman-reordpt" class="nav-link" data-scroll-target="#sec-log-invman-reordpt">Reorder Point</a></li>
+  <li><a href="#sec-log-invman-warmang" id="toc-sec-log-invman-warmang" class="nav-link" data-scroll-target="#sec-log-invman-warmang">Warehouse Management</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span id="sec-log-invman" class="quarto-section-identifier">Inventory Management</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="sec-log-invman-misc" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="sec-log-invman-misc">Misc</h2>
+<ul>
+<li>Goal: develop a replenishment policy that will minimize your ordering, holding and shortage costs.
+<ul>
+<li><a href="../qmd/logistics-inventory-management.html#sec-log-invman-outpol" style="color: green">OUT level policy</a> is widely recommended as a replenishment policy</li>
+<li>Costs (Also see <a href="../qmd/logistics-inventory-management.html#sec-log-invman-eoq" style="color: green">EOQ</a>, <a href="../qmd/logistics-inventory-management.html#sec-log-invman-dim-dicmp" style="color: green">DIM &gt;&gt; DI Components</a>)
+<ul>
+<li><u>Ordering Costs</u> ($ per order): Fixed cost to place an order due to administrative costs, system maintenance or manufacturing costs
+<ul>
+<li>Also see</li>
+</ul></li>
+<li><u>Holding Costs</u> ($ per unit per unit of time): All the costs required to hold your inventory (storage, insurance, and capital costs)
+<ul>
+<li>Forecast PI widths serve as a proxy for inventory holding costs and provides valuable input for setting a target service level</li>
+</ul></li>
+<li><u>Shortage/Stock-out Costs</u> ($ per unit): The costs of not having enough inventory to meet the customer demand (Lost Sales, Penalty)</li>
+</ul></li>
+</ul></li>
+<li>Packages
+<ul>
+<li><span style="color: #990000">{planr}</span> - Uses opening inventory, sales forecasts and supply variables to calculate projected inventory and projected coverage calculations (<a href="https://www.r-bloggers.com/2022/10/using-r-in-inventory-management-and-demand-forecasting/">article</a>)</li>
+</ul></li>
+<li>Question: “Due to the complexity/cost of maintaining inventory management system. Would it be sufficient to just set a safety stock level and replenish once the SKU dips below that level?”
+<ul>
+<li>The more products you handle, the more an inventory management system matters. If you have 1000s or 10s of 1000s of different products, it makes a large difference whether you do demand forecasting along with implementing the Order-Up-To Level Policy, etc.</li>
+</ul></li>
+<li>Variables of interest that need to be forecasted for various decisions
+<ul>
+<li><u>Stock/No Stock</u> - Should we continue to stock a product or discontinue the product and just let the current stock dwindle to zero.
+<ul>
+<li>Mean of Demand</li>
+</ul></li>
+<li><u>Replenishment</u> - How much product should we restock
+<ul>
+<li>Mean and Variance of Demand</li>
+<li>Forecasts in conjunction with a hypothesized demand distribution (parametric) vs build-up of the empircal distribution via bootstrapping (non-parametric)</li>
+</ul></li>
+<li><u>Returns</u> - Customer returning products
+<ul>
+<li>Net Demand which is equal to Demand - Returns
+<ul>
+<li>Can be forecasted itself or by forecasting Demand and Returns separately.</li>
+</ul></li>
+</ul></li>
+<li><u>Last Time Buy (LTB)</u> - the supplier’s “last call” for a part or component. The final chance an enterprise will have to buy the part before the supplier stops producing it.
+<ul>
+<li>Rate of Demand Decline</li>
+</ul></li>
+</ul></li>
+</ul>
+</section>
+<section id="sec-log-invman-terms" class="level2">
+<h2 class="anchored" data-anchor-id="sec-log-invman-terms">Terms</h2>
+<ul>
+<li><p><span style="color: #009499"><strong>Active References</strong></span> - A product may have multiple SKUs. All SKUs would be needed in order to calculate stats for that product. The active reference for a product is one SKU that encompasses all other SKUs.</p>
+<ul>
+<li>e.g.&nbsp;Last season’s dress “C” has been replaced by the new dress “D”. Even though both dresses are identical, they have different SKUs. Dress D’s SKU will be the active reference. Therefore, if the retailer sold two units of C in the past and three units of D this week, Nextail will show D having sold five units.</li>
+<li>Also seen this term used when referring to all unique SKUs on an order sheet as the total active references.</li>
+</ul></li>
+<li><p><span style="color: #009499"><strong>Fill rate</strong></span> (aka Fulfillment Rate)- The percentage of orders that you can ship from your available stock without any lost sales, backorders, or stockouts.<br>
+<img src="./_resources/Logistics.resources/Screenshot-(494).png" class="img-fluid" width="432"></p>
+<p><span class="math display">\[
+\text{Fill Rate} = \frac{\text{Total Orders Shipped}}{\text{Total Orders Placed}} \cdot 100
+\]</span></p>
+<ul>
+<li>On average, companies typically maintain a fill rate of about 85%-95%. But ideally, you should strive for a fill rate between 97% and 99%.</li>
+</ul></li>
+<li><p><span style="color: #009499"><strong>Fulfillment Rate</strong></span> - See Fill Rate</p></li>
+<li><p><span style="color: #009499"><strong>Lead Time</strong></span> (aka performance cycle) - Time required between the creation of a replenishment order and the effective store replenishment</p></li>
+<li><p><span style="color: #009499"><strong>Linked Lines</strong></span> (aka Silent Switches) - Refers to when several products in a retailer’s inventory are commercially equivalent. In other words, when identical products are identified by multiple SKUs.</p>
+<ul>
+<li><span class="ribbon-highlight">Example</span>: Continuity products are ordered over multiple seasons or years or when large orders are split among different suppliers</li>
+</ul></li>
+<li><p><span style="color: #009499"><strong>Order Components</strong></span><br>
+<img src="./_resources/Logistics.resources/image.8.png" class="img-fluid" width="282"></p>
+<ul>
+<li><span style="color: #009499"><strong>Order</strong></span>: The “shopping basket” full of items you’ve just purchased.</li>
+<li><span style="color: #009499"><strong>Lines</strong></span>: The different products within your order, recognized by warehouses as each individual Stock Keeping Unit (SKU) or Universal Product Code (UPC) number.</li>
+<li><span style="color: #009499"><strong>Units</strong></span>: The quantity of each line.</li>
+</ul></li>
+<li><p><span style="color: #009499"><strong>Performance Cycle</strong></span> - See Lead Time</p></li>
+<li><p><span style="color: #009499"><strong>Reference</strong></span> - ID for a product (e.g.&nbsp;SKU)</p></li>
+<li><p><span style="color: #009499"><strong>Replenishment cycle</strong></span> - Cycle between replenishment (i.e.&nbsp;restocking) orders</p></li>
+<li><p><span style="color: #009499"><strong>Rotations</strong></span> - Speed at which products enter and exit the warehouse</p>
+<ul>
+<li><u>High Rotation</u>: Units enter and exit continuously. These items are in high demand.</li>
+<li><u>Medium Rotation</u>: Units enter and exit in smaller volumes than those in High Rotation.</li>
+<li><u>Low Rotation</u>: These are the items that spend the most time in the warehouse, and are in low demand.</li>
+</ul></li>
+<li><p><span style="color: #009499"><strong>Safety stock</strong></span> - Extra inventory held by a retailer or a manufacturer in case demand increases unexpectedly. This means it’s additional stock above the desired inventory level that you would usually hold for day-to-day operations.</p></li>
+<li><p>(Cycle) <span style="color: #009499"><strong>Service Level</strong></span> (Z) - The probability that the amount of inventory on hand during the lead time is sufficient to meet expected demand – that is, the probability that a stockout will not occur.</p>
+<ul>
+<li>Also see figure in Fill Rate</li>
+</ul></li>
+<li><p><span style="color: #009499"><strong>Silent Switches</strong></span> - See Linked Lines</p></li>
+<li><p><span style="color: #009499"><strong>SKU</strong></span> - Stock Keeping Unit - Usually a bar code that has all the information to distinguish it from another product. These attributes can include manufacturer, description, material, size, color, packaging, and warranty terms. When a business takes inventory of its stock, it counts the quantity it has of each SKU.</p></li>
+<li><p><span style="color: #009499"><strong>Stock Outs</strong></span> - Out of stock events</p></li>
+<li><p><span style="color: #009499"><strong>Supply Chain</strong></span> - A network of processes and stock locations built to deliver services and goods to customers.</p></li>
+<li><p><span style="color: #009499"><strong>Wastage</strong></span> - Where supply greatly outstrips demand, and the product expires</p></li>
+<li><p><span style="color: #009499"><strong>S&amp;OP</strong></span> - Sales &amp; Operations Planning</p></li>
+</ul>
+</section>
+<section id="sec-log-invman-safstk" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="sec-log-invman-safstk">Safety Stock (aka Buffer Stock)</h2>
+<section id="sec-log-invman-safstk-misc" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="sec-log-invman-safstk-misc">Misc</h3>
+<ul>
+<li>Notes from <a href="https://web.mit.edu/2.810/www/files/readings/King_SafetyStock.pdf">Article</a></li>
+<li>Calculation of Safety Stock can be more useful than trying to improve forecast accuracy for intermittent(or sporadic) product time series (lotsa zeros).</li>
+</ul>
+</section>
+<section id="sec-log-invman-safstk-rfss" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="sec-log-invman-safstk-rfss">Reasons for Safety Stock</h3>
+<ul>
+<li><u>Demand Uncertainty</u> - Every retailer and manufacturer will have products that sell well all year round and products that fluctuate in demand.</li>
+<li><u>Lead time Uncetrainty</u> - Deliveries arriving earlier or later than expected, a safety stock formula will help you to cover unexpected delays and demand fluctuation to maintain a consistent output.
+<ul>
+<li>The lead time is usually a distribution and not a constant, so it needs to be recorded in order to get a sample standard deviation thats used the safety stock formula</li>
+<li>Factors:
+<ul>
+<li>Deciding what to order or produce</li>
+<li>Approval time</li>
+<li>Submitting a purchase requisition</li>
+<li>Emailing vendors</li>
+<li>Manufacturing and processing of the product</li>
+<li>Delivery time from vendor</li>
+<li>Incoming inspection time</li>
+<li>Time it takes to put on the shelf</li>
+<li>Any additional time required to return to the start of the next cycle</li>
+</ul></li>
+</ul></li>
+</ul>
+</section>
+<section id="sec-log-invman-safstk-stkots" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="sec-log-invman-safstk-stkots">Stockouts</h3>
+<ul>
+<li>Safety stock determinations are not intended to eliminate all stockouts — just the majority of them Usually caused by:
+<ul>
+<li>Changes in consumer demand</li>
+<li>Incorrect stock forecasts</li>
+<li>Variability in lead times for raw materials</li>
+</ul></li>
+<li>Costs Due to Stockouts
+<ul>
+<li>Loss of revenue</li>
+<li>Loss of gross profit</li>
+<li>Loss of customers</li>
+<li>Reduced market share</li>
+<li>Poor efficiency</li>
+<li>Strained supplier and retailer relationships</li>
+</ul></li>
+</ul>
+</section>
+<section id="sec-log-invman-safstk-cslz" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="sec-log-invman-safstk-cslz">(Cycle) Service level (Z)</h3>
+<ul>
+<li>Higher service level <span class="math inline">\(\rightarrow\)</span> more safety stock</li>
+<li>Independently choose a service level for groups of products based things such as strategic importance, profit margin, or dollar volume.
+<ul>
+<li>The retail industry aims to maintain a typical service level of between 90% and 95% depending on the product</li>
+</ul></li>
+<li><span class="ribbon-highlight">Example</span>:<br>
+<img src="./_resources/Logistics.resources/Screenshot-(493).png" class="img-fluid" width="432">
+<ul>
+<li>At 95 percent service level, expect:
+<ul>
+<li>(D1) for 50 percent of replenishment cycles, not all cycle stock will be depleted and safety stock will not be needed</li>
+<li>(D2) for 45 percent of replenishment cycles, the safety stock will suffice.</li>
+<li>(D3) and for 5 percent of replenishment cycles, expect a stockout.</li>
+</ul></li>
+<li>Kind of a confusing diagram but I think the y-axis is total stock and x-axis represents time (kinda sorta)
+<ul>
+<li>Stock dwindles as product is sold as the cycle ends, then stock is replenished after an order and begins to dwindle again.</li>
+</ul></li>
+</ul></li>
+</ul>
+</section>
+<section id="sec-log-invman-safstk-sseqs" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="sec-log-invman-safstk-sseqs">Safety Stock Equations</h3>
+<ul>
+<li><p><u>When the demand interval doesn’t equal lead time interval</u></p>
+<ul>
+<li><p>Used to mitigate demand variability and lead time variability (σLT see next formula) is very small or zero</p>
+<p><span class="math display">\[
+\text{Safety Stock} = Z \cdot \sigma_D \cdot \sqrt{\frac{PC}{T_I}}
+\]</span></p>
+<ul>
+<li><span class="math inline">\(Z\)</span>: z-score of the service level (1-sided, upper-tail)
+<ul>
+<li>e.g.&nbsp;95% service level <span class="math inline">\(\rightarrow\)</span> Z = 1.64; 90% service level <span class="math inline">\(\rightarrow\)</span> Z = 1.28</li>
+<li><code>qnorm(0.95)</code> = 1.644854, <code>qnorm(0.90)</code> = 1.281552</li>
+</ul></li>
+<li><span class="math inline">\(PC\)</span>: Performance Cycle, another term for total lead time</li>
+<li><span class="math inline">\(T_I\)</span>: Time increment used for calculating standard deviation of demand</li>
+<li><span class="math inline">\(\sigma_D\)</span>: Standard Deviation of Demand.</li>
+</ul></li>
+<li><p><span class="ribbon-highlight">Example</span>: if the standard deviation of demand is calculated from weekly demand data and the total lead time including review period is three weeks.</p>
+<ul>
+<li><span class="math inline">\(PC\)</span> = 21 days (3 weeks)</li>
+<li><span class="math inline">\(T_I\)</span> = 7 days (weekly data)</li>
+<li>Safety Stock = Z * √3 * σD</li>
+</ul></li>
+<li><p><span class="ribbon-highlight">Example</span>: Desired service level = 95%; seven-day manufacturing time and the one day needed to arrive at the warehouse; Standard deviation of weekly demand = 10 rolls</p>
+<ul>
+<li>Safety stock = 1.64 * √[8/7] * 10 rolls
+<ul>
+<li>Safety stock = 18 rolls</li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><p><u>When the lead time varies and demand variability (σD see previous formula) is very small or zero</u></p>
+<p><span class="math display">\[
+\text{Safety Stock} = Z \cdot \sigma_{LT} \cdot D_{\text{avg}}
+\]</span></p>
+<ul>
+<li><span class="math inline">\(Z\)</span>: z-score of the service level (1-sided, upper-tail)
+<ul>
+<li>e.g.&nbsp;95% service level <span class="math inline">\(\rightarrow\)</span> Z = 1.64; 90% service level <span class="math inline">\(\rightarrow\)</span> Z = 1.28</li>
+<li><code>qnorm(0.95)</code> = 1.644854, <code>qnorm(0.90)</code> = 1.281552</li>
+</ul></li>
+<li><span class="math inline">\(\sigma_{LT}\)</span>: Standard Deviation of the Lead Time</li>
+<li><span class="math inline">\(D_{\text{avg}}\)</span>: Demand Forecast
+<ul>
+<li>Depends what the frequency of the series is, but you want an estimate of the total demand between orders</li>
+</ul></li>
+<li><span class="ribbon-highlight">Example</span>: If orders are made monthly and you forecast weekly sales, then your horizon is likely monthly and you sum around 4 weeks of point estimates to get D.</li>
+</ul></li>
+<li><p><u>When both demand variability and lead time variability are present</u></p>
+<ul>
+<li><p>Demand and lead time <em>variability</em> are independent</p>
+<p><span class="math display">\[
+\text{Safety Stock} = Z \cdot \sqrt{\frac{\sigma_D^2 PC}{T_I} + (\sigma_{LT}D_{\text{avg}})^2}
+\]</span></p></li>
+<li><p>Demand and lead time <em>variability</em> are not independent</p>
+<p><span class="math display">\[
+\text{Safety Stock} = \left(Z \cdot \sigma_D \cdot\sqrt{\frac{PC}{T_I}}\;\right) + (Z \cdot \sigma_{LT} \cdot D_{\text{avg}})
+\]</span></p></li>
+<li><p>Demand variability is the dominant influence on safety stock requirements.</p>
+<ul>
+<li>With the recognition of what factors dominate an equation, it becomes easier to focus improvement efforts</li>
+</ul></li>
+</ul></li>
+</ul>
+</section>
+<section id="sec-log-invman-safstk-iss" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="sec-log-invman-safstk-iss">Issues</h3>
+<ul>
+<li>Sometimes recommended safety stock volumes are larger than business leaders are comfortable having
+<ul>
+<li>Alternative or Supplement: Order Expediting
+<ul>
+<li>Reduce safety stock volume by keeping small amounts of expensive products and rely on air freight to cover peaks in demand. The cost of shipping a small percentage of total demand via air can be minimal compared to the cost of carrying large amounts of safety stock of the valuable material on an ongoing basis.</li>
+</ul></li>
+<li>Alternative or Supplement: Make-to-Order (MTO) or Finish-to-Order (FTO) production environment
+<ul>
+<li>If lead times allow, MTO eliminates the need for most safety stock. Meanwhile, FTO allows for less differentiation in safety stock than finished-product inventory, which lowers demand variability and reduces safety stock requirements.</li>
+<li>FTO and MTO also are well suited for situations where customers are willing to accept longer lead times for highly sporadic purchases.</li>
+</ul></li>
+</ul></li>
+</ul>
+</section>
+</section>
+<section id="sec-log-invman-eoq" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="sec-log-invman-eoq">Economic Order Quantity (EOQ)</h2>
+<ul>
+<li><p>AKA Wilson Formula</p>
+<p><span class="math display">\[
+Q = \sqrt{\frac{2DS}{H}}
+\]</span></p>
+<ul>
+<li><span class="math inline">\(Q\)</span>: EOQ units (i.e.&nbsp;quantity of product to be ordered)</li>
+<li><span class="math inline">\(D\)</span>: Demand in units (Typicall on an annual basis)</li>
+<li><span class="math inline">\(S\)</span>: Order Cost (per Purchase Order)</li>
+<li><span class="math inline">\(H\)</span>: Holding Costs (per unit, per year)</li>
+</ul></li>
+<li><p>The ideal order quantity a company should purchase to minimize inventory costs such as holding costs, shortage costs, and order costs</p>
+<ul>
+<li>Usually used for purchase ordering (not production)</li>
+<li><strong>Assumes demand, ordering, and holding costs remain constant over time</strong></li>
+</ul></li>
+<li><p>Goal: minimize the cost of ordering and holding stock, while still meeting demand and service level requirements</p></li>
+<li><p>Costs of Ordering</p>
+<ul>
+<li>Placing your order</li>
+<li>Delivery</li>
+<li>Transportation</li>
+<li>Receiving the order</li>
+</ul></li>
+<li><p>Costs of Holding Stock</p>
+<ul>
+<li>Paying for stock in advance</li>
+<li>Warehousing</li>
+<li>Storage</li>
+<li>Depreciation</li>
+</ul></li>
+</ul>
+</section>
+<section id="sec-log-invman-outpol" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="sec-log-invman-outpol">Order-Up-To (OUT) Level Policy</h2>
+<p><img src="./_resources/Logistics.resources/Screenshot-(1316).png" class="img-fluid" width="632"></p>
+<ul>
+<li>Time intervals (i.e.&nbsp;Review Interval) trigger a replenishment, not reorder points
+<ul>
+<li>Length depends on the industry</li>
+<li>Examples
+<ul>
+<li>Manufacturing: 1 month</li>
+<li>Retail: 1 week</li>
+</ul></li>
+</ul></li>
+<li>Misc
+<ul>
+<li>Notes from
+<ul>
+<li>CMAF FFT: Intermittent Demand Forecasting (<a href="https://www.youtube.com/watch?v=PRidAjQRtCs&amp;list=WL&amp;index=1">Video</a>)
+<ul>
+<li>From authors of “Intermittent Demand Forecasting. Context, Methods and Applications” (see your book shelf)
+<ul>
+<li>Should have more details on OUT replenishment model</li>
+</ul></li>
+</ul></li>
+<li>UT-Dallas “Basestock Model CH. 13” <a href="https://personal.utdallas.edu/~metin/Or6302/Folios/ombasestock.pdf">Slides</a>
+<ul>
+<li>Based on Cachon &amp; Terwiesch book, “Matching Supply with Demand” (<a href="http://cachon-terwiesch.net/3e/">link</a>)</li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li>Inventory Position (IP) = Stock-on-Hand - backorders + On-Order-Inventory</li>
+<li>After every Review Interval, the OUT gets optimized according to Replenishment variables
+<ul>
+<li>Mean and Variance of Demand are estimated</li>
+<li>Forecasts in conjunction with a hypothesized demand distribution (parametric) vs build-up of the empircal distribution via bootstrapping (non-parametric)
+<ul>
+<li>See <a href="../qmd/logistics-demand-planning.html#sec-log-demfcast-intdem-fcastmn" style="color: green">Demand Forecasting &gt;&gt; Intermittent Demand &gt;&gt; Forecasting Mean Demand</a></li>
+</ul></li>
+<li>Given updated variables, place order that raises IP to OUT level (S)</li>
+</ul></li>
+<li>Protection Interval is period that you should have enough inventory to cover.
+<ul>
+<li>The forecast horizon which equals the Review Interval + Lead Time</li>
+</ul></li>
+<li>Evaluate service at each level of an order: orders, lines, units.
+<ul>
+<li>Lines (SKU Level)
+<ul>
+<li>Whether to use Cycle Service Level (CSL) or Fill Rate (ReadyRate (?) is also a possibility)
+<ul>
+<li>CSL - probability of not going out of stock -&nbsp; not realistic but easy to calculate</li>
+<li>Fill Rate measures true service offered to customers, but more involved in its application</li>
+<li>Also see Safety Stock for more details on CSL and Fill Rate</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</section>
+<section id="sec-log-invman-reordpt" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="sec-log-invman-reordpt">Reorder Point</h2>
+<ul>
+<li>The reorder point is the threshold amount of inventory at which you need place an replenishment order
+<ul>
+<li>once an item’s stock falls below PAR level, an optimised order quantity is generated</li>
+</ul></li>
+<li>Components used to determine a reorder point
+<ul>
+<li>Safety Stock</li>
+<li>Reorder Point Formula</li>
+<li>Periodic Automatic Replacement (PAR)</li>
+</ul></li>
+<li><strong>Reorder Point = Safety Stock + (Davg × Lead time)</strong></li>
+</ul>
+</section>
+<section id="sec-log-invman-warmang" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="sec-log-invman-warmang">Warehouse Management</h2>
+<ul>
+<li><u>Misc</u>
+<ul>
+<li>Picking operations account for the largest proportion of the total warehouse costs (up to more than 60%). This is why the design of these areas is of such importance.</li>
+<li>The closer the high demand or large goods are to the loading and unloading docks, the lower the handling costs.</li>
+</ul></li>
+<li><u>Material Flow Types</u>
+<ul>
+<li><strong>Simple Flows</strong>: To understand how these movements work, we can examine the simplest possible flow, which takes place when units sent by the supplier are used, without dividing these up.<br>
+<img src="./_resources/Logistics.resources/image.4.png" class="img-fluid" width="432"></li>
+<li><strong>Medium flows</strong>: Movements start to become more complex with this type of flow. It is normally found in warehouses with single or combined picking operations, generally with the supply of full pallets.<br>
+<img src="./_resources/Logistics.resources/image.5.png" class="img-fluid" width="432"></li>
+<li><strong>Complex Flows</strong>: There are warehouses with different working areas, depending on the types of product and their consumption. They normally have intermediate handling areas and can require various operations that in turn need flows of a certain (and at times great) complexity. This diagram shows an example of this type of facility and the loading movements that occur there.<br>
+<img src="./_resources/Logistics.resources/image.6.png" class="img-fluid" width="432"></li>
+</ul></li>
+<li><u>Warehouse Optimization</u><br>
+<img src="./_resources/Logistics.resources/image.2.png" class="img-fluid" width="432"><br>
+<img src="./_resources/Logistics.resources/image.3.png" class="img-fluid" width="432">
+<ul>
+<li>A: High Rotation, B: Medium Rotation, C: Low Rotation</li>
+<li>(Top) Pareto Plot shows how High Rotation products are classified as those accounting for 20% of total products but also 80% of sales (point on the curve)</li>
+<li>(Bottom) Shows how the “A” products have been positioned closest to the loading and unloading area.</li>
+</ul></li>
+</ul>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../qmd/logistics-demand-planning.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Demand Planning</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../qmd/logistics-supply-chain.html" class="pagination-link">
+        <span class="nav-page-text">Supply Chain</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+    <a class="nav-link" href="../LICENSE.html">Creative Commons Attribution-NonCommercial 4.0 International Public License</a>
+  </li>  
+</ul>
+    </div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+</body></html>

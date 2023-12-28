@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Domain Knowledge - Retail</title>
+<title>Domain Knowledge - Supply Chain</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../qmd/saas.html" rel="next">
-<link href="../qmd/real-estate.html" rel="prev">
+<link href="../qmd/low-hanging-fruit.html" rel="next">
+<link href="../qmd/logistics-inventory-management.html" rel="prev">
 <link href="../images/dk-favicon-32.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -76,7 +76,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../qmd/retail.html">Retail</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../qmd/logistics-demand-planning.html">Logistics</a></li><li class="breadcrumb-item"><a href="../qmd/logistics-supply-chain.html">Supply Chain</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -207,13 +207,13 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
  <span class="menu-text">Logistics</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../qmd/logistics-demand-planning.html" class="sidebar-item-text sidebar-link">
@@ -228,7 +228,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../qmd/logistics-supply-chain.html" class="sidebar-item-text sidebar-link">
+  <a href="../qmd/logistics-supply-chain.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Supply Chain</span></a>
   </div>
 </li>
@@ -284,7 +284,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../qmd/retail.html" class="sidebar-item-text sidebar-link active">
+  <a href="../qmd/retail.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Retail</span></a>
   </div>
 </li>
@@ -310,10 +310,10 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#sec-retail-misc" id="toc-sec-retail-misc" class="nav-link active" data-scroll-target="#sec-retail-misc">Misc</a></li>
-  <li><a href="#sec-retail-lscore" id="toc-sec-retail-lscore" class="nav-link" data-scroll-target="#sec-retail-lscore">Lead Scoring</a></li>
-  <li><a href="#sec-retail-catch" id="toc-sec-retail-catch" class="nav-link" data-scroll-target="#sec-retail-catch">Catchment</a></li>
-  <li><a href="#sec-retail-stnet" id="toc-sec-retail-stnet" class="nav-link" data-scroll-target="#sec-retail-stnet">Store Network</a></li>
+  <li><a href="#sec-log-supch-misc" id="toc-sec-log-supch-misc" class="nav-link active" data-scroll-target="#sec-log-supch-misc">Misc</a></li>
+  <li><a href="#sec-log-supch-flowdist" id="toc-sec-log-supch-flowdist" class="nav-link" data-scroll-target="#sec-log-supch-flowdist">Flow Distribution of Units Between Production Areas and Markets</a></li>
+  <li><a href="#sec-log-supch-netopt" id="toc-sec-log-supch-netopt" class="nav-link" data-scroll-target="#sec-log-supch-netopt">Network Optimization</a></li>
+  <li><a href="#sec-log-supch-pareto" id="toc-sec-log-supch-pareto" class="nav-link" data-scroll-target="#sec-log-supch-pareto">Pareto Plot</a></li>
   </ul>
 </nav>
     </div>
@@ -322,7 +322,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span id="sec-retail" class="quarto-section-identifier">Retail</span></h1>
+<h1 class="title"><span id="sec-log-supch" class="quarto-section-identifier">Supply Chain</span></h1>
 </div>
 
 
@@ -337,138 +337,76 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="sec-retail-misc" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="sec-retail-misc">Misc</h2>
+<section id="sec-log-supch-misc" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="sec-log-supch-misc">Misc</h2>
 <ul>
-<li>DS Use Cases (intermediate level - data needs to be centralized and not siloed)
+<li>Notes from: <a href="https://towardsdatascience.com/4-smart-visualizations-for-supply-chain-descriptive-analytics-fda4dfc2829a">4 Smart Visualizations for Supply Chain Descriptive Analytics</a></li>
+</ul>
+</section>
+<section id="sec-log-supch-flowdist" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="sec-log-supch-flowdist">Flow Distribution of Units Between Production Areas and Markets</h2>
+<p><img src="./_resources/Logistics.resources/image.png" class="img-fluid" width="482"></p>
 <ul>
-<li>Demand forecasting models for optimizing the stock levels.</li>
-<li>Market basket analysis models for creating better newsletter offers.</li>
-<li>Dynamic pricing models using competitors’ prices for better pricing strategies.</li>
-<li>Customer segmentation model for better understanding our customers’ shopping preferences and providing them with customized offers and loyalty discounts.</li>
+<li>Data
+<ul>
+<li>Source: the production facility name (left-side)</li>
+<li>Target: the market supplied (right-side)</li>
+<li>Units: the number of items flowing (width of bars)</li>
 </ul></li>
-<li>Approach to deciding on a store to close
+<li>Interpretation
 <ul>
-<li>Considerations
-<ul>
-<li>Catchment Area: How to define the area that matters around my store</li>
-<li>Store Network: What are the relationships between stores</li>
-<li>Predicting Sales Transfer of your Customers (aka Customer Retention)
-<ul>
-<li>Overlap in catchment areas and understanding how customers behave in your store network can help in this estimation</li>
+<li>India is the biggest country for production output</li>
+<li>Japan market demand is mainly supplied locally</li>
+<li>USA and Germany do not have local production facilities</li>
 </ul></li>
-<li>Predicting the Impact on Acquiring New Customers (aka Customer Acquistion)</li>
-<li>Bringing it together
+</ul>
+</section>
+<section id="sec-log-supch-netopt" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="sec-log-supch-netopt">Network Optimization</h2>
+<p><img src="./_resources/Logistics.resources/image.1.png" class="img-fluid" width="632"></p>
 <ul>
-<li>Calculate 1-year, 3-year impact of removing a particular store</li>
-<li>Rank these impacts to choose a store whose removal will have the least impact</li>
-</ul></li>
-<li>Measurement &amp; Model Improvement
+<li>X-Axis: each column represents a demand scenario (i.e.&nbsp;there are 50 demand scenarios in this example)</li>
+<li>Y-Axis: are the production/supply locations</li>
+<li>A blue box means that that location is included in the optimal configuration of locations for that scenario
 <ul>
-<li>e.g.&nbsp;Including real estate data such as lease terms and market intelligence on competition and anchor stores</li>
+<li>e.g.&nbsp;In scenario 1, having a low capacity facility in India and a high capacity facility in India is optimal for this scenario.</li>
 </ul></li>
-</ul></li>
-<li>Impact on Customer Retention
+<li>I think this viz can be done with <span style="color: #990000">{</span><a href="https://github.com/hrbrmstr/waffle" style="color: #990000">waffle</a><span style="color: #990000">}</span> using <code>geom_waffle</code> <em>without</em> <code>theme_enhance_waffle</code></li>
+<li>Simulate how the variability of demand in various markets (e.g.&nbsp;50 scenarios) affects the optimal distribution of production/supply locations
 <ul>
-<li>Depends on the convenience and quality of other channels for doing business (such as online or in physical locations), customer loyalty to the company and its products, and market competition.</li>
-<li>If you have historical data on customer retention after a store closure, you can use catchment and store network features to predict what will happen with customer retention if you decide to close a particular store.</li>
-</ul></li>
-<li>Impact on Customer Acquistion
+<li>Hopefully a configuration of locations will be optimal for a preponderance of scenarios. Assuming each scenario is equally important, that configuration of locations is the optimal choice.
 <ul>
-<li>For a particular store, take the its catchment area and remove any section that overlaps with another store’s catchment.
-<ul>
-<li>This area will not have any support from a brick-and-mortar perspective to help in your acquisition efforts</li>
+<li>Or I guess you could weight each scenario by frequency or something. Maybe you have a distribution of scenarios from which you drawing from.</li>
 </ul></li>
-<li>Look at trends over time to get a sense of the relative importance of this store’s area to the overall chain and whether you should build a digitally supported strategy to offset the loss of acquiring new customers at a fraction of your cost of operating a retail store at that location</li>
+</ul></li>
+<li>Linear programming
+<ul>
+<li>Also see <a href="https://ercbk.github.io/Data-Science-Notebook/qmd/optimization-equation-systems.html" style="color: green">Optimization, Equation Systems</a></li>
+<li>Set decision variable, objective function</li>
+<li>List the constraints according to the demand for each market</li>
+<li>Solutions are indicator variables for production/supply locations and whether they are 1 or 0.
+<ul>
+<li>There should be a boolean variable for a high capacity location and low capacity location in each country</li>
+<li>For each variable, 1 indicates that location should be built or that it should be in operation at that particular capacity</li>
 </ul></li>
 </ul></li>
 </ul>
 </section>
-<section id="sec-retail-lscore" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="sec-retail-lscore">Lead Scoring</h2>
+<section id="sec-log-supch-pareto" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="sec-log-supch-pareto">Pareto Plot</h2>
 <ul>
-<li>Also see
+<li>(Unfinished Note but I think there is an examle of a Pareto Plot in Warehouse Management)</li>
+<li>Data<br>
+<img src="./_resources/Logistics.resources/image.7.png" class="img-fluid" width="332">
 <ul>
-<li><a href="https://ercbk.github.io/Data-Science-Notebook/qmd/algorithms-marketing.html#sec-alg-mark-prop" style="color: green">Algorithms, Marketing &gt;&gt; Propensity Model</a> and <a href="https://ercbk.github.io/Data-Science-Notebook/qmd/algorithms-marketing.html#sec-alg-mark-uplift" style="color: green">Uplift Score Model</a></li>
+<li>“BOX” is the number of box/packs picked of that product (“SKU”) for that order (“ORDER_NUMBER”) on that date (“DATE_FORMAT”)</li>
 </ul></li>
-<li>Use case: identify customer cohorts that are unlikely to become paying customers and eliminate the low efficient outreach</li>
-<li>Map User Journey
+<li>Preprocessing
 <ul>
-<li>Also see <a href="../qmd/marketing.html#sec-mark-custjourn" style="color: green">Marketing &gt;&gt; Customer Journey</a></li>
-<li><span class="ribbon-highlight">Example</span>: B2B<br>
-<img src="./_resources/Retail.resources/image.png" class="img-fluid"></li>
-</ul></li>
-<li>Questions
-<ul>
-<li>Find customer’s last touchpoint before conversion
-<ul>
-<li>e.g.&nbsp;Proof of concept in B2B</li>
-</ul></li>
-<li>Brainstorm on metrics that may correlate with conversion and form hypotheses
-<ul>
-<li>e.g.&nbsp;Metrics that describe user behaviors in proof-of-concept</li>
-</ul></li>
-<li>Which customer cohorts are likely to schedule sales calls with us and how do they behave <em>without</em> sales guidance
-<ul>
-<li>i.e.&nbsp;Which cohorts are more likely to convert if they are given a sales call</li>
-<li>Look at how prospects behave in product trials and interact with marketing emails</li>
-</ul></li>
-</ul></li>
-<li>EDA
-<ul>
-<li>Plot metrics by cohort</li>
-<li>Calculate correlation of metrics to conversion
-<ul>
-<li>Cohorts can be segmented by any grouping factor</li>
-</ul></li>
-</ul></li>
-<li>Model
-<ul>
-<li>If you have enough data, model conversion rate ~ predictors (beta regression?) or convert/no covert ~ predictors (logistic regression, ML, DL)</li>
-<li>Otherwise, weight cohorts by their correlations with conversion</li>
-</ul></li>
-</ul>
-</section>
-<section id="sec-retail-catch" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="sec-retail-catch">Catchment</h2>
-<ul>
-<li>Refers to the sphere of influence from which a retail location, such as a shopping center, or service, such as a hospital, is likely to draw its customers.</li>
-<li>Major considerations – supply factors, market demand factors, drive time from customers, transportation access (e.g.&nbsp;interstate) and consumer interactions</li>
-<li>Steps
-<ul>
-<li>Use the customers that purchased at the store in the past 12 or 24 months <em>(you need to be the judge on timeframe based on your business model)</em>, and map them to where they live, e.g., at census block group level.</li>
-<li>If the area is massive, applying an optimization function, where you use a polygon and work to minimize the size of the area while keeping the cumulative percent of the total sales as large as possible. (70-80% of cumulative sales is typically optimal)
-<ul>
-<li>Assume this optimization function takes into account the considerations mentioned above</li>
-</ul></li>
-</ul></li>
-<li>Measuring the amount of competition in the given catchment area is useful</li>
-<li>Catchment areas might overlap.</li>
-</ul>
-</section>
-<section id="sec-retail-stnet" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="sec-retail-stnet">Store Network</h2>
-<ul>
-<li>Understanding how stores are connected beyond a catchment area is essential to make smarter optimization decisions (i.e.&nbsp;closing or opening stores).</li>
-<li>Steps
-<ul>
-<li>Pick a store and for each customer, note which of your other stores (including ecommerce) that customer has shopped at
-<ul>
-<li>(Typically) 3 types of customers:
-<ul>
-<li>Customers who shop at this store exclusively</li>
-<li>Customers who spend the majority of their $ with you at this store and spend a smaller amount at other stores, including e-commerce</li>
-<li>Customers who spend a small amount of their $ at this store and spend the most significant amount at other stores, including e-commerce</li>
-</ul></li>
-<li>For the ones that have shopped at multiple locations, those are generally your more loyal and high-value customers.</li>
-</ul></li>
-<li>This data forms the basis of the network model
-<ul>
-<li>If the network gets too complicated, then pruning by adding addition rules might be necessary
-<ul>
-<li>e.g.&nbsp;Establishing rule for a minimum amount spent to the store network</li>
-</ul></li>
-</ul></li>
+<li>Sum the number of boxes picked per SKU</li>
+<li>Sort your data frame by descending order on BOX quantity</li>
+<li>Calculate the cumulative sum of BOX</li>
+<li>Calculate the cumulative number of SKU</li>
 </ul></li>
 </ul>
 
@@ -711,13 +649,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../qmd/real-estate.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Real Estate</span>
+      <a href="../qmd/logistics-inventory-management.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Inventory Management</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../qmd/saas.html" class="pagination-link">
-        <span class="nav-page-text">SaaS</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../qmd/low-hanging-fruit.html" class="pagination-link">
+        <span class="nav-page-text">Low Hanging Fruit</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
