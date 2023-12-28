@@ -37,7 +37,11 @@ book:
     - qmd/insurance.qmd
     - qmd/kpis.qmd 
     - qmd/location-selection.qmd
-    - qmd/logistics.qmd
+    - part: "Logistics"
+      chapters: 
+        - qmd/logistics-demand-planning.qmd
+        - qmd/logistics-inventory-management.qmd
+        - qmd/logistics-supply-chain.qmd
     - qmd/low-hanging-fruit.qmd
     - qmd/manufacturing.qmd
     - qmd/marketing.qmd

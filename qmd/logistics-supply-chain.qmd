@@ -1,0 +1,50 @@
+# Supply Chain {#sec-log-supch .unnumbered}
+
+## Misc {#sec-log-supch-misc .unnumbered}
+
+-   Notes from: [4 Smart Visualizations for Supply Chain Descriptive Analytics](https://towardsdatascience.com/4-smart-visualizations-for-supply-chain-descriptive-analytics-fda4dfc2829a)
+
+## Flow Distribution of Units Between Production Areas and Markets {#sec-log-supch-flowdist .unnumbered}
+
+![](./_resources/Logistics.resources/image.png){width="482"}
+
+-   Data
+    -   Source: the production facility name (left-side)
+    -   Target: the market supplied (right-side)
+    -   Units: the number of items flowing (width of bars)
+-   Interpretation
+    -   India is the biggest country for production output
+    -   Japan market demand is mainly supplied locally
+    -   USA and Germany do not have local production facilities
+
+## Network Optimization {#sec-log-supch-netopt .unnumbered}
+
+![](./_resources/Logistics.resources/image.1.png){width="632"}
+
+-   X-Axis: each column represents a demand scenario (i.e. there are 50 demand scenarios in this example)
+-   Y-Axis: are the production/supply locations
+-   A blue box means that that location is included in the optimal configuration of locations for that scenario
+    -   e.g. In scenario 1, having a low capacity facility in India and a high capacity facility in India is optimal for this scenario.
+-   I think this viz can be done with [{]{style="color: #990000"}[waffle](https://github.com/hrbrmstr/waffle){style="color: #990000"}[}]{style="color: #990000"} using `geom_waffle` *without* `theme_enhance_waffle`
+-   Simulate how the variability of demand in various markets (e.g. 50 scenarios) affects the optimal distribution of production/supply locations
+    -   Hopefully a configuration of locations will be optimal for a preponderance of scenarios. Assuming each scenario is equally important, that configuration of locations is the optimal choice.
+        -   Or I guess you could weight each scenario by frequency or something. Maybe you have a distribution of scenarios from which you drawing from.
+-   Linear programming
+    -   Also see [Optimization, Equation Systems](https://ercbk.github.io/Data-Science-Notebook/qmd/optimization-equation-systems.html){style="color: green"}
+    -   Set decision variable, objective function
+    -   List the constraints according to the demand for each market
+    -   Solutions are indicator variables for production/supply locations and whether they are 1 or 0.
+        -   There should be a boolean variable for a high capacity location and low capacity location in each country
+        -   For each variable, 1 indicates that location should be built or that it should be in operation at that particular capacity
+
+## Pareto Plot {#sec-log-supch-pareto .unnumbered}
+
+-   (Unfinished Note but I think there is an examle of a Pareto Plot in Warehouse Management)
+-   Data\
+    ![](./_resources/Logistics.resources/image.7.png){width="332"}
+    -   "BOX" is the number of box/packs picked of that product ("SKU") for that order ("ORDER_NUMBER") on that date ("DATE_FORMAT")
+-   Preprocessing
+    -   Sum the number of boxes picked per SKU
+    -   Sort your data frame by descending order on BOX quantity
+    -   Calculate the cumulative sum of BOX
+    -   Calculate the cumulative number of SKU
