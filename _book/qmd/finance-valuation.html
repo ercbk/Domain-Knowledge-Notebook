@@ -240,12 +240,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">Location Selection</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../qmd/logistics.html" class="sidebar-item-text sidebar-link">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
  <span class="menu-text">Logistics</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../qmd/logistics-demand-planning.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Demand Planning</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../qmd/logistics-inventory-management.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Inventory Management</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../qmd/logistics-supply-chain.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Supply Chain</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../qmd/low-hanging-fruit.html" class="sidebar-item-text sidebar-link">
@@ -965,6 +988,7 @@ NPV = \sum_{t=0}^T \frac{C_t}{(1+r)^t} = 0
 <h4 class="unnumbered anchored" data-anchor-id="sec-finance-val-coc-wacc-coe">Cost of Equity</h4>
 <ul>
 <li><p>Notes from Video: <a href="https://www.youtube.com/watch?v=ZigyWoDAMrE&amp;list=PLAoukTI-9JbeRyMdcaqACHD9ZzT3STwZQ&amp;index=4">Estimating Cost Of Equity For WACC - DCF Model Insights</a></p></li>
+<li><p>Also see <a href="https://ercbk.github.io/Data-Science-Notebook/qmd/forecasting-statistical.html#sec-fcast-stat-intv" style="color: green">Forcasting, Statistical &gt;&gt; Interval Forecasting</a></p></li>
 <li><p><u>(Basic) Capital Asset Pricing Model (CAPM)</u></p>
 <p><span class="math display">\[
 K_e = R_f + \beta_L\; (R_m - R_f)
@@ -1270,11 +1294,11 @@ K_d = (\operatorname{Risk Free Rate} + \operatorname{Default Spread}) \times (1 
 </ul></li>
 <li><p><u>Project Necessary Variables</u></p>
 <ul>
-<li><p>Historical Performance such as past growth rates, profit margins, and other ratios are good indicators of future performance especially for mature companies in non-cyclical sectors.</p>
+<li>Historical Performance such as past growth rates, profit margins, and other ratios are good indicators of future performance especially for mature companies in non-cyclical sectors.
 <ul>
 <li>3 years of historical data for growing or mid-size companies or 5 years for blue chip companies is typically representative enough to be predictive of future performance.</li>
 </ul></li>
-<li><p>FCF forecast horizon is typically 5yrs but may be longer depending on its sector, stage of development, and performance predictability.</p>
+<li>FCF forecast horizon is typically 5yrs but may be longer depending on its sector, stage of development, and performance predictability.
 <ul>
 <li><p>The chosen horizon should reach to where the target’s performance reaches a stead-state or normalized level.</p></li>
 <li><p>The terminal value depends heavily on the last forecasted value of FCF, so that value needs to be as accurate as possible and representative of the steady-state performance of the company (i.e not much volatility in its earnings)</p></li>
@@ -1310,7 +1334,7 @@ K_d = (\operatorname{Risk Free Rate} + \operatorname{Default Spread}) \times (1 
 <li>Companies with long-term contracted revenue streams such as natural resources, satellite communications, or utilites should be forecasted out to 10+ years.</li>
 </ul></li>
 </ul></li>
-<li><p><span class="ribbon-highlight">Example</span>: Percentage of Sales Method for COGS, Gross Margin, and SG&amp;A</p>
+<li><span class="ribbon-highlight">Example</span>: Percentage of Sales Method for COGS, Gross Margin, and SG&amp;A
 <ul>
 <li>Get historical data for Sales (aka Revenue), COGS, Gross Margin, SG&amp;A, EBITDA, D&amp;A, and EBIT for the last 3 to 5 years. Get a consensus of projected estimates for Sales, EBITDA, and EBIT.<br>
 <img src="_resources/Finance.resources/dcf-varproj-1.png" class="img-fluid" width="532">
@@ -1330,7 +1354,7 @@ K_d = (\operatorname{Risk Free Rate} + \operatorname{Default Spread}) \times (1 
 </ul></li>
 <li>For <strong>D&amp;A</strong> projected estimates, subtract EBIT from EBITDA for each period of the horizon to get D&amp;A. The projected D&amp;A values should be consistent with CAPEX projections and D&amp;A historical values (i.e.&nbsp;compare as a percentage of Sales or as a percentage of CAPEX).</li>
 </ul></li>
-<li><p>Projecting Other Variables</p>
+<li>Projecting Other Variables
 <ul>
 <li><strong>CAPEX</strong> can be projected using consensus estimates from analysts’ reports or in the same manner as COGS, Gross Margin, and SG&amp;A by the average percentage of sales methodology.
 <ul>
@@ -1401,12 +1425,12 @@ K_d = (\operatorname{Risk Free Rate} + \operatorname{Default Spread}) \times (1 
 \text{Terminal Value} = \text{EBITDA}_T \times \text{Exit Multiple}
 \]</span></p>
 <ul>
-<li><p><span class="math inline">\(T\)</span>: The final year of the projected period (aka horizon)</p></li>
-<li><p>Determines the remaining FCF by means of a multiple. This multiple is typically the average of the Last-Twelve-Month (LTM) EBITDA multiples of comparable companies.</p>
+<li><span class="math inline">\(T\)</span>: The final year of the projected period (aka horizon)</li>
+<li>Determines the remaining FCF by means of a multiple. This multiple is typically the average of the Last-Twelve-Month (LTM) EBITDA multiples of comparable companies.
 <ul>
 <li>As current multiples may be affected by sector or economic cycles, it is important to use both a steady-state trading multiple. (e.g.&nbsp;Don’t use a LLM mulitple from year where the company was at a cyclical high)</li>
 </ul></li>
-<li><p>Perform a sanity check by comparing EMM’s implied growth rate to the PGM implied growth rate</p>
+<li>Perform a sanity check by comparing EMM’s implied growth rate to the PGM implied growth rate
 <ul>
 <li><p>End-of-Year Discounting</p>
 <p><span class="math display">\[
@@ -1424,13 +1448,13 @@ r_{\text{emm}} = \frac{(\text{Terminal Value} \times \text{WACC}) - \text{FCF}_T
 \text{Terminal Value} = \frac{\text{FCF}_T (1 + g)}{\text{WACC - g}}
 \]</span></p>
 <ul>
-<li><p><span class="math inline">\(T\)</span>: The final year of the projected period (aka horizon)</p></li>
-<li><p><span class="math inline">\(g\)</span>: The perpetuity growth rate</p></li>
-<li><p>Treats final projected year as a <em>perpetuity</em> that grows as some assumed rate.</p></li>
-<li><p>The perpetuity growth rate is typically chosen on theh basis of the company’s expected long-term industry growth rate which generally tends to be around the nominal GDP growth (2% - 4%)</p></li>
-<li><p>Assumes the company’s rate of return on capital will always be more than the cost of capital which doesn’t jive with microeconomic Life Cycle theory. Life Cycle theory says that eventually the rate of return will equal the cost of capital due to other competitors entering the market to capture the growth rate of the industry.</p></li>
-<li><p>If <span class="math inline">\(g \ge \text{WACC}\)</span>, then you must use the EMM method instead.</p></li>
-<li><p>Perform a sanity check by comparing PGM’s implied exit multiple with EMM’s exit multiple</p>
+<li><span class="math inline">\(T\)</span>: The final year of the projected period (aka horizon)</li>
+<li><span class="math inline">\(g\)</span>: The perpetuity growth rate</li>
+<li>Treats final projected year as a <em>perpetuity</em> that grows as some assumed rate.</li>
+<li>The perpetuity growth rate is typically chosen on theh basis of the company’s expected long-term industry growth rate which generally tends to be around the nominal GDP growth (2% - 4%)</li>
+<li>Assumes the company’s rate of return on capital will always be more than the cost of capital which doesn’t jive with microeconomic Life Cycle theory. Life Cycle theory says that eventually the rate of return will equal the cost of capital due to other competitors entering the market to capture the growth rate of the industry.</li>
+<li>If <span class="math inline">\(g \ge \text{WACC}\)</span>, then you must use the EMM method instead.</li>
+<li>Perform a sanity check by comparing PGM’s implied exit multiple with EMM’s exit multiple
 <ul>
 <li><p>End-of-Year Discounting</p>
 <p><span class="math display">\[
