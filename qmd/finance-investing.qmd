@@ -50,6 +50,8 @@
 
     ![From Machine Learning for Algorithmic Trading](_resources/Finance.resources/ml4t_workflow-1.png){width="532"}
 
+-   Any market forecasting model, especially involving short term horizons, should probably have a random walk in an ensemble. ([Is the Market Just Random Noise?](https://www.deanmarchiori.com/posts/2024-01-04-randomshares/))
+
 ## Considerations {#sec-finance-invest-consid .unnumbered}
 
 -   Costs that need to be accounted for when backtesting
