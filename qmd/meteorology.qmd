@@ -2,6 +2,11 @@
 
 ## Misc {#sec-meteor-misc .unnumbered}
 
+-   Method Types for Grid-type Meteorological Models
+    -   Dynamical
+        -   Uses a regional climate model has the advantage of producing physically and dynamically balanced data.
+        -   Limitations: A regional climate model requires considerable integration time and significant storage to produce high-resolution data and that the model outputs may include systematic errors
+    -   Statistical - Efficient methods that produce meteorological and climate data at a high resolution without the limitations of Dynamical models
 -   [Example]{.ribbon-highlight}: Extreme hot weather events in Western Europe-Atlantic region
     -   Notes from [video](https://www.youtube.com/watch?v=Mpzqz4y1oYY), around \~1:07:03
     -   Papers
