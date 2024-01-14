@@ -13,6 +13,7 @@
     -   [CRAN Task View](https://cran.r-project.org/web/views/Finance.html)
     -   [{{]{style="color: goldenrod"}[zipline-reloaded](https://pypi.org/project/zipline-reloaded/){style="color: goldenrod"}[}}]{style="color: goldenrod"} - Backtesting and live-trading engine by crowd-sourced investment fund Quantopian
     -   [{{]{style="color: goldenrod"}[pyfolio](https://pyfolio.ml4trading.io/){style="color: goldenrod"}[}}]{style="color: goldenrod"} - Performance and risk analysis for financial portfolios
+    -   [{{]{style="color: goldenrod"}[skfolio](https://skfolio.org/){style="color: goldenrod"}[}}]{style="color: goldenrod"} - Portfolio optimization built on top of scikit-learn. It offers a unified interface and tools compatible with scikit-learn to build, fine-tune, and cross-validate portfolio models.
     -   [{{]{style="color: goldenrod"}[alphalens](https://alphalens.ml4trading.io/){style="color: goldenrod"}[}}]{style="color: goldenrod"} - Performance analysis of predictive stock factors
 
 -   [OpenBB](https://my.openbb.co/login) - Open source bloomberg terminal (overview [article](https://www.quantscience.io/newsletter/b/how-to-get-free-financial-data))
