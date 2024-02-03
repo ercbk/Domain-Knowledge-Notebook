@@ -15,7 +15,7 @@
 
 -   [**Deflation**]{style="color: #009499"} - A sustained decrease in the price level of goods and services.
 
-    ![](_resources/Economics.resources/term-deflation-1.png){width="432"}
+    ![](_resources/Economics.resources/term-deflation-1.png){.lightbox width="432"}
 
 -   [**Disinflation**]{style="color: #009499"} - A decrease in the rate of inflation.
 

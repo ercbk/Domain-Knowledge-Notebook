@@ -53,14 +53,14 @@
             -   [Threshold Classification in eCognition](http://letters-sal.blogspot.com/2015/04/threshold-classification-in-ecognition.html)
             -   [Object-based approach to LiDAR](http://letters-sal.blogspot.com/2015/05/an-object-based-approach-to-lidar-qaqc.html)
 -   \% <metric> using 500-acre hexagons\
-    ![](./_resources/Environment.resources/Screenshot-(744).png){width="632"}
+    ![](./_resources/Environment.resources/Screenshot-(744).png){.lightbox width="632"}
 -   Use LiDAR Hill shade map with % canopy change to highlight local areas\
-    ![](./_resources/Environment.resources/Screenshot-(746).png){width="632"}
+    ![](./_resources/Environment.resources/Screenshot-(746).png){.lightbox width="632"}
 -   Land Use Categories
     -   Overall: residential, commercial, and recreational
     -   Metric change by category \| acres lost (orange)/gained (green) by category\
-        ![](./_resources/Environment.resources/Screenshot-(750).png){width="632"}\
-        ![](./_resources/Environment.resources/Screenshot-(748).png){width="632"}
+        ![](./_resources/Environment.resources/Screenshot-(750).png){.lightbox width="632"}\
+        ![](./_resources/Environment.resources/Screenshot-(748).png){.lightbox width="632"}
     -   Change per Council District (by metric)\
-        ![](./_resources/Environment.resources/Screenshot-(754).png){width="632"}\
-        ![](./_resources/Environment.resources/Screenshot-(753).png){width="632"}
+        ![](./_resources/Environment.resources/Screenshot-(754).png){.lightbox width="632"}\
+        ![](./_resources/Environment.resources/Screenshot-(753).png){.lightbox width="632"}

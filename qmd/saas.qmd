@@ -23,7 +23,7 @@
 
 ## User Segmentation {#sec-saas-userseg .unnumbered}
 
-![](./_resources/SaaS.resources/image.png){width="432"}
+![](./_resources/SaaS.resources/image.png){.lightbox width="432"}
 
 -   Diagram of users based on their activity on the language learning software, "duolingo."
     -   See article for an example of a user journey
@@ -47,7 +47,7 @@
     -   Use transition probabilities to create Markov model for simulations
 -   Identify new metrics, through simulations of the Markov model, that - when optimized - are likely to increase a North Star or Primary metric.
     -   Example\
-        ![](./_resources/SaaS.resources/image.1.png){width="233"}
+        ![](./_resources/SaaS.resources/image.1.png){.lightbox width="233"}
         -   Simulation is for 3yrs into the future
         -   "Lever" is the parameter being increased
             -   In the sim, it's increased 2% month-over-month

@@ -5,7 +5,7 @@
 -   Customer research, market expertise & experience, and competitor location analysis can all help inform the important criteria for your business
 -   [Tool](https://www.jordanbean.com/example-work#populationestimator) to calculate population density within a certain radius of a location
 -   Might be more useful to aggregate smaller geographies into overlapping circular areas to compare candidates\
-    ![](./_resources/Location_Selection.resources/1-iT14nGkyxpTDKrzXieHUpg.png){width="632"}
+    ![](./_resources/Location_Selection.resources/1-iT14nGkyxpTDKrzXieHUpg.png){.lightbox width="632"}
     -   Would have to decide how to handle geographies that are only partially enclosed in a circlular area
         -   Use a percentage?
         -   Include the whole thing?
@@ -29,8 +29,8 @@
 
 -   These are created for existing stores and locations or potential new stores
 
--   [Example]{.ribbon-highlight}: Workforce and Demographic ![](./_resources/Location_Selection.resources/1-u7KtEJ5Gbi-zaDd5dwRlhQ.png){width="632"}\
-    ![](./_resources/Location_Selection.resources/1-KAR-xT1uxjSvNfxvpPBdiQ.png){width="632"}
+-   [Example]{.ribbon-highlight}: Workforce and Demographic ![](./_resources/Location_Selection.resources/1-u7KtEJ5Gbi-zaDd5dwRlhQ.png){.lightbox width="632"}\
+    ![](./_resources/Location_Selection.resources/1-KAR-xT1uxjSvNfxvpPBdiQ.png){.lightbox width="632"}
 
 -   Other potential variables
 

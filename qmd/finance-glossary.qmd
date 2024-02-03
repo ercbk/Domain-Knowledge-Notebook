@@ -69,7 +69,7 @@
 
 -   [**Earnings**]{style="color: #009499"} or [**Net Income**]{style="color: #009499"} - Represents after-tax profit. Typically the bottom line of the income statement. EBIT and EBITDA are better for comparing companies.$\text{Earnings} = \text{Revenue} - \text{Expenses} - \text{Interest} - \text{Taxes}$
 
-    ![](_resources/Finance.resources/apple-fin-stat-1.webp){width="532"}
+    ![](_resources/Finance.resources/apple-fin-stat-1.webp){.lightbox width="532"}
 
 -   [**Earnings Before Interest and Taxes (EBIT)**]{style="color: #009499"} - (aka **Operating Income**, **Operating Profit**) Common method for measuring profitability. $\text{EBIT} = \text{Operating Expenses} - \text{Sales Revenue}$ where the sales revenue excludes tax and interest. Located in the company's income statement. (Also see Profit)
 
@@ -219,7 +219,7 @@
 
     -   Paper: [The Deflated Sharpe Ratio: Correcting for selection bias, backtest overfitting and non-normality](https://www.davidhbailey.com/dhbpapers/deflated-sharpe.pdf)
 
-        ![](./_resources/Finance.resources/Screenshot-(677).png){width="440"}
+        ![](./_resources/Finance.resources/Screenshot-(677).png){.lightbox width="440"}
 
         -   Shows that if a strategy has a maximum sharpe ratio of 1 but had 3 variations backtested, it's deflated sharpe ratio drops below the 95% CI for a sharpe ratio = 1.
 

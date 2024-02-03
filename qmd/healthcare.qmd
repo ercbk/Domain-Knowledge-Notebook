@@ -95,7 +95,7 @@
 ## Prepocessing {#sec-health-preproc .unnumbered}
 
 -   Categoricals and Codes\
-    ![](./_resources/Healthcare.resources/image.png){width="630"} -
+    ![](./_resources/Healthcare.resources/image.png){.lightbox width="630"} -
     -   Reconciling codes from various sources of data can be challenging because some coding systems are proprietary
         -   e.g. "Heart failure" may be "123" in one coding system and "1a2b3c" in another
         -   Solution: Tokenize data and create embeddings

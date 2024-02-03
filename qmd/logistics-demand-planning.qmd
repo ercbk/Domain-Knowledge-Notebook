@@ -12,19 +12,14 @@
     -   Shifts in business model --- an organization may change its operating model and business strategy. For example, a chemical company may choose to shift their business from commodity chemicals to more specialty products, and so the historical demand patterns may not hold anymore.
     -   Data availability --- historical sales data, customer and product hierarchy data, and real-time orders data may be stored on disparate systems.
     -   Data quality --- this may include issues such as inaccurate data due to entry errors or data being captured at different and inconsistent granularity across data elements.
+-   Prepare forecasts for alternate scenarios
+    -   Talk with someone on the business side and ask about the potential scenarios within the forecast horizon that could affect the forecast.
+    -   Examples: a 10% inflation spike, supply disruption of a crucial raw material, a natural disaster, etc.
+    -   Rank these scenarios and factors in order of importance, so that you can prioritize.
 -   Horizons (Typical)
     -   Short-Term: 1 - 3 months
     -   Mid-Term: 6 - 18 months
     -   Long-Term: 3 - 5 years
--   Metrics
-    -   See [Decision Impact Metrics](logistics-demand-planning.qmd#sec-log-dim){style="color: green"}
-    -   WasteNot method for judging its adjusted forecast model vs prophet\
-        ![](./_resources/Logistics.resources/1-ni6N2L4yp0ynlOzL01f8Fg.png){width="532"}
-        -   Change in the Number of Stock-Out Days (lower is better)
-        -   Percent Change in Service Level (higher is better)
-        -   Change in Profit (higher is better)
-        -   Change in Wastage (lower is better)
-        -   Change in Inventory Costs (lower is better)
 
 ## Article Notes {#sec-log-demfcast-artnot .unnumbered}
 
@@ -96,7 +91,7 @@
         -   Use domain knowledge
             -   e.g. Marketing departiment is expecting 10% growth the week after it's new promotion
         -   Replace with one of the previous methods, then apply a smoothing algorithm\
-            ![](./_resources/Logistics.resources/image4-1.png){width="432"}
+            ![](./_resources/Logistics.resources/image4-1.png){.lightbox width="432"}
             -   Shows the Kalman filter by itself fails to replace the outlier dip with the normal, expected peak, but the manual adjustment + Kalman gives us what we want
     -   Examples of shocks that may need training data to have manual adjustments and not be smoothed by an algorithm
         -   One-time spikes due to abnormal weather conditions
@@ -204,7 +199,7 @@
 
                 -   Demand Forecast
 
-                    ![](_resources/Logistics.resources/iets-forecast-1.webp){width="532"}
+                    ![](_resources/Logistics.resources/iets-forecast-1.webp){.lightbox width="532"}
 
                     ``` r
                     forecast(iETSModel, h=5, interval="prediction", side="upper") |>
@@ -217,7 +212,7 @@
 
                 -   Occurence Forecast (i.e. Stock or Not)
 
-                    ![](_resources/Logistics.resources/iets-forecast-occurence-1.webp){width="532"}
+                    ![](_resources/Logistics.resources/iets-forecast-occurence-1.webp){.lightbox width="532"}
 
                     ``` r
                     forecast(iETSModel$occurrence, h=5) |> plot()
@@ -268,10 +263,40 @@
 -   Relative Root Mean Squared Error
 -   Look at the predictive distributions instead of just the point forecasts
 -   Accuracy Implication Metrics - Measure the effect of the forecast on inventory\
-    ![](./_resources/Logistics.resources/Screenshot-(1319).png){width="432"}
+    ![](./_resources/Logistics.resources/Screenshot-(1319).png){.lightbox width="432"}
     -   Y Axis: 1 - Fill_Rate; X Axis: Average on-hand inventory
     -   Each method is a forecasting model
     -   Think the Fill Rate is estimated from a simulation using the method's forecast and a range of average SOH values as parameters
+
+## Metrics {#sec-log-demfcast-metrics .unnumbered}
+
+-   See [Decision Impact Metrics](logistics-demand-planning.qmd#sec-log-dim){style="color: green"}
+-   Process
+    -   Discuss with your manager and team the purpose of the demand forecast. Is its goal to set accurate sales targets? To lower inventory levels? What are the underlying concerns behind these forecast numbers?
+        -   If increasing sales is the top concern, then maybe adjusting the forcast towards the higher end of the prediction interval is better. Increased inventory leads to less stockouts which leads to more sales
+        -   If decreasing inventory is the top concern, then maybe adjusting the forcast towards the lower end of the prediction interval is better as this will lead to decreased inventory and decreased cost.
+    -   Create a simple business case to translate forecast accuracy metrics.
+        -   This will allow you to present your benefits of your model in business terms to a non-technical decision maker
+        -   [Example]{.ribbon-highlight}: Decreasing MASE by 50%
+            -   Current situation:
+                -   Existing forecasting method produces an average MASE of 20%.
+                -   Excess inventory costs average \$50,000 per month due to inaccurate forecasts.
+                -   Stockouts lead to an average of \$20,000 in lost sales per month.
+            -   After Improving Forecast:
+                -   By reducing MASE to 10% (decrease of 50%), the company can expect:
+                    -   Reduced excess inventory costs: Inventory costs could be reduced by \$25,000 per month (50% decrease).
+                    -   Increased sales: More accurate forecasts allow for optimal stock levels, potentially leading to a \$10,000 increase in monthly sales.
+    -   Diagram the decision making process
+        -   In many cases, the decision-maker or others will make subjective adjustments to forecasts
+        -   The diagram should include the decision being made, the inputs for the decision, who’s making the decision, and the outcomes that follow.
+        -   Each adjustment should be documented, so as to better assess how where improvement needs to made in the process.
+-   WasteNot method for judging its adjusted forecast model vs prophet\
+    ![](./_resources/Logistics.resources/1-ni6N2L4yp0ynlOzL01f8Fg.png){.lightbox width="532"}
+    -   Change in the Number of Stock-Out Days (lower is better)
+    -   Percent Change in Service Level (higher is better)
+    -   Change in Profit (higher is better)
+    -   Change in Wastage (lower is better)
+    -   Change in Inventory Costs (lower is better)
 
 ## Decision Impact Metrics {#sec-log-demfcast-dim .unnumbered}
 
@@ -307,7 +332,7 @@
 -   [Forecast Value Added](https://www.youtube.com/watch?v=o70E_qMnT5s) (FVA)
     -   FVA: The change in a forecasting accuracy metric that can be attributed to a particular process or participant in the forecasting process.
         -   [Example]{.ribbon-highlight}\
-            ![](./_resources/Logistics.resources/Screenshot-(807).png){width="282"}
+            ![](./_resources/Logistics.resources/Screenshot-(807).png){.lightbox width="282"}
             -   Statistical model has 5% FVA vs Naive forecast
             -   Adjusted Statistical Forecast has 2% FVA vs Naive Forecast
                 -   Forecast gets manually adjusted by management
@@ -474,7 +499,7 @@
     -   Interpretation: With the increase of the variable x1, the orders should change on average by 1.36
 
     -   Plot\
-        ![](./_resources/Logistics.resources/ordersDynamics.png){width="632"}
+        ![](./_resources/Logistics.resources/ordersDynamics.png){.lightbox width="632"}
 
         ``` r
         plot(model1, 7)
@@ -537,7 +562,7 @@
                 -   Never exceed the maximum allowable budget set by our finance and operations partners.
                 -   Regional
                     -   Different budgets, custom penalties, exclusion criteria for which units should not be included in the optimization, or incentive constraints that are guided by variability of the inputs.
-    -   Optimizer must account for uncertainty![](./_resources/Logistics.resources/Screenshot-(363).png){width="432"}
+    -   Optimizer must account for uncertainty![](./_resources/Logistics.resources/Screenshot-(363).png){.lightbox width="432"}
         -   City B's forecast distribution has substantial uncertainty, and it's mean says it will have enough drivers (i.e. oversupply)
         -   City A's forecast distribution is more certain, and it's more likely to be undersupplied.
         -   W/o taking uncertainty into account, the optimizer will not take into account that there's a sizeable chance B will be undersupplied

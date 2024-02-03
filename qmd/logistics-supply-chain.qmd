@@ -6,7 +6,7 @@
 
 ## Flow Distribution of Units Between Production Areas and Markets {#sec-log-supch-flowdist .unnumbered}
 
-![](./_resources/Logistics.resources/image.png){width="482"}
+![](./_resources/Logistics.resources/image.png){.lightbox width="482"}
 
 -   Data
     -   Source: the production facility name (left-side)
@@ -19,7 +19,7 @@
 
 ## Network Optimization {#sec-log-supch-netopt .unnumbered}
 
-![](./_resources/Logistics.resources/image.1.png){width="632"}
+![](./_resources/Logistics.resources/image.1.png){.lightbox width="632"}
 
 -   X-Axis: each column represents a demand scenario (i.e. there are 50 demand scenarios in this example)
 -   Y-Axis: are the production/supply locations
@@ -41,7 +41,7 @@
 
 -   (Unfinished Note but I think there is an examle of a Pareto Plot in Warehouse Management)
 -   Data\
-    ![](./_resources/Logistics.resources/image.7.png){width="332"}
+    ![](./_resources/Logistics.resources/image.7.png){.lightbox width="332"}
     -   "BOX" is the number of box/packs picked of that product ("SKU") for that order ("ORDER_NUMBER") on that date ("DATE_FORMAT")
 -   Preprocessing
     -   Sum the number of boxes picked per SKU

@@ -13,7 +13,7 @@
         -   Segments of users who follow the pattern of purchase-funnel may not be comparable between treatment and control groups, because the segmentation criterion (i.e., user journey) happens after random assignment and thus the segments of users are not randomized between the two groups.
     -   Solution involves causal mediation analysis (also see [Causal Inference \>\> Mediation Analysis](https://ercbk.github.io/Data-Science-Notebook/qmd/causal-inference.html#sec-causinf-medanal){style="color: green"})
 -   Distribution of effect sizes for webpage variations using Optimizely (platform for A/B testing) data\
-    ![](./_resources/Product_Development.resources/FICx2hFXEAUYbOz.png){width="432"}
+    ![](./_resources/Product_Development.resources/FICx2hFXEAUYbOz.png){.lightbox width="432"}
     -   Median (and average) webpage variations have roughly zero effect on webpage Engagement
     -   [Thread](https://twitter.com/marketsensei/status/1477381162888839177) summarizing paper
         -   70% of effects will not show any impact on Engagement compared to a baseline
@@ -21,7 +21,7 @@
         -   Recommends only testing sizeable changes as these are the type of changes that yield the largest effects and fewer false discoveries (i.e. the tails of the effect size distribution)
             -   See paper for other tests and recommendations
 -   Loyalty measure by app category\
-    ![](./_resources/Product_Development.resources/image.png){width="432"}
+    ![](./_resources/Product_Development.resources/image.png){.lightbox width="432"}
 -   Trust Thermocline - Point at which the number of customers that use your product suddenly drops off a cliff (3 nested [Threads](https://twitter.com/anthrocypher/status/1588571424993992704))
     -   Breaching this point typically occurs when a company continually changes the service, raises prices year after year but doesn't notice a major change in customer subscriptions/engagement. Then customers start abruptly dropping the product.
     -   Most of the time the company cannot regain the customers after this point and even if they do they will never reach heights they were at previously.
@@ -98,7 +98,7 @@
     -   Match & Assign a Customer ID: Take records that have the same (or in some cases, similar) match keys and generate a unique customer identifier for that matching group of customer records. Every customer id that is generated can be used to link the customer sources together going forward.
     -   Roll in more sources: As you get more sources you can start rolling them into the same process by setting the correct rules and precedence for the source.
 -   [Master Data Models]{.underline}: Creating a final/clean view of your customers and associated facts and dimensions.
-    -   Start with a "Customer → Transaction → Event" framework (more [details](https://www.flywheelsoftware.com/help-center-articles/preparing-your-data-for-flywheel))![](./_resources/Product_Development.resources/1-MVPyykz1OOXltfCWZL62ig.png){width="432"}
+    -   Start with a "Customer → Transaction → Event" framework (more [details](https://www.flywheelsoftware.com/help-center-articles/preparing-your-data-for-flywheel))![](./_resources/Product_Development.resources/1-MVPyykz1OOXltfCWZL62ig.png){.lightbox width="432"}
         -   Customers: Create a table of your customers with the ability to quickly add new fields
         -   Transactions: Join key from customers table to their transaction history
         -   Events: Any events you track for each customer
@@ -120,7 +120,7 @@
 
 ## Conversion Funnels {#sec-proddev-convfun .unnumbered}
 
-![](./_resources/Product_Development.resources/image.4.png){width="432"}
+![](./_resources/Product_Development.resources/image.4.png){.lightbox width="432"}
 
 -   Figure: Typical eCommerce Funnel
     -   Funnel moves down and users drop off until only 3% of users ("% users") reach Transaction (aka conversion)
@@ -142,7 +142,7 @@
     -   If a user has entered the bottom of the funnel (i.e. more towards Begin Checkout) and simply dropped off, it strong reason to reach out in attempts to facilitate or promote movement down the funnel.
 -   [Data]{.underline}
     -   Funnel data at the user-level over a time period\
-        ![](./_resources/Product_Development.resources/image.5.png){width="532"}
+        ![](./_resources/Product_Development.resources/image.5.png){.lightbox width="532"}
         -   The columns are in sequence according the conversion funnel (i.e. "Home" is the beginning of the funnel and "Purchase" is the end.)
         -   Values are counts of viewing events for webpages in the conversion funnel
             -   Values for Home must be an indicator of whether they have visited or started on the Home Page.
@@ -306,13 +306,13 @@
     -   [What makes a good step to monitor in a conversion funnel?]{.underline}
         -   Notes from [Step Suggestions: How We Take the "Guess and Check" Out of Building Funnels](https://heap.io/blog/step-suggestions-how-we-automate-building-funnels)
         -   A good funnel step is ubiquitous: almost no users reach the next step without performing this action.\
-            ![](./_resources/Product_Development.resources/funnel-results-when-x-is-ubiquitous.png){width="432"}
+            ![](./_resources/Product_Development.resources/funnel-results-when-x-is-ubiquitous.png){.lightbox width="432"}
             -   Examples:
                 -   Ubiquitous: "Enter Password" or "Click Add to Cart"
                 -   Not Ubiquitous: "Subscribe to Mailing List" or "View Warranty"
             -   To qualify as ubiquitus, at least 97% of completers need to have completed the step.
         -   A good funnel step is divisive: some users drop off before performing the step, and others drop off after.\
-            ![](./_resources/Product_Development.resources/funnel-results-x-is-divisive.png){width="432"}
+            ![](./_resources/Product_Development.resources/funnel-results-x-is-divisive.png){.lightbox width="432"}
             -   X is a good milestone: 25% of users drop off from A to X, and 33% drop off from X to A (divisiveness = min(25%, 33%) = 25%).
             -   Y isn't a good milestone: 0% of users drop off from A to Y (divisiveness = min(0%, 50%) = 0%).
             -   Z isn't a good milestone, 0% of users drop off from Z to B (divisiveness = min(0%, 50%) = 0%)
@@ -416,14 +416,14 @@
         -   [Example]{.ribbon-highlight}: productivity/work-related products that users engage with Monday through Friday. B2B SaaS products will often find it useful to show this version, as they want to drive usage during the work week.
     -   ["Smile" Curves are Good]{.underline}
         -   Monthly\
-            ![](./_resources/Product_Development.resources/image.1.png){width="632"}
+            ![](./_resources/Product_Development.resources/image.1.png){.lightbox width="632"}
             -   The 7% (far right) that engage daily shows that a group of users are returning frequently (daily) so it may be possible that the impressions can support an ad business
             -   Successive Power User Curves should ideally show users shifting over more to the right side of the smile
         -   Weekly\
-            ![](./_resources/Product_Development.resources/image.2.png){width="632"}
+            ![](./_resources/Product_Development.resources/image.2.png){.lightbox width="632"}
             -   The "smile" occurs between 1 and 5 days which makes sense for productivity type product that is most active during the workweek.
     -   [Cohort Analysis]{.underline}\
-        ![](./_resources/Product_Development.resources/image.3.png){width="632"}
+        ![](./_resources/Product_Development.resources/image.3.png){.lightbox width="632"}
         -   Also see [Algorithms, Product \>\> Cohort Analysis](https://ercbk.github.io/Data-Science-Notebook/qmd/algorithms-product.html#sec-alg-prod-cohort){style="color: green"}
         -   Shows a positive shift in user engagement from August to November, where a larger segment of the population is becoming active on a daily basis, and there's more of a smile curve.
         -   Inflection points where the line starts to bend upward for a particular month can indicate:
@@ -433,7 +433,7 @@
 
 ### RARRA {#sec-proddev-metrics-rarra .unnumbered}
 
-![](./_resources/Product_Development.resources/1aihm6-T1GIPS5VDZxjq7Xw.png){width="532"}
+![](./_resources/Product_Development.resources/1aihm6-T1GIPS5VDZxjq7Xw.png){.lightbox width="532"}
 
 -   AARRR focuses too much on Acquisition even though Retention is more important, especially for many internet products that struggle to retain people.
 -   Reasons why retention is more important:

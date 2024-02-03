@@ -24,7 +24,7 @@
         -   The programs in place to create those conditions.
     -   Each piece of the Theory of Change can then be stated in terms of a quantifiable measure of success which will serve as the starting point for developing a data strategy.
     -   Example\
-        ![](./_resources/Nonprofits.resources/1-Ap92XjwEYV-kuAou_2nicg.png){width="332"}
+        ![](./_resources/Nonprofits.resources/1-Ap92XjwEYV-kuAou_2nicg.png){.lightbox width="332"}
 -   [Stakeholders]{.underline}
     -   Answer these questions:
         -   Who are your stakeholders?
@@ -78,4 +78,4 @@
 -   Logic model
     -   It focuses on how inputs and activities translate to outputs and eventually
 -   Example  
-    ![](./_resources/Nonprofits.resources/1-1Zj8iZRg_8ClIH2ocpXZqQ.png){width="632"}
+    ![](./_resources/Nonprofits.resources/1-1Zj8iZRg_8ClIH2ocpXZqQ.png){.lightbox width="632"}

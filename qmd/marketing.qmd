@@ -245,7 +245,7 @@
     4.  Analysis
         -   Use difference in differences or synthetic controls to measure incremental conversions
         -   Example DiD\
-            ![](./_resources/Marketing.resources/0-7mG9DH1XOy4T3g9G.png){width="532"}
+            ![](./_resources/Marketing.resources/0-7mG9DH1XOy4T3g9G.png){.lightbox width="532"}
 
 ## Channel Attribution {#sec-mark-chanatt .unnumbered}
 
@@ -256,14 +256,14 @@
     -   The main KPI is now end-to-end customer acquisition cost, rather than cost per click.
 -   Model should reflect these characteristics
     -   The concave shape of diminishing returns\
-        ![](./_resources/Marketing.resources/1-Zus4VojzJJbIIFZ2rPqYJw.png){width="632"}
+        ![](./_resources/Marketing.resources/1-Zus4VojzJJbIIFZ2rPqYJw.png){.lightbox width="632"}
         -   As the market becomes saturated by your ads, additional ad spend generates less return
         -   `sales ~ ln(spend)` and you'd have make sure you change the 0s to a really small number or add 1 , e.g y = ln(x+1).
             -   By adding 1, zeroes will be zeros on the log-scale since log 1 = 0
     -   Carryover Effect
         -   The lag between the time a consumer is touched by an ad and the time a consumer converts because of the ad.
         -   Adstock is a decaying function that describes the average carryover effect\
-            ![](./_resources/Marketing.resources/1-Fmr_wpbh0SV7EHwZthBA4g.png){width="532"}
+            ![](./_resources/Marketing.resources/1-Fmr_wpbh0SV7EHwZthBA4g.png){.lightbox width="532"}
             -   The advertising effect of this example channel was about 40% in the initial week, then decrease to 20% in the following week, and so on
                 -   Not sure how this "effect" is measured. Maybe it means a 40% increase in conversions during the initial week of the ad buy. Maybe this is measured experimentally. Maybe it's something like a ratio of conversions after clicks on digital ads/paid search to total clicks on the ad.
             -   Calculate a "spend_with_adstock" variable\
@@ -349,7 +349,7 @@
     -   [Example]{.ribbon-highlight}:
         -   When a company like Lyft or Kabam runs user acquisition campaigns to gain new mobile customers, a mobile measurement partner like Adjust, Singular, Kochava, or AppsFlyer can help them connect a click on an ad with an eventual app install on a specific device. That helps Lyft know that an ad worked, and that whatever ad network they used for it succeeded.
         -   if the person who installed that app eventually signs up for an account and takes a ride share, Lyft knows where and how to attribute the results of that marketing effort, and connect it to the ad spend that initiated it. Even better, from Lyft's perspective, it can use the IDFA to tell mobile ad networks essentially: I like users like this; go find me more.
-    -   Apple's [SKAdNetwork](https://developer.apple.com/documentation/storekit/skadnetwork) ![](./_resources/Marketing.resources/https-3A-2F-2Fspecials-images.jpg%3Ffit%3Dscale){width="532"}
+    -   Apple's [SKAdNetwork](https://developer.apple.com/documentation/storekit/skadnetwork) ![](./_resources/Marketing.resources/https-3A-2F-2Fspecials-images.jpg%3Ffit%3Dscale){.lightbox width="532"}
         -   Privacy-safe framework for mobile attribution
         -   Allows advertisers to know which ads resulted in desired actions without revealing which specific devices --- or which specific people --- took those desired actions.
         -   You go to an ad network like Vungle or AdColony or Chartboost --- or Facebook or Google, for that matter --- and kick off an ad campaign. They show your ads to potential new mobile customers, and when one clicks on it and downloads your app from the App Store, Apple itself will handle sending a cryptographically signed notification --- a postback --- to the ad network. That postback will not include any user or device-specific information, so while it will validate the conversion for marketing purposes, it won't reveal any personal information of your new app user.
@@ -429,7 +429,7 @@
 
 ### RFM Analysis {#sec-mark-custseg-rfm .unnumbered}
 
-![](./_resources/Marketing.resources/image.2.png){width="632"}
+![](./_resources/Marketing.resources/image.2.png){.lightbox width="632"}
 
 -   Recency, Frequency, and Monetary Value Analysis
 -   The most profitable segments will have low recency, high frequency, and high monetary value.
@@ -437,10 +437,10 @@
 #### Data {#sec-mark-custseg-rfm-dat .unnumbered}
 
 -   Just need a transactional database with client's orders over time (at least 2.5 to 3 yrs of data to capture enough behavior variation).\
-    ![](./_resources/Marketing.resources/image.3.png){width="632"}
+    ![](./_resources/Marketing.resources/image.3.png){.lightbox width="632"}
     -   time frame could be monthly or yearly or any other time frame required by the business
 -   Explicitly creates sub-groups based on how much each customer is contributing.\
-    ![](./_resources/Marketing.resources/image.4.png){width="632"}
+    ![](./_resources/Marketing.resources/image.4.png){.lightbox width="632"}
     -   **Recency** -- How recently did the customer purchase?
         -   Invoice date can be used to calculate the recency
         -   Number of days since the last purchase
@@ -474,7 +474,7 @@
         -   If you end up with too many variables for the amount of data you have, then perform PCA before clustering
 -   Interpret clusters and create strategy for each cluster
     -   [Example]{.ribbon-highlight}\
-        ![](./_resources/Marketing.resources/image.6.png){width="632"}![](./_resources/Marketing.resources/image.5.png){width="632"}
+        ![](./_resources/Marketing.resources/image.6.png){.lightbox width="632"}![](./_resources/Marketing.resources/image.5.png){.lightbox width="632"}
 
         -   Charts
             -   Both charts have the same info, right shows the patterns better but you can't read the values
@@ -497,9 +497,9 @@
 
     -   [Example]{.ribbon-highlight}
 
-        ![](_resources/Marketing.resources/custseg-clust-bar-1.png){width="354"}
+        ![](_resources/Marketing.resources/custseg-clust-bar-1.png){.lightbox width="354"}
 
-        ![](_resources/Marketing.resources/custseg-clust-mark-recom-1.webp){width="632"}
+        ![](_resources/Marketing.resources/custseg-clust-mark-recom-1.webp){.lightbox width="632"}
 
         -   From [A Data Science Project with ChatGPT Code Interpreter](https://towardsdatascience.com/a-data-science-project-with-chatgpt-code-interpreter-e9beb8705dac)
 
@@ -519,7 +519,7 @@
     -   Purchasing: what a user buys, their purchasing frequency and timing, purchasing price and discounts, etc.
     -   Social media network: Is there an influencer within a customer's network? (see bkmks \>\> Network Analysis)
     -   [Example]{.ribbon-highlight}: Telecommunications\
-        ![](./_resources/Marketing.resources/image.7.png){width="632"}
+        ![](./_resources/Marketing.resources/image.7.png){.lightbox width="632"}
 -   Cluster the data and interpret the clusters
     -   Example using the telecommunications data above
         -   The green cluster (aka segment) is Digitally engaged customers.
@@ -531,8 +531,8 @@
 
 ## Customer Journey {#sec-mark-custjourn .unnumbered}
 
-![](./_resources/Marketing.resources/image.1.png){width="632"}\
-![](./_resources/Marketing.resources/image.png){width="632"}
+![](./_resources/Marketing.resources/image.1.png){.lightbox width="632"}\
+![](./_resources/Marketing.resources/image.png){.lightbox width="632"}
 
 -   Top Figure: Typical SaaS User Journey
 -   Bottom Figure: General User Journey
@@ -556,7 +556,7 @@
 
 ### Find the Ideal Customer Profile (ICP) and Target Them {#sec-mark-wkflw-icp .unnumbered}
 
-![](./_resources/Marketing.resources/image.8.png){width="532"}
+![](./_resources/Marketing.resources/image.8.png){.lightbox width="532"}
 
 -   Notes from [article](https://towardsdatascience.com/a-complete-guide-to-data-driven-customer-acquisition-f0f1708b328)
 
@@ -584,7 +584,7 @@
             -   Partnering with tech influencers helps the company attract cohort 1 while working with wholesale stores speeds up selling to cohort 2.
 
 -   [Use experimentation on High-Value cohorts to test which acquisition/marketing campaigns have high ROAS.]{.underline}\
-    ![](./_resources/Marketing.resources/image.9.png){width="632"}
+    ![](./_resources/Marketing.resources/image.9.png){.lightbox width="632"}
 
     -   For cohort 3, campaign A seems to have more success than campaign B
 

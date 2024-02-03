@@ -38,7 +38,7 @@
     -   Something about futures - factor tilts (shorter term)
 
 -   Misleading chart ([Thread](https://twitter.com/choffstein/status/1640034865817985024))\
-    ![](./_resources/Finance.resources/image.png){width="448"}\
+    ![](./_resources/Finance.resources/image.png){.lightbox width="448"}\
 
     -   No transaction costs
     -   No fees
@@ -50,7 +50,7 @@
 
 -   Workflow
 
-    ![From Machine Learning for Algorithmic Trading](_resources/Finance.resources/ml4t_workflow-1.png){width="532"}
+    ![From Machine Learning for Algorithmic Trading](_resources/Finance.resources/ml4t_workflow-1.png){.lightbox width="532"}
 
 -   Any market forecasting model, especially involving short term horizons, should probably have a random walk in an ensemble. ([Is the Market Just Random Noise?](https://www.deanmarchiori.com/posts/2024-01-04-randomshares/))
 
@@ -112,7 +112,7 @@
     -   Momentum calculations and any arbitrages are carried out at the end of each month.
 -   Comparison
     -   Cumulative Performance: DMSR vs. SPY vs. GEM\
-        ![](_resources/Finance.resources/dmsr-spy-gem-comp-1.png){width="532"}
+        ![](_resources/Finance.resources/dmsr-spy-gem-comp-1.png){.lightbox width="532"}
         -   Simple Cumulative Performance (%) is computed every month (I think)
             -   Rate of Return\
                 $$
@@ -123,7 +123,7 @@
                 \text{CP} = (1 + \text{RoR}_1) \times (1 + \text{RoR}_2) \times \cdots \times (1 + \text{RoR}_n) - 1
                 $$
     -   Statistics\
-        ![](_resources/Finance.resources/dmsr-spy-gem-stats-1.png){width="532"}
+        ![](_resources/Finance.resources/dmsr-spy-gem-stats-1.png){.lightbox width="532"}
 
 ## Volatility Targeting Portfolio {#sec-finance-invest-vtp .unnumbered}
 
@@ -192,7 +192,7 @@
     -   Resources
         -   [NerdWallet Compound Interest Calculator](https://www.nerdwallet.com/calculator/compound-interest-calculator?trk=nw_gn_5.0)
             -   [Example]{.ribbon-highlight}: if you put \$5,000 in a (5yr) bond with a 4% yield, assuming you reinvest your interest payments, you will have \$6083 by the time it matures.\
-                ![](_resources/Finance.resources/nerdwallet-compound-interest-1.png){width="432"}
+                ![](_resources/Finance.resources/nerdwallet-compound-interest-1.png){.lightbox width="432"}
     -   Notes from
         -   [It's a Good Time to Buy Bonds. Just Know What You're Getting Into.](https://www.wsj.com/finance/investing/investing-bonds-what-to-know-98e6f138?mod=e2twg)
     -   The price of a bond moves in the opposite direction to interest rates.

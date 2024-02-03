@@ -34,7 +34,7 @@
     -   Also seen this term used when referring to all unique SKUs on an order sheet as the total active references.
 
 -   [**Fill rate**]{style="color: #009499"} (aka Fulfillment Rate)- The percentage of orders that you can ship from your available stock without any lost sales, backorders, or stockouts.\
-    ![](./_resources/Logistics.resources/Screenshot-(494).png){width="432"}
+    ![](./_resources/Logistics.resources/Screenshot-(494).png){.lightbox width="432"}
 
     $$
     \text{Fill Rate} = \frac{\text{Total Orders Shipped}}{\text{Total Orders Placed}} \cdot 100
@@ -51,7 +51,7 @@
     -   [Example]{.ribbon-highlight}: Continuity products are ordered over multiple seasons or years or when large orders are split among different suppliers
 
 -   [**Order Components**]{style="color: #009499"}\
-    ![](./_resources/Logistics.resources/image.8.png){width="282"}
+    ![](./_resources/Logistics.resources/image.8.png){.lightbox width="282"}
 
     -   [**Order**]{style="color: #009499"}: The "shopping basket" full of items you've just purchased.
     -   [**Lines**]{style="color: #009499"}: The different products within your order, recognized by warehouses as each individual Stock Keeping Unit (SKU) or Universal Product Code (UPC) number.
@@ -130,7 +130,7 @@
 -   Independently choose a service level for groups of products based things such as strategic importance, profit margin, or dollar volume.
     -   The retail industry aims to maintain a typical service level of between 90% and 95% depending on the product
 -   [Example]{.ribbon-highlight}:\
-    ![](./_resources/Logistics.resources/Screenshot-(493).png){width="432"}
+    ![](./_resources/Logistics.resources/Screenshot-(493).png){.lightbox width="432"}
     -   At 95 percent service level, expect:
         -   (D1) for 50 percent of replenishment cycles, not all cycle stock will be depleted and safety stock will not be needed
         -   (D2) for 45 percent of replenishment cycles, the safety stock will suffice.
@@ -243,7 +243,7 @@
 
 ## Order-Up-To (OUT) Level Policy {#sec-log-invman-outpol .unnumbered}
 
-![](./_resources/Logistics.resources/Screenshot-(1316).png){width="632"}
+![](./_resources/Logistics.resources/Screenshot-(1316).png){.lightbox width="632"}
 
 -   Time intervals (i.e. Review Interval) trigger a replenishment, not reorder points
     -   Length depends on the industry
@@ -289,14 +289,14 @@
     -   The closer the high demand or large goods are to the loading and unloading docks, the lower the handling costs.
 -   [Material Flow Types]{.underline}
     -   **Simple Flows**: To understand how these movements work, we can examine the simplest possible flow, which takes place when units sent by the supplier are used, without dividing these up.\
-        ![](./_resources/Logistics.resources/image.4.png){width="432"}
+        ![](./_resources/Logistics.resources/image.4.png){.lightbox width="432"}
     -   **Medium flows**: Movements start to become more complex with this type of flow. It is normally found in warehouses with single or combined picking operations, generally with the supply of full pallets.\
-        ![](./_resources/Logistics.resources/image.5.png){width="432"}
+        ![](./_resources/Logistics.resources/image.5.png){.lightbox width="432"}
     -   **Complex Flows**: There are warehouses with different working areas, depending on the types of product and their consumption. They normally have intermediate handling areas and can require various operations that in turn need flows of a certain (and at times great) complexity. This diagram shows an example of this type of facility and the loading movements that occur there.\
-        ![](./_resources/Logistics.resources/image.6.png){width="432"}
+        ![](./_resources/Logistics.resources/image.6.png){.lightbox width="432"}
 -   [Warehouse Optimization]{.underline}\
-    ![](./_resources/Logistics.resources/image.2.png){width="432"}\
-    ![](./_resources/Logistics.resources/image.3.png){width="432"}
+    ![](./_resources/Logistics.resources/image.2.png){.lightbox width="432"}\
+    ![](./_resources/Logistics.resources/image.3.png){.lightbox width="432"}
     -   A: High Rotation, B: Medium Rotation, C: Low Rotation
     -   (Top) Pareto Plot shows how High Rotation products are classified as those accounting for 20% of total products but also 80% of sales (point on the curve)
     -   (Bottom) Shows how the "A" products have been positioned closest to the loading and unloading area.

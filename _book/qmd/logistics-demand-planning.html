@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.340">
+<meta name="generator" content="quarto-1.4.549">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -22,7 +22,7 @@ ul.task-list li input[type="checkbox"] {
 }
 /* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -76,13 +76,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -91,13 +100,42 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -108,13 +146,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../qmd/logistics-demand-planning.html">Logistics</a></li><li class="breadcrumb-item"><a href="../qmd/logistics-demand-planning.html">Demand Planning</a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../qmd/logistics-demand-planning.html">Logistics</a></li><li class="breadcrumb-item"><a href="../qmd/logistics-demand-planning.html">Demand Planning</a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -123,7 +161,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="../">Domain Knowledge</a> 
@@ -338,7 +376,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -360,6 +398,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#sec-log-demfcast-intdem-fcastvar" id="toc-sec-log-demfcast-intdem-fcastvar" class="nav-link" data-scroll-target="#sec-log-demfcast-intdem-fcastvar">Forecasting Demand Variance</a></li>
   <li><a href="#sec-log-demfcast-intdem-diag" id="toc-sec-log-demfcast-intdem-diag" class="nav-link" data-scroll-target="#sec-log-demfcast-intdem-diag">Diagnostics</a></li>
   </ul></li>
+  <li><a href="#sec-log-demfcast-metrics" id="toc-sec-log-demfcast-metrics" class="nav-link" data-scroll-target="#sec-log-demfcast-metrics">Metrics</a></li>
   <li><a href="#sec-log-demfcast-dim" id="toc-sec-log-demfcast-dim" class="nav-link" data-scroll-target="#sec-log-demfcast-dim">Decision Impact Metrics</a>
   <ul>
   <li><a href="#sec-log-demfcast-dim-misc" id="toc-sec-log-demfcast-dim-misc" class="nav-link" data-scroll-target="#sec-log-demfcast-dim-misc">Misc</a></li>
@@ -375,7 +414,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../qmd/logistics-demand-planning.html">Logistics</a></li><li class="breadcrumb-item"><a href="../qmd/logistics-demand-planning.html">Demand Planning</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title"><span id="sec-log-demfcast" class="quarto-section-identifier">Demand Planning</span></h1>
 </div>
@@ -390,7 +429,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
   
 
+
 </header>
+
 
 <section id="sec-log-demfcast-misc" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="sec-log-demfcast-misc">Misc</h2>
@@ -411,24 +452,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Data availability — historical sales data, customer and product hierarchy data, and real-time orders data may be stored on disparate systems.</li>
 <li>Data quality — this may include issues such as inaccurate data due to entry errors or data being captured at different and inconsistent granularity across data elements.</li>
 </ul></li>
+<li>Prepare forecasts for alternate scenarios
+<ul>
+<li>Talk with someone on the business side and ask about the potential scenarios within the forecast horizon that could affect the forecast.</li>
+<li>Examples: a 10% inflation spike, supply disruption of a crucial raw material, a natural disaster, etc.</li>
+<li>Rank these scenarios and factors in order of importance, so that you can prioritize.</li>
+</ul></li>
 <li>Horizons (Typical)
 <ul>
 <li>Short-Term: 1 - 3 months</li>
 <li>Mid-Term: 6 - 18 months</li>
 <li>Long-Term: 3 - 5 years</li>
-</ul></li>
-<li>Metrics
-<ul>
-<li>See <a href="../qmd/logistics-demand-planning.html#sec-log-dim" style="color: green">Decision Impact Metrics</a></li>
-<li>WasteNot method for judging its adjusted forecast model vs prophet<br>
-<img src="./_resources/Logistics.resources/1-ni6N2L4yp0ynlOzL01f8Fg.png" class="img-fluid" width="532">
-<ul>
-<li>Change in the Number of Stock-Out Days (lower is better)</li>
-<li>Percent Change in Service Level (higher is better)</li>
-<li>Change in Profit (higher is better)</li>
-<li>Change in Wastage (lower is better)</li>
-<li>Change in Inventory Costs (lower is better)</li>
-</ul></li>
 </ul></li>
 </ul>
 </section>
@@ -545,7 +579,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>e.g.&nbsp;Marketing departiment is expecting 10% growth the week after it’s new promotion</li>
 </ul></li>
 <li>Replace with one of the previous methods, then apply a smoothing algorithm<br>
-<img src="./_resources/Logistics.resources/image4-1.png" class="img-fluid" width="432">
+<a href="./_resources/Logistics.resources/image4-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="./_resources/Logistics.resources/image4-1.png" class="img-fluid" width="432"></a>
 <ul>
 <li>Shows the Kalman filter by itself fails to replace the outlier dip with the normal, expected peak, but the manual adjustment + Kalman gives us what we want</li>
 </ul></li>
@@ -695,7 +729,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>“Mixture of Bernoulli and Gamma” tells us that the Bernoulli distribution was used for the demand occurrence (this is the only option), while the Gamma distribution was used for the demand sizes (this is the default option, but you can change this via the <span class="arg-text">distribution</span> argument).</li>
 </ul></li>
 <li><p>Demand Forecast</p>
-<p><img src="_resources/Logistics.resources/iets-forecast-1.webp" class="img-fluid" width="532"></p>
+<p><a href="_resources/Logistics.resources/iets-forecast-1.webp" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="_resources/Logistics.resources/iets-forecast-1.webp" class="img-fluid" width="532"></a></p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">forecast</span>(iETSModel, <span class="at">h=</span><span class="dv">5</span>, <span class="at">interval=</span><span class="st">"prediction"</span>, <span class="at">side=</span><span class="st">"upper"</span>) <span class="sc">|&gt;</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">plot</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
@@ -706,7 +740,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul></li>
 </ul></li>
 <li><p>Occurence Forecast (i.e.&nbsp;Stock or Not)</p>
-<p><img src="_resources/Logistics.resources/iets-forecast-occurence-1.webp" class="img-fluid" width="532"></p>
+<p><a href="_resources/Logistics.resources/iets-forecast-occurence-1.webp" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="_resources/Logistics.resources/iets-forecast-occurence-1.webp" class="img-fluid" width="532"></a></p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">forecast</span>(iETSModel<span class="sc">$</span>occurrence, <span class="at">h=</span><span class="dv">5</span>) <span class="sc">|&gt;</span> <span class="fu">plot</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li>Probability reaches roughly 0.2 over the next 5 months (i.e.&nbsp;we might sale once every 5 months).</li>
@@ -778,7 +812,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Relative Root Mean Squared Error</li>
 <li>Look at the predictive distributions instead of just the point forecasts</li>
 <li>Accuracy Implication Metrics - Measure the effect of the forecast on inventory<br>
-<img src="./_resources/Logistics.resources/Screenshot-(1319).png" class="img-fluid" width="432">
+<a href="./_resources/Logistics.resources/Screenshot-(1319).png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="./_resources/Logistics.resources/Screenshot-(1319).png" class="img-fluid" width="432"></a>
 <ul>
 <li>Y Axis: 1 - Fill_Rate; X Axis: Average on-hand inventory</li>
 <li>Each method is a forecasting model</li>
@@ -786,6 +820,56 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul></li>
 </ul>
 </section>
+</section>
+<section id="sec-log-demfcast-metrics" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="sec-log-demfcast-metrics">Metrics</h2>
+<ul>
+<li>See <a href="../qmd/logistics-demand-planning.html#sec-log-dim" style="color: green">Decision Impact Metrics</a></li>
+<li>Process
+<ul>
+<li>Discuss with your manager and team the purpose of the demand forecast. Is its goal to set accurate sales targets? To lower inventory levels? What are the underlying concerns behind these forecast numbers?
+<ul>
+<li>If increasing sales is the top concern, then maybe adjusting the forcast towards the higher end of the prediction interval is better. Increased inventory leads to less stockouts which leads to more sales</li>
+<li>If decreasing inventory is the top concern, then maybe adjusting the forcast towards the lower end of the prediction interval is better as this will lead to decreased inventory and decreased cost.</li>
+</ul></li>
+<li>Create a simple business case to translate forecast accuracy metrics.
+<ul>
+<li>This will allow you to present your benefits of your model in business terms to a non-technical decision maker</li>
+<li><span class="ribbon-highlight">Example</span>: Decreasing MASE by 50%
+<ul>
+<li>Current situation:
+<ul>
+<li>Existing forecasting method produces an average MASE of 20%.</li>
+<li>Excess inventory costs average $50,000 per month due to inaccurate forecasts.</li>
+<li>Stockouts lead to an average of $20,000 in lost sales per month.</li>
+</ul></li>
+<li>After Improving Forecast:
+<ul>
+<li>By reducing MASE to 10% (decrease of 50%), the company can expect:
+<ul>
+<li>Reduced excess inventory costs: Inventory costs could be reduced by $25,000 per month (50% decrease).</li>
+<li>Increased sales: More accurate forecasts allow for optimal stock levels, potentially leading to a $10,000 increase in monthly sales.</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li>Diagram the decision making process
+<ul>
+<li>In many cases, the decision-maker or others will make subjective adjustments to forecasts</li>
+<li>The diagram should include the decision being made, the inputs for the decision, who’s making the decision, and the outcomes that follow.</li>
+<li>Each adjustment should be documented, so as to better assess how where improvement needs to made in the process.</li>
+</ul></li>
+</ul></li>
+<li>WasteNot method for judging its adjusted forecast model vs prophet<br>
+<a href="./_resources/Logistics.resources/1-ni6N2L4yp0ynlOzL01f8Fg.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img src="./_resources/Logistics.resources/1-ni6N2L4yp0ynlOzL01f8Fg.png" class="img-fluid" width="532"></a>
+<ul>
+<li>Change in the Number of Stock-Out Days (lower is better)</li>
+<li>Percent Change in Service Level (higher is better)</li>
+<li>Change in Profit (higher is better)</li>
+<li>Change in Wastage (lower is better)</li>
+<li>Change in Inventory Costs (lower is better)</li>
+</ul></li>
+</ul>
 </section>
 <section id="sec-log-demfcast-dim" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="sec-log-demfcast-dim">Decision Impact Metrics</h2>
@@ -839,7 +923,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>FVA: The change in a forecasting accuracy metric that can be attributed to a particular process or participant in the forecasting process.
 <ul>
 <li><span class="ribbon-highlight">Example</span><br>
-<img src="./_resources/Logistics.resources/Screenshot-(807).png" class="img-fluid" width="282">
+<a href="./_resources/Logistics.resources/Screenshot-(807).png" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img src="./_resources/Logistics.resources/Screenshot-(807).png" class="img-fluid" width="282"></a>
 <ul>
 <li>Statistical model has 5% FVA vs Naive forecast</li>
 <li>Adjusted Statistical Forecast has 2% FVA vs Naive Forecast
@@ -1052,7 +1136,7 @@ pq_t - vq_t - c_s(y_t-q_t) &amp; \text{for}\;\; q_t &lt; y_t
 <ul>
 <li><p>Interpretation: With the increase of the variable x1, the orders should change on average by 1.36</p></li>
 <li><p>Plot<br>
-<img src="./_resources/Logistics.resources/ordersDynamics.png" class="img-fluid" width="632"></p>
+<a href="./_resources/Logistics.resources/ordersDynamics.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7"><img src="./_resources/Logistics.resources/ordersDynamics.png" class="img-fluid" width="632"></a></p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(model1, <span class="dv">7</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li>Figure above corresponds to the orders (purple) and would cover roughly 90.91% of cases (black), so that we would run out of product in approximately 10% of cases, which would still be more profitable than any other option.</li>
@@ -1159,7 +1243,7 @@ pq_t - vq_t - c_s(y_t-q_t) &amp; \text{for}\;\; q_t &lt; y_t
 </ul></li>
 </ul></li>
 </ul></li>
-<li>Optimizer must account for uncertainty<img src="./_resources/Logistics.resources/Screenshot-(363).png" class="img-fluid" width="432">
+<li>Optimizer must account for uncertainty<a href="./_resources/Logistics.resources/Screenshot-(363).png" class="lightbox" data-gallery="quarto-lightbox-gallery-8"><img src="./_resources/Logistics.resources/Screenshot-(363).png" class="img-fluid" width="432"></a>
 <ul>
 <li>City B’s forecast distribution has substantial uncertainty, and it’s mean says it will have enough drivers (i.e.&nbsp;oversupply)</li>
 <li>City A’s forecast distribution is more certain, and it’s more likely to be undersupplied.</li>
@@ -1253,10 +1337,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -1266,8 +1349,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -1280,6 +1372,125 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
       return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -1323,6 +1534,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -1348,6 +1560,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -1409,12 +1647,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../qmd/location-selection.html" class="pagination-link">
+      <a href="../qmd/location-selection.html" class="pagination-link  aria-label=" location="" selection"="">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Location Selection</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../qmd/logistics-inventory-management.html" class="pagination-link">
+      <a href="../qmd/logistics-inventory-management.html" class="pagination-link" aria-label="Inventory Management">
         <span class="nav-page-text">Inventory Management</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
@@ -1428,7 +1666,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     <div class="nav-footer-center">
       <ul class="footer-items list-unstyled">
     <li class="nav-item">
-    <a class="nav-link" href="../LICENSE.html">Creative Commons Attribution-NonCommercial 4.0 International Public License</a>
+    <a class="nav-link" href="../LICENSE.html">
+<p>Creative Commons Attribution-NonCommercial 4.0 International Public License</p>
+</a>
   </li>  
 </ul>
     </div>
@@ -1437,6 +1677,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
+<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","selector":".lightbox","loop":false,"closeEffect":"zoom","openEffect":"zoom"});
+window.onload = () => {
+  lightboxQuarto.on('slide_before_load', (data) => {
+    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+    const href = trigger.getAttribute('href');
+    if (href !== null) {
+      const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+      if (imgEl !== null) {
+        const srcAttr = imgEl.getAttribute("src");
+        if (srcAttr && srcAttr.startsWith("data:")) {
+          slideConfig.href = srcAttr;
+        }
+      }
+    } 
+  });
+
+  lightboxQuarto.on('slide_after_load', (data) => {
+    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+    if (window.Quarto?.typesetMath) {
+      window.Quarto.typesetMath(slideNode);
+    }
+  });
+
+};
+          </script>
+
 
 
 

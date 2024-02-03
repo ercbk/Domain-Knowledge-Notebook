@@ -74,7 +74,7 @@
     -   Rental price: HomeUnion developed a tool called RENTestimate for this.
     -   Temporary rental price: Airbnb's pricing tips use a mathematical model that learns how likely a guest is to book a specific listing, on specific dates, at a range of different prices.
 -   Adding nontraditional data sources can improve estimates\
-    ![](./_resources/Real_Estate.resources/nontraditional-data.png){width="532"}
+    ![](./_resources/Real_Estate.resources/nontraditional-data.png){.lightbox width="532"}
 
 ### Hedonic Pricing Method {#sec-rlest-apprais-hedpric .unnumbered}
 
@@ -314,7 +314,7 @@
         -   Population Density
 -   [NLP]{.underline}
     -   Identify the most important words in a description and learn which words tend to be used to describe more expensive or affordable houses.\
-        ![](./_resources/Real_Estate.resources/nlp-example.png){width="532"}
+        ![](./_resources/Real_Estate.resources/nlp-example.png){.lightbox width="532"}
 -   [Sociodemographic]{.underline}
     -   Misc
         -   Which data resolution is most predictive? (e.g. state, county, neighborhood, etc.)
