@@ -42,6 +42,9 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -352,9 +355,9 @@ ul.task-list li input[type="checkbox"] {
 <ul>
 <li>Notes from <a href="https://www.youtube.com/watch?v=8wXRir49b9w">Online Scheduling Approach for Distributed Additive Manufacturing</a></li>
 <li>Global Mass Production vs Global Distributed Production<br>
-<img src="./_resources/Manufacturing.resources/Screenshot-(514).png" class="img-fluid" width="632"></li>
+<a href="./_resources/Manufacturing.resources/Screenshot-(514).png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="./_resources/Manufacturing.resources/Screenshot-(514).png" class="img-fluid" width="632"></a></li>
 <li>Dynamic Allocation of Production Orders (POs)<br>
-<img src="./_resources/Manufacturing.resources/Screenshot-(516).png" class="img-fluid" width="632">
+<a href="./_resources/Manufacturing.resources/Screenshot-(516).png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="./_resources/Manufacturing.resources/Screenshot-(516).png" class="img-fluid" width="632"></a>
 <ul>
 <li>Production order inputs delivery location, spare part to be manufactured, quantity needed</li>
 <li>The only thing being locally modeled seems to be production time
@@ -368,7 +371,7 @@ ul.task-list li input[type="checkbox"] {
 </ul></li>
 </ul></li>
 <li>Implementation<br>
-<img src="./_resources/Manufacturing.resources/Screenshot-(520).png" class="img-fluid" width="632">
+<a href="./_resources/Manufacturing.resources/Screenshot-(520).png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="./_resources/Manufacturing.resources/Screenshot-(520).png" class="img-fluid" width="632"></a>
 <ul>
 <li>FASTEN is a manufacturing software company
 <ul>
@@ -806,6 +809,31 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
+<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","openEffect":"zoom","closeEffect":"zoom","selector":".lightbox","loop":false});
+window.onload = () => {
+  lightboxQuarto.on('slide_before_load', (data) => {
+    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+    const href = trigger.getAttribute('href');
+    if (href !== null) {
+      const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+      if (imgEl !== null) {
+        const srcAttr = imgEl.getAttribute("src");
+        if (srcAttr && srcAttr.startsWith("data:")) {
+          slideConfig.href = srcAttr;
+        }
+      }
+    } 
+  });
+
+  lightboxQuarto.on('slide_after_load', (data) => {
+    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+    if (window.Quarto?.typesetMath) {
+      window.Quarto.typesetMath(slideNode);
+    }
+  });
+
+};
+          </script>
 
 
 

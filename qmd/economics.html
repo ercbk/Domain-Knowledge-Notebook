@@ -42,6 +42,9 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -363,7 +366,7 @@ ul.task-list li input[type="checkbox"] {
 </ul></li>
 <li><p><span style="color: #009499"><strong>Consumer Price Index (CPI)</strong></span> - A common index that is used to measure inflation, the&nbsp;<a href="https://www.bls.gov/cpi/questions-and-answers.htm">Bureau of Labor Statistics constructs the market basket</a>&nbsp;using more than 80,000 items.</p></li>
 <li><p><span style="color: #009499"><strong>Deflation</strong></span> - A sustained decrease in the price level of goods and services.</p>
-<p><img src="_resources/Economics.resources/term-deflation-1.png" class="img-fluid" width="432"></p></li>
+<p><a href="_resources/Economics.resources/term-deflation-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="_resources/Economics.resources/term-deflation-1.png" class="img-fluid" width="432"></a></p></li>
 <li><p><span style="color: #009499"><strong>Disinflation</strong></span> - A decrease in the rate of inflation.</p></li>
 <li><p><span style="color: #009499"><strong>Inflation</strong></span> - A sustained increase in the price level of goods and services.</p></li>
 <li><p><span style="color: #009499"><strong>Intertemporal Price Discrimination</strong></span> - charging a high price initially, then lowering price after time passes.</p>
@@ -828,6 +831,31 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","openEffect":"zoom","loop":false,"selector":".lightbox","descPosition":"bottom"});
+window.onload = () => {
+  lightboxQuarto.on('slide_before_load', (data) => {
+    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+    const href = trigger.getAttribute('href');
+    if (href !== null) {
+      const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+      if (imgEl !== null) {
+        const srcAttr = imgEl.getAttribute("src");
+        if (srcAttr && srcAttr.startsWith("data:")) {
+          slideConfig.href = srcAttr;
+        }
+      }
+    } 
+  });
+
+  lightboxQuarto.on('slide_after_load', (data) => {
+    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+    if (window.Quarto?.typesetMath) {
+      window.Quarto.typesetMath(slideNode);
+    }
+  });
+
+};
+          </script>
 
 
 

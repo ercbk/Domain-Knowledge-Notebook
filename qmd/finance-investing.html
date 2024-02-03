@@ -42,6 +42,9 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -420,7 +423,7 @@ window.Quarto = {
 <li>Something about futures - factor tilts (shorter term)</li>
 </ul></li>
 <li><p>Misleading chart (<a href="https://twitter.com/choffstein/status/1640034865817985024">Thread</a>)<br>
-<img src="./_resources/Finance.resources/image.png" class="img-fluid" width="448"><br>
+<a href="./_resources/Finance.resources/image.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="./_resources/Finance.resources/image.png" class="img-fluid" width="448"></a><br>
 </p>
 <ul>
 <li>No transaction costs</li>
@@ -436,7 +439,7 @@ window.Quarto = {
 <li><p>Workflow</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="_resources/Finance.resources/ml4t_workflow-1.png" class="img-fluid figure-img" width="532"></p>
+<p><a href="_resources/Finance.resources/ml4t_workflow-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" data-glightbox="description: .lightbox-desc-2" title="From Machine Learning for Algorithmic Trading"><img src="_resources/Finance.resources/ml4t_workflow-1.png" class="img-fluid figure-img" width="532" alt="From Machine Learning for Algorithmic Trading"></a></p>
 <figcaption>From Machine Learning for Algorithmic Trading</figcaption>
 </figure>
 </div></li>
@@ -533,7 +536,7 @@ window.Quarto = {
 <li>Comparison
 <ul>
 <li>Cumulative Performance: DMSR vs.&nbsp;SPY vs.&nbsp;GEM<br>
-<img src="_resources/Finance.resources/dmsr-spy-gem-comp-1.png" class="img-fluid" width="532">
+<a href="_resources/Finance.resources/dmsr-spy-gem-comp-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="_resources/Finance.resources/dmsr-spy-gem-comp-1.png" class="img-fluid" width="532"></a>
 <ul>
 <li>Simple Cumulative Performance (%) is computed every month (I think)
 <ul>
@@ -548,7 +551,7 @@ window.Quarto = {
 </ul></li>
 </ul></li>
 <li>Statistics<br>
-<img src="_resources/Finance.resources/dmsr-spy-gem-stats-1.png" class="img-fluid" width="532"></li>
+<a href="_resources/Finance.resources/dmsr-spy-gem-stats-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="_resources/Finance.resources/dmsr-spy-gem-stats-1.png" class="img-fluid" width="532"></a></li>
 </ul></li>
 </ul>
 </section>
@@ -657,7 +660,7 @@ window.Quarto = {
 <li><a href="https://www.nerdwallet.com/calculator/compound-interest-calculator?trk=nw_gn_5.0">NerdWallet Compound Interest Calculator</a>
 <ul>
 <li><span class="ribbon-highlight">Example</span>: if you put $5,000 in a (5yr) bond with a 4% yield, assuming you reinvest your interest payments, you will have $6083 by the time it matures.<br>
-<img src="_resources/Finance.resources/nerdwallet-compound-interest-1.png" class="img-fluid" width="432"></li>
+<a href="_resources/Finance.resources/nerdwallet-compound-interest-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img src="_resources/Finance.resources/nerdwallet-compound-interest-1.png" class="img-fluid" width="432"></a></li>
 </ul></li>
 </ul></li>
 <li>Notes from
@@ -750,6 +753,9 @@ window.Quarto = {
 </ul>
 
 
+<div class="hidden" aria-hidden="true">
+<span class="glightbox-desc lightbox-desc-2">From Machine Learning for Algorithmic Trading</span>
+</div>
 </section>
 
 </main> <!-- /main -->
@@ -1172,6 +1178,31 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","loop":false,"selector":".lightbox","descPosition":"bottom","openEffect":"zoom"});
+window.onload = () => {
+  lightboxQuarto.on('slide_before_load', (data) => {
+    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+    const href = trigger.getAttribute('href');
+    if (href !== null) {
+      const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+      if (imgEl !== null) {
+        const srcAttr = imgEl.getAttribute("src");
+        if (srcAttr && srcAttr.startsWith("data:")) {
+          slideConfig.href = srcAttr;
+        }
+      }
+    } 
+  });
+
+  lightboxQuarto.on('slide_after_load', (data) => {
+    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+    if (window.Quarto?.typesetMath) {
+      window.Quarto.typesetMath(slideNode);
+    }
+  });
+
+};
+          </script>
 
 
 

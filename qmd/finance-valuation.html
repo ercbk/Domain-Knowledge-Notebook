@@ -76,6 +76,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -553,7 +556,7 @@ NPV = \sum_{t=0}^T \frac{C_t}{(1+r)^t} = 0
 <ul>
 <li>e.g.&nbsp;the cash flow recieved in year 1 is automatically invested into another project with same IRR.</li>
 <li>Using MIRR instead of IRR solves this issue.<br>
-<img src="_resources/Finance.resources/irr-mirr-change-1.png" class="img-fluid" width="432">
+<a href="_resources/Finance.resources/irr-mirr-change-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="_resources/Finance.resources/irr-mirr-change-1.png" class="img-fluid" width="432"></a>
 <ul>
 <li>Shows how IRR gets inflated as the cost of capital increases.</li>
 </ul></li>
@@ -1055,7 +1058,7 @@ K_e = R_f + \beta_L\; (R_m - R_f)
 \]</span></p>
 <ul>
 <li>The company’s <em>target</em> capital structure is oftentimes its <em>current</em> capital structure<br>
-<img src="_resources/Finance.resources/opt-cap-struct-1.png" class="img-fluid" width="432">
+<a href="_resources/Finance.resources/opt-cap-struct-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="_resources/Finance.resources/opt-cap-struct-1.png" class="img-fluid" width="432"></a>
 <ul>
 <li>The middle yellow line shows how the WACC goes down as the company takes on a small amount debt which increases its value (lower WACC) since the interest on the debt is tax deductible. But, if the company takes on too much debt, its WACC increases which decreases its value since its risk of default gets higher.</li>
 <li>The optimal amount of debt is difficult to determine by the analyst, so it’s <em>assumed</em> that management’s goal is to optimize value. Therefore, unless under unusual circumstances (e.g.&nbsp;post-acquisition period), the company should be at its target capital structure (i.e.&nbsp;optimal <span class="math inline">\(w_d\)</span>) or moving towards it.</li>
@@ -1087,7 +1090,7 @@ K_e = R_f + \beta_L\; (R_m - R_f) + R_s + \text{CRP} + R_z
 <li><p><strong>Unsystematic Risk</strong>: The risk that affects a single company or a small group of companies. Unsystematic risk is lowered through diversification. Larger companies are typically more diversified than smaller companies.</p></li>
 <li><p>No standardized formula for calculating this risk and is usually based on the analyst’s judgement. Factors include the financial statement, comparative ratio analysis, and qualitative matters such as a site visit and management interviews.</p></li>
 <li><p>Highland Global method for estimating SCRP</p>
-<p><img src="_resources/Finance.resources/specific-co-risk-prem-1.png" class="img-fluid" width="532"></p>
+<p><a href="_resources/Finance.resources/specific-co-risk-prem-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="_resources/Finance.resources/specific-co-risk-prem-1.png" class="img-fluid" width="532"></a></p>
 <ul>
 <li><a href="https://csbweb01.uncw.edu/people/farinellaj/Classes/Fin430/Handouts/Company%20Risk%20Premium.pdf">Link</a> to white paper (Also in R &gt;&gt; Documents &gt;&gt; Finance)</li>
 <li>More appropiate for older industrial companies than new companies. (See Issues section)</li>
@@ -1173,7 +1176,7 @@ K_e = R_f + R_m + \text{IRP}_i + R_s + CRP + R_z
 <li>Operating Leases (e.g.&nbsp;An airline that leases out its planes.) (<a href="https://www.youtube.com/watch?v=Wu-jRgHUc4Q">Video</a>)</li>
 </ul></li>
 <li><p>Methods<br>
-<img src="_resources/Finance.resources/cost-of-debt-methods-1.png" class="img-fluid" width="532"></p></li>
+<a href="_resources/Finance.resources/cost-of-debt-methods-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="_resources/Finance.resources/cost-of-debt-methods-1.png" class="img-fluid" width="532"></a></p></li>
 <li><p><u>Yield-to-Maturity</u> (Most Accurate)</p>
 <ul>
 <li>Variables required for each bond:
@@ -1374,7 +1377,7 @@ K_d = (\operatorname{Risk Free Rate} + \operatorname{Default Spread}) \times (1 
 <li><span class="ribbon-highlight">Example</span>: Percentage of Sales Method for COGS, Gross Margin, and SG&amp;A
 <ul>
 <li>Get historical data for Sales (aka Revenue), COGS, Gross Margin, SG&amp;A, EBITDA, D&amp;A, and EBIT for the last 3 to 5 years. Get a consensus of projected estimates for Sales, EBITDA, and EBIT.<br>
-<img src="_resources/Finance.resources/dcf-varproj-1.png" class="img-fluid" width="532">
+<a href="_resources/Finance.resources/dcf-varproj-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img src="_resources/Finance.resources/dcf-varproj-1.png" class="img-fluid" width="532"></a>
 <ul>
 <li>For public companies, projected estimates of Sales, EBITDA, and EBIT for the first 2 or 3 years can obtained from reports generated by other analysts who specialize in the sector. Use the consensus or average of these estimates.
 <ul>
@@ -1383,9 +1386,9 @@ K_d = (\operatorname{Risk Free Rate} + \operatorname{Default Spread}) \times (1 
 </ul></li>
 </ul></li>
 <li>Transform variable amounts to a percentage of sales for each year<br>
-<img src="_resources/Finance.resources/dcf-varproj-perc-1.png" class="img-fluid" width="532"></li>
+<a href="_resources/Finance.resources/dcf-varproj-perc-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img src="_resources/Finance.resources/dcf-varproj-perc-1.png" class="img-fluid" width="532"></a></li>
 <li>For <strong>COGS</strong>, <strong>Gross Margin</strong>, and <strong>SG&amp;A</strong>, calculate the average percentage (last column). Then, multiply each variable’s average percentage times each projected Sales estimate to get each variable projected estimate for each period of the horizon.<br>
-<img src="_resources/Finance.resources/dcf-varproj-fillin-1.png" class="img-fluid" width="532">
+<a href="_resources/Finance.resources/dcf-varproj-fillin-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7"><img src="_resources/Finance.resources/dcf-varproj-fillin-1.png" class="img-fluid" width="532"></a>
 <ul>
 <li>For projecting COGS and SG&amp;A further, it’s typical to hold Gross Margin and SG&amp;A (as a percentage of Sales) constant. Although, you may want to make a slight adjustment due to company trends or the outlook of the market.</li>
 </ul></li>
@@ -1510,7 +1513,7 @@ r_{\text{emm}} = \frac{(\text{Terminal Value} \times \text{WACC}) - \text{FCF}_T
 \]</span></p>
 <ul>
 <li><p>Follows Life Cycle theory that the rate of return on capital will eventually equal the cost of capital due competitors entering the market. It more closely represents the reality that net profit on these cash flows will eventually be zero.</p>
-<p><img src="_resources/Finance.resources/life-cyc-1.png" class="img-fluid" width="332"></p>
+<p><a href="_resources/Finance.resources/life-cyc-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8"><img src="_resources/Finance.resources/life-cyc-1.png" class="img-fluid" width="332"></a></p>
 <ul>
 <li><p>Explicit Forecast represents the projected FCFs, and after the vertical line, the downward sloping diagonal represents the corrected terminal value.</p>
 <ul>
@@ -1554,16 +1557,16 @@ r_{\text{emm}} = \frac{(\text{Terminal Value} \times \text{WACC}) - \text{FCF}_T
 <li>There are various assumptions is DCF analysis, therefore it’s prudent to select a range of values at various stages and see how much the output is changed. This should result in a range of Enterprise Values.</li>
 <li>If slight changes in varibles result in large changes in enterprise value, then something is wrong with your model</li>
 <li>Make sure to include variables that are directly related to business drivers such as sales, operating costs, and investment (e.g.&nbsp;Gross Margin, CAPEX, and other financial statment line items). These are the variables that stakeholders will want to see when they look at your analysis. They want to know what levers they can pull to increase the valuation of their business.<br>
-<img src="_resources/Finance.resources/sens-biz-drivers-1.png" class="img-fluid" width="325"></li>
+<a href="_resources/Finance.resources/sens-biz-drivers-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9"><img src="_resources/Finance.resources/sens-biz-drivers-1.png" class="img-fluid" width="325"></a></li>
 <li>Simple Solutions: Lengthen horizon; adjust values in terminal value calculation</li>
 <li><span class="ribbon-highlight">Example</span>: Trying Different WACC and Exit Multiple Values<br>
-<img src="_resources/Finance.resources/sens-ex-1.png" class="img-fluid" width="432">
+<a href="_resources/Finance.resources/sens-ex-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10"><img src="_resources/Finance.resources/sens-ex-1.png" class="img-fluid" width="432"></a>
 <ul>
 <li>6000 is the result of the DCF analysis and the rest of cells are the results of the sensitivity analysis.</li>
 <li>Relatively minor effects result from changes in WACC and the Exit Multiple. Therefore there is no indication that the model is flawed is aspects regarding these two variables.</li>
 </ul></li>
 <li><span class="ribbon-highlight">Example</span>: Trying different Terminal Value Growth Rates and Gross Margins<br>
-<img src="_resources/Finance.resources/sens-ex-2.png" class="img-fluid" width="502">
+<a href="_resources/Finance.resources/sens-ex-2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-11"><img src="_resources/Finance.resources/sens-ex-2.png" class="img-fluid" width="502"></a>
 <ul>
 <li>Shows a decrease in Gross Margin by 0.5% results in around a 40% decrease of enterpise value ($15.39 <span class="math inline">\(\rightarrow\)</span> $9.32)! Indicates something is wrong with the model.</li>
 <li>Maybe the model is being overly influenced by Gross Margin or maybe the other variables aren’t influencial enough.</li>
@@ -1995,6 +1998,31 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"selector":".lightbox","openEffect":"zoom"});
+window.onload = () => {
+  lightboxQuarto.on('slide_before_load', (data) => {
+    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+    const href = trigger.getAttribute('href');
+    if (href !== null) {
+      const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+      if (imgEl !== null) {
+        const srcAttr = imgEl.getAttribute("src");
+        if (srcAttr && srcAttr.startsWith("data:")) {
+          slideConfig.href = srcAttr;
+        }
+      }
+    } 
+  });
+
+  lightboxQuarto.on('slide_after_load', (data) => {
+    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+    if (window.Quarto?.typesetMath) {
+      window.Quarto.typesetMath(slideNode);
+    }
+  });
+
+};
+          </script>
 
 
 

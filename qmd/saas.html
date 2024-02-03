@@ -42,6 +42,9 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -383,7 +386,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="sec-saas-userseg" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="sec-saas-userseg">User Segmentation</h2>
-<p><img src="./_resources/SaaS.resources/image.png" class="img-fluid" width="432"></p>
+<p><a href="./_resources/SaaS.resources/image.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="./_resources/SaaS.resources/image.png" class="img-fluid" width="432"></a></p>
 <ul>
 <li>Diagram of users based on their activity on the language learning software, “duolingo.”
 <ul>
@@ -420,7 +423,7 @@ ul.task-list li input[type="checkbox"] {
 <li>Identify new metrics, through simulations of the Markov model, that - when optimized - are likely to increase a North Star or Primary metric.
 <ul>
 <li>Example<br>
-<img src="./_resources/SaaS.resources/image.1.png" class="img-fluid" width="233">
+<a href="./_resources/SaaS.resources/image.1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="./_resources/SaaS.resources/image.1.png" class="img-fluid" width="233"></a>
 <ul>
 <li>Simulation is for 3yrs into the future</li>
 <li>“Lever” is the parameter being increased
@@ -869,6 +872,31 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
+<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","descPosition":"bottom","closeEffect":"zoom","loop":false,"selector":".lightbox"});
+window.onload = () => {
+  lightboxQuarto.on('slide_before_load', (data) => {
+    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+    const href = trigger.getAttribute('href');
+    if (href !== null) {
+      const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+      if (imgEl !== null) {
+        const srcAttr = imgEl.getAttribute("src");
+        if (srcAttr && srcAttr.startsWith("data:")) {
+          slideConfig.href = srcAttr;
+        }
+      }
+    } 
+  });
+
+  lightboxQuarto.on('slide_after_load', (data) => {
+    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+    if (window.Quarto?.typesetMath) {
+      window.Quarto.typesetMath(slideNode);
+    }
+  });
+
+};
+          </script>
 
 
 

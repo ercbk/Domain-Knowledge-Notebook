@@ -42,6 +42,9 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -719,7 +722,7 @@ eCPM = \frac{\mbox{Estimated Earnings} \cdot 1000}{\mbox{Total Impressions}}
 <ul>
 <li>Use difference in differences or synthetic controls to measure incremental conversions</li>
 <li>Example DiD<br>
-<img src="./_resources/Marketing.resources/0-7mG9DH1XOy4T3g9G.png" class="img-fluid" width="532"></li>
+<a href="./_resources/Marketing.resources/0-7mG9DH1XOy4T3g9G.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="./_resources/Marketing.resources/0-7mG9DH1XOy4T3g9G.png" class="img-fluid" width="532"></a></li>
 </ul></li>
 </ol></li>
 </ul>
@@ -737,7 +740,7 @@ eCPM = \frac{\mbox{Estimated Earnings} \cdot 1000}{\mbox{Total Impressions}}
 <li>Model should reflect these characteristics
 <ul>
 <li>The concave shape of diminishing returns<br>
-<img src="./_resources/Marketing.resources/1-Zus4VojzJJbIIFZ2rPqYJw.png" class="img-fluid" width="632">
+<a href="./_resources/Marketing.resources/1-Zus4VojzJJbIIFZ2rPqYJw.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="./_resources/Marketing.resources/1-Zus4VojzJJbIIFZ2rPqYJw.png" class="img-fluid" width="632"></a>
 <ul>
 <li>As the market becomes saturated by your ads, additional ad spend generates less return</li>
 <li><code>sales ~ ln(spend)</code> and you’d have make sure you change the 0s to a really small number or add 1 , e.g y = ln(x+1).
@@ -749,7 +752,7 @@ eCPM = \frac{\mbox{Estimated Earnings} \cdot 1000}{\mbox{Total Impressions}}
 <ul>
 <li>The lag between the time a consumer is touched by an ad and the time a consumer converts because of the ad.</li>
 <li>Adstock is a decaying function that describes the average carryover effect<br>
-<img src="./_resources/Marketing.resources/1-Fmr_wpbh0SV7EHwZthBA4g.png" class="img-fluid" width="532">
+<a href="./_resources/Marketing.resources/1-Fmr_wpbh0SV7EHwZthBA4g.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="./_resources/Marketing.resources/1-Fmr_wpbh0SV7EHwZthBA4g.png" class="img-fluid" width="532"></a>
 <ul>
 <li>The advertising effect of this example channel was about 40% in the initial week, then decrease to 20% in the following week, and so on
 <ul>
@@ -902,7 +905,7 @@ eCPM = \frac{\mbox{Estimated Earnings} \cdot 1000}{\mbox{Total Impressions}}
 <li>When a company like Lyft or Kabam runs user acquisition campaigns to gain new mobile customers, a mobile measurement partner like Adjust, Singular, Kochava, or AppsFlyer can help them connect a click on an ad with an eventual app install on a specific device. That helps Lyft know that an ad worked, and that whatever ad network they used for it succeeded.</li>
 <li>if the person who installed that app eventually signs up for an account and takes a ride share, Lyft knows where and how to attribute the results of that marketing effort, and connect it to the ad spend that initiated it. Even better, from Lyft’s perspective, it can use the IDFA to tell mobile ad networks essentially: I like users like this; go find me more.</li>
 </ul></li>
-<li>Apple’s <a href="https://developer.apple.com/documentation/storekit/skadnetwork">SKAdNetwork</a> <img src="./_resources/Marketing.resources/https-3A-2F-2Fspecials-images.jpg%3Ffit%3Dscale" class="img-fluid" width="532">
+<li>Apple’s <a href="https://developer.apple.com/documentation/storekit/skadnetwork">SKAdNetwork</a> <a href="./_resources/Marketing.resources/https-3A-2F-2Fspecials-images.jpg%3Ffit%3Dscale" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="./_resources/Marketing.resources/https-3A-2F-2Fspecials-images.jpg%3Ffit%3Dscale" class="img-fluid" width="532"></a>
 <ul>
 <li>Privacy-safe framework for mobile attribution</li>
 <li>Allows advertisers to know which ads resulted in desired actions without revealing which specific devices — or which specific people — took those desired actions.</li>
@@ -1018,7 +1021,7 @@ eCPM = \frac{\mbox{Estimated Earnings} \cdot 1000}{\mbox{Total Impressions}}
 </section>
 <section id="sec-mark-custseg-rfm" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="sec-mark-custseg-rfm">RFM Analysis</h3>
-<p><img src="./_resources/Marketing.resources/image.2.png" class="img-fluid" width="632"></p>
+<p><a href="./_resources/Marketing.resources/image.2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img src="./_resources/Marketing.resources/image.2.png" class="img-fluid" width="632"></a></p>
 <ul>
 <li>Recency, Frequency, and Monetary Value Analysis</li>
 <li>The most profitable segments will have low recency, high frequency, and high monetary value.</li>
@@ -1027,12 +1030,12 @@ eCPM = \frac{\mbox{Estimated Earnings} \cdot 1000}{\mbox{Total Impressions}}
 <h4 class="unnumbered anchored" data-anchor-id="sec-mark-custseg-rfm-dat">Data</h4>
 <ul>
 <li>Just need a transactional database with client’s orders over time (at least 2.5 to 3 yrs of data to capture enough behavior variation).<br>
-<img src="./_resources/Marketing.resources/image.3.png" class="img-fluid" width="632">
+<a href="./_resources/Marketing.resources/image.3.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img src="./_resources/Marketing.resources/image.3.png" class="img-fluid" width="632"></a>
 <ul>
 <li>time frame could be monthly or yearly or any other time frame required by the business</li>
 </ul></li>
 <li>Explicitly creates sub-groups based on how much each customer is contributing.<br>
-<img src="./_resources/Marketing.resources/image.4.png" class="img-fluid" width="632">
+<a href="./_resources/Marketing.resources/image.4.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7"><img src="./_resources/Marketing.resources/image.4.png" class="img-fluid" width="632"></a>
 <ul>
 <li><strong>Recency</strong> – How recently did the customer purchase?
 <ul>
@@ -1093,7 +1096,7 @@ eCPM = \frac{\mbox{Estimated Earnings} \cdot 1000}{\mbox{Total Impressions}}
 <li>Interpret clusters and create strategy for each cluster
 <ul>
 <li><p><span class="ribbon-highlight">Example</span><br>
-<img src="./_resources/Marketing.resources/image.6.png" class="img-fluid" width="632"><img src="./_resources/Marketing.resources/image.5.png" class="img-fluid" width="632"></p>
+<a href="./_resources/Marketing.resources/image.6.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8"><img src="./_resources/Marketing.resources/image.6.png" class="img-fluid" width="632"></a><a href="./_resources/Marketing.resources/image.5.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9"><img src="./_resources/Marketing.resources/image.5.png" class="img-fluid" width="632"></a></p>
 <ul>
 <li>Charts
 <ul>
@@ -1127,8 +1130,8 @@ eCPM = \frac{\mbox{Estimated Earnings} \cdot 1000}{\mbox{Total Impressions}}
 </ul></li>
 </ul></li>
 <li><p><span class="ribbon-highlight">Example</span></p>
-<p><img src="_resources/Marketing.resources/custseg-clust-bar-1.png" class="img-fluid" width="354"></p>
-<p><img src="_resources/Marketing.resources/custseg-clust-mark-recom-1.webp" class="img-fluid" width="632"></p>
+<p><a href="_resources/Marketing.resources/custseg-clust-bar-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10"><img src="_resources/Marketing.resources/custseg-clust-bar-1.png" class="img-fluid" width="354"></a></p>
+<p><a href="_resources/Marketing.resources/custseg-clust-mark-recom-1.webp" class="lightbox" data-gallery="quarto-lightbox-gallery-11"><img src="_resources/Marketing.resources/custseg-clust-mark-recom-1.webp" class="img-fluid" width="632"></a></p>
 <ul>
 <li>From <a href="https://towardsdatascience.com/a-data-science-project-with-chatgpt-code-interpreter-e9beb8705dac">A Data Science Project with ChatGPT Code Interpreter</a></li>
 </ul></li>
@@ -1160,7 +1163,7 @@ eCPM = \frac{\mbox{Estimated Earnings} \cdot 1000}{\mbox{Total Impressions}}
 <li>Purchasing: what a user buys, their purchasing frequency and timing, purchasing price and discounts, etc.</li>
 <li>Social media network: Is there an influencer within a customer’s network? (see bkmks &gt;&gt; Network Analysis)</li>
 <li><span class="ribbon-highlight">Example</span>: Telecommunications<br>
-<img src="./_resources/Marketing.resources/image.7.png" class="img-fluid" width="632"></li>
+<a href="./_resources/Marketing.resources/image.7.png" class="lightbox" data-gallery="quarto-lightbox-gallery-12"><img src="./_resources/Marketing.resources/image.7.png" class="img-fluid" width="632"></a></li>
 </ul></li>
 <li>Cluster the data and interpret the clusters
 <ul>
@@ -1185,8 +1188,8 @@ eCPM = \frac{\mbox{Estimated Earnings} \cdot 1000}{\mbox{Total Impressions}}
 </section>
 <section id="sec-mark-custjourn" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="sec-mark-custjourn">Customer Journey</h2>
-<p><img src="./_resources/Marketing.resources/image.1.png" class="img-fluid" width="632"><br>
-<img src="./_resources/Marketing.resources/image.png" class="img-fluid" width="632"></p>
+<p><a href="./_resources/Marketing.resources/image.1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-13"><img src="./_resources/Marketing.resources/image.1.png" class="img-fluid" width="632"></a><br>
+<a href="./_resources/Marketing.resources/image.png" class="lightbox" data-gallery="quarto-lightbox-gallery-14"><img src="./_resources/Marketing.resources/image.png" class="img-fluid" width="632"></a></p>
 <ul>
 <li>Top Figure: Typical SaaS User Journey</li>
 <li>Bottom Figure: General User Journey
@@ -1225,7 +1228,7 @@ eCPM = \frac{\mbox{Estimated Earnings} \cdot 1000}{\mbox{Total Impressions}}
 <h2 class="unnumbered anchored" data-anchor-id="sec-mark-wkflw">Workflow</h2>
 <section id="sec-mark-wkflw-icp" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="sec-mark-wkflw-icp">Find the Ideal Customer Profile (ICP) and Target Them</h3>
-<p><img src="./_resources/Marketing.resources/image.8.png" class="img-fluid" width="532"></p>
+<p><a href="./_resources/Marketing.resources/image.8.png" class="lightbox" data-gallery="quarto-lightbox-gallery-15"><img src="./_resources/Marketing.resources/image.8.png" class="img-fluid" width="532"></a></p>
 <ul>
 <li><p>Notes from <a href="https://towardsdatascience.com/a-complete-guide-to-data-driven-customer-acquisition-f0f1708b328">article</a></p></li>
 <li><p>Customer Long Term Value</p>
@@ -1254,7 +1257,7 @@ eCPM = \frac{\mbox{Estimated Earnings} \cdot 1000}{\mbox{Total Impressions}}
 </ul></li>
 </ul></li>
 <li><p><u>Use experimentation on High-Value cohorts to test which acquisition/marketing campaigns have high ROAS.</u><br>
-<img src="./_resources/Marketing.resources/image.9.png" class="img-fluid" width="632"></p>
+<a href="./_resources/Marketing.resources/image.9.png" class="lightbox" data-gallery="quarto-lightbox-gallery-16"><img src="./_resources/Marketing.resources/image.9.png" class="img-fluid" width="632"></a></p>
 <ul>
 <li>For cohort 3, campaign A seems to have more success than campaign B</li>
 </ul></li>
@@ -1789,6 +1792,31 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
+<script>var lightboxQuarto = GLightbox({"selector":".lightbox","closeEffect":"zoom","openEffect":"zoom","descPosition":"bottom","loop":false});
+window.onload = () => {
+  lightboxQuarto.on('slide_before_load', (data) => {
+    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+    const href = trigger.getAttribute('href');
+    if (href !== null) {
+      const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+      if (imgEl !== null) {
+        const srcAttr = imgEl.getAttribute("src");
+        if (srcAttr && srcAttr.startsWith("data:")) {
+          slideConfig.href = srcAttr;
+        }
+      }
+    } 
+  });
+
+  lightboxQuarto.on('slide_after_load', (data) => {
+    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+    if (window.Quarto?.typesetMath) {
+      window.Quarto.typesetMath(slideNode);
+    }
+  });
+
+};
+          </script>
 
 
 

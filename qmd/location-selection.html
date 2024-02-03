@@ -42,6 +42,9 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -352,7 +355,7 @@ ul.task-list li input[type="checkbox"] {
 <li>Customer research, market expertise &amp; experience, and competitor location analysis can all help inform the important criteria for your business</li>
 <li><a href="https://www.jordanbean.com/example-work#populationestimator">Tool</a> to calculate population density within a certain radius of a location</li>
 <li>Might be more useful to aggregate smaller geographies into overlapping circular areas to compare candidates<br>
-<img src="./_resources/Location_Selection.resources/1-iT14nGkyxpTDKrzXieHUpg.png" class="img-fluid" width="632">
+<a href="./_resources/Location_Selection.resources/1-iT14nGkyxpTDKrzXieHUpg.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="./_resources/Location_Selection.resources/1-iT14nGkyxpTDKrzXieHUpg.png" class="img-fluid" width="632"></a>
 <ul>
 <li>Would have to decide how to handle geographies that are only partially enclosed in a circlular area
 <ul>
@@ -387,8 +390,8 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="unnumbered anchored" data-anchor-id="sec-locsel-locprof">Location Profiles</h2>
 <ul>
 <li><p>These are created for existing stores and locations or potential new stores</p></li>
-<li><p><span class="ribbon-highlight">Example</span>: Workforce and Demographic <img src="./_resources/Location_Selection.resources/1-u7KtEJ5Gbi-zaDd5dwRlhQ.png" class="img-fluid" width="632"><br>
-<img src="./_resources/Location_Selection.resources/1-KAR-xT1uxjSvNfxvpPBdiQ.png" class="img-fluid" width="632"></p></li>
+<li><p><span class="ribbon-highlight">Example</span>: Workforce and Demographic <a href="./_resources/Location_Selection.resources/1-u7KtEJ5Gbi-zaDd5dwRlhQ.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="./_resources/Location_Selection.resources/1-u7KtEJ5Gbi-zaDd5dwRlhQ.png" class="img-fluid" width="632"></a><br>
+<a href="./_resources/Location_Selection.resources/1-KAR-xT1uxjSvNfxvpPBdiQ.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="./_resources/Location_Selection.resources/1-KAR-xT1uxjSvNfxvpPBdiQ.png" class="img-fluid" width="632"></a></p></li>
 <li><p>Other potential variables</p>
 <ul>
 <li>Customer median driving distance
@@ -899,6 +902,31 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
+<script>var lightboxQuarto = GLightbox({"loop":false,"selector":".lightbox","descPosition":"bottom","openEffect":"zoom","closeEffect":"zoom"});
+window.onload = () => {
+  lightboxQuarto.on('slide_before_load', (data) => {
+    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+    const href = trigger.getAttribute('href');
+    if (href !== null) {
+      const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+      if (imgEl !== null) {
+        const srcAttr = imgEl.getAttribute("src");
+        if (srcAttr && srcAttr.startsWith("data:")) {
+          slideConfig.href = srcAttr;
+        }
+      }
+    } 
+  });
+
+  lightboxQuarto.on('slide_after_load', (data) => {
+    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+    if (window.Quarto?.typesetMath) {
+      window.Quarto.typesetMath(slideNode);
+    }
+  });
+
+};
+          </script>
 
 
 

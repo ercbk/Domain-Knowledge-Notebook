@@ -42,6 +42,9 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -430,7 +433,7 @@ window.Quarto = {
 <li>The larger the drawdown (%), the larger uptick (%) needed to get back to initial peak. (e.g.&nbsp;dd of 1% requires 1.01% uptick while 20% dd requires a 25% uptick). Some investors choose to avoid drawdowns of greater than 20% before cutting their losses and turning the position into cash instead.</li>
 </ul></li>
 <li><p><span style="color: #009499"><strong>Earnings</strong></span> or <span style="color: #009499"><strong>Net Income</strong></span> - Represents after-tax profit. Typically the bottom line of the income statement. EBIT and EBITDA are better for comparing companies.<span class="math inline">\(\text{Earnings} = \text{Revenue} - \text{Expenses} - \text{Interest} - \text{Taxes}\)</span></p>
-<p><img src="_resources/Finance.resources/apple-fin-stat-1.webp" class="img-fluid" width="532"></p></li>
+<p><a href="_resources/Finance.resources/apple-fin-stat-1.webp" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="_resources/Finance.resources/apple-fin-stat-1.webp" class="img-fluid" width="532"></a></p></li>
 <li><p><span style="color: #009499"><strong>Earnings Before Interest and Taxes (EBIT)</strong></span> - (aka <strong>Operating Income</strong>, <strong>Operating Profit</strong>) Common method for measuring profitability. <span class="math inline">\(\text{EBIT} = \text{Operating Expenses} - \text{Sales Revenue}\)</span> where the sales revenue excludes tax and interest. Located in the company’s income statement. (Also see Profit)</p></li>
 <li><p><span style="color: #009499"><strong>Earnings Before Interest Tax Depreciation Amortization (EBITDA)</strong></span> - Metric used to analyze and compare pre-tax cash flow of a business. It eliminates non-cash factors (depreciation and amortization) and backs out financing costs (interest). Using net profit (aka earnings) would not be an apples-to-apples comparison. Preferred over EBIT in industries with a high level of fixed assets.</p>
 <ul>
@@ -554,7 +557,7 @@ M = \frac{\text{Closing Price}_{\text{end of month}}- \text{Closing Price}_{\tex
 <ul>
 <li><p>Combines probabilistic sharpe ratio and false strategy theorem</p></li>
 <li><p>Paper: <a href="https://www.davidhbailey.com/dhbpapers/deflated-sharpe.pdf">The Deflated Sharpe Ratio: Correcting for selection bias, backtest overfitting and non-normality</a></p>
-<p><img src="./_resources/Finance.resources/Screenshot-(677).png" class="img-fluid" width="440"></p>
+<p><a href="./_resources/Finance.resources/Screenshot-(677).png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="./_resources/Finance.resources/Screenshot-(677).png" class="img-fluid" width="440"></a></p>
 <ul>
 <li>Shows that if a strategy has a maximum sharpe ratio of 1 but had 3 variations backtested, it’s deflated sharpe ratio drops below the 95% CI for a sharpe ratio = 1.</li>
 </ul></li>
@@ -1045,6 +1048,31 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","selector":".lightbox","openEffect":"zoom","loop":false});
+window.onload = () => {
+  lightboxQuarto.on('slide_before_load', (data) => {
+    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+    const href = trigger.getAttribute('href');
+    if (href !== null) {
+      const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+      if (imgEl !== null) {
+        const srcAttr = imgEl.getAttribute("src");
+        if (srcAttr && srcAttr.startsWith("data:")) {
+          slideConfig.href = srcAttr;
+        }
+      }
+    } 
+  });
+
+  lightboxQuarto.on('slide_after_load', (data) => {
+    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+    if (window.Quarto?.typesetMath) {
+      window.Quarto.typesetMath(slideNode);
+    }
+  });
+
+};
+          </script>
 
 
 

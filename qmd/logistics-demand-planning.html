@@ -76,6 +76,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -395,6 +398,7 @@ window.Quarto = {
   <li><a href="#sec-log-demfcast-intdem-fcastvar" id="toc-sec-log-demfcast-intdem-fcastvar" class="nav-link" data-scroll-target="#sec-log-demfcast-intdem-fcastvar">Forecasting Demand Variance</a></li>
   <li><a href="#sec-log-demfcast-intdem-diag" id="toc-sec-log-demfcast-intdem-diag" class="nav-link" data-scroll-target="#sec-log-demfcast-intdem-diag">Diagnostics</a></li>
   </ul></li>
+  <li><a href="#sec-log-demfcast-metrics" id="toc-sec-log-demfcast-metrics" class="nav-link" data-scroll-target="#sec-log-demfcast-metrics">Metrics</a></li>
   <li><a href="#sec-log-demfcast-dim" id="toc-sec-log-demfcast-dim" class="nav-link" data-scroll-target="#sec-log-demfcast-dim">Decision Impact Metrics</a>
   <ul>
   <li><a href="#sec-log-demfcast-dim-misc" id="toc-sec-log-demfcast-dim-misc" class="nav-link" data-scroll-target="#sec-log-demfcast-dim-misc">Misc</a></li>
@@ -448,24 +452,17 @@ window.Quarto = {
 <li>Data availability — historical sales data, customer and product hierarchy data, and real-time orders data may be stored on disparate systems.</li>
 <li>Data quality — this may include issues such as inaccurate data due to entry errors or data being captured at different and inconsistent granularity across data elements.</li>
 </ul></li>
+<li>Prepare forecasts for alternate scenarios
+<ul>
+<li>Talk with someone on the business side and ask about the potential scenarios within the forecast horizon that could affect the forecast.</li>
+<li>Examples: a 10% inflation spike, supply disruption of a crucial raw material, a natural disaster, etc.</li>
+<li>Rank these scenarios and factors in order of importance, so that you can prioritize.</li>
+</ul></li>
 <li>Horizons (Typical)
 <ul>
 <li>Short-Term: 1 - 3 months</li>
 <li>Mid-Term: 6 - 18 months</li>
 <li>Long-Term: 3 - 5 years</li>
-</ul></li>
-<li>Metrics
-<ul>
-<li>See <a href="../qmd/logistics-demand-planning.html#sec-log-dim" style="color: green">Decision Impact Metrics</a></li>
-<li>WasteNot method for judging its adjusted forecast model vs prophet<br>
-<img src="./_resources/Logistics.resources/1-ni6N2L4yp0ynlOzL01f8Fg.png" class="img-fluid" width="532">
-<ul>
-<li>Change in the Number of Stock-Out Days (lower is better)</li>
-<li>Percent Change in Service Level (higher is better)</li>
-<li>Change in Profit (higher is better)</li>
-<li>Change in Wastage (lower is better)</li>
-<li>Change in Inventory Costs (lower is better)</li>
-</ul></li>
 </ul></li>
 </ul>
 </section>
@@ -582,7 +579,7 @@ window.Quarto = {
 <li>e.g.&nbsp;Marketing departiment is expecting 10% growth the week after it’s new promotion</li>
 </ul></li>
 <li>Replace with one of the previous methods, then apply a smoothing algorithm<br>
-<img src="./_resources/Logistics.resources/image4-1.png" class="img-fluid" width="432">
+<a href="./_resources/Logistics.resources/image4-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="./_resources/Logistics.resources/image4-1.png" class="img-fluid" width="432"></a>
 <ul>
 <li>Shows the Kalman filter by itself fails to replace the outlier dip with the normal, expected peak, but the manual adjustment + Kalman gives us what we want</li>
 </ul></li>
@@ -732,7 +729,7 @@ window.Quarto = {
 <li>“Mixture of Bernoulli and Gamma” tells us that the Bernoulli distribution was used for the demand occurrence (this is the only option), while the Gamma distribution was used for the demand sizes (this is the default option, but you can change this via the <span class="arg-text">distribution</span> argument).</li>
 </ul></li>
 <li><p>Demand Forecast</p>
-<p><img src="_resources/Logistics.resources/iets-forecast-1.webp" class="img-fluid" width="532"></p>
+<p><a href="_resources/Logistics.resources/iets-forecast-1.webp" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="_resources/Logistics.resources/iets-forecast-1.webp" class="img-fluid" width="532"></a></p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">forecast</span>(iETSModel, <span class="at">h=</span><span class="dv">5</span>, <span class="at">interval=</span><span class="st">"prediction"</span>, <span class="at">side=</span><span class="st">"upper"</span>) <span class="sc">|&gt;</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">plot</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
@@ -743,7 +740,7 @@ window.Quarto = {
 </ul></li>
 </ul></li>
 <li><p>Occurence Forecast (i.e.&nbsp;Stock or Not)</p>
-<p><img src="_resources/Logistics.resources/iets-forecast-occurence-1.webp" class="img-fluid" width="532"></p>
+<p><a href="_resources/Logistics.resources/iets-forecast-occurence-1.webp" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="_resources/Logistics.resources/iets-forecast-occurence-1.webp" class="img-fluid" width="532"></a></p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">forecast</span>(iETSModel<span class="sc">$</span>occurrence, <span class="at">h=</span><span class="dv">5</span>) <span class="sc">|&gt;</span> <span class="fu">plot</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li>Probability reaches roughly 0.2 over the next 5 months (i.e.&nbsp;we might sale once every 5 months).</li>
@@ -815,7 +812,7 @@ window.Quarto = {
 <li>Relative Root Mean Squared Error</li>
 <li>Look at the predictive distributions instead of just the point forecasts</li>
 <li>Accuracy Implication Metrics - Measure the effect of the forecast on inventory<br>
-<img src="./_resources/Logistics.resources/Screenshot-(1319).png" class="img-fluid" width="432">
+<a href="./_resources/Logistics.resources/Screenshot-(1319).png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="./_resources/Logistics.resources/Screenshot-(1319).png" class="img-fluid" width="432"></a>
 <ul>
 <li>Y Axis: 1 - Fill_Rate; X Axis: Average on-hand inventory</li>
 <li>Each method is a forecasting model</li>
@@ -823,6 +820,56 @@ window.Quarto = {
 </ul></li>
 </ul>
 </section>
+</section>
+<section id="sec-log-demfcast-metrics" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="sec-log-demfcast-metrics">Metrics</h2>
+<ul>
+<li>See <a href="../qmd/logistics-demand-planning.html#sec-log-dim" style="color: green">Decision Impact Metrics</a></li>
+<li>Process
+<ul>
+<li>Discuss with your manager and team the purpose of the demand forecast. Is its goal to set accurate sales targets? To lower inventory levels? What are the underlying concerns behind these forecast numbers?
+<ul>
+<li>If increasing sales is the top concern, then maybe adjusting the forcast towards the higher end of the prediction interval is better. Increased inventory leads to less stockouts which leads to more sales</li>
+<li>If decreasing inventory is the top concern, then maybe adjusting the forcast towards the lower end of the prediction interval is better as this will lead to decreased inventory and decreased cost.</li>
+</ul></li>
+<li>Create a simple business case to translate forecast accuracy metrics.
+<ul>
+<li>This will allow you to present your benefits of your model in business terms to a non-technical decision maker</li>
+<li><span class="ribbon-highlight">Example</span>: Decreasing MASE by 50%
+<ul>
+<li>Current situation:
+<ul>
+<li>Existing forecasting method produces an average MASE of 20%.</li>
+<li>Excess inventory costs average $50,000 per month due to inaccurate forecasts.</li>
+<li>Stockouts lead to an average of $20,000 in lost sales per month.</li>
+</ul></li>
+<li>After Improving Forecast:
+<ul>
+<li>By reducing MASE to 10% (decrease of 50%), the company can expect:
+<ul>
+<li>Reduced excess inventory costs: Inventory costs could be reduced by $25,000 per month (50% decrease).</li>
+<li>Increased sales: More accurate forecasts allow for optimal stock levels, potentially leading to a $10,000 increase in monthly sales.</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li>Diagram the decision making process
+<ul>
+<li>In many cases, the decision-maker or others will make subjective adjustments to forecasts</li>
+<li>The diagram should include the decision being made, the inputs for the decision, who’s making the decision, and the outcomes that follow.</li>
+<li>Each adjustment should be documented, so as to better assess how where improvement needs to made in the process.</li>
+</ul></li>
+</ul></li>
+<li>WasteNot method for judging its adjusted forecast model vs prophet<br>
+<a href="./_resources/Logistics.resources/1-ni6N2L4yp0ynlOzL01f8Fg.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img src="./_resources/Logistics.resources/1-ni6N2L4yp0ynlOzL01f8Fg.png" class="img-fluid" width="532"></a>
+<ul>
+<li>Change in the Number of Stock-Out Days (lower is better)</li>
+<li>Percent Change in Service Level (higher is better)</li>
+<li>Change in Profit (higher is better)</li>
+<li>Change in Wastage (lower is better)</li>
+<li>Change in Inventory Costs (lower is better)</li>
+</ul></li>
+</ul>
 </section>
 <section id="sec-log-demfcast-dim" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="sec-log-demfcast-dim">Decision Impact Metrics</h2>
@@ -876,7 +923,7 @@ window.Quarto = {
 <li>FVA: The change in a forecasting accuracy metric that can be attributed to a particular process or participant in the forecasting process.
 <ul>
 <li><span class="ribbon-highlight">Example</span><br>
-<img src="./_resources/Logistics.resources/Screenshot-(807).png" class="img-fluid" width="282">
+<a href="./_resources/Logistics.resources/Screenshot-(807).png" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img src="./_resources/Logistics.resources/Screenshot-(807).png" class="img-fluid" width="282"></a>
 <ul>
 <li>Statistical model has 5% FVA vs Naive forecast</li>
 <li>Adjusted Statistical Forecast has 2% FVA vs Naive Forecast
@@ -1089,7 +1136,7 @@ pq_t - vq_t - c_s(y_t-q_t) &amp; \text{for}\;\; q_t &lt; y_t
 <ul>
 <li><p>Interpretation: With the increase of the variable x1, the orders should change on average by 1.36</p></li>
 <li><p>Plot<br>
-<img src="./_resources/Logistics.resources/ordersDynamics.png" class="img-fluid" width="632"></p>
+<a href="./_resources/Logistics.resources/ordersDynamics.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7"><img src="./_resources/Logistics.resources/ordersDynamics.png" class="img-fluid" width="632"></a></p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(model1, <span class="dv">7</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li>Figure above corresponds to the orders (purple) and would cover roughly 90.91% of cases (black), so that we would run out of product in approximately 10% of cases, which would still be more profitable than any other option.</li>
@@ -1196,7 +1243,7 @@ pq_t - vq_t - c_s(y_t-q_t) &amp; \text{for}\;\; q_t &lt; y_t
 </ul></li>
 </ul></li>
 </ul></li>
-<li>Optimizer must account for uncertainty<img src="./_resources/Logistics.resources/Screenshot-(363).png" class="img-fluid" width="432">
+<li>Optimizer must account for uncertainty<a href="./_resources/Logistics.resources/Screenshot-(363).png" class="lightbox" data-gallery="quarto-lightbox-gallery-8"><img src="./_resources/Logistics.resources/Screenshot-(363).png" class="img-fluid" width="432"></a>
 <ul>
 <li>City B’s forecast distribution has substantial uncertainty, and it’s mean says it will have enough drivers (i.e.&nbsp;oversupply)</li>
 <li>City A’s forecast distribution is more certain, and it’s more likely to be undersupplied.</li>
@@ -1630,6 +1677,31 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
+<script>var lightboxQuarto = GLightbox({"selector":".lightbox","loop":false,"closeEffect":"zoom","openEffect":"zoom","descPosition":"bottom"});
+window.onload = () => {
+  lightboxQuarto.on('slide_before_load', (data) => {
+    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+    const href = trigger.getAttribute('href');
+    if (href !== null) {
+      const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+      if (imgEl !== null) {
+        const srcAttr = imgEl.getAttribute("src");
+        if (srcAttr && srcAttr.startsWith("data:")) {
+          slideConfig.href = srcAttr;
+        }
+      }
+    } 
+  });
+
+  lightboxQuarto.on('slide_after_load', (data) => {
+    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+    if (window.Quarto?.typesetMath) {
+      window.Quarto.typesetMath(slideNode);
+    }
+  });
+
+};
+          </script>
 
 
 
