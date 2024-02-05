@@ -390,6 +390,7 @@ window.Quarto = {
   <li><a href="#sec-log-demfcast-artnot-csasr" id="toc-sec-log-demfcast-artnot-csasr" class="nav-link" data-scroll-target="#sec-log-demfcast-artnot-csasr">Case Study: Automating Stock Replenishment</a></li>
   <li><a href="#sec-log-demfcast-artnot-dwshk" id="toc-sec-log-demfcast-artnot-dwshk" class="nav-link" data-scroll-target="#sec-log-demfcast-artnot-dwshk">Dealing with Shocks</a></li>
   </ul></li>
+  <li><a href="#project-preparation" id="toc-project-preparation" class="nav-link" data-scroll-target="#project-preparation">Project Preparation</a></li>
   <li><a href="#sec-log-demfcast-intdem" id="toc-sec-log-demfcast-intdem" class="nav-link" data-scroll-target="#sec-log-demfcast-intdem">Intermittent Demand</a>
   <ul>
   <li><a href="#sec-log-demfcast-intdem-misc" id="toc-sec-log-demfcast-intdem-misc" class="nav-link" data-scroll-target="#sec-log-demfcast-intdem-misc">Misc</a></li>
@@ -605,6 +606,75 @@ window.Quarto = {
 </ul></li>
 </ul>
 </section>
+</section>
+<section id="project-preparation" class="level2">
+<h2 class="anchored" data-anchor-id="project-preparation">Project Preparation</h2>
+<ul>
+<li><u>Misc</u>
+<ul>
+<li>Questions for the stakeholder before starting a forecasting project.
+<ul>
+<li>For the most part, the questions with bold terms are ones that I consider essential for producing a valuable forecasting model.</li>
+<li>The other questions might be optional depending on your role.
+<ul>
+<li>i.e.&nbsp;Unless you’re asked to review the overall decision making process and offer recommendations, the questions surrounding the decision-making process are not strictly necessary for producing a forecasting model.</li>
+</ul></li>
+</ul></li>
+<li>Notes from: <a href="https://medium.com/@lingyi_99090/an-inquisitive-journey-into-forecasting-2f5289414ac2">An Inquisitive Journey into Forecasting</a></li>
+</ul></li>
+<li><u>Decisions and Actions</u>
+<ul>
+<li>What decisions is the forecast going to support? (e.g.&nbsp;plan for manufacturing, set inventory target, allocate marketing budget?) How are they made currently? Is there a clear and stable decision process?
+<ul>
+<li>A “clear and stable decision process” would mean that the decision-making process ,for which the forecast is an input, is the same each and every time a decision is made.</li>
+<li>e.g.&nbsp;Adjusting a forecast based on vibes or politics or casually adding or removing other inputs to the decision-making process would <em>n</em>o<em>t</em> be stable</li>
+</ul></li>
+<li>Who are the key <strong>decision-makers</strong>? What does the <strong>decision process</strong> look like? Are there stakeholders who should have been involved but were left out?</li>
+<li>What are the subsequent actions related to the decision? Who carries them out? How do people manage and carry out these actions in their day-to-day business? How well do actions adhere to decisions?</li>
+<li>How often is the decision made? Is it the right <strong>frequency</strong> for the actions? (too frequent then it disrupts day-to-day business; too infrequent then we are slow to react to crucial trends and events)
+<ul>
+<li>e.g.&nbsp;Should the predicted values be weekly, monthly, quarterly, etc.?</li>
+</ul></li>
+<li>How much further into the future do people anticipate when making decisions? (i.e.&nbsp;the forecast <strong>horizon</strong>) Is it the right horizon for the actions? (too short then business will be forever in reactive mode, too long then forecasting team will just waste their energy on useless reports)</li>
+<li>At which granularity do people make decisions? At which granularity do people take actions? Are they the same? If not, how do people bridge the gap to carry out their day-to-day business?
+<ul>
+<li>i.e.&nbsp;Is there <strong>hierarchical</strong> or <strong>group</strong> aspect to the forecast?</li>
+</ul></li>
+<li>What are the decisions and actions closely related to this one? Are those decisions providing input, constraints to the current one, or does the forecast enable them?</li>
+<li>From a process perspective, how do they ensure that targets and forecasts are not interfering with each other? Is there a clear distinction between targets and forecasts in the company?
+<ul>
+<li>I think this one is asking if the forecasts get fudged to get inline with sales targets (?) which goes back to first question about a stable decision-making process.</li>
+</ul></li>
+</ul></li>
+<li><u>Value</u>
+<ul>
+<li>Also see <a href="../qmd/logistics-demand-planning.html#sec-log-demfcast-metrics" style="color: green">Metrics</a> for details on drilling down into this subject</li>
+<li>How is the variable being forecasted related to the company’s OKRs/KPIs?</li>
+<li>What value can a good decision bring about and what’s the cost of a bad decision? Can I make a <strong>dollar estimation of the impact</strong>? What would be a reasonable way to make this estimation, and what are the assumptions behind it?</li>
+<li>Using the framework of value estimation established in the previous question, can I connect the metrics of forecast quality (e.g.&nbsp;accuracy, bias) to a dollar impact? What would be a reasonable level of impact to sponsor the upgrade / rebuild of the forecast model? How much model improvement would that entail?</li>
+<li>Can I improve / refine the decision-making process without improving the forecast model? If so, how big is the value impact?</li>
+<li>Are there any non-financial benefits, e.g.&nbsp;<strong>time and efficiency</strong>? Better adoption of data-driven decision making and higher trust in data and forecast? Internal capability building which paves the way for future technologies?
+<ul>
+<li>The time and efficiency in generating forecasts for the old forecasting model/process can be used as inputs in determining the overall ROI of your model.</li>
+</ul></li>
+<li>Does the <strong>80/20 rule</strong> apply to the value impact somewhere? For example, the majority of the value can come from a rather restricted scope of products, business lines, distribution channels, geographies and decisions.
+<ul>
+<li>If you’re creating a model with hierarchical or group data and for example, some products are more important for generating profit for the company than others, then the models forecasting those products best take priority in any sort of model selection process.</li>
+</ul></li>
+</ul></li>
+<li><u>Drivers and Proxies</u> - While causal variables are good predictors (assuming they’re leading indicators), using <em>only</em> causal variables as predictors isn’t necessarily important to produce accurate predictions, but they are important for determining which levers can be adjusted by stakeholders in order to increase or decrease the future values of the forecast variable (e.g.&nbsp;sales). Use the answers to these questions to create a DAG. Then, models can be fit to measure their effects.
+<ul>
+<li>What are the <strong>key factors</strong> which impact the forecast target? (e.g.&nbsp;for demand, it could be price, promotion, marketing, channel distribution, etc.)</li>
+<li>What is the mechanism between those factors and the forecast target? Can we establish <strong>causal links</strong> either through common sense or industry expertise?</li>
+<li>Among those factors, which are the causal drivers and which are barely correlated?</li>
+<li>What are the factors that we, as an organization, can <strong>control</strong>? (e.g.&nbsp;price and promotion)</li>
+<li>What are the factors that we cannot control but we can <strong>observe</strong>?</li>
+<li>What are the factors that are <strong>neither controllable nor observable</strong>, but we know they have an important impact on demand?</li>
+<li>What are the factors that influence the forecast target with a delay (i.e.&nbsp;forward-looking indicators / signals), and how long is the <strong>lead</strong> time?</li>
+<li>How do people make forecasts currently? Do they use any of those factors and their relations to help them make the forecast? Is there a <strong>data-driven model</strong> in place?</li>
+</ul></li>
+<li><u>Data</u></li>
+</ul>
 </section>
 <section id="sec-log-demfcast-intdem" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="sec-log-demfcast-intdem">Intermittent Demand</h2>
@@ -1677,7 +1747,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","selector":".lightbox","loop":false,"closeEffect":"zoom","openEffect":"zoom"});
+<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","closeEffect":"zoom","selector":".lightbox","descPosition":"bottom","loop":false});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;
