@@ -390,7 +390,7 @@ window.Quarto = {
   <li><a href="#sec-log-demfcast-artnot-csasr" id="toc-sec-log-demfcast-artnot-csasr" class="nav-link" data-scroll-target="#sec-log-demfcast-artnot-csasr">Case Study: Automating Stock Replenishment</a></li>
   <li><a href="#sec-log-demfcast-artnot-dwshk" id="toc-sec-log-demfcast-artnot-dwshk" class="nav-link" data-scroll-target="#sec-log-demfcast-artnot-dwshk">Dealing with Shocks</a></li>
   </ul></li>
-  <li><a href="#project-preparation" id="toc-project-preparation" class="nav-link" data-scroll-target="#project-preparation">Project Preparation</a></li>
+  <li><a href="#sec-log-demfcast-stakho" id="toc-sec-log-demfcast-stakho" class="nav-link" data-scroll-target="#sec-log-demfcast-stakho">Stakeholder Questions</a></li>
   <li><a href="#sec-log-demfcast-intdem" id="toc-sec-log-demfcast-intdem" class="nav-link" data-scroll-target="#sec-log-demfcast-intdem">Intermittent Demand</a>
   <ul>
   <li><a href="#sec-log-demfcast-intdem-misc" id="toc-sec-log-demfcast-intdem-misc" class="nav-link" data-scroll-target="#sec-log-demfcast-intdem-misc">Misc</a></li>
@@ -607,8 +607,8 @@ window.Quarto = {
 </ul>
 </section>
 </section>
-<section id="project-preparation" class="level2">
-<h2 class="anchored" data-anchor-id="project-preparation">Project Preparation</h2>
+<section id="sec-log-demfcast-stakho" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="sec-log-demfcast-stakho">Stakeholder Questions</h2>
 <ul>
 <li><u>Misc</u>
 <ul>
@@ -669,11 +669,34 @@ window.Quarto = {
 <li>Among those factors, which are the causal drivers and which are barely correlated?</li>
 <li>What are the factors that we, as an organization, can <strong>control</strong>? (e.g.&nbsp;price and promotion)</li>
 <li>What are the factors that we cannot control but we can <strong>observe</strong>?</li>
-<li>What are the factors that are <strong>neither controllable nor observable</strong>, but we know they have an important impact on demand?</li>
+<li>What are the factors that are <strong>neither controllable nor observable</strong>, but we know they have an important impact on demand?
+<ul>
+<li>These will require proxy variables. (Also see <a href="https://ercbk.github.io/Data-Science-Notebook/qmd/causal-inference.html#sec-causinf-misc" style="color: green">Causal Inference &gt;&gt; Misc</a> &gt;&gt; Partial Identification)</li>
+</ul></li>
 <li>What are the factors that influence the forecast target with a delay (i.e.&nbsp;forward-looking indicators / signals), and how long is the <strong>lead</strong> time?</li>
 <li>How do people make forecasts currently? Do they use any of those factors and their relations to help them make the forecast? Is there a <strong>data-driven model</strong> in place?</li>
 </ul></li>
-<li><u>Data</u></li>
+<li><u>Data</u>
+<ul>
+<li>Do we have <strong>historical data</strong> for all the above-mentioned factors? How much history do we have for each factor? If direct data is not available, is it possible to find good proxies from public data sources or through <strong>data acquisition</strong>?</li>
+<li>Can we obtain forward-looking indicators for the forecast target from sources like research organizations, public data, or <strong>internal resources</strong> (such as pricing and promotions)? Additionally, how far into the future do these data provide insights?</li>
+<li><strong>Where</strong> do these data (historical &amp; forward-looking) come from? Are they generated internally from an ERP system, inputted manually by staff, or obtained from external data providers?</li>
+<li>Is there a data cleaning process (<strong>ETL</strong>) that is used to prepare the data we have? How does it work? What are the main functions that it performs? Would this process mask key information that we want to get from the data? If that’s the case, is it possible to obtain the <strong>raw data</strong>?</li>
+<li>What’s the granularity of those data? Is it as granular as the decisions? How often do those data get updated? Is it updated frequently enough for the decision process?</li>
+<li>Do we have <strong>multiple sources</strong> for the same factor? If so, what are the key differences? Do different business units and teams use different sources or versions? What’s the reason behind it?</li>
+<li>Does the data cover all products / business units? If not, what’s the reason for the low coverage? Can we calculate the percentage of the value pool which have <strong>proper data coverage</strong>? Does that look big enough? If not, can we think of ways to improve it?
+<ul>
+<li>“Value pool” refers the profits of the company and if there is sufficient data collection on the products that create the most value for the company.</li>
+</ul></li>
+<li>What’s a normal <strong>range</strong> for key business data and KPIs (e.g.&nbsp;accuracy, bias)? How do business people generally account for the fluctuation of those metrics?</li>
+</ul></li>
+<li><u>Draw Conclusions from the Answers</u>
+<ul>
+<li>Do I know what this forecast is built for, what’s the value? Where and how do we generate value? How is it linked to the forecast quality?</li>
+<li>How can the forecast be designed (frequency, horizon, granularity, scope) to assist and guide the process? How do decision-makers and operational staff interact with the forecast? Does that make sense?</li>
+<li>Do I fully understand how my forecast target is generated? What do the list of drivers, causal graph, and influence lag imply about my modeling? Does that fit well with the process?</li>
+<li>Do I have enough &amp; good-quality data to build the first model? What might go wrong with the data, how to fix it (if possible)? How can we improve data quality, availability over time (how long would that be)?</li>
+</ul></li>
 </ul>
 </section>
 <section id="sec-log-demfcast-intdem" class="level2 unnumbered">
@@ -872,7 +895,11 @@ window.Quarto = {
 <section id="sec-log-demfcast-intdem-diag" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="sec-log-demfcast-intdem-diag">Diagnostics</h3>
 <ul>
-<li>Also see <a href="../qmd/logistics-demand-planning.html#sec-log-demfcast-dim" style="color: green">Decision Impact Metrics</a></li>
+<li>Also see
+<ul>
+<li><a href="../qmd/logistics-demand-planning.html#sec-log-demfcast-metrics" style="color: green">Metrics</a></li>
+<li><a href="../qmd/logistics-demand-planning.html#sec-log-demfcast-dim" style="color: green">Decision Impact Metrics</a></li>
+</ul></li>
 <li>Do NOT use metrics based on absolute errors (e.g MASE, MAPE) <em>by themselves</em>
 <ul>
 <li>Minimization of these metrics, by themselves, can result (i.e.&nbsp;over half of your values are zeros) in always recommending 0 value forecasts</li>
@@ -894,7 +921,11 @@ window.Quarto = {
 <section id="sec-log-demfcast-metrics" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="sec-log-demfcast-metrics">Metrics</h2>
 <ul>
-<li>See <a href="../qmd/logistics-demand-planning.html#sec-log-dim" style="color: green">Decision Impact Metrics</a></li>
+<li>See
+<ul>
+<li><a href="../qmd/logistics-demand-planning.html#sec-log-demfcast-intdem-diag" style="color: green">Demand Forecasting &gt;&gt; Intermittent Demand &gt;&gt; Diagnostics</a> &gt;&gt; Accuracy Implication Metrics</li>
+<li><a href="../qmd/logistics-demand-planning.html#sec-log-dim" style="color: green">Decision Impact Metrics</a></li>
+</ul></li>
 <li>Process
 <ul>
 <li>Discuss with your manager and team the purpose of the demand forecast. Is its goal to set accurate sales targets? To lower inventory levels? What are the underlying concerns behind these forecast numbers?
@@ -946,7 +977,11 @@ window.Quarto = {
 <section id="sec-log-demfcast-dim-misc" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="sec-log-demfcast-dim-misc">Misc</h3>
 <ul>
-<li>Also see <a href="../qmd/logistics-demand-planning.html#sec-log-demfcast-intdem-diag" style="color: green">Demand Forecasting &gt;&gt; Intermittent Demand &gt;&gt; Diagnostics</a> &gt;&gt; Accuracy Implication Metrics</li>
+<li>Also see
+<ul>
+<li><a href="../qmd/logistics-demand-planning.html#sec-log-demfcast-metrics" style="color: green">Metrics</a></li>
+<li><a href="../qmd/logistics-demand-planning.html#sec-log-demfcast-intdem-diag" style="color: green">Demand Forecasting &gt;&gt; Intermittent Demand &gt;&gt; Diagnostics</a> &gt;&gt; Accuracy Implication Metrics</li>
+</ul></li>
 <li>DI metrics for all generated forecasts can be used to calculate a quarterly, semestrial, or annual ROI for the product planning department
 <ul>
 <li>ROI = sum(<span class="math inline">\(DI_{na}\)</span>)- (cost of people, tools, etc. used by department to generate forecasts)</li>
@@ -1747,7 +1782,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","closeEffect":"zoom","selector":".lightbox","descPosition":"bottom","loop":false});
+<script>var lightboxQuarto = GLightbox({"selector":".lightbox","openEffect":"zoom","loop":false,"closeEffect":"zoom","descPosition":"bottom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;

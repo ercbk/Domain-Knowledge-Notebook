@@ -104,7 +104,7 @@
     -   Requires using domain expertise of the event to use to adjust the predictions
     -   Make sure to build-out the code infrastructure so that each manual adjustment should just feel like adding another input to the model.
 
-## Project Preparation
+## Stakeholder Questions {#sec-log-demfcast-stakho .unnumbered}
 
 -   [Misc]{.underline}
     -   Questions for the stakeholder before starting a forecasting project.
@@ -143,9 +143,24 @@
     -   What are the factors that we, as an organization, can **control**? (e.g. price and promotion)
     -   What are the factors that we cannot control but we can **observe**?
     -   What are the factors that are **neither controllable nor observable**, but we know they have an important impact on demand?
+        -   These will require proxy variables. (Also see [Causal Inference \>\> Misc](https://ercbk.github.io/Data-Science-Notebook/qmd/causal-inference.html#sec-causinf-misc){style="color: green"} \>\> Partial Identification)
     -   What are the factors that influence the forecast target with a delay (i.e. forward-looking indicators / signals), and how long is the **lead** time?
     -   How do people make forecasts currently? Do they use any of those factors and their relations to help them make the forecast? Is there a **data-driven model** in place?
 -   [Data]{.underline}
+    -   Do we have **historical data** for all the above-mentioned factors? How much history do we have for each factor? If direct data is not available, is it possible to find good proxies from public data sources or through **data acquisition**?
+    -   Can we obtain forward-looking indicators for the forecast target from sources like research organizations, public data, or **internal resources** (such as pricing and promotions)? Additionally, how far into the future do these data provide insights?
+    -   **Where** do these data (historical & forward-looking) come from? Are they generated internally from an ERP system, inputted manually by staff, or obtained from external data providers?
+    -   Is there a data cleaning process (**ETL**) that is used to prepare the data we have? How does it work? What are the main functions that it performs? Would this process mask key information that we want to get from the data? If that’s the case, is it possible to obtain the **raw data**?
+    -   What’s the granularity of those data? Is it as granular as the decisions? How often do those data get updated? Is it updated frequently enough for the decision process?
+    -   Do we have **multiple sources** for the same factor? If so, what are the key differences? Do different business units and teams use different sources or versions? What’s the reason behind it?
+    -   Does the data cover all products / business units? If not, what’s the reason for the low coverage? Can we calculate the percentage of the value pool which have **proper data coverage**? Does that look big enough? If not, can we think of ways to improve it?
+        -   "Value pool" refers the profits of the company and if there is sufficient data collection on the products that create the most value for the company.
+    -   What’s a normal **range** for key business data and KPIs (e.g. accuracy, bias)? How do business people generally account for the fluctuation of those metrics?
+-   [Draw Conclusions from the Answers]{.underline}
+    -   Do I know what this forecast is built for, what’s the value? Where and how do we generate value? How is it linked to the forecast quality?
+    -   How can the forecast be designed (frequency, horizon, granularity, scope) to assist and guide the process? How do decision-makers and operational staff interact with the forecast? Does that make sense?
+    -   Do I fully understand how my forecast target is generated? What do the list of drivers, causal graph, and influence lag imply about my modeling? Does that fit well with the process?
+    -   Do I have enough & good-quality data to build the first model? What might go wrong with the data, how to fix it (if possible)? How can we improve data quality, availability over time (how long would that be)?
 
 ## Intermittent Demand {#sec-log-demfcast-intdem .unnumbered}
 
@@ -298,7 +313,9 @@
 
 ### Diagnostics {#sec-log-demfcast-intdem-diag .unnumbered}
 
--   Also see [Decision Impact Metrics](logistics-demand-planning.qmd#sec-log-demfcast-dim){style="color: green"}
+-   Also see
+    -   [Metrics](logistics-demand-planning.qmd#sec-log-demfcast-metrics){style="color: green"}
+    -   [Decision Impact Metrics](logistics-demand-planning.qmd#sec-log-demfcast-dim){style="color: green"}
 -   Do NOT use metrics based on absolute errors (e.g MASE, MAPE) *by themselves*
     -   Minimization of these metrics, by themselves, can result (i.e. over half of your values are zeros) in always recommending 0 value forecasts
     -   Can be used in conjunction with bias correction measures
@@ -313,7 +330,9 @@
 
 ## Metrics {#sec-log-demfcast-metrics .unnumbered}
 
--   See [Decision Impact Metrics](logistics-demand-planning.qmd#sec-log-dim){style="color: green"}
+-   See
+    -   [Demand Forecasting \>\> Intermittent Demand \>\> Diagnostics](logistics-demand-planning.qmd#sec-log-demfcast-intdem-diag){style="color: green"} \>\> Accuracy Implication Metrics
+    -   [Decision Impact Metrics](logistics-demand-planning.qmd#sec-log-dim){style="color: green"}
 -   Process
     -   Discuss with your manager and team the purpose of the demand forecast. Is its goal to set accurate sales targets? To lower inventory levels? What are the underlying concerns behind these forecast numbers?
         -   If increasing sales is the top concern, then maybe adjusting the forcast towards the higher end of the prediction interval is better. Increased inventory leads to less stockouts which leads to more sales
@@ -345,7 +364,9 @@
 
 ### Misc {#sec-log-demfcast-dim-misc .unnumbered}
 
--   Also see [Demand Forecasting \>\> Intermittent Demand \>\> Diagnostics](logistics-demand-planning.qmd#sec-log-demfcast-intdem-diag){style="color: green"} \>\> Accuracy Implication Metrics
+-   Also see
+    -   [Metrics](logistics-demand-planning.qmd#sec-log-demfcast-metrics){style="color: green"}
+    -   [Demand Forecasting \>\> Intermittent Demand \>\> Diagnostics](logistics-demand-planning.qmd#sec-log-demfcast-intdem-diag){style="color: green"} \>\> Accuracy Implication Metrics
 -   DI metrics for all generated forecasts can be used to calculate a quarterly, semestrial, or annual ROI for the product planning department
     -   ROI = sum($DI_{na}$)- (cost of people, tools, etc. used by department to generate forecasts)
 -   Probabilistic Forecasts + DI metrics
