@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.549">
+<meta name="generator" content="quarto-1.4.550">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -1135,6 +1135,71 @@ eCPM = \frac{\mbox{Estimated Earnings} \cdot 1000}{\mbox{Total Impressions}}
 <ul>
 <li>From <a href="https://towardsdatascience.com/a-data-science-project-with-chatgpt-code-interpreter-e9beb8705dac">A Data Science Project with ChatGPT Code Interpreter</a></li>
 </ul></li>
+<li><p><span class="ribbon-highlight">Example</span>: Categorizing by Rank</p>
+<ul>
+<li>From <a href="https://towardsdatascience.com/how-to-create-an-rfm-model-in-bigquery-5ca7bbbd4687">How to Create an RFM Model in BigQuery</a> (See article for code)</li>
+<li>Advocates
+<ul>
+<li><p>Who They Are: Recent, frequent shoppers with high spending.</p></li>
+<li><p>Strategy: Ideal for exclusive rewards and further engagement opportunities.</p></li>
+<li><p>Ranks</p>
+<pre><code>recency_rank between 4 and 5 
+and frequency_rank between 4 and 5 
+and monetary_rank between 4 and 5 </code></pre></li>
+</ul></li>
+<li>Loyalists
+<ul>
+<li><p>Who They Are: Customers showing strong recent engagement and significant spending.</p></li>
+<li><p>Strategy: Deserve recognition and retention efforts, perfect for loyalty programs.</p></li>
+<li><p>Ranks</p>
+<pre><code>recency_rank between 3 and 5 
+and frequency_rank between 3 and 5 
+and monetary_rank between 3 and 5 </code></pre></li>
+</ul></li>
+<li>Promising
+<ul>
+<li><p>Who They Are: Recent customers showing potential but with lower frequency and spend.</p></li>
+<li><p>Strategy: Need encouragement to boost their shopping frequency and spending.</p></li>
+<li><p>Ranks</p>
+<pre><code>recency_rank between 3 and 5 
+and frequency_rank between 2 and 5 
+and monetary_rank between 1 and 5 </code></pre></li>
+</ul></li>
+<li>Need Attention
+<ul>
+<li><p>Who They Are: Customers who have made a recent purchase but have only done so once.</p></li>
+<li><p>Strategy: An opportunity to introduce these typically new customers to the brand and products, encouraging deeper engagement.</p></li>
+<li><p>Ranks</p>
+<pre><code>recency_rank between 3 and 5 
+and frequency_rank = 1
+and monetary_rank between 1 and 5</code></pre></li>
+</ul></li>
+<li>Losing High Value
+<ul>
+<li><p>Who They Are: Once frequent and high-spending customers now showing decreased recency.</p></li>
+<li><p>Strategy: Require personalized re-engagement strategies and incentives to rekindle their interest and loyalty.</p></li>
+<li><p>Ranks</p>
+<pre><code>recency_rank between 2 and 3 
+and frequency_rank between 1 and 5 
+and monetary_rank between 3 and 5 </code></pre></li>
+</ul></li>
+<li>Losing Low Value
+<ul>
+<li><p>Who They Are: Customers similar to the high-value segment but with overall lower spending.</p></li>
+<li><p>Strategy: Also in need of re-engagement efforts, though strategies may differ given their lower value.</p></li>
+<li><p>Ranks</p>
+<pre><code>recency_rank between 2 and 3 
+and frequency_rank between 1 and 5
+and monetary_rank between 1 and 3</code></pre></li>
+</ul></li>
+<li>Lost
+<ul>
+<li><p>Who They Are: Customers who have not made a purchase in a long time, making them unlikely to return.</p></li>
+<li><p>Strategy: Focus efforts on more engaged segments, as re-engaging lost customers may not be resource-efficient.</p></li>
+<li><p>Rank</p>
+<pre><code>recency_rank = 1 </code></pre></li>
+</ul></li>
+</ul></li>
 </ul></li>
 </ul>
 </section>
@@ -1762,7 +1827,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../qmd/manufacturing.html" class="pagination-link  aria-label=" manufacturing"="">
+      <a href="../qmd/manufacturing.html" class="pagination-link" aria-label="Manufacturing">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Manufacturing</span>
       </a>          
   </div>
@@ -1792,7 +1857,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"selector":".lightbox","loop":false,"openEffect":"zoom","descPosition":"bottom","closeEffect":"zoom"});
+<script>var lightboxQuarto = GLightbox({"loop":false,"selector":".lightbox","descPosition":"bottom","openEffect":"zoom","closeEffect":"zoom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;
