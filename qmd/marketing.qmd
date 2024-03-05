@@ -503,6 +503,92 @@
 
         -   From [A Data Science Project with ChatGPT Code Interpreter](https://towardsdatascience.com/a-data-science-project-with-chatgpt-code-interpreter-e9beb8705dac)
 
+    -   [Example]{.ribbon-highlight}: Categorizing by Rank
+
+        -   From [How to Create an RFM Model in BigQuery](https://towardsdatascience.com/how-to-create-an-rfm-model-in-bigquery-5ca7bbbd4687) (See article for code)
+        -   Advocates
+            -   Who They Are: Recent, frequent shoppers with high spending.
+
+            -   Strategy: Ideal for exclusive rewards and further engagement opportunities.
+
+            -   Ranks
+
+                ```         
+                recency_rank between 4 and 5 
+                and frequency_rank between 4 and 5 
+                and monetary_rank between 4 and 5 
+                ```
+        -   Loyalists
+            -   Who They Are: Customers showing strong recent engagement and significant spending.
+
+            -   Strategy: Deserve recognition and retention efforts, perfect for loyalty programs.
+
+            -   Ranks
+
+                ```         
+                recency_rank between 3 and 5 
+                and frequency_rank between 3 and 5 
+                and monetary_rank between 3 and 5 
+                ```
+        -   Promising
+            -   Who They Are: Recent customers showing potential but with lower frequency and spend.
+
+            -   Strategy: Need encouragement to boost their shopping frequency and spending.
+
+            -   Ranks
+
+                ```         
+                recency_rank between 3 and 5 
+                and frequency_rank between 2 and 5 
+                and monetary_rank between 1 and 5 
+                ```
+        -   Need Attention
+            -   Who They Are: Customers who have made a recent purchase but have only done so once.
+
+            -   Strategy: An opportunity to introduce these typically new customers to the brand and products, encouraging deeper engagement.
+
+            -   Ranks
+
+                ```         
+                recency_rank between 3 and 5 
+                and frequency_rank = 1
+                and monetary_rank between 1 and 5
+                ```
+        -   Losing High Value
+            -   Who They Are: Once frequent and high-spending customers now showing decreased recency.
+
+            -   Strategy: Require personalized re-engagement strategies and incentives to rekindle their interest and loyalty.
+
+            -   Ranks
+
+                ```         
+                recency_rank between 2 and 3 
+                and frequency_rank between 1 and 5 
+                and monetary_rank between 3 and 5 
+                ```
+        -   Losing Low Value
+            -   Who They Are: Customers similar to the high-value segment but with overall lower spending.
+
+            -   Strategy: Also in need of re-engagement efforts, though strategies may differ given their lower value.
+
+            -   Ranks
+
+                ```         
+                recency_rank between 2 and 3 
+                and frequency_rank between 1 and 5
+                and monetary_rank between 1 and 3
+                ```
+        -   Lost
+            -   Who They Are: Customers who have not made a purchase in a long time, making them unlikely to return.
+
+            -   Strategy: Focus efforts on more engaged segments, as re-engaging lost customers may not be resource-efficient.
+
+            -   Rank
+
+                ```         
+                recency_rank = 1 
+                ```
+
 ### Behavioral Segmentation {#sec-mark-custseg-behav .unnumbered}
 
 -   Tries to understand how customers interact with your product or website
