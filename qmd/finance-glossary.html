@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.550">
+<meta name="generator" content="quarto-1.4.551">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -519,11 +519,18 @@ M = \frac{\text{Closing Price}_{\text{end of month}}- \text{Closing Price}_{\tex
 </ul></li>
 <li><p><span style="color: #009499"><strong>Options</strong></span> - An option on stock XYZ gives the holder the right to buy or sell XYZ at the strike price up until expiration. The underlying asset for the option is the stock of XYZ. The writer must either buy or sell the underlying asset to the buyer on the specified date at the agreed-upon price. The buyer is not obligated to purchase the underlying asset, but they can exercise their right if they choose to do so. If the option is about to expire, and the underlying asset has not moved favorably enough to make exercising the option worthwhile, the buyer can let the expire and they will lose the amount they paid for the option.</p>
 <ul>
-<li><span style="color: #009499"><strong>Put option</strong></span> - If Morty buys 100 shares of Stock plc (STOCK) at $10 per share, he might hedge his investment by buying an American put option with a strike price of $8 expiring in one year. This option gives Morty the right to sell 100 shares of STOCK for $8 any time in the next year. Let’s assume he pays $1 for the option, or $100 in premium. If one year later STOCK is trading at $12, Morty will not exercise the option and will be out $100. He’s unlikely to fret, though, since his unrealized gain is $100 ($100 including the price of the put). If STOCK is trading at $0, on the other hand, Morty will exercise the option and sell his shares for $8, for a loss of $300 ($300 including the price of the put). Without the option, he stood to lose his entire investment.</li>
-<li><span style="color: #009499"><strong>Call options</strong></span> - Contract giving the owner the right, but not the obligation, to buy a specified amount of an underlying security at a specified price within a specified time. The specified price is known as the <span style="color: #009499"><strong>strike price</strong></span> and the specified time during which a sale is made is its expiration (expiry) or time to maturity. As the price of the stock goes up, the value of the call option contract goes up. The contract can be sold at any time or you can purchase the stock at the guaranteed price on the expiration date. The price of the call option is called the premium.
+<li><p><span style="color: #009499"><strong>Call options</strong></span> - Contract giving the owner the right, but not the obligation, to buy a specified amount of an underlying security at a specified price within a specified time. The specified price is known as the <span style="color: #009499"><strong>strike price</strong></span> and the specified time during which a sale is made is its expiration (expiry) or time to maturity. As the price of the stock goes up, the value of the call option contract goes up. The contract can be sold at any time or you can purchase the stock at the guaranteed price on the expiration date. The price of the call option is called the premium.</p>
 <ul>
 <li>If Apple is trading at $110 at expiry (aka expiration date), the strike price is $100, and the options cost the buyer $2, the profit is $110 - ($100 +$2) = $8. If the buyer bought one contract that equates to $800 ($8 x 100 shares), or $1,600 if they bought two contracts ($8 x 200). If at expiry Apple is below $100, then the option buyer loses $200 ($2 x 100 shares) for each contract they bought.</li>
 <li>Suppose that Microsoft shares are trading at $108 per share. You own 100 shares of the stock and want to generate an income above and beyond the stock’s dividend. You also believe that shares are unlikely to rise above $115.00 per share over the next month. You take a look at the call options for the following month and see that there’s a 115.00 call trading at $0.37 per contract. So, you sell one call option and collect the $37 premium ($0.37 x 100 shares), representing a roughly four percent annualized income. If the stock rises above $115.00, the option buyer will exercise the option and you will have to deliver the 100 shares of stock at $115.00 per share. You still generated a profit of $7.00 per share, but you will have missed out on any upside above $115.00. If the stock doesn’t rise above $115.00, you keep the shares and the $37 in premium income.</li>
+</ul></li>
+<li><p><span style="color: #009499"><strong>Put option</strong></span> - If Morty buys 100 shares of Stock plc (STOCK) at $10 per share, he might hedge his investment by buying an American put option with a strike price of $8 expiring in one year. This option gives Morty the right to sell 100 shares of STOCK for $8 any time in the next year. Let’s assume he pays $1 for the option, or $100 in premium. If one year later STOCK is trading at $12, Morty will not exercise the option and will be out $100. He’s unlikely to fret, though, since his unrealized gain is $100 ($100 including the price of the put). If STOCK is trading at $0, on the other hand, Morty will exercise the option and sell his shares for $8, for a loss of $300 ($300 including the price of the put). Without the option, he stood to lose his entire investment.</p></li>
+<li><p><span style="color: #009499"><strong>Vanilla Option</strong></span> - The most basic, liquid, and commonly traded form of options contracts — backbone of the options market. They refer to standard call options and put options with the following characteristics:</p>
+<ul>
+<li>Can have either the European-style (expiration date only) or American-style (anytime until expiration) exercise feature.</li>
+<li>Written on common underlying assets like stocks, stock indices, currencies, or commodities.</li>
+<li>Do not have any special features or conditions attached to them such as barrier options, Asian options, or options with path-dependent payoffs.</li>
+<li>They can be settled either through physical delivery of the underlying asset or cash settlement, depending on the specific contract.</li>
 </ul></li>
 </ul></li>
 <li><p><span style="color: #009499"><strong>Outstanding Shares</strong></span> - The number of stocks that a company has issued. This number represents all the shares that can be bought and sold by the public, as well as all the restricted shares that require special permission before being transacted.</p></li>
@@ -568,6 +575,11 @@ M = \frac{\text{Closing Price}_{\text{end of month}}- \text{Closing Price}_{\tex
 <ul>
 <li>The gap between the bid and the ask prices of a security or asset, like a stock, bond or commodity.</li>
 <li>The gap between a short position (that is, selling) in one futures contract or currency and a long position (that is, buying) in another. This is officially known as a spread trade</li>
+</ul></li>
+<li><p><span style="color: #009499"><strong>Stochastic Volatility Model</strong></span> - Used to describe the behavior of the volatility of an underlying asset or security over time. Unlike traditional models, which assume that volatility is constant or follows a deterministic process, SV models treat volatility as a random process itself, allowing it to fluctuate randomly over time.</p>
+<ul>
+<li>The volatility of the asset is modeled as a separate stochastic (random) process, often following a mean-reverting process, such as an Ornstein-Uhlenbeck process or a GARCH process. This means that the volatility is assumed to fluctuate randomly around a long-term mean level, with deviations from the mean being temporary and eventually reverting back to the mean over time.</li>
+<li>Claude <a href="https://claude.ai/chat/f501d319-f200-423c-8f78-d92f38a9ae1e">chat</a> discussing how this model fits into an options pricing workflow</li>
 </ul></li>
 <li><p><span style="color: #009499"><strong>Time Value of Money</strong></span> - Money that isn’t invested loses buying power over time (i.e.&nbsp;inflation). The concept of the time value of money can help guide investment decisions (e.g.&nbsp;a project with a $1M payout in year 1 has a higher present value than one that pays the same amount in 5yrs)</p>
 <ul>
@@ -708,6 +720,24 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -742,7 +772,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
     });
   }
   const xrefs = window.document.querySelectorAll('a.quarto-xref');
@@ -1048,7 +1082,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"selector":".lightbox","openEffect":"zoom","descPosition":"bottom","loop":false,"closeEffect":"zoom"});
+<script>var lightboxQuarto = GLightbox({"selector":".lightbox","loop":false,"openEffect":"zoom","closeEffect":"zoom","descPosition":"bottom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;
