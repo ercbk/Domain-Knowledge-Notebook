@@ -192,6 +192,9 @@
         -   Do not have any special features or conditions attached to them such as barrier options, Asian options, or options with path-dependent payoffs.
         -   They can be settled either through physical delivery of the underlying asset or cash settlement, depending on the specific contract.
 
+    -   [Example]{.ribbon-highlight}: From [Veritasium](https://www.youtube.com/watch?v=A5w-dEgIU1M&ab_channel=Veritasium)\
+        ![](_resources/Finance.resources/trading-options-1.png){.lightbox width="532"}
+
 -   [**Outstanding Shares**]{style="color: #009499"} - The number of stocks that a company has issued. This number represents all the shares that can be bought and sold by the public, as well as all the restricted shares that require special permission before being transacted.
 
 -   [**Profit**]{style="color: #009499"} - The balance that remains when all of a business’s operating expenses are subtracted from its revenues. ([link](https://online.hbs.edu/blog/post/cash-flow-vs-profit))
