@@ -533,7 +533,33 @@ M = \frac{\text{Closing Price}_{\text{end of month}}- \text{Closing Price}_{\tex
 <li>They can be settled either through physical delivery of the underlying asset or cash settlement, depending on the specific contract.</li>
 </ul></li>
 <li><p><span class="ribbon-highlight">Example</span>: From <a href="https://www.youtube.com/watch?v=A5w-dEgIU1M&amp;ab_channel=Veritasium">Veritasium</a><br>
-<a href="_resources/Finance.resources/trading-options-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="_resources/Finance.resources/trading-options-1.png" class="img-fluid" width="532"></a></p></li>
+<a href="_resources/Finance.resources/trading-options-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="_resources/Finance.resources/trading-options-1.png" class="img-fluid" width="532"></a></p>
+<ul>
+<li>Stock trading: Buy a stock at $100
+<ul>
+<li>Price goes down to $70, lose $30 (-30%)
+<ul>
+<li>There is also the possibilty the price goes to $0 and you lose your investment entirely before you have a chance to sell.</li>
+</ul></li>
+<li>Price goes up to $130, gain $30 (+30%)</li>
+</ul></li>
+<li>Options Trading: Buy the $100 stock’s option for $10 at a strike price of $100
+<ul>
+<li>Price goes down to $70, lose $10 (price of option)(-100%)</li>
+<li>Price goes up to $130, gain $20 (+200%) by selling the option for $30 and pocketing the profit ($30 - $10).</li>
+</ul></li>
+<li>Hedging: Stock price is $100 and call/put option is $10 at a strike price of $100
+<ul>
+<li>Buy the Call Option because you expect to price to increase. Then stock increases to $130, you exercise your option to buy the stock at $100 strike price. You sell the stock at $130 and make a profit of <span class="math inline">\(\$130-(\$100 + \$10) = \$20\)</span>.
+<ul>
+<li>Alternatively, if the stock decreases in price, you don’t exercise your option and lose $10.</li>
+</ul></li>
+<li>Buy the Put Option because you expect the price to decrease. The stock decreases to $70 and you buy the stock. Then, you exercise your option to sell the stock at $100 and make a profit of <span class="math inline">\(\$100 - (\$70 + \$10) = \$20\)</span>.
+<ul>
+<li>Alternatively, if the stock increases in price, you don’t exercise your option and lose $10.</li>
+</ul></li>
+</ul></li>
+</ul></li>
 </ul></li>
 <li><p><span style="color: #009499"><strong>Outstanding Shares</strong></span> - The number of stocks that a company has issued. This number represents all the shares that can be bought and sold by the public, as well as all the restricted shares that require special permission before being transacted.</p></li>
 <li><p><span style="color: #009499"><strong>Profit</strong></span> - The balance that remains when all of a business’s operating expenses are subtracted from its revenues. (<a href="https://online.hbs.edu/blog/post/cash-flow-vs-profit">link</a>)</p>
@@ -1062,7 +1088,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","loop":false,"selector":".lightbox","openEffect":"zoom","closeEffect":"zoom"});
+<script>var lightboxQuarto = GLightbox({"selector":".lightbox","openEffect":"zoom","descPosition":"bottom","loop":false,"closeEffect":"zoom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;
