@@ -146,6 +146,11 @@
 
 ## Mean Reversion Strategy or Pairs Trading {#sec-finance-invest-meanrev .unnumbered}
 
+-   Papers
+    -   [Pairs Trading Using a Novel Graphical Matching Approach](https://arxiv.org/abs/2403.07998)
+        -   Application of graph theory to the selection of stock pairs. Results in robust risk-adjusted performance but also achieves annualized returns comparable to the S&P 500 with a superior Sharpe ratio
+            -   Selection based *solely* upon the significance of cointegration between pairs can result in portfolios overly concentrated in a limited number of stocks, which elevates portfolio variance and diminishes risk-adjusted returns
+        -   Utilizes of graph theory to the selection of stock pairs to decrease variance with the t-statistic from a cointegration statistical test as the weight for the edges.
 -   Match two trading vehicles that are highly correlated, trading one long and the other short when the pair's price ratio diverges "x" number of standard deviations - "x" is optimized using historical data. If the pair reverts to its mean trend, a profit is made on one or both of the positions.
 -   Chart the relative performance (price ratio)
     -   The center white line represents the mean price ratio over the past two years. The yellow and red lines represent one and two standard deviations from the mean ratio, respectively.
