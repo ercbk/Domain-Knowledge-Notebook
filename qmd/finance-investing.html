@@ -597,6 +597,17 @@ window.Quarto = {
 <section id="sec-finance-invest-meanrev" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="sec-finance-invest-meanrev">Mean Reversion Strategy or Pairs Trading</h2>
 <ul>
+<li>Papers
+<ul>
+<li><a href="https://arxiv.org/abs/2403.07998">Pairs Trading Using a Novel Graphical Matching Approach</a>
+<ul>
+<li>Application of graph theory to the selection of stock pairs. Results in robust risk-adjusted performance but also achieves annualized returns comparable to the S&amp;P 500 with a superior Sharpe ratio
+<ul>
+<li>Selection based <em>solely</em> upon the significance of cointegration between pairs can result in portfolios overly concentrated in a limited number of stocks, which elevates portfolio variance and diminishes risk-adjusted returns</li>
+</ul></li>
+<li>Utilizes of graph theory to the selection of stock pairs to decrease variance with the t-statistic from a cointegration statistical test as the weight for the edges.</li>
+</ul></li>
+</ul></li>
 <li>Match two trading vehicles that are highly correlated, trading one long and the other short when the pair’s price ratio diverges “x” number of standard deviations - “x” is optimized using historical data. If the pair reverts to its mean trend, a profit is made on one or both of the positions.</li>
 <li>Chart the relative performance (price ratio)
 <ul>
@@ -1206,7 +1217,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","selector":".lightbox","descPosition":"bottom","openEffect":"zoom","loop":false});
+<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","closeEffect":"zoom","selector":".lightbox","loop":false,"openEffect":"zoom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;
