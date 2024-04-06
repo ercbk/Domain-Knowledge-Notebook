@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.551">
+<meta name="generator" content="quarto-1.4.553">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -462,7 +462,10 @@ window.Quarto = {
 <li>Slippage</li>
 <li>Taxes</li>
 </ul></li>
-<li>A model that performs well in a specific market condition may incur substantial losses when the market shifts, be it due to news, events, or economic changes.</li>
+<li>A model that performs well in a specific market condition may incur substantial losses when the market shifts, be it due to news, events, or economic changes.
+<ul>
+<li>See <a href="../qmd/finance-snippets.html#sec-finance-snip-misc" style="color: green">Finance, Snippets &gt;&gt; Misc</a> &gt;&gt; Test Assumptions</li>
+</ul></li>
 <li>Beware of survivorship bias when backtesting algorithms
 <ul>
 <li>Example: S&amp;P 500
@@ -486,6 +489,7 @@ window.Quarto = {
 <ul>
 <li><span style="color: goldenrod">{{</span><a href="https://www.quantstart.com/qstrader/tutorial-60-40-portfolio/" style="color: goldenrod">QSTrader</a><span style="color: goldenrod">}}</span></li>
 <li>Notes from - <a href="https://www.quantstart.com/articles/the-6040-benchmark-portfolio/">The 60/40 Benchmark Portfolio</a></li>
+<li>For portfolio construction in general, positions are optimized using Expected Returns, Return Variance (i.e.&nbsp;volatility), and Co-Movements (i.e.&nbsp;covariance) in order to maximize Risk Adjusted Returns.</li>
 </ul></li>
 <li>Description</li>
 <li>60/40 US Equities/Bonds strategy is a simple long-term investment approach that is widely utilised in the investment industry. It seeks to ensure that at any point during the lifetime of the investment that 60% of account equity is invested in one or more assets representing a broad selection of US equities (such as an S&amp;P500 ETF), while 40% of account equity is invested in one or more assets representing a broad selection of US treasury bonds (such as a treasury bond ETF).</li>
@@ -1217,7 +1221,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","closeEffect":"zoom","selector":".lightbox","loop":false,"openEffect":"zoom"});
+<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","selector":".lightbox","loop":false,"closeEffect":"zoom","openEffect":"zoom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;

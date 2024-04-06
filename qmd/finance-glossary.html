@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.551">
+<meta name="generator" content="quarto-1.4.553">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -523,6 +523,7 @@ M = \frac{\text{Closing Price}_{\text{end of month}}- \text{Closing Price}_{\tex
 <li><span class="math inline">\(r\)</span>: Cost of Capital</li>
 <li><span class="math inline">\(n\)</span>: Last period of the project</li>
 </ul></li>
+<li><p><span style="color: #009499"><strong>Open, High, Low, Close (OHLC)</strong></span> - Data that shows open, high, low, and closing prices for each period. OHLC charts are useful since they show the four major data points over a period, with the closing price being considered the most important by many traders.</p></li>
 <li><p><span style="color: #009499"><strong>Options</strong></span> - An option on stock XYZ gives the holder the right to buy or sell XYZ at the strike price up until expiration. The underlying asset for the option is the stock of XYZ. The writer must either buy or sell the underlying asset to the buyer on the specified date at the agreed-upon price. The buyer is not obligated to purchase the underlying asset, but they can exercise their right if they choose to do so. If the option is about to expire, and the underlying asset has not moved favorably enough to make exercising the option worthwhile, the buyer can let the expire and they will lose the amount they paid for the option.</p>
 <ul>
 <li><p><span style="color: #009499"><strong>Call options</strong></span> - (Useful if you think the price might go up) Contract giving the owner the right, but not the obligation, to buy a specified amount of an underlying security at a specified price within a specified time. The specified price is known as the <span style="color: #009499"><strong>strike price</strong></span> and the specified time during which a sale is made is its expiration (expiry) or time to maturity. As the price of the stock goes up, the value of the call option contract goes up. The contract can be sold at any time or you can purchase the stock at the guaranteed price on the expiration date. The price of the call option is called the premium.</p>
@@ -1116,7 +1117,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","selector":".lightbox","loop":false,"descPosition":"bottom","closeEffect":"zoom"});
+<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","closeEffect":"zoom","selector":".lightbox","loop":false,"descPosition":"bottom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;
