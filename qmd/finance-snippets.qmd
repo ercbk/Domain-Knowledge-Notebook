@@ -32,6 +32,120 @@
     ```
     :::
 
+-   Basic Calculation of Volatility
+
+    ``` r
+    VTI <- VTI %>%
+      # calculate volatility as pct range
+      mutate(range_pct = (high/low - 1) * 100)
+    ```
+
+    -   [VTI]{.var-text} is daily OHLC data
+    -   Volatility as a percentage range between daily highs and daily lows
+
+-   Test whether assumptions are consistent over a time period
+
+    -   Notes from [How to Test the Assumption of Persistence](https://robotwealth.com/how-to-test-the-assumption-of-persistence/)
+
+    -   If your strategy only works when certain conditions are present, then you need to see how consistent they are across time.
+
+    -   Don't use overlapping windows (i.e. rolling) in your analysis of persistence. It creates relationships between subsequent daily estimates of your statistic.
+
+    -   Use Case Examples
+
+        -   Correlation or covariance between pairs of assets.
+
+            -   You'll typically find that correlations are also persistent, but that this persistence is much noisier than than the volatility example below
+
+        -   Asset Returns
+
+            -   You'll typically find almost no persistence at all, other than a very weak negative relationship at the daily timescale in some assets.
+
+    -   [Example]{.ribbon-highlight}: How persistent is volatility over time?
+
+        -   Statistically, you can calculate the ACF. For relationships further back than one day, ACF(2), ACF(3), etc.
+
+        ::: panel-tabset
+        ## Overall Present Volatility vs 1 Day Lead
+
+        ![](_resources/Finance-Snippets.resources/daily-vol-vs-1-day-lead-2.png){.lightbox width="532"}
+
+        ``` r
+        VTI <- 
+          VTI %>%
+          # calculate volatility as pct range
+          mutate(range_pct = (high/low - 1) * 100) %>%
+          # ensure our observations are arranged by date
+          arrange(date) %>%
+          # shift our observations
+          mutate(next_day_range_pct = lead(range_pct, 1)) %>%
+          # remove NAs (we'll have an NA on our last observation as there's no tomorrow)
+          na.omit()
+
+        VTI %>%
+          ggplot(aes(x=range_pct, y=next_day_range_pct)) +
+          scale_x_log10() +
+          scale_y_log10() +
+          geom_point() +
+          # add regression line
+          geom_smooth(method = "lm", formula = 'y ~ x') +
+          labs(
+            title = "Daily range vs next day's range"
+          )
+        ```
+
+        -   I think the data is over a 20 year span.
+        -   Using log scaled axes because the points were clumped towards zero and obscuring the relationsip.
+        -   The seems to be a fairly persistent relationship between today's and tomorrow's volatility
+
+        ## Over Years
+
+        ![](_resources/Finance-Snippets.resources/daily-vol-vs-1-day-lead-per-year-2.png){.lightbox width="532"}
+
+        ``` r
+        VTI %>%
+          mutate(year = year(date)) %>%
+          ggplot(aes(x=range_pct, y=next_day_range_pct)) +
+          scale_x_log10() +
+          scale_y_log10() +
+          geom_point() +
+          geom_smooth(method = 'lm', formula = 'y ~ x') +
+          facet_wrap(~year, scales = "free") +
+          labs(
+            title = "Daily range vs next day's range by year"
+          )
+        ```
+
+        -   Some years are more volatile than others, the relationship between today’s and yesterday’s volatilities has been reasonably consistent over time. And while the slope of the regression line has changed over the years, it’s always up and to the right (i.e. *reasonably persistent*).
+
+        ## Across ETFs
+
+        ![](_resources/Finance-Snippets.resources/daily-vol-vs-1-day-lead-across-etfs-2.png){width="532"}
+
+        ``` r
+        prices %>%
+          # calculate the daily range
+          mutate(range_pct = (high/low - 1) * 100) %>%
+          # perform subsequent operations on each ticker separately
+          group_by(ticker) %>%
+          arrange(date) %>%
+          mutate(next_day_range_pct  = lead(range_pct, 1)) %>%
+          na.omit() %>%
+          # plot each ticker separately
+          ggplot(aes(x=range_pct, y=next_day_range_pct)) +
+          scale_y_log10() +
+          scale_x_log10() +
+          geom_point() +
+          geom_smooth(method = 'lm', formula = 'y ~ x') +
+          facet_wrap(~ticker, scales = "free") +
+          labs(
+            title = "Daily range vs next day's range by ticker"
+          )
+        ```
+
+        -   Still fairly consistent
+        :::
+
 ## Get Data {#sec-finance-snip-basic .unnumbered}
 
 -   Packages

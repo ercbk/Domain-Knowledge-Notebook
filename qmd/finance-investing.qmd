@@ -62,6 +62,7 @@
     -   Slippage
     -   Taxes
 -   A model that performs well in a specific market condition may incur substantial losses when the market shifts, be it due to news, events, or economic changes.
+    -   See [Finance, Snippets \>\> Misc](finance-snippets.qmd#sec-finance-snip-misc){style="color: green"} \>\> Test Assumptions
 -   Beware of survivorship bias when backtesting algorithms
     -   Example: S&P 500
         -   A trader is creating an algorithm to predict prices of all the stocks in the S&P 500. If the trader uses the current roster of companies, the list only includes companies that have made it to now without shutting down or losing so much value they drop off the list. The trader should use the list of companies as it was at the start of the training data.
@@ -76,6 +77,7 @@
 -   Misc
     -   [{{]{style="color: goldenrod"}[QSTrader](https://www.quantstart.com/qstrader/tutorial-60-40-portfolio/){style="color: goldenrod"}[}}]{style="color: goldenrod"}
     -   Notes from - [The 60/40 Benchmark Portfolio](https://www.quantstart.com/articles/the-6040-benchmark-portfolio/)
+    -   For portfolio construction in general, positions are optimized using Expected Returns, Return Variance (i.e. volatility), and Co-Movements (i.e. covariance) in order to maximize Risk Adjusted Returns.
 -   Description
 -   60/40 US Equities/Bonds strategy is a simple long-term investment approach that is widely utilised in the investment industry. It seeks to ensure that at any point during the lifetime of the investment that 60% of account equity is invested in one or more assets representing a broad selection of US equities (such as an S&P500 ETF), while 40% of account equity is invested in one or more assets representing a broad selection of US treasury bonds (such as a treasury bond ETF).
 -   Since the actual percentage allocations of each asset class can deviate over time due to relative growth of the respective assets a 'rebalance' approach is often carried out. This means that trades are issued on a relatively infrequent basis to buy/sell amounts of each asset class to periodically bring the account equity allocations back into the 60/40 split. For the particular strategy implemented here we are using an end of month rebalance frequency.

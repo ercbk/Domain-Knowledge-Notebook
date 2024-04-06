@@ -30,7 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../qmd/finance-valuation.html" rel="next">
+<link href="../qmd/finance-snippets.html" rel="next">
 <link href="../qmd/finance-glossary.html" rel="prev">
 <link href="../images/dk-favicon-32.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js"></script>
@@ -210,6 +210,12 @@ window.Quarto = {
   <div class="sidebar-item-container"> 
   <a href="../qmd/finance-investing.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Investing</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../qmd/finance-snippets.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Snippets</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -439,7 +445,7 @@ window.Quarto = {
 <li><p>Workflow</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="_resources/Finance.resources/ml4t_workflow-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" data-glightbox="description: .lightbox-desc-2" title="From Machine Learning for Algorithmic Trading"><img src="_resources/Finance.resources/ml4t_workflow-1.png" class="img-fluid figure-img" width="532" alt="From Machine Learning for Algorithmic Trading"></a></p>
+<p><a href="_resources/Finance.resources/ml4t_workflow-1.png" class="lightbox" data-glightbox="description: .lightbox-desc-2" data-gallery="quarto-lightbox-gallery-2" title="From Machine Learning for Algorithmic Trading"><img src="_resources/Finance.resources/ml4t_workflow-1.png" class="img-fluid figure-img" width="532" alt="From Machine Learning for Algorithmic Trading"></a></p>
 <figcaption>From Machine Learning for Algorithmic Trading</figcaption>
 </figure>
 </div></li>
@@ -456,7 +462,10 @@ window.Quarto = {
 <li>Slippage</li>
 <li>Taxes</li>
 </ul></li>
-<li>A model that performs well in a specific market condition may incur substantial losses when the market shifts, be it due to news, events, or economic changes.</li>
+<li>A model that performs well in a specific market condition may incur substantial losses when the market shifts, be it due to news, events, or economic changes.
+<ul>
+<li>See <a href="../qmd/finance-snippets.html#sec-finance-snip-misc" style="color: green">Finance, Snippets &gt;&gt; Misc</a> &gt;&gt; Test Assumptions</li>
+</ul></li>
 <li>Beware of survivorship bias when backtesting algorithms
 <ul>
 <li>Example: S&amp;P 500
@@ -480,6 +489,7 @@ window.Quarto = {
 <ul>
 <li><span style="color: goldenrod">{{</span><a href="https://www.quantstart.com/qstrader/tutorial-60-40-portfolio/" style="color: goldenrod">QSTrader</a><span style="color: goldenrod">}}</span></li>
 <li>Notes from - <a href="https://www.quantstart.com/articles/the-6040-benchmark-portfolio/">The 60/40 Benchmark Portfolio</a></li>
+<li>For portfolio construction in general, positions are optimized using Expected Returns, Return Variance (i.e.&nbsp;volatility), and Co-Movements (i.e.&nbsp;covariance) in order to maximize Risk Adjusted Returns.</li>
 </ul></li>
 <li>Description</li>
 <li>60/40 US Equities/Bonds strategy is a simple long-term investment approach that is widely utilised in the investment industry. It seeks to ensure that at any point during the lifetime of the investment that 60% of account equity is invested in one or more assets representing a broad selection of US equities (such as an S&amp;P500 ETF), while 40% of account equity is invested in one or more assets representing a broad selection of US treasury bonds (such as a treasury bond ETF).</li>
@@ -591,6 +601,17 @@ window.Quarto = {
 <section id="sec-finance-invest-meanrev" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="sec-finance-invest-meanrev">Mean Reversion Strategy or Pairs Trading</h2>
 <ul>
+<li>Papers
+<ul>
+<li><a href="https://arxiv.org/abs/2403.07998">Pairs Trading Using a Novel Graphical Matching Approach</a>
+<ul>
+<li>Application of graph theory to the selection of stock pairs. Results in robust risk-adjusted performance but also achieves annualized returns comparable to the S&amp;P 500 with a superior Sharpe ratio
+<ul>
+<li>Selection based <em>solely</em> upon the significance of cointegration between pairs can result in portfolios overly concentrated in a limited number of stocks, which elevates portfolio variance and diminishes risk-adjusted returns</li>
+</ul></li>
+<li>Utilizes of graph theory to the selection of stock pairs to decrease variance with the t-statistic from a cointegration statistical test as the weight for the edges.</li>
+</ul></li>
+</ul></li>
 <li>Match two trading vehicles that are highly correlated, trading one long and the other short when the pair’s price ratio diverges “x” number of standard deviations - “x” is optimized using historical data. If the pair reverts to its mean trend, a profit is made on one or both of the positions.</li>
 <li>Chart the relative performance (price ratio)
 <ul>
@@ -1153,8 +1174,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../qmd/finance-valuation.html" class="pagination-link" aria-label="Valuation">
-        <span class="nav-page-text">Valuation</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../qmd/finance-snippets.html" class="pagination-link" aria-label="Snippets">
+        <span class="nav-page-text">Snippets</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -1178,7 +1199,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","loop":false,"closeEffect":"zoom","selector":".lightbox","descPosition":"bottom"});
+<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","closeEffect":"zoom","selector":".lightbox","loop":false,"openEffect":"zoom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;
