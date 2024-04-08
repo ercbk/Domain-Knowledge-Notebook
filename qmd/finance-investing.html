@@ -408,10 +408,14 @@ window.Quarto = {
 <li><span style="color: goldenrod">{{</span><a href="https://skfolio.org/" style="color: goldenrod">skfolio</a><span style="color: goldenrod">}}</span> - Portfolio optimization built on top of scikit-learn. It offers a unified interface and tools compatible with scikit-learn to build, fine-tune, and cross-validate portfolio models.</li>
 <li><span style="color: goldenrod">{{</span><a href="https://alphalens.ml4trading.io/" style="color: goldenrod">alphalens</a><span style="color: goldenrod">}}</span> - Performance analysis of predictive stock factors</li>
 </ul></li>
+<li><p>Tools</p>
+<ul>
 <li><p><a href="https://my.openbb.co/login">OpenBB</a> - Open source bloomberg terminal (overview <a href="https://www.quantscience.io/newsletter/b/how-to-get-free-financial-data">article</a>)</p>
 <ul>
 <li>Free data and seemingly hundreds of different tools including some decent forecast methods.</li>
 </ul></li>
+</ul></li>
+<li><p>For portfolio construction in general, positions are optimized using Expected Returns, Return Variance (i.e.&nbsp;volatility), and Co-Movements (i.e.&nbsp;covariance) in order to maximize Risk Adjusted Returns.</p></li>
 <li><p>Technical vs Fundamental Analysis</p>
 <ul>
 <li><em>Technical analysis</em> in many cases tends to amplify stock price trends because many technical traders buy when stocks are rising and sell when they fall.</li>
@@ -425,8 +429,51 @@ window.Quarto = {
 </ul></li>
 <li><p>Strategies</p>
 <ul>
+<li>Notes from
+<ul>
+<li><a href="https://robotwealth.com/three-types-of-systematic-strategy-that-work/">Three types of systematic strategy that “work”</a></li>
+</ul></li>
 <li>Hedgefund - factor rotations (longer term)</li>
 <li>Something about futures - factor tilts (shorter term)</li>
+<li>Harvesting Risk Premia
+<ul>
+<li>Should be the primary focus of independent traders.</li>
+<li>General Process
+<ul>
+<li>Intentionally expose your portfolio to diverse <em>sources of risk that tend to be rewarded</em> (noting that not all risks are rewarded)</li>
+<li>Manage risk sensibly so no risk dominates at any time</li>
+<li>Be patient and chill (the hardest part for most)</li>
+</ul></li>
+<li>Examples: 60/40 stock/bond portfolio</li>
+</ul></li>
+<li>Economically-sensible, statistically-quantifiable slow-converging inefficiencies
+<ul>
+<li>These are noisy tendencies for assets to trade too cheap or expensive at certain times due to behavioral or structural effects. Slow to converge and must be analyzed in aggregated datasets. Generally, these edges are less reliable than risk premia harvesting.</li>
+<li>After mastering Harvesting Risk Premia, add a little of this over time.</li>
+<li>Requirements
+<ul>
+<li>To understand why the inefficiency would persist.</li>
+<li>Faster converging metrics around what we’re exploiting so we’re not the last to know when the inefficiency disappears.</li>
+<li>Patience and discipline to keep swinging the bat – you have to let the noisy edge play out over a large number of bets.</li>
+</ul></li>
+<li>Examples: Momentum effects, seasonal regularities, effects due to indexing inclusion/exclusion, probably style factors (momentum, value, carry, quality, low vol), and most medium frequency statistical arbitrage approaches.</li>
+<li>Resources
+<ul>
+<li>Expected Returns by Antti Ilmanen</li>
+<li>Efficiently Inefficient by Lasse Pedersen</li>
+<li>Positional Option Trading by Euan Sinclair <em><strong>(</strong>which literally gives you stuff to trade<strong>)</strong></em></li>
+<li>Active Portfolio Managementby Grinhold and Kahn</li>
+</ul></li>
+</ul></li>
+<li>Fast-converging supply-demand imbalances
+<ul>
+<li>Short term supply and demand imbalances create dislocations in prices which fast traders can “disperse” by trading against them and offsetting risk elsewhere. It carries risks because we can’t trade instantaneously.</li>
+<li>Require significant investment in infrastructure and staff, so isn’t practical for “home gamers.”</li>
+<li>Examples
+<ul>
+<li>Arbitrage: Buy futures on Shanghai INE and buy a similar contract cheaper on Singapore SGX for a profit (after costs).</li>
+</ul></li>
+</ul></li>
 </ul></li>
 <li><p>Misleading chart (<a href="https://twitter.com/choffstein/status/1640034865817985024">Thread</a>)<br>
 <a href="./_resources/Finance.resources/image.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="./_resources/Finance.resources/image.png" class="img-fluid" width="448"></a><br>
@@ -445,7 +492,7 @@ window.Quarto = {
 <li><p>Workflow</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="_resources/Finance.resources/ml4t_workflow-1.png" class="lightbox" data-glightbox="description: .lightbox-desc-2" data-gallery="quarto-lightbox-gallery-2" title="From Machine Learning for Algorithmic Trading"><img src="_resources/Finance.resources/ml4t_workflow-1.png" class="img-fluid figure-img" width="532" alt="From Machine Learning for Algorithmic Trading"></a></p>
+<p><a href="_resources/Finance.resources/ml4t_workflow-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" data-glightbox="description: .lightbox-desc-2" title="From Machine Learning for Algorithmic Trading"><img src="_resources/Finance.resources/ml4t_workflow-1.png" class="img-fluid figure-img" width="532" alt="From Machine Learning for Algorithmic Trading"></a></p>
 <figcaption>From Machine Learning for Algorithmic Trading</figcaption>
 </figure>
 </div></li>
@@ -489,11 +536,13 @@ window.Quarto = {
 <ul>
 <li><span style="color: goldenrod">{{</span><a href="https://www.quantstart.com/qstrader/tutorial-60-40-portfolio/" style="color: goldenrod">QSTrader</a><span style="color: goldenrod">}}</span></li>
 <li>Notes from - <a href="https://www.quantstart.com/articles/the-6040-benchmark-portfolio/">The 60/40 Benchmark Portfolio</a></li>
-<li>For portfolio construction in general, positions are optimized using Expected Returns, Return Variance (i.e.&nbsp;volatility), and Co-Movements (i.e.&nbsp;covariance) in order to maximize Risk Adjusted Returns.</li>
 </ul></li>
-<li>Description</li>
+<li>Description
+<ul>
 <li>60/40 US Equities/Bonds strategy is a simple long-term investment approach that is widely utilised in the investment industry. It seeks to ensure that at any point during the lifetime of the investment that 60% of account equity is invested in one or more assets representing a broad selection of US equities (such as an S&amp;P500 ETF), while 40% of account equity is invested in one or more assets representing a broad selection of US treasury bonds (such as a treasury bond ETF).</li>
 <li>Since the actual percentage allocations of each asset class can deviate over time due to relative growth of the respective assets a ‘rebalance’ approach is often carried out. This means that trades are issued on a relatively infrequent basis to buy/sell amounts of each asset class to periodically bring the account equity allocations back into the 60/40 split. For the particular strategy implemented here we are using an end of month rebalance frequency.</li>
+</ul></li>
+<li>More balanced implementations include&nbsp;<a href="https://www.bridgewater.com/research-and-insights/the-all-weather-story">Bridgewater’s All-Weather</a>&nbsp;portfolio and Risk Parity strategies generally, which attempt to equalize risk across assets or sources of risk premia.</li>
 </ul>
 </section>
 <section id="sec-finance-invest-momassallo" class="level2 unnumbered">
@@ -1221,7 +1270,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","selector":".lightbox","loop":false,"closeEffect":"zoom","openEffect":"zoom"});
+<script>var lightboxQuarto = GLightbox({"loop":false,"closeEffect":"zoom","selector":".lightbox","descPosition":"bottom","openEffect":"zoom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;
