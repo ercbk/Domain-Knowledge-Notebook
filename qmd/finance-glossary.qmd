@@ -226,6 +226,8 @@
 
 -   [**Revenue**]{style="color: #009499"} aka [**Sales**]{style="color: #009499"} - The income a company generates before deducting expenses. Usually the top line of the income statement
 
+-   [**Risk Premium**]{style="color: #009499"} - The excess return you might expect over and above risk-free cashflows for taking on certain unattractive risks,
+
 -   [**Selling, General, and Administrative Expenses (SG&A)**]{style="color: #009499"} - Includes all general and administrative expenses (G&A) as well as the direct and indirect selling expenses of the business. This line item includes nearly all business costs not directly attributable to making a product or performing a service. SG&A includes the costs of managing the company and the expenses of delivering its products or services.
 
 -   [**Sharpe Ratio**]{style="color: #009499"} [**(annualized)**]{style="color: #009499"} - Measures the performance of an asset relative to violitility (i.e. riskiness)

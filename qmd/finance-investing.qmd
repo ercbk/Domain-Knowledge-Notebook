@@ -17,9 +17,13 @@
     -   [{{]{style="color: goldenrod"}[skfolio](https://skfolio.org/){style="color: goldenrod"}[}}]{style="color: goldenrod"} - Portfolio optimization built on top of scikit-learn. It offers a unified interface and tools compatible with scikit-learn to build, fine-tune, and cross-validate portfolio models.
     -   [{{]{style="color: goldenrod"}[alphalens](https://alphalens.ml4trading.io/){style="color: goldenrod"}[}}]{style="color: goldenrod"} - Performance analysis of predictive stock factors
 
--   [OpenBB](https://my.openbb.co/login) - Open source bloomberg terminal (overview [article](https://www.quantscience.io/newsletter/b/how-to-get-free-financial-data))
+-   Tools
 
-    -   Free data and seemingly hundreds of different tools including some decent forecast methods.
+    -   [OpenBB](https://my.openbb.co/login) - Open source bloomberg terminal (overview [article](https://www.quantscience.io/newsletter/b/how-to-get-free-financial-data))
+
+        -   Free data and seemingly hundreds of different tools including some decent forecast methods.
+
+-   For portfolio construction in general, positions are optimized using Expected Returns, Return Variance (i.e. volatility), and Co-Movements (i.e. covariance) in order to maximize Risk Adjusted Returns.
 
 -   Technical vs Fundamental Analysis
 
@@ -34,8 +38,35 @@
 
 -   Strategies
 
+    -   Notes from
+        -   [Three types of systematic strategy that “work”](https://robotwealth.com/three-types-of-systematic-strategy-that-work/)
     -   Hedgefund - factor rotations (longer term)
     -   Something about futures - factor tilts (shorter term)
+    -   Harvesting Risk Premia
+        -   Should be the primary focus of independent traders.
+        -   General Process
+            -   Intentionally expose your portfolio to diverse *sources of risk that tend to be rewarded* (noting that not all risks are rewarded)
+            -   Manage risk sensibly so no risk dominates at any time
+            -   Be patient and chill (the hardest part for most)
+        -   Examples: 60/40 stock/bond portfolio
+    -   Economically-sensible, statistically-quantifiable slow-converging inefficiencies
+        -   These are noisy tendencies for assets to trade too cheap or expensive at certain times due to behavioral or structural effects. Slow to converge and must be analyzed in aggregated datasets. Generally, these edges are less reliable than risk premia harvesting.
+        -   After mastering Harvesting Risk Premia, add a little of this over time.
+        -   Requirements
+            -   To understand why the inefficiency would persist.
+            -   Faster converging metrics around what we’re exploiting so we’re not the last to know when the inefficiency disappears.
+            -   Patience and discipline to keep swinging the bat – you have to let the noisy edge play out over a large number of bets.
+        -   Examples: Momentum effects, seasonal regularities, effects due to indexing inclusion/exclusion, probably style factors (momentum, value, carry, quality, low vol), and most medium frequency statistical arbitrage approaches.
+        -   Resources
+            -   Expected Returns by Antti Ilmanen
+            -   Efficiently Inefficient by Lasse Pedersen
+            -   Positional Option Trading by Euan Sinclair ***(**which literally gives you stuff to trade**)***
+            -   Active Portfolio Managementby Grinhold and Kahn
+    -   Fast-converging supply-demand imbalances
+        -   Short term supply and demand imbalances create dislocations in prices which fast traders can “disperse” by trading against them and offsetting risk elsewhere. It carries risks because we can’t trade instantaneously.
+        -   Require significant investment in infrastructure and staff, so isn’t practical for “home gamers.”
+        -   Examples
+            -   Arbitrage: Buy futures on Shanghai INE and buy a similar contract cheaper on Singapore SGX for a profit (after costs).
 
 -   Misleading chart ([Thread](https://twitter.com/choffstein/status/1640034865817985024))\
     ![](./_resources/Finance.resources/image.png){.lightbox width="448"}\
@@ -77,10 +108,10 @@
 -   Misc
     -   [{{]{style="color: goldenrod"}[QSTrader](https://www.quantstart.com/qstrader/tutorial-60-40-portfolio/){style="color: goldenrod"}[}}]{style="color: goldenrod"}
     -   Notes from - [The 60/40 Benchmark Portfolio](https://www.quantstart.com/articles/the-6040-benchmark-portfolio/)
-    -   For portfolio construction in general, positions are optimized using Expected Returns, Return Variance (i.e. volatility), and Co-Movements (i.e. covariance) in order to maximize Risk Adjusted Returns.
 -   Description
--   60/40 US Equities/Bonds strategy is a simple long-term investment approach that is widely utilised in the investment industry. It seeks to ensure that at any point during the lifetime of the investment that 60% of account equity is invested in one or more assets representing a broad selection of US equities (such as an S&P500 ETF), while 40% of account equity is invested in one or more assets representing a broad selection of US treasury bonds (such as a treasury bond ETF).
--   Since the actual percentage allocations of each asset class can deviate over time due to relative growth of the respective assets a 'rebalance' approach is often carried out. This means that trades are issued on a relatively infrequent basis to buy/sell amounts of each asset class to periodically bring the account equity allocations back into the 60/40 split. For the particular strategy implemented here we are using an end of month rebalance frequency.
+    -   60/40 US Equities/Bonds strategy is a simple long-term investment approach that is widely utilised in the investment industry. It seeks to ensure that at any point during the lifetime of the investment that 60% of account equity is invested in one or more assets representing a broad selection of US equities (such as an S&P500 ETF), while 40% of account equity is invested in one or more assets representing a broad selection of US treasury bonds (such as a treasury bond ETF).
+    -   Since the actual percentage allocations of each asset class can deviate over time due to relative growth of the respective assets a 'rebalance' approach is often carried out. This means that trades are issued on a relatively infrequent basis to buy/sell amounts of each asset class to periodically bring the account equity allocations back into the 60/40 split. For the particular strategy implemented here we are using an end of month rebalance frequency.
+-   More balanced implementations include [Bridgewater’s All-Weather](https://www.bridgewater.com/research-and-insights/the-all-weather-story) portfolio and Risk Parity strategies generally, which attempt to equalize risk across assets or sources of risk premia.
 
 ## Momentum Tactical Asset Allocation Strategy {#sec-finance-invest-momassallo .unnumbered}
 
