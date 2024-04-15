@@ -256,6 +256,9 @@
 ## Features {#sec-rlest-feats .unnumbered}
 
 -   Also see [Feature Engineering, Geospatial](https://ercbk.github.io/Data-Science-Notebook/qmd/feature-engineering-geospatial.html){style="color: green"}
+-   Data
+    -   [American Housing Survey (AHS)](https://www.census.gov/programs-surveys/ahs.html)
+    -   [Zillow](https://www.zillow.com/research/data/) - Zillow Home Value Index (ZHVI), Zillow Home Value Forecast (ZHVF), Zillow Observed Rent Index (ZORI), + a bunch of other stuff
 -   [Scrape Traditional Variables]{.underline}
     -   Number of bedrooms
     -   Number of bathrooms
