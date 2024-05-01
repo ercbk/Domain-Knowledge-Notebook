@@ -403,6 +403,11 @@ window.Quarto = {
 <li><p>Packages</p>
 <ul>
 <li><a href="https://cran.r-project.org/web/views/Finance.html">CRAN Task View</a></li>
+<li><span style="color: #990000">{</span><a href="https://business-science.github.io/tidyquant/" style="color: #990000">tidyquant</a><span style="color: #990000">}</span>
+<ul>
+<li>Download and clean data - Daily stock prices (historical), key statistics (real-time), key ratios (historical), financial statements, dividends, splits, economic data from the FRED, FOREX rates from Oanda</li>
+<li>Performance Analysis and Portfolio Analysis</li>
+</ul></li>
 <li><span style="color: goldenrod">{{</span><a href="https://pypi.org/project/zipline-reloaded/" style="color: goldenrod">zipline-reloaded</a><span style="color: goldenrod">}}</span> - Backtesting and live-trading engine by crowd-sourced investment fund Quantopian</li>
 <li><span style="color: goldenrod">{{</span><a href="https://pyfolio.ml4trading.io/" style="color: goldenrod">pyfolio</a><span style="color: goldenrod">}}</span> - Performance and risk analysis for financial portfolios</li>
 <li><span style="color: goldenrod">{{</span><a href="https://skfolio.org/" style="color: goldenrod">skfolio</a><span style="color: goldenrod">}}</span> - Portfolio optimization built on top of scikit-learn. It offers a unified interface and tools compatible with scikit-learn to build, fine-tune, and cross-validate portfolio models.</li>
@@ -492,7 +497,7 @@ window.Quarto = {
 <li><p>Workflow</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="_resources/Finance.resources/ml4t_workflow-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" data-glightbox="description: .lightbox-desc-2" title="From Machine Learning for Algorithmic Trading"><img src="_resources/Finance.resources/ml4t_workflow-1.png" class="img-fluid figure-img" width="532" alt="From Machine Learning for Algorithmic Trading"></a></p>
+<p><a href="_resources/Finance.resources/ml4t_workflow-1.png" class="lightbox" data-glightbox="description: .lightbox-desc-2" data-gallery="quarto-lightbox-gallery-2" title="From Machine Learning for Algorithmic Trading"><img src="_resources/Finance.resources/ml4t_workflow-1.png" class="img-fluid figure-img" width="532" alt="From Machine Learning for Algorithmic Trading"></a></p>
 <figcaption>From Machine Learning for Algorithmic Trading</figcaption>
 </figure>
 </div></li>
@@ -1286,7 +1291,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","openEffect":"zoom","selector":".lightbox","descPosition":"bottom","loop":false});
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;

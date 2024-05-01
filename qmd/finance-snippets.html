@@ -533,6 +533,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Performance Analysis and Portfolio Analysis</li>
 </ul></li>
 <li><span style="color: goldenrod">{{</span><a href="https://github.com/ranaroussi/yfinance" style="color: goldenrod">yfinance</a><span style="color: goldenrod">}}</span> - Downloads market data from yahoo finance</li>
+<li><span style="color: #990000">{</span><a href="https://nareal.github.io/frenchdata/" style="color: #990000">frenchdata</a><span style="color: #990000">}</span> - Download and read data sets from Prof.&nbsp;Kenneth French finance data library</li>
 <li><span style="color: #990000">{</span><a href="https://cran.r-project.org/package=fredr" style="color: #990000">fredr</a><span style="color: #990000">}</span> - The Federal Reserve Bank of St.&nbsp;Louis provides more than 818,000 US and international time series from 109 sources via the API FRED. The data is freely available and can be browsed online on the FRED <a href="https://fred.stlouisfed.org/">homepage</a>.</li>
 <li><span style="color: #990000">{</span><a href="https://cran.r-project.org/package=simfinapi" style="color: #990000">simfinapi</a><span style="color: #990000">}</span> - Simfin make fundamental financial data freely available to private investors, researchers, and students. The data provider applies automating data collection processes to collect a large set of publicly available information from firms’ financial statements.</li>
 <li><span style="color: #990000">{</span><a href="https://cran.r-project.org/package=Rblpapi" style="color: #990000">Rblpapi</a><span style="color: #990000">}</span> - Bloomberg’s Fundamental coverage includes current and normalized historical data for the balance sheet, income statement, cash flows statement, and financial ratios. Additionally, it provides industry-specific data for communications, consumer, energy, health care, and many more. In order to retrieve Bloomberg data, a paid subscription is needed.</li>
@@ -1126,7 +1127,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"loop":false,"descPosition":"bottom","openEffect":"zoom","selector":".lightbox","closeEffect":"zoom"});
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","openEffect":"zoom","loop":false,"descPosition":"bottom","selector":".lightbox"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;
