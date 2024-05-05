@@ -403,6 +403,11 @@ window.Quarto = {
 <li><p>Packages</p>
 <ul>
 <li><a href="https://cran.r-project.org/web/views/Finance.html">CRAN Task View</a></li>
+<li><span style="color: #990000">{</span><a href="https://business-science.github.io/tidyquant/" style="color: #990000">tidyquant</a><span style="color: #990000">}</span>
+<ul>
+<li>Download and clean data - Daily stock prices (historical), key statistics (real-time), key ratios (historical), financial statements, dividends, splits, economic data from the FRED, FOREX rates from Oanda</li>
+<li>Performance Analysis and Portfolio Analysis</li>
+</ul></li>
 <li><span style="color: goldenrod">{{</span><a href="https://pypi.org/project/zipline-reloaded/" style="color: goldenrod">zipline-reloaded</a><span style="color: goldenrod">}}</span> - Backtesting and live-trading engine by crowd-sourced investment fund Quantopian</li>
 <li><span style="color: goldenrod">{{</span><a href="https://pyfolio.ml4trading.io/" style="color: goldenrod">pyfolio</a><span style="color: goldenrod">}}</span> - Performance and risk analysis for financial portfolios</li>
 <li><span style="color: goldenrod">{{</span><a href="https://skfolio.org/" style="color: goldenrod">skfolio</a><span style="color: goldenrod">}}</span> - Portfolio optimization built on top of scikit-learn. It offers a unified interface and tools compatible with scikit-learn to build, fine-tune, and cross-validate portfolio models.</li>
@@ -492,7 +497,7 @@ window.Quarto = {
 <li><p>Workflow</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><a href="_resources/Finance.resources/ml4t_workflow-1.png" class="lightbox" data-glightbox="description: .lightbox-desc-2" data-gallery="quarto-lightbox-gallery-2" title="From Machine Learning for Algorithmic Trading"><img src="_resources/Finance.resources/ml4t_workflow-1.png" class="img-fluid figure-img" width="532" alt="From Machine Learning for Algorithmic Trading"></a></p>
+<p><a href="_resources/Finance.resources/ml4t_workflow-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" data-glightbox="description: .lightbox-desc-2" title="From Machine Learning for Algorithmic Trading"><img src="_resources/Finance.resources/ml4t_workflow-1.png" class="img-fluid figure-img" width="532" alt="From Machine Learning for Algorithmic Trading"></a></p>
 <figcaption>From Machine Learning for Algorithmic Trading</figcaption>
 </figure>
 </div></li>
@@ -554,6 +559,11 @@ window.Quarto = {
 <li>Notes from
 <ul>
 <li><a href="https://www.quantstart.com/articles/systematic-tactical-asset-allocation-an-introduction/">Systematic Tactical Asset Allocation: An Introduction</a> - <a href="https://www.quantstart.com/qstrader/tutorial-momentum-tactical-asset-allocation-strategy/">Tutorial</a></li>
+<li><a href="https://alphaarchitect.com/2024/04/cross-sectional-momentum/">Minimizing the Risk of Cross-Sectional Momentum Crashes</a>
+<ul>
+<li>See article for more details and links to resources</li>
+<li>Cross-Sectional Momementum - Investing in previous winners and short-selling previous losers</li>
+</ul></li>
 </ul></li>
 </ul></li>
 <li>Description
@@ -562,6 +572,17 @@ window.Quarto = {
 <li>At the end of every month the strategy calculates the holding period return (HPR) based momentum of all of the SPDR sector ETFs (the ticker symbols of which begin with the prefix XL) and selects the top N to invest in for the forthcoming month, where N is usually between 3 and 6.</li>
 <li>In the implementation given here the HPR momentum is calculated over the previous 126 days (approximately six months of business days) and the top three sector ETFs are chosen for the portfolio.</li>
 <li>The portfolio allocation is equally weighted between each of these three sector ETFs. Irrespective of changes in signal the portfolio is rebalanced once per month to weight the assets equally.</li>
+</ul></li>
+<li>Risk
+<ul>
+<li>Momentum displays a huge tail risk, as there are short but persistent periods of highly negative return which occur in reversals from bear markets, when the momentum portfolio displays a negative market beta and momentum volatility is high.</li>
+<li>Investors have experienced <em>huge</em> drawdowns—momentum exhibits both high kurtosis and negative skewness.</li>
+<li>Momentum volatility increases in times of momentum crashes</li>
+<li>“…strong relationship between the level of high-yield spreads and the one-month returns to the momentum factor. Specifically, tight high-yield spreads are associated with robust momentum premia, while elevated spreads (400-700 basis points) predict weaker returns. The right signal to move out of the momentum strategy—or even to initiate strong bets on reversals—has historically been when spreads exceed 700 basis points.”
+<ul>
+<li>The “high-yield spread is not a particularly useful predictor of the forward returns of the ‘winner’ portfolio,” however, the high-yield spread “significantly predicts momentum crashes by identifying when the ‘loser’ portfolios will experience positive reversals.”</li>
+</ul></li>
+<li>Downturns are forecastable — occurring following market declines and when market volatility is high (contemporaneous with market rebounds) — but also that there are systematic strategies that have been shown to historically reduce crash risk. Smoler-Schatz showed that the high-yield spread is one of them.</li>
 </ul></li>
 </ul>
 </section>
@@ -1248,7 +1269,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"loop":false,"openEffect":"zoom","descPosition":"bottom","closeEffect":"zoom","selector":".lightbox"});
+<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","closeEffect":"zoom","selector":".lightbox","descPosition":"bottom","loop":false});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;

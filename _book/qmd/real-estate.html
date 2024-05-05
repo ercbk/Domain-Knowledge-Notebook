@@ -248,6 +248,12 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../qmd/finance-snippets.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Snippets</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../qmd/finance-valuation.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Valuation</span></a>
   </div>
@@ -756,6 +762,11 @@ window.Quarto = {
 <h2 class="unnumbered anchored" data-anchor-id="sec-rlest-feats">Features</h2>
 <ul>
 <li>Also see <a href="https://ercbk.github.io/Data-Science-Notebook/qmd/feature-engineering-geospatial.html" style="color: green">Feature Engineering, Geospatial</a></li>
+<li>Data
+<ul>
+<li><a href="https://www.census.gov/programs-surveys/ahs.html">American Housing Survey (AHS)</a></li>
+<li><a href="https://www.zillow.com/research/data/">Zillow</a> - Zillow Home Value Index (ZHVI), Zillow Home Value Forecast (ZHVF), Zillow Observed Rent Index (ZORI), + a bunch of other stuff</li>
+</ul></li>
 <li><u>Scrape Traditional Variables</u>
 <ul>
 <li>Number of bedrooms</li>
@@ -1292,7 +1303,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"selector":".lightbox","descPosition":"bottom","loop":false,"openEffect":"zoom","closeEffect":"zoom"});
+<script>var lightboxQuarto = GLightbox({"loop":false,"closeEffect":"zoom","selector":".lightbox","openEffect":"zoom","descPosition":"bottom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;

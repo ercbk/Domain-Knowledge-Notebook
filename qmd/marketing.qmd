@@ -224,7 +224,7 @@
     -   Less than 100% you can redistribute budgets to better-performing campaigns and channels
     -   Equal to or higher than 100% you know you are not cannibalizing organic traffic and that your ads are effective
 
-## Geo-experiments {#sec-mark-geoexp .unnumbered}
+## Geo-Experiments {#sec-mark-geoexp .unnumbered}
 
 -   Packages
     -   [{]{style="color: #990000"}[GeoLift](https://github.com/facebookincubator/GeoLift){style="color: #990000"}[}]{style="color: #990000"} - Facebook package for end-to-end geo-experimental methodology based on Synthetic Control Methods used to measure the true incremental effect (Lift) of ad campaign.
@@ -246,6 +246,40 @@
         -   Use difference in differences or synthetic controls to measure incremental conversions
         -   Example DiD\
             ![](./_resources/Marketing.resources/0-7mG9DH1XOy4T3g9G.png){.lightbox width="532"}
+
+## Longitudinal Experiments {#sec-mark-long .unnumbered}
+
+-   Notes from [A Data Scientist’s Guide to Longitudinal Experiments for Personalization Programs](https://towardsdatascience.com/how-to-set-up-longitudinal-experiments-a-data-scientists-guide-59b7aa729d20)
+-   Longitudinal experiments offer distinct advantages in complex personalization scenarios. They enable a deeper understanding of the cumulative impact of personalized marketing strategies and help determine when to scale these efforts.
+-   [Example]{.ribbon-highlight}: Bike Customization Business
+    -   Contrary to one-time grocery trips, typical shopper journeys at "AvidBikers" consists of a series of online shopping trips to get all parts needed to DIY bikes and upgrade biking equipments.
+        -   So the company launched a personalization program to send weekly best offerings and promotions to their loyal cyclist customer base
+    -   The marketing data science team would like to understand both the individual campaign effectiveness and the overall program-level incrementality from combined personalized marketing strategies.
+        -   Program-level measurement results indicate the overall success of AvidBikers personalization program.
+        -   Campaign-level measurement tells us which specific personalization tactic (personalized offering or promo) is the winning strategy for which subset of the customer base.
+    -   Two-Pronged approach
+        -   Study program-wide effects which refer to the impacts from running the personalization program, which sometimes consists of up to thousands of individual campaigns.
+        -   Study campaign-level impacts which refer to that of sending personalized weekly best offerings vs. promotions to most relevant customers.
+    -   Test and control groups are created on both global level and campaign level.
+        -   Global (Program-wide)
+            -   The test group is the customer base who receives personalized offerings and promos when eligible
+            -   The control is carved out as “hold-out” group.
+        -   Campaign
+            -   Within the global test group, we further carve out campaign-level test and control groups to measure impacts of different personalization strategies.
+        -   Perform a statistical test to validate groups are balanced
+    -   Issues
+        -   Dropout
+            -   Customer attrition likely has an uneven impact on test and control groups, creating uncontrolled differences that could not be attributed to the personalization treatment / interventions.
+            -   To address such bias, new customers are assigned into program-level and campaign level test and control groups, followed by a statistical test to validate groups are balanced.
+                -   I think this is probably fine. Mixed effects models handle group imbalance okay, but there will be a loss of power. (See [Mixed Effects, General \>\> Model Equation](https://ercbk.github.io/Data-Science-Notebook/qmd/mixed-effects-general.html#sec-me-gen-modeq){style="color: green"})
+            -   Perform a "longitudinal quality check" to ensure audience assignment is consistent week over week (?)
+                -   I'm guessing this a test to monitor group balance on a weekly basis.
+            -   Also see
+                -   [Missingness \>\> Misc](https://ercbk.github.io/Data-Science-Notebook/qmd/missingness.html#sec-missing-misc){style="color: green"} \>\> Missingness in RCT due to dropouts
+        -   Other issues such as cold-start, overlapping strategies, etc. could also arise.
+            -   [Experiments, A/B Testing \>\> Potential Biases](https://ercbk.github.io/Data-Science-Notebook/qmd/experiments-a_b-testing.html#sec-exp-ab-pb){style="color: green"}
+            -   [Experiements, RCT \>\> Sources of Bias](https://ercbk.github.io/Data-Science-Notebook/qmd/experiments-rct.html#sec-exp-rct-sbias){style="color: green"}
+            -   [Experiments, Planning \>\> Misc](https://ercbk.github.io/Data-Science-Notebook/qmd/experiments-planning.html#sec-exp-plan-misc){style="color: green"}
 
 ## Channel Attribution {#sec-mark-chanatt .unnumbered}
 

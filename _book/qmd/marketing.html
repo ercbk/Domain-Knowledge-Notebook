@@ -214,6 +214,12 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../qmd/finance-snippets.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Snippets</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../qmd/finance-valuation.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Valuation</span></a>
   </div>
@@ -354,7 +360,8 @@ window.Quarto = {
   <li><a href="#sec-mark-usecases" id="toc-sec-mark-usecases" class="nav-link" data-scroll-target="#sec-mark-usecases">Use Cases</a></li>
   <li><a href="#sec-mark-metrics" id="toc-sec-mark-metrics" class="nav-link" data-scroll-target="#sec-mark-metrics">Metrics</a></li>
   <li><a href="#sec-mark-custlift" id="toc-sec-mark-custlift" class="nav-link" data-scroll-target="#sec-mark-custlift">Conversion Lift Tests</a></li>
-  <li><a href="#sec-mark-geoexp" id="toc-sec-mark-geoexp" class="nav-link" data-scroll-target="#sec-mark-geoexp">Geo-experiments</a></li>
+  <li><a href="#sec-mark-geoexp" id="toc-sec-mark-geoexp" class="nav-link" data-scroll-target="#sec-mark-geoexp">Geo-Experiments</a></li>
+  <li><a href="#sec-mark-long" id="toc-sec-mark-long" class="nav-link" data-scroll-target="#sec-mark-long">Longitudinal Experiments</a></li>
   <li><a href="#sec-mark-chanatt" id="toc-sec-mark-chanatt" class="nav-link" data-scroll-target="#sec-mark-chanatt">Channel Attribution</a>
   <ul>
   <li><a href="#sec-mark-chanatt-misc" id="toc-sec-mark-chanatt-misc" class="nav-link" data-scroll-target="#sec-mark-chanatt-misc">Misc</a></li>
@@ -687,7 +694,7 @@ eCPM = \frac{\mbox{Estimated Earnings} \cdot 1000}{\mbox{Total Impressions}}
 </ul>
 </section>
 <section id="sec-mark-geoexp" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="sec-mark-geoexp">Geo-experiments</h2>
+<h2 class="unnumbered anchored" data-anchor-id="sec-mark-geoexp">Geo-Experiments</h2>
 <ul>
 <li>Packages
 <ul>
@@ -725,6 +732,68 @@ eCPM = \frac{\mbox{Estimated Earnings} \cdot 1000}{\mbox{Total Impressions}}
 <a href="./_resources/Marketing.resources/0-7mG9DH1XOy4T3g9G.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="./_resources/Marketing.resources/0-7mG9DH1XOy4T3g9G.png" class="img-fluid" width="532"></a></li>
 </ul></li>
 </ol></li>
+</ul>
+</section>
+<section id="sec-mark-long" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="sec-mark-long">Longitudinal Experiments</h2>
+<ul>
+<li>Notes from <a href="https://towardsdatascience.com/how-to-set-up-longitudinal-experiments-a-data-scientists-guide-59b7aa729d20">A Data Scientist’s Guide to Longitudinal Experiments for Personalization Programs</a></li>
+<li>Longitudinal experiments offer distinct advantages in complex personalization scenarios. They enable a deeper understanding of the cumulative impact of personalized marketing strategies and help determine when to scale these efforts.</li>
+<li><span class="ribbon-highlight">Example</span>: Bike Customization Business
+<ul>
+<li>Contrary to one-time grocery trips, typical shopper journeys at “AvidBikers” consists of a series of online shopping trips to get all parts needed to DIY bikes and upgrade biking equipments.
+<ul>
+<li>So the company launched a personalization program to send weekly best offerings and promotions to their loyal cyclist customer base</li>
+</ul></li>
+<li>The marketing data science team would like to understand both the individual campaign effectiveness and the overall program-level incrementality from combined personalized marketing strategies.
+<ul>
+<li>Program-level measurement results indicate the overall success of AvidBikers personalization program.</li>
+<li>Campaign-level measurement tells us which specific personalization tactic (personalized offering or promo) is the winning strategy for which subset of the customer base.</li>
+</ul></li>
+<li>Two-Pronged approach
+<ul>
+<li>Study program-wide effects which refer to the impacts from running the personalization program, which sometimes consists of up to thousands of individual campaigns.</li>
+<li>Study campaign-level impacts which refer to that of sending personalized weekly best offerings vs.&nbsp;promotions to most relevant customers.</li>
+</ul></li>
+<li>Test and control groups are created on both global level and campaign level.
+<ul>
+<li>Global (Program-wide)
+<ul>
+<li>The test group is the customer base who receives personalized offerings and promos when eligible</li>
+<li>The control is carved out as “hold-out” group.</li>
+</ul></li>
+<li>Campaign
+<ul>
+<li>Within the global test group, we further carve out campaign-level test and control groups to measure impacts of different personalization strategies.</li>
+</ul></li>
+<li>Perform a statistical test to validate groups are balanced</li>
+</ul></li>
+<li>Issues
+<ul>
+<li>Dropout
+<ul>
+<li>Customer attrition likely has an uneven impact on test and control groups, creating uncontrolled differences that could not be attributed to the personalization treatment / interventions.</li>
+<li>To address such bias, new customers are assigned into program-level and campaign level test and control groups, followed by a statistical test to validate groups are balanced.
+<ul>
+<li>I think this is probably fine. Mixed effects models handle group imbalance okay, but there will be a loss of power. (See <a href="https://ercbk.github.io/Data-Science-Notebook/qmd/mixed-effects-general.html#sec-me-gen-modeq" style="color: green">Mixed Effects, General &gt;&gt; Model Equation</a>)</li>
+</ul></li>
+<li>Perform a “longitudinal quality check” to ensure audience assignment is consistent week over week (?)
+<ul>
+<li>I’m guessing this a test to monitor group balance on a weekly basis.</li>
+</ul></li>
+<li>Also see
+<ul>
+<li><a href="https://ercbk.github.io/Data-Science-Notebook/qmd/missingness.html#sec-missing-misc" style="color: green">Missingness &gt;&gt; Misc</a> &gt;&gt; Missingness in RCT due to dropouts</li>
+</ul></li>
+</ul></li>
+<li>Other issues such as cold-start, overlapping strategies, etc. could also arise.
+<ul>
+<li><a href="https://ercbk.github.io/Data-Science-Notebook/qmd/experiments-a_b-testing.html#sec-exp-ab-pb" style="color: green">Experiments, A/B Testing &gt;&gt; Potential Biases</a></li>
+<li><a href="https://ercbk.github.io/Data-Science-Notebook/qmd/experiments-rct.html#sec-exp-rct-sbias" style="color: green">Experiements, RCT &gt;&gt; Sources of Bias</a></li>
+<li><a href="https://ercbk.github.io/Data-Science-Notebook/qmd/experiments-planning.html#sec-exp-plan-misc" style="color: green">Experiments, Planning &gt;&gt; Misc</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
 </ul>
 </section>
 <section id="sec-mark-chanatt" class="level2 unnumbered">
@@ -1857,7 +1926,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"selector":".lightbox","openEffect":"zoom","loop":false,"closeEffect":"zoom","descPosition":"bottom"});
+<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","selector":".lightbox","loop":false,"descPosition":"bottom","closeEffect":"zoom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;
