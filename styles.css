@@ -1,15 +1,27 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Merienda:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,500;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital@0;1&display=swap');
+
+
+/* Import font from local source */
+@font-face {
+  font-family: 'FiraCode-Retina';
+  src: local('Fira Code Retina'), local('FiraCode-Retina'), url('fonts/FiraCode-Retina.ttf') format('truetype');
+}
+
 
 h1, .h1 {
  text-transform: uppercase !important;
+ font-family: "Noto Sans", sans-serif;
  font-weight: 540;
  color: #1E4477 !important;
 }
 
 
 h2, .h2 {
+    font-family: "Noto Sans", sans-serif;
     font-weight: 540 !important;
     border-bottom: 2px solid #1E4477 !important;
     padding-bottom: .5rem;
@@ -18,6 +30,7 @@ h2, .h2 {
 
 
 h3, .h3 {
+    font-family: "Noto Sans", sans-serif;
     font-weight: 530 !important;
     font-size: calc(1.25rem + 0.24vw);
     border-bottom: 2px solid #dee2e6;
@@ -27,6 +40,7 @@ h3, .h3 {
 
 
 h4, h5, .h4, .h5 {
+  font-family: "Noto Sans", sans-serif;
   color: #365586FF !important;
   border-bottom: 2px solid #dee2e6;
   padding-bottom: .1rem;
@@ -40,14 +54,13 @@ h4, h5, .h4, .h5 {
   position:relative;
   margin:0.1em;
   color: white;
-  padding: 0 14px;
-  margin: 0 3px
+  padding: 0 14px; 
 }
 .ribbon-highlight:before{
   content:"";
   z-index:-1;
   left:-0.04em;
-  top:0.1em;
+  top:0.25em;
   border-width:0.5em;
   border-style: solid;
   border-color: #44883C;
@@ -60,13 +73,47 @@ h4, h5, .h4, .h5 {
 /* styling for function argument names */
 .arg-text {
   font-family: 'Roboto Mono', monospace;
-  font-size: 80%;
+  font-size: 90%;
 }
 /* styling for data variable names */
 .var-text {
   font-family: 'Merienda', cursive;
-  font-size: 80%;
+  font-size: 90%;
 }
+
+/* code folding html tag */
+details > summary {
+  color: #365586FF;
+}
+
+/* styling for inline code text */
+code {
+    display: inline-block;
+    margin: 0 .4em !important;
+    padding: 1px 6px !important;
+    color: #365586FF;
+    background: #FFFDF9FF !important;
+    border: 1px solid #DDD;
+    box-shadow: 1px 1px 0 #B2ADA3FF, 1px 1px 0 #ddd;
+}
+
+/* code tag affects inline AND block code, so I'm undoing the above style changes for block code */
+pre code {
+  background: #fff !important;
+  border: none;
+  box-shadow: none;
+}
+
+/* "note" callout; banner color is in scss file */
+.callout-note {
+  color: #1E4477;
+  font-weight: 100 !important;
+}
+
+.callout-style-default {
+  background-color: #FFFDF9FF;  
+}
+
 
 /* old color for title and icons: #0064B6FF */
 /* Book title */
@@ -119,6 +166,25 @@ mjx-container[jax="CHTML"][display="true"] {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.4);
   border-radius: 10px; /* rounds edges of box; higher makes them more rounded */
 }
+
+/* styles code annotation */
+/* outside code block */
+dl.code-annotation-container-grid dt {
+    color: #007BB7;
+    border: solid #007BB7 1px;
+}
+/* inside code block */ 
+code.sourceCode .code-annotation-anchor {
+    font-family: "Fira Code Retina";
+    color: #007BB7;
+    border: solid #007BB7 1px;
+    border-radius: 50%;
+    height: 18px;
+    width: 18px;
+    font-size: 9px;
+    margin-top: 2px;
+}
+
 
 /* outlier note; using equation id to specify a specific equation. There's some extra space on the left side that needs removed.
 #eq-grubbstest > span > mjx-container > mjx-math > mjx-mtable {
