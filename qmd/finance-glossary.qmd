@@ -144,6 +144,12 @@
         [(1 + 0.8)\times (1 - 0.5)\times (1 + 0.6)\times (1 + 0.4)] - 1 = 13.1\%
         $$
 
+-   [**Information Discreteness (ID)**]{style="color: #009499"} - In traditional asset pricing models, such as the Capital Asset Pricing Model (CAPM) or the Arbitrage Pricing Theory (APT), it is often assumed that information arrives continuously and is immediately incorporated into asset prices. However, in reality, new information tends to arrive at specific points in time, such as when a company releases its earnings report or when a major economic indicator is announced. ID is positively associated with higher media coverage and more management press releases (Da et al., 2014).
+
+    $$
+    \mbox(ID) = \frac{\mbox{Down Days} - \mbox{Up Days}}{\mbox{Total Days}}
+    $$
+
 -   [**Internal Rate of Return (IRR)**]{style="color: #009499"} - A flawed indicator of strength for capital projects. It should only be used when a project has no interim cashflows or is somehow able reinvest those interim cashflows at the same IRR for the duration of the project (See disadvantages). (Also see MIRR and [Finance, Valuation \>\> Rates of Return](finance-valuation.qmd#sec-finance-val-ror){style="color: green"})
 
     -   The internal rate of return is a *discount rate* that makes the net present value (NPV) of all cash flows from a particular project or investment equal to zero. In general, projects with higher IRRs are more favorable than projects with lower IRRs, as the expected rate of return on these projects is greater.
@@ -223,6 +229,8 @@
 -   [**Relative Performance**]{style="color: #009499"} - The price ratio of two stocks
 
 -   [**Return on Investment (ROI)**]{style="color: #009499"} - $\text{ROI} = \frac{\text{Net Profit}}{\text{Investment}}$ where investment can include working capital, R&D, capital spending, acquisitions, etc.
+
+-   [**Reversal Effect**]{style="color: #009499"} - The tendency for stocks that have performed poorly over a recent period (e.g., the past year) to outperform stocks that have performed well over the same period in the immediately following period, i.e. past losers tend to become future winners, while past winners tend to become future losers over the short-term. Researchers often try to avoid any short-term return reversals contaminating their results by not including the most recent period. For example, they will compute monthly, cumulative returns from t-12 to t-1 (skipping month t).
 
 -   [**Revenue**]{style="color: #009499"} aka [**Sales**]{style="color: #009499"} - The income a company generates before deducting expenses. Usually the top line of the income statement
 

@@ -1,3 +1,7 @@
+---
+fig-cap-location: top
+---
+
 # Investing {#sec-finance-invest .unnumbered}
 
 ## Misc {#sec-finance-invest-misc .unnumbered}
@@ -120,11 +124,29 @@
 
 -   Misc
     -   [{{]{style="color: goldenrod"}[QSTrader](https://www.quantstart.com/qstrader/tutorial-60-40-portfolio/){style="color: goldenrod"}[}}]{style="color: goldenrod"}
+
     -   Notes from
+
         -   [Systematic Tactical Asset Allocation: An Introduction](https://www.quantstart.com/articles/systematic-tactical-asset-allocation-an-introduction/) - [Tutorial](https://www.quantstart.com/qstrader/tutorial-momentum-tactical-asset-allocation-strategy/)
         -   [Minimizing the Risk of Cross-Sectional Momentum Crashes](https://alphaarchitect.com/2024/04/cross-sectional-momentum/)
             -   See article for more details and links to resources
             -   Cross-Sectional Momementum - Investing in previous winners and short-selling previous losers
+
+    -   Types of Momentum: Cross-Sectional (aka Long-Short) and Absolute (aka Trend, Time Series)
+
+    -   Individual investors can utilize momentum strategies without incurring additional costs by incorporating momentum into trading decisions. For example, when rebalancing, they can delay purchases of assets with negative momentum and delay sales of assets with positive momentum.
+
+    -   Momentum Portfolios with higher trend clarity (measured by R^2^) have higher returns than portfolios with lower trend clarity. Trend clarity is a *driver* of momentum. ([article](https://alphaarchitect.com/2024/05/momentum-and-the-clarity-of-the-trend/))\
+
+        ::: {layout-ncol="2"}
+        ![High Trend Clarity](_resources/Finance.resources/mom-high-trend-clarity-1.png){.lightbox group="trend-clarity" width="332"}
+
+        ![Low Trend Clarity](_resources/Finance.resources/mom-low-trend-clarity-1.png){.lightbox group="trend-clarity" width="332"}
+        :::
+
+        -   The impact of trend clarity on momentum was more pronounced in smaller stocks, where information diffusion tends to be slower.
+        -   A more pronounced effect of trend clarity on momentum occurs during periods of high sentiment.
+        -   the clarity of the price trend closely aligned with earnings surprises (Standardized Unexpected Earnings (SUE)). As SUE changes and the steepness of changes in SUE increased, so did trend clarity, suggesting that positive or negative news instigated the clear price trend. As the magnitude of SUE diminished and the trend reversed, indicating a deficiency of fundamentals to back the extrapolation by trend followers.
 -   Description
     -   The US sector momentum strategy is a long-only dynamic tactical asset allocation strategy that attempts to exceed the performance of simply going long the S&P500.
     -   At the end of every month the strategy calculates the holding period return (HPR) based momentum of all of the SPDR sector ETFs (the ticker symbols of which begin with the prefix XL) and selects the top N to invest in for the forthcoming month, where N is usually between 3 and 6.

@@ -140,12 +140,9 @@ pre code {
 
 /* --------------------------------MathJax LateX attributes ------------------------------------- */
 
-/*
 .math.inline .MathJax {
-  font-size: 150%;
-  color: #22b222;
+  font-size: 100%;
 }
-*/
 
 .math.display .MathJax {
   /*background-color: #FFFDFAFF !important*/

@@ -498,6 +498,10 @@ window.Quarto = {
 [(1 + 0.8)\times (1 - 0.5)\times (1 + 0.6)\times (1 + 0.4)] - 1 = 13.1\%
 \]</span></p></li>
 </ul></li>
+<li><p><span style="color: #009499"><strong>Information Discreteness (ID)</strong></span> - In traditional asset pricing models, such as the Capital Asset Pricing Model (CAPM) or the Arbitrage Pricing Theory (APT), it is often assumed that information arrives continuously and is immediately incorporated into asset prices. However, in reality, new information tends to arrive at specific points in time, such as when a company releases its earnings report or when a major economic indicator is announced. ID is positively associated with higher media coverage and more management press releases (Da et al., 2014).</p>
+<p><span class="math display">\[
+\mbox(ID) = \frac{\mbox{Down Days} - \mbox{Up Days}}{\mbox{Total Days}}
+\]</span></p></li>
 <li><p><span style="color: #009499"><strong>Internal Rate of Return (IRR)</strong></span> - A flawed indicator of strength for capital projects. It should only be used when a project has no interim cashflows or is somehow able reinvest those interim cashflows at the same IRR for the duration of the project (See disadvantages). (Also see MIRR and <a href="../qmd/finance-valuation.html#sec-finance-val-ror" style="color: green">Finance, Valuation &gt;&gt; Rates of Return</a>)</p>
 <ul>
 <li>The internal rate of return is a <em>discount rate</em> that makes the net present value (NPV) of all cash flows from a particular project or investment equal to zero. In general, projects with higher IRRs are more favorable than projects with lower IRRs, as the expected rate of return on these projects is greater.</li>
@@ -578,6 +582,7 @@ M = \frac{\text{Closing Price}_{\text{end of month}}- \text{Closing Price}_{\tex
 <li><p><span style="color: #009499"><strong>Rate of Return (RoR)</strong></span> - The net gain or loss of an investment over a specified time period, expressed as a percentage of the investment’s initial cost. The rate of return disregards some key factors in an investment, like the time value of money, the timing and size of cash flows, and the risk and uncertainty associated with any investment or in the case of stocks — taxes and investing fees. (See Internal Rate of Return, MIRR, and <a href="../qmd/finance-valuation.html#sec-finance-val-ror" style="color: green">Finance, Valuation &gt;&gt; Rates of Return</a>)</p></li>
 <li><p><span style="color: #009499"><strong>Relative Performance</strong></span> - The price ratio of two stocks</p></li>
 <li><p><span style="color: #009499"><strong>Return on Investment (ROI)</strong></span> - <span class="math inline">\(\text{ROI} = \frac{\text{Net Profit}}{\text{Investment}}\)</span> where investment can include working capital, R&amp;D, capital spending, acquisitions, etc.</p></li>
+<li><p><span style="color: #009499"><strong>Reversal Effect</strong></span> - The tendency for stocks that have performed poorly over a recent period (e.g., the past year) to outperform stocks that have performed well over the same period in the immediately following period, i.e.&nbsp;past losers tend to become future winners, while past winners tend to become future losers over the short-term. Researchers often try to avoid any short-term return reversals contaminating their results by not including the most recent period. For example, they will compute monthly, cumulative returns from t-12 to t-1 (skipping month t).</p></li>
 <li><p><span style="color: #009499"><strong>Revenue</strong></span> aka <span style="color: #009499"><strong>Sales</strong></span> - The income a company generates before deducting expenses. Usually the top line of the income statement</p></li>
 <li><p><span style="color: #009499"><strong>Risk Premium</strong></span> - The excess return you might expect over and above risk-free cashflows for taking on certain unattractive risks,</p></li>
 <li><p><span style="color: #009499"><strong>Selling, General, and Administrative Expenses (SG&amp;A)</strong></span> - Includes all general and administrative expenses (G&amp;A) as well as the direct and indirect selling expenses of the business. This line item includes nearly all business costs not directly attributable to making a product or performing a service. SG&amp;A includes the costs of managing the company and the expenses of delivering its products or services.</p></li>
@@ -1096,7 +1101,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","selector":".lightbox","descPosition":"bottom","openEffect":"zoom","loop":false});
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","openEffect":"zoom","descPosition":"bottom","loop":false,"selector":".lightbox"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;
