@@ -248,6 +248,12 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../qmd/finance-risk.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Risk</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../qmd/finance-snippets.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Snippets</span></a>
   </div>
@@ -389,13 +395,13 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#misc" id="toc-misc" class="nav-link active" data-scroll-target="#misc">Misc</a></li>
+  <li><a href="#sec-finance-val-misc" id="toc-sec-finance-val-misc" class="nav-link active" data-scroll-target="#sec-finance-val-misc">Misc</a></li>
   <li><a href="#sec-finance-val-ror" id="toc-sec-finance-val-ror" class="nav-link" data-scroll-target="#sec-finance-val-ror">Rates of Return</a>
   <ul>
-  <li><a href="#rate-of-return-ror" id="toc-rate-of-return-ror" class="nav-link" data-scroll-target="#rate-of-return-ror">Rate of Return (RoR)</a></li>
-  <li><a href="#internal-rate-of-return-irr" id="toc-internal-rate-of-return-irr" class="nav-link" data-scroll-target="#internal-rate-of-return-irr">Internal Rate of Return (IRR)</a></li>
-  <li><a href="#modified-internal-rate-of-return-mirr" id="toc-modified-internal-rate-of-return-mirr" class="nav-link" data-scroll-target="#modified-internal-rate-of-return-mirr">Modified Internal Rate of Return (MIRR)</a></li>
-  <li><a href="#average-internal-rate-of-return-airr" id="toc-average-internal-rate-of-return-airr" class="nav-link" data-scroll-target="#average-internal-rate-of-return-airr">Average Internal Rate of Return (AIRR)</a></li>
+  <li><a href="#sec-finance-val-ror-ror" id="toc-sec-finance-val-ror-ror" class="nav-link" data-scroll-target="#sec-finance-val-ror-ror">Rate of Return (RoR)</a></li>
+  <li><a href="#sec-finance-val-ror-irr" id="toc-sec-finance-val-ror-irr" class="nav-link" data-scroll-target="#sec-finance-val-ror-irr">Internal Rate of Return (IRR)</a></li>
+  <li><a href="#sec-finance-val-ror-mirr" id="toc-sec-finance-val-ror-mirr" class="nav-link" data-scroll-target="#sec-finance-val-ror-mirr">Modified Internal Rate of Return (MIRR)</a></li>
+  <li><a href="#sec-finance-val-ror-airr" id="toc-sec-finance-val-ror-airr" class="nav-link" data-scroll-target="#sec-finance-val-ror-airr">Average Internal Rate of Return (AIRR)</a></li>
   </ul></li>
   <li><a href="#sec-finance-val-coc" id="toc-sec-finance-val-coc" class="nav-link" data-scroll-target="#sec-finance-val-coc">Cost of Capital</a>
   <ul>
@@ -431,8 +437,8 @@ window.Quarto = {
 </header>
 
 
-<section id="misc" class="level2">
-<h2 class="anchored" data-anchor-id="misc">Misc</h2>
+<section id="sec-finance-val-misc" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="sec-finance-val-misc">Misc</h2>
 <ul>
 <li><strong>TL;DR;</strong>
 <ul>
@@ -452,7 +458,7 @@ window.Quarto = {
 <li><p>Comparison</p>
 <table class="table">
 <colgroup>
-<col style="width: 25%">
+<col style="width: 24%">
 <col style="width: 37%">
 <col style="width: 37%">
 </colgroup>
@@ -505,8 +511,8 @@ window.Quarto = {
 </section>
 <section id="sec-finance-val-ror" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="sec-finance-val-ror">Rates of Return</h2>
-<section id="rate-of-return-ror" class="level3">
-<h3 class="anchored" data-anchor-id="rate-of-return-ror">Rate of Return (RoR)</h3>
+<section id="sec-finance-val-ror-ror" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="sec-finance-val-ror-ror">Rate of Return (RoR)</h3>
 <p><span class="math display">\[
 \text{RoR} = \frac{\operatorname{current\_value - \operatorname{initial\_value}}}{\operatorname{initial\_value}} \times 100
 \]</span></p>
@@ -535,8 +541,8 @@ window.Quarto = {
 </ul></li>
 </ul>
 </section>
-<section id="internal-rate-of-return-irr" class="level3">
-<h3 class="anchored" data-anchor-id="internal-rate-of-return-irr">Internal Rate of Return (IRR)</h3>
+<section id="sec-finance-val-ror-irr" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="sec-finance-val-ror-irr">Internal Rate of Return (IRR)</h3>
 <ul>
 <li><p>A flawed indicator of strength for capital projects. It should only be used when a project has no interim cashflows or is somehow able reinvest those interim cashflows at the same IRR for the duration of the project (See disadvantages).</p></li>
 <li><p>The internal rate of return is a <em>discount rate</em> that makes the net present value (NPV) of all cash flows from a particular project or investment equal to zero. In general, projects with higher IRRs are more favorable than projects with lower IRRs, as the expected rate of return on these projects is greater.</p></li>
@@ -571,8 +577,8 @@ NPV = \sum_{t=0}^T \frac{C_t}{(1+r)^t} = 0
 </ul></li>
 </ul>
 </section>
-<section id="modified-internal-rate-of-return-mirr" class="level3">
-<h3 class="anchored" data-anchor-id="modified-internal-rate-of-return-mirr">Modified Internal Rate of Return (MIRR)</h3>
+<section id="sec-finance-val-ror-mirr" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="sec-finance-val-ror-mirr">Modified Internal Rate of Return (MIRR)</h3>
 <ul>
 <li><p>Better alternative to IRR that assumes the cash inflows are reinvested at cost of capital of the company instead of at the IRR. (<a href="https://www.youtube.com/watch?v=f0IJegvYPKk">video1</a>, <a href="https://www.youtube.com/watch?v=Z-CUSIGLk2U">video2</a>)</p></li>
 <li><p>Weaknesses</p>
@@ -627,14 +633,14 @@ NPV = \sum_{t=0}^T \frac{C_t}{(1+r)^t} = 0
 <li><p><span class="ribbon-highlight">Example</span>: 7 year Project (<a href="https://www.youtube.com/watch?v=Z-CUSIGLk2U&amp;t=342s">link</a>)</p>
 <table class="table">
 <colgroup>
+<col style="width: 17%">
 <col style="width: 11%">
+<col style="width: 10%">
+<col style="width: 8%">
+<col style="width: 10%">
 <col style="width: 11%">
-<col style="width: 11%">
-<col style="width: 11%">
-<col style="width: 11%">
-<col style="width: 11%">
-<col style="width: 11%">
-<col style="width: 11%">
+<col style="width: 10%">
+<col style="width: 10%">
 <col style="width: 11%">
 </colgroup>
 <thead>
@@ -764,16 +770,16 @@ NPV = \sum_{t=0}^T \frac{C_t}{(1+r)^t} = 0
 </p>
 <table class="table">
 <colgroup>
-<col style="width: 10%">
-<col style="width: 10%">
-<col style="width: 10%">
-<col style="width: 10%">
-<col style="width: 10%">
-<col style="width: 10%">
-<col style="width: 10%">
-<col style="width: 10%">
-<col style="width: 10%">
-<col style="width: 10%">
+<col style="width: 15%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
+<col style="width: 9%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -866,8 +872,8 @@ NPV = \sum_{t=0}^T \frac{C_t}{(1+r)^t} = 0
 </ul></li>
 </ul>
 </section>
-<section id="average-internal-rate-of-return-airr" class="level3">
-<h3 class="anchored" data-anchor-id="average-internal-rate-of-return-airr">Average Internal Rate of Return (AIRR)</h3>
+<section id="sec-finance-val-ror-airr" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="sec-finance-val-ror-airr">Average Internal Rate of Return (AIRR)</h3>
 <ul>
 <li>AIRR overcomes many of the limitations of IRR by calculating the average rate of return on each invested dollar at each point in time, resulting in a single, unambiguous measure of project profitability. It addresses the issues with multiplicity, complex numbers, and incompatibility with NPV, providing a more reliable and interpretable measure for investment decisions. (Magni, 2010)
 <ul>
@@ -1352,8 +1358,8 @@ K_d = (\operatorname{Risk Free Rate} + \operatorname{Default Spread}) \times (1 
 <li><p>Horizon Guidelines</p>
 <table class="table">
 <colgroup>
-<col style="width: 63%">
-<col style="width: 36%">
+<col style="width: 78%">
+<col style="width: 22%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -2026,7 +2032,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","closeEffect":"zoom","openEffect":"zoom","selector":".lightbox","loop":false});
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","selector":".lightbox","descPosition":"bottom","loop":false,"openEffect":"zoom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;

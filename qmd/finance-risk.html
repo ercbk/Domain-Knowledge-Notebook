@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Domain Knowledge - Location Selection</title>
+<title>Domain Knowledge - Risk</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -30,8 +64,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../qmd/logistics-demand-planning.html" rel="next">
-<link href="../qmd/kpis.html" rel="prev">
+<link href="../qmd/finance-snippets.html" rel="next">
+<link href="../qmd/finance-investing.html" rel="prev">
 <link href="../images/dk-favicon-32.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -42,9 +76,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
-<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
-<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
-<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -86,7 +117,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../qmd/location-selection.html">Location Selection</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../qmd/finance-glossary.html">Finance</a></li><li class="breadcrumb-item"><a href="../qmd/finance-risk.html">Risk</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -164,13 +195,13 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
  <span class="menu-text">Finance</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../qmd/finance-glossary.html" class="sidebar-item-text sidebar-link">
@@ -185,7 +216,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../qmd/finance-risk.html" class="sidebar-item-text sidebar-link">
+  <a href="../qmd/finance-risk.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Risk</span></a>
   </div>
 </li>
@@ -223,7 +254,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../qmd/location-selection.html" class="sidebar-item-text sidebar-link active">
+  <a href="../qmd/location-selection.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Location Selection</span></a>
   </div>
 </li>
@@ -332,19 +363,20 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#sec-locsel-misc" id="toc-sec-locsel-misc" class="nav-link active" data-scroll-target="#sec-locsel-misc">Misc</a></li>
-  <li><a href="#sec-locsel-fact" id="toc-sec-locsel-fact" class="nav-link" data-scroll-target="#sec-locsel-fact">Factors</a></li>
-  <li><a href="#sec-locsel-locprof" id="toc-sec-locsel-locprof" class="nav-link" data-scroll-target="#sec-locsel-locprof">Location Profiles</a></li>
-  <li><a href="#sec-locsel-anal" id="toc-sec-locsel-anal" class="nav-link" data-scroll-target="#sec-locsel-anal">Analysis</a></li>
+  <li><a href="#sec-finance-risk-misc" id="toc-sec-finance-risk-misc" class="nav-link active" data-scroll-target="#sec-finance-risk-misc">Misc</a></li>
+  <li><a href="#sec-finance-risk-var" id="toc-sec-finance-risk-var" class="nav-link" data-scroll-target="#sec-finance-risk-var">Value at Risk (VaR)</a>
+  <ul>
+  <li><a href="#sec-finance-risk-var-cop" id="toc-sec-finance-risk-var-cop" class="nav-link" data-scroll-target="#sec-finance-risk-var-cop">Copulas</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../qmd/finance-glossary.html">Finance</a></li><li class="breadcrumb-item"><a href="../qmd/finance-risk.html">Risk</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="sec-locsel" class="quarto-section-identifier">Location Selection</span></h1>
+<h1 class="title"><span id="sec-finance-risk" class="quarto-section-identifier">Risk</span></h1>
 </div>
 
 
@@ -361,137 +393,135 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="sec-locsel-misc" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="sec-locsel-misc">Misc</h2>
+<section id="sec-finance-risk-misc" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="sec-finance-risk-misc">Misc</h2>
 <ul>
-<li>Customer research, market expertise &amp; experience, and competitor location analysis can all help inform the important criteria for your business</li>
-<li><a href="https://www.jordanbean.com/example-work#populationestimator">Tool</a> to calculate population density within a certain radius of a location</li>
-<li>Might be more useful to aggregate smaller geographies into overlapping circular areas to compare candidates<br>
-<a href="./_resources/Location_Selection.resources/1-iT14nGkyxpTDKrzXieHUpg.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="./_resources/Location_Selection.resources/1-iT14nGkyxpTDKrzXieHUpg.png" class="img-fluid" width="632"></a>
+<li>Packages
 <ul>
-<li>Would have to decide how to handle geographies that are only partially enclosed in a circlular area
+<li><span style="color: #990000">{</span><a href="https://cran.r-project.org/web/packages/PerformanceAnalytics/index.html" style="color: #990000">PerformanceAnalytics</a><span style="color: #990000">}</span> - Econometric Tools for Performance and Risk Analysis
 <ul>
-<li>Use a percentage?</li>
-<li>Include the whole thing?</li>
+<li>Lots of vignettes, but there’s also a substantial amount of material in the introduction section of the Reference Manual</li>
 </ul></li>
 </ul></li>
 </ul>
 </section>
-<section id="sec-locsel-fact" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="sec-locsel-fact">Factors</h2>
+<section id="sec-finance-risk-var" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="sec-finance-risk-var">Value at Risk (VaR)</h2>
 <ul>
-<li>Understanding of the demographic or economic factors that must be in place to be successful</li>
-<li>Examples of questions
-<ul>
-<li>Do you need a large population?</li>
-<li>High income population?</li>
-<li>High presence of certain age brackets?</li>
-<li>Do you rely on office worker foot traffic?</li>
-<li>Is the presence of certain business types important (restaurants, healthcare facilities)?</li>
-</ul></li>
-<li>Non-data factors
-<ul>
-<li>Appropriate accessibility (car traffic/foot traffic, street frontage)</li>
-<li>Signage</li>
-<li>Availability and size of space</li>
-<li>Cost/affordability</li>
-</ul></li>
+<li>Notes from <a href="https://chatgpt.com/share/4a17c9f3-e3ec-4ebc-8b9e-fcc38a583dfc">GPT-4o</a></li>
 </ul>
-</section>
-<section id="sec-locsel-locprof" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="sec-locsel-locprof">Location Profiles</h2>
+<section id="sec-finance-risk-var-cop" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="sec-finance-risk-var-cop">Copulas</h3>
 <ul>
-<li><p>These are created for existing stores and locations or potential new stores</p></li>
-<li><p><span class="ribbon-highlight">Example</span>: Workforce and Demographic <a href="./_resources/Location_Selection.resources/1-u7KtEJ5Gbi-zaDd5dwRlhQ.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="./_resources/Location_Selection.resources/1-u7KtEJ5Gbi-zaDd5dwRlhQ.png" class="img-fluid" width="632"></a><br>
-<a href="./_resources/Location_Selection.resources/1-KAR-xT1uxjSvNfxvpPBdiQ.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="./_resources/Location_Selection.resources/1-KAR-xT1uxjSvNfxvpPBdiQ.png" class="img-fluid" width="632"></a></p></li>
-<li><p>Other potential variables</p>
+<li><p>Also see <a href="https://ercbk.github.io/Data-Science-Notebook/qmd/association-copulas.html" style="color: green">Association, Copulas</a></p></li>
+<li><p>Copula Workflow</p>
 <ul>
-<li>Customer median driving distance
+<li>Data Collection and Preprocessing:
 <ul>
-<li>May also inform on the correct census geography to use</li>
+<li>Collect historical data for the two variables of interest.</li>
+<li>Clean the data by handling missing values, outliers, and ensuring consistency.</li>
 </ul></li>
-<li>Distance_to highways, business district, etc.</li>
+<li>Marginal Distribution Estimation:
+<ul>
+<li>Estimate the marginal distributions of each variable independently.</li>
+<li>Fit appropriate probability distributions to the marginal data.</li>
 </ul></li>
-</ul>
-</section>
-<section id="sec-locsel-anal" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="sec-locsel-anal">Analysis</h2>
+<li>Copula Selection and Fitting:
 <ul>
-<li>Use thresholds for any profile variables to help narrow the group of potential candidate locations to a managable number
-<ul>
-<li>Might be useful to fit a decision tree to develop rules to use as thresholds</li>
-<li><span class="ribbon-highlight">Example</span>
-<ul>
-<li>Zip Code Population of 25,000+
-<ul>
-<li>May want to use census geographies other than zip code</li>
+<li>Choose a copula family (e.g., Gaussian, t, Clayton, Gumbel, etc.).</li>
+<li>Fit the copula model to the data, estimating the copula parameters.</li>
 </ul></li>
-<li>City Population of 150,000+</li>
-<li>Growing Population</li>
-<li>Household Income of $75,000+</li>
-<li>High percentage of the population in the workforce</li>
-<li>High economic activity</li>
-<li>Primary industry of employment in White Collar</li>
-<li>Percentage millennial population</li>
-<li>Restaurant density</li>
+<li>Simulation and Analysis:
+<ul>
+<li>Generate joint samples from the fitted copula model.</li>
+<li>Use the joint distribution to compute risk measures such as VaR and CVaR.</li>
 </ul></li>
 </ul></li>
-<li>Score candidate locations
+<li><p><span class="ribbon-highlight">Example</span>: Value at Risk and Conditional Value at Risk Using Copulas</p>
+<div class="sourceCode" id="annotated-cell-1"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-1-1"><a href="#annotated-cell-1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="annotated-cell-1-2"><a href="#annotated-cell-1-2" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
+<span id="annotated-cell-1-3"><a href="#annotated-cell-1-3" aria-hidden="true" tabindex="-1"></a>asset1 <span class="ot">&lt;-</span> </span>
+<span id="annotated-cell-1-4"><a href="#annotated-cell-1-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rnorm</span>(n, </span>
+<span id="annotated-cell-1-5"><a href="#annotated-cell-1-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">mean =</span> <span class="fl">0.001</span>, </span>
+<span id="annotated-cell-1-6"><a href="#annotated-cell-1-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">sd =</span> <span class="fl">0.02</span>)</span>
+<span id="annotated-cell-1-7"><a href="#annotated-cell-1-7" aria-hidden="true" tabindex="-1"></a>asset2 <span class="ot">&lt;-</span> </span>
+<span id="annotated-cell-1-8"><a href="#annotated-cell-1-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rnorm</span>(n, </span>
+<span id="annotated-cell-1-9"><a href="#annotated-cell-1-9" aria-hidden="true" tabindex="-1"></a>        <span class="at">mean =</span> <span class="fl">0.001</span>, </span>
+<span id="annotated-cell-1-10"><a href="#annotated-cell-1-10" aria-hidden="true" tabindex="-1"></a>        <span class="at">sd =</span> <span class="fl">0.03</span>)</span>
+<span id="annotated-cell-1-11"><a href="#annotated-cell-1-11" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(asset1, asset2)</span>
+<span id="annotated-cell-1-12"><a href="#annotated-cell-1-12" aria-hidden="true" tabindex="-1"></a></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-1-13" class="code-annotation-target"><a href="#annotated-cell-1-13" aria-hidden="true" tabindex="-1"></a>margins <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">m1 =</span> fitdistrplus<span class="sc">::</span><span class="fu">fitdist</span>(asset1, <span class="st">"norm"</span>),</span>
+<span id="annotated-cell-1-14"><a href="#annotated-cell-1-14" aria-hidden="true" tabindex="-1"></a>                <span class="at">m2 =</span> fitdistrplus<span class="sc">::</span><span class="fu">fitdist</span>(asset2, <span class="st">"norm"</span>))</span>
+<span id="annotated-cell-1-15"><a href="#annotated-cell-1-15" aria-hidden="true" tabindex="-1"></a></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-1-16" class="code-annotation-target"><a href="#annotated-cell-1-16" aria-hidden="true" tabindex="-1"></a>normal.cop <span class="ot">&lt;-</span> copula<span class="sc">::</span><span class="fu">normalCopula</span>(<span class="at">param =</span> <span class="fl">0.5</span>, <span class="at">dim =</span> <span class="dv">2</span>)</span>
+<span id="annotated-cell-1-17"><a href="#annotated-cell-1-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="annotated-cell-1-18"><a href="#annotated-cell-1-18" aria-hidden="true" tabindex="-1"></a>u1 <span class="ot">&lt;-</span> </span>
+<span id="annotated-cell-1-19"><a href="#annotated-cell-1-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pnorm</span>(asset1, </span>
+<span id="annotated-cell-1-20"><a href="#annotated-cell-1-20" aria-hidden="true" tabindex="-1"></a>        <span class="at">mean =</span> margins<span class="sc">$</span>m1<span class="sc">$</span>estimate[<span class="st">"mean"</span>], </span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="3" onclick="event.preventDefault();">3</a><span id="annotated-cell-1-21" class="code-annotation-target"><a href="#annotated-cell-1-21" aria-hidden="true" tabindex="-1"></a>        <span class="at">sd =</span> margins<span class="sc">$</span>m1<span class="sc">$</span>estimate[<span class="st">"sd"</span>])</span>
+<span id="annotated-cell-1-22"><a href="#annotated-cell-1-22" aria-hidden="true" tabindex="-1"></a>u2 <span class="ot">&lt;-</span> </span>
+<span id="annotated-cell-1-23"><a href="#annotated-cell-1-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pnorm</span>(asset2, </span>
+<span id="annotated-cell-1-24"><a href="#annotated-cell-1-24" aria-hidden="true" tabindex="-1"></a>        <span class="at">mean =</span> margins<span class="sc">$</span>m2<span class="sc">$</span>estimate[<span class="st">"mean"</span>], </span>
+<span id="annotated-cell-1-25"><a href="#annotated-cell-1-25" aria-hidden="true" tabindex="-1"></a>        <span class="at">sd =</span> margins<span class="sc">$</span>m2<span class="sc">$</span>estimate[<span class="st">"sd"</span>])</span>
+<span id="annotated-cell-1-26"><a href="#annotated-cell-1-26" aria-hidden="true" tabindex="-1"></a>fit.cop <span class="ot">&lt;-</span> </span>
+<span id="annotated-cell-1-27"><a href="#annotated-cell-1-27" aria-hidden="true" tabindex="-1"></a>  copula<span class="sc">::</span><span class="fu">fitCopula</span>(normal.cop, </span>
+<span id="annotated-cell-1-28"><a href="#annotated-cell-1-28" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">cbind</span>(u1, u2), </span>
+<span id="annotated-cell-1-29"><a href="#annotated-cell-1-29" aria-hidden="true" tabindex="-1"></a>                    <span class="at">method =</span> <span class="st">"ml"</span>)</span>
+<span id="annotated-cell-1-30"><a href="#annotated-cell-1-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="annotated-cell-1-31"><a href="#annotated-cell-1-31" aria-hidden="true" tabindex="-1"></a>copula.samples <span class="ot">&lt;-</span> </span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="4" onclick="event.preventDefault();">4</a><span id="annotated-cell-1-32" class="code-annotation-target"><a href="#annotated-cell-1-32" aria-hidden="true" tabindex="-1"></a>  copula<span class="sc">::</span><span class="fu">rCopula</span>(n, fit.cop<span class="sc">@</span>copula)</span>
+<span id="annotated-cell-1-33"><a href="#annotated-cell-1-33" aria-hidden="true" tabindex="-1"></a></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="5" onclick="event.preventDefault();">5</a><span id="annotated-cell-1-34" class="code-annotation-target"><a href="#annotated-cell-1-34" aria-hidden="true" tabindex="-1"></a>simulated.returns <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="annotated-cell-1-35"><a href="#annotated-cell-1-35" aria-hidden="true" tabindex="-1"></a>  <span class="at">asset1 =</span> <span class="fu">qnorm</span>(copula.samples[, <span class="dv">1</span>], </span>
+<span id="annotated-cell-1-36"><a href="#annotated-cell-1-36" aria-hidden="true" tabindex="-1"></a>                 <span class="at">mean =</span> margins<span class="sc">$</span>m1<span class="sc">$</span>estimate[<span class="st">"mean"</span>], </span>
+<span id="annotated-cell-1-37"><a href="#annotated-cell-1-37" aria-hidden="true" tabindex="-1"></a>                 <span class="at">sd =</span> margins<span class="sc">$</span>m1<span class="sc">$</span>estimate[<span class="st">"sd"</span>]),</span>
+<span id="annotated-cell-1-38"><a href="#annotated-cell-1-38" aria-hidden="true" tabindex="-1"></a>  <span class="at">asset2 =</span> <span class="fu">qnorm</span>(copula.samples[, <span class="dv">2</span>], </span>
+<span id="annotated-cell-1-39"><a href="#annotated-cell-1-39" aria-hidden="true" tabindex="-1"></a>                 <span class="at">mean =</span> margins<span class="sc">$</span>m2<span class="sc">$</span>estimate[<span class="st">"mean"</span>], </span>
+<span id="annotated-cell-1-40"><a href="#annotated-cell-1-40" aria-hidden="true" tabindex="-1"></a>                 <span class="at">sd =</span> margins<span class="sc">$</span>m2<span class="sc">$</span>estimate[<span class="st">"sd"</span>])</span>
+<span id="annotated-cell-1-41"><a href="#annotated-cell-1-41" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="annotated-cell-1-42"><a href="#annotated-cell-1-42" aria-hidden="true" tabindex="-1"></a>simulated.portfolio.returns <span class="ot">&lt;-</span> <span class="fu">rowMeans</span>(simulated.returns)</span>
+<span id="annotated-cell-1-43"><a href="#annotated-cell-1-43" aria-hidden="true" tabindex="-1"></a></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="6" onclick="event.preventDefault();">6</a><span id="annotated-cell-1-44" class="code-annotation-target"><a href="#annotated-cell-1-44" aria-hidden="true" tabindex="-1"></a>VaR_95 <span class="ot">&lt;-</span> <span class="fu">quantile</span>(simulated.portfolio.returns, <span class="at">probs =</span> <span class="fl">0.05</span>)</span>
+<span id="annotated-cell-1-45"><a href="#annotated-cell-1-45" aria-hidden="true" tabindex="-1"></a>CVaR_95 <span class="ot">&lt;-</span> <span class="fu">mean</span>(simulated.portfolio.returns[simulated.portfolio.returns <span class="sc">&lt;=</span> VaR_95])</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<dl class="code-annotation-container-grid">
+<dt data-target-cell="annotated-cell-1" data-target-annotation="1">1</dt>
+<dd>
+<span data-code-cell="annotated-cell-1" data-code-lines="13" data-code-annotation="1">Estimate marginal distributions (assuming normal for simplicity)</span>
+</dd>
+<dt data-target-cell="annotated-cell-1" data-target-annotation="2">2</dt>
+<dd>
+<span data-code-cell="annotated-cell-1" data-code-lines="16" data-code-annotation="2"><code>normalCopula</code> doesn’t have it’s own listing in the reference manual. It’s under <code>ellipCopula</code>, or you can just use <code>?normalCopula</code>.</span>
+</dd>
+<dt data-target-cell="annotated-cell-1" data-target-annotation="3">3</dt>
+<dd>
+<span data-code-cell="annotated-cell-1" data-code-lines="21" data-code-annotation="3">Fit the copula to the data</span>
+</dd>
+<dt data-target-cell="annotated-cell-1" data-target-annotation="4">4</dt>
+<dd>
+<span data-code-cell="annotated-cell-1" data-code-lines="32" data-code-annotation="4">Generate samples from the fitted copula. The <code>@</code> operator is used to access copula object since it’s a S4 object. Also, <code>rCopula</code> doesn’t have it’s own listing in the reference manual. It’s under <code>Copula</code>, or you can just use <code>?rCopula</code>.</span>
+</dd>
+<dt data-target-cell="annotated-cell-1" data-target-annotation="5">5</dt>
+<dd>
+<span data-code-cell="annotated-cell-1" data-code-lines="34" data-code-annotation="5">Simulate portfolio returns by ransforming copula samples back to original scale and averaging (i.e.&nbsp;equal weighting)</span>
+</dd>
+<dt data-target-cell="annotated-cell-1" data-target-annotation="6">6</dt>
+<dd>
+<span data-code-cell="annotated-cell-1" data-code-lines="44" data-code-annotation="6">Calculate VaR and CVaR at 95% confidence level</span>
+</dd>
+</dl>
 <ul>
-<li>Create weights for important profile variables and then calculate scores for each candidate location
-<ul>
-<li>Methods for creating weights
-<ul>
-<li>Wing it with domain knowledge</li>
-<li>Coefficients from a regularized regression of KPI ~ standardized_profile_vars could be used as weights
-<ul>
-<li>Or feature importance, shapely values, etc. from tree model</li>
-</ul></li>
-<li>Correlation or association statistics as weights</li>
-</ul></li>
-</ul></li>
-<li>Order scores highest to lowest
-<ul>
-<li>If more than one location is considered, then group_by a suitably-sized geography</li>
-</ul></li>
-</ul></li>
-<li>Cluster candidate location profiles with current successful stores
-<ul>
-<li>Candidate locations that are in the same cluster as your stores are the ones that should be considered</li>
-<li>Prominent features of the cluster(s) may indicate which profile variables are more important than others</li>
-</ul></li>
-<li>Take top-n candidates and dig deeper:
-<ul>
-<li>Competitor analysis
-<ul>
-<li>Example questions
-<ul>
-<li>How many competitors exist is location?</li>
-<li>Where are they located?</li>
-<li>How satisfied are consumers with the options that exist today?
-<ul>
-<li>Which competitors are most popular, suggesting we may want to look in other areas?</li>
-<li>e.g.&nbsp;Google Map, Yelp, etc. reviews of competitors at this location</li>
-</ul></li>
-</ul></li>
-</ul></li>
-<li>Mapping may illuminate other considerations
-<ul>
-<li>e.g.&nbsp;One location has large swaths of uninhabitable land — is there enough population density for us to be successful?</li>
-</ul></li>
-<li>How close are these locations to your other stores?
-<ul>
-<li>Could one leach customers from the other?</li>
-</ul></li>
-<li>Examine profiles of final candidates
-<ul>
-<li>What are the primary differences?</li>
-<li>What are the best features?</li>
-</ul></li>
+<li><p><span style="color: #990000">{PerformanceAnalytics}</span> also has functions for calculation the VaR and CVaR values</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>VaR_95 <span class="ot">&lt;-</span> <span class="fu">VaR</span>(simulated.portfolio.returns, </span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>              <span class="at">p =</span> <span class="fl">0.95</span>, </span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>              <span class="at">method =</span> <span class="st">"historical"</span>)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>CVaR_95 <span class="ot">&lt;-</span> <span class="fu">ES</span>(simulated.portfolio.returns, </span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>              <span class="at">p =</span> <span class="fl">0.95</span>, </span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>              <span class="at">method =</span> <span class="st">"historical"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 </ul></li>
 </ul>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -906,13 +936,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../qmd/kpis.html" class="pagination-link" aria-label="KPIs">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">KPIs</span>
+      <a href="../qmd/finance-investing.html" class="pagination-link" aria-label="Investing">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Investing</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../qmd/logistics-demand-planning.html" class="pagination-link" aria-label="Demand Planning">
-        <span class="nav-page-text">Demand Planning</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../qmd/finance-snippets.html" class="pagination-link" aria-label="Snippets">
+        <span class="nav-page-text">Snippets</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -936,31 +966,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"loop":false,"openEffect":"zoom","descPosition":"bottom","selector":".lightbox","closeEffect":"zoom"});
-window.onload = () => {
-  lightboxQuarto.on('slide_before_load', (data) => {
-    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-    const href = trigger.getAttribute('href');
-    if (href !== null) {
-      const imgEl = window.document.querySelector(`a[href="${href}"] img`);
-      if (imgEl !== null) {
-        const srcAttr = imgEl.getAttribute("src");
-        if (srcAttr && srcAttr.startsWith("data:")) {
-          slideConfig.href = srcAttr;
-        }
-      }
-    } 
-  });
-
-  lightboxQuarto.on('slide_after_load', (data) => {
-    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-    if (window.Quarto?.typesetMath) {
-      window.Quarto.typesetMath(slideNode);
-    }
-  });
-
-};
-          </script>
 
 
 
