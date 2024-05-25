@@ -1,6 +1,6 @@
 # Valuation {#sec-finance-val .unnumbered}
 
-## Misc
+## Misc {#sec-finance-val-misc .unnumbered}
 
 -   **TL;DR;**
     -   In order to be considered, a project's *Rate of Return* must exceed the company's *Cost of Capital* which deems it as a good investment. Then, out of the projects that exceed the company's *Cost of Capital*, the project with the largest *Rate of Return* is, in general, considered the best project to invest in.
@@ -13,7 +13,7 @@
             -   Comparison
 
                 | Feature                  | AIRR                                    | MIRR                                    |
-                |------------------|---------------------------|---------------------------|
+                |--------------------------|-----------------------------------------|-----------------------------------------|
                 | Calculation method       | Average return on each invested dollar  | IRR of the terminal value of cash flows |
                 | Multiple solutions       | No                                      | Possible                                |
                 | Compatibility with NPV   | Consistent                              | May not be                              |
@@ -25,7 +25,7 @@
 
 ## Rates of Return {#sec-finance-val-ror .unnumbered}
 
-### Rate of Return (RoR)
+### Rate of Return (RoR) {#sec-finance-val-ror-ror .unnumbered}
 
 $$
 \text{RoR} = \frac{\operatorname{current\_value - \operatorname{initial\_value}}}{\operatorname{initial\_value}} \times 100
@@ -46,7 +46,7 @@ $$
         -   APR that takes into account the compounding effect.
         -   e.g. a credit card with a monthly interest rate of 1.25%, what is the EAR? $\text{EAR} = (1 + 0.0125)^{12}-1 = 0.1608 \;\text{or}\; 16.08\%$
 
-### Internal Rate of Return (IRR)
+### Internal Rate of Return (IRR) {#sec-finance-val-ror-irr .unnumbered}
 
 -   A flawed indicator of strength for capital projects. It should only be used when a project has no interim cashflows or is somehow able reinvest those interim cashflows at the same IRR for the duration of the project (See disadvantages).
 
@@ -76,7 +76,7 @@ $$
             -   Shows how IRR gets inflated as the cost of capital increases.
     -   Does not consider differences in the duration of projects. A longer term project may be more favorable even if it has a lower IRR, because it is generating a substantial cash flow for a longer period that would be difficult to replace if the shorter term project was chosen.
 
-### Modified Internal Rate of Return (MIRR)
+### Modified Internal Rate of Return (MIRR) {#sec-finance-val-ror-mirr .unnumbered}
 
 -   Better alternative to IRR that assumes the cash inflows are reinvested at cost of capital of the company instead of at the IRR. ([video1](https://www.youtube.com/watch?v=f0IJegvYPKk), [video2](https://www.youtube.com/watch?v=Z-CUSIGLk2U))
 
@@ -116,7 +116,7 @@ $$
 -   [Example]{.ribbon-highlight}: 7 year Project ([link](https://www.youtube.com/watch?v=Z-CUSIGLk2U&t=342s))
 
     | Timeline       | Year 0   | Year 1  | Year 2 | Year 3  | Year 4   | Year 5  | Year 6  | Year 7   |
-    |--------|--------|--------|--------|--------|--------|--------|--------|--------|
+    |----------------|----------|---------|--------|---------|----------|---------|---------|----------|
     | Cash Outlay    | 10000.00 | 4500.00 | 950.00 |         |          |         |         |          |
     | Cash Inflow    |          |         |        | 6000.00 | 7500.00  | 1250.00 | 8010.00 | 9000.00  |
     | FV,PV at 12.5% |          | 4000.00 | 750.62 | 9610.84 | 10678.71 | 1582.03 | 9011.25 |          |
@@ -178,7 +178,7 @@ $$
     -   Data and Code:\
 
         |             | Year 0 | Year 1 | Year 2 | Year 3 | Year 4 | Year 5 | Year 6 | Year 7 | Year 8 |
-        |--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|
+        |-------------|--------|--------|--------|--------|--------|--------|--------|--------|--------|
         | Cash Outlay | 36     |        |        |        | 4      |        |        |        |        |
         | Cash Inflow |        | 8      | 8      | 8      |        | 8      | 8      | 8      | 8      |
 
@@ -229,7 +229,7 @@ $$
             -   Would've made more sense if they would've said the die set was replaced at the end of year 4 IMO. My first attempt assumed they didn't receive the cash inflow \$8M for that year.
         -   The Year 4 outflow is discounted 4 years, and each cash inflow (except the last one) is compounded to Year 8. Note that in the code, Year 4 is skipped since it's an outflow year.
 
-### Average Internal Rate of Return (AIRR)
+### Average Internal Rate of Return (AIRR) {#sec-finance-val-ror-airr .unnumbered}
 
 -   AIRR overcomes many of the limitations of IRR by calculating the average rate of return on each invested dollar at each point in time, resulting in a single, unambiguous measure of project profitability. It addresses the issues with multiplicity, complex numbers, and incompatibility with NPV, providing a more reliable and interpretable measure for investment decisions. (Magni, 2010)
     -   Magni listed 21 flaws of IRR, see his paper "Average Internal Rate of Return and Investment Decisions: A New Perspective" for details.
@@ -617,7 +617,7 @@ $$
         -   Horizon Guidelines
 
             | Company's Competitive Position                                                                                      | Excess Returns/Forecast Horizon |
-            |----------------------------------------------|--------------------------|
+            |---------------------------------------------------------------------------------------------------------------------|---------------------------------|
             | Slow Growing; Operates in a highly competitive, low margin industry                                                 | 1 Year                          |
             | Solid company that has advantages such as strong marketing channels, brand recognition, regulatory advantages, etc. | 5 Years                         |
             | Early stages of rapid growth; Operates with high barriers to entry; dominant market position or prospects           | 10 Years                        |

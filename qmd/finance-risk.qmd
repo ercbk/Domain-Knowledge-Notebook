@@ -1,0 +1,98 @@
+# Risk {#sec-finance-risk .unnumbered}
+
+## Misc {#sec-finance-risk-misc .unnumbered}
+
+-   Packages
+    -   [{]{style="color: #990000"}[PerformanceAnalytics](https://cran.r-project.org/web/packages/PerformanceAnalytics/index.html){style="color: #990000"}[}]{style="color: #990000"} - Econometric Tools for Performance and Risk Analysis
+        -   Lots of vignettes, but there's also a substantial amount of material in the introduction section of the Reference Manual
+
+## Value at Risk (VaR) {#sec-finance-risk-var .unnumbered}
+
+-   Notes from [GPT-4o](https://chatgpt.com/share/4a17c9f3-e3ec-4ebc-8b9e-fcc38a583dfc)
+
+### Copulas {#sec-finance-risk-var-cop .unnumbered}
+
+-   Also see [Association, Copulas](https://ercbk.github.io/Data-Science-Notebook/qmd/association-copulas.html){style="color: green"}
+
+-   Copula Workflow
+
+    -   Data Collection and Preprocessing:
+        -   Collect historical data for the two variables of interest.
+        -   Clean the data by handling missing values, outliers, and ensuring consistency.
+    -   Marginal Distribution Estimation:
+        -   Estimate the marginal distributions of each variable independently.
+        -   Fit appropriate probability distributions to the marginal data.
+    -   Copula Selection and Fitting:
+        -   Choose a copula family (e.g., Gaussian, t, Clayton, Gumbel, etc.).
+        -   Fit the copula model to the data, estimating the copula parameters.
+    -   Simulation and Analysis:
+        -   Generate joint samples from the fitted copula model.
+        -   Use the joint distribution to compute risk measures such as VaR and CVaR.
+
+-   [Example]{.ribbon-highlight}: Value at Risk and Conditional Value at Risk Using Copulas
+
+    ``` r
+    set.seed(123)
+    n <- 1000
+    asset1 <- 
+      rnorm(n, 
+            mean = 0.001, 
+            sd = 0.02)
+    asset2 <- 
+      rnorm(n, 
+            mean = 0.001, 
+            sd = 0.03)
+    data <- data.frame(asset1, asset2)
+
+    margins <- list(m1 = fitdistrplus::fitdist(asset1, "norm"), # <1>
+                    m2 = fitdistrplus::fitdist(asset2, "norm"))
+
+    normal.cop <- copula::normalCopula(param = 0.5, dim = 2) # <2>
+
+    u1 <- 
+      pnorm(asset1, 
+            mean = margins$m1$estimate["mean"], 
+            sd = margins$m1$estimate["sd"]) # <3>
+    u2 <- 
+      pnorm(asset2, 
+            mean = margins$m2$estimate["mean"], 
+            sd = margins$m2$estimate["sd"])
+    fit.cop <- 
+      copula::fitCopula(normal.cop, 
+                        cbind(u1, u2), 
+                        method = "ml")
+
+    copula.samples <- 
+      copula::rCopula(n, fit.cop@copula) # <4>
+
+    simulated.returns <- data.frame( # <5>
+      asset1 = qnorm(copula.samples[, 1], 
+                     mean = margins$m1$estimate["mean"], 
+                     sd = margins$m1$estimate["sd"]),
+      asset2 = qnorm(copula.samples[, 2], 
+                     mean = margins$m2$estimate["mean"], 
+                     sd = margins$m2$estimate["sd"])
+    )
+    simulated.portfolio.returns <- rowMeans(simulated.returns)
+
+    VaR_95 <- quantile(simulated.portfolio.returns, probs = 0.05) # <6>
+    CVaR_95 <- mean(simulated.portfolio.returns[simulated.portfolio.returns <= VaR_95])
+    ```
+
+    1.  Estimate marginal distributions (assuming normal for simplicity)
+    2.  `normalCopula` doesn't have it's own listing in the reference manual. It's under `ellipCopula`, or you can just use `?normalCopula`.
+    3.  Fit the copula to the data
+    4.  Generate samples from the fitted copula. The `@` operator is used to access copula object since it's a S4 object. Also, `rCopula` doesn't have it's own listing in the reference manual. It's under `Copula`, or you can just use `?rCopula`.
+    5.  Simulate portfolio returns by ransforming copula samples back to original scale and averaging (i.e. equal weighting)
+    6.  Calculate VaR and CVaR at 95% confidence level
+
+    -   [{PerformanceAnalytics}]{style="color: #990000"} also has functions for calculation the VaR and CVaR values
+
+        ``` r
+        VaR_95 <- VaR(simulated.portfolio.returns, 
+                      p = 0.95, 
+                      method = "historical")
+        CVaR_95 <- ES(simulated.portfolio.returns, 
+                      p = 0.95, 
+                      method = "historical")
+        ```

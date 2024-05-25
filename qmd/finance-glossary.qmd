@@ -298,6 +298,10 @@
 
     -   In the case of annuity or perpetuity payments, the generalized formula has additional or fewer factors (See [wiki](https://en.wikipedia.org/wiki/Time_value_of_money), [Investopedia](https://www.investopedia.com/terms/f/futurevalue.asp))
 
+-   [**Value at Risk (VaR)**]{style="color: #009499"} - A risk measure that quantifies the maximum potential loss over a given time period at a specified confidence level. For example, a 1-day VaR at the 95% confidence level is the maximum loss expected over one day with 95% confidence.
+
+    -   [**Conditional Value at Risk (CVaR)**]{style="color: #009499"} (aka [**Expected Shortfall**]{style="color: #009499"}) - Measures the expected loss given that the loss has exceeded the VaR threshold. It provides an estimate of the average loss in the tail of the distribution, offering a more comprehensive risk assessment.
+
 -   [**Volatility**]{style="color: #009499"} - Typical measured by the standard deviation of a stock over a specified time period. A higher standard deviation indicates higher volatility, meaning larger price swings in either direction. Recommended to compare the volatility of a specific stock to its historical levels and the overall market to understand its relative risk.
 
     -   [Average True Range (ATR)]{.underline}: This method focuses on the absolute size of price changes, regardless of direction. It calculates the average difference between the highest and lowest price of a specific period for each observation. Typically calculated using a 14-period moving average.
