@@ -1,0 +1,195 @@
+# KPIs {#sec-proddev-kpis .unnumbered}
+
+## Misc {#sec-proddev-kpis-misc .unnumbered}
+
+-   Also see [KPIs](kpis.qmd#sec-kpis){style="color: green"}
+
+## Lifecycle-based Monitoring {#sec-proddev-kpis-lmon .unnumbered}
+
+-   Notes from [Your End-to-End Product Analytics Strategy](https://towardsdatascience.com/your-end-to-end-product-analytics-strategy-648ecfa586c2)
+-   Determine which stage your product is in\
+    ![](_resources/KPIs.resources/product-lifecycle-1.webp){.lightbox width="432"}
+
+### Introduction Stage {#sec-proddev-kpis-lmon-intro .unnumbered}
+
+-   Do we have product-market-fit?
+-   Determine whether their product meets a genuine market need and resonates with the target audience.
+-   Understanding product-market-fit involves assessing whether early adopters are not only using the product but also finding value in it.
+-   Analysis Areas
+    -   **Retention**: Do users find value in the product?
+        -   e.g. D30 Retention, Cohort Retention Curves
+    -   **Active Users**: How many users does the product have? Is this increasing?
+        -   e.g. Daily Active Users (DAU), Monthly Active Users (MAU), Growth Accounting.
+    -   **Stickiness**: Is the product engaging and used frequently?
+        -   e.g.DAU/MAU, Activity Frequency Histogram (sometimes called L28 Histogram).
+-   Potential Scenarios
+    -   **No long-term retention and low user growth (worst case)**: In this scenario there is no product-market-fit. Users are not returning to use the product and there is a small market. This requires large changes in the product and/or the target market.
+    -   **No long-term retention but high user growth**: This is the leaky bucket problem. Users are being acquired, using the product for a short period, but all eventually churn. Focus here is on fixing retention and slowing down growth.
+    -   **Long-term retention but low user growth**: Focus in this scenario is to either adjust the acquisition funnel to improve user growth or, if the market proves to be small, pivot to a larger market.
+    -   **Long-term retention, high user growth, but low stickiness**: This is a utility product that users find value in, but are using infrequently. Examples include tax preparation apps, travel websites and event ticketing sites. Focus should be exploring new features that make the product more engaging.
+    -   **Long-term retention, high user growth, and high stickiness (ideal state)**: Users are returning to the product, using it frequently and the user numbers are growing. This shows product-market-fit.
+
+### Growth Stage {#sec-proddev-kpis-lmon-grow .unnumbered}
+
+-   How do we scale effectively while maintaining product quality and user satisfaction?
+-   Stage where a product has the potential to move from promising to dominant.
+-   Analysis Areas
+    -   **User Journey Analysis**: How do we optimize the user experience?
+        -   e.g. Conversion Rate, Time to Convert, Funnels.
+        -   See
+            -   [Marketing \>\> Customer Journey](marketing.html#sec-mark-custjourn){style="color: green"}
+            -   [Product Development, General \>\> Conversion Funnel](product-development-general.qmd#sec-proddev-gen-convfun){style="color: green"}
+            -   [Algorithms, Product \>\> Customer Journey](https://ercbk.github.io/Data-Science-Notebook/qmd/algorithms-product.html#sec-alg-prod-cj){style="color: green"} and [Conversion Funnel](https://ercbk.github.io/Data-Science-Notebook/qmd/algorithms-product.html#sec-alg-prod-convfun){style="color: green"}
+    -   **Experimentation**: How can we determine whether a change will positively improve key metrics?
+        -   e.g. A/B Testing, Multivariate Testing
+        -   Start building this capability early in a product and company’s lifecycle because it is more difficult to implement than a set of metrics. Product, engineering and data teams should be involved in the experiment design.
+            -   \* This should remain a fundamental part of analytics throughout the rest of the product lifecycle. \*
+        -   See [Experiments, A/B Testing](https://ercbk.github.io/Data-Science-Notebook/qmd/experiments-a_b-testing.html){style="color: green"}
+    -   **‘Aha’ Analysis**: What is the moment that causes a step-change in a users retention and stickiness?
+        -   e.g. A combination of user journey analysis, experimentation and product-market-fit metrics.
+        -   These are the key interactions where users realize the product’s value which leads to loyalty.
+        -   Facebook’s 8 friends in 10 days was their users ‘aha’ moment.
+        -   Use a Top-Down Process
+            -   Form a hypothesis about the problem and determine the data needed to test the hypothesis
+            -   Gather and analyze the *necessary* data, comparing the result to the hypothesis
+            -   Update the model of the problem space and form a new hypothesis
+
+### Maturity Stage {#sec-proddev-kpis-lmon-mat .unnumbered}
+
+-   How can we be profitable while maintaining a high quality product and satisfied customer base?
+-   Goals: increase revenue and decrease costs
+-   Example Metrics: Customer Acquisition Cost (CAC), Customer Lifetime Value (CLV), CLV:CAC Ratio, Monthly Recurring Revenue (MRR).
+    -   Marketing and Go-to-Market (?) Teams own CAC reduction
+    -   Product Teams own CLV and MRR improvement
+-   Potential Strategies
+    -   Optimizing advertising spend
+    -   Reducing time to close sales deals through to cross-selling and bundling products for existing users.
+-   Targets
+    -   B2B Software: CLV:CAC ratio of 3:1 to 4:1
+    -   B2C Software: CLV:CAC ratio close to 2.5:1
+
+### Decline Stage {#sec-proddev-kpis-lmon-decl .unnumbered}
+
+-   How do we maintain user interest and slow decline?
+-   Competitors identify your opportunity and increase competition, existing users migrate to substitutes and new technologies, and markets become saturated, offering little growth.
+-   Creating new products and looking into new markets is also prudent at this stage.
+-   Analysis Areas
+    -   **Churn Prediction Modelling:** Can we identify users likely to churn and intervene?
+        -   Critical since new user growth has slowed
+        -   See
+            -   [Product Development, General \>\> Churn Analysis](product-development-general.qmd#sec-proddev-gen-churn){style="color: green"}
+            -   [Algorithms, Marketing \>\> Churn](https://ercbk.github.io/Data-Science-Notebook/qmd/algorithms-marketing.html#sec-alg-mark-churn){style="color: green"}
+    -   **Power User Analysis:** What can we learn from the most engaged users?
+        -   e.g. Stickiness, Feature Usage, Transaction Volume metrics
+        -   These users are the highest priority to retain, and have the product-usage behavior that would ideally be shared across all users.
+        -   Deploy measures, such as loyalty programs, to retain these users and identify pathways to increase the number of power users.
+    -   **Root Cause Analysis:** What are the root cause drivers of key metrics?
+        -   e.g. Quarterly Business Reviews, Issue Driver Trees.
+        -   Uncovering drivers of key metrics can provide confidence in product changes that are costly to implement and can help untangle the interdependent measures across the product ecosystem.
+        -   Perform bespoke deep dives delving into specific problem areas within a mature product.
+
+## Product Metrics {#sec-proddev-kpis-prod .unnumbered}
+
+-   Also see [Product Development, General \>\> Metrics](product-development-general.qmd#sec-proddev-gen-metrics){style="color: green"}
+-   Why are they important?
+    -   Metrics help companies have clarity, alignment and prioritization in what to build.
+    -   Metrics help a company decide how to build the product once they've prioritized what to build.
+    -   Metrics help a company determine how successful they are and hold them accountable to an outcome.
+
+### North Star Metric (NSM) {#sec-proddev-kpis-prod-nsm .unnumbered}
+
+-   Long-term metric focused on the desired outcome for the entire company
+-   Examples of potential NSMs
+    -   Instagram: Monthly Active Users
+    -   Spotify: Time Spent Listening
+    -   Airbnb: Booked Nights
+    -   Lyft: Rides per week
+    -   Slack: Daily Active Users
+    -   Customer happiness (e.g. revenue, Net Promoter Score (NPS), and customer satisfaction)
+    -   Quora: Questions Answered
+
+### Primary {#sec-proddev-kpis-prod-prim .unnumbered}
+
+-   Ask
+    -   "What is the desired outcome for this product?" (keeping the company's mission in mind)
+        -   Example: Number of high quality sellers that join the platform as a result of the email outreach
+    -   "What do our customers care about, and how do we solve it as fast as possible?"
+        -   [Example]{.ribbon-highlight}
+            -   Engineering, product, and marketing agree that onboarding is a pain point, you decide to build goals and KPIs around making it easier for new customers to get started.
+            -   Align the company around the shared goal of reducing new tool onboarding from five days to three days
+                -   Data team gathers metrics on usage and helps build A/B tests
+                -   Engineering team modifies the product
+                -   Marketing team creates nurture campaigns
+-   Map this outcome to a metric that is meaningful, measurable, and movable
+    -   [Meaningful]{.underline}
+        -   Should reflect the way a company intends to drive value for its customers (based on the company's *mission*)
+        -   Avoid *vanity* metrics.
+            -   [Example]{.ribbon-highlight}: Quora uses push notifications to alert users when they would be best suited to answer a question. However, the number of times users click on the notification and open the app is a vanity metric. It may make Quora feel good to see open rates going up. But Quora didn't release push notifications to drive open rates. The outcome they were aiming for was to get high quality answers to questions asked on their platform. So an outcome oriented metric would focus on answer rates, not open rates.
+    -   [Measurable]{.underline}
+        -   Each component of that metric's formula should be a datapoint that you can collect with high confidence and precision. And remember to add a time frame to your metric.
+        -   Some aspects of a company's or product's mission/goal aren't measurable directly but may be measured through latent variables, proxy, or highly associated variable or group of variables
+    -   [Moveable]{.underline}
+        -   Basically means the metric shouldn't be so noisy as to inhibit being able to measure changes when you take actions to change it.
+        -   The metric should measure something that as directly under control of the company as possible.
+            -   Example: Page Load Time - Time difference between a user clicking on a link or typing the URL in the browser and the page being rendered to the user.
+                -   This is affected substantially by the user's computer, ISP, browser, etc. along with the app/website code. So asis, it wouldn't be a good metric to track.
+    -   Other Desirables
+        -   [Quick Feedback]{.underline}
+            -   Actions taken to influence the metric should be (almost) immediately observable
+            -   [Example]{.ribbon-highlight}: Measuring (subscription) retention would require you to wait until the end of the month in order to be able to judge the effect of your action. Daily Active Users might be a better alternative
+        -   [Easily Interpretted]{.underline}
+            -   The role of a metric is to align teams around a specific goal so that they can take the right steps towards achieving that goal. If people can't understand the metric, they can't take the right steps to optimize for it.
+            -   Examples:
+                -   Complicated: the median of a weighted combination of viewing time, comments, likes, shares per user (with each action having different weights based on its importance)
+                -   Simpler: Average Watch Time per user.
+        -   [Not Gameable]{.underline}
+            -   I.e. Picking an easily moveable metric that has no real value leads to bad incentives.
+
+### Supporting/Tracking/Input Metrics {#sec-proddev-kpis-prod-suppti .unnumbered}
+
+-   Leading indicators that the NSM or the primary metric is moving in the right direction
+-   Inputs into the NSM and are directly correlated to its value
+-   Also tells you where your efforts to move your NSM may be falling short.
+-   Examples
+    -   Number of emails sent
+    -   The number of people that opened the email
+    -   Number of businesses that signed up to sell on the platform
+
+### Counter Metrics/Guardrails {#sec-proddev-kpis-prod-countg .unnumbered}
+
+-   Other outcomes that the business cares about, which may be negatively affected by a positive change in the primary metric (or NSM)
+-   They exist to make sure that in the pursuit of your primary metric, you are not doing harm to another aspect of the business
+-   [Example]{.ribbon-highlight}: Email marketing to obtain quality sellers for Amazon)
+    -   If your primary metric focuses on product *quantity*, your guardrail metric might be around product *quality*
+    -   The guardrail, average number of purchases a user makes in a day, ensures that the influx of sellers that the primary metric optimizes for doesn't result in consumers becoming so overwhelmed by choice, that they end up not buying anything at all
+
+### AARRR (or Pirate Metric) Framework {#sec-proddev-kpis-prod-aarrr .unnumbered}
+
+-   **Awareness**: How many people are aware your brand exists?
+    -   Metric Examples: number of website visits, social media metrics (number of likes, shares, impressions, reach), time spent on a website, email open rate
+-   **Acquisition**: How many people are interacting with your product?
+    -   A *lead* is any potential user who's information you've been able to capture in some shape or form.
+        -   e.g. People who give you their email addresses when they sign up for your mailing list are considered to be leads.
+    -   A *qualified lead* when they show additional interest in your product beyond giving you their information.
+        -   e.g. In addition to signing up for your mailing list they also watch a webinar or sign up for a demo
+    -   Metric Examples: number of leads, number of qualified leads, sign ups, downloads, install, chatbot interactions
+-   **Activation**: How many people are realizing the value of your product?
+    -   Typically in the form of an action taken x times with in a period of y days
+    -   When the activation hurdle is crossed, an individual goes from unknown entity to actual user.
+    -   [Example]{.ribbon-highlight}: Dropbox
+        -   Their activation metric is the number of users that have stored at least one file in one dropbox folder on one device
+    -   Metric Examples: number of connections made, number of times an action is performed, number of steps completed
+-   **Engagement**: What is the breadth and frequency of user engagement?
+    -   Depth of their usage: How often are they using your product? Is it above or below the average users frequency?
+    -   Breadth of their usage: Are they performing every action that's possible with your product? Are they favoring some more than others? What if you have multiple products? Are they using all of them?
+    -   Metric Examples: daily, weekly and monthly active users, time spent in a session, session frequency, actions taken in the product
+-   **Revenue**: How many people are paying for your product?
+    -   \*\* Remember, a business should optimize for the value they bring to their customers, not the revenue they generate. And, if their customers are deriving a lot of value from the business, willingness to pay will be a natural byproduct
+    -   Metric Examples: % of paid customers; average revenue per customer; conversion rate of trial to paid customers; number of transactions completed; shopping cart abandonment rates; ad-metrics like click-through-rate and conversion rate (crucial for ads based businesses)
+-   **Retention/Renewal**: How often are your people coming back?
+    -   Metric Examples: % of users coming back to your platform each day, month, year (product dependent); churn rates; customer lifetime value
+-   **Referral**: How many customers are becoming advocates?
+    -   Metric Examples: [Net Promoter Score](https://www.netpromoter.com/know/), [Viral Coefficient](https://www.questionpro.com/blog/viral-coefficient/) i.e. the average number of people that your users refer you to
+        -   Also see
+            -   [Survey, Design \>\> Response Scales \>\> Net Promoter Score](https://ercbk.github.io/Data-Science-Notebook/qmd/surveys-design.html#sec-surv-design-respsc-nps){style="color: green"}
+            -   [Algorithms, Product \>\> Net Promoter Score](https://ercbk.github.io/Data-Science-Notebook/qmd/algorithms-product.html#sec-alg-prod-nps){style="color: green"}

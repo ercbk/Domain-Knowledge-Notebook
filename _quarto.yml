@@ -50,7 +50,10 @@ book:
     - qmd/meteorology.qmd
     - qmd/nonprofits.qmd
     - qmd/politics.qmd
-    - qmd/product-development.qmd
+    - part: "Product Development"
+      chapters: 
+        - qmd/product-development-general.qmd
+        - qmd/product-development-kpis.qmd
     - qmd/real-estate.qmd
     - qmd/retail.qmd
     - qmd/saas.qmd

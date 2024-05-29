@@ -629,7 +629,7 @@
 -   Misc
     -   Also see
         -   [Customer Journey](marketing.qmd#sec-mark-custjourn){style="color: green"}
-        -   [Product Development \>\> Behavioral Data](product-development.qmd#sec-proddev-behdat){style="color: green"}
+        -   [Product Development, General \>\> Behavioral Data](product-development-general.qmd#sec-proddev-gen-behdat){style="color: green"}
 -   Data
     -   Demographics: location, age, gender, and income
     -   Touchpoints (see Terms): view-through, click-through, the time between each action, etc
@@ -660,7 +660,10 @@
     -   The red arrow represents customers that drop off and don't convert
     -   The start of the arrow show the section of the rectangle that represents the amount customer that drop off from on point to the next.
 -   Misc
-    -   Also see [Algorithms, Product \>\> Customer Journey](https://ercbk.github.io/Data-Science-Notebook/qmd/algorithms-product.html#sec-alg-prod-cj){style="color: green"}
+    -   Also see
+        -   [Product Development, General \>\> Conversion Funnel](product-development-general.qmd#sec-proddev-gen-convfun){style="color: green"}
+        -   [Product Development, KPIs \>\> Lifecycle-based Monitoring \>\> Growth Stage](product-development-kpis.qmd#sec-proddev-kpis-lmon-grow){style="color: green"}
+        -   [Algorithms, Product \>\> Customer Journey](https://ercbk.github.io/Data-Science-Notebook/qmd/algorithms-product.html#sec-alg-prod-cj){style="color: green"} and [Conversion Funnel](https://ercbk.github.io/Data-Science-Notebook/qmd/algorithms-product.html#sec-alg-prod-convfun){style="color: green"}
 -   Pre Sale
     -   When potential customers are in the "consideration" phase and researching a product, AI will target ads at them and can help guide their search
         -   Determine which customers are most likely to be persuadable and, on the basis of their browsing histories, choose products to show them

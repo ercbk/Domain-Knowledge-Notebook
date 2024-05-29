@@ -1,6 +1,6 @@
-# Product Development {#sec-proddev .unnumbered}
+# Product Development {#sec-proddev-gen .unnumbered}
 
-## Misc {#sec-proddev-misc .unnumbered}
+## Misc {#sec-proddev-gen-misc .unnumbered}
 
 -   Also see [Decision Intelligence \>\> Conjoint Analysis](https://ercbk.github.io/Data-Science-Notebook/qmd/decision-intelligence.html#sec-decint-conjanal){style="color: green"} for surveying consumers about product attributes to calculate attribute utilities and probability of purchase
 -   Flaws of Purchase-Funnel Based Attribution Metrics
@@ -35,23 +35,23 @@
         -   Get your customer retention people in a room with a white board and list all the issues they CONSTANTLY hear from customers but have stopped bothering to report up the chain.
         -   However painful it is to your bottom line. However politically tough it is. However complex the problem. These are the things that need to be fixed.
 
-## Terms {#sec-proddev-terms .unnumbered}
+## Terms {#sec-proddev-gen-terms .unnumbered}
 
 -   [**Bounce Rate**]{style="color: #009499"} - the percentage of visitors to a particular website who navigate away from the site after viewing only one page. Low bounce rate can indicate the landing page needs improvement
 -   [**Product Listing Page (PLP)**]{style="color: #009499"} -  webpage that lists all your products or a category of your products
 -   [**Product Details Page (PDP)**]{style="color: #009499"} - webpage for a specific product that shows in-depth information
 
-## Behavioral Data {#sec-proddev-behdat .unnumbered}
+## Behavioral Data {#sec-proddev-gen-behdat .unnumbered}
 
 -   Behavioral data serves two main purposes for teams --- understanding how the product is being used or not used (user behavior) and building personalized customer experiences across various touchpoints to influence user behavior.
     -   Launching new features without instrumenting them (e.g. tracking) beforehand takes away the opportunity to analyze how those features are used (if at all) and to trigger in-app experiences or messages when relevant events take place (or don't).
 
-### Misc {#sec-proddev-behdat-misc .unnumbered}
+### Misc {#sec-proddev-gen-behdat-misc .unnumbered}
 
 -   Notes from [How to Collect Behavioral Data](https://towardsdatascience.com/how-to-collect-behavioral-data-2a891fad6bc5)
 -   Also see [Marketing \>\> Customer Segmentation \>\> Behaviorial Segmentation](marketing.html#sec-mark-custseg-behav){style="color: green"}
 
-### Sources {#sec-proddev-behdat-src .unnumbered}
+### Sources {#sec-proddev-gen-behdat-src .unnumbered}
 
 -   [Primary]{.underline}: web app, mobile apps, a smart device, or a combination --- powered by proprietary code
 -   [Secondary]{.underline}: all external or third-party tools that your customers interact with directly or indirectly
@@ -60,7 +60,7 @@
         -   Opening a support ticket via Zendesk, leaving feedback via Typeform, opening an email sent via Intercom, or engaging with an ad on Facebook
     -   To collect data from secondary sources, you can either use source integrations offered by data collection tools or write your own code
 
-### Extract Data {#sec-proddev-behdat-extdat .unnumbered}
+### Extract Data {#sec-proddev-gen-behdat-extdat .unnumbered}
 
 -   Using vendors are the best option. Maintenance and troubleshooting are not trivial for homemade solutions even for experienced engineers.
 -   [CDI or ELT?]{.underline}
@@ -88,7 +88,7 @@
         -   Offers a Connector Development Kit (CDK) that you can use to build integrations that are maintained by Airbyte's community members
     -   Other (all open source): Fivetran, Stitch, and Meltano
 
-### Process Data {#sec-proddev-behdat-proc .unnumbered}
+### Process Data {#sec-proddev-gen-behdat-proc .unnumbered}
 
 -   Notes from [The Modern Customer Data Stack](https://towardsdatascience.com/the-modern-customer-data-stack-3cd91a3e79d1)
 -   [Identity Resolution]{.underline}: Identifying the same users in different data sources
@@ -106,7 +106,7 @@
             -   double-sided marketplace - tables for both sellers and buyers as different entities.
             -   B2B business - separate accounts and contacts entities
 
-### Analysis Tools {#sec-proddev-behdat-analt .unnumbered}
+### Analysis Tools {#sec-proddev-gen-behdat-analt .unnumbered}
 
 -   General characteristics
     -   Offer SDKs and APIs to collect data from your primary (first-party) data sources
@@ -118,7 +118,7 @@
 -   PostHog (open-source)
     -   Can be integrated with Airbyte
 
-## Conversion Funnels {#sec-proddev-convfun .unnumbered}
+## Conversion Funnels {#sec-proddev-gen-convfun .unnumbered}
 
 ![](./_resources/Product_Development.resources/image.4.png){.lightbox width="432"}
 
@@ -129,8 +129,12 @@
 -   [Misc]{.underline}
     -   Also see
         -   [Marketing \>\> Customer Journey](marketing.html#sec-mark-custjourn){style="color: green"}
+        -   [Product Development, KPIs \>\> Lifecycle-based Monitoring \>\> Growth Stage](product-development-kpis.qmd#sec-proddev-kpis-lmon-grow){style="color: green"}
         -   [Algorithms, Product \>\> Customer Journey](https://ercbk.github.io/Data-Science-Notebook/qmd/algorithms-product.html#sec-alg-prod-cj){style="color: green"} and [Conversion Funnel](https://ercbk.github.io/Data-Science-Notebook/qmd/algorithms-product.html#sec-alg-prod-convfun){style="color: green"}
     -   Typical e-commerce user conversion rate can be benchmarked at around [2.5--3%](https://www.bigcommerce.com/articles/ecommerce/conversion-rate-optimization/) in a regular business as usual time.
+    -   When implementing user journey data collection, less is more. The temptation may be to instrument every page and every button in a product, but this can often be onerous for engineering to implement and difficult to maintain.
+        -   Start with just a beginning and end event — these two events will allow you to calculate a conversion rate and a time to convert.
+        -   Expand beyond two events to only include critical steps in a user journey. Ensure that events capture user segments such as device, operating system and location.
 -   [Benefits]{.underline}
     -   Product Managers:
         -   Useful for new feature launches. By grouping your sessions by user or device properties, you can compare the conversions between different user cohorts.
@@ -176,7 +180,7 @@
             -   For each signal in terms of activity (i.e. counts of events), segment customers into 3 quantiles (\< Q33, Q33 \< Q66, \>Q66) with labels below average, average, above average customers
                 -   Can also label customers who did not have any events for a signal at all (0-score users)
 
-## Stages of Product Development {#sec-proddev-sopd .unnumbered}
+## Stages of Product Development {#sec-proddev-gen-sopd .unnumbered}
 
 -   [Stage 1]{.underline}: Coming up with initial product ideas.
 -   [Stage 2]{.underline}: Selecting ideas:
@@ -189,8 +193,9 @@
     -   Diagnosing problems and evaluating tradeoffs.
     -   Throughout the product development lifecycle, working with the appropriate **metrics** is of paramount importance
 
-## Why Do People Leave and Stay? {#sec-proddev-wdplas .unnumbered}
+## Churn Analysis {#sec-proddev-gen-churn .unnumbered}
 
+-   See [Algorithms, Marketing \>\> Churn](https://ercbk.github.io/Data-Science-Notebook/qmd/algorithms-marketing.html#sec-alg-mark-churn){style="color: green"}
 -   Might need to be answered by user research and experiments instead of user analytics data
 -   Collaborate with the UX research team to help design the surveys and interviews, and generate insights
 -   Collaborate with the engineers to design experiments and analyze results
@@ -207,13 +212,13 @@
     -   Personalized notification works.
     -   It has become a habit for people to use the product.
 
-## Feedback {#sec-proddev-fdbk .unnumbered}
+## Feedback {#sec-proddev-gen-fdbk .unnumbered}
 
-### Misc {#sec-proddev-fdbk-misc .unnumbered}
+### Misc {#sec-proddev-gen-fdbk-misc .unnumbered}
 
 -   Before even touching any of the data, ask yourself some **user privacy questions**: do we have good reason to be looking at the user data? Would we be violating any user privacy? In modern technology, user privacy is at the forefront so this should always be your first thought.
 
-### Types {#sec-proddev-fdbk-types .unnumbered}
+### Types {#sec-proddev-gen-fdbk-types .unnumbered}
 
 -   [In-product bug reporting]{.underline}: Many products give users a way to leave feedback if the system crashes or they navigate somewhere unexpected.
 -   [In-product feedback]{.underline}: Products can ask for more general feedback in specific locations or always give users an option in site menus.
@@ -221,24 +226,24 @@
 -   [Internal feedback]{.underline}: Many people working internally in a company will have a view of how the product behaves and capturing feedback from these people is also important.
 -   [User research]{.underline}: Companies can actively seek user feedback through user research which often includes recruiting individuals and asking questions directly.
 
-### Potential Insights {#sec-proddev-fdbk-potins .unnumbered}
+### Potential Insights {#sec-proddev-gen-fdbk-potins .unnumbered}
 
 -   [Inform product direction]{.underline}: If users are consistently asking for a specific feature or requesting you to add more types of content, then the product may very well benefit from following their advice.
 -   [Identify bugs]{.underline}: When something goes wrong, users are often happy to complain about it. Monitoring user feedback is a great way to get quick insights into potential problems with your product.
 -   [Understand product sentiment]{.underline}: Product teams will often ask themselves, how are we doing? There are many ways to answer this question including benchmarking against similar products and looking at retention metrics, but an equally effective method is to understand product sentiment through user feedback. This can help you know when you may need to invest more in building a better product, or if you can go heavily into marketing spend.
 
-### Issues {#sec-proddev-fdbk-iss .unnumbered}
+### Issues {#sec-proddev-gen-fdbk-iss .unnumbered}
 
 -   [User feedback is typically biased]{.underline}: If people are unhappy with something, then more likely to shout about it, then if they're not fussed by it. This can lead to the feedback you actually receive being weighted heavily to the extremities, both users complaining about negative experiences and also those strong advocates who loved your product. There's no silver bullet for dealing with this, so it's important that all analyses done be caveated with this.
 -   [User feedback is noisy]{.underline}: Feedback comes from people, and people have very different circumstances when coming into contact with your product. A feature might be loved by one user and hated by the next. To this end, it's important to try to get as much data as possible, and from different sources. Another important approach is to look deeper than the averages, rather than just the mean, look at the actual distribution of reviews --- are there a few people with very negative ratings changing the average?
 
-### DS Outputs {#sec-proddev-fdbk-dsout .unnumbered}
+### DS Outputs {#sec-proddev-gen-fdbk-dsout .unnumbered}
 
 -   [Self-service dashboards]{.underline}: Users across a company can use the dashboard to get insights on feedback.
 -   [Regular reporting]{.underline}: Having a good understanding of the feedback data can lead to automatic generation of reports which can drastically reduce the time to actually understand feedback and get insights out of it.
 -   [Scalable datasets]{.underline}: Datasets which can be used by employees across the company.
 
-### EDA/Processing {#sec-proddev-fdbk-eda .unnumbered}
+### EDA/Processing {#sec-proddev-gen-fdbk-eda .unnumbered}
 
 -   For your product area, [identify the keyword/s]{.underline} that users are likely to use, for example if you're running a clothing e-commerce store, they might be: "fit", "style", "expensive", "ugly", etc. Try to keep the total number to less than ten.
 -   Sample at least 100 pieces of feedback from the total population and do a simple [text match with the terms]{.underline} identified in the step above.
@@ -247,20 +252,24 @@
 -   [Plot the volume of reports matching your keyword/s]{.underline}, do you see a consistent pattern, are there increases around any product launches? Correlation with product launches and known bugs can help confirm the reports correlate with what you're interested in.
 -   [Check the volume is high enough to be useful]{.underline}. You should aim to find a few hundred reports per day in order to get meaningful feedback. Of course, you can work with fewer if that's all you have, but it will be harder to detect quick changes.
 
-### Modeling {#sec-proddev-fdbk-mod .unnumbered}
+### Modeling {#sec-proddev-gen-fdbk-mod .unnumbered}
 
 -   Perform [sentiment analysis]{.underline} to understand if users are positive or negative towards your product.
 -   Run [topic modeling]{.underline} algorithms to have a more flexible understanding of the topics users are giving feedback on.
 
-### Track Metrics {#sec-proddev-fdbk-trkmet .unnumbered}
+### Track Metrics {#sec-proddev-gen-fdbk-trkmet .unnumbered}
 
 -   This should include taking the analyses completed above and [making timeseries to add to dashboards]{.underline}.
 -   Set up [anomaly detection]{.underline} to be alerted if there are significant movements in the metric. This can be simple percentage movements in the key metrics that you identified above in the understand and modelling phases, or you can use more sophisticated algorithms.
 -   It's also good to create [automated reports]{.underline} where possible, to summarize longer term trends, such as quarterly reports. You'll always require some manual work, but setting up the queries and making it as easy as possible to action is important.
 
-## Metrics {#sec-proddev-metrics .unnumbered}
+## Metrics {#sec-proddev-gen-metrics .unnumbered}
 
-### Types {#sec-proddev-metrics-types .unnumbered}
+### Misc {#sec-proddev-gen-metrics-misc .unnumbered}
+
+-   Also see [Product Development, KPIs](product-development-kpis.qmd#sec-proddev-kpis){style="color: green"}
+
+### Types {#sec-proddev-gen-metrics-types .unnumbered}
 
 -   Success
 -   Guardrail
@@ -269,7 +278,7 @@
 -   Growth
 -   Platform
 
-### Success Metrics {#sec-proddev-metrics-succ .unnumbered}
+### Success Metrics {#sec-proddev-gen-metrics-succ .unnumbered}
 
 -   Sometimes called a "north star metric" or "primary metric" or "OKR metric") are used to measure the success or health of a product. Commonly used (daily/monthly) success metrics include:
     -   Active Users
@@ -278,14 +287,14 @@
     -   Click Through Rate
     -   Conversion Rate
 
-### Guardrail Metrics {#sec-proddev-metrics-grdrl .unnumbered}
+### Guardrail Metrics {#sec-proddev-gen-metrics-grdrl .unnumbered}
 
 -   Measures core quantities that should not degrade in pursuit of a new product or feature. Success metrics of other core product teams can sometimes also serve as guardrail metrics. Examples can include:
     -   Bounce Rate - the percentage of visitors to a particular website who navigate away from the site after viewing only one page. High bounce rate can indicate the landing page needs improvement
     -   Cancellation / Unsubscription Rate
     -   Latency
 
-### Funnel Metrics {#sec-proddev-metrics-funmet .unnumbered}
+### Funnel Metrics {#sec-proddev-gen-metrics-funmet .unnumbered}
 
 -   Any family of metrics that tracks the "user journey" through various parts of a product.
 -   [AARRR growth metrics]{.underline} (see below for details: A user who is activated must have been acquired (through some channel or organically); a user who generates revenue must have been previously activated.
@@ -328,7 +337,7 @@
                     -   Funnel for a login form which has a true conversion rate of 36% (login submits/login pageviews)
                     -   Entering a phone number was an optional step. Adding it to the funnel drops the conversion rate to 19.98%
 
-### Input-Output Metrics {#sec-proddev-metrics-io .unnumbered}
+### Input-Output Metrics {#sec-proddev-gen-metrics-io .unnumbered}
 
 -   Input / Driver Metrics: Metrics that track the activities / resources used to work towards an outcome.
 -   Output metrics: Metrics that demonstrate the outcome of an initiative.
@@ -342,7 +351,7 @@
         -   Successful Sessions per User
         -   Advertisement Revenue
 -   [Example]{.ribbon-highlight}: Fraud Detection
-    -   Also see [Platform Metrics](product-development.qmd#sec-proddev-metrics-rarra-plat){style="color: green"}
+    -   Also see [Platform Metrics](product-development-general.qmd#sec-proddev-gen-metrics-rarra-plat){style="color: green"}
     -   Input metrics
         -   True / False Positive Rates of
             -   Fraud Rules and Models
@@ -356,12 +365,12 @@
         -   Losses Prevented
         -   Revenue
 
-### Growth Metrics (AARRR) {#sec-proddev-metrics-growth .unnumbered}
+### Growth Metrics (AARRR) {#sec-proddev-gen-metrics-growth .unnumbered}
 
 -   Are responsible for enlarging a product's user base and keeping current users engaged
--   Also see KPIs \>\> Product Metrics \>\> AARRR
+-   Also see [Product Development, KPIs \>\> Product Metrics \>\> AARRR](product-development-kpis.qmd#sec-kpis-prod-aarrr){style="color: green"}
 
-#### AARRR {#sec-proddev-metrics-growth-aarrr .unnumbered}
+#### AARRR {#sec-proddev-gen-metrics-growth-aarrr .unnumbered}
 
 -   [Acquisition]{.underline}: Getting customers to sign up for a website or product, which requires driving product awareness (often known as "top of funnel").
 -   [Activation]{.underline}: Getting customers to gain basic familiarity with the product, and appreciating the basic product value.
@@ -369,7 +378,7 @@
 -   [Referral]{.underline}: Getting customers to share the product with others, in turn further growing the user base.
 -   [Revenue]{.underline}: Getting customers to adopt one or more paid features that generate revenue for the company; also known as Monetization.
 
-#### Concepts {#sec-proddev-metrics-growth-conc .unnumbered}
+#### Concepts {#sec-proddev-gen-metrics-growth-conc .unnumbered}
 
 -   [Tradeoffs Between Acquisition and Revenue]{.underline}
     -   How should a company strike the optimal balance between revenue maximization and acquiring new customers (the latter can always be done via expensive campaigns, such as providing large discounts / gifts for new users, etc.)?
@@ -392,7 +401,7 @@
 -   [Challenges of International Expansion]{.underline}:
     -   These include additional costs associated with localization (adapting a product appropriately to better fit the customers in a particular market), regulatory / compliance requirements, understanding the competitive landscape, etc.
 
-#### Power User Analysis {#sec-proddev-metrics-growth-pua .unnumbered}
+#### Power User Analysis {#sec-proddev-gen-metrics-growth-pua .unnumbered}
 
 -   [Questions]{.underline}
     -   Which customers generate the most value for your company?
@@ -431,7 +440,7 @@
                 -   This might be a place to double down, to increase engagement.
             -   For a network effects product, you might expect to see newer cohorts gradually improve as you achieve network density/liquidity.
 
-### RARRA {#sec-proddev-metrics-rarra .unnumbered}
+### RARRA {#sec-proddev-gen-metrics-rarra .unnumbered}
 
 ![](./_resources/Product_Development.resources/1aihm6-T1GIPS5VDZxjq7Xw.png){.lightbox width="532"}
 
@@ -441,7 +450,7 @@
     -   Retention is the foundation of growth
     -   User retention is more directly connected to revenue than acquisition.
 
-#### Platform Metrics {#sec-proddev-metrics-rarra-plat .unnumbered}
+#### Platform Metrics {#sec-proddev-gen-metrics-rarra-plat .unnumbered}
 
 -   Departments include Customer Support, Trust and Safety, Payments, Infrastructure, Operations
 -   Many of these are indirectly related to the Growth Metrics
