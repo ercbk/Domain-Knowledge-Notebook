@@ -321,12 +321,29 @@ window.Quarto = {
  <span class="menu-text">Politics</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
+ <span class="menu-text">Product Development</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../qmd/product-development.html" class="sidebar-item-text sidebar-link">
+  <a href="../qmd/product-development-general.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Product Development</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../qmd/product-development-kpis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">KPIs</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../qmd/real-estate.html" class="sidebar-item-text sidebar-link">
@@ -1288,7 +1305,7 @@ and monetary_rank between 1 and 3</code></pre></li>
 <li>Also see
 <ul>
 <li><a href="../qmd/marketing.html#sec-mark-custjourn" style="color: green">Customer Journey</a></li>
-<li><a href="../qmd/product-development.html#sec-proddev-behdat" style="color: green">Product Development &gt;&gt; Behavioral Data</a></li>
+<li><a href="../qmd/product-development-general.html#sec-proddev-gen-behdat" style="color: green">Product Development, General &gt;&gt; Behavioral Data</a></li>
 </ul></li>
 </ul></li>
 <li>Data
@@ -1340,7 +1357,12 @@ and monetary_rank between 1 and 3</code></pre></li>
 </ul></li>
 <li>Misc
 <ul>
-<li>Also see <a href="https://ercbk.github.io/Data-Science-Notebook/qmd/algorithms-product.html#sec-alg-prod-cj" style="color: green">Algorithms, Product &gt;&gt; Customer Journey</a></li>
+<li>Also see
+<ul>
+<li><a href="../qmd/product-development-general.html#sec-proddev-gen-convfun" style="color: green">Product Development, General &gt;&gt; Conversion Funnel</a></li>
+<li><a href="../qmd/product-development-kpis.html#sec-proddev-kpis-lmon-grow" style="color: green">Product Development, KPIs &gt;&gt; Lifecycle-based Monitoring &gt;&gt; Growth Stage</a></li>
+<li><a href="https://ercbk.github.io/Data-Science-Notebook/qmd/algorithms-product.html#sec-alg-prod-cj" style="color: green">Algorithms, Product &gt;&gt; Customer Journey</a> and <a href="https://ercbk.github.io/Data-Science-Notebook/qmd/algorithms-product.html#sec-alg-prod-convfun" style="color: green">Conversion Funnel</a></li>
+</ul></li>
 </ul></li>
 <li>Pre Sale
 <ul>
@@ -1954,7 +1976,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","closeEffect":"zoom","selector":".lightbox","loop":false,"descPosition":"bottom"});
+<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","loop":false,"descPosition":"bottom","selector":".lightbox","closeEffect":"zoom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;

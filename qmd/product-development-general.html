@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.549">
+<meta name="generator" content="quarto-1.4.554">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -30,7 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../qmd/real-estate.html" rel="next">
+<link href="../qmd/product-development-kpis.html" rel="next">
 <link href="../qmd/politics.html" rel="prev">
 <link href="../images/dk-favicon-32.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js"></script>
@@ -86,7 +86,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../qmd/product-development.html">Product Development</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../qmd/product-development-general.html">Product Development</a></li><li class="breadcrumb-item"><a href="../qmd/product-development-general.html">Product Development</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -181,6 +181,18 @@ ul.task-list li input[type="checkbox"] {
   <div class="sidebar-item-container"> 
   <a href="../qmd/finance-investing.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Investing</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../qmd/finance-risk.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Risk</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../qmd/finance-snippets.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Snippets</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -280,12 +292,29 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Politics</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+ <span class="menu-text">Product Development</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../qmd/product-development.html" class="sidebar-item-text sidebar-link active">
+  <a href="../qmd/product-development-general.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Product Development</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../qmd/product-development-kpis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">KPIs</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../qmd/real-estate.html" class="sidebar-item-text sidebar-link">
@@ -320,46 +349,47 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#sec-proddev-misc" id="toc-sec-proddev-misc" class="nav-link active" data-scroll-target="#sec-proddev-misc">Misc</a></li>
-  <li><a href="#sec-proddev-terms" id="toc-sec-proddev-terms" class="nav-link" data-scroll-target="#sec-proddev-terms">Terms</a></li>
-  <li><a href="#sec-proddev-behdat" id="toc-sec-proddev-behdat" class="nav-link" data-scroll-target="#sec-proddev-behdat">Behavioral Data</a>
+  <li><a href="#sec-proddev-gen-misc" id="toc-sec-proddev-gen-misc" class="nav-link active" data-scroll-target="#sec-proddev-gen-misc">Misc</a></li>
+  <li><a href="#sec-proddev-gen-terms" id="toc-sec-proddev-gen-terms" class="nav-link" data-scroll-target="#sec-proddev-gen-terms">Terms</a></li>
+  <li><a href="#sec-proddev-gen-behdat" id="toc-sec-proddev-gen-behdat" class="nav-link" data-scroll-target="#sec-proddev-gen-behdat">Behavioral Data</a>
   <ul>
-  <li><a href="#sec-proddev-behdat-misc" id="toc-sec-proddev-behdat-misc" class="nav-link" data-scroll-target="#sec-proddev-behdat-misc">Misc</a></li>
-  <li><a href="#sec-proddev-behdat-src" id="toc-sec-proddev-behdat-src" class="nav-link" data-scroll-target="#sec-proddev-behdat-src">Sources</a></li>
-  <li><a href="#sec-proddev-behdat-extdat" id="toc-sec-proddev-behdat-extdat" class="nav-link" data-scroll-target="#sec-proddev-behdat-extdat">Extract Data</a></li>
-  <li><a href="#sec-proddev-behdat-proc" id="toc-sec-proddev-behdat-proc" class="nav-link" data-scroll-target="#sec-proddev-behdat-proc">Process Data</a></li>
-  <li><a href="#sec-proddev-behdat-analt" id="toc-sec-proddev-behdat-analt" class="nav-link" data-scroll-target="#sec-proddev-behdat-analt">Analysis Tools</a></li>
+  <li><a href="#sec-proddev-gen-behdat-misc" id="toc-sec-proddev-gen-behdat-misc" class="nav-link" data-scroll-target="#sec-proddev-gen-behdat-misc">Misc</a></li>
+  <li><a href="#sec-proddev-gen-behdat-src" id="toc-sec-proddev-gen-behdat-src" class="nav-link" data-scroll-target="#sec-proddev-gen-behdat-src">Sources</a></li>
+  <li><a href="#sec-proddev-gen-behdat-extdat" id="toc-sec-proddev-gen-behdat-extdat" class="nav-link" data-scroll-target="#sec-proddev-gen-behdat-extdat">Extract Data</a></li>
+  <li><a href="#sec-proddev-gen-behdat-proc" id="toc-sec-proddev-gen-behdat-proc" class="nav-link" data-scroll-target="#sec-proddev-gen-behdat-proc">Process Data</a></li>
+  <li><a href="#sec-proddev-gen-behdat-analt" id="toc-sec-proddev-gen-behdat-analt" class="nav-link" data-scroll-target="#sec-proddev-gen-behdat-analt">Analysis Tools</a></li>
   </ul></li>
-  <li><a href="#sec-proddev-convfun" id="toc-sec-proddev-convfun" class="nav-link" data-scroll-target="#sec-proddev-convfun">Conversion Funnels</a></li>
-  <li><a href="#sec-proddev-sopd" id="toc-sec-proddev-sopd" class="nav-link" data-scroll-target="#sec-proddev-sopd">Stages of Product Development</a></li>
-  <li><a href="#sec-proddev-wdplas" id="toc-sec-proddev-wdplas" class="nav-link" data-scroll-target="#sec-proddev-wdplas">Why Do People Leave and Stay?</a></li>
-  <li><a href="#sec-proddev-fdbk" id="toc-sec-proddev-fdbk" class="nav-link" data-scroll-target="#sec-proddev-fdbk">Feedback</a>
+  <li><a href="#sec-proddev-gen-convfun" id="toc-sec-proddev-gen-convfun" class="nav-link" data-scroll-target="#sec-proddev-gen-convfun">Conversion Funnels</a></li>
+  <li><a href="#sec-proddev-gen-sopd" id="toc-sec-proddev-gen-sopd" class="nav-link" data-scroll-target="#sec-proddev-gen-sopd">Stages of Product Development</a></li>
+  <li><a href="#sec-proddev-gen-churn" id="toc-sec-proddev-gen-churn" class="nav-link" data-scroll-target="#sec-proddev-gen-churn">Churn Analysis</a></li>
+  <li><a href="#sec-proddev-gen-fdbk" id="toc-sec-proddev-gen-fdbk" class="nav-link" data-scroll-target="#sec-proddev-gen-fdbk">Feedback</a>
   <ul>
-  <li><a href="#sec-proddev-fdbk-misc" id="toc-sec-proddev-fdbk-misc" class="nav-link" data-scroll-target="#sec-proddev-fdbk-misc">Misc</a></li>
-  <li><a href="#sec-proddev-fdbk-types" id="toc-sec-proddev-fdbk-types" class="nav-link" data-scroll-target="#sec-proddev-fdbk-types">Types</a></li>
-  <li><a href="#sec-proddev-fdbk-potins" id="toc-sec-proddev-fdbk-potins" class="nav-link" data-scroll-target="#sec-proddev-fdbk-potins">Potential Insights</a></li>
-  <li><a href="#sec-proddev-fdbk-iss" id="toc-sec-proddev-fdbk-iss" class="nav-link" data-scroll-target="#sec-proddev-fdbk-iss">Issues</a></li>
-  <li><a href="#sec-proddev-fdbk-dsout" id="toc-sec-proddev-fdbk-dsout" class="nav-link" data-scroll-target="#sec-proddev-fdbk-dsout">DS Outputs</a></li>
-  <li><a href="#sec-proddev-fdbk-eda" id="toc-sec-proddev-fdbk-eda" class="nav-link" data-scroll-target="#sec-proddev-fdbk-eda">EDA/Processing</a></li>
-  <li><a href="#sec-proddev-fdbk-mod" id="toc-sec-proddev-fdbk-mod" class="nav-link" data-scroll-target="#sec-proddev-fdbk-mod">Modeling</a></li>
-  <li><a href="#sec-proddev-fdbk-trkmet" id="toc-sec-proddev-fdbk-trkmet" class="nav-link" data-scroll-target="#sec-proddev-fdbk-trkmet">Track Metrics</a></li>
+  <li><a href="#sec-proddev-gen-fdbk-misc" id="toc-sec-proddev-gen-fdbk-misc" class="nav-link" data-scroll-target="#sec-proddev-gen-fdbk-misc">Misc</a></li>
+  <li><a href="#sec-proddev-gen-fdbk-types" id="toc-sec-proddev-gen-fdbk-types" class="nav-link" data-scroll-target="#sec-proddev-gen-fdbk-types">Types</a></li>
+  <li><a href="#sec-proddev-gen-fdbk-potins" id="toc-sec-proddev-gen-fdbk-potins" class="nav-link" data-scroll-target="#sec-proddev-gen-fdbk-potins">Potential Insights</a></li>
+  <li><a href="#sec-proddev-gen-fdbk-iss" id="toc-sec-proddev-gen-fdbk-iss" class="nav-link" data-scroll-target="#sec-proddev-gen-fdbk-iss">Issues</a></li>
+  <li><a href="#sec-proddev-gen-fdbk-dsout" id="toc-sec-proddev-gen-fdbk-dsout" class="nav-link" data-scroll-target="#sec-proddev-gen-fdbk-dsout">DS Outputs</a></li>
+  <li><a href="#sec-proddev-gen-fdbk-eda" id="toc-sec-proddev-gen-fdbk-eda" class="nav-link" data-scroll-target="#sec-proddev-gen-fdbk-eda">EDA/Processing</a></li>
+  <li><a href="#sec-proddev-gen-fdbk-mod" id="toc-sec-proddev-gen-fdbk-mod" class="nav-link" data-scroll-target="#sec-proddev-gen-fdbk-mod">Modeling</a></li>
+  <li><a href="#sec-proddev-gen-fdbk-trkmet" id="toc-sec-proddev-gen-fdbk-trkmet" class="nav-link" data-scroll-target="#sec-proddev-gen-fdbk-trkmet">Track Metrics</a></li>
   </ul></li>
-  <li><a href="#sec-proddev-metrics" id="toc-sec-proddev-metrics" class="nav-link" data-scroll-target="#sec-proddev-metrics">Metrics</a>
+  <li><a href="#sec-proddev-gen-metrics" id="toc-sec-proddev-gen-metrics" class="nav-link" data-scroll-target="#sec-proddev-gen-metrics">Metrics</a>
   <ul>
-  <li><a href="#sec-proddev-metrics-types" id="toc-sec-proddev-metrics-types" class="nav-link" data-scroll-target="#sec-proddev-metrics-types">Types</a></li>
-  <li><a href="#sec-proddev-metrics-succ" id="toc-sec-proddev-metrics-succ" class="nav-link" data-scroll-target="#sec-proddev-metrics-succ">Success Metrics</a></li>
-  <li><a href="#sec-proddev-metrics-grdrl" id="toc-sec-proddev-metrics-grdrl" class="nav-link" data-scroll-target="#sec-proddev-metrics-grdrl">Guardrail Metrics</a></li>
-  <li><a href="#sec-proddev-metrics-funmet" id="toc-sec-proddev-metrics-funmet" class="nav-link" data-scroll-target="#sec-proddev-metrics-funmet">Funnel Metrics</a></li>
-  <li><a href="#sec-proddev-metrics-io" id="toc-sec-proddev-metrics-io" class="nav-link" data-scroll-target="#sec-proddev-metrics-io">Input-Output Metrics</a></li>
-  <li><a href="#sec-proddev-metrics-growth" id="toc-sec-proddev-metrics-growth" class="nav-link" data-scroll-target="#sec-proddev-metrics-growth">Growth Metrics (AARRR)</a>
+  <li><a href="#sec-proddev-gen-metrics-misc" id="toc-sec-proddev-gen-metrics-misc" class="nav-link" data-scroll-target="#sec-proddev-gen-metrics-misc">Misc</a></li>
+  <li><a href="#sec-proddev-gen-metrics-types" id="toc-sec-proddev-gen-metrics-types" class="nav-link" data-scroll-target="#sec-proddev-gen-metrics-types">Types</a></li>
+  <li><a href="#sec-proddev-gen-metrics-succ" id="toc-sec-proddev-gen-metrics-succ" class="nav-link" data-scroll-target="#sec-proddev-gen-metrics-succ">Success Metrics</a></li>
+  <li><a href="#sec-proddev-gen-metrics-grdrl" id="toc-sec-proddev-gen-metrics-grdrl" class="nav-link" data-scroll-target="#sec-proddev-gen-metrics-grdrl">Guardrail Metrics</a></li>
+  <li><a href="#sec-proddev-gen-metrics-funmet" id="toc-sec-proddev-gen-metrics-funmet" class="nav-link" data-scroll-target="#sec-proddev-gen-metrics-funmet">Funnel Metrics</a></li>
+  <li><a href="#sec-proddev-gen-metrics-io" id="toc-sec-proddev-gen-metrics-io" class="nav-link" data-scroll-target="#sec-proddev-gen-metrics-io">Input-Output Metrics</a></li>
+  <li><a href="#sec-proddev-gen-metrics-growth" id="toc-sec-proddev-gen-metrics-growth" class="nav-link" data-scroll-target="#sec-proddev-gen-metrics-growth">Growth Metrics (AARRR)</a>
   <ul>
-  <li><a href="#sec-proddev-metrics-growth-aarrr" id="toc-sec-proddev-metrics-growth-aarrr" class="nav-link" data-scroll-target="#sec-proddev-metrics-growth-aarrr">AARRR</a></li>
-  <li><a href="#sec-proddev-metrics-growth-conc" id="toc-sec-proddev-metrics-growth-conc" class="nav-link" data-scroll-target="#sec-proddev-metrics-growth-conc">Concepts</a></li>
-  <li><a href="#sec-proddev-metrics-growth-pua" id="toc-sec-proddev-metrics-growth-pua" class="nav-link" data-scroll-target="#sec-proddev-metrics-growth-pua">Power User Analysis</a></li>
+  <li><a href="#sec-proddev-gen-metrics-growth-aarrr" id="toc-sec-proddev-gen-metrics-growth-aarrr" class="nav-link" data-scroll-target="#sec-proddev-gen-metrics-growth-aarrr">AARRR</a></li>
+  <li><a href="#sec-proddev-gen-metrics-growth-conc" id="toc-sec-proddev-gen-metrics-growth-conc" class="nav-link" data-scroll-target="#sec-proddev-gen-metrics-growth-conc">Concepts</a></li>
+  <li><a href="#sec-proddev-gen-metrics-growth-pua" id="toc-sec-proddev-gen-metrics-growth-pua" class="nav-link" data-scroll-target="#sec-proddev-gen-metrics-growth-pua">Power User Analysis</a></li>
   </ul></li>
-  <li><a href="#sec-proddev-metrics-rarra" id="toc-sec-proddev-metrics-rarra" class="nav-link" data-scroll-target="#sec-proddev-metrics-rarra">RARRA</a>
+  <li><a href="#sec-proddev-gen-metrics-rarra" id="toc-sec-proddev-gen-metrics-rarra" class="nav-link" data-scroll-target="#sec-proddev-gen-metrics-rarra">RARRA</a>
   <ul>
-  <li><a href="#sec-proddev-metrics-rarra-plat" id="toc-sec-proddev-metrics-rarra-plat" class="nav-link" data-scroll-target="#sec-proddev-metrics-rarra-plat">Platform Metrics</a></li>
+  <li><a href="#sec-proddev-gen-metrics-rarra-plat" id="toc-sec-proddev-gen-metrics-rarra-plat" class="nav-link" data-scroll-target="#sec-proddev-gen-metrics-rarra-plat">Platform Metrics</a></li>
   </ul></li>
   </ul></li>
   </ul>
@@ -368,9 +398,9 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../qmd/product-development-general.html">Product Development</a></li><li class="breadcrumb-item"><a href="../qmd/product-development-general.html">Product Development</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="sec-proddev" class="quarto-section-identifier">Product Development</span></h1>
+<h1 class="title"><span id="sec-proddev-gen" class="quarto-section-identifier">Product Development</span></h1>
 </div>
 
 
@@ -387,8 +417,8 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="sec-proddev-misc" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="sec-proddev-misc">Misc</h2>
+<section id="sec-proddev-gen-misc" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="sec-proddev-gen-misc">Misc</h2>
 <ul>
 <li>Also see <a href="https://ercbk.github.io/Data-Science-Notebook/qmd/decision-intelligence.html#sec-decint-conjanal" style="color: green">Decision Intelligence &gt;&gt; Conjoint Analysis</a> for surveying consumers about product attributes to calculate attribute utilities and probability of purchase</li>
 <li>Flaws of Purchase-Funnel Based Attribution Metrics
@@ -444,31 +474,31 @@ ul.task-list li input[type="checkbox"] {
 </ul></li>
 </ul>
 </section>
-<section id="sec-proddev-terms" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="sec-proddev-terms">Terms</h2>
+<section id="sec-proddev-gen-terms" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="sec-proddev-gen-terms">Terms</h2>
 <ul>
 <li><span style="color: #009499"><strong>Bounce Rate</strong></span> - the percentage of visitors to a particular website who navigate away from the site after viewing only one page. Low bounce rate can indicate the landing page needs improvement</li>
 <li><span style="color: #009499"><strong>Product Listing Page (PLP)</strong></span> -&nbsp; webpage that lists all your products or a category of your products</li>
 <li><span style="color: #009499"><strong>Product Details Page (PDP)</strong></span> - webpage for a specific product that shows in-depth information</li>
 </ul>
 </section>
-<section id="sec-proddev-behdat" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="sec-proddev-behdat">Behavioral Data</h2>
+<section id="sec-proddev-gen-behdat" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="sec-proddev-gen-behdat">Behavioral Data</h2>
 <ul>
 <li>Behavioral data serves two main purposes for teams — understanding how the product is being used or not used (user behavior) and building personalized customer experiences across various touchpoints to influence user behavior.
 <ul>
 <li>Launching new features without instrumenting them (e.g.&nbsp;tracking) beforehand takes away the opportunity to analyze how those features are used (if at all) and to trigger in-app experiences or messages when relevant events take place (or don’t).</li>
 </ul></li>
 </ul>
-<section id="sec-proddev-behdat-misc" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="sec-proddev-behdat-misc">Misc</h3>
+<section id="sec-proddev-gen-behdat-misc" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="sec-proddev-gen-behdat-misc">Misc</h3>
 <ul>
 <li>Notes from <a href="https://towardsdatascience.com/how-to-collect-behavioral-data-2a891fad6bc5">How to Collect Behavioral Data</a></li>
 <li>Also see <a href="marketing.html#sec-mark-custseg-behav" style="color: green">Marketing &gt;&gt; Customer Segmentation &gt;&gt; Behaviorial Segmentation</a></li>
 </ul>
 </section>
-<section id="sec-proddev-behdat-src" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="sec-proddev-behdat-src">Sources</h3>
+<section id="sec-proddev-gen-behdat-src" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="sec-proddev-gen-behdat-src">Sources</h3>
 <ul>
 <li><u>Primary</u>: web app, mobile apps, a smart device, or a combination — powered by proprietary code</li>
 <li><u>Secondary</u>: all external or third-party tools that your customers interact with directly or indirectly
@@ -482,8 +512,8 @@ ul.task-list li input[type="checkbox"] {
 </ul></li>
 </ul>
 </section>
-<section id="sec-proddev-behdat-extdat" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="sec-proddev-behdat-extdat">Extract Data</h3>
+<section id="sec-proddev-gen-behdat-extdat" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="sec-proddev-gen-behdat-extdat">Extract Data</h3>
 <ul>
 <li>Using vendors are the best option. Maintenance and troubleshooting are not trivial for homemade solutions even for experienced engineers.</li>
 <li><u>CDI or ELT?</u>
@@ -526,8 +556,8 @@ ul.task-list li input[type="checkbox"] {
 </ul></li>
 </ul>
 </section>
-<section id="sec-proddev-behdat-proc" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="sec-proddev-behdat-proc">Process Data</h3>
+<section id="sec-proddev-gen-behdat-proc" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="sec-proddev-gen-behdat-proc">Process Data</h3>
 <ul>
 <li>Notes from <a href="https://towardsdatascience.com/the-modern-customer-data-stack-3cd91a3e79d1">The Modern Customer Data Stack</a></li>
 <li><u>Identity Resolution</u>: Identifying the same users in different data sources
@@ -556,8 +586,8 @@ ul.task-list li input[type="checkbox"] {
 </ul></li>
 </ul>
 </section>
-<section id="sec-proddev-behdat-analt" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="sec-proddev-behdat-analt">Analysis Tools</h3>
+<section id="sec-proddev-gen-behdat-analt" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="sec-proddev-gen-behdat-analt">Analysis Tools</h3>
 <ul>
 <li>General characteristics
 <ul>
@@ -579,8 +609,8 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 </section>
 </section>
-<section id="sec-proddev-convfun" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="sec-proddev-convfun">Conversion Funnels</h2>
+<section id="sec-proddev-gen-convfun" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="sec-proddev-gen-convfun">Conversion Funnels</h2>
 <p><a href="./_resources/Product_Development.resources/image.4.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="./_resources/Product_Development.resources/image.4.png" class="img-fluid" width="432"></a></p>
 <ul>
 <li>Figure: Typical eCommerce Funnel
@@ -594,9 +624,15 @@ ul.task-list li input[type="checkbox"] {
 <li>Also see
 <ul>
 <li><a href="marketing.html#sec-mark-custjourn" style="color: green">Marketing &gt;&gt; Customer Journey</a></li>
+<li><a href="../qmd/product-development-kpis.html#sec-proddev-kpis-lmon-grow" style="color: green">Product Development, KPIs &gt;&gt; Lifecycle-based Monitoring &gt;&gt; Growth Stage</a></li>
 <li><a href="https://ercbk.github.io/Data-Science-Notebook/qmd/algorithms-product.html#sec-alg-prod-cj" style="color: green">Algorithms, Product &gt;&gt; Customer Journey</a> and <a href="https://ercbk.github.io/Data-Science-Notebook/qmd/algorithms-product.html#sec-alg-prod-convfun" style="color: green">Conversion Funnel</a></li>
 </ul></li>
 <li>Typical e-commerce user conversion rate can be benchmarked at around <a href="https://www.bigcommerce.com/articles/ecommerce/conversion-rate-optimization/">2.5–3%</a> in a regular business as usual time.</li>
+<li>When implementing user journey data collection, less is more. The temptation may be to instrument every page and every button in a product, but this can often be onerous for engineering to implement and difficult to maintain.
+<ul>
+<li>Start with just a beginning and end event — these two events will allow you to calculate a conversion rate and a time to convert.</li>
+<li>Expand beyond two events to only include critical steps in a user journey. Ensure that events capture user segments such as device, operating system and location.</li>
+</ul></li>
 </ul></li>
 <li><u>Benefits</u>
 <ul>
@@ -686,8 +722,8 @@ ul.task-list li input[type="checkbox"] {
 </ul></li>
 </ul>
 </section>
-<section id="sec-proddev-sopd" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="sec-proddev-sopd">Stages of Product Development</h2>
+<section id="sec-proddev-gen-sopd" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="sec-proddev-gen-sopd">Stages of Product Development</h2>
 <ul>
 <li><u>Stage 1</u>: Coming up with initial product ideas.</li>
 <li><u>Stage 2</u>: Selecting ideas:
@@ -707,9 +743,10 @@ ul.task-list li input[type="checkbox"] {
 </ul></li>
 </ul>
 </section>
-<section id="sec-proddev-wdplas" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="sec-proddev-wdplas">Why Do People Leave and Stay?</h2>
+<section id="sec-proddev-gen-churn" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="sec-proddev-gen-churn">Churn Analysis</h2>
 <ul>
+<li>See <a href="https://ercbk.github.io/Data-Science-Notebook/qmd/algorithms-marketing.html#sec-alg-mark-churn" style="color: green">Algorithms, Marketing &gt;&gt; Churn</a></li>
 <li>Might need to be answered by user research and experiments instead of user analytics data</li>
 <li>Collaborate with the UX research team to help design the surveys and interviews, and generate insights</li>
 <li>Collaborate with the engineers to design experiments and analyze results</li>
@@ -731,16 +768,16 @@ ul.task-list li input[type="checkbox"] {
 </ul></li>
 </ul>
 </section>
-<section id="sec-proddev-fdbk" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="sec-proddev-fdbk">Feedback</h2>
-<section id="sec-proddev-fdbk-misc" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="sec-proddev-fdbk-misc">Misc</h3>
+<section id="sec-proddev-gen-fdbk" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="sec-proddev-gen-fdbk">Feedback</h2>
+<section id="sec-proddev-gen-fdbk-misc" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="sec-proddev-gen-fdbk-misc">Misc</h3>
 <ul>
 <li>Before even touching any of the data, ask yourself some <strong>user privacy questions</strong>: do we have good reason to be looking at the user data? Would we be violating any user privacy? In modern technology, user privacy is at the forefront so this should always be your first thought.</li>
 </ul>
 </section>
-<section id="sec-proddev-fdbk-types" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="sec-proddev-fdbk-types">Types</h3>
+<section id="sec-proddev-gen-fdbk-types" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="sec-proddev-gen-fdbk-types">Types</h3>
 <ul>
 <li><u>In-product bug reporting</u>: Many products give users a way to leave feedback if the system crashes or they navigate somewhere unexpected.</li>
 <li><u>In-product feedback</u>: Products can ask for more general feedback in specific locations or always give users an option in site menus.</li>
@@ -749,31 +786,31 @@ ul.task-list li input[type="checkbox"] {
 <li><u>User research</u>: Companies can actively seek user feedback through user research which often includes recruiting individuals and asking questions directly.</li>
 </ul>
 </section>
-<section id="sec-proddev-fdbk-potins" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="sec-proddev-fdbk-potins">Potential Insights</h3>
+<section id="sec-proddev-gen-fdbk-potins" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="sec-proddev-gen-fdbk-potins">Potential Insights</h3>
 <ul>
 <li><u>Inform product direction</u>: If users are consistently asking for a specific feature or requesting you to add more types of content, then the product may very well benefit from following their advice.</li>
 <li><u>Identify bugs</u>: When something goes wrong, users are often happy to complain about it. Monitoring user feedback is a great way to get quick insights into potential problems with your product.</li>
 <li><u>Understand product sentiment</u>: Product teams will often ask themselves, how are we doing? There are many ways to answer this question including benchmarking against similar products and looking at retention metrics, but an equally effective method is to understand product sentiment through user feedback. This can help you know when you may need to invest more in building a better product, or if you can go heavily into marketing spend.</li>
 </ul>
 </section>
-<section id="sec-proddev-fdbk-iss" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="sec-proddev-fdbk-iss">Issues</h3>
+<section id="sec-proddev-gen-fdbk-iss" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="sec-proddev-gen-fdbk-iss">Issues</h3>
 <ul>
 <li><u>User feedback is typically biased</u>: If people are unhappy with something, then more likely to shout about it, then if they’re not fussed by it. This can lead to the feedback you actually receive being weighted heavily to the extremities, both users complaining about negative experiences and also those strong advocates who loved your product. There’s no silver bullet for dealing with this, so it’s important that all analyses done be caveated with this.</li>
 <li><u>User feedback is noisy</u>: Feedback comes from people, and people have very different circumstances when coming into contact with your product. A feature might be loved by one user and hated by the next. To this end, it’s important to try to get as much data as possible, and from different sources. Another important approach is to look deeper than the averages, rather than just the mean, look at the actual distribution of reviews — are there a few people with very negative ratings changing the average?</li>
 </ul>
 </section>
-<section id="sec-proddev-fdbk-dsout" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="sec-proddev-fdbk-dsout">DS Outputs</h3>
+<section id="sec-proddev-gen-fdbk-dsout" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="sec-proddev-gen-fdbk-dsout">DS Outputs</h3>
 <ul>
 <li><u>Self-service dashboards</u>: Users across a company can use the dashboard to get insights on feedback.</li>
 <li><u>Regular reporting</u>: Having a good understanding of the feedback data can lead to automatic generation of reports which can drastically reduce the time to actually understand feedback and get insights out of it.</li>
 <li><u>Scalable datasets</u>: Datasets which can be used by employees across the company.</li>
 </ul>
 </section>
-<section id="sec-proddev-fdbk-eda" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="sec-proddev-fdbk-eda">EDA/Processing</h3>
+<section id="sec-proddev-gen-fdbk-eda" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="sec-proddev-gen-fdbk-eda">EDA/Processing</h3>
 <ul>
 <li>For your product area, <u>identify the keyword/s</u> that users are likely to use, for example if you’re running a clothing e-commerce store, they might be: “fit”, “style”, “expensive”, “ugly”, etc. Try to keep the total number to less than ten.</li>
 <li>Sample at least 100 pieces of feedback from the total population and do a simple <u>text match with the terms</u> identified in the step above.</li>
@@ -783,15 +820,15 @@ ul.task-list li input[type="checkbox"] {
 <li><u>Check the volume is high enough to be useful</u>. You should aim to find a few hundred reports per day in order to get meaningful feedback. Of course, you can work with fewer if that’s all you have, but it will be harder to detect quick changes.</li>
 </ul>
 </section>
-<section id="sec-proddev-fdbk-mod" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="sec-proddev-fdbk-mod">Modeling</h3>
+<section id="sec-proddev-gen-fdbk-mod" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="sec-proddev-gen-fdbk-mod">Modeling</h3>
 <ul>
 <li>Perform <u>sentiment analysis</u> to understand if users are positive or negative towards your product.</li>
 <li>Run <u>topic modeling</u> algorithms to have a more flexible understanding of the topics users are giving feedback on.</li>
 </ul>
 </section>
-<section id="sec-proddev-fdbk-trkmet" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="sec-proddev-fdbk-trkmet">Track Metrics</h3>
+<section id="sec-proddev-gen-fdbk-trkmet" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="sec-proddev-gen-fdbk-trkmet">Track Metrics</h3>
 <ul>
 <li>This should include taking the analyses completed above and <u>making timeseries to add to dashboards</u>.</li>
 <li>Set up <u>anomaly detection</u> to be alerted if there are significant movements in the metric. This can be simple percentage movements in the key metrics that you identified above in the understand and modelling phases, or you can use more sophisticated algorithms.</li>
@@ -799,10 +836,16 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 </section>
 </section>
-<section id="sec-proddev-metrics" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="sec-proddev-metrics">Metrics</h2>
-<section id="sec-proddev-metrics-types" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="sec-proddev-metrics-types">Types</h3>
+<section id="sec-proddev-gen-metrics" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="sec-proddev-gen-metrics">Metrics</h2>
+<section id="sec-proddev-gen-metrics-misc" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="sec-proddev-gen-metrics-misc">Misc</h3>
+<ul>
+<li>Also see <a href="../qmd/product-development-kpis.html#sec-proddev-kpis" style="color: green">Product Development, KPIs</a></li>
+</ul>
+</section>
+<section id="sec-proddev-gen-metrics-types" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="sec-proddev-gen-metrics-types">Types</h3>
 <ul>
 <li>Success</li>
 <li>Guardrail</li>
@@ -812,8 +855,8 @@ ul.task-list li input[type="checkbox"] {
 <li>Platform</li>
 </ul>
 </section>
-<section id="sec-proddev-metrics-succ" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="sec-proddev-metrics-succ">Success Metrics</h3>
+<section id="sec-proddev-gen-metrics-succ" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="sec-proddev-gen-metrics-succ">Success Metrics</h3>
 <ul>
 <li>Sometimes called a “north star metric” or “primary metric” or “OKR metric”) are used to measure the success or health of a product. Commonly used (daily/monthly) success metrics include:
 <ul>
@@ -825,8 +868,8 @@ ul.task-list li input[type="checkbox"] {
 </ul></li>
 </ul>
 </section>
-<section id="sec-proddev-metrics-grdrl" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="sec-proddev-metrics-grdrl">Guardrail Metrics</h3>
+<section id="sec-proddev-gen-metrics-grdrl" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="sec-proddev-gen-metrics-grdrl">Guardrail Metrics</h3>
 <ul>
 <li>Measures core quantities that should not degrade in pursuit of a new product or feature. Success metrics of other core product teams can sometimes also serve as guardrail metrics. Examples can include:
 <ul>
@@ -836,8 +879,8 @@ ul.task-list li input[type="checkbox"] {
 </ul></li>
 </ul>
 </section>
-<section id="sec-proddev-metrics-funmet" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="sec-proddev-metrics-funmet">Funnel Metrics</h3>
+<section id="sec-proddev-gen-metrics-funmet" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="sec-proddev-gen-metrics-funmet">Funnel Metrics</h3>
 <ul>
 <li>Any family of metrics that tracks the “user journey” through various parts of a product.</li>
 <li><u>AARRR growth metrics</u> (see below for details: A user who is activated must have been acquired (through some channel or organically); a user who generates revenue must have been previously activated.</li>
@@ -905,8 +948,8 @@ ul.task-list li input[type="checkbox"] {
 </ul></li>
 </ul>
 </section>
-<section id="sec-proddev-metrics-io" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="sec-proddev-metrics-io">Input-Output Metrics</h3>
+<section id="sec-proddev-gen-metrics-io" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="sec-proddev-gen-metrics-io">Input-Output Metrics</h3>
 <ul>
 <li>Input / Driver Metrics: Metrics that track the activities / resources used to work towards an outcome.</li>
 <li>Output metrics: Metrics that demonstrate the outcome of an initiative.</li>
@@ -927,7 +970,7 @@ ul.task-list li input[type="checkbox"] {
 </ul></li>
 <li><span class="ribbon-highlight">Example</span>: Fraud Detection
 <ul>
-<li>Also see <a href="../qmd/product-development.html#sec-proddev-metrics-rarra-plat" style="color: green">Platform Metrics</a></li>
+<li>Also see <a href="../qmd/product-development-general.html#sec-proddev-gen-metrics-rarra-plat" style="color: green">Platform Metrics</a></li>
 <li>Input metrics
 <ul>
 <li>True / False Positive Rates of
@@ -955,14 +998,14 @@ ul.task-list li input[type="checkbox"] {
 </ul></li>
 </ul>
 </section>
-<section id="sec-proddev-metrics-growth" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="sec-proddev-metrics-growth">Growth Metrics (AARRR)</h3>
+<section id="sec-proddev-gen-metrics-growth" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="sec-proddev-gen-metrics-growth">Growth Metrics (AARRR)</h3>
 <ul>
 <li>Are responsible for enlarging a product’s user base and keeping current users engaged</li>
-<li>Also see KPIs &gt;&gt; Product Metrics &gt;&gt; AARRR</li>
+<li>Also see <a href="../qmd/product-development-kpis.html#sec-kpis-prod-aarrr" style="color: green">Product Development, KPIs &gt;&gt; Product Metrics &gt;&gt; AARRR</a></li>
 </ul>
-<section id="sec-proddev-metrics-growth-aarrr" class="level4 unnumbered">
-<h4 class="unnumbered anchored" data-anchor-id="sec-proddev-metrics-growth-aarrr">AARRR</h4>
+<section id="sec-proddev-gen-metrics-growth-aarrr" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="sec-proddev-gen-metrics-growth-aarrr">AARRR</h4>
 <ul>
 <li><u>Acquisition</u>: Getting customers to sign up for a website or product, which requires driving product awareness (often known as “top of funnel”).</li>
 <li><u>Activation</u>: Getting customers to gain basic familiarity with the product, and appreciating the basic product value.</li>
@@ -971,8 +1014,8 @@ ul.task-list li input[type="checkbox"] {
 <li><u>Revenue</u>: Getting customers to adopt one or more paid features that generate revenue for the company; also known as Monetization.</li>
 </ul>
 </section>
-<section id="sec-proddev-metrics-growth-conc" class="level4 unnumbered">
-<h4 class="unnumbered anchored" data-anchor-id="sec-proddev-metrics-growth-conc">Concepts</h4>
+<section id="sec-proddev-gen-metrics-growth-conc" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="sec-proddev-gen-metrics-growth-conc">Concepts</h4>
 <ul>
 <li><u>Tradeoffs Between Acquisition and Revenue</u>
 <ul>
@@ -1016,8 +1059,8 @@ ul.task-list li input[type="checkbox"] {
 </ul></li>
 </ul>
 </section>
-<section id="sec-proddev-metrics-growth-pua" class="level4 unnumbered">
-<h4 class="unnumbered anchored" data-anchor-id="sec-proddev-metrics-growth-pua">Power User Analysis</h4>
+<section id="sec-proddev-gen-metrics-growth-pua" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="sec-proddev-gen-metrics-growth-pua">Power User Analysis</h4>
 <ul>
 <li><u>Questions</u>
 <ul>
@@ -1086,8 +1129,8 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 </section>
 </section>
-<section id="sec-proddev-metrics-rarra" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="sec-proddev-metrics-rarra">RARRA</h3>
+<section id="sec-proddev-gen-metrics-rarra" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="sec-proddev-gen-metrics-rarra">RARRA</h3>
 <p><a href="./_resources/Product_Development.resources/1aihm6-T1GIPS5VDZxjq7Xw.png" class="lightbox" data-gallery="quarto-lightbox-gallery-11"><img src="./_resources/Product_Development.resources/1aihm6-T1GIPS5VDZxjq7Xw.png" class="img-fluid" width="532"></a></p>
 <ul>
 <li>AARRR focuses too much on Acquisition even though Retention is more important, especially for many internet products that struggle to retain people.</li>
@@ -1098,8 +1141,8 @@ ul.task-list li input[type="checkbox"] {
 <li>User retention is more directly connected to revenue than acquisition.</li>
 </ul></li>
 </ul>
-<section id="sec-proddev-metrics-rarra-plat" class="level4 unnumbered">
-<h4 class="unnumbered anchored" data-anchor-id="sec-proddev-metrics-rarra-plat">Platform Metrics</h4>
+<section id="sec-proddev-gen-metrics-rarra-plat" class="level4 unnumbered">
+<h4 class="unnumbered anchored" data-anchor-id="sec-proddev-gen-metrics-rarra-plat">Platform Metrics</h4>
 <ul>
 <li>Departments include Customer Support, Trust and Safety, Payments, Infrastructure, Operations</li>
 <li>Many of these are indirectly related to the Growth Metrics</li>
@@ -1216,6 +1259,24 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -1250,7 +1311,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
     });
   }
   const xrefs = window.document.querySelectorAll('a.quarto-xref');
@@ -1526,13 +1591,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../qmd/politics.html" class="pagination-link  aria-label=" politics"="">
+      <a href="../qmd/politics.html" class="pagination-link" aria-label="Politics">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Politics</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../qmd/real-estate.html" class="pagination-link" aria-label="Real Estate">
-        <span class="nav-page-text">Real Estate</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../qmd/product-development-kpis.html" class="pagination-link" aria-label="KPIs">
+        <span class="nav-page-text">KPIs</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -1556,7 +1621,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","loop":false,"descPosition":"bottom","selector":".lightbox","closeEffect":"zoom"});
+<script>var lightboxQuarto = GLightbox({"selector":".lightbox","openEffect":"zoom","loop":false,"descPosition":"bottom","closeEffect":"zoom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;
