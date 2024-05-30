@@ -1,6 +1,6 @@
-# Retail  {#sec-retail .unnumbered}
+# Retail {#sec-retail .unnumbered}
 
-## Misc  {#sec-retail-misc .unnumbered}
+## Misc {#sec-retail-misc .unnumbered}
 
 -   DS Use Cases (intermediate level - data needs to be centralized and not siloed)
     -   Demand forecasting models for optimizing the stock levels.
@@ -27,15 +27,15 @@
             -   This area will not have any support from a brick-and-mortar perspective to help in your acquisition efforts
         -   Look at trends over time to get a sense of the relative importance of this store's area to the overall chain and whether you should build a digitally supported strategy to offset the loss of acquiring new customers at a fraction of your cost of operating a retail store at that location
 
-## Lead Scoring  {#sec-retail-lscore .unnumbered}
+## Lead Scoring {#sec-retail-lscore .unnumbered}
 
 -   Also see
-    -   [Algorithms, Marketing  \>\> Propensity Model](https://ercbk.github.io/Data-Science-Notebook/qmd/algorithms-marketing.html#sec-alg-mark-prop){style="color: green"} and [Uplift Score Model](https://ercbk.github.io/Data-Science-Notebook/qmd/algorithms-marketing.html#sec-alg-mark-uplift){style="color: green"}
+    -   [Algorithms, Marketing \>\> Propensity Model](https://ercbk.github.io/Data-Science-Notebook/qmd/algorithms-marketing.html#sec-alg-mark-prop){style="color: green"} and [Uplift Score Model](https://ercbk.github.io/Data-Science-Notebook/qmd/algorithms-marketing.html#sec-alg-mark-uplift){style="color: green"}
 -   Use case: identify customer cohorts that are unlikely to become paying customers and eliminate the low efficient outreach
 -   Map User Journey
-    -   Also see [Marketing  \>\> Customer Journey](marketing.qmd#sec-mark-custjourn){style="color: green"}
-    -   [Example]{.ribbon-highlight}: B2B  
-        ![](./_resources/Retail.resources/image.png)
+    -   Also see [Marketing \>\> Customer Journey](marketing.qmd#sec-mark-custjourn){style="color: green"}
+    -   [Example]{.ribbon-highlight}: B2B\
+        ![](./_resources/Retail.resources/image.png){.lightbox width="632"}
 -   Questions
     -   Find customer's last touchpoint before conversion
         -   e.g. Proof of concept in B2B
@@ -52,7 +52,7 @@
     -   If you have enough data, model conversion rate \~ predictors (beta regression?) or convert/no covert \~ predictors (logistic regression, ML, DL)
     -   Otherwise, weight cohorts by their correlations with conversion
 
-## Catchment  {#sec-retail-catch .unnumbered}
+## Catchment {#sec-retail-catch .unnumbered}
 
 -   Refers to the sphere of influence from which a retail location, such as a shopping center, or service, such as a hospital, is likely to draw its customers.
 -   Major considerations -- supply factors, market demand factors, drive time from customers, transportation access (e.g. interstate) and consumer interactions
@@ -63,7 +63,7 @@
 -   Measuring the amount of competition in the given catchment area is useful
 -   Catchment areas might overlap.
 
-## Store Network  {#sec-retail-stnet .unnumbered}
+## Store Network {#sec-retail-stnet .unnumbered}
 
 -   Understanding how stores are connected beyond a catchment area is essential to make smarter optimization decisions (i.e. closing or opening stores).
 -   Steps

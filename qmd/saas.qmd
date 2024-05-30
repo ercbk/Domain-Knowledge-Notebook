@@ -5,6 +5,9 @@
 -   Notes from
     -   [Meaningful metrics: How data sharpened the focus of product teams](https://blog.duolingo.com/growth-model-duolingo/)
     -   [Open Source does not win by being cheaper](https://github.com/getlago/lago/wiki/Open-Source-does-not-win-by-being-cheaper)
+-   Resources
+    -   [SaaS Growth Metrics](https://www.wallstreetprep.com/knowledge/monthly-recurring-revenue-mrr/)
+    -   [What Is Monthly Recurring Revenue (MRR) and How Can It Help You Understand Business Health?](https://www.salesforce.com/blog/monthly-recurring-revenue/)
 -   Open-Source solutions are great when a transparency problem is present
     -   SaaS tools need to process sensitive client data such as IP addresses, names, session recordings, etc., and in a world of increasing data regulations (e.g., GDPR and CCPA), it can be daunting for third parties to store that data.
     -   Example: PostHog
@@ -20,6 +23,39 @@
     -   Most open-source solutions aren't replacing a top-three line item, and therefore price isn't the north star deciding factor.
 -   MongoDB eventually switched to a special SSPL license to add specific restrictions on Cloud Providers from distributing a service without contributing to the project, which isn't OSI approved, but is open-source practically).
     -   But why make this point? Well, splitting the hair between profit and usage is important to measuring long-term success. If a project gets great adoption but cannot drive revenue, it will die.
+
+## Metrics {#sec-saas-metrics .unnumbered}
+
+-   **Monthly Recurring Revenue (MRR)**\
+    $$
+    \mbox{MRR} = \mbox{Number of Active Accounts} \times \mbox{ARPA}
+    $$
+    -   The normalized, predictable revenue that is generated from active accounts on subscription-based payment plans on a monthly basis.
+    -   $\mbox{ARPA}$: Average Revenue per (Active) Account
+    -   Each metric must be scaled to a per month basis:
+        -   Quarterly Contract → Divide by 3
+        -   Semi-Annual → Divide by 6
+        -   Annual → Divide by 12
+    -   One-Time payments are not recurring and should not be included in the MRR calculation.
+-   **Net New Monthly Recurring Revenue (Net New MRR)**\
+    $$
+    \mbox{Net New MRR} = \mbox{New MRR} + \mbox{New MRR Expansion} + \mbox{Reactivation MRR} − \mbox{MRR Churn}
+    $$
+    -   An adjusted MRR that is inclusive of both gains and losses
+
+    -   $\mbox{New MRR}$: Incremental MRR from New Customers Acquisitions
+
+    -   $\mbox{New MRR Expansion}$: Additional MRR from Existing Customers (e.g. Upgrades, Upselling, Cross-Selling)\
+
+        $$
+        \mbox{Number of Customers Who Upgraded} \times \mbox{Difference in Monthly Subscription Fees Before and After Upgrade}
+        $$
+
+    -   $\mbox{MRR Churn}$: Lost MRR from Cancellations or Downgrades\
+
+        $$
+        \mbox{Number of Customers Churned} \times \mbox{Average Monthly Subscription Fee per Customer}
+        $$
 
 ## User Segmentation {#sec-saas-userseg .unnumbered}
 

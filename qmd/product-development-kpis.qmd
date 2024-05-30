@@ -45,7 +45,7 @@
         -   Start building this capability early in a product and company’s lifecycle because it is more difficult to implement than a set of metrics. Product, engineering and data teams should be involved in the experiment design.
             -   \* This should remain a fundamental part of analytics throughout the rest of the product lifecycle. \*
         -   See [Experiments, A/B Testing](https://ercbk.github.io/Data-Science-Notebook/qmd/experiments-a_b-testing.html){style="color: green"}
-    -   **‘Aha’ Analysis**: What is the moment that causes a step-change in a users retention and stickiness?
+    -   **‘Aha’ Analysis**: What is the moment that causes a step-change in a users retention and stickiness? (Also see [article](https://medium.com/parsa-vc/how-to-discover-your-apps-aha-moment-5f75dd7b6536))
         -   e.g. A combination of user journey analysis, experimentation and product-market-fit metrics.
         -   These are the key interactions where users realize the product’s value which leads to loyalty.
         -   Facebook’s 8 friends in 10 days was their users ‘aha’ moment.
@@ -61,7 +61,10 @@
 -   Example Metrics: Customer Acquisition Cost (CAC), Customer Lifetime Value (CLV), CLV:CAC Ratio, Monthly Recurring Revenue (MRR).
     -   Marketing and Go-to-Market (?) Teams typically own CAC reduction
     -   Product Teams typically own CLV and MRR improvement
-        -   See [Algorithms, Marketing \>\> Customer Lifetime Value (CLV)](algorithms-marketing.html#sec-alg-mark-clv){style="color: green"}
+    -   See
+        -   [Marketing \>\> Metrics](marketing.qmd#sec-mark-metrics){style="color: green"} \>\> Customer Acquistion Cost (CAC)
+        -   [SaaS \>\> Metrics](saas.qmd#sec-saas-metrics){style="color: green"} \>\> MRR and Net New MRR
+        -   [Algorithms, Marketing \>\> Customer Lifetime Value (CLV)](algorithms-marketing.html#sec-alg-mark-clv){style="color: green"}
 -   Potential Strategies
     -   Optimizing advertising spend
     -   Reducing time to close sales deals through to cross-selling and bundling products for existing users.
@@ -89,6 +92,7 @@
         -   e.g. Quarterly Business Reviews, Issue Driver Trees.
         -   Uncovering drivers of key metrics can provide confidence in product changes that are costly to implement and can help untangle the interdependent measures across the product ecosystem.
         -   Also, perform deep dives delving into specific problem areas within a mature product.
+        -   See [KPIs \>\> Driver Trees](kpis.qmd#sec-kpis-dtree){style="color: green"}
 
 ## Product Metrics {#sec-proddev-kpis-prod .unnumbered}
 

@@ -162,6 +162,27 @@
 
 -   Conversion Rates, Bounce Rates, and Average Basket Sizes
 
+-   **Customer Acquistion Cost (CAC)**\
+    $$
+    \mbox{CAC} = \frac{\mbox{Sales and Marketing Expenses}}{\mbox{Number of New Customers Acquired}}
+    $$
+
+    -   Common Expenses
+
+        -   Employee Salaries (i.e. Sales and Marketing Team)
+
+        -   Ad Spend and Marketing Campaigns (e.g. Social Media Ad Placements, Commercials, Billboard Advertising)
+
+        -   Creative Costs and Production Costs (e.g. Affiliate Marketing, Editing Software)
+
+        -   Technical Tools (e.g. CRM Software)
+
+        -   Content Creation and Digital Marketing (e.g. SEO, SEM)
+
+        -   In-Person Events (e.g. Hosted Events, Trade Shows, Travel Expenses)
+
+        -   Third-Party Professional Services (e.g. Strategy Consulting Fees)
+
 -   **Return on Ad Spend** **(ROAS)**
 
     $$

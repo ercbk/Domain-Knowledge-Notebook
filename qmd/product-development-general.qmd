@@ -3,6 +3,8 @@
 ## Misc {#sec-proddev-gen-misc .unnumbered}
 
 -   Also see [Decision Intelligence \>\> Conjoint Analysis](https://ercbk.github.io/Data-Science-Notebook/qmd/decision-intelligence.html#sec-decint-conjanal){style="color: green"} for surveying consumers about product attributes to calculate attribute utilities and probability of purchase
+-   Load speed affects conversion ([Google article](https://developers.google.com/web/fundamentals/performance/why-performance-matters))
+    -   [Google Lighthouse Scores](https://developer.chrome.com/docs/lighthouse) - Measure performance, accessibility, coding practices, and SEO.
 -   Flaws of Purchase-Funnel Based Attribution Metrics
     -   Notes from [The Causal Analysis of Cannibalization in Online Products](https://codeascraft.com/2020/02/24/the-causal-analysis-of-cannibalization-in-online-products/)
     -   Users usually take more complicated journeys than a heuristically-defined purchase-funnel can capture.
