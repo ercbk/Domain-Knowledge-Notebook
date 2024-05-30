@@ -42,6 +42,9 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -378,7 +381,7 @@ window.Quarto = {
   <li><a href="#sec-kpis-misc" id="toc-sec-kpis-misc" class="nav-link active" data-scroll-target="#sec-kpis-misc">Misc</a></li>
   <li><a href="#sec-kpis-terms" id="toc-sec-kpis-terms" class="nav-link" data-scroll-target="#sec-kpis-terms">Terms</a></li>
   <li><a href="#sec-kpis-gen" id="toc-sec-kpis-gen" class="nav-link" data-scroll-target="#sec-kpis-gen">General</a></li>
-  <li><a href="#driver-trees" id="toc-driver-trees" class="nav-link" data-scroll-target="#driver-trees">Driver Trees</a></li>
+  <li><a href="#sec-kpis-dtree" id="toc-sec-kpis-dtree" class="nav-link" data-scroll-target="#sec-kpis-dtree">Driver Trees</a></li>
   </ul>
 </nav>
     </div>
@@ -541,13 +544,110 @@ window.Quarto = {
 </ul></li>
 </ul>
 </section>
-<section id="driver-trees" class="level2">
-<h2 class="anchored" data-anchor-id="driver-trees">Driver Trees</h2>
+<section id="sec-kpis-dtree" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="sec-kpis-dtree">Driver Trees</h2>
+<p><a href="_resources/KPIs.resources/driver-tree-1.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="_resources/KPIs.resources/driver-tree-1.jpg" class="img-fluid" width="332"></a></p>
+<ul>
+<li><u>Description</u>
 <ul>
 <li>AKA KPI Tree</li>
-<li>It’s a map of how different metrics and levers in an organisation fit together.
+<li>It’s a map of how different metrics and levers in an organization fit together.
 <ul>
 <li>On the far left, you have an overarching metric you want to drive. This is the ultimate goal you want all the teams to be working towards (e.g.&nbsp;North Star metric).</li>
+<li>As you move to the right, you become more granular in terms of <strong>how</strong> you want to achieve that goal. Each branch gives you an indicator of the component parts that make up the “<strong>what”</strong> above them.</li>
+<li>The compounding effect of all the smaller actions rollup to the driver above</li>
+</ul></li>
+<li>Use Cases
+<ul>
+<li>Helps to breakdown the complex nature of your business and help everyone understand how the overarching pieces fit together.
+<ul>
+<li>What is the business model?</li>
+<li>How do we generate revenue?</li>
+<li>Where do our costs go?</li>
+</ul></li>
+<li>Fosters alignment across teams, by bridging the gap between customer behaviour, product metrics, and company goals
+<ul>
+<li>The tree is a reference point for conversations between departments and with different stakeholders. A well-built tree means all these discussions will become more outcome oriented.</li>
+</ul></li>
+<li>Creates understanding about whether you’re making progress toward your goals and tracking the right things. It connects what you’re tracking to your strategy.
+<ul>
+<li>Gives you a clear idea of success and can measure progress in a meaningful way</li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><u>Misc</u>
+<ul>
+<li>Notes from
+<ul>
+<li><a href="https://medium.com/swlh/driver-trees-a-tool-to-make-your-teams-more-successful-88f751e86482">Driver Trees — How and Why to use them to Improve your Business</a></li>
+<li><a href="https://www.petra-wille.com/blog/kpi-trees-how-to-bridge-the-gap-between-customer-behavior-product-metrics-and-company-goals">KPI Trees: How to Bridge the Gap Between Customer Behavior, Product Metrics, and Company Goals</a></li>
+</ul></li>
+</ul></li>
+<li><u>Tips</u>
+<ul>
+<li><em>Overlap</em> is fine. During this process, you’ll find that some metrics and indicators could appear in multiple locations. Although you should aim to minimise overlap, it’s not a major issue. The Driver Tree is a way of abstracting complexity and does not have to be a perfect representation.</li>
+<li>Aim to use <em>metrics</em> as the individual drivers (blocks). This makes each element much more specific and helps you understand what impact you’re actually having. The tree will likely include a combination of business (revenue, cost), departmental (Email Open Rate, Ticket Response Time) and technical (% of API 500 Errors) metrics.
+<ul>
+<li>If you’re stuck, it helps to think of your problem as a math equation. Start with one metric and then think of the inputs used to calculate it. (See Example 2)</li>
+</ul></li>
+<li>The core of the tree can be developed by a smaller team with a good and broad understanding of how the business works. After the finishing the core, various parts of the core tree should be <em>sent out to the appropriate departments/teams</em>, so that the tree can be extended further.
+<ul>
+<li>Senior Leadership should be involved to facilitate connections</li>
+<li>When there is a natural overlap of different teams, involve them together. This allows a sharing of ideas, perspectives and contexts which the driver tree aims to capture.</li>
+</ul></li>
+<li>Driver trees can and should be created for projects and not just for the whole organization. In these cases, the trees don’t have to be large or complete. Certain branches can remain incomplete if they aren’t the focus of the project.</li>
+<li>The first draft of your tree will include metrics you know are important and some you assume are important. As part of your Product Development, you will spend time <em>validating</em> (or <em>invalidating</em> them). You don’t have to get it right the first time.</li>
+<li>Make it <em>accessible</em> in your knowledge management tool for anyone in the organization. Have the teams post physical copies of it in their work areas and reference it in their planning and alignment sessions.
+<ul>
+<li>Include it in the onboarding process.</li>
+</ul></li>
+<li>The driver tree should be <em>updated</em> as the business continues to evolve.
+<ul>
+<li>Make sure to do so any time your strategy changes, your goals or objective change, you make a bigger discovery revelation, or when you find something in your tree is wrong (particularly with metrics that are a hypothesis).</li>
+<li>Create a regular checkpoint to revisit your tree, e.g.&nbsp;once a quarter.&nbsp;</li>
+</ul></li>
+</ul></li>
+<li>First Draft
+<ul>
+<li>Get all your ideas onto a physical or virtual whiteboard (e.g.&nbsp;<a href="https://miro.com/">Miro</a>, <a href="https://www.mural.co/">Mural</a> and <a href="https://whimsical.com/">Whimsical</a>).</li>
+<li>Put the metrics you have on Post-its and do a whiteboard session to discuss hierarchy and weight.</li>
+<li>Once you’ve started filling out your tree, take time to reflect and minimize overlaps or gaps between branches, where possible.</li>
+<li>Use a dotted line if you have a hypothesis but you need to learn more about the connection to verify if the correlation exists.&nbsp;</li>
+<li>Use a solid line if you are certain that one KPI influences or drives another KPI in a particular way.</li>
+<li>Make sure to share early drafts of your tree and regularly ask for feedback</li>
+</ul></li>
+<li>Options
+<ul>
+<li>Color Coding Metrics
+<ul>
+<li>Is the metric trusted and available for self service? (e.g.&nbsp;can you look it up on a dashboard whenever you want?)</li>
+<li>Is the metric verified but not available for self service? (e.g.&nbsp;it’s reliable but you need someone else to look it up for you)</li>
+<li>Is the metric not tracked or not available?</li>
+<li>Is the metric unverified or unreliable?</li>
+</ul></li>
+<li>Lable lines in some way to indicate the strength of the relationship between metrics. (effect size or association?)</li>
+</ul></li>
+<li><span class="ribbon-highlight">Example 1</span>: Conversion Rate (CVR)
+<ul>
+<li><p>Start by adding anything you know (or strongly suspect) that affects conversion rate</p>
+<p><a href="_resources/KPIs.resources/ex-cvr-1.webp" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="_resources/KPIs.resources/ex-cvr-1.webp" class="img-fluid" width="532"></a></p>
+<ul>
+<li>See <a href="../qmd/product-development-general.html#sec-proddev-gen-misc" style="color: green">Product Development, General &gt;&gt; Misc</a> for details on Lighthouse Score and how webpage load speed affects conversion.</li>
+<li>Then, drill-down as far as you can for each subcomponent.</li>
+</ul></li>
+<li><p>Continue to expand and drill-down<br>
+<a href="_resources/KPIs.resources/ex-cvr-2.webp" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="_resources/KPIs.resources/ex-cvr-2.webp" class="img-fluid" width="532"></a></p>
+<ul>
+<li>The other components are Google Analytics metrics</li>
+<li>The “Micro Funnel” is some kind of portal where the user enters an email address.</li>
+</ul></li>
+</ul></li>
+<li><span class="ribbon-highlight">Example 2</span>: Monthly Active Users (MAU)<br>
+<a href="_resources/KPIs.resources/drivertree-ex2-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="_resources/KPIs.resources/drivertree-ex2-1.png" class="img-fluid" width="532"></a>
+<ul>
+<li>The scenario is a news organizaiton building an app to gain younger viewers</li>
+<li>The plus and multiplication signs indicate the level is an equation that equals the metric above it, e.g.&nbsp;<span class="math inline">\(\mbox{MAU} = \mbox{new users} + \mbox{returning users} + \mbox{reactivated users}\)</span></li>
+<li>The dotted lines in the center branch indicate that these are hypotheses (i.e.&nbsp;they aren’t sure if they’re causal or not.)</li>
 </ul></li>
 </ul>
 
@@ -996,6 +1096,31 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","selector":".lightbox","descPosition":"bottom","loop":false,"openEffect":"zoom"});
+window.onload = () => {
+  lightboxQuarto.on('slide_before_load', (data) => {
+    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+    const href = trigger.getAttribute('href');
+    if (href !== null) {
+      const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+      if (imgEl !== null) {
+        const srcAttr = imgEl.getAttribute("src");
+        if (srcAttr && srcAttr.startsWith("data:")) {
+          slideConfig.href = srcAttr;
+        }
+      }
+    } 
+  });
+
+  lightboxQuarto.on('slide_after_load', (data) => {
+    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+    if (window.Quarto?.typesetMath) {
+      window.Quarto.typesetMath(slideNode);
+    }
+  });
+
+};
+          </script>
 
 
 

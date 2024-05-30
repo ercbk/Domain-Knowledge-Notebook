@@ -421,6 +421,10 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="unnumbered anchored" data-anchor-id="sec-proddev-gen-misc">Misc</h2>
 <ul>
 <li>Also see <a href="https://ercbk.github.io/Data-Science-Notebook/qmd/decision-intelligence.html#sec-decint-conjanal" style="color: green">Decision Intelligence &gt;&gt; Conjoint Analysis</a> for surveying consumers about product attributes to calculate attribute utilities and probability of purchase</li>
+<li>Load speed affects conversion (<a href="https://developers.google.com/web/fundamentals/performance/why-performance-matters">Google article</a>)
+<ul>
+<li><a href="https://developer.chrome.com/docs/lighthouse">Google Lighthouse Scores</a> - Measure performance, accessibility, coding practices, and SEO.</li>
+</ul></li>
 <li>Flaws of Purchase-Funnel Based Attribution Metrics
 <ul>
 <li>Notes from <a href="https://codeascraft.com/2020/02/24/the-causal-analysis-of-cannibalization-in-online-products/">The Causal Analysis of Cannibalization in Online Products</a></li>
@@ -1621,7 +1625,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","selector":".lightbox","loop":false,"descPosition":"bottom","openEffect":"zoom"});
+<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","closeEffect":"zoom","selector":".lightbox","descPosition":"bottom","loop":false});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;
