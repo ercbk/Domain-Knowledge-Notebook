@@ -304,7 +304,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../qmd/product-development-general.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Product Development</span></a>
+ <span class="menu-text">General</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -482,8 +482,11 @@ ul.task-list li input[type="checkbox"] {
 <li>Goals: increase revenue and decrease costs</li>
 <li>Example Metrics: Customer Acquisition Cost (CAC), Customer Lifetime Value (CLV), CLV:CAC Ratio, Monthly Recurring Revenue (MRR).
 <ul>
-<li>Marketing and Go-to-Market (?) Teams own CAC reduction</li>
-<li>Product Teams own CLV and MRR improvement</li>
+<li>Marketing and Go-to-Market (?) Teams typically own CAC reduction</li>
+<li>Product Teams typically own CLV and MRR improvement
+<ul>
+<li>See <a href="algorithms-marketing.html#sec-alg-mark-clv" style="color: green">Algorithms, Marketing &gt;&gt; Customer Lifetime Value (CLV)</a></li>
+</ul></li>
 </ul></li>
 <li>Potential Strategies
 <ul>
@@ -519,12 +522,13 @@ ul.task-list li input[type="checkbox"] {
 <li>e.g.&nbsp;Stickiness, Feature Usage, Transaction Volume metrics</li>
 <li>These users are the highest priority to retain, and have the product-usage behavior that would ideally be shared across all users.</li>
 <li>Deploy measures, such as loyalty programs, to retain these users and identify pathways to increase the number of power users.</li>
+<li>See <a href="product-development-general.qmdproduct-development-general.html#sec-proddev-gen-metrics-growth-pua" style="color: green">Product Development, General &gt;&gt; Metrics &gt;&gt; Growth Metrics &gt;&gt; Power User Analysis</a></li>
 </ul></li>
 <li><strong>Root Cause Analysis:</strong> What are the root cause drivers of key metrics?
 <ul>
 <li>e.g.&nbsp;Quarterly Business Reviews, Issue Driver Trees.</li>
 <li>Uncovering drivers of key metrics can provide confidence in product changes that are costly to implement and can help untangle the interdependent measures across the product ecosystem.</li>
-<li>Perform bespoke deep dives delving into specific problem areas within a mature product.</li>
+<li>Also, perform deep dives delving into specific problem areas within a mature product.</li>
 </ul></li>
 </ul></li>
 </ul>
@@ -1129,8 +1133,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../qmd/product-development-general.html" class="pagination-link" aria-label="Product Development">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Product Development</span>
+      <a href="../qmd/product-development-general.html" class="pagination-link" aria-label="General">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">General</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
@@ -1159,7 +1163,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","selector":".lightbox","closeEffect":"zoom","descPosition":"bottom","loop":false});
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","selector":".lightbox","openEffect":"zoom","descPosition":"bottom","loop":false});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;
