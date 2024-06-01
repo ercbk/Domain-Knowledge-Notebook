@@ -333,7 +333,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../qmd/product-development-general.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Product Development</span></a>
+ <span class="menu-text">General</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -381,8 +381,12 @@ window.Quarto = {
   <li><a href="#sec-finance-invest-misc" id="toc-sec-finance-invest-misc" class="nav-link active" data-scroll-target="#sec-finance-invest-misc">Misc</a></li>
   <li><a href="#sec-finance-invest-consid" id="toc-sec-finance-invest-consid" class="nav-link" data-scroll-target="#sec-finance-invest-consid">Considerations</a></li>
   <li><a href="#sec-finance-invest-6040" id="toc-sec-finance-invest-6040" class="nav-link" data-scroll-target="#sec-finance-invest-6040">60/40 Portfolio Strategy</a></li>
-  <li><a href="#sec-finance-invest-momassallo" id="toc-sec-finance-invest-momassallo" class="nav-link" data-scroll-target="#sec-finance-invest-momassallo">Momentum Tactical Asset Allocation Strategy</a></li>
-  <li><a href="#dual-momentum-sector-rotation" id="toc-dual-momentum-sector-rotation" class="nav-link" data-scroll-target="#dual-momentum-sector-rotation">Dual Momentum Sector Rotation</a></li>
+  <li><a href="#sec-finance-invest-factor" id="toc-sec-finance-invest-factor" class="nav-link" data-scroll-target="#sec-finance-invest-factor">Factor-based</a></li>
+  <li><a href="#sec-finance-invest-mom" id="toc-sec-finance-invest-mom" class="nav-link" data-scroll-target="#sec-finance-invest-mom">Momentum Strategies</a>
+  <ul>
+  <li><a href="#sec-finance-invest-mom-mtaas" id="toc-sec-finance-invest-mom-mtaas" class="nav-link" data-scroll-target="#sec-finance-invest-mom-mtaas">Momentum Tactical Asset Allocation Strategy</a></li>
+  <li><a href="#sec-finance-invest-mom-dmsr" id="toc-sec-finance-invest-mom-dmsr" class="nav-link" data-scroll-target="#sec-finance-invest-mom-dmsr">Dual Momentum Sector Rotation</a></li>
+  </ul></li>
   <li><a href="#sec-finance-invest-vtp" id="toc-sec-finance-invest-vtp" class="nav-link" data-scroll-target="#sec-finance-invest-vtp">Volatility Targeting Portfolio</a></li>
   <li><a href="#sec-finance-invest-meanrev" id="toc-sec-finance-invest-meanrev" class="nav-link" data-scroll-target="#sec-finance-invest-meanrev">Mean Reversion Strategy or Pairs Trading</a></li>
   <li><a href="#sec-finance-invest-bonds" id="toc-sec-finance-invest-bonds" class="nav-link" data-scroll-target="#sec-finance-invest-bonds">Bonds</a></li>
@@ -521,7 +525,7 @@ window.Quarto = {
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <figcaption>From Machine Learning for Algorithmic Trading</figcaption>
-<p><a href="_resources/Finance.resources/ml4t_workflow-1.png" class="lightbox" data-glightbox="description: .lightbox-desc-2" data-gallery="quarto-lightbox-gallery-2" title="From Machine Learning for Algorithmic Trading"><img src="_resources/Finance.resources/ml4t_workflow-1.png" class="img-fluid figure-img" width="532" alt="From Machine Learning for Algorithmic Trading"></a></p>
+<p><a href="_resources/Finance.resources/ml4t_workflow-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" data-glightbox="description: .lightbox-desc-2" title="From Machine Learning for Algorithmic Trading"><img src="_resources/Finance.resources/ml4t_workflow-1.png" class="img-fluid figure-img" width="532" alt="From Machine Learning for Algorithmic Trading"></a></p>
 </figure>
 </div></li>
 <li><p>Any market forecasting model, especially involving short term horizons, should probably have a random walk in an ensemble. (<a href="https://www.deanmarchiori.com/posts/2024-01-04-randomshares/">Is the Market Just Random Noise?</a>)</p></li>
@@ -573,15 +577,74 @@ window.Quarto = {
 <li>More balanced implementations include&nbsp;<a href="https://www.bridgewater.com/research-and-insights/the-all-weather-story">Bridgewater’s All-Weather</a>&nbsp;portfolio and Risk Parity strategies generally, which attempt to equalize risk across assets or sources of risk premia.</li>
 </ul>
 </section>
-<section id="sec-finance-invest-momassallo" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="sec-finance-invest-momassallo">Momentum Tactical Asset Allocation Strategy</h2>
+<section id="sec-finance-invest-factor" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="sec-finance-invest-factor">Factor-based</h2>
+<ul>
+<li><u>Misc</u>
+<ul>
+<li>Todo: beta, size, and value factors</li>
+<li>Resources
+<ul>
+<li><a href="https://www.spglobal.com/spdji/en/index-family/dividends-factors/single-factor/#overview">S&amp;P Factor Indices</a></li>
+</ul></li>
+<li>Criteria for an factor To be considered for using in investments (<a href="https://alphaarchitect.com/2024/05/cross-section-of-returns/">Swedroe and Berkin</a>)
+<ul>
+<li>Must have provided a premium that was persistent across long periods and different economic regimes</li>
+<li>Pervasive across countries, regions, sectors, and even asset classes</li>
+<li>Robust to various definitions</li>
+<li>Investable (it held up after implementation costs)</li>
+<li>Intuitive (there are logical risk-based or behavioral-based explanations for the premium, providing the rationale that it should continue to exist).</li>
+</ul></li>
+</ul></li>
+<li><u>Quality</u>
+<ul>
+<li><p>Characteristics: low earnings volatility, low financial leverage, high gross profitability, high return on equity, low operating leverage, high asset turnover, low accruals (high earnings quality), low equity dilution, and low idiosyncratic stock risk.</p></li>
+<li><p>Indexes:</p>
+<ul>
+<li>MSCI
+<ul>
+<li><p><a href="https://www.msci.com/end-of-day-data-search">Index</a> - Select “Quality” from the Index Suite dropdown and either the Regional or Country tab. It gives return percentages for various year intervals.</p></li>
+<li><p>See R &gt;&gt; Documents &gt;&gt; Finance &gt;&gt; Reference &gt;&gt; MSCI_Quality_Indexes_Methodology_May2022 for further details on their methodology.</p></li>
+<li><p>Calculates their quality score for each security by averaging Z-Scores of three winsorized fundamental variables: Return on Equity, Debt to Equity and Earnings Variability.</p></li>
+<li><p>After averaging the z-scores <span class="math inline">\(Z_{\text{avg}}\)</span>, the Quality Score is determined by:</p>
+<p><span class="math display">\[
+\text{QS} =
+\left\{ \begin{array}{lcl}
+1 + Z, &amp; Z \gt 0 \\
+(1-Z)^{-1}, &amp; Z \lt 0
+\end{array}\right.
+\]</span></p></li>
+<li><p>Fundamental Variables:</p>
+<ul>
+<li><p>Return on Equity (ROE) - Shows how effectively a company uses investments to generate earnings growth</p>
+<p><span class="math display">\[
+\mbox{ROE} = \frac{\text{Trailing 12-Month Earnings per Share}}{\text{Latest Book Value per Share}}
+\]</span></p></li>
+<li><p>Debt to Equity (D/E) - Measures a company’s leverage</p>
+<p><span class="math display">\[
+\mbox{D/E} = \frac{\text{Total Debt}}{\text{Book Value}}
+\]</span></p></li>
+<li><p>Earnings Variability: The standard deviation of y-o-y earnings per share growth over the last five fiscal years. Measures how smooth earnings growth has been.</p></li>
+</ul></li>
+</ul></li>
+<li>S&amp;P
+<ul>
+<li><a href="https://www.spglobal.com/spdji/en/index-family/dividends-factors/single-factor/quality/#overview">Indices</a> categorized by market cap size</li>
+<li>Based on Return on Equity, Accruals Ratio, and Financial Leverage Ratio</li>
+<li>See R &gt;&gt; Documents &gt;&gt; Finance &gt;&gt; Reference &gt;&gt; methodology-sp-quality-indices for details on methodology</li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><u>Momentum</u></li>
+</ul>
+</section>
+<section id="sec-finance-invest-mom" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="sec-finance-invest-mom">Momentum Strategies</h2>
 <ul>
 <li>Misc
 <ul>
-<li><p><span style="color: goldenrod">{{</span><a href="https://www.quantstart.com/qstrader/tutorial-60-40-portfolio/" style="color: goldenrod">QSTrader</a><span style="color: goldenrod">}}</span></p></li>
 <li><p>Notes from</p>
 <ul>
-<li><a href="https://www.quantstart.com/articles/systematic-tactical-asset-allocation-an-introduction/">Systematic Tactical Asset Allocation: An Introduction</a> - <a href="https://www.quantstart.com/qstrader/tutorial-momentum-tactical-asset-allocation-strategy/">Tutorial</a></li>
 <li><a href="https://alphaarchitect.com/2024/04/cross-sectional-momentum/">Minimizing the Risk of Cross-Sectional Momentum Crashes</a>
 <ul>
 <li>See article for more details and links to resources</li>
@@ -601,7 +664,7 @@ window.Quarto = {
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <figcaption>High Trend Clarity</figcaption>
-<p><a href="_resources/Finance.resources/mom-high-trend-clarity-1.png" class="lightbox" data-glightbox="description: .lightbox-desc-3" data-gallery="trend-clarity" title="High Trend Clarity"><img src="_resources/Finance.resources/mom-high-trend-clarity-1.png" class="img-fluid figure-img" width="332" alt="High Trend Clarity"></a></p>
+<p><a href="_resources/Finance.resources/mom-high-trend-clarity-1.png" class="lightbox" data-gallery="trend-clarity" data-glightbox="description: .lightbox-desc-3" title="High Trend Clarity"><img src="_resources/Finance.resources/mom-high-trend-clarity-1.png" class="img-fluid figure-img" width="332" alt="High Trend Clarity"></a></p>
 </figure>
 </div>
 </div>
@@ -609,7 +672,7 @@ window.Quarto = {
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <figcaption>Low Trend Clarity</figcaption>
-<p><a href="_resources/Finance.resources/mom-low-trend-clarity-1.png" class="lightbox" data-glightbox="description: .lightbox-desc-4" data-gallery="trend-clarity" title="Low Trend Clarity"><img src="_resources/Finance.resources/mom-low-trend-clarity-1.png" class="img-fluid figure-img" width="332" alt="Low Trend Clarity"></a></p>
+<p><a href="_resources/Finance.resources/mom-low-trend-clarity-1.png" class="lightbox" data-gallery="trend-clarity" data-glightbox="description: .lightbox-desc-4" title="Low Trend Clarity"><img src="_resources/Finance.resources/mom-low-trend-clarity-1.png" class="img-fluid figure-img" width="332" alt="Low Trend Clarity"></a></p>
 </figure>
 </div>
 </div>
@@ -619,6 +682,18 @@ window.Quarto = {
 <li>The impact of trend clarity on momentum was more pronounced in smaller stocks, where information diffusion tends to be slower.</li>
 <li>A more pronounced effect of trend clarity on momentum occurs during periods of high sentiment.</li>
 <li>the clarity of the price trend closely aligned with earnings surprises (Standardized Unexpected Earnings (SUE)). As SUE changes and the steepness of changes in SUE increased, so did trend clarity, suggesting that positive or negative news instigated the clear price trend. As the magnitude of SUE diminished and the trend reversed, indicating a deficiency of fundamentals to back the extrapolation by trend followers.</li>
+</ul></li>
+</ul></li>
+</ul>
+<section id="sec-finance-invest-mom-mtaas" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="sec-finance-invest-mom-mtaas">Momentum Tactical Asset Allocation Strategy</h3>
+<ul>
+<li>Misc
+<ul>
+<li><p><span style="color: goldenrod">{{</span><a href="https://www.quantstart.com/qstrader/tutorial-60-40-portfolio/" style="color: goldenrod">QSTrader</a><span style="color: goldenrod">}}</span></p></li>
+<li><p>Notes from</p>
+<ul>
+<li><a href="https://www.quantstart.com/articles/systematic-tactical-asset-allocation-an-introduction/">Systematic Tactical Asset Allocation: An Introduction</a> - <a href="https://www.quantstart.com/qstrader/tutorial-momentum-tactical-asset-allocation-strategy/">Tutorial</a></li>
 </ul></li>
 </ul></li>
 <li>Description
@@ -641,10 +716,10 @@ window.Quarto = {
 </ul></li>
 </ul>
 </section>
-<section id="dual-momentum-sector-rotation" class="level2">
-<h2 class="anchored" data-anchor-id="dual-momentum-sector-rotation">Dual Momentum Sector Rotation</h2>
+<section id="sec-finance-invest-mom-dmsr" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="sec-finance-invest-mom-dmsr">Dual Momentum Sector Rotation</h3>
 <ul>
-<li>Notes from <a href="https://nlxfinance.wordpress.com/2023/11/22/simulation-of-gary-antonaccis-dual-momentum-sector-rotation-strategy/">Simulation of Gary Antonacci’s Dual Momentum Sector Rotation&nbsp;Strategy</a></li>
+<li>Notes from <a href="https://nlxfinance.wordpress.com/2023/11/22/simulation-of-gary-antonaccis-dual-momentum-sector-rotation-strategy/">Simulation of Gary Antonacci’s Dual Momentum Sector Rotation Strategy</a></li>
 <li>Characteristics
 <ul>
 <li>Conditions for investing offensively or defensively: the 12-month momentum of the S&amp;P500 (absolute mom)</li>
@@ -689,6 +764,7 @@ window.Quarto = {
 <a href="_resources/Finance.resources/dmsr-spy-gem-stats-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img src="_resources/Finance.resources/dmsr-spy-gem-stats-1.png" class="img-fluid" width="532"></a></li>
 </ul></li>
 </ul>
+</section>
 </section>
 <section id="sec-finance-invest-vtp" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="sec-finance-invest-vtp">Volatility Targeting Portfolio</h2>
@@ -1326,7 +1402,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"loop":false,"descPosition":"bottom","closeEffect":"zoom","selector":".lightbox","openEffect":"zoom"});
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"selector":".lightbox","openEffect":"zoom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;

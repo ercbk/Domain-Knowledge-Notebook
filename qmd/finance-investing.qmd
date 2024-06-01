@@ -120,14 +120,66 @@ fig-cap-location: top
     -   Since the actual percentage allocations of each asset class can deviate over time due to relative growth of the respective assets a 'rebalance' approach is often carried out. This means that trades are issued on a relatively infrequent basis to buy/sell amounts of each asset class to periodically bring the account equity allocations back into the 60/40 split. For the particular strategy implemented here we are using an end of month rebalance frequency.
 -   More balanced implementations include [Bridgewater’s All-Weather](https://www.bridgewater.com/research-and-insights/the-all-weather-story) portfolio and Risk Parity strategies generally, which attempt to equalize risk across assets or sources of risk premia.
 
-## Momentum Tactical Asset Allocation Strategy {#sec-finance-invest-momassallo .unnumbered}
+## Factor-based {#sec-finance-invest-factor .unnumbered}
+
+-   [Misc]{.underline}
+    -   Todo: beta, size, and value factors
+    -   Resources
+        -   [S&P Factor Indices](https://www.spglobal.com/spdji/en/index-family/dividends-factors/single-factor/#overview)
+    -   Criteria for an factor To be considered for using in investments ([Swedroe and Berkin](https://alphaarchitect.com/2024/05/cross-section-of-returns/))
+        -   Must have provided a premium that was persistent across long periods and different economic regimes
+        -   Pervasive across countries, regions, sectors, and even asset classes
+        -   Robust to various definitions
+        -   Investable (it held up after implementation costs)
+        -   Intuitive (there are logical risk-based or behavioral-based explanations for the premium, providing the rationale that it should continue to exist).
+-   [Quality]{.underline}
+    -   Characteristics: low earnings volatility, low financial leverage, high gross profitability, high return on equity, low operating leverage, high asset turnover, low accruals (high earnings quality), low equity dilution, and low idiosyncratic stock risk.
+
+    -   Indexes:
+
+        -   MSCI
+            -   [Index](https://www.msci.com/end-of-day-data-search) - Select "Quality" from the Index Suite dropdown and either the Regional or Country tab. It gives return percentages for various year intervals.
+
+            -   See R \>\> Documents \>\> Finance \>\> Reference \>\> MSCI_Quality_Indexes_Methodology_May2022 for further details on their methodology.
+
+            -   Calculates their quality score for each security by averaging Z-Scores of three winsorized fundamental variables: Return on Equity, Debt to Equity and Earnings Variability.
+
+            -   After averaging the z-scores $Z_{\text{avg}}$, the Quality Score is determined by:
+
+                $$
+                \text{QS} = 
+                \left\{ \begin{array}{lcl}
+                1 + Z, & Z \gt 0 \\
+                (1-Z)^{-1}, & Z \lt 0
+                \end{array}\right.
+                $$
+
+            -   Fundamental Variables:
+
+                -   Return on Equity (ROE) - Shows how effectively a company uses investments to generate earnings growth
+
+                    $$
+                    \mbox{ROE} = \frac{\text{Trailing 12-Month Earnings per Share}}{\text{Latest Book Value per Share}}
+                    $$
+
+                -   Debt to Equity (D/E) - Measures a company's leverage
+
+                    $$
+                    \mbox{D/E} = \frac{\text{Total Debt}}{\text{Book Value}}
+                    $$
+
+                -   Earnings Variability: The standard deviation of y-o-y earnings per share growth over the last five fiscal years. Measures how smooth earnings growth has been.
+        -   S&P
+            -   [Indices](https://www.spglobal.com/spdji/en/index-family/dividends-factors/single-factor/quality/#overview) categorized by market cap size
+            -   Based on Return on Equity, Accruals Ratio, and Financial Leverage Ratio
+            -   See R \>\> Documents \>\> Finance \>\> Reference \>\> methodology-sp-quality-indices for details on methodology
+-   [Momentum]{.underline}
+
+## Momentum Strategies {#sec-finance-invest-mom .unnumbered}
 
 -   Misc
-    -   [{{]{style="color: goldenrod"}[QSTrader](https://www.quantstart.com/qstrader/tutorial-60-40-portfolio/){style="color: goldenrod"}[}}]{style="color: goldenrod"}
-
     -   Notes from
 
-        -   [Systematic Tactical Asset Allocation: An Introduction](https://www.quantstart.com/articles/systematic-tactical-asset-allocation-an-introduction/) - [Tutorial](https://www.quantstart.com/qstrader/tutorial-momentum-tactical-asset-allocation-strategy/)
         -   [Minimizing the Risk of Cross-Sectional Momentum Crashes](https://alphaarchitect.com/2024/04/cross-sectional-momentum/)
             -   See article for more details and links to resources
             -   Cross-Sectional Momementum - Investing in previous winners and short-selling previous losers
@@ -147,6 +199,15 @@ fig-cap-location: top
         -   The impact of trend clarity on momentum was more pronounced in smaller stocks, where information diffusion tends to be slower.
         -   A more pronounced effect of trend clarity on momentum occurs during periods of high sentiment.
         -   the clarity of the price trend closely aligned with earnings surprises (Standardized Unexpected Earnings (SUE)). As SUE changes and the steepness of changes in SUE increased, so did trend clarity, suggesting that positive or negative news instigated the clear price trend. As the magnitude of SUE diminished and the trend reversed, indicating a deficiency of fundamentals to back the extrapolation by trend followers.
+
+### Momentum Tactical Asset Allocation Strategy {#sec-finance-invest-mom-mtaas .unnumbered}
+
+-   Misc
+    -   [{{]{style="color: goldenrod"}[QSTrader](https://www.quantstart.com/qstrader/tutorial-60-40-portfolio/){style="color: goldenrod"}[}}]{style="color: goldenrod"}
+
+    -   Notes from
+
+        -   [Systematic Tactical Asset Allocation: An Introduction](https://www.quantstart.com/articles/systematic-tactical-asset-allocation-an-introduction/) - [Tutorial](https://www.quantstart.com/qstrader/tutorial-momentum-tactical-asset-allocation-strategy/)
 -   Description
     -   The US sector momentum strategy is a long-only dynamic tactical asset allocation strategy that attempts to exceed the performance of simply going long the S&P500.
     -   At the end of every month the strategy calculates the holding period return (HPR) based momentum of all of the SPDR sector ETFs (the ticker symbols of which begin with the prefix XL) and selects the top N to invest in for the forthcoming month, where N is usually between 3 and 6.
@@ -160,9 +221,9 @@ fig-cap-location: top
         -   The “high-yield spread is not a particularly useful predictor of the forward returns of the ‘winner’ portfolio," however, the high-yield spread “significantly predicts momentum crashes by identifying when the ‘loser’ portfolios will experience positive reversals.”
     -   Downturns are forecastable — occurring following market declines and when market volatility is high (contemporaneous with market rebounds) — but also that there are systematic strategies that have been shown to historically reduce crash risk. Smoler-Schatz showed that the high-yield spread is one of them.
 
-## Dual Momentum Sector Rotation
+### Dual Momentum Sector Rotation {#sec-finance-invest-mom-dmsr .unnumbered}
 
--   Notes from [Simulation of Gary Antonacci’s Dual Momentum Sector Rotation Strategy](https://nlxfinance.wordpress.com/2023/11/22/simulation-of-gary-antonaccis-dual-momentum-sector-rotation-strategy/)
+-   Notes from [Simulation of Gary Antonacci’s Dual Momentum Sector Rotation Strategy](https://nlxfinance.wordpress.com/2023/11/22/simulation-of-gary-antonaccis-dual-momentum-sector-rotation-strategy/)
 -   Characteristics
     -   Conditions for investing offensively or defensively: the 12-month momentum of the S&P500 (absolute mom)
     -   List of offensive investment vehicles: the 11 sectors that make up the S&P500 index (relative strength)

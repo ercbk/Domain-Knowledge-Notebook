@@ -236,6 +236,8 @@
 
 -   [**Risk Premium**]{style="color: #009499"} - The excess return you might expect over and above risk-free cashflows for taking on certain unattractive risks,
 
+-   [**Sell in May and Go Away**]{style="color: #009499"} - An adage referring to the historically weaker performance of stocks from May to October compared with the other half of the year. Since 1990, the S&P 500 has averaged a return of about 2% annually from May to October, versus about 7% from November to April. The pattern did not hold in 2020, and is likely to be outweighed by more pressing considerations in other years. Investors could try to capitalize on the pattern by rotating into less economically sensitive stocks from May to October, based on historical data. (Investopedia)
+
 -   [**Selling, General, and Administrative Expenses (SG&A)**]{style="color: #009499"} - Includes all general and administrative expenses (G&A) as well as the direct and indirect selling expenses of the business. This line item includes nearly all business costs not directly attributable to making a product or performing a service. SG&A includes the costs of managing the company and the expenses of delivering its products or services.
 
 -   [**Sharpe Ratio**]{style="color: #009499"} [**(annualized)**]{style="color: #009499"} - Measures the performance of an asset relative to violitility (i.e. riskiness)
