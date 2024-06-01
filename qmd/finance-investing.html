@@ -595,11 +595,16 @@ window.Quarto = {
 <li>Investable (it held up after implementation costs)</li>
 <li>Intuitive (there are logical risk-based or behavioral-based explanations for the premium, providing the rationale that it should continue to exist).</li>
 </ul></li>
+<li><strong>Acceleration</strong> is typically defined as the quarter-on-quarter change to a particular factor.</li>
 </ul></li>
 <li><u>Quality</u>
 <ul>
-<li><p>Characteristics: low earnings volatility, low financial leverage, high gross profitability, high return on equity, low operating leverage, high asset turnover, low accruals (high earnings quality), low equity dilution, and low idiosyncratic stock risk.</p></li>
-<li><p>Indexes:</p>
+<li>Characteristics: low earnings volatility, low financial leverage, high gross profitability, high return on equity, low operating leverage, high asset turnover, low accruals (high earnings quality), low equity dilution, and low idiosyncratic stock risk.</li>
+<li>Misc
+<ul>
+<li><a href="https://alphaarchitect.com/2024/05/cross-section-of-returns/">Quality, Factor Momentum, and the Cross-Section of Returns</a> - Overview of a paper on quality acceleration that uses profitability, growth, payout, and safety to measure Quality. It gives the proxy measures for each characteristic.</li>
+</ul></li>
+<li>Indexes:
 <ul>
 <li>MSCI
 <ul>
@@ -635,7 +640,15 @@ window.Quarto = {
 </ul></li>
 </ul></li>
 </ul></li>
-<li><u>Momentum</u></li>
+<li><u>Momentum</u>
+<ul>
+<li>Cross-Sectional (aka Relative) - Stocks are ranked according to momentum and the top ranked stocks are bought. The bottom ranked stocks may be shorted.</li>
+<li>Time-Series (aka Absolute or Trend)- Past performance of a single stock is evaluated and it’s determined whether its trend will continue.</li>
+<li>Factor - It applies the concept of momentum towards factors.
+<ul>
+<li>e.g.&nbsp;If the value factor (investing in undervalued stocks) has performed well in recent periods, a factor momentum strategy would increase exposure to the value factor. Conversely, if the momentum factor (investing in past winners) has underperformed, the strategy might reduce exposure to the momentum factor.</li>
+</ul></li>
+</ul></li>
 </ul>
 </section>
 <section id="sec-finance-invest-mom" class="level2 unnumbered">
@@ -1424,7 +1437,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","selector":".lightbox","loop":false,"openEffect":"zoom","descPosition":"bottom"});
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","loop":false,"descPosition":"bottom","selector":".lightbox","openEffect":"zoom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;
