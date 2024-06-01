@@ -132,11 +132,12 @@ fig-cap-location: top
         -   Robust to various definitions
         -   Investable (it held up after implementation costs)
         -   Intuitive (there are logical risk-based or behavioral-based explanations for the premium, providing the rationale that it should continue to exist).
+    -   **Acceleration** is typically defined as the quarter-on-quarter change to a particular factor.
 -   [Quality]{.underline}
     -   Characteristics: low earnings volatility, low financial leverage, high gross profitability, high return on equity, low operating leverage, high asset turnover, low accruals (high earnings quality), low equity dilution, and low idiosyncratic stock risk.
-
+    -   Misc
+        -   [Quality, Factor Momentum, and the Cross-Section of Returns](https://alphaarchitect.com/2024/05/cross-section-of-returns/) - Overview of a paper on quality acceleration that uses profitability, growth, payout, and safety to measure Quality. It gives the proxy measures for each characteristic.
     -   Indexes:
-
         -   MSCI
             -   [Index](https://www.msci.com/end-of-day-data-search) - Select "Quality" from the Index Suite dropdown and either the Regional or Country tab. It gives return percentages for various year intervals.
 
@@ -174,6 +175,10 @@ fig-cap-location: top
             -   Based on Return on Equity, Accruals Ratio, and Financial Leverage Ratio
             -   See R \>\> Documents \>\> Finance \>\> Reference \>\> methodology-sp-quality-indices for details on methodology
 -   [Momentum]{.underline}
+    -   Cross-Sectional (aka Relative) - Stocks are ranked according to momentum and the top ranked stocks are bought. The bottom ranked stocks may be shorted.
+    -   Time-Series (aka Absolute or Trend)- Past performance of a single stock is evaluated and it's determined whether its trend will continue.
+    -   Factor - It applies the concept of momentum towards factors.
+        -   e.g. If the value factor (investing in undervalued stocks) has performed well in recent periods, a factor momentum strategy would increase exposure to the value factor. Conversely, if the momentum factor (investing in past winners) has underperformed, the strategy might reduce exposure to the momentum factor.
 
 ## Momentum Strategies {#sec-finance-invest-mom .unnumbered}
 
