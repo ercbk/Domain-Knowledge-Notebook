@@ -2,6 +2,9 @@
 
 ## Misc {#sec-finance-risk-misc .unnumbered}
 
+-   Also see
+    -   [Decision Intelligence \>\> Decision Curves](decision-intelligence.qmd#sec-decint-deccurv){style="color: green"}
+        -   Not sure if it can be applied to other types of risk analysis outside of medicine, but it might be worth looking at.
 -   Packages
     -   [{]{style="color: #990000"}[PerformanceAnalytics](https://cran.r-project.org/web/packages/PerformanceAnalytics/index.html){style="color: #990000"}[}]{style="color: #990000"} - Econometric Tools for Performance and Risk Analysis
         -   Lots of vignettes, but there's also a substantial amount of material in the introduction section of the Reference Manual
