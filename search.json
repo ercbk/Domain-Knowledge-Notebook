@@ -295,7 +295,7 @@
     "href": "qmd/finance-risk.html#sec-finance-risk-misc",
     "title": "Risk",
     "section": "",
-    "text": "Packages\n\n{PerformanceAnalytics} - Econometric Tools for Performance and Risk Analysis\n\nLots of vignettes, but there’s also a substantial amount of material in the introduction section of the Reference Manual",
+    "text": "Also see\n\nDecision Intelligence &gt;&gt; Decision Curves\n\nNot sure if it can be applied to other types of risk analysis outside of medicine, but it might be worth looking at.\n\n\nPackages\n\n{PerformanceAnalytics} - Econometric Tools for Performance and Risk Analysis\n\nLots of vignettes, but there’s also a substantial amount of material in the introduction section of the Reference Manual",
     "crumbs": [
       "Finance",
       "Risk"
