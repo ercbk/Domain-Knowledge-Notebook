@@ -380,6 +380,14 @@ ul.task-list li input[type="checkbox"] {
 <section id="sec-econ-misc" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="sec-econ-misc">Misc</h2>
 <ul>
+<li>Packages
+<ul>
+<li><span style="color: #990000">{</span><a href="https://github.com/UchidaMizuki/econgoods" style="color: #990000">econgoods</a><span style="color: #990000">}</span> - Provides various utility functions and usage with composite goods in economics.
+<ul>
+<li>Current utility functions: Constant elasticity of substitution (CES) utility, Leontief utility, Cobb-Douglas utility, marginal utility for two goods</li>
+<li><code>util_calibrate</code>: Fit parameters of utility functions to the given prices and quantities.</li>
+</ul></li>
+</ul></li>
 <li><strong>Dynamic stochastic general equilibrium (DSGE)</strong> models, which are popular in macroeconomic modeling, are garbage (<a href="https://marginalrevolution.com/marginalrevolution/2022/11/a-big-and-embarrassing-challenge-to-dsge-models.html">article</a>)
 <ul>
 <li>Even under extremely ideal conditions they don’t retrieve the parameters and using them to forecast is no better than chance.</li>
@@ -882,7 +890,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","selector":".lightbox","loop":false,"openEffect":"zoom","closeEffect":"zoom"});
+<script>var lightboxQuarto = GLightbox({"loop":false,"descPosition":"bottom","openEffect":"zoom","selector":".lightbox","closeEffect":"zoom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;

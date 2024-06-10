@@ -94,7 +94,7 @@
     "href": "qmd/economics.html#sec-econ-misc",
     "title": "Economics",
     "section": "",
-    "text": "Dynamic stochastic general equilibrium (DSGE) models, which are popular in macroeconomic modeling, are garbage (article)\n\nEven under extremely ideal conditions they don’t retrieve the parameters and using them to forecast is no better than chance.",
+    "text": "Packages\n\n{econgoods} - Provides various utility functions and usage with composite goods in economics.\n\nCurrent utility functions: Constant elasticity of substitution (CES) utility, Leontief utility, Cobb-Douglas utility, marginal utility for two goods\nutil_calibrate: Fit parameters of utility functions to the given prices and quantities.\n\n\nDynamic stochastic general equilibrium (DSGE) models, which are popular in macroeconomic modeling, are garbage (article)\n\nEven under extremely ideal conditions they don’t retrieve the parameters and using them to forecast is no better than chance.",
     "crumbs": [
       "Economics"
     ]
