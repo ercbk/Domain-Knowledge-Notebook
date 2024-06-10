@@ -2,6 +2,10 @@
 
 ## Misc {#sec-econ-misc .unnumbered}
 
+-   Packages
+    -   [{]{style="color: #990000"}[econgoods](https://github.com/UchidaMizuki/econgoods){style="color: #990000"}[}]{style="color: #990000"} - Provides various utility functions and usage with composite goods in economics.
+        -   Current utility functions: Constant elasticity of substitution (CES) utility, Leontief utility, Cobb-Douglas utility, marginal utility for two goods
+        -   `util_calibrate`: Fit parameters of utility functions to the given prices and quantities.
 -   **Dynamic stochastic general equilibrium (DSGE)** models, which are popular in macroeconomic modeling, are garbage ([article](https://marginalrevolution.com/marginalrevolution/2022/11/a-big-and-embarrassing-challenge-to-dsge-models.html))
     -   Even under extremely ideal conditions they don't retrieve the parameters and using them to forecast is no better than chance.
 
