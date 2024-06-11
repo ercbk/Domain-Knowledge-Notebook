@@ -82,6 +82,7 @@
 
 -   [Misc]{.underline}
     -   Forecasting shocks is difficult for an algorithm
+    -   Also see [Forecasting, Deep Learning \>\> Misc](forecasting-dl.qmd#sec-fcast-dl-misc){style="color: green"} \>\> Predictive Adjustment
     -   Notes from [Why Good Forecasts Treat Human Input as Part of the Model](https://doordash.engineering/2021/02/24/why-good-forecasts-treat-human-input-as-part-of-the-model/)
 -   [Preprocessing]{.underline}
     -   It can be better to smooth out (expected) shocks in the training data and then add an adjustment to the predictions during the dates of the shocks.
