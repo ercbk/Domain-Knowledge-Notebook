@@ -23,6 +23,10 @@
     -   Financing cash flow: This refers specifically to how cash moves between a company and its investors, owners, or creditors. It’s the net cash generated to finance the company and may include debt, equity, and dividend payments.
     -   Free cash flow: The net amount of cash left over after taxes are paid; depreciation, amortization, and changes in working capital are accounted for; and capital expenditures (property, equipment, and technology investments) are subtracted. In short: It’s the cash left over that doesn’t need to be allocated anywhere.
 
+-   [**Commody Trend Advisors (CTAs)**]{style="color: #009499"} (aka [**Trend-Following Funds**]{style="color: #009499"}, [**Managed Futures**]{style="color: #009499"}) - Trade on futures contracts based on other market patterns.
+
+    -   They go long on the markets that are going up and short the markets that are going down, but they differ in the asset classes or timelines they might invest in or how much leverage they use.
+
 -   [**Compound Annual Growth Rate (CAGR)**]{style="color: #009499"} - The rate of return (RoR) that would be required for an investment to grow from its beginning value (BV) to its ending value (EV), assuming the profits were reinvested at the end of each period of the investment's life span (t).
 
     $$
@@ -240,7 +244,7 @@
 
 -   [**Selling, General, and Administrative Expenses (SG&A)**]{style="color: #009499"} - Includes all general and administrative expenses (G&A) as well as the direct and indirect selling expenses of the business. This line item includes nearly all business costs not directly attributable to making a product or performing a service. SG&A includes the costs of managing the company and the expenses of delivering its products or services.
 
--   [**Sharpe Ratio**]{style="color: #009499"} [**(annualized)**]{style="color: #009499"} - Measures the performance of an asset relative to violitility (i.e. riskiness)
+-   [**Sharpe Ratio**]{style="color: #009499"} [**(annualized)**]{style="color: #009499"} - A Risk-Adjusted Return measure. Measures the performance of an asset relative to violitility (i.e. riskiness)
 
     -   (expected excess returns relative to a risk free asset (e.g. treasury bond) / sd of those expected excess returns) \* √number_of_observations_in_a_year
     -   Sharpe ratios above 1.0 are generally considered "good," as this would suggest that the portfolio is offering excess returns relative to its volatility

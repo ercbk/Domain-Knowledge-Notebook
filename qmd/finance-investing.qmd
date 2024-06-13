@@ -74,6 +74,10 @@ fig-cap-location: top
         -   Require significant investment in infrastructure and staff, so isn’t practical for “home gamers.”
         -   Examples
             -   Arbitrage: Buy futures on Shanghai INE and buy a similar contract cheaper on Singapore SGX for a profit (after costs).
+    -   Trend-Equities Strategy
+        -   See [Bonds versus CTAs for Diversification](https://insights.finominal.com/research-bonds-versus-ctas-for-diversification/)
+        -   Allocates 100% to the S&P 500 if the 12-month return is positive measured every month, otherwise 100% is allocated to short-term U.S. Treasury bills
+        -   This strategy in a 60-40 proportion along with CTAs performs well in low-yielding market environments.
 
 -   Misleading chart ([Thread](https://twitter.com/choffstein/status/1640034865817985024))\
     ![](./_resources/Finance.resources/image.png){.lightbox width="448"}\
@@ -332,6 +336,10 @@ fig-cap-location: top
         -   [NerdWallet Compound Interest Calculator](https://www.nerdwallet.com/calculator/compound-interest-calculator?trk=nw_gn_5.0)
             -   [Example]{.ribbon-highlight}: if you put \$5,000 in a (5yr) bond with a 4% yield, assuming you reinvest your interest payments, you will have \$6083 by the time it matures.\
                 ![](_resources/Finance.resources/nerdwallet-compound-interest-1.png){.lightbox width="432"}
+        -   **Commody Trend Advisors (CTAs)** are alternatives to bonds. Bonds and stocks were correlated in the 2020s while CTAs were not correlated with either.
+            -   The SG Trend Index tracks the daily rate of return for a pool of CTAs
+            -   Traders try to identify assets where the recent volatility has been low and have the potential to make outsized moves during so-called "tail events" – low probability occurrences that can drive big swings in asset prices.
+            -   See [Bonds versus CTAs for Diversification](https://insights.finominal.com/research-bonds-versus-ctas-for-diversification/)
     -   Notes from
         -   [It's a Good Time to Buy Bonds. Just Know What You're Getting Into.](https://www.wsj.com/finance/investing/investing-bonds-what-to-know-98e6f138?mod=e2twg)
     -   The price of a bond moves in the opposite direction to interest rates.
