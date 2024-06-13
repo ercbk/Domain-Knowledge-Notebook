@@ -421,6 +421,10 @@ window.Quarto = {
 <li>Financing cash flow: This refers specifically to how cash moves between a company and its investors, owners, or creditors. It’s the net cash generated to finance the company and may include debt, equity, and dividend payments.</li>
 <li>Free cash flow: The net amount of cash left over after taxes are paid; depreciation, amortization, and changes in working capital are accounted for; and capital expenditures (property, equipment, and technology investments) are subtracted. In short: It’s the cash left over that doesn’t need to be allocated anywhere.</li>
 </ul></li>
+<li><p><span style="color: #009499"><strong>Commody Trend Advisors (CTAs)</strong></span> (aka <span style="color: #009499"><strong>Trend-Following Funds</strong></span>, <span style="color: #009499"><strong>Managed Futures</strong></span>) - Trade on futures contracts based on other market patterns.</p>
+<ul>
+<li>They go long on the markets that are going up and short the markets that are going down, but they differ in the asset classes or timelines they might invest in or how much leverage they use.</li>
+</ul></li>
 <li><p><span style="color: #009499"><strong>Compound Annual Growth Rate (CAGR)</strong></span> - The rate of return (RoR) that would be required for an investment to grow from its beginning value (BV) to its ending value (EV), assuming the profits were reinvested at the end of each period of the investment’s life span (t).</p>
 <p><span class="math display">\[
 \text{CAGR} = \left ( \left (\frac{\text{EV}}{\text{BV}} \right ) ^{1/t} - 1 \right) \times 100
@@ -610,7 +614,7 @@ M = \frac{\text{Closing Price}_{\text{end of month}}- \text{Closing Price}_{\tex
 <li><p><span style="color: #009499"><strong>Risk Premium</strong></span> - The excess return you might expect over and above risk-free cashflows for taking on certain unattractive risks,</p></li>
 <li><p><span style="color: #009499"><strong>Sell in May and Go Away</strong></span> - An adage referring to the historically weaker performance of stocks from May to October compared with the other half of the year. Since 1990, the S&amp;P 500 has averaged a return of about 2% annually from May to October, versus about 7% from November to April. The pattern did not hold in 2020, and is likely to be outweighed by more pressing considerations in other years. Investors could try to capitalize on the pattern by rotating into less economically sensitive stocks from May to October, based on historical data. (Investopedia)</p></li>
 <li><p><span style="color: #009499"><strong>Selling, General, and Administrative Expenses (SG&amp;A)</strong></span> - Includes all general and administrative expenses (G&amp;A) as well as the direct and indirect selling expenses of the business. This line item includes nearly all business costs not directly attributable to making a product or performing a service. SG&amp;A includes the costs of managing the company and the expenses of delivering its products or services.</p></li>
-<li><p><span style="color: #009499"><strong>Sharpe Ratio</strong></span> <span style="color: #009499"><strong>(annualized)</strong></span> - Measures the performance of an asset relative to violitility (i.e.&nbsp;riskiness)</p>
+<li><p><span style="color: #009499"><strong>Sharpe Ratio</strong></span> <span style="color: #009499"><strong>(annualized)</strong></span> - A Risk-Adjusted Return measure. Measures the performance of an asset relative to violitility (i.e.&nbsp;riskiness)</p>
 <ul>
 <li>(expected excess returns relative to a risk free asset (e.g.&nbsp;treasury bond) / sd of those expected excess returns) * √number_of_observations_in_a_year</li>
 <li>Sharpe ratios above 1.0 are generally considered “good,” as this would suggest that the portfolio is offering excess returns relative to its volatility
@@ -1151,7 +1155,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","loop":false,"selector":".lightbox","openEffect":"zoom","closeEffect":"zoom"});
+<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","selector":".lightbox","descPosition":"bottom","loop":false,"closeEffect":"zoom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;
