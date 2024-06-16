@@ -10,6 +10,8 @@
 
     -   Calculated as the covariance between the rate of return of a company's stock and the overall market return.
 
+-   [**Bottom-Line Growth**]{style="color: #009499"} - (Refers to location on the income statement) Growth of a company's net income.
+
 -   [**Capital Expenditure (CapEx)**]{style="color: #009499"} - Money that is spent to acquire, repair, update, or improve a fixed company asset, such as a building, business, or equipment. For assets to fall under the CapEx designation, the investments must have a useful life of one year or more. A CapEx is amortized, or its value is deducted a little each year based on the total cost and its expected useful life.
 
     -   Useful life refers to the estimated and generally agreed upon shelf life of a specific business asset.
@@ -176,6 +178,8 @@
         M = \frac{\text{Closing Price}_{\text{end of month}}- \text{Closing Price}_{\text{12 months ago}}}{\text{Closing Price}_{\text{12 months ago}}}
         $$
 
+-   [**Net Income**]{style="color: #009499"} (aka [**Net Earnings**]{style="color: #009499"} or [**Net Profits**]{style="color: #009499"}) - The bottom figure on a company's income statement. A company's income after all expenses have been deducted from revenues. These expenses include interest charges paid on loans, general and administrative costs, and income taxes.
+
 -   [**Net Present Value**]{style="color: #009499"} - A way to compare potential investments or projects in today's dollars. It's the difference between the present value of a future stream of cash inflows and outflows. Used in capital budgeting and investment planning to analyze the profitability of a projected investment or project. (Also see [Finance, Valuation \>\> Rates of Return \>\> AIRR](finance-valuation.qmd#average-internal-rate-of-return-airr){style="color: green"} \>\> Formula Using Time-Varying Cost of Capital)
 
     $$
@@ -305,6 +309,8 @@
         -   $n$: Number of *compounding* periods in a year
 
     -   In the case of annuity or perpetuity payments, the generalized formula has additional or fewer factors (See [wiki](https://en.wikipedia.org/wiki/Time_value_of_money), [Investopedia](https://www.investopedia.com/terms/f/futurevalue.asp))
+
+-   [**Top-Line Growth**]{style="color: #009499"} - (Refers to location on the income statement) Growth of a company's revenues or gross sales.
 
 -   [**Value at Risk (VaR)**]{style="color: #009499"} - A risk measure that quantifies the maximum potential loss over a given time period at a specified confidence level. For example, a 1-day VaR at the 95% confidence level is the maximum loss expected over one day with 95% confidence.
 
