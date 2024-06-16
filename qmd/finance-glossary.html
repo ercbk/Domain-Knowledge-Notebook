@@ -406,6 +406,7 @@ window.Quarto = {
 <ul>
 <li>Calculated as the covariance between the rate of return of a company’s stock and the overall market return.</li>
 </ul></li>
+<li><p><span style="color: #009499"><strong>Bottom-Line Growth</strong></span> - (Refers to location on the income statement) Growth of a company’s net income.</p></li>
 <li><p><span style="color: #009499"><strong>Capital Expenditure (CapEx)</strong></span> - Money that is spent to acquire, repair, update, or improve a fixed company asset, such as a building, business, or equipment. For assets to fall under the CapEx designation, the investments must have a useful life of one year or more. A CapEx is amortized, or its value is deducted a little each year based on the total cost and its expected useful life.</p>
 <ul>
 <li>Useful life refers to the estimated and generally agreed upon shelf life of a specific business asset.
@@ -545,6 +546,7 @@ window.Quarto = {
 M = \frac{\text{Closing Price}_{\text{end of month}}- \text{Closing Price}_{\text{12 months ago}}}{\text{Closing Price}_{\text{12 months ago}}}
 \]</span></p></li>
 </ul></li>
+<li><p><span style="color: #009499"><strong>Net Income</strong></span> (aka <span style="color: #009499"><strong>Net Earnings</strong></span> or <span style="color: #009499"><strong>Net Profits</strong></span>) - The bottom figure on a company’s income statement. A company’s income after all expenses have been deducted from revenues. These expenses include interest charges paid on loans, general and administrative costs, and income taxes.</p></li>
 <li><p><span style="color: #009499"><strong>Net Present Value</strong></span> - A way to compare potential investments or projects in today’s dollars. It’s the difference between the present value of a future stream of cash inflows and outflows. Used in capital budgeting and investment planning to analyze the profitability of a projected investment or project. (Also see <a href="../qmd/finance-valuation.html#average-internal-rate-of-return-airr" style="color: green">Finance, Valuation &gt;&gt; Rates of Return &gt;&gt; AIRR</a> &gt;&gt; Formula Using Time-Varying Cost of Capital)</p>
 <p><span class="math display">\[
 \text{NPV} = F_0 + \frac{F_1}{1+r} + \cdots + \frac{F_n}{(1+r)^n}
@@ -677,6 +679,7 @@ M = \frac{\text{Closing Price}_{\text{end of month}}- \text{Closing Price}_{\tex
 </ul></li>
 <li><p>In the case of annuity or perpetuity payments, the generalized formula has additional or fewer factors (See <a href="https://en.wikipedia.org/wiki/Time_value_of_money">wiki</a>, <a href="https://www.investopedia.com/terms/f/futurevalue.asp">Investopedia</a>)</p></li>
 </ul></li>
+<li><p><span style="color: #009499"><strong>Top-Line Growth</strong></span> - (Refers to location on the income statement) Growth of a company’s revenues or gross sales.</p></li>
 <li><p><span style="color: #009499"><strong>Value at Risk (VaR)</strong></span> - A risk measure that quantifies the maximum potential loss over a given time period at a specified confidence level. For example, a 1-day VaR at the 95% confidence level is the maximum loss expected over one day with 95% confidence.</p>
 <ul>
 <li><span style="color: #009499"><strong>Conditional Value at Risk (CVaR)</strong></span> (aka <span style="color: #009499"><strong>Expected Shortfall</strong></span>) - Measures the expected loss given that the loss has exceeded the VaR threshold. It provides an estimate of the average loss in the tail of the distribution, offering a more comprehensive risk assessment.</li>
@@ -1158,7 +1161,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","closeEffect":"zoom","selector":".lightbox","loop":false,"openEffect":"zoom"});
+<script>var lightboxQuarto = GLightbox({"selector":".lightbox","openEffect":"zoom","closeEffect":"zoom","loop":false,"descPosition":"bottom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;
