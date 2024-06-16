@@ -10,7 +10,7 @@
 
     -   Calculated as the covariance between the rate of return of a company's stock and the overall market return.
 
--   [**Bottom-Line Growth**]{style="color: #009499"} - (Refers to location on the income statement) Growth of a company's net income.
+-   [**Bottom-Line Growth**]{style="color: #009499"} - (Refers to location on the income statement) Growth of a company's net income. Growth can be accomplished increasing top-line metrics (e.g. revenue) or increases in investment income, interest income, rental or co-location fees collected, and the sale of property or equipment. Reductions in costs also increase the bottom-line, such as using different input goods or with more efficient methods; decreasing wages and benefits; operating out of less expensive facilities; utilizing tax benefits; and limiting the cost of capital.
 
 -   [**Capital Expenditure (CapEx)**]{style="color: #009499"} - Money that is spent to acquire, repair, update, or improve a fixed company asset, such as a building, business, or equipment. For assets to fall under the CapEx designation, the investments must have a useful life of one year or more. A CapEx is amortized, or its value is deducted a little each year based on the total cost and its expected useful life.
 
@@ -310,7 +310,7 @@
 
     -   In the case of annuity or perpetuity payments, the generalized formula has additional or fewer factors (See [wiki](https://en.wikipedia.org/wiki/Time_value_of_money), [Investopedia](https://www.investopedia.com/terms/f/futurevalue.asp))
 
--   [**Top-Line Growth**]{style="color: #009499"} - (Refers to location on the income statement) Growth of a company's revenues or gross sales.
+-   [**Top-Line Growth**]{style="color: #009499"} - (Refers to location on the income statement) Growth of a company's revenues or gross sales. Growth can be accomplished by increasing production; lowering sales returns through product improvement; expanding product lines; acquiring new customers through an ad campaign, acquistion of another company that leads to greater market share; or increasing prices.
 
 -   [**Value at Risk (VaR)**]{style="color: #009499"} - A risk measure that quantifies the maximum potential loss over a given time period at a specified confidence level. For example, a 1-day VaR at the 95% confidence level is the maximum loss expected over one day with 95% confidence.
 
