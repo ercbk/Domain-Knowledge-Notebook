@@ -420,7 +420,7 @@
     -   Histogram of users' engagement by the total number of days they performed which action you've deemed valuable in a month
         -   Can be applied to a cohort if you're a subscription business, track product launches, track results from feature changes, or results from marketing campaiagns, etc. (see below)
         -   I don't think this concept has to be limited to time being on the x-axis. It could be any metric value you consider representative of a "power user."
-            -   Also see [Google, Analytics, Analysis](https://ercbk.github.io/Data-Science-Notebook/qmd/google-analytics-analysis.html){style="color: green"} \>\> Power User Analysis (Example 24)
+            -   Also see [Google, Analytics, Analysis \>\> Examples](https://ercbk.github.io/Data-Science-Notebook/qmd/google-analytics-analysis.html#sec-goog-anal-anal-ex .u){style="color: green"} \>\> Example 24 Power User Analysis
                 -   Y axis: % users, X axis: visits
     -   [Time Period]{.underline}
         -   Depends on your products natural cycle. May be monthly ("L30"), weekly ("L7"), daily, etc.
