@@ -10,6 +10,29 @@
 
     -   Calculated as the covariance between the rate of return of a company's stock and the overall market return.
 
+-   [**Bid-Ask Spread**]{style="color: #009499"} - The difference between the highest price a buyer is willing to pay (bid) and the lowest price a seller is willing to accept (ask).
+
+    -   Lower spreads are preferred since the spread represents a cost for traders. When you buy at the ask price and sell at the bid price, you're effectively paying the spread.
+    -   Higher trading volume leads to narrower bid-ask spreads. Market makers can afford tighter spreads due to:
+        a)  Lower inventory risk (easier to balance buy and sell orders)
+        b)  Faster inventory turnover
+        c)  More frequent small profits instead of fewer large profits
+        d)  More competition which typically results in tighter spreads as market makers compete for order flow.
+    -   Spreads often follow a U-shaped pattern during the trading day. Spreads are typically wider at market open and close (often lower volume periods) and narrower during mid-day (usually higher volume).
+    -   Traders often use the bid-ask spread as a proxy for liquidity. Tighter spreads in high-volume markets generally indicate better liquidity conditions.
+    -   For most retail investors, data on sites, like yahoo finance, might be delayed by 15-20 minutes unless you have a real-time data subscription.
+    -   [Example]{.ribbon-highlight}
+        -   On Yahoo Finance, NIKE, Inc. (NKE) shows a Bid Price of [\$82.52 x 900]{.arg-text} and an Ask Price of [\$82.60 x 800]{.arg-text}.
+        -   Bid Price:
+            -   82.52 is the highest price that buyers are currently willing to pay for the stock.
+                -   i.e. If you placed a market order to sell, you'd likely receive \$82.52
+            -   900 represents the number of shares that buyers are willing to purchase at this price.
+        -   Ask Price:
+            -   82.60 is the lowest price at which sellers are willing to sell the stock.
+                -   i.e. If you were to place a market order to buy, you'd likely pay \$82.60
+            -   800 represents the number of shares available for sale at this price.
+        -   Bid-Ask Spread: \$82.60 - \$82.52 = \$0.08.
+
 -   [**Bottom-Line Growth**]{style="color: #009499"} - (Refers to location on the income statement) Growth of a company's net income. Growth can be accomplished increasing top-line metrics (e.g. revenue) or increases in investment income, interest income, rental or co-location fees collected, and the sale of property or equipment. Reductions in costs also increase the bottom-line, such as using different input goods or with more efficient methods; decreasing wages and benefits; operating out of less expensive facilities; utilizing tax benefits; and limiting the cost of capital.
 
 -   [**Capital Expenditure (CapEx)**]{style="color: #009499"} - Money that is spent to acquire, repair, update, or improve a fixed company asset, such as a building, business, or equipment. For assets to fall under the CapEx designation, the investments must have a useful life of one year or more. A CapEx is amortized, or its value is deducted a little each year based on the total cost and its expected useful life.
@@ -274,7 +297,7 @@
 
     -   Returns from investment strategies often exhibit autocorrelation, fat tails, and negative skewness which further "deflates" the deflated sharpe ratio
 
--   [**Slippage**]{style="color: #009499"}- The difference between where the computer signaled the entry and exit for a trade and where actual clients, with actual money, entered and exited the market using the computer's signals. Along with transaction costs, it's a cost that needs to be taken into account when analyzing the profitability of a strategy.
+-   [**Slippage**]{style="color: #009499"}- The difference between where the computer signaled the entry and exit for a trade and where actual clients, with actual money, entered and exited the market using the computer's signals. Along with transaction costs, it's a cost that needs to be taken into account when analyzing the profitability of a strategy. More likely in low volume trading environments when there's less liquidity to absorb orders.
 
 -   [**Spread**]{style="color: #009499"} ([**Bid-Ask**]{style="color: #009499"}): The difference between two prices, rates or yields.
 

@@ -212,7 +212,7 @@
         -   The difference seems to be semantics IMO.
             -   With A/B, the control group gets a "different treatment" and with conversion lift tests, the control group gets no treatment
     -   Brand Lift Tests
-        -   seek to measure a campaign's impact on brand metrics, not conversions
+        -   Seek to measure a campaign's impact on brand metrics, not conversions
     -   Geo-experiments (see below))
         -   Capable of measuring incrementality. Viable alternative to lift tests
 
