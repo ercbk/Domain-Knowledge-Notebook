@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.555">
+<meta name="generator" content="quarto-1.4.557">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -73,7 +73,7 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <script type="text/javascript">
@@ -406,6 +406,41 @@ window.Quarto = {
 <ul>
 <li>Calculated as the covariance between the rate of return of a company’s stock and the overall market return.</li>
 </ul></li>
+<li><p><span style="color: #009499"><strong>Bid-Ask Spread</strong></span> - The difference between the highest price a buyer is willing to pay (bid) and the lowest price a seller is willing to accept (ask).</p>
+<ul>
+<li>Lower spreads are preferred since the spread represents a cost for traders. When you buy at the ask price and sell at the bid price, you’re effectively paying the spread.</li>
+<li>Higher trading volume leads to narrower bid-ask spreads. Market makers can afford tighter spreads due to:
+<ol type="a">
+<li>Lower inventory risk (easier to balance buy and sell orders)</li>
+<li>Faster inventory turnover</li>
+<li>More frequent small profits instead of fewer large profits</li>
+<li>More competition which typically results in tighter spreads as market makers compete for order flow.</li>
+</ol></li>
+<li>Spreads often follow a U-shaped pattern during the trading day. Spreads are typically wider at market open and close (often lower volume periods) and narrower during mid-day (usually higher volume).</li>
+<li>Traders often use the bid-ask spread as a proxy for liquidity. Tighter spreads in high-volume markets generally indicate better liquidity conditions.</li>
+<li>For most retail investors, data on sites, like yahoo finance, might be delayed by 15-20 minutes unless you have a real-time data subscription.</li>
+<li><span class="ribbon-highlight">Example</span>
+<ul>
+<li>On Yahoo Finance, NIKE, Inc.&nbsp;(NKE) shows a Bid Price of <span class="arg-text">$82.52 x 900</span> and an Ask Price of <span class="arg-text">$82.60 x 800</span>.</li>
+<li>Bid Price:
+<ul>
+<li>82.52 is the highest price that buyers are currently willing to pay for the stock.
+<ul>
+<li>i.e.&nbsp;If you placed a market order to sell, you’d likely receive $82.52</li>
+</ul></li>
+<li>900 represents the number of shares that buyers are willing to purchase at this price.</li>
+</ul></li>
+<li>Ask Price:
+<ul>
+<li>82.60 is the lowest price at which sellers are willing to sell the stock.
+<ul>
+<li>i.e.&nbsp;If you were to place a market order to buy, you’d likely pay $82.60</li>
+</ul></li>
+<li>800 represents the number of shares available for sale at this price.</li>
+</ul></li>
+<li>Bid-Ask Spread: $82.60 - $82.52 = $0.08.</li>
+</ul></li>
+</ul></li>
 <li><p><span style="color: #009499"><strong>Bottom-Line Growth</strong></span> - (Refers to location on the income statement) Growth of a company’s net income. Growth can be accomplished increasing top-line metrics (e.g.&nbsp;revenue) or increases in investment income, interest income, rental or co-location fees collected, and the sale of property or equipment. Reductions in costs also increase the bottom-line, such as using different input goods or with more efficient methods; decreasing wages and benefits; operating out of less expensive facilities; utilizing tax benefits; and limiting the cost of capital.</p></li>
 <li><p><span style="color: #009499"><strong>Capital Expenditure (CapEx)</strong></span> - Money that is spent to acquire, repair, update, or improve a fixed company asset, such as a building, business, or equipment. For assets to fall under the CapEx designation, the investments must have a useful life of one year or more. A CapEx is amortized, or its value is deducted a little each year based on the total cost and its expected useful life.</p>
 <ul>
@@ -644,7 +679,7 @@ M = \frac{\text{Closing Price}_{\text{end of month}}- \text{Closing Price}_{\tex
 </ul></li>
 <li><p>Returns from investment strategies often exhibit autocorrelation, fat tails, and negative skewness which further “deflates” the deflated sharpe ratio</p></li>
 </ul></li>
-<li><p><span style="color: #009499"><strong>Slippage</strong></span>- The difference between where the computer signaled the entry and exit for a trade and where actual clients, with actual money, entered and exited the market using the computer’s signals. Along with transaction costs, it’s a cost that needs to be taken into account when analyzing the profitability of a strategy.</p></li>
+<li><p><span style="color: #009499"><strong>Slippage</strong></span>- The difference between where the computer signaled the entry and exit for a trade and where actual clients, with actual money, entered and exited the market using the computer’s signals. Along with transaction costs, it’s a cost that needs to be taken into account when analyzing the profitability of a strategy. More likely in low volume trading environments when there’s less liquidity to absorb orders.</p></li>
 <li><p><span style="color: #009499"><strong>Spread</strong></span> (<span style="color: #009499"><strong>Bid-Ask</strong></span>): The difference between two prices, rates or yields.</p>
 <ul>
 <li>The gap between the bid and the ask prices of a security or asset, like a stock, bond or commodity.</li>
@@ -1161,7 +1196,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"loop":false,"selector":".lightbox","closeEffect":"zoom","openEffect":"zoom","descPosition":"bottom"});
+<script>var lightboxQuarto = GLightbox({"selector":".lightbox","closeEffect":"zoom","openEffect":"zoom","descPosition":"bottom","loop":false});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;
