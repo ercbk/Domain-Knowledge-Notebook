@@ -364,3 +364,9 @@
 
     -   Includes price increases as well as any dividends paid, calculated as the net realized return divided by the principal amount (i.e. amount invested).
     -   Higher yields are perceived to be an indicator of lower risk and higher income, but a high yield may not always be a positive, such as the case of a rising dividend yield due to a falling stock price.
+
+-   [**Yield Curve Inversions**]{style="color: #009499"} - A signal for such situations when (based on the past data) there is a higher probability of recessions and equity bear markets.
+
+    -   When the 3-month treasury yield jumps significantly over the 10-year yield
+    -   Duration of the yield inversion and not just the inversion itself could factor into\
+        ![](_resources/Finance-Glossary.resources/yield-curve-inversion-duration-.png){.lightbox width="632"}
