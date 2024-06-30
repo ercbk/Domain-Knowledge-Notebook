@@ -368,5 +368,5 @@
 -   [**Yield Curve Inversions**]{style="color: #009499"} - A signal for such situations when (based on the past data) there is a higher probability of recessions and equity bear markets.
 
     -   When the 3-month treasury yield jumps significantly over the 10-year yield
-    -   Duration of the yield inversion and not just the inversion itself could factor into\
+    -   The duration of the yield inversion and not just the inversion itself could factor into strategies (i.e. When to reallocate from a more equities heavy portfolio to a hedging portfolio)\
         ![](_resources/Finance-Glossary.resources/yield-curve-inversion-duration-.png){.lightbox width="632"}
