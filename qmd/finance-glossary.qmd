@@ -95,6 +95,14 @@
 -   [**Drawdown**]{style="color: #009499"} - A peak-to-trough decline during a specific period for an investment, trading account, or fund. If a trading account has \$10,000 in it, and the funds drop to \$9,000 before moving back above \$10,000, then the trading account witnessed a 10% drawdown.
 
     -   The larger the drawdown (%), the larger uptick (%) needed to get back to initial peak. (e.g. dd of 1% requires 1.01% uptick while 20% dd requires a 25% uptick). Some investors choose to avoid drawdowns of greater than 20% before cutting their losses and turning the position into cash instead.
+    -   Guidelines
+        -   A 20% maximum drawdown as a common threshold for long-term investment strategies.
+            -   Conservative strategies: 5-10% maximum drawdown
+            -   Moderate strategies: 10-20% maximum drawdown
+            -   Aggressive strategies: 20-30% maximum drawdown or more
+        -   A maximum drawdown should be no worse than 1.5 times that of the S&P 500 over the same period
+        -   The potential reward should be at least 2-3 times the maximum drawdown risk
+        -   Recovery time should not exceed twice the length of the drawdown period
 
 -   [**Earnings**]{style="color: #009499"} or [**Net Income**]{style="color: #009499"} - Represents after-tax profit. Typically the bottom line of the income statement. EBIT and EBITDA are better for comparing companies.$\text{Earnings} = \text{Revenue} - \text{Expenses} - \text{Interest} - \text{Taxes}$
 
@@ -121,6 +129,8 @@
 
     -   My idea of an expense is something that's leaving a company. It occurs immediately as an asset gets used or sold. When something dissipates, I think of an expense (e.g value of an asset disappearing as depreciation, electricity being used in the building, salary being paid).
     -   [Example]{.ribbon-highlight}: An organization makes an expenditure of \$3,000 for a desktop computer. It then charges the computer to expense over the next three years, which results in an annual depreciation expense of \$1,000.
+
+-   [**Expense Ratio**]{style="color: #009499"} - How much you pay a mutual fund or ETF per year, expressed as a percent of your investments. So, if you have \$5,000 invested in an ETF with an expense ratio of .04%, you'll pay the fund \$2 annually.
 
 -   [**False Strategy Theorem**]{style="color: #009499"} - Gives the threshold for which a Sharpe Ratio greater than this threshold would be significant.
 
@@ -185,6 +195,10 @@
 
 -   [**Leg**]{style="color: #009499"} - One part or one side of a multistep trade. Legs should be exercised at the same time in order to avoid any risks associated with fluctuations in the price of the related security. So a purchase and sale should be made around the same time to avoid any price risk. Strategy often associated with derivatives trading.
 
+-   [**Leveraged ETFs**]{style="color: #009499"} - Uses swaps, futures contracts, and other derivatives, in addition to stocks to amplify the returns of an underlying index, stock, specific bonds, or currencies. Since leveraged exposure typically results in higher expenses for the fund, these costs get passed on to the investor through the expense ratio. They are meant for day-to-day trading, and their results over longer periods are unpredictable and can significantly compound losses.
+
+    -   [Example]{.ribbon-highlight}: ProShares Ultra QQQ (QLD) - Aims to provide 2x the daily performance of the Nasdaq-100 Index (or the Nasdaq ETF, QQQ).
+
 -   [**Limited Liability Corporation (LLC)**]{style="color: #009499"} - A corporation is a business organization that issues stock to its shareholders. A limited liability company is a business organization composed of members with membership interests. a type of legal entity that can be used when forming a business that offers protection to the owner(s) from personal liability for debts and other obligations that a business might incur. In other words, the personal assets of the owner cannot be used for legal claims against the business.The differences don't really matter much at the taxation or day-to-day corporate level except in scale: LLCs tend to be smaller than corporations (more or less; a lot of people form small business corporations for good reasons and ignorant ones). (See [Differences between a LLC and S Corp](https://www.investopedia.com/articles/personal-finance/011216/s-corp-vs-llc-which-should-i-choose.asp))
 
 -   [**Marginal Tax Rate**]{style="color: #009499"}: The maximum percentage of income tax that anyone is liable to pay in a system that applies tax burdens to people depending on their respective actual taxable incomes (i.e your tax bracket). As of 2023, the corporate tax rate is 25%.
@@ -195,11 +209,21 @@
 
 -   [**Momentum**]{style="color: #009499"} - The rate of acceleration of a security's price---that is, the speed at which the price is changing. In general, Momentum = Today's price - Price from X days ago. Positive: bullish, Negative: bearish. More sophisticated indicators can be calculated, see <https://www.investopedia.com/terms/m/marketmomentum.asp>
 
-    -   12-Month Momementum:
+    -   12-Month Momentum:
 
         $$
         M = \frac{\text{Closing Price}_{\text{end of month}}- \text{Closing Price}_{\text{12 months ago}}}{\text{Closing Price}_{\text{12 months ago}}}
         $$
+
+    -   Momentum Factor:\
+        $$
+        M_f = \frac{\Delta_{\mbox{yr}} \text{Closing Price} (\%) - \Delta_{\mbox{mo}}\text{Closing Price}(\%)}{\mbox{sd}(\text{Daily Returns})_{\text{yr}}}
+        $$
+
+        -   Regarding this version of the Momentum Factor: "There is a vast literature documenting momentum factors, and this one is proven to work." ([source](https://www.quantitativo.com/p/momentum-based-long-and-short-equities))
+        -   $\Delta_{\mbox{yr}} \text{Closing Price} (\%)$: The percent price change over the past year up until a month ago
+        -   $\Delta_{\mbox{mo}}\text{Closing Price}(\%)$: The percent price change over the past month
+        -   $\mbox{sd}(\text{Daily Returns})_{\text{yr}}$: The standard deviation of daily returns from the last year
 
 -   [**Net Income**]{style="color: #009499"} (aka [**Net Earnings**]{style="color: #009499"} or [**Net Profits**]{style="color: #009499"}) - The bottom figure on a company's income statement. A company's income after all expenses have been deducted from revenues. These expenses include interest charges paid on loans, general and administrative costs, and income taxes.
 

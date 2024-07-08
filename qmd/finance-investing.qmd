@@ -96,6 +96,13 @@ fig-cap-location: top
 
 -   Any market forecasting model, especially involving short term horizons, should probably have a random walk in an ensemble. ([Is the Market Just Random Noise?](https://www.deanmarchiori.com/posts/2024-01-04-randomshares/))
 
+-   The Invesco QQQ ETF
+
+    -   Tracks the Nasdaq-100 Index, which includes 100 of the largest non-financial companies listed on the Nasdaq stock exchange
+    -   Heavily weighted towards technology companies
+    -   Often used as a benchmark for the performance of the technology sector and growth stocks in general
+    -   A popular underlying asset for options trading, adding to its significance in derivatives markets
+
 ## Considerations {#sec-finance-invest-consid .unnumbered}
 
 -   Costs that need to be accounted for when backtesting
@@ -263,6 +270,42 @@ fig-cap-location: top
     -   Statistics\
         ![](_resources/Finance.resources/dmsr-spy-gem-stats-1.png){.lightbox width="532"}
 
+### Momentum-based Long & Short
+
+-   tl;dr: Over the past 23yrs, the Average Annual Return (%) was between 18% and 27% depending on the various parameters you decide on, but the maximum drawdowns are very large — between 56% and 80%. It was hit hard during recessions, so the strategy needs adjusted.
+-   Notes from: [Momentum-based Long & Short Equities Portfolio](https://www.quantitativo.com/p/momentum-based-long-and-short-equities)
+-   General Strategy:
+    -   Every month (or week, or 15 days), we will rank a universe of stocks by a momentum factor**;**
+    -   Then, we will long the top decile and short the bottom decile;
+    -   At the beginning of every month, we will re-balance.
+-   Parameters Tested:
+    -   Stock Universe Sizes: top 150, 500, and 1,000 stocks in terms of market cap;
+    -   Rebalancing Frequencies: weekly, biweekly, and monthly.
+-   Process
+    -   On the first day of every month, we rank the top 150 stocks in terms of market cap according to their momentum factor;
+    -   We long the top 15 and short the bottom 15, with equal weights to each stock;
+    -   We use all the available capital (the cash available and the proceeds from the shorts) to long the stocks.
+-   Results\
+    ![](_resources/Finance-Investing.resources/mom-long-short-exp-results-1.jpg){.lightbox width="532"}
+    -   Best Results: experiment 4 with a universe of 500 stocks and weekly rebalancing
+-   Market Regime Filter applied to reduce maximum drawdown
+    -   Process
+        -   If, on a rebalancing date, the S&P 500 is below its 200-day moving average, then move to 100% cash;
+        -   Resume trading when the S&P 500 comes back above to the 200-SMA
+    -   Results:
+        -   Achieved a 0.91 Sharpe, the highest in all experiments;
+        -   The maximum drawdown reduced to 57%, same as benchmark, and unfortunately still too high;
+        -   Invested 80% of the time, so the exposure-adjusted return would be 23.4%.
+-   Other risk reducing strategies
+    -   Tried but failed:
+        -   Position sizing had poor performance.
+        -   Stop-loss orders would not only cut losers but also cut winners
+    -   Try individual stocks and trade instruments in parallel as opportunities appear
+    -   Try different asset classes (ETFs, futures, crypto, etc)
+    -   Try a cross-sectional momentum strategy;
+    -   Try a machine learning model to predict the probability of a stock to outperform (or underperform) in the near future, training this model with momentum-based signals.
+    -   Combine with other strategies like Mean Reversion
+
 ## Volatility Targeting Portfolio {#sec-finance-invest-vtp .unnumbered}
 
 -   Misc
@@ -282,7 +325,7 @@ fig-cap-location: top
     -   Volatility targeting reduces the likelihood of extreme returns for all asset classes.
     -   Importantly, "left-tail" events tend to be less severe, as they typically occur at times of elevated volatility, when a target-volatility portfolio has a scaled-down notional exposure.
 
-## Mean Reversion Strategy or Pairs Trading {#sec-finance-invest-meanrev .unnumbered}
+## Pairs Trading {#sec-finance-invest-pairs .unnumbered}
 
 -   Papers
     -   [Pairs Trading Using a Novel Graphical Matching Approach](https://arxiv.org/abs/2403.07998)
@@ -328,6 +371,20 @@ fig-cap-location: top
         -   WTI crude oil and Brent crude oil.
         -   AUD/USD and NZD/USD.
         -   Yield curves and futures calendar spreads
+
+## Mean Reversion {#sec-finance-invest-meanrev .unnumbered}
+
+-   IBS + High/Low Strategy
+    -   Notes from [A Mean Reversion Strategy with 2.11 Sharpe](https://www.quantitativo.com/p/a-mean-reversion-strategy-with-211)
+    -   The logic behind this trading strategy is that the market tends to bounce back once it drops too low from its recent highs.
+    -   Process
+        -   Compute the rolling mean of High minus Low over the last 25 days;
+        -   Compute the IBS indicator: (Close - Low) / (High - Low);
+        -   Compute a lower band as the rolling High over the last 10 days minus 2.5 x the rolling mean of High minus Low (first bullet);
+        -   Go long whenever SPY closes under the lower band (3rd bullet), and IBS is lower than 0.3;
+        -   Close the trade whenever the SPY closing price is higher than yesterday's high.
+    -   Experiment: 1999–2024 QQQ ETF
+        -   Results
 
 ## Bonds {#sec-finance-invest-bonds .unnumbered}
 
