@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.52">
+<meta name="generator" content="quarto-1.5.53">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -386,9 +386,11 @@ window.Quarto = {
   <ul>
   <li><a href="#sec-finance-invest-mom-mtaas" id="toc-sec-finance-invest-mom-mtaas" class="nav-link" data-scroll-target="#sec-finance-invest-mom-mtaas">Momentum Tactical Asset Allocation Strategy</a></li>
   <li><a href="#sec-finance-invest-mom-dmsr" id="toc-sec-finance-invest-mom-dmsr" class="nav-link" data-scroll-target="#sec-finance-invest-mom-dmsr">Dual Momentum Sector Rotation</a></li>
+  <li><a href="#momentum-based-long-short" id="toc-momentum-based-long-short" class="nav-link" data-scroll-target="#momentum-based-long-short">Momentum-based Long &amp; Short</a></li>
   </ul></li>
   <li><a href="#sec-finance-invest-vtp" id="toc-sec-finance-invest-vtp" class="nav-link" data-scroll-target="#sec-finance-invest-vtp">Volatility Targeting Portfolio</a></li>
-  <li><a href="#sec-finance-invest-meanrev" id="toc-sec-finance-invest-meanrev" class="nav-link" data-scroll-target="#sec-finance-invest-meanrev">Mean Reversion Strategy or Pairs Trading</a></li>
+  <li><a href="#sec-finance-invest-pairs" id="toc-sec-finance-invest-pairs" class="nav-link" data-scroll-target="#sec-finance-invest-pairs">Pairs Trading</a></li>
+  <li><a href="#sec-finance-invest-meanrev" id="toc-sec-finance-invest-meanrev" class="nav-link" data-scroll-target="#sec-finance-invest-meanrev">Mean Reversion</a></li>
   <li><a href="#sec-finance-invest-bonds" id="toc-sec-finance-invest-bonds" class="nav-link" data-scroll-target="#sec-finance-invest-bonds">Bonds</a></li>
   </ul>
 </nav>
@@ -535,6 +537,13 @@ window.Quarto = {
 </figure>
 </div></li>
 <li><p>Any market forecasting model, especially involving short term horizons, should probably have a random walk in an ensemble. (<a href="https://www.deanmarchiori.com/posts/2024-01-04-randomshares/">Is the Market Just Random Noise?</a>)</p></li>
+<li><p>The Invesco QQQ ETF</p>
+<ul>
+<li>Tracks the Nasdaq-100 Index, which includes 100 of the largest non-financial companies listed on the Nasdaq stock exchange</li>
+<li>Heavily weighted towards technology companies</li>
+<li>Often used as a benchmark for the performance of the technology sector and growth stocks in general</li>
+<li>A popular underlying asset for options trading, adding to its significance in derivatives markets</li>
+</ul></li>
 </ul>
 </section>
 <section id="sec-finance-invest-consid" class="level2 unnumbered">
@@ -784,6 +793,62 @@ window.Quarto = {
 </ul></li>
 </ul>
 </section>
+<section id="momentum-based-long-short" class="level3">
+<h3 class="anchored" data-anchor-id="momentum-based-long-short">Momentum-based Long &amp; Short</h3>
+<ul>
+<li>tl;dr: Over the past 23yrs, the Average Annual Return (%) was between 18% and 27% depending on the various parameters you decide on, but the maximum drawdowns are very large — between 56% and 80%. It was hit hard during recessions, so the strategy needs adjusted.</li>
+<li>Notes from: <a href="https://www.quantitativo.com/p/momentum-based-long-and-short-equities">Momentum-based Long &amp; Short Equities Portfolio</a></li>
+<li>General Strategy:
+<ul>
+<li>Every month (or week, or 15 days), we will rank a universe of stocks by a momentum factor<strong>;</strong></li>
+<li>Then, we will long the top decile and short the bottom decile;</li>
+<li>At the beginning of every month, we will re-balance.</li>
+</ul></li>
+<li>Parameters Tested:
+<ul>
+<li>Stock Universe Sizes: top 150, 500, and 1,000 stocks in terms of market cap;</li>
+<li>Rebalancing Frequencies: weekly, biweekly, and monthly.</li>
+</ul></li>
+<li>Process
+<ul>
+<li>On the first day of every month, we rank the top 150 stocks in terms of market cap according to their momentum factor;</li>
+<li>We long the top 15 and short the bottom 15, with equal weights to each stock;</li>
+<li>We use all the available capital (the cash available and the proceeds from the shorts) to long the stocks.</li>
+</ul></li>
+<li>Results<br>
+<a href="_resources/Finance-Investing.resources/mom-long-short-exp-results-1.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-7"><img src="_resources/Finance-Investing.resources/mom-long-short-exp-results-1.jpg" class="img-fluid" width="532"></a>
+<ul>
+<li>Best Results: experiment 4 with a universe of 500 stocks and weekly rebalancing</li>
+</ul></li>
+<li>Market Regime Filter applied to reduce maximum drawdown
+<ul>
+<li>Process
+<ul>
+<li>If, on a rebalancing date, the S&amp;P 500 is below its 200-day moving average, then move to 100% cash;</li>
+<li>Resume trading when the S&amp;P 500 comes back above to the 200-SMA</li>
+</ul></li>
+<li>Results:
+<ul>
+<li>Achieved a 0.91 Sharpe, the highest in all experiments;</li>
+<li>The maximum drawdown reduced to 57%, same as benchmark, and unfortunately still too high;</li>
+<li>Invested 80% of the time, so the exposure-adjusted return would be 23.4%.</li>
+</ul></li>
+</ul></li>
+<li>Other risk reducing strategies
+<ul>
+<li>Tried but failed:
+<ul>
+<li>Position sizing had poor performance.</li>
+<li>Stop-loss orders would not only cut losers but also cut winners</li>
+</ul></li>
+<li>Try individual stocks and trade instruments in parallel as opportunities appear</li>
+<li>Try different asset classes (ETFs, futures, crypto, etc)</li>
+<li>Try a cross-sectional momentum strategy;</li>
+<li>Try a machine learning model to predict the probability of a stock to outperform (or underperform) in the near future, training this model with momentum-based signals.</li>
+<li>Combine with other strategies like Mean Reversion</li>
+</ul></li>
+</ul>
+</section>
 </section>
 <section id="sec-finance-invest-vtp" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="sec-finance-invest-vtp">Volatility Targeting Portfolio</h2>
@@ -818,8 +883,8 @@ window.Quarto = {
 </ul></li>
 </ul>
 </section>
-<section id="sec-finance-invest-meanrev" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="sec-finance-invest-meanrev">Mean Reversion Strategy or Pairs Trading</h2>
+<section id="sec-finance-invest-pairs" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="sec-finance-invest-pairs">Pairs Trading</h2>
 <ul>
 <li>Papers
 <ul>
@@ -891,6 +956,28 @@ window.Quarto = {
 </ul></li>
 </ul>
 </section>
+<section id="sec-finance-invest-meanrev" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="sec-finance-invest-meanrev">Mean Reversion</h2>
+<ul>
+<li>IBS + High/Low Strategy
+<ul>
+<li>Notes from <a href="https://www.quantitativo.com/p/a-mean-reversion-strategy-with-211">A Mean Reversion Strategy with 2.11 Sharpe</a></li>
+<li>The logic behind this trading strategy is that the market tends to bounce back once it drops too low from its recent highs.</li>
+<li>Process
+<ul>
+<li>Compute the rolling mean of High minus Low over the last 25 days;</li>
+<li>Compute the IBS indicator: (Close - Low) / (High - Low);</li>
+<li>Compute a lower band as the rolling High over the last 10 days minus 2.5 x the rolling mean of High minus Low (first bullet);</li>
+<li>Go long whenever SPY closes under the lower band (3rd bullet), and IBS is lower than 0.3;</li>
+<li>Close the trade whenever the SPY closing price is higher than yesterday’s high.</li>
+</ul></li>
+<li>Experiment: 1999–2024 QQQ ETF
+<ul>
+<li>Results</li>
+</ul></li>
+</ul></li>
+</ul>
+</section>
 <section id="sec-finance-invest-bonds" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="sec-finance-invest-bonds">Bonds</h2>
 <ul>
@@ -901,7 +988,7 @@ window.Quarto = {
 <li><a href="https://www.nerdwallet.com/calculator/compound-interest-calculator?trk=nw_gn_5.0">NerdWallet Compound Interest Calculator</a>
 <ul>
 <li><span class="ribbon-highlight">Example</span>: if you put $5,000 in a (5yr) bond with a 4% yield, assuming you reinvest your interest payments, you will have $6083 by the time it matures.<br>
-<a href="_resources/Finance.resources/nerdwallet-compound-interest-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7"><img src="_resources/Finance.resources/nerdwallet-compound-interest-1.png" class="img-fluid" width="432"></a></li>
+<a href="_resources/Finance.resources/nerdwallet-compound-interest-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8"><img src="_resources/Finance.resources/nerdwallet-compound-interest-1.png" class="img-fluid" width="432"></a></li>
 </ul></li>
 <li><strong>Commody Trend Advisors (CTAs)</strong> are alternatives to bonds. Bonds and stocks were correlated in the 2020s while CTAs were not correlated with either.
 <ul>
@@ -1455,7 +1542,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"selector":".lightbox","loop":false,"closeEffect":"zoom","descPosition":"bottom","openEffect":"zoom"});
+<script>var lightboxQuarto = GLightbox({"selector":".lightbox","loop":false,"openEffect":"zoom","closeEffect":"zoom","descPosition":"bottom"});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {
