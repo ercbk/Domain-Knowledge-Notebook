@@ -23,6 +23,9 @@ fig-cap-location: top
     -   [{{]{style="color: goldenrod"}[pyfolio](https://pyfolio.ml4trading.io/){style="color: goldenrod"}[}}]{style="color: goldenrod"} - Performance and risk analysis for financial portfolios
     -   [{{]{style="color: goldenrod"}[skfolio](https://skfolio.org/){style="color: goldenrod"}[}}]{style="color: goldenrod"} - Portfolio optimization built on top of scikit-learn. It offers a unified interface and tools compatible with scikit-learn to build, fine-tune, and cross-validate portfolio models.
     -   [{{]{style="color: goldenrod"}[alphalens](https://alphalens.ml4trading.io/){style="color: goldenrod"}[}}]{style="color: goldenrod"} - Performance analysis of predictive stock factors
+    -   [{{]{style="color: goldenrod"}[PyBroker](https://www.pybroker.com/en/latest/){style="color: goldenrod"}[}}]{style="color: goldenrod"} - A backtesting engine; A framework is designed for developing algorithmic trading strategies, with a focus on strategies that use machine learning. Easily create and fine-tune trading rules, build powerful models, and gain valuable insights into your strategy’s performance.
+    -   [{{]{style="color: goldenrod"}[empyrical](https://github.com/quantopian/empyrical){style="color: goldenrod"}[}}]{style="color: goldenrod"} - Common financial risk and performance metrics. Used by zipline and pyfolio.
+    -   [{{]{style="color: goldenrod"}[riskfolio-lib](https://pypi.org/project/Riskfolio-Lib/){style="color: goldenrod"}[}}]{style="color: goldenrod"} - Tools for quantitative strategic asset allocation or portfolio optimization
 
 -   Tools
 
