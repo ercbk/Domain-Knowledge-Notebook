@@ -26,6 +26,11 @@
 
 ## Canopy Assessment {#sec-environ-canopy .unnumbered}
 
+-   Packages
+    -   [{]{style="color: #990000"}[greenR](https://github.com/sachit27/greenR){style="color: #990000"}[}]{style="color: #990000"} - An R Package for Quantifying Urban Greenness
+        -   Provides a new and scalable method to assign green indices to individual street segments.
+        -   Offers a comprehensive solution by facilitating green index quantification, analysis, and visualization.
+        -   Supports Mapbox visualizations for interactive exploration of different types of geospatial data, enhancing the analysis with dynamic and engaging visual tools.
 -   Notes from [Lousiville Tree Canopy Assessment 2012-2019](https://treeslouisville.org/wp-content/uploads/2022/02/Louisville-Tree-Canopy-Assessment-Report-2012-2019-Draft3.pdf)
 -   Tree benefit: reducing stormwater runoff near streets and decreasing the urban heat island effect
 -   Above surface factors such as sidewalks to utilities can affect the suitability of a site for tree planting.
