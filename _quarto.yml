@@ -18,8 +18,12 @@ book:
     background: "#fffaf0"
     foreground: "#1E4477"
     tools: 
-      - icon: house-fill
+      - icon: house
         href: https://ericbook.netlify.app/
+      - icon: database-gear
+        href: https://ercbk.github.io/Data-Science-Notebook/
+      - icon: book
+        href: https://ercbk.github.io/Statistical-Rethinking-Notebook/
   chapters:
     - index.qmd
     - qmd/agriculture.qmd
