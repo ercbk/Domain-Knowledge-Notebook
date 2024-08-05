@@ -7,6 +7,10 @@
     -   [Job, Organizational and Team Development \>\> Developing a Data Strategy \>\> Objectives and Key Results (OKRs)](https://ercbk.github.io/Data-Science-Notebook/qmd/job-organizational-and-team-development.html#sec-job-orgdev-datstrat-okr){style="color: green"}
 -   Leaders should focus on 3 to 6 KPIs that will drive growth.
 -   When a KPI's growth begins to stagnate, break up the KPI monolith into smaller, more meaningful (and hopefully, easier to optimize) segments
+-   Optimizing around a single metric will lead to unintended consequences and vulnerabilities
+    -   Systems are complex and ignoring other potentially important factors could result in an overall negative affect
+    -   e.g. If you focus on increasing the volume of a product without also considering the quality, then the result will likely be fewer customers.
+    -   I think this could also pertain to the importance of guardrail metrics.
 
 ## Terms {#sec-kpis-terms .unnumbered}
 

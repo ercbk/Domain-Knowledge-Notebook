@@ -6,9 +6,21 @@
 
 -   [**Basis Risk**]{style="color: #009499"} - The risk that an asset and a hedge will not move in opposite directions as expected; "basis" refers to the discrepancy.
 
--   [**Beta**]{style="color: #009499"} - A measure of a stock's or a portfolio's sensitivity to market movements. It quantifies the relationship between the price movements of a security and the overall market. A beta of 1 indicates that the security tends to move in line with the market, while a beta greater than 1 implies that the security is more volatile than the market. A beta less than 1 suggests that the security is less volatile than the market. Often used as a tool to assess the risk or volatility of a particular stock or portfolio in comparison to the overall market
+-   [**Beta**]{style="color: #009499"} - A measure of a stock's or a portfolio's sensitivity to market movements. It quantifies the relationship between the price movements of a security and the overall market.
 
-    -   Calculated as the covariance between the rate of return of a company's stock and the overall market return.
+    -   Used to evaluate the return of an asset based on, for example, the return of the market portfolio (Capital Asset Pricing Model, CAPM), market plus asset characteristics (Fama-French three-factor model and five-factor model, Carhart four-factor model, or a set of risk factors and market indices (Arbitrage Pricing Theory, APT).
+    -   A beta of 1 indicates that the security tends to move in line with the market, while a beta greater than 1 implies that the security is more volatile than the market. A beta less than 1 suggests that the security is less volatile than the market. Often used as a tool to assess the risk or volatility of a particular stock or portfolio in comparison to the overall market
+    -   Simple regressions are the basic model for estimating $\beta$, such as $\text{asset} = \alpha + \hat \beta \; \text{hedging\_intrument} + \epsilon$
+        -   For multiple hedging instruments, a simple regression model is fit for each instrument
+        -   $\text{asset}$: The historical return prices of the target asset
+            -   Typical window of past prices is between 3 months and a year.
+        -   $\text{hedging instrument}$: The historical return prices of hedging instrument
+    -   [Example]{.ribbon-highlight}: Using ETF shares as a hedging instrument
+        -   Target asset: 1000 shares of Stock A, price \$100
+        -   \$50 per ETF share
+        -   The beta is calculated to be 0.3
+        -   To hedge, you'd buy 0.3 \* (\$100/\$50) \* 1000 shares = 600 ETF shares
+            -   \$100/\$50 (prices of asset and instrument) standardizes beta coefficient
 
 -   [**Bid-Ask Spread**]{style="color: #009499"} - The difference between the highest price a buyer is willing to pay (bid) and the lowest price a seller is willing to accept (ask).
 
