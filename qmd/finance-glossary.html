@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.54">
+<meta name="generator" content="quarto-1.5.56">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -404,9 +404,29 @@ window.Quarto = {
 <li><p><span style="color: #009499"><strong>Amortization</strong></span> - Similar to depreciation except for intangible assets. A non-cash expense that reduces the value of a company’s <em>definite life</em> intangible assets and also reduces reported earnings</p></li>
 <li><p><span style="color: #009499"><strong>Basis Point</strong></span> - 1/100th of a percentage point</p></li>
 <li><p><span style="color: #009499"><strong>Basis Risk</strong></span> - The risk that an asset and a hedge will not move in opposite directions as expected; “basis” refers to the discrepancy.</p></li>
-<li><p><span style="color: #009499"><strong>Beta</strong></span> - A measure of a stock’s or a portfolio’s sensitivity to market movements. It quantifies the relationship between the price movements of a security and the overall market. A beta of 1 indicates that the security tends to move in line with the market, while a beta greater than 1 implies that the security is more volatile than the market. A beta less than 1 suggests that the security is less volatile than the market. Often used as a tool to assess the risk or volatility of a particular stock or portfolio in comparison to the overall market</p>
+<li><p><span style="color: #009499"><strong>Beta</strong></span> - A measure of a stock’s or a portfolio’s sensitivity to market movements. It quantifies the relationship between the price movements of a security and the overall market.</p>
 <ul>
-<li>Calculated as the covariance between the rate of return of a company’s stock and the overall market return.</li>
+<li>Used to evaluate the return of an asset based on, for example, the return of the market portfolio (Capital Asset Pricing Model, CAPM), market plus asset characteristics (Fama-French three-factor model and five-factor model, Carhart four-factor model, or a set of risk factors and market indices (Arbitrage Pricing Theory, APT).</li>
+<li>A beta of 1 indicates that the security tends to move in line with the market, while a beta greater than 1 implies that the security is more volatile than the market. A beta less than 1 suggests that the security is less volatile than the market. Often used as a tool to assess the risk or volatility of a particular stock or portfolio in comparison to the overall market</li>
+<li>Simple regressions are the basic model for estimating <span class="math inline">\(\beta\)</span>, such as <span class="math inline">\(\text{asset} = \alpha + \hat \beta \; \text{hedging\_intrument} + \epsilon\)</span>
+<ul>
+<li>For multiple hedging instruments, a simple regression model is fit for each instrument</li>
+<li><span class="math inline">\(\text{asset}\)</span>: The historical return prices of the target asset
+<ul>
+<li>Typical window of past prices is between 3 months and a year.</li>
+</ul></li>
+<li><span class="math inline">\(\text{hedging instrument}\)</span>: The historical return prices of hedging instrument</li>
+</ul></li>
+<li><span class="ribbon-highlight">Example</span>: Using ETF shares as a hedging instrument
+<ul>
+<li>Target asset: 1000 shares of Stock A, price $100</li>
+<li>$50 per ETF share</li>
+<li>The beta is calculated to be 0.3</li>
+<li>To hedge, you’d buy 0.3 * ($100/$50) * 1000 shares = 600 ETF shares
+<ul>
+<li>$100/$50 (prices of asset and instrument) standardizes beta coefficient</li>
+</ul></li>
+</ul></li>
 </ul></li>
 <li><p><span style="color: #009499"><strong>Bid-Ask Spread</strong></span> - The difference between the highest price a buyer is willing to pay (bid) and the lowest price a seller is willing to accept (ask).</p>
 <ul>
@@ -1242,7 +1262,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","selector":".lightbox","openEffect":"zoom","loop":false,"closeEffect":"zoom"});
+<script>var lightboxQuarto = GLightbox({"selector":".lightbox","openEffect":"zoom","closeEffect":"zoom","descPosition":"bottom","loop":false});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {
