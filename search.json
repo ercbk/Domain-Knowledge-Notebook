@@ -572,6 +572,16 @@
     ]
   },
   {
+    "objectID": "qmd/kpis.html#sec-proj-plan-capf",
+    "href": "qmd/kpis.html#sec-proj-plan-capf",
+    "title": "KPIs",
+    "section": "Developing a KPI Data Pipeline",
+    "text": "Developing a KPI Data Pipeline\n\n\nKind of like working backwards in the data analysis workflow (design driven development)\nQuantify the problems and develop KPIs that can inform the direction of the business\n\n10-15 organizational KPIs is common\nExamples: Number of daily sales, the number of new customers, decreasing cost of operations/logistics\n\nBuild data pipelines around these critical KPIs\n\nWhat data can we use that we already have access to?\nWhat kind of internal data do we need to capture?\nWhat kind of third party/external data could be useful?\nWhat is the least amount of data available that can be used to approximate each KPI metric?\n\nAfter the simplest version of the metric is built, you can brainstorm on how it can be improved.\n\nPersonalize a general metric to your specific business.\n\nSplit a general metric into smaller metrics can increase accuracy (e.g. product line, geography, etc.)\n\nWhat kind of storage will we need?\n\nAdding a pipeline for a new data source\n\nCapture a sample of the data to examine its potential. (e.g. cookies on your website)\nIf metric measured from new data is potentially valuable, build a simple, less robust (without sacrificing too much data integrity) pipeline to your lake.\n\nMeaning fewer built-in quality checks\nDoing it this way does add technical debt\nIf metric feeds into a company-wide metric, then additional checks will need to be added\n\nE.g. no duplicate datasets, data corruption, or data losses.\n\n\nAfter 6 months or so, if metric remains useful, make pipeline more robust.\n\nAdding third party data pipeline (e.g. Equifax)\n\nE.g. demographic, income data\nIf a product has a certain demographics associated with it, this data can be used to weight customers relative to the demographic specifics of that product.\nGet a sample first to determine if it’s worth it\n\n3rd party data is expensive to buy and usually a reoccurring cost.\nCan be time-consuming and resource intensive to add the pipeline\n\nGet transparency on how the data was collected and validity checks used\n\nPeriodically reevaluate whether the metrics fundamentally still make sense from a business perspective and how they can be improved.\n\nExpand pipelines to capture additional data in order to continue to refine metrics\nDrop and add metrics as business and trends change.\nRedefine metrics as needed",
+    "crumbs": [
+      "KPIs"
+    ]
+  },
+  {
     "objectID": "qmd/location-selection.html",
     "href": "qmd/location-selection.html",
     "title": "Location Selection",
