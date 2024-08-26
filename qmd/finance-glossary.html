@@ -404,6 +404,16 @@ window.Quarto = {
 <li><p><span style="color: #009499"><strong>Amortization</strong></span> - Similar to depreciation except for intangible assets. A non-cash expense that reduces the value of a company’s <em>definite life</em> intangible assets and also reduces reported earnings</p></li>
 <li><p><span style="color: #009499"><strong>Basis Point</strong></span> - 1/100th of a percentage point</p></li>
 <li><p><span style="color: #009499"><strong>Basis Risk</strong></span> - The risk that an asset and a hedge will not move in opposite directions as expected; “basis” refers to the discrepancy.</p></li>
+<li><p><span style="color: #009499"><strong>Bear Market</strong></span> - Definitions one and two by themselves can result in bear markets that are only a couple days long, which depending on your research, may not be useful.</p>
+<ol type="1">
+<li>Index (Closing Price) under its 200-day moving average</li>
+<li>Index is 20% or more off its all-time high</li>
+<li>Defs 1 and 2 are the Bear Signals. Then, a bear market requires: (<a href="https://alvarezquanttrading.com/blog/bear-markets-through-the-decades/">source</a>)
+<ul>
+<li>The Bear Signal has been true for 50% or more days over the last 63 trading days</li>
+<li>The last Bear Signal happened in the last 10 trading days</li>
+</ul></li>
+</ol></li>
 <li><p><span style="color: #009499"><strong>Beta</strong></span> - A measure of a stock’s or a portfolio’s sensitivity to market movements. It quantifies the relationship between the price movements of a security and the overall market.</p>
 <ul>
 <li>Used to evaluate the return of an asset based on, for example, the return of the market portfolio (Capital Asset Pricing Model, CAPM), market plus asset characteristics (Fama-French three-factor model and five-factor model, Carhart four-factor model, or a set of risk factors and market indices (Arbitrage Pricing Theory, APT).</li>
@@ -1262,7 +1272,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","openEffect":"zoom","closeEffect":"zoom","loop":false,"selector":".lightbox"});
+<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","closeEffect":"zoom","selector":".lightbox","loop":false,"descPosition":"bottom"});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {
