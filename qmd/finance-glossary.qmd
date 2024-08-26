@@ -6,6 +6,14 @@
 
 -   [**Basis Risk**]{style="color: #009499"} - The risk that an asset and a hedge will not move in opposite directions as expected; "basis" refers to the discrepancy.
 
+-   [**Bear Market**]{style="color: #009499"} - Definitions one and two by themselves can result in bear markets that are only a couple days long, which depending on your research, may not be useful.
+
+    1.  Index (Closing Price) under its 200-day moving average
+    2.  Index is 20% or more off its all-time high
+    3.  Defs 1 and 2 are the Bear Signals. Then, a bear market requires: ([source](https://alvarezquanttrading.com/blog/bear-markets-through-the-decades/))
+        -   The Bear Signal has been true for 50% or more days over the last 63 trading days
+        -   The last Bear Signal happened in the last 10 trading days
+
 -   [**Beta**]{style="color: #009499"} - A measure of a stock's or a portfolio's sensitivity to market movements. It quantifies the relationship between the price movements of a security and the overall market.
 
     -   Used to evaluate the return of an asset based on, for example, the return of the market portfolio (Capital Asset Pricing Model, CAPM), market plus asset characteristics (Fama-French three-factor model and five-factor model, Carhart four-factor model, or a set of risk factors and market indices (Arbitrage Pricing Theory, APT).
