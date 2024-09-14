@@ -75,6 +75,10 @@
 
     -   Also see figure in Fill Rate
 
+-   [**Shrink Rate**]{style="color: #009499"} - The lost inventory as a percentage of sales. The metric is the gap between products retailers physically have on-hand at stores and warehouses during an inventory check (usually once or twice a year) and what they purchased.
+
+    -   Customer and employee theft drive roughly two-thirds of shrink, retailers estimate, on top of damaged or spoiled products, administrative errors, vendor fraud, and other factors. ([source](https://www.cnn.com/2024/09/13/business/theft-retail-shrink-stores/index.html))
+
 -   [**Silent Switches**]{style="color: #009499"} - See Linked Lines
 
 -   [**SKU**]{style="color: #009499"} - Stock Keeping Unit - Usually a bar code that has all the information to distinguish it from another product. These attributes can include manufacturer, description, material, size, color, packaging, and warranty terms. When a business takes inventory of its stock, it counts the quantity it has of each SKU.
