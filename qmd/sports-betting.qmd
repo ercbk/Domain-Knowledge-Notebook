@@ -22,6 +22,10 @@
 
 ## Terms {#sec-spbet-terms .unnumbered}
 
+-   [**Bradley-Terry Model**]{style="color: #009499"} - Can be used to model data where you have *pairwise comparisons* between different items, and you are interested in the underlying “fitness” of the items (i.e. wins/losses).
+
+    -   [Example]{.ribbon-highlight}: A sport where each match is a “pairwise comparison” between two players or teams, and you assume each player or team has an underlying skill or ability.
+
 -   [**Closing Line Value (CLV)**]{style="color: #009499"} - A measure of the value of a bet at the time it is placed compared to the closing odds. You can calculate it by comparing the odds you received when you placed your bet to the final odds when the event starts. If the odds you received were better than the closing odds, then the bet has positive CLV. If the odds you received were worse than the closing odds, then the bet has negative CLV. This is the formula used by the [Unabated](https://unabated.com/articles/getting-precise-about-closing-line-value) website.
 
     $$
@@ -57,6 +61,12 @@
 -   [**Originators**]{style="color: #009499"} - A sharp that generates their own odds --- the quants of sports betting.
 
 -   [**Picking Off**]{style="color: #009499"} (aka [**Stake Factoring**]{style="color: #009499"}) - The limiting of the maximum wager or even banning of a sharp bettor by a bookmaker. This is done by the bookmaker to optimize profitability. Bettors can be flagged as unprofitable not only by how much or how often they win, but by betting actions determined to be predictive according to the algorithm used by the bookmaker.
+
+-   [**Plackett-Luce Model**]{style="color: #009499"} - Can be useful when you have several *rankings* between items and you’re interested in the underlying “fitness” of each item.
+
+    -   [Example]{.ribbon-highlight}: Assess the quality of different products when each participant has ranked the items from best to worst.
+
+    -   [Example]{.ribbon-highlight}: Model the underlying skills of each player when the outcome isn’t wins or losses, but rankings.
 
 -   [**Sharp Bettors**]{style="color: #009499"} (aka [**Sharps**]{style="color: #009499"}) - Informed, experienced, successful sports bettors. Someone who is consistently making positive Expected Value (EV) bets or bets that are expected to be profitable in the long term which is typically means winning about 55% to 60% of the time.
 
