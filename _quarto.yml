@@ -5,6 +5,9 @@ book:
   title: "Domain Knowledge"
   author: "Eric Book"
   date: "6/21/2023"
+  cover-image: images/domain-knowledge-notebook-1a.jpg
+  cover-image-alt: |
+    dark blue notebook with various knowledge iconograghy
   favicon: images/dk-favicon-32.png
   reader-mode: true
   repo-url: https://github.com/ercbk/Domain-Knowledge-Notebook
