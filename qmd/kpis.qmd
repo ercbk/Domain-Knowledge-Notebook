@@ -11,6 +11,7 @@
     -   Systems are complex and ignoring other potentially important factors could result in an overall negative affect
     -   e.g. If you focus on increasing the volume of a product without also considering the quality, then the result will likely be fewer customers.
     -   I think this could also pertain to the importance of guardrail metrics.
+-   Monitoring raw metrics can be misleading. Consider normalization when appropriate (See [Marketing \>\> Search Engine Marketing](marketing.qmd#sec-mark-sem){style="color: green"} \>\> Bid Elasticity \>\> Non-Normalized metrics are misleading)
 
 ## Terms {#sec-kpis-terms .unnumbered}
 

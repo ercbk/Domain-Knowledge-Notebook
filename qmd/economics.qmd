@@ -11,7 +11,7 @@
 
 ## Terms {#sec-econ-terms .unnumbered}
 
--   [**Adverse Selection**]{style="color: #009499"} - a market situation where buyers and sellers have different information. The result is that participants with key information might participate selectively in trades at the expense of other parties who do not have the same information
+-   [**Adverse Selection**]{style="color: #009499"} - A market situation where buyers and sellers have different information. The result is that participants with key information might participate selectively in trades at the expense of other parties who do not have the same information
 
     -   e.g. A person waits until he knows he is sick and in need of health care before applying for a health insurance policy. The buyer has more knowledge (i.e., about their health). To fight adverse selection, insurance companies reduce exposure to large claims by limiting coverage or raising premiums
 
@@ -25,12 +25,12 @@
 
 -   [**Inflation**]{style="color: #009499"} - A sustained increase in the price level of goods and services.
 
--   [**Intertemporal Price Discrimination**]{style="color: #009499"} - charging a high price initially, then lowering price after time passes.
+-   [**Intertemporal Price Discrimination**]{style="color: #009499"} - Charging a high price initially, then lowering price after time passes.
 
     -   A method for firms to separate consumer groups based on willingness to pay
     -   e.g. last minute travel bookings (opposite direction since last minute bookings usually cost more)
 
--   [**Price Elasticity**]{style="color: #009499"} [**of Demand**]{style="color: #009499"} **(PED)**- the percent change in demand given the percent change in price assuming that everything else doesn't change
+-   [**Price Elasticity of Demand (PED)**]{style="color: #009499"} - The percent change in demand given the percent change in price assuming that everything else doesn't change
 
     -   How sensitive the quantity demanded is to its price. When the price rises, quantity demanded falls for almost any good, but it falls more for some than for others.
     -   The elasticity of a good or service can vary according to the number of close substitutes available, its relative cost, and the amount of time that has elapsed since the price change occurred.
@@ -38,7 +38,13 @@
     -   An [**inelastic**]{style="color: #009499"} product is one that consumers continue to purchase even after a change in price
     -   Products or services that are elastic are either unnecessary or can be easily replaced with a substitute.
 
--   [**Second Degree Price Discrimination**]{style="color: #009499"} - charging a different price for different quantities at the same time
+-   [**Price Elasticity of Supply (PES)**]{style="color: #009499"} - How quickly producers shift production levels in response to price changes. ([source](https://towardsdatascience.com/how-to-calculate-the-elasticity-of-bids-in-ppc-marketing-1a989c0b46cd))\
+    ![](_resources/Economics.resources/terms-pes-1.webp){.lightbox width="432"}
+
+    -   From a producers point of view, the more prices rise, the more the producer would be willing to produce.
+    -   Price elasticity of supply = % Change in Supply / % Change in Price
+
+-   [**Second Degree Price Discrimination**]{style="color: #009499"} - Charging a different price for different quantities at the same time
 
 ## Price Elasticity {#sec-econ-pricelas .unnumbered}
 
