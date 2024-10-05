@@ -1032,7 +1032,10 @@ eCPM = \frac{\mbox{Estimated Earnings} \cdot 1000}{\mbox{Total Impressions}}
 <section id="sec-mark-sem" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="sec-mark-sem">Search Engine Marketing (SEM)</h2>
 <ul>
-<li><p>Marketing on search engines where you pay to place ads at the top so that the user sees your ads before the organic search results (e.g.&nbsp;Google, Bing, etc.)</p></li>
+<li><p>Marketing on search engines where you pay to place ads at the top so that the user sees your ads before the organic search results (e.g.&nbsp;Google, Bing, etc.)</p>
+<ul>
+<li>This same methodology can apply to other types of marketing that uses bids, such as Amazon with product placement</li>
+</ul></li>
 <li><p>Most SEM ads work on an auction system, where you have to place a bid on each of the search terms (can be millions of terms) relevant to your business and if you win a position in the auction(there are usually 2–3 SEM ads per search, or more based on your region and the search engine you are using), then you would pay the cost equal to your bid or lower depending on which auction system the search engine follows.</p></li>
 <li><p><u>Auctions</u></p>
 <ul>
@@ -1083,6 +1086,47 @@ eCPM = \frac{\mbox{Estimated Earnings} \cdot 1000}{\mbox{Total Impressions}}
 <li>Is there an optimal level of investment?</li>
 </ul></li>
 </ul></li>
+<li><p><u>Bid Elasticity</u></p>
+<ul>
+<li>Notes from <a href="https://towardsdatascience.com/how-to-calculate-the-elasticity-of-bids-in-ppc-marketing-1a989c0b46cd">How to Calculate the Elasticity of Bids in PPC Marketing</a></li>
+<li>The higher the bid Google or Amazon receives, generally, the higher the supply of slots they will provide (and hence, the higher the chances of getting a click).</li>
+<li>Basic Formula for Bid Elasticity of Supply<br>
+<span class="math display">\[
+\mbox{Price Elasticity of Bids} = \frac{\text{% Change in Metric}}{\text{% Change in Bids}}
+\]</span>
+<ul>
+<li><span class="math inline">\(\text{Metric}\)</span> can be impressions, clicks, impression share, etc.</li>
+</ul></li>
+<li>Non-Normalized metrics are misleading
+<ul>
+<li>Clicks (metric) vs Bid Price<br>
+<a href="_resources/Marketing.resources/sem-elast-nonnorm-1.webp" class="lightbox" data-gallery="nonnorm"><img src="_resources/Marketing.resources/sem-elast-nonnorm-1.webp" class="img-fluid" width="532"></a>
+<ul>
+<li>The bid price at €0.40 resulted in more clicks than the €0.70 bid price</li>
+<li>This apparently shows that an increase in bid price does not lead to an increase in supply (i.e.&nbsp;increase in advertising slots <span class="math inline">\(\rightarrow\)</span> opportunities for clicks <span class="math inline">\(\rightarrow\)</span> clicks) which is contrary economic theory, but the raw metric (clicks) is misleading</li>
+</ul></li>
+<li>Clicks (metric) vs Bid Price vs Days Active<br>
+<a href="_resources/Marketing.resources/sem-elast-nonnorm-2.webp" class="lightbox" data-gallery="nonnorm"><img src="_resources/Marketing.resources/sem-elast-nonnorm-2.webp" class="img-fluid" width="532"></a>
+<ul>
+<li>Since the the bid price of €0.40 was active more days than the €0.70 bid price, it had more click opportunities which leads to more clicks</li>
+</ul></li>
+<li>Clicks (metric) vs Bid Price vs Eligible Impressions<br>
+<a href="_resources/Marketing.resources/sem-elast-nonnorm-3.webp" class="lightbox" data-gallery="nonnorm"><img src="_resources/Marketing.resources/sem-elast-nonnorm-3.webp" class="img-fluid" width="532"></a>
+<ul>
+<li>The €0.40 was in around twice as many auctions (266K eligible impressions) that the €0.70 bid price (125K eligible impressions) which again shows that lower price had more click opportunities which is why it had more clicks</li>
+</ul></li>
+</ul></li>
+<li>Normalizing Metrics
+<ul>
+<li>Examples for Clicks
+<ul>
+<li><strong>Impression Share</strong> (Impressions / Eligible Opportunities)</li>
+<li><strong>CTR</strong> (Clicks / Impressions)</li>
+<li>Clicks / Eligible Opportunities</li>
+<li><strong>Click Coverage</strong> (your clicks vs the whole market of clicks)</li>
+</ul></li>
+</ul></li>
+</ul></li>
 </ul>
 </section>
 <section id="sec-mark-custseg" class="level2 unnumbered">
@@ -1131,7 +1175,7 @@ eCPM = \frac{\mbox{Estimated Earnings} \cdot 1000}{\mbox{Total Impressions}}
 </section>
 <section id="sec-mark-custseg-rfm" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="sec-mark-custseg-rfm">RFM Analysis</h3>
-<p><a href="./_resources/Marketing.resources/image.2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img src="./_resources/Marketing.resources/image.2.png" class="img-fluid" width="632"></a></p>
+<p><a href="./_resources/Marketing.resources/image.2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8"><img src="./_resources/Marketing.resources/image.2.png" class="img-fluid" width="632"></a></p>
 <ul>
 <li>Recency, Frequency, and Monetary Value Analysis</li>
 <li>The most profitable segments will have low recency, high frequency, and high monetary value.</li>
@@ -1140,12 +1184,12 @@ eCPM = \frac{\mbox{Estimated Earnings} \cdot 1000}{\mbox{Total Impressions}}
 <h4 class="unnumbered anchored" data-anchor-id="sec-mark-custseg-rfm-dat">Data</h4>
 <ul>
 <li>Just need a transactional database with client’s orders over time (at least 2.5 to 3 yrs of data to capture enough behavior variation).<br>
-<a href="./_resources/Marketing.resources/image.3.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img src="./_resources/Marketing.resources/image.3.png" class="img-fluid" width="632"></a>
+<a href="./_resources/Marketing.resources/image.3.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9"><img src="./_resources/Marketing.resources/image.3.png" class="img-fluid" width="632"></a>
 <ul>
 <li>time frame could be monthly or yearly or any other time frame required by the business</li>
 </ul></li>
 <li>Explicitly creates sub-groups based on how much each customer is contributing.<br>
-<a href="./_resources/Marketing.resources/image.4.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7"><img src="./_resources/Marketing.resources/image.4.png" class="img-fluid" width="632"></a>
+<a href="./_resources/Marketing.resources/image.4.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10"><img src="./_resources/Marketing.resources/image.4.png" class="img-fluid" width="632"></a>
 <ul>
 <li><strong>Recency</strong> – How recently did the customer purchase?
 <ul>
@@ -1206,7 +1250,7 @@ eCPM = \frac{\mbox{Estimated Earnings} \cdot 1000}{\mbox{Total Impressions}}
 <li>Interpret clusters and create strategy for each cluster
 <ul>
 <li><p><span class="ribbon-highlight">Example</span><br>
-<a href="./_resources/Marketing.resources/image.6.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8"><img src="./_resources/Marketing.resources/image.6.png" class="img-fluid" width="632"></a><a href="./_resources/Marketing.resources/image.5.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9"><img src="./_resources/Marketing.resources/image.5.png" class="img-fluid" width="632"></a></p>
+<a href="./_resources/Marketing.resources/image.6.png" class="lightbox" data-gallery="quarto-lightbox-gallery-11"><img src="./_resources/Marketing.resources/image.6.png" class="img-fluid" width="632"></a><a href="./_resources/Marketing.resources/image.5.png" class="lightbox" data-gallery="quarto-lightbox-gallery-12"><img src="./_resources/Marketing.resources/image.5.png" class="img-fluid" width="632"></a></p>
 <ul>
 <li>Charts
 <ul>
@@ -1240,8 +1284,8 @@ eCPM = \frac{\mbox{Estimated Earnings} \cdot 1000}{\mbox{Total Impressions}}
 </ul></li>
 </ul></li>
 <li><p><span class="ribbon-highlight">Example</span></p>
-<p><a href="_resources/Marketing.resources/custseg-clust-bar-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10"><img src="_resources/Marketing.resources/custseg-clust-bar-1.png" class="img-fluid" width="354"></a></p>
-<p><a href="_resources/Marketing.resources/custseg-clust-mark-recom-1.webp" class="lightbox" data-gallery="quarto-lightbox-gallery-11"><img src="_resources/Marketing.resources/custseg-clust-mark-recom-1.webp" class="img-fluid" width="632"></a></p>
+<p><a href="_resources/Marketing.resources/custseg-clust-bar-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-13"><img src="_resources/Marketing.resources/custseg-clust-bar-1.png" class="img-fluid" width="354"></a></p>
+<p><a href="_resources/Marketing.resources/custseg-clust-mark-recom-1.webp" class="lightbox" data-gallery="quarto-lightbox-gallery-14"><img src="_resources/Marketing.resources/custseg-clust-mark-recom-1.webp" class="img-fluid" width="632"></a></p>
 <ul>
 <li>From <a href="https://towardsdatascience.com/a-data-science-project-with-chatgpt-code-interpreter-e9beb8705dac">A Data Science Project with ChatGPT Code Interpreter</a></li>
 </ul></li>
@@ -1338,7 +1382,7 @@ and monetary_rank between 1 and 3</code></pre></li>
 <li>Purchasing: what a user buys, their purchasing frequency and timing, purchasing price and discounts, etc.</li>
 <li>Social media network: Is there an influencer within a customer’s network? (see bkmks &gt;&gt; Network Analysis)</li>
 <li><span class="ribbon-highlight">Example</span>: Telecommunications<br>
-<a href="./_resources/Marketing.resources/image.7.png" class="lightbox" data-gallery="quarto-lightbox-gallery-12"><img src="./_resources/Marketing.resources/image.7.png" class="img-fluid" width="632"></a></li>
+<a href="./_resources/Marketing.resources/image.7.png" class="lightbox" data-gallery="quarto-lightbox-gallery-15"><img src="./_resources/Marketing.resources/image.7.png" class="img-fluid" width="632"></a></li>
 </ul></li>
 <li>Cluster the data and interpret the clusters
 <ul>
@@ -1363,8 +1407,8 @@ and monetary_rank between 1 and 3</code></pre></li>
 </section>
 <section id="sec-mark-custjourn" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="sec-mark-custjourn">Customer Journey</h2>
-<p><a href="./_resources/Marketing.resources/image.1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-13"><img src="./_resources/Marketing.resources/image.1.png" class="img-fluid" width="632"></a><br>
-<a href="./_resources/Marketing.resources/image.png" class="lightbox" data-gallery="quarto-lightbox-gallery-14"><img src="./_resources/Marketing.resources/image.png" class="img-fluid" width="632"></a></p>
+<p><a href="./_resources/Marketing.resources/image.1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-16"><img src="./_resources/Marketing.resources/image.1.png" class="img-fluid" width="632"></a><br>
+<a href="./_resources/Marketing.resources/image.png" class="lightbox" data-gallery="quarto-lightbox-gallery-17"><img src="./_resources/Marketing.resources/image.png" class="img-fluid" width="632"></a></p>
 <ul>
 <li>Top Figure: Typical SaaS User Journey</li>
 <li>Bottom Figure: General User Journey
@@ -1408,7 +1452,7 @@ and monetary_rank between 1 and 3</code></pre></li>
 <h2 class="unnumbered anchored" data-anchor-id="sec-mark-wkflw">Workflow</h2>
 <section id="sec-mark-wkflw-icp" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="sec-mark-wkflw-icp">Find the Ideal Customer Profile (ICP) and Target Them</h3>
-<p><a href="./_resources/Marketing.resources/image.8.png" class="lightbox" data-gallery="quarto-lightbox-gallery-15"><img src="./_resources/Marketing.resources/image.8.png" class="img-fluid" width="532"></a></p>
+<p><a href="./_resources/Marketing.resources/image.8.png" class="lightbox" data-gallery="quarto-lightbox-gallery-18"><img src="./_resources/Marketing.resources/image.8.png" class="img-fluid" width="532"></a></p>
 <ul>
 <li><p>Notes from <a href="https://towardsdatascience.com/a-complete-guide-to-data-driven-customer-acquisition-f0f1708b328">article</a></p></li>
 <li><p>Customer Long Term Value</p>
@@ -1437,7 +1481,7 @@ and monetary_rank between 1 and 3</code></pre></li>
 </ul></li>
 </ul></li>
 <li><p><u>Use experimentation on High-Value cohorts to test which acquisition/marketing campaigns have high ROAS.</u><br>
-<a href="./_resources/Marketing.resources/image.9.png" class="lightbox" data-gallery="quarto-lightbox-gallery-16"><img src="./_resources/Marketing.resources/image.9.png" class="img-fluid" width="632"></a></p>
+<a href="./_resources/Marketing.resources/image.9.png" class="lightbox" data-gallery="quarto-lightbox-gallery-19"><img src="./_resources/Marketing.resources/image.9.png" class="img-fluid" width="632"></a></p>
 <ul>
 <li>For cohort 3, campaign A seems to have more success than campaign B</li>
 </ul></li>
@@ -2005,7 +2049,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","selector":".lightbox","closeEffect":"zoom","descPosition":"bottom","loop":false});
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","selector":".lightbox","openEffect":"zoom","loop":false,"descPosition":"bottom"});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {
