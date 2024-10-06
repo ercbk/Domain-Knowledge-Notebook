@@ -456,11 +456,12 @@
 
 -   [Bid Elasticity]{.underline}
 
+    -   Also see [Economics \>\> Price Elasticity](economics.qmd#sec-econ-pricelas){style="color: green"}
     -   Notes from [How to Calculate the Elasticity of Bids in PPC Marketing](https://towardsdatascience.com/how-to-calculate-the-elasticity-of-bids-in-ppc-marketing-1a989c0b46cd)
     -   The higher the bid Google or Amazon receives, generally, the higher the supply of slots they will provide (and hence, the higher the chances of getting a click).
     -   Basic Formula for Bid Elasticity of Supply\
         $$
-        \mbox{Price Elasticity of Bids} = \frac{\text{\% Change in Metric}}{\text{\% Change in Bids}}
+        \mbox{Price Elasticity of Bids} = \frac{\text{\% Change in Metric}}{\text{\% Change in Bid Prices}}
         $$
         -   $\text{Metric}$ can be impressions, clicks, impression share, etc.
     -   Non-Normalized metrics are misleading
@@ -491,6 +492,9 @@
             ![](_resources/Marketing.resources/sem-elast-norm-1.webp){.lightbox width="532"}
             -   Now we see the behavior that economic theory teaches us, supply (i.e. increase in advertising slots $\rightarrow$ opportunities for clicks $\rightarrow$ clicks) increases as bid price increases.
             -   Note that there are fluctuations because there are many factors that influence the volume of clicks or elgible opportunities
+    -   Linear Fit\
+        ![](_resources/Marketing.resources/sem-elast-fit-1.webp){.lightbox width="532"}
+        -   This is just a simple linear regression line which shows a pretty good fit. The classical model would be to use a log-log regression model, metric \~ bid price with the coefficient as the estimate for elasticity. Other factors can be included as explanatory variables.
 
 ## Customer Segmentation {#sec-mark-custseg .unnumbered}
 

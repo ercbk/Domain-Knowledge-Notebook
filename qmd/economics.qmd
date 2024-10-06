@@ -49,16 +49,44 @@
 ## Price Elasticity {#sec-econ-pricelas .unnumbered}
 
 -   Also see [Algorithms, Products \>\> Price Optimization](https://ercbk.github.io/Data-Science-Notebook/qmd/algorithms-product.html#sec-alg-prod-prcopt){style="color: green"}
+
 -   By identifying the price elasticity of demand, you can try to determine the amount of price you can increase without hurting the demand, as well as check at what point an increase in price starts to affect the market.
+
 -   Price is NOT the only variable that influences whether you purchase a product or service. Therefore, looking at quantity purchased at each price to determine price elasticity is not enough.
+
+-   Formula\
+    $$
+    \mathcal{e} = \frac{\frac{\Delta Q}{Q}}{\frac{\Delta P}{P}} = \frac{ \mbox{\% Change in Quantity}}{\mbox{\% Change in Price}}
+    $$
+
 -   Guidelines
+
     -   If the PED is greater than one (PED \> 1), it is known as "**elastic**", meaning changes in price causes a significant change in demand.
     -   If the PED is equal to 1 (PED = 1), then this means any change in price causes equivalent changes in demand.
     -   If the PED is less than one (PED \< 1), it is known as "**inelastic**". This means changes in price don't affect the demand that much.
     -   If the PED is equal to 0 (PED = 0), known as "**perfectly inelastic**", meaning any change in price doesn't cause a change in demand.
+
 -   Process
+
     -   Filter on the specific subset of sales data relevant to the dimension which you are estimating elasticity (e.g. if estimating the price elasticity for red wine, filter on only red wine sales)
     -   Perform a log transformation on the future sales target variable and on the current price feature
     -   Train a multivariable linear regression model to accurately predict future sales
     -   The price elasticity estimate will be the coefficient of the log transformed, price feature
     -   Repeat steps 1--4 for each elasticity estimate
+
+-   Using ML and partial dependence calculations
+
+    ``` r
+    rf_model <- randomForest(quantity ~ price + other_factor, data = data)
+
+    # Create partial dependence plot
+    pdp_price <- pdp::partial(rf_model, pred.var = "price", train = data)
+
+    # Calculate elasticity using the original formula
+    pdp_price$elasticity <- with(pdp_price, 
+                                 (diff(yhat) / yhat[-length(yhat)]) / 
+                                 (diff(price) / price[-length(price)]))
+    ```
+
+    -   Note that `-length()` removes the last value so the calculations are made with equal length vectors. Removal of the last value instead of the first value is used since elasticity is typically defined as the responsiveness of quantity to a change in price. Using the initial quantity and price as the base aligns better with this concept.
+    -   See [Diagnostics, Model Agnostic](https://ercbk.github.io/Data-Science-Notebook/qmd/diagnostics-model-agnostic.html#sec-diag-modagn){style="color: green"} for other packages that calculate pdps
