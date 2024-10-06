@@ -460,17 +460,24 @@
     -   The higher the bid Google or Amazon receives, generally, the higher the supply of slots they will provide (and hence, the higher the chances of getting a click).
     -   Basic Formula for Bid Elasticity of Supply\
         $$
-        \mbox{Price Elasticity of Bids} = \frac{\text{% Change in Metric}}{\text{% Change in Bids}}
+        \mbox{Price Elasticity of Bids} = \frac{\text{\% Change in Metric}}{\text{\% Change in Bids}}
         $$
         -   $\text{Metric}$ can be impressions, clicks, impression share, etc.
     -   Non-Normalized metrics are misleading
+        -   Factors that can that influence raw metrics
+            -   Fluctuations on how much you bid
+                -   How many times you bid at a certain price.
+            -   Temporal effects
+                -   A €0.30 bid in high vs low demand cycles can get your into less vs more auctions. It is the same bid, but the amount of competition changes.
+            -   External effects
+                -   Google is famous on having factors such as *relevance* and *accuracy* as part of their ad ranking logic. If Google decides to change this, your same bid could get into more or less auctions.
         -   Clicks (metric) vs Bid Price\
             ![](_resources/Marketing.resources/sem-elast-nonnorm-1.webp){.lightbox group="nonnorm" width="532"}
             -   The bid price at €0.40 resulted in more clicks than the €0.70 bid price
             -   This apparently shows that an increase in bid price does not lead to an increase in supply (i.e. increase in advertising slots $\rightarrow$ opportunities for clicks $\rightarrow$ clicks) which is contrary economic theory, but the raw metric (clicks) is misleading
         -   Clicks (metric) vs Bid Price vs Days Active\
             ![](_resources/Marketing.resources/sem-elast-nonnorm-2.webp){.lightbox group="nonnorm" width="532"}
-            -   Since the the bid price of €0.40 was active more days than the €0.70 bid price, it had more click opportunities which leads to more clicks
+            -   Since the the bid price of €0.40 was active more days than the €0.70 bid price, it had more click opportunities (first factor affecting raw metrics) which leads to more clicks
         -   Clicks (metric) vs Bid Price vs Eligible Impressions\
             ![](_resources/Marketing.resources/sem-elast-nonnorm-3.webp){.lightbox group="nonnorm" width="532"}
             -   The €0.40 was in around twice as many auctions (266K eligible impressions) that the €0.70 bid price (125K eligible impressions) which again shows that lower price had more click opportunities which is why it had more clicks
@@ -480,6 +487,10 @@
             -   **CTR** (Clicks / Impressions)
             -   Clicks / Eligible Opportunities
             -   **Click Coverage** (your clicks vs the whole market of clicks)
+        -   Clicks per Eligible Opportunity vs Bid Price\
+            ![](_resources/Marketing.resources/sem-elast-norm-1.webp){.lightbox width="532"}
+            -   Now we see the behavior that economic theory teaches us, supply (i.e. increase in advertising slots $\rightarrow$ opportunities for clicks $\rightarrow$ clicks) increases as bid price increases.
+            -   Note that there are fluctuations because there are many factors that influence the volume of clicks or elgible opportunities
 
 ## Customer Segmentation {#sec-mark-custseg .unnumbered}
 
