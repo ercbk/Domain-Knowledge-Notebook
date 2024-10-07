@@ -11,13 +11,11 @@
 
 ## Value at Risk (VaR) {#sec-finance-risk-var .unnumbered}
 
--   Notes from [GPT-4o](https://chatgpt.com/share/4a17c9f3-e3ec-4ebc-8b9e-fcc38a583dfc)
-
 ### Copulas {#sec-finance-risk-var-cop .unnumbered}
 
 -   Also see [Association, Copulas](https://ercbk.github.io/Data-Science-Notebook/qmd/association-copulas.html){style="color: green"}
 
--   Copula Workflow
+-   Copula Workflow ([source](https://chatgpt.com/share/4a17c9f3-e3ec-4ebc-8b9e-fcc38a583dfc))
 
     -   Data Collection and Preprocessing:
         -   Collect historical data for the two variables of interest.
@@ -77,8 +75,10 @@
                      sd = margins$m2$estimate["sd"])
     )
     simulated.portfolio.returns <- rowMeans(simulated.returns)
-
+    
+    # -0.0285
     VaR_95 <- quantile(simulated.portfolio.returns, probs = 0.05) # <6>
+    # -0.0351187638772645
     CVaR_95 <- mean(simulated.portfolio.returns[simulated.portfolio.returns <= VaR_95])
     ```
 
