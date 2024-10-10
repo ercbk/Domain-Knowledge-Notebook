@@ -104,6 +104,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -429,10 +458,36 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Lots of vignettes, but there’s also a substantial amount of material in the introduction section of the Reference Manual</li>
 </ul></li>
 </ul></li>
+<li>Factor Model
+<ul>
+<li>Model<br>
+<span class="math display">\[
+Y_t = L_t X_t + \epsilon_t
+\]</span>
+<ul>
+<li><span class="math inline">\(Y_t \in \mathbb{R}^p\)</span> is a multivariate matrix of returns</li>
+<li><span class="math inline">\(X_t \in \mathbb{R}^k\)</span> are returns of underlying factors (where <span class="math inline">\(k \lt\lt p\)</span>) which drive correlation among the assets. (not observed)</li>
+<li><span class="math inline">\(L_t\)</span> are factor loadings. <span class="math inline">\(L_{j,l,t}\)</span> measures the exposure of <span class="math inline">\(j^{\text{th}}\)</span> asset to the <span class="math inline">\(l^{\text{th}}\)</span> factor at time, <span class="math inline">\(t\)</span>. (deterministic matrix)</li>
+<li><span class="math inline">\(\epsilon_t\)</span> the residuals, aka “idiosyncratic returns of <span class="math inline">\(p\)</span> assets that can’t</li>
+</ul></li>
+</ul></li>
 </ul>
 </section>
 <section id="sec-finance-risk-var" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="sec-finance-risk-var">Value at Risk (VaR)</h2>
+<ul>
+<li>VaR modeling determines the potential for loss in the entity being assessed and the probability that the defined loss will occur. One measures VaR by assessing the amount of potential loss, the probability of occurrence for the amount of loss, and the time frame.</li>
+<li><span class="ribbon-highlight">Example</span>: Interpretation (<a href="https://www.investopedia.com/terms/v/var.asp">source</a>)
+<ul>
+<li>A financial firm may determine an asset has a 3% one-month VaR of 2%, representing a 3% chance of the asset declining in value by 2% during the one-month time frame.</li>
+<li>The conversion of the 3% chance of occurrence to a daily ratio places the odds of a 2% loss at one day per month.</li>
+</ul></li>
+<li>Disadvantages
+<ul>
+<li>If data is from a low volatility period, then in high volatility periods, VaR estimates may underestimate the probabilty and magnitude of extreme events</li>
+<li>Black swan events not covered.</li>
+</ul></li>
+</ul>
 <section id="sec-finance-risk-var-cop" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="sec-finance-risk-var-cop">Copulas</h3>
 <ul>
@@ -531,7 +586,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </dd>
 <dt data-target-cell="annotated-cell-1" data-target-annotation="6">6</dt>
 <dd>
-<span data-code-cell="annotated-cell-1" data-code-lines="45" data-code-annotation="6">Calculate VaR and CVaR at 95% confidence level</span>
+<span data-code-cell="annotated-cell-1" data-code-lines="45" data-code-annotation="6">Calculate VaR and CVaR at 95% confidence level. At the 95% CI, the maximum 1-day loss is 3.5%.</span>
 </dd>
 </dl>
 <ul>
