@@ -9,14 +9,25 @@
     -   [{]{style="color: #990000"}[PerformanceAnalytics](https://cran.r-project.org/web/packages/PerformanceAnalytics/index.html){style="color: #990000"}[}]{style="color: #990000"} - Econometric Tools for Performance and Risk Analysis
         -   Lots of vignettes, but there's also a substantial amount of material in the introduction section of the Reference Manual
 -   Factor Model
+    -   Notes from [{{mosaicperm}}]{style="color: goldenrod"} paper
     -   Model\
         $$
         Y_t = L_t X_t + \epsilon_t
         $$
         -   $Y_t \in \mathbb{R}^p$ is a multivariate matrix of returns
-        -   $X_t \in \mathbb{R}^k$ are returns of underlying factors (where $k \lt\lt p$) which drive correlation among the assets. (not observed)
+        -   $X_t \in \mathbb{R}^k$ are returns of underlying factors (where $k \ll p$) which drive correlation among the assets. (not observed)
+            -   Typically estimated using cross-sectional regression
         -   $L_t$ are factor loadings. $L_{j,l,t}$ measures the exposure of $j^{\text{th}}$ asset to the $l^{\text{th}}$ factor at time, $t$. (deterministic matrix)
+            -   Loadings are *known* at time $t$ unlike the factors, $X_t$.
         -   $\epsilon_t$ the residuals, aka "idiosyncratic returns of $p$ assets that can't
+    -   Financial firms routinely publish exposure matrices $L_t$ for commercial risk models, including MSCI Barra models, and the BFRE model
+    -   Black Rock Fundamental Equity Risk (BFRE) model
+        -   $L_t$ is based on market fundamentals such as industry membership (e.g. stock $j$ is industry $l$) and accounting data.
+    -   GOF
+        -   [{{]{style="color: goldenrod"}[mosaicperm](https://mosaicperm.readthedocs.io/en/latest/){style="color: goldenrod"}[}}]{style="color: goldenrod"} ([Paper](https://arxiv.org/abs/2404.15017))
+            -   Null Hypothesis: $H_0: \epsilon_{.,1}, \epsilon_{.,2}, \ldots, \epsilon_{.,p} \; \text{are jointly independent}$
+                -   Where each $\epsilon_{.,j} := \epsilon_{1,j}, \epsilon_{2,j}, \ldots \epsilon_{T,j}$ denotes the time series of residuals for the $j^\text{th}$ asset. The residuals are allowed to be autocorrelated, nonstationary, and heterogeneous.
+            -   Tests whether $H_0$ holds for a fixed choice of exposures $L_t$. Rigorously controls for false positives.
 
 ## Value at Risk (VaR) {#sec-finance-risk-var .unnumbered}
 
