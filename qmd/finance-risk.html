@@ -460,15 +460,38 @@ window.Quarto = {
 </ul></li>
 <li>Factor Model
 <ul>
+<li>Notes from <span style="color: goldenrod">{{mosaicperm}}</span> paper</li>
 <li>Model<br>
 <span class="math display">\[
 Y_t = L_t X_t + \epsilon_t
 \]</span>
 <ul>
 <li><span class="math inline">\(Y_t \in \mathbb{R}^p\)</span> is a multivariate matrix of returns</li>
-<li><span class="math inline">\(X_t \in \mathbb{R}^k\)</span> are returns of underlying factors (where <span class="math inline">\(k \lt\lt p\)</span>) which drive correlation among the assets. (not observed)</li>
-<li><span class="math inline">\(L_t\)</span> are factor loadings. <span class="math inline">\(L_{j,l,t}\)</span> measures the exposure of <span class="math inline">\(j^{\text{th}}\)</span> asset to the <span class="math inline">\(l^{\text{th}}\)</span> factor at time, <span class="math inline">\(t\)</span>. (deterministic matrix)</li>
+<li><span class="math inline">\(X_t \in \mathbb{R}^k\)</span> are returns of underlying factors (where <span class="math inline">\(k \ll p\)</span>) which drive correlation among the assets. (not observed)
+<ul>
+<li>Typically estimated using cross-sectional regression</li>
+</ul></li>
+<li><span class="math inline">\(L_t\)</span> are factor loadings. <span class="math inline">\(L_{j,l,t}\)</span> measures the exposure of <span class="math inline">\(j^{\text{th}}\)</span> asset to the <span class="math inline">\(l^{\text{th}}\)</span> factor at time, <span class="math inline">\(t\)</span>. (deterministic matrix)
+<ul>
+<li>Loadings are <em>known</em> at time <span class="math inline">\(t\)</span> unlike the factors, <span class="math inline">\(X_t\)</span>.</li>
+</ul></li>
 <li><span class="math inline">\(\epsilon_t\)</span> the residuals, aka “idiosyncratic returns of <span class="math inline">\(p\)</span> assets that can’t</li>
+</ul></li>
+<li>Financial firms routinely publish exposure matrices <span class="math inline">\(L_t\)</span> for commercial risk models, including MSCI Barra models, and the BFRE model</li>
+<li>Black Rock Fundamental Equity Risk (BFRE) model
+<ul>
+<li><span class="math inline">\(L_t\)</span> is based on market fundamentals such as industry membership (e.g.&nbsp;stock <span class="math inline">\(j\)</span> is industry <span class="math inline">\(l\)</span>) and accounting data.</li>
+</ul></li>
+<li>GOF
+<ul>
+<li><span style="color: goldenrod">{{</span><a href="https://mosaicperm.readthedocs.io/en/latest/" style="color: goldenrod">mosaicperm</a><span style="color: goldenrod">}}</span> (<a href="https://arxiv.org/abs/2404.15017">Paper</a>)
+<ul>
+<li>Null Hypothesis: <span class="math inline">\(H_0: \epsilon_{.,1}, \epsilon_{.,2}, \ldots, \epsilon_{.,p} \; \text{are jointly independent}\)</span>
+<ul>
+<li>Where each <span class="math inline">\(\epsilon_{.,j} := \epsilon_{1,j}, \epsilon_{2,j}, \ldots \epsilon_{T,j}\)</span> denotes the time series of residuals for the <span class="math inline">\(j^\text{th}\)</span> asset. The residuals are allowed to be autocorrelated, nonstationary, and heterogeneous.</li>
+</ul></li>
+<li>Tests whether <span class="math inline">\(H_0\)</span> holds for a fixed choice of exposures <span class="math inline">\(L_t\)</span>. Rigorously controls for false positives.</li>
+</ul></li>
 </ul></li>
 </ul></li>
 </ul>
