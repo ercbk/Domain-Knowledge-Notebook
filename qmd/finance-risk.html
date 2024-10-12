@@ -484,6 +484,10 @@ Y_t = L_t X_t + \epsilon_t
 </ul></li>
 <li>GOF
 <ul>
+<li>Issue: Curse of Dimensionality
+<ul>
+<li>Data for sectors is typically around p ≥ 2000 assets and T ≈ 50 observations, or subsectors with p ≈ 150 assets and T ≈ 50 observations. Methods involving likelihood ratios and bootstrapping will generally be inaccurate in this case.</li>
+</ul></li>
 <li><span style="color: goldenrod">{{</span><a href="https://mosaicperm.readthedocs.io/en/latest/" style="color: goldenrod">mosaicperm</a><span style="color: goldenrod">}}</span> (<a href="https://arxiv.org/abs/2404.15017">Paper</a>)
 <ul>
 <li>Null Hypothesis: <span class="math inline">\(H_0: \epsilon_{.,1}, \epsilon_{.,2}, \ldots, \epsilon_{.,p} \; \text{are jointly independent}\)</span>
