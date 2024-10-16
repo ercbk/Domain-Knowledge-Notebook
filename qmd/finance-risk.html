@@ -490,11 +490,14 @@ Y_t = L_t X_t + \epsilon_t
 </ul></li>
 <li><span style="color: goldenrod">{{</span><a href="https://mosaicperm.readthedocs.io/en/latest/" style="color: goldenrod">mosaicperm</a><span style="color: goldenrod">}}</span> (<a href="https://arxiv.org/abs/2404.15017">Paper</a>)
 <ul>
+<li>Tests whether <span class="math inline">\(H_0\)</span> holds for a fixed choice of exposures <span class="math inline">\(L_t\)</span>. Rigorously controls for false positives.</li>
 <li>Null Hypothesis: <span class="math inline">\(H_0: \epsilon_{.,1}, \epsilon_{.,2}, \ldots, \epsilon_{.,p} \; \text{are jointly independent}\)</span>
 <ul>
 <li>Where each <span class="math inline">\(\epsilon_{.,j} := \epsilon_{1,j}, \epsilon_{2,j}, \ldots \epsilon_{T,j}\)</span> denotes the time series of residuals for the <span class="math inline">\(j^\text{th}\)</span> asset. The residuals are allowed to be autocorrelated, nonstationary, and heterogeneous.</li>
 </ul></li>
-<li>Tests whether <span class="math inline">\(H_0\)</span> holds for a fixed choice of exposures <span class="math inline">\(L_t\)</span>. Rigorously controls for false positives.</li>
+<li>The <span class="math inline">\(Y\)</span> matrix is tiled (vertically and horizontally). The risk model is fit on each tile in order to obtain the residuals.</li>
+<li>The <span class="math inline">\(H_a\)</span> test statistic is calculated from the correlation matrix of residuals. The <span class="math inline">\(H_0\)</span> test statistic is calcuated by permuting the residuals in each tile. Then you use its correlation matrix to calculate a test statistic that will act as a threshold.</li>
+<li>The test yields an exact p-value in finite samples under the assumption that the residuals for each asset are locally exchangeable.</li>
 </ul></li>
 </ul></li>
 </ul></li>
