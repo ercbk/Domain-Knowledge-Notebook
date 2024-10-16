@@ -27,9 +27,12 @@
         -   Issue: Curse of Dimensionality
             -   Data for sectors is typically around p ≥ 2000 assets and T ≈ 50 observations, or subsectors with p ≈ 150 assets and T ≈ 50 observations. Methods involving likelihood ratios and bootstrapping will generally be inaccurate in this case.
         -   [{{]{style="color: goldenrod"}[mosaicperm](https://mosaicperm.readthedocs.io/en/latest/){style="color: goldenrod"}[}}]{style="color: goldenrod"} ([Paper](https://arxiv.org/abs/2404.15017))
+            -   Tests whether $H_0$ holds for a fixed choice of exposures $L_t$. Rigorously controls for false positives.
             -   Null Hypothesis: $H_0: \epsilon_{.,1}, \epsilon_{.,2}, \ldots, \epsilon_{.,p} \; \text{are jointly independent}$
                 -   Where each $\epsilon_{.,j} := \epsilon_{1,j}, \epsilon_{2,j}, \ldots \epsilon_{T,j}$ denotes the time series of residuals for the $j^\text{th}$ asset. The residuals are allowed to be autocorrelated, nonstationary, and heterogeneous.
-            -   Tests whether $H_0$ holds for a fixed choice of exposures $L_t$. Rigorously controls for false positives.
+            -   The $Y$ matrix is tiled (vertically and horizontally). The risk model is fit on each tile in order to obtain the residuals.
+            -   The $H_a$ test statistic is calculated from the correlation matrix of residuals. The $H_0$ test statistic is calcuated by permuting the residuals in each tile. Then you use its correlation matrix to calculate a test statistic that will act as a threshold.
+            -   The test yields an exact p-value in finite samples under the assumption that the residuals for each asset are locally exchangeable.
 
 ## Value at Risk (VaR) {#sec-finance-risk-var .unnumbered}
 
