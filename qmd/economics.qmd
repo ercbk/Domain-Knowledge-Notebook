@@ -44,6 +44,10 @@
     -   From a producers point of view, the more prices rise, the more the producer would be willing to produce.
     -   Price elasticity of supply = % Change in Supply / % Change in Price
 
+-   [**Sahm Rule**]{style="color: #009499"} - The early stages of a recession are signaled when the three-month moving average of the U.S. unemployment rate is half a percentage point or more above the lowest three-month moving average unemployment rate over the previous 12 months. ([source](https://alphaarchitect.com/2024/10/sahm-rule/))
+
+    -   It's meant to signal a weakening of the labor market. However, while the July 2024 jobs report did show a slowdown in the growth of the labor market, it was the slowing in the growth of the labor force, not layoffs, that drove the rate higher. While the slowdown in job growth indicates a slowing economy, the Sahm Rule may be overstating economic weakness in the labor market. That is a stark difference from past recessions.
+
 -   [**Second Degree Price Discrimination**]{style="color: #009499"} - Charging a different price for different quantities at the same time
 
 ## Price Elasticity {#sec-econ-pricelas .unnumbered}
