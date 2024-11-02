@@ -402,6 +402,19 @@ window.Quarto = {
 
 <ul>
 <li><p><span style="color: #009499"><strong>Amortization</strong></span> - Similar to depreciation except for intangible assets. A non-cash expense that reduces the value of a company’s <em>definite life</em> intangible assets and also reduces reported earnings</p></li>
+<li><p><span style="color: #009499"><strong>Arbitrage</strong></span> - The simultaneous buying and selling of an asset in different markets to profit from any price differences (<a href="https://www.investopedia.com/ask/answers/what-is-arbitrage/">source</a>)</p>
+<ul>
+<li>When markets are temporarily inefficient, arbitrageurs step in to correct these discrepancies by buying low in one market and selling high in another, thus making a profit and helping restore equilibrium.</li>
+<li>Markets are tied together by arbitrage—if one of them moves sharply in a given direction then others must follow.</li>
+<li><span class="ribbon-highlight">Example</span>: Electoral Prediction Markets (<a href="https://rajivsethi.substack.com/p/the-limits-of-arbitrage?triedRedirect=true">source</a>)
+<ul>
+<li>If the Trump contract is trading at 60¢ on one market and 50¢ on another, one can bet <em>against him</em> on the first for 40¢ and <em>against his opponent</em> on the second for 50¢, thus buying a dollar for 90¢
+<ul>
+<li>Each contract pays $1 (or $0 if you lose). So since you’ve purchased both possible outcomes for less than $1, you’re guaranteed to make a profit.</li>
+</ul></li>
+<li>If many try to exploit this opportunity at scale, the price of the Trump contract will fall on the first market and rise on the second, until prices have converged enough to make the trade unappealing</li>
+</ul></li>
+</ul></li>
 <li><p><span style="color: #009499"><strong>Basis Point</strong></span> - 1/100th of a percentage point</p></li>
 <li><p><span style="color: #009499"><strong>Basis Risk</strong></span> - The risk that an asset and a hedge will not move in opposite directions as expected; “basis” refers to the discrepancy.</p></li>
 <li><p><span style="color: #009499"><strong>Bear Market</strong></span> - Definitions one and two by themselves can result in bear markets that are only a couple days long, which depending on your research, may not be useful.</p>
@@ -1279,7 +1292,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","loop":false,"descPosition":"bottom","openEffect":"zoom","selector":".lightbox"});
+<script>var lightboxQuarto = GLightbox({"selector":".lightbox","descPosition":"bottom","loop":false,"openEffect":"zoom","closeEffect":"zoom"});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {
