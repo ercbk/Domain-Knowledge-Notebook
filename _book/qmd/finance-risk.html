@@ -104,6 +104,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -134,7 +163,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div class="sidebar-title mb-0 py-0">
       <a href="../">Domain Knowledge</a> 
         <div class="sidebar-tools-main tools-wide">
-    <a href="https://ericbook.netlify.app/" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-house-fill"></i></a>
+    <a href="https://ericbook.netlify.app/" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-house"></i></a>
+    <a href="https://ercbk.github.io/Data-Science-Notebook/" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-database-gear"></i></a>
+    <a href="https://ercbk.github.io/Statistical-Rethinking-Notebook/" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-book"></i></a>
     <a href="https://github.com/ercbk/Domain-Knowledge-Notebook" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
   <a href="" class="quarto-reader-toggle quarto-navigation-tool px-1" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
   <div class="quarto-reader-toggle-btn">
@@ -427,18 +458,75 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Lots of vignettes, but there’s also a substantial amount of material in the introduction section of the Reference Manual</li>
 </ul></li>
 </ul></li>
+<li>Papers
+<ul>
+<li><a href="https://arxiv.org/abs/2203.08224">Predicting Value at Risk for Cryptocurrencies With Generalized Random Forests</a></li>
+</ul></li>
+<li>Factor Model
+<ul>
+<li>Notes from <span style="color: goldenrod">{{mosaicperm}}</span> paper</li>
+<li>Model<br>
+<span class="math display">\[
+Y_t = L_t X_t + \epsilon_t
+\]</span>
+<ul>
+<li><span class="math inline">\(Y_t \in \mathbb{R}^p\)</span> is a multivariate matrix of returns</li>
+<li><span class="math inline">\(X_t \in \mathbb{R}^k\)</span> are returns of underlying factors (where <span class="math inline">\(k \ll p\)</span>) which drive correlation among the assets. (not observed)
+<ul>
+<li>Typically estimated using cross-sectional regression</li>
+</ul></li>
+<li><span class="math inline">\(L_t\)</span> are factor loadings. <span class="math inline">\(L_{j,l,t}\)</span> measures the exposure of <span class="math inline">\(j^{\text{th}}\)</span> asset to the <span class="math inline">\(l^{\text{th}}\)</span> factor at time, <span class="math inline">\(t\)</span>. (deterministic matrix)
+<ul>
+<li>Loadings are <em>known</em> at time <span class="math inline">\(t\)</span> unlike the factors, <span class="math inline">\(X_t\)</span>.</li>
+</ul></li>
+<li><span class="math inline">\(\epsilon_t\)</span> the residuals, aka “idiosyncratic returns of <span class="math inline">\(p\)</span> assets that can’t</li>
+</ul></li>
+<li>Financial firms routinely publish exposure matrices <span class="math inline">\(L_t\)</span> for commercial risk models, including MSCI Barra models, and the BFRE model</li>
+<li>Black Rock Fundamental Equity Risk (BFRE) model
+<ul>
+<li><span class="math inline">\(L_t\)</span> is based on market fundamentals such as industry membership (e.g.&nbsp;stock <span class="math inline">\(j\)</span> is industry <span class="math inline">\(l\)</span>) and accounting data.</li>
+</ul></li>
+<li>GOF
+<ul>
+<li>Issue: Curse of Dimensionality
+<ul>
+<li>Data for sectors is typically around p ≥ 2000 assets and T ≈ 50 observations, or subsectors with p ≈ 150 assets and T ≈ 50 observations. Methods involving likelihood ratios and bootstrapping will generally be inaccurate in this case.</li>
+</ul></li>
+<li><span style="color: goldenrod">{{</span><a href="https://mosaicperm.readthedocs.io/en/latest/" style="color: goldenrod">mosaicperm</a><span style="color: goldenrod">}}</span> (<a href="https://arxiv.org/abs/2404.15017">Paper</a>)
+<ul>
+<li>Tests whether <span class="math inline">\(H_0\)</span> holds for a fixed choice of exposures <span class="math inline">\(L_t\)</span>. Rigorously controls for false positives.</li>
+<li>Null Hypothesis: <span class="math inline">\(H_0: \epsilon_{.,1}, \epsilon_{.,2}, \ldots, \epsilon_{.,p} \; \text{are jointly independent}\)</span>
+<ul>
+<li>Where each <span class="math inline">\(\epsilon_{.,j} := \epsilon_{1,j}, \epsilon_{2,j}, \ldots \epsilon_{T,j}\)</span> denotes the time series of residuals for the <span class="math inline">\(j^\text{th}\)</span> asset. The residuals are allowed to be autocorrelated, nonstationary, and heterogeneous.</li>
+</ul></li>
+<li>The <span class="math inline">\(Y\)</span> matrix is tiled (vertically and horizontally). The risk model is fit on each tile in order to obtain the residuals.</li>
+<li>The <span class="math inline">\(H_a\)</span> test statistic is calculated from the correlation matrix of residuals. The <span class="math inline">\(H_0\)</span> test statistic is calcuated by permuting the residuals in each tile. Then you use its correlation matrix to calculate a test statistic that will act as a threshold.</li>
+<li>The test yields an exact p-value in finite samples under the assumption that the residuals for each asset are locally exchangeable.</li>
+</ul></li>
+</ul></li>
+</ul></li>
 </ul>
 </section>
 <section id="sec-finance-risk-var" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="sec-finance-risk-var">Value at Risk (VaR)</h2>
 <ul>
-<li>Notes from <a href="https://chatgpt.com/share/4a17c9f3-e3ec-4ebc-8b9e-fcc38a583dfc">GPT-4o</a></li>
+<li>VaR modeling determines the potential for loss in the entity being assessed and the probability that the defined loss will occur. One measures VaR by assessing the amount of potential loss, the probability of occurrence for the amount of loss, and the time frame.</li>
+<li><span class="ribbon-highlight">Example</span>: Interpretation (<a href="https://www.investopedia.com/terms/v/var.asp">source</a>)
+<ul>
+<li>A financial firm may determine an asset has a 3% one-month VaR of 2%, representing a 3% chance of the asset declining in value by 2% during the one-month time frame.</li>
+<li>The conversion of the 3% chance of occurrence to a daily ratio places the odds of a 2% loss at one day per month.</li>
+</ul></li>
+<li>Disadvantages
+<ul>
+<li>If data is from a low volatility period, then in high volatility periods, VaR estimates may underestimate the probabilty and magnitude of extreme events</li>
+<li>Black swan events not covered.</li>
+</ul></li>
 </ul>
 <section id="sec-finance-risk-var-cop" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="sec-finance-risk-var-cop">Copulas</h3>
 <ul>
 <li><p>Also see <a href="https://ercbk.github.io/Data-Science-Notebook/qmd/association-copulas.html" style="color: green">Association, Copulas</a></p></li>
-<li><p>Copula Workflow</p>
+<li><p>Copula Workflow (<a href="https://chatgpt.com/share/4a17c9f3-e3ec-4ebc-8b9e-fcc38a583dfc">source</a>)</p>
 <ul>
 <li>Data Collection and Preprocessing:
 <ul>
@@ -505,8 +593,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="annotated-cell-1-41"><a href="#annotated-cell-1-41" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="annotated-cell-1-42"><a href="#annotated-cell-1-42" aria-hidden="true" tabindex="-1"></a>simulated.portfolio.returns <span class="ot">&lt;-</span> <span class="fu">rowMeans</span>(simulated.returns)</span>
 <span id="annotated-cell-1-43"><a href="#annotated-cell-1-43" aria-hidden="true" tabindex="-1"></a></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="6" onclick="event.preventDefault();">6</a><span id="annotated-cell-1-44" class="code-annotation-target"><a href="#annotated-cell-1-44" aria-hidden="true" tabindex="-1"></a>VaR_95 <span class="ot">&lt;-</span> <span class="fu">quantile</span>(simulated.portfolio.returns, <span class="at">probs =</span> <span class="fl">0.05</span>)</span>
-<span id="annotated-cell-1-45"><a href="#annotated-cell-1-45" aria-hidden="true" tabindex="-1"></a>CVaR_95 <span class="ot">&lt;-</span> <span class="fu">mean</span>(simulated.portfolio.returns[simulated.portfolio.returns <span class="sc">&lt;=</span> VaR_95])</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="annotated-cell-1-44"><a href="#annotated-cell-1-44" aria-hidden="true" tabindex="-1"></a><span class="co"># -0.0285</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="6" onclick="event.preventDefault();">6</a><span id="annotated-cell-1-45" class="code-annotation-target"><a href="#annotated-cell-1-45" aria-hidden="true" tabindex="-1"></a>VaR_95 <span class="ot">&lt;-</span> <span class="fu">quantile</span>(simulated.portfolio.returns, <span class="at">probs =</span> <span class="fl">0.05</span>)</span>
+<span id="annotated-cell-1-46"><a href="#annotated-cell-1-46" aria-hidden="true" tabindex="-1"></a><span class="co"># -0.0351187638772645</span></span>
+<span id="annotated-cell-1-47"><a href="#annotated-cell-1-47" aria-hidden="true" tabindex="-1"></a>CVaR_95 <span class="ot">&lt;-</span> <span class="fu">mean</span>(simulated.portfolio.returns[simulated.portfolio.returns <span class="sc">&lt;=</span> VaR_95])</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <dl class="code-annotation-container-grid">
 <dt data-target-cell="annotated-cell-1" data-target-annotation="1">1</dt>
 <dd>
@@ -530,7 +620,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </dd>
 <dt data-target-cell="annotated-cell-1" data-target-annotation="6">6</dt>
 <dd>
-<span data-code-cell="annotated-cell-1" data-code-lines="44" data-code-annotation="6">Calculate VaR and CVaR at 95% confidence level</span>
+<span data-code-cell="annotated-cell-1" data-code-lines="45" data-code-annotation="6">Calculate VaR and CVaR at 95% confidence level. At the 95% CI, the maximum 1-day loss is 3.5%.</span>
 </dd>
 </dl>
 <ul>

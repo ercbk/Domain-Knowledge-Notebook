@@ -2,6 +2,11 @@
 
 ## Misc {#sec-budallo-misc .unnumbered}
 
+-   Also see
+    -   [Algorithms, Product \>\> Cost-Benefit Analysis](https://ercbk.github.io/Data-Science-Notebook/qmd/algorithms-product.html#sec-alg-prod-cba){style="color: green"}
+    -   [Optimization \>\> Budget Allocation](https://ercbk.github.io/Data-Science-Notebook/qmd/optimization-equation-systems.html#sec-opt-ba){style="color: green"}
+    -   [Project, Planning \>\> Decision Models](https://ercbk.github.io/Data-Science-Notebook/qmd/project-planning.html#sec-proj-plan-decmod){style="color: green"}
+
 ## Performance-based Budget Cuts {#sec-budallo-perform-cuts .unnumbered}
 
 -   Notes from: [The Politics of Performance Measurement](https://realworlddatascience.net/careers/posts/2023/04/18/politics-of-performance-measurement.html) - Scenario: "Criminal Justice Division (CJD) of the Texas Governor's Office received news all government agencies dread: budgets were to be cut. CJD oversaw a grant program that funded specialty courts throughout the state, however it was now being told that the program's budget of \$10.6m would be reduced 20% to \$8.5m by 2018."
@@ -16,9 +21,8 @@
     2.  **Fewer grants.** Grants were scored based on the quality of their application and all grants that passed a certain threshold got funded. The Advisory Council would employ the same scoring method as the previous year but instead of funding the top \$10.6m worth of grants, they would fund the top \$8.5m worth.
         -   This seemed a less bad option than cutting across the board, but we would still run into the problem of arbitrarily defunding successful programs. Grants near the bottom of the Advisory Council's cutoff that got funded the previous year would be denied renewal only because the goalposts had moved.
 
-    ```{=html}
     <!-- -->
-    ```
+
     3.  **Targeted funding.** The Advisory Council would incorporate performance data and statewide strategic plan alignment into their scoring method and make cuts accordingly.
 
 -   Engage stakeholders and define performance
