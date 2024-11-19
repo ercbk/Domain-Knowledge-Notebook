@@ -7,6 +7,8 @@
         -   Uses a regional climate model has the advantage of producing physically and dynamically balanced data.
         -   Limitations: A regional climate model requires considerable integration time and significant storage to produce high-resolution data and that the model outputs may include systematic errors
     -   Statistical - Efficient methods that produce meteorological and climate data at a high resolution without the limitations of Dynamical models
+-   Preprocessing
+    -   "This data set contains the average daily temperatures of 35 Canadian provinces over a year and, as is standard, we smoothed them into periodic functional data $X_i⁢(t), \; i=1,\ldots,35, \;t=0,\ldots,365$, using a 100-element Fourier basis in the R-package fda" ([source](https://arxiv.org/abs/2411.11580))
 -   [Example]{.ribbon-highlight}: Extreme hot weather events in Western Europe-Atlantic region
     -   Notes from [video](https://www.youtube.com/watch?v=Mpzqz4y1oYY), around \~1:07:03
     -   Papers
