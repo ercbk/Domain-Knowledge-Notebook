@@ -22,6 +22,12 @@
         -   Determine what your customers are using or how they are accessing your products to find new ways to improve or alter a product or service you offer
     -   Making better decisions
         -   Allows you to make better decisions about business changes, hiring new employees, marketing, and advertising strategies
+-   When companies DON’T have a data pipeline, you may see:
+    -   Multiple sources of truth with nobody knowing which is *really* correct
+    -   Insights “trapped” in the platform generating the data (Hubspot, Google Analytics, Zapier, etc.)
+    -   Metric calculations exclusively in BI tools
+    -   Data gaps
+    -   Manual data refreshes
 
 ## What you offer {#sec-lhf-wyo .unnumbered}
 
