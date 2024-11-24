@@ -83,3 +83,5 @@ editor: visual
 
 execute:
     freeze: auto
+
+lightbox: true
