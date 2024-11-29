@@ -19,6 +19,8 @@ fig-cap-location: top
     -   [{]{style="color: #990000"}[tidyquant](https://business-science.github.io/tidyquant/){style="color: #990000"}[}]{style="color: #990000"}
         -   Download and clean data - Daily stock prices (historical), key statistics (real-time), key ratios (historical), financial statements, dividends, splits, economic data from the FRED, FOREX rates from Oanda
         -   Performance Analysis and Portfolio Analysis
+    -   [{]{style="color: #990000"}[IBrokers](https://cran.r-project.org/web/packages/IBrokers/index.html){style="color: #990000"}[}]{style="color: #990000"} - R API to Interactive Brokers Trader Workstation
+        -   [Interactive Brokers](https://www.interactivebrokers.com/) is an international brokerage firm specializing in electronic execution in products ranging from equities to bonds, options to futures, as well as FX, all from a single account
     -   [{]{style="color: #990000"}[TTR](https://cran.r-project.org/web/packages/TTR/index.html){style="color: #990000"}[}]{style="color: #990000"} - A collection of over 50 technical indicators for creating technical trading rules. The package also provides fast implementations of common rolling-window functions, and several volatility calculations.
     -   [{{]{style="color: goldenrod"}[zipline-reloaded](https://pypi.org/project/zipline-reloaded/){style="color: goldenrod"}[}}]{style="color: goldenrod"} - Backtesting and live-trading engine by crowd-sourced investment fund Quantopian
     -   [{{]{style="color: goldenrod"}[pyfolio](https://pyfolio.ml4trading.io/){style="color: goldenrod"}[}}]{style="color: goldenrod"} - Performance and risk analysis for financial portfolios
