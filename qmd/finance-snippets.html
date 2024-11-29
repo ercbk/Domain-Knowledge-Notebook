@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.57">
+<meta name="generator" content="quarto-1.6.39">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -72,10 +72,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ff9192afc05e137288b20e4a6f267c29.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-035816e95195a47e7ac952e60606915a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
@@ -557,12 +557,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Download and clean data - Daily stock prices (historical), key statistics (real-time), key ratios (historical), financial statements, dividends, splits, economic data from the FRED, FOREX rates from Oanda</li>
 <li>Performance Analysis and Portfolio Analysis</li>
 </ul></li>
+<li><span style="color: #990000">{</span><a href="https://docs.ropensci.org/yfR/" style="color: #990000">yfR</a><span style="color: #990000">}</span> - Facilitates importing stock prices from Yahoo finance, organizing the data in the tidy format and speeding up the process using a cache system and parallel computing.
+<ul>
+<li>See <a href="https://msperlin.com/afedr/importing-internet#package-yfr">chapter</a> for examples and notes on using this package</li>
+</ul></li>
 <li><span style="color: goldenrod">{{</span><a href="https://github.com/ranaroussi/yfinance" style="color: goldenrod">yfinance</a><span style="color: goldenrod">}}</span> - Downloads market data from yahoo finance</li>
 <li><span style="color: #990000">{</span><a href="https://nareal.github.io/frenchdata/" style="color: #990000">frenchdata</a><span style="color: #990000">}</span> - Download and read data sets from Prof.&nbsp;Kenneth French finance data library</li>
 <li><span style="color: #990000">{</span><a href="https://cran.r-project.org/package=fredr" style="color: #990000">fredr</a><span style="color: #990000">}</span> - The Federal Reserve Bank of St.&nbsp;Louis provides more than 818,000 US and international time series from 109 sources via the API FRED. The data is freely available and can be browsed online on the FRED <a href="https://fred.stlouisfed.org/">homepage</a>.</li>
-<li><span style="color: #990000">{</span><a href="https://cran.r-project.org/package=simfinapi" style="color: #990000">simfinapi</a><span style="color: #990000">}</span> - Simfin make fundamental financial data freely available to private investors, researchers, and students. The data provider applies automating data collection processes to collect a large set of publicly available information from firms’ financial statements.</li>
+<li><span style="color: #990000">{</span><a href="https://cran.r-project.org/package=simfinapi" style="color: #990000">simfinapi</a><span style="color: #990000">}</span> - Simfin make fundamental financial data freely available to private investors, researchers, and students. The data provider applies automating data collection processes to collect a large set of publicly available information from firms’ financial statements.
+<ul>
+<li>Offers a generous free plan, with a daily limit of 2000 api calls.</li>
+<li>See <a href="https://msperlin.com/afedr/importing-internet#package-simfinapi">chapter</a> for a few examples</li>
+</ul></li>
 <li><span style="color: #990000">{</span><a href="https://cran.r-project.org/package=Rblpapi" style="color: #990000">Rblpapi</a><span style="color: #990000">}</span> - Bloomberg’s Fundamental coverage includes current and normalized historical data for the balance sheet, income statement, cash flows statement, and financial ratios. Additionally, it provides industry-specific data for communications, consumer, energy, health care, and many more. In order to retrieve Bloomberg data, a paid subscription is needed.</li>
-<li><span style="color: #990000">{</span><a href="https://cran.r-project.org/package=Quandl" style="color: #990000">Quandl</a><span style="color: #990000">}</span> - Quandl is a publisher of alternative data. Quandl publishes free data, scraped from many different sources from the web. However, some of the data requires specific subscriptions on the Quandl platform.</li>
+<li><span style="color: #990000">{</span><a href="https://github.com/msperlin/GetQuandlData/" style="color: #990000">GetQuandlData</a><span style="color: #990000">}</span> - Quandl is a publisher of alternative data. Quandl publishes free data, scraped from many different sources from the web. However, some of the data requires specific subscriptions on the Quandl platform.
+<ul>
+<li><span style="color: #990000">{</span><a href="https://cran.r-project.org/package=Quandl" style="color: #990000">Quandl</a><span style="color: #990000">}</span> has some <a href="https://www.msperlin.com/post/2019-10-01-new-package-getquandldata/">issues</a></li>
+<li>Getting Quandl data requires you to register for an account, and in the account settings, you’ll find your API key.</li>
+<li><a href="https://docs.data.nasdaq.com/docs/parameters-2">List of parameters</a> that can be used for querying the data.</li>
+</ul></li>
 <li><span style="color: #990000">{</span><a href="https://cran.r-project.org/package=edgarWebR" style="color: #990000">edgarWebR</a><span style="color: #990000">}</span> - The EDGAR database provides free public access to corporate information, allowing you to research a public company’s financial information and operations by reviewing the filings the company makes with the SEC. You can also research information provided by mutual funds (including money market funds), exchange-traded funds (ETFs), and variable annuities.</li>
 </ul></li>
 <li><p><u>Stock Prices</u></p>
@@ -793,8 +806,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -905,7 +916,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {
@@ -1163,7 +1173,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"selector":".lightbox","descPosition":"bottom","openEffect":"zoom","loop":false,"closeEffect":"zoom"});
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {
