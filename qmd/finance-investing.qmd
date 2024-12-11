@@ -9,6 +9,7 @@ fig-cap-location: top
 -   Resources
 
     -   [Tidy Finance](https://www.tidy-finance.org/) - R and Python versions
+    -   [Machine Learning for Factor Investing](https://www.mlfactor.com/)
     -   Advances in Financial Machine Learning - de Prado (R \>\> Documents \>\> Financial)
     -   [Machine Learning for Algorithmic Trading](https://ml4trading.io/)
         -   Github [repo](https://github.com/stefan-jansen/machine-learning-for-trading) with the code that's referred to in the book
