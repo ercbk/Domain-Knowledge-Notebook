@@ -3,6 +3,7 @@
 -   [**Amortization**]{style="color: #009499"} - Similar to depreciation except for intangible assets. A non-cash expense that reduces the value of a company's *definite life* intangible assets and also reduces reported earnings
 
 -   [**Arbitrage**]{style="color: #009499"} - The simultaneous buying and selling of an asset in different markets to profit from any price differences ([source](https://www.investopedia.com/ask/answers/what-is-arbitrage/))
+
     -   When markets are temporarily inefficient, arbitrageurs step in to correct these discrepancies by buying low in one market and selling high in another, thus making a profit and helping restore equilibrium.
     -   Markets are tied together by arbitrage—if one of them moves sharply in a given direction then others must follow.
     -   [Example]{.ribbon-highlight}: Electoral Prediction Markets ([source](https://rajivsethi.substack.com/p/the-limits-of-arbitrage?triedRedirect=true))
@@ -193,6 +194,8 @@
 -   [**Hedge**]{style="color: #009499"} - An investment that is made with the intention of reducing the risk of adverse price movements in an asset. Normally, a hedge consists of taking an offsetting or opposite position in a related security. An example could be investing in both cyclical and counter-cyclical stocks.
 
 -   [**Hedge Ratio**]{style="color: #009499"} ([**delta**]{style="color: #009499"}) - The effectiveness of a derivative hedge, delta, is the amount the price of a derivative moves per \$1 movement in the price of the underlying asset.
+
+-   [**Hit Rate**]{style="color: #009499"} - The proportion of time the model predicts the *sign* of the daily log-return correctly
 
 -   [**Holding Period Return (HPR)**]{style="color: #009499"} - The total return (%) received from holding an asset or portfolio of assets over a period of time.
 
