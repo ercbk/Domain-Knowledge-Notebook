@@ -3,13 +3,77 @@
 ## Misc {#sec-finance-risk-misc .unnumbered}
 
 -   Also see
-    -   [Decision Intelligence \>\> Decision Curves](decision-intelligence.qmd#sec-decint-deccurv){style="color: green"}
+    -   [Decision Intelligence \>\> Decision Curves](https://ercbk.github.io/Data-Science-Notebook/qmd/decision-intelligence.html#sec-decint-deccurv){style="color: green"}
         -   Not sure if it can be applied to other types of risk analysis outside of medicine, but it might be worth looking at.
 -   Packages
     -   [{]{style="color: #990000"}[PerformanceAnalytics](https://cran.r-project.org/web/packages/PerformanceAnalytics/index.html){style="color: #990000"}[}]{style="color: #990000"} - Econometric Tools for Performance and Risk Analysis
         -   Lots of vignettes, but there's also a substantial amount of material in the introduction section of the Reference Manual
 -   Papers
     -   [Predicting Value at Risk for Cryptocurrencies With Generalized Random Forests](https://arxiv.org/abs/2203.08224)
+-   Metrics
+    -   **Omega Ratio** - A weighted ratio of gains and losses above a threshold return. It captures more information about returns than similar metrics like the Sharpe ratio
+
+        -   Formula\
+            $$
+            \Omega = \frac{\sum \text{Returns}_{+,\theta}}{-1 \cdot \sum \text{Returns}_{-,\theta}}
+            $$
+
+            -   $\text{Returns}_{+, \theta}$ : Returns that are greater than the target threshold return, $\theta$
+
+            -   $\text{Returns}_{-,\theta}$ : Returns that are less than the target threshold return, $\theta$
+
+        <Details>
+
+        <Summary>Code ([Source](https://github.com/quant-science/sunday-quant-scientist/blob/main/QS030-omega/01_omega.py))</Summary>
+
+        ``` python
+        import yfinance as yf
+        import numpy as np
+        # Download the stock data for AAPL from Yahoo Finance for the specified date range
+        data = yf.download("AAPL", start="2020-01-01", end="2021-12-31")
+        returns = data["Adj Close"].pct_change()
+        # Calculate the Omega ratio of a strategy's returns
+        def omega_ratio(returns, required_return=0.0):
+            """Determines the Omega ratio of a strategy.
+            Parameters
+            ----------
+            returns : pd.Series or np.ndarray
+                Daily returns of the strategy, noncumulative.
+            required_return : float, optional
+                Minimum acceptance return of the investor. Threshold over which to
+                consider positive vs negative returns. It will be converted to a
+                value appropriate for the period of the returns. E.g. An annual minimum
+                acceptable return of 100 will translate to a minimum acceptable
+                return of 0.018.
+            Returns
+            -------
+            omega_ratio : float
+            Note
+            -----
+            See https://en.wikipedia.org/wiki/Omega_ratio for more details.
+            """
+            # Convert the required return to a daily return threshold
+            return_threshold = (1 + required_return) ** (1 / 252) - 1
+            # Calculate the difference between returns and the return threshold
+            returns_less_thresh = returns - return_threshold
+            # Calculate the numerator as the sum of positive returns above the threshold
+            numer = sum(returns_less_thresh[returns_less_thresh > 0.0])
+            # Calculate the denominator as the absolute sum of negative returns below the threshold
+            denom = -1.0 * sum(returns_less_thresh[returns_less_thresh < 0.0])
+            # Return the Omega ratio if the denominator is positive; otherwise, return NaN
+            if denom > 0.0:
+                return numer / denom
+            else:
+                return np.nan
+        # Calculate the Omega ratio for the given returns and required return
+        omega_ratio(returns, 0.07)
+        # Compute and plot the rolling 30-day Omega ratio of the returns
+        returns.rolling(30).apply(omega_ratio).plot()
+        # Plot a histogram of the daily returns to visualize their distribution
+        returns.hist(bins=50)
+        ```
+
+        </Details>
 -   Factor Model
     -   Notes from [{{mosaicperm}}]{style="color: goldenrod"} paper
     -   Model\
