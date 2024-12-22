@@ -446,7 +446,7 @@ window.Quarto = {
 <ul>
 <li>Also see
 <ul>
-<li><a href="decision-intelligence.qmd#sec-decint-deccurv" style="color: green">Decision Intelligence &gt;&gt; Decision Curves</a>
+<li><a href="https://ercbk.github.io/Data-Science-Notebook/qmd/decision-intelligence.html#sec-decint-deccurv" style="color: green">Decision Intelligence &gt;&gt; Decision Curves</a>
 <ul>
 <li>Not sure if it can be applied to other types of risk analysis outside of medicine, but it might be worth looking at.</li>
 </ul></li>
@@ -461,6 +461,69 @@ window.Quarto = {
 <li>Papers
 <ul>
 <li><a href="https://arxiv.org/abs/2203.08224">Predicting Value at Risk for Cryptocurrencies With Generalized Random Forests</a></li>
+</ul></li>
+<li>Metrics
+<ul>
+<li><p><strong>Omega Ratio</strong> - A weighted ratio of gains and losses above a threshold return. It captures more information about returns than similar metrics like the Sharpe ratio</p>
+<ul>
+<li><p>Formula<br>
+<span class="math display">\[
+\Omega = \frac{\sum \text{Returns}_{+,\theta}}{-1 \cdot \sum \text{Returns}_{-,\theta}}
+\]</span></p>
+<ul>
+<li><p><span class="math inline">\(\text{Returns}_{+, \theta}\)</span> : Returns that are greater than the target threshold return, <span class="math inline">\(\theta\)</span></p></li>
+<li><p><span class="math inline">\(\text{Returns}_{-,\theta}\)</span> : Returns that are less than the target threshold return, <span class="math inline">\(\theta\)</span></p></li>
+</ul></li>
+</ul>
+<details>
+<summary>
+<p>Code (<a href="https://github.com/quant-science/sunday-quant-scientist/blob/main/QS030-omega/01_omega.py">Source</a>)</p>
+</summary>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> yfinance <span class="im">as</span> yf</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Download the stock data for AAPL from Yahoo Finance for the specified date range</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> yf.download(<span class="st">"AAPL"</span>, start<span class="op">=</span><span class="st">"2020-01-01"</span>, end<span class="op">=</span><span class="st">"2021-12-31"</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>returns <span class="op">=</span> data[<span class="st">"Adj Close"</span>].pct_change()</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate the Omega ratio of a strategy's returns</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> omega_ratio(returns, required_return<span class="op">=</span><span class="fl">0.0</span>):</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Determines the Omega ratio of a strategy.</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co">    Parameters</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co">    ----------</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co">    returns : pd.Series or np.ndarray</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co">        Daily returns of the strategy, noncumulative.</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co">    required_return : float, optional</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co">        Minimum acceptance return of the investor. Threshold over which to</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="co">        consider positive vs negative returns. It will be converted to a</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="co">        value appropriate for the period of the returns. E.g. An annual minimum</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="co">        acceptable return of 100 will translate to a minimum acceptable</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="co">        return of 0.018.</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="co">    Returns</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="co">    -------</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="co">    omega_ratio : float</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="co">    Note</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="co">    -----</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="co">    See https://en.wikipedia.org/wiki/Omega_ratio for more details.</span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Convert the required return to a daily return threshold</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>    return_threshold <span class="op">=</span> (<span class="dv">1</span> <span class="op">+</span> required_return) <span class="op">**</span> (<span class="dv">1</span> <span class="op">/</span> <span class="dv">252</span>) <span class="op">-</span> <span class="dv">1</span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Calculate the difference between returns and the return threshold</span></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>    returns_less_thresh <span class="op">=</span> returns <span class="op">-</span> return_threshold</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Calculate the numerator as the sum of positive returns above the threshold</span></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>    numer <span class="op">=</span> <span class="bu">sum</span>(returns_less_thresh[returns_less_thresh <span class="op">&gt;</span> <span class="fl">0.0</span>])</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Calculate the denominator as the absolute sum of negative returns below the threshold</span></span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>    denom <span class="op">=</span> <span class="op">-</span><span class="fl">1.0</span> <span class="op">*</span> <span class="bu">sum</span>(returns_less_thresh[returns_less_thresh <span class="op">&lt;</span> <span class="fl">0.0</span>])</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Return the Omega ratio if the denominator is positive; otherwise, return NaN</span></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> denom <span class="op">&gt;</span> <span class="fl">0.0</span>:</span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> numer <span class="op">/</span> denom</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>    <span class="cf">else</span>:</span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> np.nan</span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate the Omega ratio for the given returns and required return</span></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>omega_ratio(returns, <span class="fl">0.07</span>)</span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute and plot the rolling 30-day Omega ratio of the returns</span></span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>returns.rolling(<span class="dv">30</span>).<span class="bu">apply</span>(omega_ratio).plot()</span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot a histogram of the daily returns to visualize their distribution</span></span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>returns.hist(bins<span class="op">=</span><span class="dv">50</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details></li>
 </ul></li>
 <li>Factor Model
 <ul>
@@ -550,87 +613,87 @@ Y_t = L_t X_t + \epsilon_t
 </ul></li>
 </ul></li>
 <li><p><span class="ribbon-highlight">Example</span>: Value at Risk and Conditional Value at Risk Using Copulas</p>
-<div class="sourceCode" id="annotated-cell-1"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-1-1"><a href="#annotated-cell-1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
-<span id="annotated-cell-1-2"><a href="#annotated-cell-1-2" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
-<span id="annotated-cell-1-3"><a href="#annotated-cell-1-3" aria-hidden="true" tabindex="-1"></a>asset1 <span class="ot">&lt;-</span> </span>
-<span id="annotated-cell-1-4"><a href="#annotated-cell-1-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rnorm</span>(n, </span>
-<span id="annotated-cell-1-5"><a href="#annotated-cell-1-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">mean =</span> <span class="fl">0.001</span>, </span>
-<span id="annotated-cell-1-6"><a href="#annotated-cell-1-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">sd =</span> <span class="fl">0.02</span>)</span>
-<span id="annotated-cell-1-7"><a href="#annotated-cell-1-7" aria-hidden="true" tabindex="-1"></a>asset2 <span class="ot">&lt;-</span> </span>
-<span id="annotated-cell-1-8"><a href="#annotated-cell-1-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rnorm</span>(n, </span>
-<span id="annotated-cell-1-9"><a href="#annotated-cell-1-9" aria-hidden="true" tabindex="-1"></a>        <span class="at">mean =</span> <span class="fl">0.001</span>, </span>
-<span id="annotated-cell-1-10"><a href="#annotated-cell-1-10" aria-hidden="true" tabindex="-1"></a>        <span class="at">sd =</span> <span class="fl">0.03</span>)</span>
-<span id="annotated-cell-1-11"><a href="#annotated-cell-1-11" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(asset1, asset2)</span>
-<span id="annotated-cell-1-12"><a href="#annotated-cell-1-12" aria-hidden="true" tabindex="-1"></a></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-1-13" class="code-annotation-target"><a href="#annotated-cell-1-13" aria-hidden="true" tabindex="-1"></a>margins <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">m1 =</span> fitdistrplus<span class="sc">::</span><span class="fu">fitdist</span>(asset1, <span class="st">"norm"</span>),</span>
-<span id="annotated-cell-1-14"><a href="#annotated-cell-1-14" aria-hidden="true" tabindex="-1"></a>                <span class="at">m2 =</span> fitdistrplus<span class="sc">::</span><span class="fu">fitdist</span>(asset2, <span class="st">"norm"</span>))</span>
-<span id="annotated-cell-1-15"><a href="#annotated-cell-1-15" aria-hidden="true" tabindex="-1"></a></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-1-16" class="code-annotation-target"><a href="#annotated-cell-1-16" aria-hidden="true" tabindex="-1"></a>normal.cop <span class="ot">&lt;-</span> copula<span class="sc">::</span><span class="fu">normalCopula</span>(<span class="at">param =</span> <span class="fl">0.5</span>, <span class="at">dim =</span> <span class="dv">2</span>)</span>
-<span id="annotated-cell-1-17"><a href="#annotated-cell-1-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="annotated-cell-1-18"><a href="#annotated-cell-1-18" aria-hidden="true" tabindex="-1"></a>u1 <span class="ot">&lt;-</span> </span>
-<span id="annotated-cell-1-19"><a href="#annotated-cell-1-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pnorm</span>(asset1, </span>
-<span id="annotated-cell-1-20"><a href="#annotated-cell-1-20" aria-hidden="true" tabindex="-1"></a>        <span class="at">mean =</span> margins<span class="sc">$</span>m1<span class="sc">$</span>estimate[<span class="st">"mean"</span>], </span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="3" onclick="event.preventDefault();">3</a><span id="annotated-cell-1-21" class="code-annotation-target"><a href="#annotated-cell-1-21" aria-hidden="true" tabindex="-1"></a>        <span class="at">sd =</span> margins<span class="sc">$</span>m1<span class="sc">$</span>estimate[<span class="st">"sd"</span>])</span>
-<span id="annotated-cell-1-22"><a href="#annotated-cell-1-22" aria-hidden="true" tabindex="-1"></a>u2 <span class="ot">&lt;-</span> </span>
-<span id="annotated-cell-1-23"><a href="#annotated-cell-1-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pnorm</span>(asset2, </span>
-<span id="annotated-cell-1-24"><a href="#annotated-cell-1-24" aria-hidden="true" tabindex="-1"></a>        <span class="at">mean =</span> margins<span class="sc">$</span>m2<span class="sc">$</span>estimate[<span class="st">"mean"</span>], </span>
-<span id="annotated-cell-1-25"><a href="#annotated-cell-1-25" aria-hidden="true" tabindex="-1"></a>        <span class="at">sd =</span> margins<span class="sc">$</span>m2<span class="sc">$</span>estimate[<span class="st">"sd"</span>])</span>
-<span id="annotated-cell-1-26"><a href="#annotated-cell-1-26" aria-hidden="true" tabindex="-1"></a>fit.cop <span class="ot">&lt;-</span> </span>
-<span id="annotated-cell-1-27"><a href="#annotated-cell-1-27" aria-hidden="true" tabindex="-1"></a>  copula<span class="sc">::</span><span class="fu">fitCopula</span>(normal.cop, </span>
-<span id="annotated-cell-1-28"><a href="#annotated-cell-1-28" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">cbind</span>(u1, u2), </span>
-<span id="annotated-cell-1-29"><a href="#annotated-cell-1-29" aria-hidden="true" tabindex="-1"></a>                    <span class="at">method =</span> <span class="st">"ml"</span>)</span>
-<span id="annotated-cell-1-30"><a href="#annotated-cell-1-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="annotated-cell-1-31"><a href="#annotated-cell-1-31" aria-hidden="true" tabindex="-1"></a>copula.samples <span class="ot">&lt;-</span> </span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="4" onclick="event.preventDefault();">4</a><span id="annotated-cell-1-32" class="code-annotation-target"><a href="#annotated-cell-1-32" aria-hidden="true" tabindex="-1"></a>  copula<span class="sc">::</span><span class="fu">rCopula</span>(n, fit.cop<span class="sc">@</span>copula)</span>
-<span id="annotated-cell-1-33"><a href="#annotated-cell-1-33" aria-hidden="true" tabindex="-1"></a></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="5" onclick="event.preventDefault();">5</a><span id="annotated-cell-1-34" class="code-annotation-target"><a href="#annotated-cell-1-34" aria-hidden="true" tabindex="-1"></a>simulated.returns <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="annotated-cell-1-35"><a href="#annotated-cell-1-35" aria-hidden="true" tabindex="-1"></a>  <span class="at">asset1 =</span> <span class="fu">qnorm</span>(copula.samples[, <span class="dv">1</span>], </span>
-<span id="annotated-cell-1-36"><a href="#annotated-cell-1-36" aria-hidden="true" tabindex="-1"></a>                 <span class="at">mean =</span> margins<span class="sc">$</span>m1<span class="sc">$</span>estimate[<span class="st">"mean"</span>], </span>
-<span id="annotated-cell-1-37"><a href="#annotated-cell-1-37" aria-hidden="true" tabindex="-1"></a>                 <span class="at">sd =</span> margins<span class="sc">$</span>m1<span class="sc">$</span>estimate[<span class="st">"sd"</span>]),</span>
-<span id="annotated-cell-1-38"><a href="#annotated-cell-1-38" aria-hidden="true" tabindex="-1"></a>  <span class="at">asset2 =</span> <span class="fu">qnorm</span>(copula.samples[, <span class="dv">2</span>], </span>
-<span id="annotated-cell-1-39"><a href="#annotated-cell-1-39" aria-hidden="true" tabindex="-1"></a>                 <span class="at">mean =</span> margins<span class="sc">$</span>m2<span class="sc">$</span>estimate[<span class="st">"mean"</span>], </span>
-<span id="annotated-cell-1-40"><a href="#annotated-cell-1-40" aria-hidden="true" tabindex="-1"></a>                 <span class="at">sd =</span> margins<span class="sc">$</span>m2<span class="sc">$</span>estimate[<span class="st">"sd"</span>])</span>
-<span id="annotated-cell-1-41"><a href="#annotated-cell-1-41" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="annotated-cell-1-42"><a href="#annotated-cell-1-42" aria-hidden="true" tabindex="-1"></a>simulated.portfolio.returns <span class="ot">&lt;-</span> <span class="fu">rowMeans</span>(simulated.returns)</span>
-<span id="annotated-cell-1-43"><a href="#annotated-cell-1-43" aria-hidden="true" tabindex="-1"></a></span>
-<span id="annotated-cell-1-44"><a href="#annotated-cell-1-44" aria-hidden="true" tabindex="-1"></a><span class="co"># -0.0285</span></span>
-<a class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="6" onclick="event.preventDefault();">6</a><span id="annotated-cell-1-45" class="code-annotation-target"><a href="#annotated-cell-1-45" aria-hidden="true" tabindex="-1"></a>VaR_95 <span class="ot">&lt;-</span> <span class="fu">quantile</span>(simulated.portfolio.returns, <span class="at">probs =</span> <span class="fl">0.05</span>)</span>
-<span id="annotated-cell-1-46"><a href="#annotated-cell-1-46" aria-hidden="true" tabindex="-1"></a><span class="co"># -0.0351187638772645</span></span>
-<span id="annotated-cell-1-47"><a href="#annotated-cell-1-47" aria-hidden="true" tabindex="-1"></a>CVaR_95 <span class="ot">&lt;-</span> <span class="fu">mean</span>(simulated.portfolio.returns[simulated.portfolio.returns <span class="sc">&lt;=</span> VaR_95])</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="annotated-cell-2"><pre class="sourceCode r code-annotation-code code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-2-1"><a href="#annotated-cell-2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="annotated-cell-2-2"><a href="#annotated-cell-2-2" aria-hidden="true" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="dv">1000</span></span>
+<span id="annotated-cell-2-3"><a href="#annotated-cell-2-3" aria-hidden="true" tabindex="-1"></a>asset1 <span class="ot">&lt;-</span> </span>
+<span id="annotated-cell-2-4"><a href="#annotated-cell-2-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rnorm</span>(n, </span>
+<span id="annotated-cell-2-5"><a href="#annotated-cell-2-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">mean =</span> <span class="fl">0.001</span>, </span>
+<span id="annotated-cell-2-6"><a href="#annotated-cell-2-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">sd =</span> <span class="fl">0.02</span>)</span>
+<span id="annotated-cell-2-7"><a href="#annotated-cell-2-7" aria-hidden="true" tabindex="-1"></a>asset2 <span class="ot">&lt;-</span> </span>
+<span id="annotated-cell-2-8"><a href="#annotated-cell-2-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rnorm</span>(n, </span>
+<span id="annotated-cell-2-9"><a href="#annotated-cell-2-9" aria-hidden="true" tabindex="-1"></a>        <span class="at">mean =</span> <span class="fl">0.001</span>, </span>
+<span id="annotated-cell-2-10"><a href="#annotated-cell-2-10" aria-hidden="true" tabindex="-1"></a>        <span class="at">sd =</span> <span class="fl">0.03</span>)</span>
+<span id="annotated-cell-2-11"><a href="#annotated-cell-2-11" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(asset1, asset2)</span>
+<span id="annotated-cell-2-12"><a href="#annotated-cell-2-12" aria-hidden="true" tabindex="-1"></a></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="1" onclick="event.preventDefault();">1</a><span id="annotated-cell-2-13" class="code-annotation-target"><a href="#annotated-cell-2-13" aria-hidden="true" tabindex="-1"></a>margins <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">m1 =</span> fitdistrplus<span class="sc">::</span><span class="fu">fitdist</span>(asset1, <span class="st">"norm"</span>),</span>
+<span id="annotated-cell-2-14"><a href="#annotated-cell-2-14" aria-hidden="true" tabindex="-1"></a>                <span class="at">m2 =</span> fitdistrplus<span class="sc">::</span><span class="fu">fitdist</span>(asset2, <span class="st">"norm"</span>))</span>
+<span id="annotated-cell-2-15"><a href="#annotated-cell-2-15" aria-hidden="true" tabindex="-1"></a></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="2" onclick="event.preventDefault();">2</a><span id="annotated-cell-2-16" class="code-annotation-target"><a href="#annotated-cell-2-16" aria-hidden="true" tabindex="-1"></a>normal.cop <span class="ot">&lt;-</span> copula<span class="sc">::</span><span class="fu">normalCopula</span>(<span class="at">param =</span> <span class="fl">0.5</span>, <span class="at">dim =</span> <span class="dv">2</span>)</span>
+<span id="annotated-cell-2-17"><a href="#annotated-cell-2-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="annotated-cell-2-18"><a href="#annotated-cell-2-18" aria-hidden="true" tabindex="-1"></a>u1 <span class="ot">&lt;-</span> </span>
+<span id="annotated-cell-2-19"><a href="#annotated-cell-2-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pnorm</span>(asset1, </span>
+<span id="annotated-cell-2-20"><a href="#annotated-cell-2-20" aria-hidden="true" tabindex="-1"></a>        <span class="at">mean =</span> margins<span class="sc">$</span>m1<span class="sc">$</span>estimate[<span class="st">"mean"</span>], </span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="3" onclick="event.preventDefault();">3</a><span id="annotated-cell-2-21" class="code-annotation-target"><a href="#annotated-cell-2-21" aria-hidden="true" tabindex="-1"></a>        <span class="at">sd =</span> margins<span class="sc">$</span>m1<span class="sc">$</span>estimate[<span class="st">"sd"</span>])</span>
+<span id="annotated-cell-2-22"><a href="#annotated-cell-2-22" aria-hidden="true" tabindex="-1"></a>u2 <span class="ot">&lt;-</span> </span>
+<span id="annotated-cell-2-23"><a href="#annotated-cell-2-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pnorm</span>(asset2, </span>
+<span id="annotated-cell-2-24"><a href="#annotated-cell-2-24" aria-hidden="true" tabindex="-1"></a>        <span class="at">mean =</span> margins<span class="sc">$</span>m2<span class="sc">$</span>estimate[<span class="st">"mean"</span>], </span>
+<span id="annotated-cell-2-25"><a href="#annotated-cell-2-25" aria-hidden="true" tabindex="-1"></a>        <span class="at">sd =</span> margins<span class="sc">$</span>m2<span class="sc">$</span>estimate[<span class="st">"sd"</span>])</span>
+<span id="annotated-cell-2-26"><a href="#annotated-cell-2-26" aria-hidden="true" tabindex="-1"></a>fit.cop <span class="ot">&lt;-</span> </span>
+<span id="annotated-cell-2-27"><a href="#annotated-cell-2-27" aria-hidden="true" tabindex="-1"></a>  copula<span class="sc">::</span><span class="fu">fitCopula</span>(normal.cop, </span>
+<span id="annotated-cell-2-28"><a href="#annotated-cell-2-28" aria-hidden="true" tabindex="-1"></a>                    <span class="fu">cbind</span>(u1, u2), </span>
+<span id="annotated-cell-2-29"><a href="#annotated-cell-2-29" aria-hidden="true" tabindex="-1"></a>                    <span class="at">method =</span> <span class="st">"ml"</span>)</span>
+<span id="annotated-cell-2-30"><a href="#annotated-cell-2-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="annotated-cell-2-31"><a href="#annotated-cell-2-31" aria-hidden="true" tabindex="-1"></a>copula.samples <span class="ot">&lt;-</span> </span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="4" onclick="event.preventDefault();">4</a><span id="annotated-cell-2-32" class="code-annotation-target"><a href="#annotated-cell-2-32" aria-hidden="true" tabindex="-1"></a>  copula<span class="sc">::</span><span class="fu">rCopula</span>(n, fit.cop<span class="sc">@</span>copula)</span>
+<span id="annotated-cell-2-33"><a href="#annotated-cell-2-33" aria-hidden="true" tabindex="-1"></a></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="5" onclick="event.preventDefault();">5</a><span id="annotated-cell-2-34" class="code-annotation-target"><a href="#annotated-cell-2-34" aria-hidden="true" tabindex="-1"></a>simulated.returns <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="annotated-cell-2-35"><a href="#annotated-cell-2-35" aria-hidden="true" tabindex="-1"></a>  <span class="at">asset1 =</span> <span class="fu">qnorm</span>(copula.samples[, <span class="dv">1</span>], </span>
+<span id="annotated-cell-2-36"><a href="#annotated-cell-2-36" aria-hidden="true" tabindex="-1"></a>                 <span class="at">mean =</span> margins<span class="sc">$</span>m1<span class="sc">$</span>estimate[<span class="st">"mean"</span>], </span>
+<span id="annotated-cell-2-37"><a href="#annotated-cell-2-37" aria-hidden="true" tabindex="-1"></a>                 <span class="at">sd =</span> margins<span class="sc">$</span>m1<span class="sc">$</span>estimate[<span class="st">"sd"</span>]),</span>
+<span id="annotated-cell-2-38"><a href="#annotated-cell-2-38" aria-hidden="true" tabindex="-1"></a>  <span class="at">asset2 =</span> <span class="fu">qnorm</span>(copula.samples[, <span class="dv">2</span>], </span>
+<span id="annotated-cell-2-39"><a href="#annotated-cell-2-39" aria-hidden="true" tabindex="-1"></a>                 <span class="at">mean =</span> margins<span class="sc">$</span>m2<span class="sc">$</span>estimate[<span class="st">"mean"</span>], </span>
+<span id="annotated-cell-2-40"><a href="#annotated-cell-2-40" aria-hidden="true" tabindex="-1"></a>                 <span class="at">sd =</span> margins<span class="sc">$</span>m2<span class="sc">$</span>estimate[<span class="st">"sd"</span>])</span>
+<span id="annotated-cell-2-41"><a href="#annotated-cell-2-41" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="annotated-cell-2-42"><a href="#annotated-cell-2-42" aria-hidden="true" tabindex="-1"></a>simulated.portfolio.returns <span class="ot">&lt;-</span> <span class="fu">rowMeans</span>(simulated.returns)</span>
+<span id="annotated-cell-2-43"><a href="#annotated-cell-2-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="annotated-cell-2-44"><a href="#annotated-cell-2-44" aria-hidden="true" tabindex="-1"></a><span class="co"># -0.0285</span></span>
+<a class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="6" onclick="event.preventDefault();">6</a><span id="annotated-cell-2-45" class="code-annotation-target"><a href="#annotated-cell-2-45" aria-hidden="true" tabindex="-1"></a>VaR_95 <span class="ot">&lt;-</span> <span class="fu">quantile</span>(simulated.portfolio.returns, <span class="at">probs =</span> <span class="fl">0.05</span>)</span>
+<span id="annotated-cell-2-46"><a href="#annotated-cell-2-46" aria-hidden="true" tabindex="-1"></a><span class="co"># -0.0351187638772645</span></span>
+<span id="annotated-cell-2-47"><a href="#annotated-cell-2-47" aria-hidden="true" tabindex="-1"></a>CVaR_95 <span class="ot">&lt;-</span> <span class="fu">mean</span>(simulated.portfolio.returns[simulated.portfolio.returns <span class="sc">&lt;=</span> VaR_95])</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <dl class="code-annotation-container-grid">
-<dt data-target-cell="annotated-cell-1" data-target-annotation="1">1</dt>
+<dt data-target-cell="annotated-cell-2" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-1" data-code-lines="13" data-code-annotation="1">Estimate marginal distributions (assuming normal for simplicity)</span>
+<span data-code-cell="annotated-cell-2" data-code-lines="13" data-code-annotation="1">Estimate marginal distributions (assuming normal for simplicity)</span>
 </dd>
-<dt data-target-cell="annotated-cell-1" data-target-annotation="2">2</dt>
+<dt data-target-cell="annotated-cell-2" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-cell="annotated-cell-1" data-code-lines="16" data-code-annotation="2"><code>normalCopula</code> doesn’t have it’s own listing in the reference manual. It’s under <code>ellipCopula</code>, or you can just use <code>?normalCopula</code>.</span>
+<span data-code-cell="annotated-cell-2" data-code-lines="16" data-code-annotation="2"><code>normalCopula</code> doesn’t have it’s own listing in the reference manual. It’s under <code>ellipCopula</code>, or you can just use <code>?normalCopula</code>.</span>
 </dd>
-<dt data-target-cell="annotated-cell-1" data-target-annotation="3">3</dt>
+<dt data-target-cell="annotated-cell-2" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-cell="annotated-cell-1" data-code-lines="21" data-code-annotation="3">Fit the copula to the data</span>
+<span data-code-cell="annotated-cell-2" data-code-lines="21" data-code-annotation="3">Fit the copula to the data</span>
 </dd>
-<dt data-target-cell="annotated-cell-1" data-target-annotation="4">4</dt>
+<dt data-target-cell="annotated-cell-2" data-target-annotation="4">4</dt>
 <dd>
-<span data-code-cell="annotated-cell-1" data-code-lines="32" data-code-annotation="4">Generate samples from the fitted copula. The <code>@</code> operator is used to access copula object since it’s a S4 object. Also, <code>rCopula</code> doesn’t have it’s own listing in the reference manual. It’s under <code>Copula</code>, or you can just use <code>?rCopula</code>.</span>
+<span data-code-cell="annotated-cell-2" data-code-lines="32" data-code-annotation="4">Generate samples from the fitted copula. The <code>@</code> operator is used to access copula object since it’s a S4 object. Also, <code>rCopula</code> doesn’t have it’s own listing in the reference manual. It’s under <code>Copula</code>, or you can just use <code>?rCopula</code>.</span>
 </dd>
-<dt data-target-cell="annotated-cell-1" data-target-annotation="5">5</dt>
+<dt data-target-cell="annotated-cell-2" data-target-annotation="5">5</dt>
 <dd>
-<span data-code-cell="annotated-cell-1" data-code-lines="34" data-code-annotation="5">Simulate portfolio returns by ransforming copula samples back to original scale and averaging (i.e.&nbsp;equal weighting)</span>
+<span data-code-cell="annotated-cell-2" data-code-lines="34" data-code-annotation="5">Simulate portfolio returns by ransforming copula samples back to original scale and averaging (i.e.&nbsp;equal weighting)</span>
 </dd>
-<dt data-target-cell="annotated-cell-1" data-target-annotation="6">6</dt>
+<dt data-target-cell="annotated-cell-2" data-target-annotation="6">6</dt>
 <dd>
-<span data-code-cell="annotated-cell-1" data-code-lines="45" data-code-annotation="6">Calculate VaR and CVaR at 95% confidence level. At the 95% CI, the maximum 1-day loss is 3.5%.</span>
+<span data-code-cell="annotated-cell-2" data-code-lines="45" data-code-annotation="6">Calculate VaR and CVaR at 95% confidence level. At the 95% CI, the maximum 1-day loss is 3.5%.</span>
 </dd>
 </dl>
 <ul>
 <li><p><span style="color: #990000">{PerformanceAnalytics}</span> also has functions for calculation the VaR and CVaR values</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>VaR_95 <span class="ot">&lt;-</span> <span class="fu">VaR</span>(simulated.portfolio.returns, </span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>              <span class="at">p =</span> <span class="fl">0.95</span>, </span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>              <span class="at">method =</span> <span class="st">"historical"</span>)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>CVaR_95 <span class="ot">&lt;-</span> <span class="fu">ES</span>(simulated.portfolio.returns, </span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>              <span class="at">p =</span> <span class="fl">0.95</span>, </span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>              <span class="at">method =</span> <span class="st">"historical"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>VaR_95 <span class="ot">&lt;-</span> <span class="fu">VaR</span>(simulated.portfolio.returns, </span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>              <span class="at">p =</span> <span class="fl">0.95</span>, </span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>              <span class="at">method =</span> <span class="st">"historical"</span>)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>CVaR_95 <span class="ot">&lt;-</span> <span class="fu">ES</span>(simulated.portfolio.returns, </span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>              <span class="at">p =</span> <span class="fl">0.95</span>, </span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>              <span class="at">method =</span> <span class="st">"historical"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 </ul></li>
 </ul>
 
