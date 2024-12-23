@@ -167,6 +167,7 @@
         -   Getting Quandl data requires you to register for an account, and in the account settings, you'll find your API key.
         -   [List of parameters](https://docs.data.nasdaq.com/docs/parameters-2) that can be used for querying the data.
     -   [{]{style="color: #990000"}[edgarWebR](https://cran.r-project.org/package=edgarWebR){style="color: #990000"}[}]{style="color: #990000"} - The EDGAR database provides free public access to corporate information, allowing you to research a public company’s financial information and operations by reviewing the filings the company makes with the SEC. You can also research information provided by mutual funds (including money market funds), exchange-traded funds (ETFs), and variable annuities.
+    -   [{]{style="color: #990000"}[fmpapi](https://tidy-finance.github.io/r-fmpapi/){style="color: #990000"}[}]{style="color: #990000"}, [{{]{style="color: goldenrod"}[fmpapi](https://github.com/tidy-finance/py-fmpapi){style="color: goldenrod"}[}}]{style="color: goldenrod"} - Wrapper for the FMP API — (free) real-time stock prices, financial statements, or historical data
 
 -   [Stock Prices]{.underline}
 
