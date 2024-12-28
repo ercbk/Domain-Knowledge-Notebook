@@ -270,6 +270,15 @@
 ### Misc {#sec-proddev-gen-metrics-misc .unnumbered}
 
 -   Also see [Product Development, KPIs](product-development-kpis.qmd#sec-proddev-kpis){style="color: green"}
+-   Cross-Product Adoption Metrics - Which types consumers have purchased multiple products
+    -   Multi-product companies can gain valuable insights into user behavior and adoption patterns across their product portfolio.
+    -   Also see
+        -   [Databases, dbt \>\> Packages](https://ercbk.github.io/Data-Science-Notebook/qmd/db-dbt.html#sec-db-dbt-pkgs){style="color: green"} \>\> dbt_set_similarity
+        -   [Association, General \>\> Discrete](association-general.html#sec-assoc-gen-disc){style="color: green"} \>\> Misc
+    -   [Example]{.ribbon-highlight}: Jaccard Index ([source](https://towardsdatascience.com/measuring-cross-product-adoption-using-dbt-set-similarity-fdf7c1f88bc2))\
+        ![](_resources/Product_Development.resources/metrics-cross-prod-1.webp){.lightbox width="532"}
+        -   Customer 1 is the only tech enthusiast that has bought both photo and document storage
+        -   Customers 5 and 6 have purchased both photo and document storage
 
 ### Types {#sec-proddev-gen-metrics-types .unnumbered}
 
@@ -420,7 +429,7 @@
     -   Histogram of users' engagement by the total number of days they performed which action you've deemed valuable in a month
         -   Can be applied to a cohort if you're a subscription business, track product launches, track results from feature changes, or results from marketing campaiagns, etc. (see below)
         -   I don't think this concept has to be limited to time being on the x-axis. It could be any metric value you consider representative of a "power user."
-            -   Also see [Google, Analytics, Analysis \>\> Examples](https://ercbk.github.io/Data-Science-Notebook/qmd/google-analytics-analysis.html#sec-goog-anal-anal-ex .u){style="color: green"} \>\> Example 24 Power User Analysis
+            -   Also see [Google, Analytics, Analysis \>\> Examples](https://ercbk.github.io/Data-Science-Notebook/qmd/google-analytics-analysis.html#sec-goog-anal-anal-ex%20.u){style="color: green"} \>\> Example 24 Power User Analysis
                 -   Y axis: % users, X axis: visits
     -   [Time Period]{.underline}
         -   Depends on your products natural cycle. May be monthly ("L30"), weekly ("L7"), daily, etc.
