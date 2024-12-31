@@ -274,7 +274,7 @@
     -   Multi-product companies can gain valuable insights into user behavior and adoption patterns across their product portfolio.
     -   Also see
         -   [Databases, dbt \>\> Packages](https://ercbk.github.io/Data-Science-Notebook/qmd/db-dbt.html#sec-db-dbt-pkgs){style="color: green"} \>\> dbt_set_similarity
-        -   [Association, General \>\> Discrete](association-general.html#sec-assoc-gen-disc){style="color: green"} \>\> Misc
+        -   [Association, General \>\> Discrete](https://ercbk.github.io/Data-Science-Notebook/qmd/association-general.html#sec-assoc-gen-disc){style="color: green"} \>\> Misc \>\> Binary vs Binary Similarity measures
     -   [Example]{.ribbon-highlight}: Jaccard Index ([source](https://towardsdatascience.com/measuring-cross-product-adoption-using-dbt-set-similarity-fdf7c1f88bc2))\
         ![](_resources/Product_Development.resources/metrics-cross-prod-1.webp){.lightbox width="532"}
         -   Customer 1 is the only tech enthusiast that has bought both photo and document storage

@@ -302,6 +302,62 @@
             -   [Experiements, RCT \>\> Sources of Bias](https://ercbk.github.io/Data-Science-Notebook/qmd/experiments-rct.html#sec-exp-rct-sbias){style="color: green"}
             -   [Experiments, Planning \>\> Misc](https://ercbk.github.io/Data-Science-Notebook/qmd/experiments-planning.html#sec-exp-plan-misc){style="color: green"}
 
+## Tracking {#sec-mark-tracking .unnumbered}
+
+-   Notes from [Conversions without cookies: How to track conversions from Google Ads and Meta without any cookies](https://seifert.substack.com/p/conversions-without-cookies)
+    -   Article also contains SQL code that prepares conversion data to send to advertisers.
+-   Traditional cookie tracking process when placing an advertisement on Google Ads, Meta, TikTok, LinkedIn, etc.
+    -   Set up your (client-side) tag management system (i.e. Google Tag Manager)
+    -   Add a bunch of conversion tags to your website (or app)
+    -   Collect consent to use the necessary cookies of the advertisement partners you work with
+    -   Whenever a conversion on your site happens, trigger the tag notifying the advertisement partner of the conversion which sends along some information from those cookies so the advertisement partner can identify which activity on their platform is connected to the conversion.
+-   Current estimates are about 30% of traffic on your site not being trackable (because of ITP, iOS14+, …).
+    -   In a country like Switzerland, where Apple products are widely used, and considering people who simply won’t consent to cookies even if you kindly ask them, this can climb to 40%.
+
+### Web Server Logs {#sec-mark-tracking-web .unnumbered}
+
+-   This method can be used in conjuction to client-side methods like cookies to perhaps gain insight on customers that aren't trackable through cookie or as an alternative.
+-   When someone opens your website, their browser requests a file (a .html or the like) from the server (i.e. pageview). And usually the server logs those requests (or at least you can make it to). Some website hosts call those “access logs” or “http logs.”
+    -   Typically contain the **IP address, user agent of the browser, a timestamp, and the full URI** used in the request.
+    -   **User Agent** is a string of text that web browsers send to websites to identify themselves. It contains information about:
+        -   The browser being used (Chrome, Firefox, Safari, etc.)
+        -   The browser version
+        -   The operating system (Windows, macOS, iOS, Android, etc.)
+        -   The device type (desktop, mobile, tablet)
+-   Pageviews from Server Logs
+    -   Can be used to determine the number of sessions and devices that visit your website
+    -   Sessions can be a bit complicated to construct. Author of the article offered to share his SQL code if contacted.
+        -   I used Claude to generate R, Python, and SQL scripts using the data fields he mentioned that were available in the logs and Google's session definition of a user session (See [Google, Analytics, Reports \>\> Terms](https://ercbk.github.io/Data-Science-Notebook/qmd/google-analytics-reports.html#sec-goog-anal-rep-term){style="color: green"} \>\> Session).
+            -   Scripts are in my local Code \>\> Business Applications \>\> Web and App directories.
+    -   Issues
+        -   No events (clicks etc.) as those do not trigger a request to the server immediately
+        -   Identifying users (even if they log in) might also be rather difficult (unless you configure a login so that it also triggers a request to your webserver)
+    -   Removing bots from the logs
+        -   Remove ips that send a request to your `robots.txt` since their IP/agent can immediately be identified as a bot
+        -   Set up a pipeline to determine if an IP/agent belongs to a known bot
+            -   [IPQS](https://www.ipqualityscore.com/) is recommended
+        -   Add some anomaly detection
+            -   e.g. A session requesting more than 3 pages within 2 seconds is unlikely relevant to you).
+-   Conversions
+    -   Add thank-you-page after a checkout.
+    -   Create the URI of this thank-you-page so that it contains (e.g. as query parameters) the information you need to enrich a conversion (particularly its value) or at least contains a reference to a transaction (like an ID) so you can look up this transaction in your logs.
+        -   All you need is the identifier that the advertisement partner requires to attribute this conversion to
+    -   After having modeled sessions in your warehouse, you can identify the first pageview of a session and it’s URI.
+-   Exporting conversion data to advertisers
+    -   See article for code
+    -   By sending them this data:
+        -   These platforms can tell you exactly which ads led to sales. Instead of just seeing clicks or engagement, you can track which campaigns actually generate revenue.
+        -   It helps their algorithms to target demographics with your ads that are likely to convert.
+        -   You can use features like Meta's Advantage+ Shopping Campaigns or Google's Smart Shopping campaigns. These automated systems adjust your bids and targeting in real-time based on which users are most likely to convert.
+    -   For most advertisement partners, this first URI will contain a “Click ID” in a query parameter. A regular expression can extract this ID and you are ready to send a conversion to your advertisement partner.
+        -   For Google, it's [gclid]{.arg-text}
+        -   For Meta, it's [fbclid]{.arg-text}
+        -   Caveat: This method assumes the conversion occurs in the same session as the "Click ID." A device switch or timeout will break this method, but last-click attribution is better than nothing.
+    -   If you have the *client-side* tracking data in the same DWH, you can simply look up which Click IDs are already caught (and presumably sent to the advertisement partner) by the client-side tracking and *only* process those Click IDs and conversions *not* already covered.
+    -   Google has [Data Manager](https://support.google.com/google-ads/answer/14639041)
+    -   Meta has a [Conversions API](https://developers.facebook.com/docs/marketing-api/conversions-api/)
+        -   ETL Tools like [Census](https://www.getcensus.com/), [Hightouch](https://hightouch.com/), [Azure Data Factory](https://azure.microsoft.com/en-us/products/data-factory), etc. can be used to connect to this API and send them the data.
+
 ## Channel Attribution {#sec-mark-chanatt .unnumbered}
 
 ### Misc {#sec-mark-chanatt-misc .unnumbered}
