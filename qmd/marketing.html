@@ -387,6 +387,10 @@ window.Quarto = {
   <li><a href="#sec-mark-custlift" id="toc-sec-mark-custlift" class="nav-link" data-scroll-target="#sec-mark-custlift">Conversion Lift Tests</a></li>
   <li><a href="#sec-mark-geoexp" id="toc-sec-mark-geoexp" class="nav-link" data-scroll-target="#sec-mark-geoexp">Geo-Experiments</a></li>
   <li><a href="#sec-mark-long" id="toc-sec-mark-long" class="nav-link" data-scroll-target="#sec-mark-long">Longitudinal Experiments</a></li>
+  <li><a href="#sec-mark-tracking" id="toc-sec-mark-tracking" class="nav-link" data-scroll-target="#sec-mark-tracking">Tracking</a>
+  <ul>
+  <li><a href="#sec-mark-tracking-web" id="toc-sec-mark-tracking-web" class="nav-link" data-scroll-target="#sec-mark-tracking-web">Web Server Logs</a></li>
+  </ul></li>
   <li><a href="#sec-mark-chanatt" id="toc-sec-mark-chanatt" class="nav-link" data-scroll-target="#sec-mark-chanatt">Channel Attribution</a>
   <ul>
   <li><a href="#sec-mark-chanatt-misc" id="toc-sec-mark-chanatt-misc" class="nav-link" data-scroll-target="#sec-mark-chanatt-misc">Misc</a></li>
@@ -836,6 +840,102 @@ eCPM = \frac{\mbox{Estimated Earnings} \cdot 1000}{\mbox{Total Impressions}}
 </ul></li>
 </ul></li>
 </ul>
+</section>
+<section id="sec-mark-tracking" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="sec-mark-tracking">Tracking</h2>
+<ul>
+<li>Notes from <a href="https://seifert.substack.com/p/conversions-without-cookies">Conversions without cookies: How to track conversions from Google Ads and Meta without any cookies</a>
+<ul>
+<li>Article also contains SQL code that prepares conversion data to send to advertisers.</li>
+</ul></li>
+<li>Traditional cookie tracking process when placing an advertisement on Google Ads, Meta, TikTok, LinkedIn, etc.
+<ul>
+<li>Set up your (client-side) tag management system (i.e.&nbsp;Google Tag Manager)</li>
+<li>Add a bunch of conversion tags to your website (or app)</li>
+<li>Collect consent to use the necessary cookies of the advertisement partners you work with</li>
+<li>Whenever a conversion on your site happens, trigger the tag notifying the advertisement partner of the conversion which sends along some information from those cookies so the advertisement partner can identify which activity on their platform is connected to the conversion.</li>
+</ul></li>
+<li>Current estimates are about 30% of traffic on your site not being trackable (because of ITP, iOS14+, …).
+<ul>
+<li>In a country like Switzerland, where Apple products are widely used, and considering people who simply won’t consent to cookies even if you kindly ask them, this can climb to 40%.</li>
+</ul></li>
+</ul>
+<section id="sec-mark-tracking-web" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="sec-mark-tracking-web">Web Server Logs</h3>
+<ul>
+<li>This method can be used in conjuction to client-side methods like cookies to perhaps gain insight on customers that aren’t trackable through cookie or as an alternative.</li>
+<li>When someone opens your website, their browser requests a file (a .html or the like) from the server (i.e.&nbsp;pageview). And usually the server logs those requests (or at least you can make it to). Some website hosts call those “access logs” or “http logs.”
+<ul>
+<li>Typically contain the <strong>IP address, user agent of the browser, a timestamp, and the full URI</strong> used in the request.</li>
+<li><strong>User Agent</strong> is a string of text that web browsers send to websites to identify themselves. It contains information about:
+<ul>
+<li>The browser being used (Chrome, Firefox, Safari, etc.)</li>
+<li>The browser version</li>
+<li>The operating system (Windows, macOS, iOS, Android, etc.)</li>
+<li>The device type (desktop, mobile, tablet)</li>
+</ul></li>
+</ul></li>
+<li>Pageviews from Server Logs
+<ul>
+<li>Can be used to determine the number of sessions and devices that visit your website</li>
+<li>Sessions can be a bit complicated to construct. Author of the article offered to share his SQL code if contacted.
+<ul>
+<li>I used Claude to generate R, Python, and SQL scripts using the data fields he mentioned that were available in the logs and Google’s session definition of a user session (See <a href="https://ercbk.github.io/Data-Science-Notebook/qmd/google-analytics-reports.html#sec-goog-anal-rep-term" style="color: green">Google, Analytics, Reports &gt;&gt; Terms</a> &gt;&gt; Session).
+<ul>
+<li>Scripts are in my local Code &gt;&gt; Business Applications &gt;&gt; Web and App directories.</li>
+</ul></li>
+</ul></li>
+<li>Issues
+<ul>
+<li>No events (clicks etc.) as those do not trigger a request to the server immediately</li>
+<li>Identifying users (even if they log in) might also be rather difficult (unless you configure a login so that it also triggers a request to your webserver)</li>
+</ul></li>
+<li>Removing bots from the logs
+<ul>
+<li>Remove ips that send a request to your <code>robots.txt</code> since their IP/agent can immediately be identified as a bot</li>
+<li>Set up a pipeline to determine if an IP/agent belongs to a known bot
+<ul>
+<li><a href="https://www.ipqualityscore.com/">IPQS</a> is recommended</li>
+</ul></li>
+<li>Add some anomaly detection
+<ul>
+<li>e.g.&nbsp;A session requesting more than 3 pages within 2 seconds is unlikely relevant to you).</li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li>Conversions
+<ul>
+<li>Add thank-you-page after a checkout.</li>
+<li>Create the URI of this thank-you-page so that it contains (e.g.&nbsp;as query parameters) the information you need to enrich a conversion (particularly its value) or at least contains a reference to a transaction (like an ID) so you can look up this transaction in your logs.
+<ul>
+<li>All you need is the identifier that the advertisement partner requires to attribute this conversion to</li>
+</ul></li>
+<li>After having modeled sessions in your warehouse, you can identify the first pageview of a session and it’s URI.</li>
+</ul></li>
+<li>Exporting conversion data to advertisers
+<ul>
+<li>See article for code</li>
+<li>By sending them this data:
+<ul>
+<li>These platforms can tell you exactly which ads led to sales. Instead of just seeing clicks or engagement, you can track which campaigns actually generate revenue.</li>
+<li>It helps their algorithms to target demographics with your ads that are likely to convert.</li>
+<li>You can use features like Meta’s Advantage+ Shopping Campaigns or Google’s Smart Shopping campaigns. These automated systems adjust your bids and targeting in real-time based on which users are most likely to convert.</li>
+</ul></li>
+<li>For most advertisement partners, this first URI will contain a “Click ID” in a query parameter. A regular expression can extract this ID and you are ready to send a conversion to your advertisement partner.
+<ul>
+<li>For Google, it’s <span class="arg-text">gclid</span></li>
+<li>For Meta, it’s <span class="arg-text">fbclid</span></li>
+<li>Caveat: This method assumes the conversion occurs in the same session as the “Click ID.” A device switch or timeout will break this method, but last-click attribution is better than nothing.</li>
+</ul></li>
+<li>If you have the <em>client-side</em> tracking data in the same DWH, you can simply look up which Click IDs are already caught (and presumably sent to the advertisement partner) by the client-side tracking and <em>only</em> process those Click IDs and conversions <em>not</em> already covered.</li>
+<li>Google has <a href="https://support.google.com/google-ads/answer/14639041">Data Manager</a></li>
+<li>Meta has a <a href="https://developers.facebook.com/docs/marketing-api/conversions-api/">Conversions API</a>
+<ul>
+<li>ETL Tools like <a href="https://www.getcensus.com/">Census</a>, <a href="https://hightouch.com/">Hightouch</a>, <a href="https://azure.microsoft.com/en-us/products/data-factory">Azure Data Factory</a>, etc. can be used to connect to this API and send them the data.</li>
+</ul></li>
+</ul></li>
+</ul>
+</section>
 </section>
 <section id="sec-mark-chanatt" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="sec-mark-chanatt">Channel Attribution</h2>
