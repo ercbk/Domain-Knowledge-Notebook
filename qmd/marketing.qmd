@@ -319,6 +319,15 @@
 -   This method can be used in conjuction to client-side methods like cookies to perhaps gain insight on customers that aren't trackable through cookie or as an alternative.
 -   When someone opens your website, their browser requests a file (a .html or the like) from the server (i.e. pageview). And usually the server logs those requests (or at least you can make it to). Some website hosts call those “access logs” or “http logs.”
     -   Typically contain the **IP address, user agent of the browser, a timestamp, and the full URI** used in the request.
+    -   [{]{style="color: #990000"}[ipapi](https://github.com/ipqwery/ipapi-r){style="color: #990000"}[}]{style="color: #990000"} - Queries IP addresses using the ipquery.io API
+        -   Returns these fields
+
+            ``` r
+            names(ipapi_obj)
+            #>  [1] "ip"            "asn"           "org"           "isp"           "country"       "country_code"  "city"          "state"        
+            #>  [9] "zipcode"       "latitude"      "longitude"     "timezone"      "localtime"     "is_mobile"     "is_vpn"        "is_tor"       
+            #> [17] "is_proxy"      "is_datacenter" "risk_score"  
+            ```
     -   **User Agent** is a string of text that web browsers send to websites to identify themselves. It contains information about:
         -   The browser being used (Chrome, Firefox, Safari, etc.)
         -   The browser version
