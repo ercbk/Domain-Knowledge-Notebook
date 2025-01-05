@@ -9,6 +9,7 @@ fig-cap-location: top
 -   Resources
 
     -   [Tidy Finance](https://www.tidy-finance.org/) - R and Python versions
+    -   [Tidy Portfolio Management in R](https://www.tidy-pm.com/)
     -   [Machine Learning for Factor Investing](https://www.mlfactor.com/)
     -   Advances in Financial Machine Learning - de Prado (R \>\> Documents \>\> Financial)
     -   [Machine Learning for Algorithmic Trading](https://ml4trading.io/)
