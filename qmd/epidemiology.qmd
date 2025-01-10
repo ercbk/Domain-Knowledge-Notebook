@@ -2,7 +2,8 @@
 
 ## Misc {#sec-epidemi-misc .unnumbered}
 
--   Packages
+-   Packages\
+    ![](_resources/Epidemiology.resources/pkgs-1.png){.lightbox width="289"}
     -   [CRAN Taskview](https://cran.r-project.org/web/views/Epidemiology.html)
     -   [Epiverse-TRACE packages](https://epiverse-trace.r-universe.dev/packages)
     -   [RECON packages](https://www.repidemicsconsortium.org/projects/)
@@ -12,9 +13,25 @@
     -   [RECON Learn](https://www.reconlearn.org/) - Free and open training resources to respond to outbreaks, health emergencies and humanitarian crises
     -   [Epiverse-TRACE](https://epiverse-trace.github.io/) - Tools and learning materials
 -   Papers
-    -   [From the 100 Day Mission to 100 lines of software development: how to improve early outbreak analytics](https://www.thelancet.com/journals/landig/article/PIIS2589-7500(24)00218-8/fulltext)
+    -   [What Should the First 100 Lines of Code Written During an Epidemic Look Like?](https://epiverse-trace.github.io/posts/100days-workshop/) ([Paper](https://www.thelancet.com/journals/landig/article/PIIS2589-7500(24)00218-8/fulltext))
+        -   Notes from a workshop of academics, epidemiologists, data scientists, and software engineers
+        -   For each scenario:
+            -   A ficticious case line list and contact tracing data are described
+            -   A set of questions to address during the analytic process is given
+            -   An analytic pipeline is given
+            -   Challenges experienced during the process are described.
+        -   Outlined Scenarios
+            -   Novel respiratory disease in The Gambia
+            -   Outbreak of an unidentified disease in rural Colombia
+            -   Reston Ebolavirus in the Philippines
+            -   Emerging avian influenza in Cambodia
+            -   Outbreak of respiratory disease in Canada
 -   Workflow ([paper](https://www.thelancet.com/journals/landig/article/PIIS2589-7500(24)00218-8/fulltext))\
     ![](_resources/Epidemiology.resources/workflow-1.jpg){.lightbox}
+
+## Terms {#sec-epidemi-terms .unnumbered}
+
+-   [**Case Line Lists**]{style="color: #009499"} - Data tables in which every line is a different case/patient, and columns record different variables of potential epidemiological interest such as date of events (e.g. onset of symptom, case notification), disease outcome, or patient data (e.g. age, sex, occupation).
 
 ## Disease Mapping {#sec-epidemi-dismap .unnumbered}
 
