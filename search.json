@@ -170,6 +170,16 @@
     ]
   },
   {
+    "objectID": "qmd/epidemiology.html#sec-epidemi-misc",
+    "href": "qmd/epidemiology.html#sec-epidemi-misc",
+    "title": "Epidemiology",
+    "section": "",
+    "text": "Packages\n\nCRAN Taskview\nEpiverse-TRACE packages\nRECON packages\n\nResources\n\nThe Epidemiologist R Handbook\nR4EPIs - A project to develop standardized data cleaning, analysis and reporting tools to cover common types of outbreaks and population-based surveys that would be conducted in an MSF emergency response setting (automated outbreak templates)\nRECON Learn - Free and open training resources to respond to outbreaks, health emergencies and humanitarian crises\nEpiverse-TRACE - Tools and learning materials\n\nPapers\n\nFrom the 100 Day Mission to 100 lines of software development: how to improve early outbreak analytics\n\nWorkflow (paper)",
+    "crumbs": [
+      "Epidemiology"
+    ]
+  },
+  {
     "objectID": "qmd/epidemiology.html#sec-epidemi-dismap",
     "href": "qmd/epidemiology.html#sec-epidemi-dismap",
     "title": "Epidemiology",
