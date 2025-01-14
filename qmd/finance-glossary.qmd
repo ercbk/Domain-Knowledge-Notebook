@@ -15,7 +15,7 @@
 
 -   [**Basis Risk**]{style="color: #009499"} - The risk that an asset and a hedge will not move in opposite directions as expected; "basis" refers to the discrepancy.
 
--   [**Bear Market**]{style="color: #009499"} - Definitions one and two by themselves can result in bear markets that are only a couple days long, which depending on your research, may not be useful.
+-   [**Bear Market**]{style="color: #009499"} - Definitions one and two by themselves can result in bear markets that are only a couple days long, which depending on your research, may not be useful. (See **Market Regimes**)
 
     1.  Index (Closing Price) under its 200-day moving average
     2.  Index is 20% or more off its all-time high
@@ -245,6 +245,13 @@
 -   [**Marginal Tax Rate**]{style="color: #009499"}: The maximum percentage of income tax that anyone is liable to pay in a system that applies tax burdens to people depending on their respective actual taxable incomes (i.e your tax bracket). As of 2023, the corporate tax rate is 25%.
 
 -   [**Market Capitalization**]{style="color: #009499"} - The total dollar market value of a company's outstanding shares. Calculated by multiplying the total number of a company's shares by the current market price of one share.
+
+-   [**Market Regimes**]{style="color: #009499"} - Categories that are used to characterize the current state or condition of a financial market. It helps in understanding whether the market is in a particular phase, such as a bull market, bear market, volatile market, or a range-bound market (aka sideways). ([source](https://quantmatter.com/what-is-a-market-regime-a-comprehensive-guide/#Sideways_Market))
+
+    -   **Range-Bound Market** - asset prices fluctuate within a narrow range without a clear upward or downward trend. Some investors focus on generating income through dividends and interest during these periods.
+    -   See **Bear Market**
+    -   Can be modeled with Hidden Markov Models (i.e. discrete time series forecasting). See [Stochastic Processs \>\> Hidden Markov Models](https://ercbk.github.io/Data-Science-Notebook/qmd/stochastic-processes.html#sec-stoch-hmm){style="color: green"}
+    -   Potential indicators: Price Trends, Volatility Measures (VIX), Economic Indicators (gdp, employment, inflation), Sentiment Analysis (surveys, news), Technical Analysis (moving average, relative strength indicators (RSI))
 
 -   [**Modified Internal Rate of Return (MIRR)**]{style="color: #009499"} - Better alternative to IRR that assumes the cash inflows are reinvested at cost of capital of the company instead of at the IRR. (Also see [Finance, Valuation \>\> Rates of Return](finance-valuation.qmd#sec-finance-val-ror){style="color: green"})
 
