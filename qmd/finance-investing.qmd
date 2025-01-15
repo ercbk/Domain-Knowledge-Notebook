@@ -167,6 +167,8 @@ fig-cap-location: top
     -   Characteristics: low earnings volatility, low financial leverage, high gross profitability, high return on equity, low operating leverage, high asset turnover, low accruals (high earnings quality), low equity dilution, and low idiosyncratic stock risk.
     -   Misc
         -   [Quality, Factor Momentum, and the Cross-Section of Returns](https://alphaarchitect.com/2024/05/cross-section-of-returns/) - Overview of a paper on quality acceleration that uses profitability, growth, payout, and safety to measure Quality. It gives the proxy measures for each characteristic.
+        -   Packages
+            -   [{]{style="color: #990000"}[qmj](https://cran.r-project.org/web/packages/qmj/index.html){style="color: #990000"}[}]{style="color: #990000"} - Produces quality scores for each of the US companies from the Russell 3000, following the approach described in "Quality Minus Junk"
     -   Indexes:
         -   MSCI
             -   [Index](https://www.msci.com/end-of-day-data-search) - Select "Quality" from the Index Suite dropdown and either the Regional or Country tab. It gives return percentages for various year intervals.
