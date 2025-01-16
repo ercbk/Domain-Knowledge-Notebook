@@ -9,6 +9,36 @@
 -   DS Use Cases
     -   Predict insurance claims frequency (see bkmk)
 
+## Life Tables {#sec-insur-life .unnumbered}
+
+-   Summarizes the mortality and survival patterns of a population. It provides a detailed summary of the expected life span and survival rates of a group of individuals at various ages, based on observed or estimated mortality rates.
+
+-   Misc
+
+    -   Packages
+        -   [{]{style="color: #990000"}[rwlifetable](https://cran.r-project.org/web/packages/rwlifetable/index.html){style="color: #990000"}[}]{style="color: #990000"} - Estimation of Life Tables Using Rolling Windows
+            -   Estimates life tables, specifically (crude) death rates and (raw and graduated) death probabilities, using rolling windows in one (e.g., age), two (e.g., age and time) or three (e.g., age, time and income) dimensions.
+        -   [{]{style="color: #990000"}[BaSTA](https://cran.r-project.org/web//packages//BaSTA/index.html){style="color: #990000"}[}]{style="color: #990000"} - Age-Specific Bayesian Survival Trajectory Analysis from Incomplete Census or Capture-Recapture/Recovery Data
+            -   Includes tools for data checking, model diagnostics and outputs such as life-tables and plots
+
+-   Components
+
+    -   **Age Intervals** ($x$): Specifies the age groups or intervals (e.g., 0–1, 1–4, 5–9, etc.).
+    -   **Number Alive** ($l_x$): The number of individuals alive at the beginning of each age interval, starting with a hypothetical cohort (e.g., 100,000 births).
+    -   **Probability of Death** ($q_x$): The probability that an individual dies during the age interval.
+    -   **Number of Deaths** ($d_x$): The number of individuals who die during each age interval.
+    -   **Survival Rate** ($p_x$): The probability that an individual survives through the age interval.
+    -   **Person-Years Lived** ($L_x$): The total number of years lived by the cohort during an age interval.
+    -   **Total Remaining Life Expectancy** ($T_x$): The total number of person-years remaining for the cohort at the beginning of a given age.
+    -   **Life Expectancy** ($e_x$): The average number of additional years an individual at a certain age is expected to live.
+
+-   Types
+
+    -   **Complete Life Table:** Includes data for every single year of age.
+    -   **Abridged Life Table:** Groups ages into broader intervals, such as 5 or 10 years, to simplify calculations.
+    -   **Cohort (Longitudinal) Life Table:** Tracks a specific cohort over time.
+    -   **Period Life Table:** Represents the mortality experience of a population at a specific point in time, assuming current mortality rates remain constant.
+
 ## Risk {#sec-insur-risk .unnumbered}
 
 -   When analyzing data, beware of survivorship bias
