@@ -532,6 +532,16 @@
     ]
   },
   {
+    "objectID": "qmd/insurance.html#sec-insur-life",
+    "href": "qmd/insurance.html#sec-insur-life",
+    "title": "Insurance",
+    "section": "Life Tables",
+    "text": "Life Tables\n\nSummarizes the mortality and survival patterns of a population. It provides a detailed summary of the expected life span and survival rates of a group of individuals at various ages, based on observed or estimated mortality rates.\nMisc\n\nPackages\n\n{rwlifetable} - Estimation of Life Tables Using Rolling Windows\n\nEstimates life tables, specifically (crude) death rates and (raw and graduated) death probabilities, using rolling windows in one (e.g., age), two (e.g., age and time) or three (e.g., age, time and income) dimensions.\n\n{BaSTA} - Age-Specific Bayesian Survival Trajectory Analysis from Incomplete Census or Capture-Recapture/Recovery Data\n\nIncludes tools for data checking, model diagnostics and outputs such as life-tables and plots\n\n\n\nComponents\n\nAge Intervals (\\(x\\)): Specifies the age groups or intervals (e.g., 0–1, 1–4, 5–9, etc.).\nNumber Alive (\\(l_x\\)): The number of individuals alive at the beginning of each age interval, starting with a hypothetical cohort (e.g., 100,000 births).\nProbability of Death (\\(q_x\\)): The probability that an individual dies during the age interval.\nNumber of Deaths (\\(d_x\\)): The number of individuals who die during each age interval.\nSurvival Rate (\\(p_x\\)): The probability that an individual survives through the age interval.\nPerson-Years Lived (\\(L_x\\)): The total number of years lived by the cohort during an age interval.\nTotal Remaining Life Expectancy (\\(T_x\\)): The total number of person-years remaining for the cohort at the beginning of a given age.\nLife Expectancy (\\(e_x\\)): The average number of additional years an individual at a certain age is expected to live.\n\nTypes\n\nComplete Life Table: Includes data for every single year of age.\nAbridged Life Table: Groups ages into broader intervals, such as 5 or 10 years, to simplify calculations.\nCohort (Longitudinal) Life Table: Tracks a specific cohort over time.\nPeriod Life Table: Represents the mortality experience of a population at a specific point in time, assuming current mortality rates remain constant.",
+    "crumbs": [
+      "Insurance"
+    ]
+  },
+  {
     "objectID": "qmd/insurance.html#sec-insur-risk",
     "href": "qmd/insurance.html#sec-insur-risk",
     "title": "Insurance",

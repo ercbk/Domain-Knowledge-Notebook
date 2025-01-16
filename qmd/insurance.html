@@ -70,6 +70,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -349,6 +378,7 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#sec-insur-misc" id="toc-sec-insur-misc" class="nav-link active" data-scroll-target="#sec-insur-misc">Misc</a></li>
+  <li><a href="#sec-insur-life" id="toc-sec-insur-life" class="nav-link" data-scroll-target="#sec-insur-life">Life Tables</a></li>
   <li><a href="#sec-insur-risk" id="toc-sec-insur-risk" class="nav-link" data-scroll-target="#sec-insur-risk">Risk</a></li>
   <li><a href="#sec-insur-mba" id="toc-sec-insur-mba" class="nav-link" data-scroll-target="#sec-insur-mba">Market Basket Analysis</a></li>
   </ul>
@@ -390,6 +420,44 @@ ul.task-list li input[type="checkbox"] {
 <li>DS Use Cases
 <ul>
 <li>Predict insurance claims frequency (see bkmk)</li>
+</ul></li>
+</ul>
+</section>
+<section id="sec-insur-life" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="sec-insur-life">Life Tables</h2>
+<ul>
+<li><p>Summarizes the mortality and survival patterns of a population. It provides a detailed summary of the expected life span and survival rates of a group of individuals at various ages, based on observed or estimated mortality rates.</p></li>
+<li><p>Misc</p>
+<ul>
+<li>Packages
+<ul>
+<li><span style="color: #990000">{</span><a href="https://cran.r-project.org/web/packages/rwlifetable/index.html" style="color: #990000">rwlifetable</a><span style="color: #990000">}</span> - Estimation of Life Tables Using Rolling Windows
+<ul>
+<li>Estimates life tables, specifically (crude) death rates and (raw and graduated) death probabilities, using rolling windows in one (e.g., age), two (e.g., age and time) or three (e.g., age, time and income) dimensions.</li>
+</ul></li>
+<li><span style="color: #990000">{</span><a href="https://cran.r-project.org/web//packages//BaSTA/index.html" style="color: #990000">BaSTA</a><span style="color: #990000">}</span> - Age-Specific Bayesian Survival Trajectory Analysis from Incomplete Census or Capture-Recapture/Recovery Data
+<ul>
+<li>Includes tools for data checking, model diagnostics and outputs such as life-tables and plots</li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><p>Components</p>
+<ul>
+<li><strong>Age Intervals</strong> (<span class="math inline">\(x\)</span>): Specifies the age groups or intervals (e.g., 0–1, 1–4, 5–9, etc.).</li>
+<li><strong>Number Alive</strong> (<span class="math inline">\(l_x\)</span>): The number of individuals alive at the beginning of each age interval, starting with a hypothetical cohort (e.g., 100,000 births).</li>
+<li><strong>Probability of Death</strong> (<span class="math inline">\(q_x\)</span>): The probability that an individual dies during the age interval.</li>
+<li><strong>Number of Deaths</strong> (<span class="math inline">\(d_x\)</span>): The number of individuals who die during each age interval.</li>
+<li><strong>Survival Rate</strong> (<span class="math inline">\(p_x\)</span>): The probability that an individual survives through the age interval.</li>
+<li><strong>Person-Years Lived</strong> (<span class="math inline">\(L_x\)</span>): The total number of years lived by the cohort during an age interval.</li>
+<li><strong>Total Remaining Life Expectancy</strong> (<span class="math inline">\(T_x\)</span>): The total number of person-years remaining for the cohort at the beginning of a given age.</li>
+<li><strong>Life Expectancy</strong> (<span class="math inline">\(e_x\)</span>): The average number of additional years an individual at a certain age is expected to live.</li>
+</ul></li>
+<li><p>Types</p>
+<ul>
+<li><strong>Complete Life Table:</strong> Includes data for every single year of age.</li>
+<li><strong>Abridged Life Table:</strong> Groups ages into broader intervals, such as 5 or 10 years, to simplify calculations.</li>
+<li><strong>Cohort (Longitudinal) Life Table:</strong> Tracks a specific cohort over time.</li>
+<li><strong>Period Life Table:</strong> Represents the mortality experience of a population at a specific point in time, assuming current mortality rates remain constant.</li>
 </ul></li>
 </ul>
 </section>
