@@ -28,6 +28,10 @@
     -   Metric calculations exclusively in BI tools
     -   Data gaps
     -   Manual data refreshes
+-   Pipeline Components
+    -   A place to store and ship code & data
+    -   Compute ("infrastructure") to execute the code on
+    -   Tools to orchestrate, monitor, and report on operations of the code
 
 ## What you offer {#sec-lhf-wyo .unnumbered}
 
