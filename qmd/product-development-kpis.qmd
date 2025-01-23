@@ -160,6 +160,11 @@
     -   Number of emails sent
     -   The number of people that opened the email
     -   Number of businesses that signed up to sell on the platform
+    -   Feature usage: What proportion of users are using a specific feature?
+    -   Feature adoption rate: How many users adopt a new feature over a given period?
+    -   Activation rate: The percentage of users who complete a key action after signing up (e.g., listening to a song on Spotify).
+    -   Churn rate: The rate at which users abandon the product over a given period.
+    -   Retention rate: The percentage of users who return to the product after their first interaction.
 
 ### Counter Metrics/Guardrails {#sec-proddev-kpis-prod-countg .unnumbered}
 

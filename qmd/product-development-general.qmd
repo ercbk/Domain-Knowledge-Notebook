@@ -110,6 +110,9 @@
 
 ### Analysis Tools {#sec-proddev-gen-behdat-analt .unnumbered}
 
+-   Uses
+    -   Build user journeys to do things like identify the steps where your users drop off and find solutions to retain them.
+    -   Track events in real time, e.g. observe how many clicks a new feature has generated since its launch.
 -   General characteristics
     -   Offer SDKs and APIs to collect data from your primary (first-party) data sources
         -   Using purpose-built data collection tools (CDI and ELT) is more efficient and prevents vendor lock-in
@@ -119,6 +122,7 @@
 -   Indicative, Heap
 -   PostHog (open-source)
     -   Can be integrated with Airbyte
+-   Hotjar
 
 ## Conversion Funnels {#sec-proddev-gen-convfun .unnumbered}
 

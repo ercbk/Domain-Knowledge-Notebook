@@ -15,6 +15,10 @@
             -   Reverse ETL
                 -   I think this process is described in the "Manual" part (above)
             -   Platforms: Flywheel
+-   Analytics Tools: Google Analytics, Meta Ad Manager, and HubSpot, are designed to analyze campaigns and the performance of acquisition channels.
+    -   Analyze traffic sources: Are your visitors coming primarily from SEO, paid ads, or social media?
+    -   Track campaign ROI: Which ad performs best?
+    -   Optimize targeting: Identify the most relevant audiences to maximize your results.
 -   Facebook enables smart mobile user acquisition for mobile brands with 2 methods:
     -   App Event Optimization (AEO)
         -   Looks for new-to-you people who are similar to customers you already have in your apps at defined stages
@@ -160,7 +164,13 @@
 
 ## Metrics {#sec-mark-metrics .unnumbered}
 
--   Conversion Rates, Bounce Rates, and Average Basket Sizes
+-   **Traffic Source Performance**: Analyzing the channels (SEO, social media, ads) that bring in the most qualified traffic.
+
+-   **Bounce Rates**, and **Average Basket Sizes**
+
+-   **Click-Through Rate (CTR)**: The percentage of clicks relative to the impressions of an ad campaign.
+
+-   **Conversion Rate**: The percentage of visitors who complete a target action (e.g., sign-up, purchase).
 
 -   **Customer Acquistion Cost (CAC)**\
     $$
@@ -568,6 +578,7 @@
 -   Also see
     -   [Customer Journey](marketing.qmd#sec-mark-custjourn){style="color: green"}
     -   [Algorithms, Product \>\> Customer Journey](https://ercbk.github.io/Data-Science-Notebook/qmd/algorithms-product.html#sec-alg-prod-cj){style="color: green"}
+-   Growth Managers help identify the best-performing audience segments for acquisition campaigns.
 -   Seeks to answer:
     -   Who are the most valuable customers?
     -   Where do they come from?
@@ -804,6 +815,8 @@
 -   Post sale
     -   AI-enabled service agents (chatbots) triage customers' requests---and are able to deal with fluctuating volumes of service requests better than human agents are
     -   Can handle simple queries about, say, delivery time or scheduling an appointment and can escalate more-complex issues to a human agent
+-   Product and Marketing Analytics During Customer Journey ([source](https://towardsdatascience.com/the-basics-you-must-master-before-dive-into-marketing-product-analytics-61a346eccf58))\
+    ![](_resources/Marketing.resources/userj-mark-prod-1.png){.lightbox width="632"}
 
 ## Workflow {#sec-mark-wkflw .unnumbered}
 
