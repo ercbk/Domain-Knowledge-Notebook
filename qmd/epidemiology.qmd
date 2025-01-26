@@ -7,6 +7,7 @@
     -   [CRAN Taskview](https://cran.r-project.org/web/views/Epidemiology.html)
     -   [Epiverse-TRACE packages](https://epiverse-trace.r-universe.dev/packages)
     -   [RECON packages](https://www.repidemicsconsortium.org/projects/)
+    -   [{]{style="color: #990000"}[ABM](https://github.com/junlingm/ABM){style="color: #990000"}[}]{style="color: #990000"} - Fast SEIR model simuation
 -   Resources
     -   [The Epidemiologist R Handbook](https://epirhandbook.com/en/)
     -   [R4EPIs](https://r4epis.netlify.app/) - A project to develop standardized data cleaning, analysis and reporting tools to cover common types of outbreaks and population-based surveys that would be conducted in an MSF emergency response setting (automated outbreak templates)
