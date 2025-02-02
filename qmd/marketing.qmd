@@ -431,15 +431,16 @@
 
 ### Marketing Mix Modeling (MMM) {#sec-mark-chanatt-mmm .unnumbered}
 
--   `Sales (or ) ~ Channel_Spend` (`+ Trend + Seasonality(s) + Campaigns + Events + Holidays + Weather +… etc.`)
+-   `Sales (or KPI or etc.) ~ Channel_Spend_1 + Channel_Spend_2` `+ Trend + Seasonality(s) + Campaigns + Events + Holidays + Weather + Region + … etc.`
     -   Other outcome variables
         -   KPI or google search volume or website visits or account sign-ups
+    -   Alternative Channel
     -   Other explanatory variables:
-        -   media cost for each channel
-        -   product pricing
-        -   economic indicators
-        -   synergistic effect between different media (i.e. interaction)
-        -   competitor activities
+        -   Media cost for each channel
+        -   Product pricing
+        -   Economic indicators
+        -   Synergistic effect between different media (i.e. interaction)
+        -   Competitor activities
 -   Better for measuring performance of offline traditional Out-of-Home (OOH) media like TV, radio and print which is unlike online advertising where we have access to metrics like clicks, clickthrough rate, impressions, etc.
 -   Requires relatively large budgets and longer data history to have reliable reads. Sparse data and short data history could make the results biased and unstable
     -   Typically requires at least 2 years of weekly data (longer is better) and a good volume of media spend.
