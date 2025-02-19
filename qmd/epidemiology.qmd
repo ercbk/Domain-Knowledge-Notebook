@@ -11,6 +11,9 @@
     -   [{]{style="color: #990000"}[ggsurveillance](https://ggsurveillance.biostats.dev/){style="color: #990000"}[}]{style="color: #990000"} - Helpful tools and ggplot extensions for epidemiology, especially infectious disease surveillance and outbreak investigation.
         -   `geoms` for plotting epicurves and epigantt charts
         -   Data prep: seasonal alignment and case bining based on dates
+    -   [{]{style="color: #990000"}[epigrowthfit](https://cran.r-project.org/web/packages/epigrowthfit/index.html){style="color: #990000"}[}]{style="color: #990000"} - Maximum likelihood estimation of nonlinear mixed effects models of epidemic growth using Template Model Builder ('TMB')
+        -   Enables joint estimation for collections of disease incidence time series, including time series that describe multiple epidemic waves.
+        -   Supported Distributions: Exponential, Logistic, Richards (Generalized Logistic), Subexponential, and Gompertz
 -   Resources
     -   [The Epidemiologist R Handbook](https://epirhandbook.com/en/)
     -   [R4EPIs](https://r4epis.netlify.app/) - A project to develop standardized data cleaning, analysis and reporting tools to cover common types of outbreaks and population-based surveys that would be conducted in an MSF emergency response setting (automated outbreak templates)
