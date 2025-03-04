@@ -8,6 +8,9 @@
         -   Makes data suitable for a RNN (see Processing for details)
 -   Also see
     -   [Epidemiology \>\> Disease Mapping](epidemiology.qmd#sec-epidemi-dismap){style="color: green"}
+-   Tools
+    -   [The TUVA Project](https://thetuvaproject.com/) - Looks like tools to create dbt pipelines for healthcare analytics
+        -   Also see [Databases, dbt](https://ercbk.github.io/Data-Science-Notebook/qmd/db-dbt.html#sec-db-dbt){style="color: green"}
 -   False negatives are often more important than false positives. (e.g. detecting diseases)
 -   Populations within Healthcare Claims Data\
     -   Lines of business (LOB) such as patients with coverage from a government payer (Medicaid, Medicare); commercial lines (employer groups, retail or purchased via the exchange); self-insured (self-funded groups, usually large employers paying for their own healthcare claims of employees), etc.\
