@@ -3,6 +3,21 @@
 ## Misc {#sec-log-supch-misc .unnumbered}
 
 -   Notes from: [4 Smart Visualizations for Supply Chain Descriptive Analytics](https://towardsdatascience.com/4-smart-visualizations-for-supply-chain-descriptive-analytics-fda4dfc2829a)
+-   Resources
+    -   Videos: [Supply Science](https://www.youtube.com/@SupplyScience) - Sami Saci's channel
+    -   [Supply Chain Analytics Cheat Sheet](https://abstracted-hydrant-a3d.notion.site/Supply-Chain-Analytics-Cheat-Sheet-d449e3d53cfc45978aa889d3ef40f559) (Saci)
+        -    70+ complete case studies solving a business or operational issue with analytics or automation solutions
+        -   Subjects
+            -   Supply Chain Sustainability
+            -   Data Analytics for Business Strategy
+            -   Logistics Performance Improvement
+            -   Supply Chain Optimization
+            -   Visualization & Reporting
+            -   Generative AI
+            -   Automate Tasks
+            -   Supply Chain Analytics Apps
+-   Systems\
+    ![](_resources/Logistics.resources/logistic-systems-1.webp){.lightbox width="582"}
 
 ## Flow Distribution of Units Between Production Areas and Markets {#sec-log-supch-flowdist .unnumbered}
 
