@@ -24,7 +24,7 @@
     "href": "qmd/agriculture.html#sec-ag-misc",
     "title": "Agriculture",
     "section": "",
-    "text": "Commodity prices normally forecast using a cobweb model which leads to price risk\nVegetable price series are much more volatile than other commodities\n\nSeasonality regulates the supply and demand\nPerishable nature of the produce adds complications in stabalizing the price",
+    "text": "Packages\n\n{STCCGEV} - Spatio-Temporal, Conditional Copula Model for Crop Yield Forecasting\n\nIncorporates extreme weather covariates and Bayesian Structural Time Series models to analyze crop yield dependencies across multiple regions\n\n\nCommodity prices normally forecast using a cobweb model which leads to price risk\nVegetable price series are much more volatile than other commodities\n\nSeasonality regulates the supply and demand\nPerishable nature of the produce adds complications in stabalizing the price",
     "crumbs": [
       "Agriculture"
     ]
@@ -874,7 +874,7 @@
     "href": "qmd/logistics-supply-chain.html#sec-log-supch-misc",
     "title": "Supply Chain",
     "section": "",
-    "text": "Notes from: 4 Smart Visualizations for Supply Chain Descriptive Analytics",
+    "text": "Notes from: 4 Smart Visualizations for Supply Chain Descriptive Analytics\nResources\n\nVideos: Supply Science - Sami Saci’s channel\nSupply Chain Analytics Cheat Sheet (Saci)\n\n70+ complete case studies solving a business or operational issue with analytics or automation solutions\nSubjects\n\nSupply Chain Sustainability\nData Analytics for Business Strategy\nLogistics Performance Improvement\nSupply Chain Optimization\nVisualization & Reporting\nGenerative AI\nAutomate Tasks\nSupply Chain Analytics Apps\n\n\n\nSystems",
     "crumbs": [
       "Logistics",
       "Supply Chain"
