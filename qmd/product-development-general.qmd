@@ -3,6 +3,8 @@
 ## Misc {#sec-proddev-gen-misc .unnumbered}
 
 -   Also see [Decision Intelligence \>\> Conjoint Analysis](https://ercbk.github.io/Data-Science-Notebook/qmd/decision-intelligence.html#sec-decint-conjanal){style="color: green"} for surveying consumers about product attributes to calculate attribute utilities and probability of purchase
+-   Packages
+    -   [{]{style="color: #990000"}[npdsim](https://cran.r-project.org/web/packages/npdsim/index.html){style="color: #990000"}[}]{style="color: #990000"} - Simulate demand and attributes for ready to launch new products during their life cycle, or during their introduction and growth phases
 -   Load speed affects conversion ([Google article](https://developers.google.com/web/fundamentals/performance/why-performance-matters))
     -   [Google Lighthouse Scores](https://developer.chrome.com/docs/lighthouse) - Measure performance, accessibility, coding practices, and SEO.
 -   Flaws of Purchase-Funnel Based Attribution Metrics
