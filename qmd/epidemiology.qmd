@@ -14,6 +14,7 @@
     -   [{]{style="color: #990000"}[epigrowthfit](https://cran.r-project.org/web/packages/epigrowthfit/index.html){style="color: #990000"}[}]{style="color: #990000"} - Maximum likelihood estimation of nonlinear mixed effects models of epidemic growth using Template Model Builder ('TMB')
         -   Enables joint estimation for collections of disease incidence time series, including time series that describe multiple epidemic waves.
         -   Supported Distributions: Exponential, Logistic, Richards (Generalized Logistic), Subexponential, and Gompertz
+    -   [{]{style="color: #990000"}[fastbeta](https://cran.r-project.org/web/packages/fastbeta/index.html){style="color: #990000"}[}]{style="color: #990000"} - A fast method for approximating time-varying infectious disease transmission rates from disease incidence time series and other data, based on a discrete time approximation of an SEIR model
 -   Resources
     -   [The Epidemiologist R Handbook](https://epirhandbook.com/en/)
     -   [R4EPIs](https://r4epis.netlify.app/) - A project to develop standardized data cleaning, analysis and reporting tools to cover common types of outbreaks and population-based surveys that would be conducted in an MSF emergency response setting (automated outbreak templates)
