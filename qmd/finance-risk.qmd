@@ -102,6 +102,9 @@
 
 ## Value at Risk (VaR) {#sec-finance-risk-var .unnumbered}
 
+-   Packages
+    -   [{]{style="color: #990000"}[lognGPD](https://cran.r-project.org/web/packages/lognGPD/index.html){style="color: #990000"}[}]{style="color: #990000"} ([Paper](https://arxiv.org/abs/2505.22507)) - Estimation of a Lognormal - Generalized Pareto Mixture
+        -   The mixture has a lognormal component, which is usually appropriate for the body of the distribution, and a Pareto-type tail, aimed at accommodating the largest observations, since the lognormal tail often decays too fast.
 -   VaR modeling determines the potential for loss in the entity being assessed and the probability that the defined loss will occur. One measures VaR by assessing the amount of potential loss, the probability of occurrence for the amount of loss, and the time frame.
 -   [Example]{.ribbon-highlight}: Interpretation ([source](https://www.investopedia.com/terms/v/var.asp))
     -   A financial firm may determine an asset has a 3% one-month VaR of 2%, representing a 3% chance of the asset declining in value by 2% during the one-month time frame.
