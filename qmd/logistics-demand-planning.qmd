@@ -4,6 +4,9 @@
 
 -   Also see
     -   [Forecasting, Statistical \>\> Count Forecasting](https://ercbk.github.io/Data-Science-Notebook/qmd/forecasting-statistical.html#sec-fcast-stat-count){style="color: green"}
+-   Packages
+    -   [{]{style="color: #990000"}[aggreCAT](https://cran.r-project.org/web/packages/aggreCAT/index.html){style="color: #990000"}[}]{style="color: #990000"} - Mathematically Aggregating Expert Judgments
+        -   Forecasts often get adjusted by persons with domain knowledge
 -   Resources
     -   [Reinforcement Learning for Inventory Optimization Series III: Sim-to-Real Transfer for the RL Model \| by Guangrui Xie \| Jan, 2023 \| Towards Data Science](https://towardsdatascience.com/reinforcement-learning-for-inventory-optimization-series-iii-sim-to-real-transfer-for-the-rl-model-d260c3b8277d)
 -   Used in Sales & Operations Planning (S&OP) process where the forecasts generated in this stage trickle down to other stages including supply planning, production scheduling, logistics planning, and inventory optimization.
