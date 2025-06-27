@@ -77,6 +77,37 @@
     -   Is there a drop in conversion rate?
     -   Are we meeting our KPIs?
 
+## Marketing
+
+-   Examples of Deliverables
+    -   Stakeholder: Chief Marketing Officer
+        -   Needs: Concise summaries, trend analysis, top-line KPIs, strategic insights.
+        -   Delivery: Daily email alerts (for critical shifts), weekly executive summary.
+        -   Key Questions:
+            -   Where is our marketing spend having the most impact in terms of leads and revenue generated?
+
+            -   What’s our cost per lead across different channels?
+
+            -   Are we meeting our quarterly/annual lead generation and pipeline contribution goals?
+    -   Sr. Campaign Marketing Manager
+        -   Needs: Drill-down visualizations, campaign-specific performance, comparative analysis (between campaigns), content effectiveness.
+        -   Delivery: Weekly (for campaign optimization), ad-hoc (for deep dives).
+        -   Key Questions:
+            -   How many leads did our LinkedIn campaign generate last month, and what was its conversion rate?
+
+            -   Are there specific stages in the lead journey where my campaigns could be more effective?
+
+            -   Should we reallocate budget from social media campaign A to event campaign B based on recent lead quality?
+    -   Sales VP
+        -   Needs: Focus on sales-ready leads, conversion rates to opportunities, sales pipeline value from marketing sources.
+        -   Delivery: Daily (for lead assignments/prioritization), weekly (for sales forecasting), ad-hoc (for specific channel reviews).
+        -   Key Questions:
+            -   What’s the average lead score of leads passed to us?
+
+            -   Which marketing channels are producing the highest quality leads that convert into opportunities?
+
+            -   Which industries are leading to the highest conversion?
+
 ## Product Demand Forecasting {#sec-lhf-pdf .unnumbered}
 
 -   See [Logistics \>\> Demand Forecasting](logistics.qmd#sec-log-demfcast){style="color: green"}
