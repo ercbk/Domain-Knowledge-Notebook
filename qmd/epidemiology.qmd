@@ -8,6 +8,7 @@
     -   [Epiverse-TRACE packages](https://epiverse-trace.r-universe.dev/packages)
     -   [RECON packages](https://www.repidemicsconsortium.org/projects/)
     -   [{]{style="color: #990000"}[ABM](https://github.com/junlingm/ABM){style="color: #990000"}[}]{style="color: #990000"} - Fast SEIR model simuation
+    -   [{]{style="color: #990000"}[dlmwwbe](https://cran.r-project.org/web/packages/dlmwwbe/index.html){style="color: #990000"}[}]{style="color: #990000"} - Dynamic Linear Model for Wastewater-Based Epidemiology
     -   [{]{style="color: #990000"}[ggsurveillance](https://ggsurveillance.biostats.dev/){style="color: #990000"}[}]{style="color: #990000"} - Helpful tools and ggplot extensions for epidemiology, especially infectious disease surveillance and outbreak investigation.
         -   `geoms` for plotting epicurves and epigantt charts
         -   Data prep: seasonal alignment and case bining based on dates
