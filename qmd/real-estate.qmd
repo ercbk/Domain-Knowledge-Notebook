@@ -2,6 +2,8 @@
 
 ## Misc {#sec-rlest-misc .unnumbered}
 
+-   Packages
+    -   [{]{style="color: #990000"}[REPS](https://cran.r-project.org/web/packages/REPS/index.html){style="color: #990000"}[}]{style="color: #990000"} - Hedonic and Multilateral Index Methods for Real Estate Price Statistics
 -   Listing Price
     -   Affects the final selling price, how long the home spends on the market, the volume of interest in the house, and anchors price negotiations with buyers
     -   Algorithmic estimates have better performances when they take the list price into account
