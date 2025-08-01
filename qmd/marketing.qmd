@@ -24,6 +24,9 @@
         -   Looks for new-to-you people who are similar to customers you already have in your apps at defined stages
     -   Value Optimization (VO)
         -   Looks for people who will spend a certain amount of money in your mobile app
+-   [Automate LinkedIn Carousels with R and Gemini](https://drmowinckels.io/blog/2025/linkedin_gemini/)
+    -   Details a complete workflow, from connecting to the API and summarizing a blog post into structured points, to generating a custom Quarto document ready for manual review and posting.
+    -   "Carousels achieve an average engagement rate of 24.42%, significantly outperforming plain text posts, which average 6.67%" ([source](https://www.linkedin.com/pulse/from-zero-viral-mastering-linkedin-carousels-minutes-sarah-socha-vbxze/))
 
 ## Terms {#sec-mark-terms .unnumbered}
 
