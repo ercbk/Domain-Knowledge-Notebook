@@ -27,6 +27,7 @@
 -   [Automate LinkedIn Carousels with R and Gemini](https://drmowinckels.io/blog/2025/linkedin_gemini/)
     -   Details a complete workflow, from connecting to the API and summarizing a blog post into structured points, to generating a custom Quarto document ready for manual review and posting.
     -   "Carousels achieve an average engagement rate of 24.42%, significantly outperforming plain text posts, which average 6.67%" ([source](https://www.linkedin.com/pulse/from-zero-viral-mastering-linkedin-carousels-minutes-sarah-socha-vbxze/))
+    -   [Example](https://www.linkedin.com/posts/drmowinckels_automate-linkedin-carousels-with-r-and-gemini-activity-7357748629123620864-qr__?utm_source=share&utm_medium=member_desktop&rcm=ACoAABNDt20BP2SReTkJa8gH1-ZOkiYBysNsgPc) on her linkedin page
 
 ## Terms {#sec-mark-terms .unnumbered}
 
