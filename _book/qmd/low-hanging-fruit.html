@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.57">
+<meta name="generator" content="quarto-1.6.42">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -38,10 +38,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-1e797c79b2c232c5b667cf2e204d33ae.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-c0ed7ae13818f5483cc2fab0fd96f2eb.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -69,6 +69,15 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-BK8YC1GLDM"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-BK8YC1GLDM', { 'anonymize_ip': true});
+</script>
 
 
 <link rel="stylesheet" href="../styles.css">
@@ -353,6 +362,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#sec-lhf-raaa" id="toc-sec-lhf-raaa" class="nav-link" data-scroll-target="#sec-lhf-raaa">Report Automation and Alerts</a></li>
   <li><a href="#sec-lhf-churn" id="toc-sec-lhf-churn" class="nav-link" data-scroll-target="#sec-lhf-churn">Churn</a></li>
   <li><a href="#sec-lhf-mom" id="toc-sec-lhf-mom" class="nav-link" data-scroll-target="#sec-lhf-mom">Monitoring Operational metrics</a></li>
+  <li><a href="#marketing" id="toc-marketing" class="nav-link" data-scroll-target="#marketing">Marketing</a></li>
   <li><a href="#sec-lhf-pdf" id="toc-sec-lhf-pdf" class="nav-link" data-scroll-target="#sec-lhf-pdf">Product Demand Forecasting</a></li>
   <li><a href="#sec-lhf-custseg" id="toc-sec-lhf-custseg" class="nav-link" data-scroll-target="#sec-lhf-custseg">Customer Segmentation</a></li>
   </ul>
@@ -427,6 +437,12 @@ ul.task-list li input[type="checkbox"] {
 <li>Data gaps</li>
 <li>Manual data refreshes</li>
 </ul></li>
+<li>Pipeline Components
+<ul>
+<li>A place to store and ship code &amp; data</li>
+<li>Compute (“infrastructure”) to execute the code on</li>
+<li>Tools to orchestrate, monitor, and report on operations of the code</li>
+</ul></li>
 </ul>
 </section>
 <section id="sec-lhf-wyo" class="level2 unnumbered">
@@ -488,6 +504,47 @@ ul.task-list li input[type="checkbox"] {
 <li>Daily updates about key metrics.</li>
 <li>Is there a drop in conversion rate?</li>
 <li>Are we meeting our KPIs?</li>
+</ul></li>
+</ul>
+</section>
+<section id="marketing" class="level2">
+<h2 class="anchored" data-anchor-id="marketing">Marketing</h2>
+<ul>
+<li>Examples of Deliverables
+<ul>
+<li>Stakeholder: Chief Marketing Officer
+<ul>
+<li>Needs: Concise summaries, trend analysis, top-line KPIs, strategic insights.</li>
+<li>Delivery: Daily email alerts (for critical shifts), weekly executive summary.</li>
+<li>Key Questions:
+<ul>
+<li><p>Where is our marketing spend having the most impact in terms of leads and revenue generated?</p></li>
+<li><p>What’s our cost per lead across different channels?</p></li>
+<li><p>Are we meeting our quarterly/annual lead generation and pipeline contribution goals?</p></li>
+</ul></li>
+</ul></li>
+<li>Sr.&nbsp;Campaign Marketing Manager
+<ul>
+<li>Needs: Drill-down visualizations, campaign-specific performance, comparative analysis (between campaigns), content effectiveness.</li>
+<li>Delivery: Weekly (for campaign optimization), ad-hoc (for deep dives).</li>
+<li>Key Questions:
+<ul>
+<li><p>How many leads did our LinkedIn campaign generate last month, and what was its conversion rate?</p></li>
+<li><p>Are there specific stages in the lead journey where my campaigns could be more effective?</p></li>
+<li><p>Should we reallocate budget from social media campaign A to event campaign B based on recent lead quality?</p></li>
+</ul></li>
+</ul></li>
+<li>Sales VP
+<ul>
+<li>Needs: Focus on sales-ready leads, conversion rates to opportunities, sales pipeline value from marketing sources.</li>
+<li>Delivery: Daily (for lead assignments/prioritization), weekly (for sales forecasting), ad-hoc (for specific channel reviews).</li>
+<li>Key Questions:
+<ul>
+<li><p>What’s the average lead score of leads passed to us?</p></li>
+<li><p>Which marketing channels are producing the highest quality leads that convert into opportunities?</p></li>
+<li><p>Which industries are leading to the highest conversion?</p></li>
+</ul></li>
+</ul></li>
 </ul></li>
 </ul>
 </section>
@@ -617,8 +674,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -729,7 +784,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {

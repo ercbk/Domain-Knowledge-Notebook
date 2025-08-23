@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.6.39">
+<meta name="generator" content="quarto-1.6.42">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -72,7 +72,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ff9192afc05e137288b20e4a6f267c29.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-1e797c79b2c232c5b667cf2e204d33ae.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap-c0ed7ae13818f5483cc2fab0fd96f2eb.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
@@ -103,6 +103,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-BK8YC1GLDM"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-BK8YC1GLDM', { 'anonymize_ip': true});
+</script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
@@ -573,6 +582,14 @@ Y_t = L_t X_t + \epsilon_t
 <section id="sec-finance-risk-var" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="sec-finance-risk-var">Value at Risk (VaR)</h2>
 <ul>
+<li>Packages
+<ul>
+<li><span style="color: #990000">{</span><a href="https://cran.r-project.org/web/packages/lognGPD/index.html" style="color: #990000">lognGPD</a><span style="color: #990000">}</span> (<a href="https://arxiv.org/abs/2505.22507">Paper</a>) - Estimation of a Lognormal - Generalized Pareto Mixture
+<ul>
+<li>The mixture has a lognormal component, which is usually appropriate for the body of the distribution, and a Pareto-type tail, aimed at accommodating the largest observations, since the lognormal tail often decays too fast.</li>
+</ul></li>
+<li><span style="color: #990000">{</span><a href="https://cran.r-project.org/web/packages/ExactVaRTest/index.html" style="color: #990000">ExactVaRTest</a><span style="color: #990000">}</span> - Exact Finite-Sample Value-at-Risk Back-Testing</li>
+</ul></li>
 <li>VaR modeling determines the potential for loss in the entity being assessed and the probability that the defined loss will occur. One measures VaR by assessing the amount of potential loss, the probability of occurrence for the amount of loss, and the time frame.</li>
 <li><span class="ribbon-highlight">Example</span>: Interpretation (<a href="https://www.investopedia.com/terms/v/var.asp">source</a>)
 <ul>
