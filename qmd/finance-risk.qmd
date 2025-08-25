@@ -118,6 +118,12 @@
 
 -   Also see [Association, Copulas](https://ercbk.github.io/Data-Science-Notebook/qmd/association-copulas.html){style="color: green"}
 
+    -   Papers
+
+        -   [On a multivariate extension for Copula-based Conditional Value at Risk](https://arxiv.org/abs/2508.16132) ([Code](https://github.com/molinamauricio/CCVaR-Matlab))
+
+            -   Code would need to be translated from Matlab
+
 -   Copula Workflow ([source](https://chatgpt.com/share/4a17c9f3-e3ec-4ebc-8b9e-fcc38a583dfc))
 
     -   Data Collection and Preprocessing:
