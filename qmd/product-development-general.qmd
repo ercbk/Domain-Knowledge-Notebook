@@ -125,6 +125,7 @@
 -   PostHog (open-source)
     -   Can be integrated with Airbyte
 -   Hotjar
+-   [Statsig](https://www.statsig.com/) - An integrated platform for experimentation, analytics, feature flags, session replays, and more
 
 ## Conversion Funnels {#sec-proddev-gen-convfun .unnumbered}
 
