@@ -21,6 +21,9 @@
         -   Includes a set of API-related functions to retrieve real-time statistics on COVID-19, influenza-like illnesses from the Centers for Disease Control and Prevention (CDC), and vaccination coverage worldwide.
     -   [{]{style="color: #990000"}[mlspatial](https://cran.r-project.org/web/packages/mlspatial/index.html){style="color: #990000"}[}]{style="color: #990000"} - Provides tools for the integration, visualisation, and modelling of spatial epidemiological data
         -   Enables users to import and pre-process shapefile and associated demographic or disease incidence data, generate richly annotated thematic maps, and apply predictive models, including Random Forest, 'XGBoost', and Support Vector Regression, to identify spatial patterns and risk factors.
+    -   [{]{style="color: #990000"}[sparsesurv](https://cran.r-project.org/web/packages/sparsesurv/index.html){style="color: #990000"}[}]{style="color: #990000"} - Provides functions for fitting, forecasting, and prospective outbreak detection in sparse surveillance count time series
+        -   Forecasting using future climatic/environmental covariates you supply (e.g., weather or seasonality drivers).
+        -   Separates endemic and epidemic states and returns, for each time point, the probability of being in an epidemic state, enabling transparent flagging of emerging outbreaks.
     -   [{]{style="color: #990000"}[WarnEpi](https://cran.r-project.org/web/packages/WarnEpi/index.html){style="color: #990000"}[}]{style="color: #990000"} - A Comprehensive Tool for Early Warning in Infectious Disease
         -   Provides statistical tools for analyzing time-series monitoring data through three core methods: a) EWMA (Exponentially Weighted Moving Average) b) Modified-CUSUM (Modified Cumulative Sum) c) Adjusted-Serfling model
 -   Resources
