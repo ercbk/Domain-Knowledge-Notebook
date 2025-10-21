@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.34">
+<meta name="generator" content="quarto-1.8.25">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -70,14 +70,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../images/dk-favicon-32.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-b43b305e8f7f3ad7975af6396d71de14.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-be0bf478834dcd5fa1d207f31fcfa0a3.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-20c3ac5794f29eb20a3293709aaca847.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-9f17f01a6c4f1f4745562f60b3d10423.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
@@ -132,7 +133,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -173,7 +174,9 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="../index.html" class="sidebar-logo-link">
+      </a>
     <div class="sidebar-title mb-0 py-0">
       <a href="../">Domain Knowledge</a> 
         <div class="sidebar-tools-main tools-wide">
@@ -823,12 +826,12 @@ window.Quarto = {
 <li><p><span class="ribbon-highlight">Example</span>: From <a href="https://forecasting.svetunkov.ru/en/2023/09/08/iets-state-space-model-for-intermittent-demand-forecasting/">iETS: State space model for intermittent demand forecasting</a></p>
 <ul>
 <li><p>Model</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">7</span>)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">7</span>)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">rpois</span>(<span class="dv">10</span>,<span class="dv">3</span>),<span class="fu">rpois</span>(<span class="dv">10</span>,<span class="dv">2</span>),<span class="fu">rpois</span>(<span class="dv">10</span>,<span class="dv">1</span>),<span class="fu">rpois</span>(<span class="dv">10</span>,<span class="fl">0.5</span>),<span class="fu">rpois</span>(<span class="dv">10</span>,<span class="fl">0.1</span>)) <span class="sc">|&gt;</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">ts</span>(<span class="at">frequency=</span><span class="dv">12</span>)</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(smooth)</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>iETSModel <span class="ot">&lt;-</span> <span class="fu">adam</span>(y, <span class="st">"YYN"</span>, <span class="at">occurrence=</span><span class="st">"direct"</span>, <span class="at">h=</span><span class="dv">5</span>, <span class="at">holdout=</span><span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>iETSModel <span class="ot">&lt;-</span> <span class="fu">adam</span>(y, <span class="st">"YYN"</span>, <span class="at">occurrence=</span><span class="st">"direct"</span>, <span class="at">h=</span><span class="dv">5</span>, <span class="at">holdout=</span><span class="cn">TRUE</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li><span class="arg-text">model = “YYN”</span>: Tells function to select the best pure multiplicative ETS model based on the information criterion
 <ul>
@@ -849,7 +852,7 @@ window.Quarto = {
 <li><span class="arg-text">holdout = TRUE</span>: Says to keep the last 5 observations in the holdout sample</li>
 </ul></li>
 <li><p>Results</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(iETSModel)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(iETSModel)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Model estimated using adam() function: iETS(MMN)</span></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Response variable: y</span></span>
@@ -870,15 +873,15 @@ window.Quarto = {
 <span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Number of degrees of freedom: 36</span></span>
 <span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Information criteria:</span></span>
 <span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;      AIC     AICc      BIC     BICc </span></span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 202.6527 204.1911 218.9126 206.6142 </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; 202.6527 204.1911 218.9126 206.6142 </span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li>Selected the iETS(M,M,N) model</li>
 <li>“Mixture of Bernoulli and Gamma” tells us that the Bernoulli distribution was used for the demand occurrence (this is the only option), while the Gamma distribution was used for the demand sizes (this is the default option, but you can change this via the <span class="arg-text">distribution</span> argument).</li>
 </ul></li>
 <li><p>Demand Forecast</p>
 <p><a href="_resources/Logistics.resources/iets-forecast-1.webp" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="_resources/Logistics.resources/iets-forecast-1.webp" class="img-fluid" width="532"></a></p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">forecast</span>(iETSModel, <span class="at">h=</span><span class="dv">5</span>, <span class="at">interval=</span><span class="st">"prediction"</span>, <span class="at">side=</span><span class="st">"upper"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">plot</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">forecast</span>(iETSModel, <span class="at">h=</span><span class="dv">5</span>, <span class="at">interval=</span><span class="st">"prediction"</span>, <span class="at">side=</span><span class="st">"upper"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">plot</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li><span class="arg-text">side = “upper”</span>: Says we only want the upper prediction interval
 <ul>
@@ -888,16 +891,16 @@ window.Quarto = {
 </ul></li>
 <li><p>Occurence Forecast (i.e.&nbsp;Stock or Not)</p>
 <p><a href="_resources/Logistics.resources/iets-forecast-occurence-1.webp" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="_resources/Logistics.resources/iets-forecast-occurence-1.webp" class="img-fluid" width="532"></a></p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">forecast</span>(iETSModel<span class="sc">$</span>occurrence, <span class="at">h=</span><span class="dv">5</span>) <span class="sc">|&gt;</span> <span class="fu">plot</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">forecast</span>(iETSModel<span class="sc">$</span>occurrence, <span class="at">h=</span><span class="dv">5</span>) <span class="sc">|&gt;</span> <span class="fu">plot</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li>Probability reaches roughly 0.2 over the next 5 months (i.e.&nbsp;we might sale once every 5 months).</li>
 <li>If we think that this is too low then we should discontinue the product. Otherwise, if we decide to continue selling the product, then it makes more sense to generate the desired quantile of the cumulative demand over the lead time.</li>
 </ul></li>
 <li><p>Cumulative Demand Forecast</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">forecast</span>(iETSModel, <span class="at">h=</span><span class="dv">5</span>, <span class="at">interval=</span><span class="st">"prediction"</span>, <span class="at">side=</span><span class="st">"upper"</span>, <span class="at">cumulative=</span><span class="cn">TRUE</span>)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">forecast</span>(iETSModel, <span class="at">h=</span><span class="dv">5</span>, <span class="at">interval=</span><span class="st">"prediction"</span>, <span class="at">side=</span><span class="st">"upper"</span>, <span class="at">cumulative=</span><span class="cn">TRUE</span>)</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt;       Point forecast Upper bound (95%)</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Oct 4      0.3055742          1.208207</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co">#&gt; Oct 4      0.3055742          1.208207</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li>Based on the estimated model, we need to have two items in stock to satisfy the demand over the next 5 months with the confidence level of 95%.</li>
 </ul></li>
@@ -1264,7 +1267,7 @@ pq_t - vq_t - c_s(y_t-q_t) &amp; \text{for}\;\; q_t &lt; y_t
 <li><span class="math inline">\(c_s\)</span>: Shortage Cost</li>
 </ul></li>
 <li><p><span class="ribbon-highlight">Example</span></p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(greybox)</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(greybox)</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate artificial data</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>x1 <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">100</span>,<span class="dv">100</span>,<span class="dv">10</span>)</span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>x2 <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(<span class="dv">100</span>,<span class="dv">2</span>,<span class="fl">0.05</span>)</span>
@@ -1291,12 +1294,12 @@ pq_t - vq_t - c_s(y_t-q_t) &amp; \text{for}\;\; q_t &lt; y_t
 <span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Estimate Std. Error Lower <span class="fl">2.5</span><span class="sc">% Upper 97.5%</span>&nbsp;</span>
 <span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a>(Intercept)&nbsp; <span class="fl">36.5177</span>&nbsp; &nbsp; <span class="fl">14.2840</span>&nbsp; &nbsp; <span class="fl">2.7783</span>&nbsp; &nbsp; <span class="fl">51.4844</span> <span class="sc">*</span></span>
 <span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a>x1&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="fl">1.3622</span>&nbsp; &nbsp; <span class="fl">0.1622</span>&nbsp; &nbsp; <span class="fl">1.1909</span>&nbsp; &nbsp; &nbsp; <span class="fl">1.7528</span> <span class="sc">*</span></span>
-<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a>x2&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="fl">3.3423</span>&nbsp; &nbsp; <span class="fl">2.7810</span>&nbsp; &nbsp; <span class="sc">-</span><span class="fl">6.5997</span>&nbsp; &nbsp; &nbsp; <span class="fl">5.9101</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a>x2&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="fl">3.3423</span>&nbsp; &nbsp; <span class="fl">2.7810</span>&nbsp; &nbsp; <span class="sc">-</span><span class="fl">6.5997</span>&nbsp; &nbsp; &nbsp; <span class="fl">5.9101</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li><p>Interpretation: With the increase of the variable x1, the orders should change on average by 1.36</p></li>
 <li><p>Plot<br>
 <a href="./_resources/Logistics.resources/ordersDynamics.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7"><img src="./_resources/Logistics.resources/ordersDynamics.png" class="img-fluid" width="632"></a></p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(model1, <span class="dv">7</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(model1, <span class="dv">7</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <ul>
 <li>Figure above corresponds to the orders (purple) and would cover roughly 90.91% of cases (black), so that we would run out of product in approximately 10% of cases, which would still be more profitable than any other option.</li>
 </ul></li>
@@ -1468,13 +1471,14 @@ pq_t - vq_t - c_s(y_t-q_t) &amp; \text{for}\;\; q_t &lt; y_t
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
