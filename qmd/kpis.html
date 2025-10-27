@@ -398,6 +398,7 @@ window.Quarto = {
   <li><a href="#sec-kpis-gen" id="toc-sec-kpis-gen" class="nav-link" data-scroll-target="#sec-kpis-gen">General</a></li>
   <li><a href="#sec-kpis-dtree" id="toc-sec-kpis-dtree" class="nav-link" data-scroll-target="#sec-kpis-dtree">Driver Trees</a></li>
   <li><a href="#sec-proj-plan-capf" id="toc-sec-proj-plan-capf" class="nav-link" data-scroll-target="#sec-proj-plan-capf">Developing a KPI Data Pipeline</a></li>
+  <li><a href="#sec-kpis-mon" id="toc-sec-kpis-mon" class="nav-link" data-scroll-target="#sec-kpis-mon">Monitoring</a></li>
   </ul>
 </nav>
     </div>
@@ -439,7 +440,6 @@ window.Quarto = {
 <li>e.g.&nbsp;If you focus on increasing the volume of a product without also considering the quality, then the result will likely be fewer customers.</li>
 <li>I think this could also pertain to the importance of guardrail metrics.</li>
 </ul></li>
-<li>Monitoring raw metrics can be misleading. Consider normalization when appropriate (See <a href="../qmd/marketing.html#sec-mark-sem" style="color: green">Marketing &gt;&gt; Search Engine Marketing</a> &gt;&gt; Bid Elasticity &gt;&gt; Non-Normalized metrics are misleading)</li>
 </ul>
 </section>
 <section id="sec-kpis-terms" class="level2 unnumbered">
@@ -728,8 +728,66 @@ window.Quarto = {
 <ul>
 <li>Expand pipelines to capture additional data in order to continue to refine metrics</li>
 <li>Drop and add metrics as business and trends change.</li>
-<li>Redefine metrics as needed<br>
-</li>
+<li>Redefine metrics as needed</li>
+</ul></li>
+</ul>
+</section>
+<section id="sec-kpis-mon" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="sec-kpis-mon">Monitoring</h2>
+<ul>
+<li><u>Misc</u>
+<ul>
+<li>Also see <a href="https://ercbk.github.io/Data-Science-Notebook/qmd/anomaly-detection.html" style="color: green">Anomaly Detection</a></li>
+<li>Notes from <a href="https://towardsdatascience.com/building-a-monitoring-system-that-actually-works/">Building a Monitoring System That Actually Works</a></li>
+<li>Monitoring raw metrics can be misleading. Consider normalization when appropriate
+<ul>
+<li>See <a href="../qmd/marketing.html#sec-mark-sem" style="color: green">Marketing &gt;&gt; Search Engine Marketing</a> &gt;&gt; Bid Elasticity &gt;&gt; Non-Normalized metrics are misleading</li>
+</ul></li>
+<li>Always a good idea to have higher-level daily, weekly, or monthly monitoring alongside your real-time (per min or 15 min buckets, etc.) monitoring to keep an eye on longer-term trends.</li>
+</ul></li>
+<li><u>Processes</u>
+<ul>
+<li><em>Have someone responsible for monitoring and responding to alerts.</em>
+<ul>
+<li>An on-call rotation where each week, one person would be in charge of reviewing all the alerts.</li>
+<li>See <a href="https://ercbk.github.io/Data-Science-Notebook/qmd/job-organizational-and-team-development.html#sec-job-orgdev-daoce" style="color: green">Job, Organizational and Team Development &gt;&gt; Developing an On-Call Environment</a></li>
+</ul></li>
+<li><em>Periodically perform manual checks</em>
+<ul>
+<li>Have a process where someone (like an on-call person) reviews the metrics once a day or week.</li>
+<li>If necessary, you could also have monitors around the office that display critical metrics, so that more eyes are watching.</li>
+</ul></li>
+<li><em>Establish feedback loops</em>
+<ul>
+<li>When reviewing alerts and looking back at incidents you might have missed, take the time to fine-tune your monitoring system’s settings.</li>
+</ul></li>
+<li><em>Keep a changelog of monitoring changes</em>
+<ul>
+<li>Provides context about what happened to your KPIs and when.</li>
+<li>Gives you a valuable dataset for evaluating the real impact on your monitoring system when you make changes (like figuring out what percentage of past anomalies your new setup would actually catch).</li>
+</ul></li>
+</ul></li>
+<li><u>Potential Issues</u>
+<ul>
+<li><em>Data Lags</em>
+<ul>
+<li>It usually takes some time for data to reach your data warehouse. So you need to learn how to distinguish between cases where data hasn’t arrived yet versus actual incidents affecting the customer experience.</li>
+<li>The most straightforward approach is to look at historical data, identify the typical lag, and filter out the last 5–10 data points.</li>
+</ul></li>
+<li><em>Different sensitivity for different segments</em>
+<ul>
+<li>Adding more segments (e.g.&nbsp;regions, products) means more false positive alerts that you need to deal with.</li>
+<li>To keep this under control, you can use different sensitivity levels for different segments (e.g.&nbsp;3 standard deviations for the main KPI and 5 for segments).</li>
+</ul></li>
+<li><em>Avoid alert fatigue with smarter alerts</em>
+<ul>
+<li>Build logic to filter out redundant notifications</li>
+<li>Examples:
+<ul>
+<li><p>If we received the same notification within the last 3 hours, don’t fire another alert.</p></li>
+<li><p>If there’s a notification about a drop in the main KPI plus more than 3 segments, only alert about the main KPI change.</p></li>
+</ul></li>
+</ul></li>
 </ul></li>
 </ul>
 
