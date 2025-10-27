@@ -11,7 +11,6 @@
     -   Systems are complex and ignoring other potentially important factors could result in an overall negative affect
     -   e.g. If you focus on increasing the volume of a product without also considering the quality, then the result will likely be fewer customers.
     -   I think this could also pertain to the importance of guardrail metrics.
--   Monitoring raw metrics can be misleading. Consider normalization when appropriate (See [Marketing \>\> Search Engine Marketing](marketing.qmd#sec-mark-sem){style="color: green"} \>\> Bid Elasticity \>\> Non-Normalized metrics are misleading)
 
 ## Terms {#sec-kpis-terms .unnumbered}
 
@@ -193,4 +192,38 @@
 -   Periodically reevaluate whether the metrics fundamentally still make sense from a business perspective and how they can be improved.
     -   Expand pipelines to capture additional data in order to continue to refine metrics
     -   Drop and add metrics as business and trends change.
-    -   Redefine metrics as needed\
+    -   Redefine metrics as needed
+
+## Monitoring {#sec-kpis-mon .unnumbered}
+
+-   [Misc]{.underline}
+    -   Also see [Anomaly Detection](https://ercbk.github.io/Data-Science-Notebook/qmd/anomaly-detection.html){style="color: green"}
+    -   Notes from [Building a Monitoring System That Actually Works](https://towardsdatascience.com/building-a-monitoring-system-that-actually-works/)
+    -   Monitoring raw metrics can be misleading. Consider normalization when appropriate
+        -   See [Marketing \>\> Search Engine Marketing](marketing.qmd#sec-mark-sem){style="color: green"} \>\> Bid Elasticity \>\> Non-Normalized metrics are misleading
+    -   Always a good idea to have higher-level daily, weekly, or monthly monitoring alongside your real-time (per min or 15 min buckets, etc.) monitoring to keep an eye on longer-term trends.
+-   [Processes]{.underline}
+    -   *Have someone responsible for monitoring and responding to alerts.*
+        -   An on-call rotation where each week, one person would be in charge of reviewing all the alerts.
+        -   See [Job, Organizational and Team Development \>\> Developing an On-Call Environment](https://ercbk.github.io/Data-Science-Notebook/qmd/job-organizational-and-team-development.html#sec-job-orgdev-daoce){style="color: green"}
+    -   *Periodically perform manual checks*
+        -   Have a process where someone (like an on-call person) reviews the metrics once a day or week.
+        -   If necessary, you could also have monitors around the office that display critical metrics, so that more eyes are watching.
+    -   *Establish feedback loops*
+        -   When reviewing alerts and looking back at incidents you might have missed, take the time to fine-tune your monitoring system’s settings.
+    -   *Keep a changelog of monitoring changes*
+        -   Provides context about what happened to your KPIs and when.
+        -   Gives you a valuable dataset for evaluating the real impact on your monitoring system when you make changes (like figuring out what percentage of past anomalies your new setup would actually catch).
+-   [Potential Issues]{.underline}
+    -   *Data Lags*
+        -   It usually takes some time for data to reach your data warehouse. So you need to learn how to distinguish between cases where data hasn’t arrived yet versus actual incidents affecting the customer experience.
+        -   The most straightforward approach is to look at historical data, identify the typical lag, and filter out the last 5–10 data points.
+    -   *Different sensitivity for different segments*
+        -   Adding more segments (e.g. regions, products) means more false positive alerts that you need to deal with.
+        -   To keep this under control, you can use different sensitivity levels for different segments (e.g. 3 standard deviations for the main KPI and 5 for segments).
+    -   *Avoid alert fatigue with smarter alerts*
+        -   Build logic to filter out redundant notifications
+        -   Examples:
+            -   If we received the same notification within the last 3 hours, don’t fire another alert.
+
+            -   If there’s a notification about a drop in the main KPI plus more than 3 segments, only alert about the main KPI change.
