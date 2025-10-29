@@ -24,7 +24,7 @@
     "href": "qmd/agriculture.html#sec-ag-misc",
     "title": "Agriculture",
     "section": "",
-    "text": "Packages\n\n{STCCGEV} - Spatio-Temporal, Conditional Copula Model for Crop Yield Forecasting\n\nIncorporates extreme weather covariates and Bayesian Structural Time Series models to analyze crop yield dependencies across multiple regions\n\n\nCommodity prices normally forecast using a cobweb model which leads to price risk\nVegetable price series are much more volatile than other commodities\n\nSeasonality regulates the supply and demand\nPerishable nature of the produce adds complications in stabalizing the price",
+    "text": "Packages\n\n{STCCGEV} - Spatio-Temporal, Conditional Copula Model for Crop Yield Forecasting\n\nIncorporates extreme weather covariates and Bayesian Structural Time Series models to analyze crop yield dependencies across multiple regions\n\n\nPapers\n\nMethod: Using generalized additive models in the livestock animal sciences by Simpson (Repo)\n\nShows how learning from data can produce a better fit to data than that of parametric models\nShows how hierarchical GAMs can be used to estimate growth data from multiple animals in a single model\nShows how hierarchical GAMs can be used for formal statistical inference in a designed experiment\n\n\nCommodity prices normally forecast using a cobweb model which leads to price risk\nVegetable price series are much more volatile than other commodities\n\nSeasonality regulates the supply and demand\nPerishable nature of the produce adds complications in stabalizing the price",
     "crumbs": [
       "Agriculture"
     ]
