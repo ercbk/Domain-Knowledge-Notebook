@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Epidemiology – Domain Knowledge</title>
+<title>1&nbsp; Football – Domain Knowledge</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../qmd/finance-glossary.html" rel="next">
-<link href="../qmd/environment.html" rel="prev">
+<link href="../qmd/healthcare.html" rel="next">
+<link href="../qmd/finance-valuation.html" rel="prev">
 <link href="../images/dk-favicon-32.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -44,9 +44,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap-d5dd3632b67e0b9add22a95f52b8c0f0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
-<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
-<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
-<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -84,6 +81,35 @@ gtag('js', new Date());
 gtag('config', 'G-BK8YC1GLDM', { 'anonymize_ip': true});
 </script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -97,7 +123,7 @@ gtag('config', 'G-BK8YC1GLDM', { 'anonymize_ip': true});
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../qmd/epidemiology.html">Epidemiology</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../qmd/football.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Football</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -173,7 +199,7 @@ gtag('config', 'G-BK8YC1GLDM', { 'anonymize_ip': true});
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../qmd/epidemiology.html" class="sidebar-item-text sidebar-link active">
+  <a href="../qmd/epidemiology.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Epidemiology</span></a>
   </div>
 </li>
@@ -220,7 +246,7 @@ gtag('config', 'G-BK8YC1GLDM', { 'anonymize_ip': true});
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../qmd/football.html" class="sidebar-item-text sidebar-link">
+  <a href="../qmd/football.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Football</span></span></a>
   </div>
 </li>
@@ -370,9 +396,7 @@ gtag('config', 'G-BK8YC1GLDM', { 'anonymize_ip': true});
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#sec-epidemi-misc" id="toc-sec-epidemi-misc" class="nav-link active" data-scroll-target="#sec-epidemi-misc">Misc</a></li>
-  <li><a href="#sec-epidemi-terms" id="toc-sec-epidemi-terms" class="nav-link" data-scroll-target="#sec-epidemi-terms">Terms</a></li>
-  <li><a href="#sec-epidemi-dismap" id="toc-sec-epidemi-dismap" class="nav-link" data-scroll-target="#sec-epidemi-dismap">Disease Mapping</a></li>
+  <li><a href="#metrics" id="toc-metrics" class="nav-link active" data-scroll-target="#metrics"><span class="header-section-number">1.1</span> Metrics</a></li>
   </ul>
 </nav>
     </div>
@@ -381,7 +405,7 @@ gtag('config', 'G-BK8YC1GLDM', { 'anonymize_ip': true});
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span id="sec-epidemi" class="quarto-section-identifier">Epidemiology</span></h1>
+<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Football</span></h1>
 </div>
 
 
@@ -398,163 +422,14 @@ gtag('config', 'G-BK8YC1GLDM', { 'anonymize_ip': true});
 </header>
 
 
-<section id="sec-epidemi-misc" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="sec-epidemi-misc">Misc</h2>
+<section id="metrics" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="metrics"><span class="header-section-number">1.1</span> Metrics</h2>
 <ul>
-<li>Packages<br>
-<a href="_resources/Epidemiology.resources/pkgs-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="_resources/Epidemiology.resources/pkgs-1.png" class="img-fluid" width="289"></a>
+<li><span style="color: #009499"><strong>Success Rate</strong></span> is:
 <ul>
-<li><a href="https://cran.r-project.org/web/views/Epidemiology.html">CRAN Taskview</a></li>
-<li><a href="https://epiverse-trace.r-universe.dev/packages">Epiverse-TRACE packages</a></li>
-<li><a href="https://www.repidemicsconsortium.org/projects/">RECON packages</a></li>
-<li><span style="color: #990000">{</span><a href="https://github.com/junlingm/ABM" style="color: #990000">ABM</a><span style="color: #990000">}</span> - Fast SEIR model simuation</li>
-<li><span style="color: #990000">{</span><a href="https://cran.r-project.org/web/packages/dlmwwbe/index.html" style="color: #990000">dlmwwbe</a><span style="color: #990000">}</span> - Dynamic Linear Model for Wastewater-Based Epidemiology</li>
-<li><span style="color: #990000">{</span><a href="https://ggsurveillance.biostats.dev/" style="color: #990000">ggsurveillance</a><span style="color: #990000">}</span> - Helpful tools and ggplot extensions for epidemiology, especially infectious disease surveillance and outbreak investigation.
-<ul>
-<li><code>geoms</code> for plotting epicurves and epigantt charts</li>
-<li>Data prep: seasonal alignment and case bining based on dates</li>
-</ul></li>
-<li><span style="color: #990000">{</span><a href="https://cran.r-project.org/web/packages/epigrowthfit/index.html" style="color: #990000">epigrowthfit</a><span style="color: #990000">}</span> - Maximum likelihood estimation of nonlinear mixed effects models of epidemic growth using Template Model Builder (‘TMB’)
-<ul>
-<li>Enables joint estimation for collections of disease incidence time series, including time series that describe multiple epidemic waves.</li>
-<li>Supported Distributions: Exponential, Logistic, Richards (Generalized Logistic), Subexponential, and Gompertz</li>
-</ul></li>
-<li><span style="color: #990000">{</span><a href="https://cran.r-project.org/web/packages/fastbeta/index.html" style="color: #990000">fastbeta</a><span style="color: #990000">}</span> - A fast method for approximating time-varying infectious disease transmission rates from disease incidence time series and other data, based on a discrete time approximation of an SEIR model</li>
-<li><span style="color: #990000">{</span><a href="https://bsc-es.github.io/GHRtools/docs/GHRmodel/GHRmodel" style="color: #990000">GHRmodel</a><span style="color: #990000">}</span> - Supports modeling health outcomes using Bayesian hierarchical spatio-temporal models with complex covariate effects (e.g., linear, non-linear, interactions, distributed lag linear and non-linear models) in the R-INLA framework.
-<ul>
-<li>Designed to help users identify key drivers and predictors of disease risk by enabling streamlined model exploration, comparison, and visualization of complex covariate effects.</li>
-</ul></li>
-<li><span style="color: #990000">{</span><a href="https://lightbluetitan.github.io/infectiousr/" style="color: #990000">infectiousR</a><span style="color: #990000">}</span> - Interface to access real-time data on infectious diseases through the disease.sh API, a RESTful API offering global health statistics.
-<ul>
-<li>Enables users to explore up-to-date information on disease outbreaks, vaccination progress, and surveillance metrics across countries, continents, and U.S. states.</li>
-<li>Includes a set of API-related functions to retrieve real-time statistics on COVID-19, influenza-like illnesses from the Centers for Disease Control and Prevention (CDC), and vaccination coverage worldwide.</li>
-</ul></li>
-<li><span style="color: #990000">{</span><a href="https://cran.r-project.org/web/packages/mlspatial/index.html" style="color: #990000">mlspatial</a><span style="color: #990000">}</span> - Provides tools for the integration, visualisation, and modelling of spatial epidemiological data
-<ul>
-<li>Enables users to import and pre-process shapefile and associated demographic or disease incidence data, generate richly annotated thematic maps, and apply predictive models, including Random Forest, ‘XGBoost’, and Support Vector Regression, to identify spatial patterns and risk factors.</li>
-</ul></li>
-<li><span style="color: #990000">{</span><a href="https://cran.r-project.org/web/packages/sparsesurv/index.html" style="color: #990000">sparsesurv</a><span style="color: #990000">}</span> - Provides functions for fitting, forecasting, and prospective outbreak detection in sparse surveillance count time series
-<ul>
-<li>Forecasting using future climatic/environmental covariates you supply (e.g., weather or seasonality drivers).</li>
-<li>Separates endemic and epidemic states and returns, for each time point, the probability of being in an epidemic state, enabling transparent flagging of emerging outbreaks.</li>
-</ul></li>
-<li><span style="color: #990000">{</span><a href="https://cran.r-project.org/web/packages/WarnEpi/index.html" style="color: #990000">WarnEpi</a><span style="color: #990000">}</span> - A Comprehensive Tool for Early Warning in Infectious Disease
-<ul>
-<li>Provides statistical tools for analyzing time-series monitoring data through three core methods: a) EWMA (Exponentially Weighted Moving Average) b) Modified-CUSUM (Modified Cumulative Sum) c) Adjusted-Serfling model</li>
-</ul></li>
-</ul></li>
-<li>Resources
-<ul>
-<li><a href="https://epirhandbook.com/en/">The Epidemiologist R Handbook</a></li>
-<li><a href="https://r4epis.netlify.app/">R4EPIs</a> - A project to develop standardized data cleaning, analysis and reporting tools to cover common types of outbreaks and population-based surveys that would be conducted in an MSF emergency response setting (automated outbreak templates)</li>
-<li><a href="https://www.reconlearn.org/">RECON Learn</a> - Free and open training resources to respond to outbreaks, health emergencies and humanitarian crises</li>
-<li><a href="https://epiverse-trace.github.io/">Epiverse-TRACE</a> - Tools and learning materials</li>
-<li>CDC <a href="https://www.cdc.gov/training/quicklearns/epimode/index.html">tutorial</a> on epicurves</li>
-</ul></li>
-<li>Papers
-<ul>
-<li><a href="https://epiverse-trace.github.io/posts/100days-workshop/">What Should the First 100 Lines of Code Written During an Epidemic Look Like?</a> (<a href="https://www.thelancet.com/journals/landig/article/PIIS2589-7500(24)00218-8/fulltext">Paper</a>)
-<ul>
-<li>Notes from a workshop of academics, epidemiologists, data scientists, and software engineers</li>
-<li>For each scenario:
-<ul>
-<li>A ficticious case line list and contact tracing data are described</li>
-<li>A set of questions to address during the analytic process is given</li>
-<li>An analytic pipeline is given</li>
-<li>Challenges experienced during the process are described.</li>
-</ul></li>
-<li>Outlined Scenarios
-<ul>
-<li>Novel respiratory disease in The Gambia</li>
-<li>Outbreak of an unidentified disease in rural Colombia</li>
-<li>Reston Ebolavirus in the Philippines</li>
-<li>Emerging avian influenza in Cambodia</li>
-<li>Outbreak of respiratory disease in Canada</li>
-</ul></li>
-</ul></li>
-</ul></li>
-<li>Workflow (<a href="https://www.thelancet.com/journals/landig/article/PIIS2589-7500(24)00218-8/fulltext">paper</a>)<br>
-<a href="_resources/Epidemiology.resources/workflow-1.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="_resources/Epidemiology.resources/workflow-1.jpg" class="img-fluid"></a></li>
-</ul>
-</section>
-<section id="sec-epidemi-terms" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="sec-epidemi-terms">Terms</h2>
-<ul>
-<li><span style="color: #009499"><strong>Case Line Lists</strong></span> - Data tables in which every line is a different case/patient, and columns record different variables of potential epidemiological interest such as date of events (e.g.&nbsp;onset of symptom, case notification), disease outcome, or patient data (e.g.&nbsp;age, sex, occupation).</li>
-</ul>
-</section>
-<section id="sec-epidemi-dismap" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="sec-epidemi-dismap">Disease Mapping</h2>
-<ul>
-<li>Goals
-<ul>
-<li>Provide accurate estimates of mortality/incidence risks or rates in space and time</li>
-<li>Unveil underlying spatial and spatio-temporal patterns</li>
-<li>Detect high-risk areas or hotspots</li>
-</ul></li>
-<li>Risk estimation using metrics such as Standardized Mortality Ratio (SMR) when analyzing rare diseases or low-populated areas are highly variable over time, so it’s diffficult to spot patterns and form hypotheses
-<ul>
-<li>SMR = Observed number of cases / Expected number of cases
-<ul>
-<li>SMR &gt; 1: risk is greater than the whole region under study</li>
-<li>Guessing “Expected number of cases” is the average number of cases for the whole study region</li>
-</ul></li>
-</ul></li>
-<li>Statistical models smooth risks by borrowing information from spatio-temporal neighbors
-<ul>
-<li>The smoothed gradient over the entire study region makes it easier to detect patterns and form hypotheses than highly variable, local area metric estimates (e.g.&nbsp;SMR in a low populated county)</li>
-</ul></li>
-<li>Traditional Models
-<ul>
-<li>Types
-<ul>
-<li>Mixed Poisson with conditional autoregressive (CAR) priors for “space” and random walk priors for “time” that include space ⨯ time interactions (Knorr-Held, 2000, Bayesian modeling of inseperable space-time variation in disease risk)</li>
-<li>Reduced rank multidimensional P-splines (Ugarte et al, 2017, One-dimensional, two-dimensional, and three dimensional B-splines to specify space-time interactions in Bayesian disease mapping)</li>
-</ul></li>
-<li>Issues
-<ul>
-<li>Estimating the cov-var matrix becomes intractable with big data and many areas since the covariance must be estimated between each pair of areas</li>
-<li>CAR models assume the same level of spatial dependence between all areas which isn’t likely.</li>
-</ul></li>
-</ul></li>
-<li><span style="color: #990000">{</span><a href="https://github.com/spatialstatisticsupna/bigDM" style="color: #990000">bigDM</a><span style="color: #990000">}</span>
-<ul>
-<li>Scalable non-stationary Bayesian models for high-dim, count data</li>
-<li>Dependencies
-<ul>
-<li>Uses {future} for distributed computing</li>
-<li>Integrated, nested laplace approximation (INLA) method through {R-INLA}</li>
-</ul></li>
-<li>K-order neighborhood model
-<ul>
-<li>Breaks up local spatial or spatio-temporal domains so that estimations can distributed and local area dependencies (neighborhoods) can be accounted for.</li>
-<li>“Areas” are usually districts, counties, provinces, etc.
-<ul>
-<li>Package does provide a method to create a “random” area grid
-<ul>
-<li>Might be useful to compare a random grid model with the e.g.&nbsp;county model to see how much county boundaries influence the estimates</li>
-</ul></li>
-</ul></li>
-<li>Each local area model includes k adjacent areas which creates a partition
-<ul>
-<li>The local area estimate is smoothed by taking information from the adjacent areas</li>
-<li>Adjacent areas also have estimate posteriors computed</li>
-<li>Each area will have multiple posterior estimates from local area models where the area is the local area or where it is the adjacent area</li>
-</ul></li>
-<li>Merge or don’t merge estimate posteriors for each area
-<ul>
-<li>Merge: use weights proportional to the conditional predictive ordinates (CPO) ???</li>
-<li>Don’t Merge: Use the posterior marginal risk estimates of an area corresponding to the original submodel.
-<ul>
-<li>i.e.&nbsp;use the posterior where the area is the “local area” in that local area model and not an adjacent area.</li>
-</ul></li>
-<li>Primary functions
-<ul>
-<li><code>CAR.INLA()</code> fits several spatial CAR models for high dim count data</li>
-<li><code>STCAR.INLA()</code> fits several spatio-temporal CAR models for high dim count data</li>
-</ul></li>
-</ul></li>
-</ul></li>
+<li>1st Down: Gain <span class="math inline">\(40\%\)</span> of yards to go.</li>
+<li>2nd Down: Gain <span class="math inline">\(60\%\)</span> of yards to go.</li>
+<li>3rd/4th Down: Gain <span class="math inline">\(100\%\)</span> of yards to go (convert).</li>
 </ul></li>
 </ul>
 
@@ -964,13 +839,13 @@ gtag('config', 'G-BK8YC1GLDM', { 'anonymize_ip': true});
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../qmd/environment.html" class="pagination-link" aria-label="Environment">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Environment</span>
+      <a href="../qmd/finance-valuation.html" class="pagination-link" aria-label="Valuation">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Valuation</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../qmd/finance-glossary.html" class="pagination-link" aria-label="Glossary">
-        <span class="nav-page-text">Glossary</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../qmd/healthcare.html" class="pagination-link" aria-label="Healthcare">
+        <span class="nav-page-text">Healthcare</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -994,38 +869,6 @@ gtag('config', 'G-BK8YC1GLDM', { 'anonymize_ip': true});
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
-(function() {
-  let previousOnload = window.onload;
-  window.onload = () => {
-    if (previousOnload) {
-      previousOnload();
-    }
-    lightboxQuarto.on('slide_before_load', (data) => {
-      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-      const href = trigger.getAttribute('href');
-      if (href !== null) {
-        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
-        if (imgEl !== null) {
-          const srcAttr = imgEl.getAttribute("src");
-          if (srcAttr && srcAttr.startsWith("data:")) {
-            slideConfig.href = srcAttr;
-          }
-        }
-      } 
-    });
-  
-    lightboxQuarto.on('slide_after_load', (data) => {
-      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(slideNode);
-      }
-    });
-  
-  };
-  
-})();
-          </script>
 
 
 

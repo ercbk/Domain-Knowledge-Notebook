@@ -43,6 +43,7 @@ book:
         - qmd/finance-risk.qmd
         - qmd/finance-snippets.qmd
         - qmd/finance-valuation.qmd
+    - qmd/football.qmd
     - qmd/healthcare.qmd
     - qmd/insurance.qmd
     - qmd/kpis.qmd 

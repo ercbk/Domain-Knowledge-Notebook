@@ -1,0 +1,8 @@
+# Football
+
+## Metrics
+
+-   [**Success Rate**]{style="color: #009499"} is:
+    -   1st Down: Gain $40\%$ of yards to go.
+    -   2nd Down: Gain $60\%$ of yards to go.
+    -   3rd/4th Down: Gain $100\%$ of yards to go (convert).
