@@ -442,6 +442,26 @@
     ]
   },
   {
+    "objectID": "qmd/football.html",
+    "href": "qmd/football.html",
+    "title": "1  Football",
+    "section": "",
+    "text": "1.1 Metrics",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Football</span>"
+    ]
+  },
+  {
+    "objectID": "qmd/football.html#metrics",
+    "href": "qmd/football.html#metrics",
+    "title": "1  Football",
+    "section": "",
+    "text": "Success Rate is:\n\n1st Down: Gain \\(40\\%\\) of yards to go.\n2nd Down: Gain \\(60\\%\\) of yards to go.\n3rd/4th Down: Gain \\(100\\%\\) of yards to go (convert).",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Football</span>"
+    ]
+  },
+  {
     "objectID": "qmd/healthcare.html",
     "href": "qmd/healthcare.html",
     "title": "Healthcare",
