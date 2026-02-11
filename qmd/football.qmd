@@ -1,8 +1,9 @@
-# Football
+# Football {#sec-foot .unnumbered}
 
-## Metrics
+## Metrics {#sec-foot-met .unnumbered}
 
 -   [**Success Rate**]{style="color: #009499"} is:
     -   1st Down: Gain $40\%$ of yards to go.
     -   2nd Down: Gain $60\%$ of yards to go.
     -   3rd/4th Down: Gain $100\%$ of yards to go (convert).
+    -   **Standard Downs**: First downs, second-and-7 or less and third- or fourth-and-4 or less

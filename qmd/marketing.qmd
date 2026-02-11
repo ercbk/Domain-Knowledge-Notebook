@@ -592,6 +592,10 @@
 -   Also see
     -   [Customer Journey](marketing.qmd#sec-mark-custjourn){style="color: green"}
     -   [Algorithms, Product \>\> Customer Journey](https://ercbk.github.io/Data-Science-Notebook/qmd/algorithms-product.html#sec-alg-prod-cj){style="color: green"}
+-   Packages
+    -   [{]{style="color: #990000"}[ti](https://cran.r-project.org/web/packages/ti/index.html){style="color: #990000"}[}]{style="color: #990000"} - Time Intelligence and Customer Segmentation for Financial Analysis
+        -   Functions for period-over-period comparisons (year-over-year, month-over-month) and period-to-date calculations (YTD, MTD, QTD)
+        -   Included customer segmentation (ABC analysis, cohorts)
 -   Growth Managers help identify the best-performing audience segments for acquisition campaigns.
 -   Seeks to answer:
     -   Who are the most valuable customers?
