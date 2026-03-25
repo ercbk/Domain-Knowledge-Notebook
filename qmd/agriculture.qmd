@@ -3,6 +3,13 @@
 ## Misc {#sec-ag-misc .unnumbered}
 
 -   Packages
+    -   [{]{style="color: #990000"}[aridagri](https://cran.r-project.org/web/packages/aridagri/index.html){style="color: #990000"}[}]{style="color: #990000"} - Provides 35+ functions for statistical analysis in agricultural research, with special focus on experimental design analysis and agronomic calculations
+        -   Complete ANOVA Suite: All experimental designs with proper error terms
+        -   Multiple Post-Hoc Tests: LSD, Duncan, Tukey, SNK, Scheffé, Bonferroni, Dunnett
+        -   Stability Analysis: 7 methods (Eberhart-Russell, AMMI, Finlay-Wilkinson, Shukla, Wricke, CV, Superiority)
+        -   Thermal Indices: GDD, HTU, PTU, Heat Use Efficiency
+        -   Crop Growth Analysis: CGR, RGR, NAR, LAI
+        -   Publication-Ready Output: Formatted tables with SE, CD, CV
     -   [{]{style="color: #990000"}[STCCGEV](https://cran.r-project.org/web/packages/STCCGEV/index.html){style="color: #990000"}[}]{style="color: #990000"} - Spatio-Temporal, Conditional Copula Model for Crop Yield Forecasting
         -   Incorporates extreme weather covariates and Bayesian Structural Time Series models to analyze crop yield dependencies across multiple regions
 -   Papers

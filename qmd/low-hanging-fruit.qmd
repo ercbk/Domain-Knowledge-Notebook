@@ -32,6 +32,20 @@
     -   A place to store and ship code & data
     -   Compute ("infrastructure") to execute the code on
     -   Tools to orchestrate, monitor, and report on operations of the code
+-   Using R for projects
+    -   R is stable, widely used, and institutionally relevant. It's been consistently in or around the top 10 computer programming rankings
+        -   The community is active.
+        -   The ecosystem is healthy.
+        -   The language continues to matter in research, statistics, and data‑driven work.
+    -   TIOBE Index\
+        ![](_resources/Low-Hanging-Fruit.resources/tiobe-index-2007-2026-1.webp){.lightbox width="632"}
+    -   Companies that use R for data science
+        -   Captial One
+        -   Johnson & Johnson
+        -   GSK
+        -   Roche
+        -   Novo Nordisk
+        -   Oventive
 
 ## What you offer {#sec-lhf-wyo .unnumbered}
 
