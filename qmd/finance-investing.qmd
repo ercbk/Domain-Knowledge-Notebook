@@ -411,6 +411,8 @@ fig-cap-location: top
 ## Bonds {#sec-finance-invest-bonds .unnumbered}
 
 -   Misc
+    -   Packages
+        -   [{]{style="color: #990000"}[yieldcurves](https://cran.r-project.org/web/packages/yieldcurves/index.html){style="color: #990000"}[}]{style="color: #990000"} - Yield Curve Fitting, Analysis, and Decomposition
     -   Resources
         -   [NerdWallet Compound Interest Calculator](https://www.nerdwallet.com/calculator/compound-interest-calculator?trk=nw_gn_5.0)
             -   [Example]{.ribbon-highlight}: if you put \$5,000 in a (5yr) bond with a 4% yield, assuming you reinvest your interest payments, you will have \$6083 by the time it matures.\

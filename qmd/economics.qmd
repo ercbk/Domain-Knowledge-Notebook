@@ -6,6 +6,7 @@
     -   [{]{style="color: #990000"}[econgoods](https://github.com/UchidaMizuki/econgoods){style="color: #990000"}[}]{style="color: #990000"} - Provides various utility functions and usage with composite goods in economics.
         -   Current utility functions: Constant elasticity of substitution (CES) utility, Leontief utility, Cobb-Douglas utility, marginal utility for two goods
         -   `util_calibrate`: Fit parameters of utility functions to the given prices and quantities.
+    -   [{]{style="color: #990000"}[inflationkit](https://cran.r-project.org/web/packages/inflationkit/index.html){style="color: #990000"}[}]{style="color: #990000"} - Inflation Decomposition, Core Measures, and Trend Estimation
     -   [{]{style="color: #990000"}[nowcast](https://cran.r-project.org/web/packages/nowcast/index.html){style="color: #990000"}[}]{style="color: #990000"} - Provides bridge equations with optional autoregressive terms for nowcasting low-frequency macroeconomic variables (e.g. quarterly GDP) from higher-frequency indicators (e.g. monthly retail sales).
         -   Handles the ragged-edge problem where different indicators have different publication lags via mixed-frequency alignment.
         -   Includes pseudo-real-time evaluation with expanding or rolling windows, and the Diebold-Mariano test
