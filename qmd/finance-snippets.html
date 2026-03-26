@@ -80,7 +80,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-d350c7185185dab00f6904e97b3f80f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-7893dbb888ced8672a67cf6e0299c0f4.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-f5f4c3a540aa6487f4c8863f5ed0c0b2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
@@ -572,32 +572,36 @@ gtag('config', 'G-BK8YC1GLDM', { 'anonymize_ip': true});
 <ul>
 <li><p>Packages</p>
 <ul>
-<li><span style="color: #990000">{</span><a href="https://business-science.github.io/tidyquant/" style="color: #990000">tidyquant</a><span style="color: #990000">}</span>
+<li><span style="color: #990000">{</span><a href="https://cran.r-project.org/web/packages/edgarfundamentals/index.html" style="color: #990000">edgarfundamentals</a><span style="color: #990000">}</span> - Retrieve Fundamental Financial Data from SEC ‘EDGAR’
 <ul>
-<li>Download and clean data - Daily stock prices (historical), key statistics (real-time), key ratios (historical), financial statements, dividends, splits, economic data from the FRED, FOREX rates from Oanda</li>
-<li>Performance Analysis and Portfolio Analysis</li>
+<li>Includes earnings per share, return on equity, return on assets, debt-to-equity, current ratio, gross margin, operating margin, net margin, price-to-earnings, price-to-book, and dividend yield for any publicly traded U.S. company</li>
 </ul></li>
-<li><span style="color: #990000">{</span><a href="https://docs.ropensci.org/yfR/" style="color: #990000">yfR</a><span style="color: #990000">}</span> - Facilitates importing stock prices from Yahoo finance, organizing the data in the tidy format and speeding up the process using a cache system and parallel computing.
-<ul>
-<li>See <a href="https://msperlin.com/afedr/importing-internet#package-yfr">chapter</a> for examples and notes on using this package</li>
-</ul></li>
-<li><span style="color: goldenrod">{</span><a href="https://github.com/ranaroussi/yfinance" style="color: goldenrod">yfinance</a><span style="color: goldenrod">}</span>, <a href="https://cran.r-project.org/web/packages/yfinancer/index.html">yfinancer</a> - Downloads market data from yahoo finance</li>
-<li><span style="color: #990000">{</span><a href="https://nareal.github.io/frenchdata/" style="color: #990000">frenchdata</a><span style="color: #990000">}</span> - Download and read data sets from Prof.&nbsp;Kenneth French finance data library</li>
+<li><span style="color: #990000">{</span><a href="https://cran.r-project.org/package=edgarWebR" style="color: #990000">edgarWebR</a><span style="color: #990000">}</span> - The EDGAR database provides free public access to corporate information, allowing you to research a public company’s financial information and operations by reviewing the filings the company makes with the SEC. You can also research information provided by mutual funds (including money market funds), exchange-traded funds (ETFs), and variable annuities.</li>
+<li><span style="color: #990000">{</span><a href="https://tidy-finance.github.io/r-fmpapi/" style="color: #990000">fmpapi</a><span style="color: #990000">}</span>, <span style="color: goldenrod">{</span><a href="https://github.com/tidy-finance/py-fmpapi" style="color: goldenrod">fmpapi</a><span style="color: goldenrod">}</span> - Wrapper for the FMP API — (free) real-time stock prices, financial statements, or historical data</li>
 <li><span style="color: #990000">{</span><a href="https://cran.r-project.org/package=fredr" style="color: #990000">fredr</a><span style="color: #990000">}</span> - The Federal Reserve Bank of St.&nbsp;Louis provides more than 818,000 US and international time series from 109 sources via the API FRED. The data is freely available and can be browsed online on the FRED <a href="https://fred.stlouisfed.org/">homepage</a>.</li>
-<li><span style="color: #990000">{</span><a href="https://cran.r-project.org/package=simfinapi" style="color: #990000">simfinapi</a><span style="color: #990000">}</span> - Simfin make fundamental financial data freely available to private investors, researchers, and students. The data provider applies automating data collection processes to collect a large set of publicly available information from firms’ financial statements.
-<ul>
-<li>Offers a generous free plan, with a daily limit of 2000 api calls.</li>
-<li>See <a href="https://msperlin.com/afedr/importing-internet#package-simfinapi">chapter</a> for a few examples</li>
-</ul></li>
-<li><span style="color: #990000">{</span><a href="https://cran.r-project.org/package=Rblpapi" style="color: #990000">Rblpapi</a><span style="color: #990000">}</span> - Bloomberg’s Fundamental coverage includes current and normalized historical data for the balance sheet, income statement, cash flows statement, and financial ratios. Additionally, it provides industry-specific data for communications, consumer, energy, health care, and many more. In order to retrieve Bloomberg data, a paid subscription is needed.</li>
+<li><span style="color: #990000">{</span><a href="https://nareal.github.io/frenchdata/" style="color: #990000">frenchdata</a><span style="color: #990000">}</span> - Download and read data sets from Prof.&nbsp;Kenneth French finance data library</li>
 <li><span style="color: #990000">{</span><a href="https://github.com/msperlin/GetQuandlData/" style="color: #990000">GetQuandlData</a><span style="color: #990000">}</span> - Quandl is a publisher of alternative data. Quandl publishes free data, scraped from many different sources from the web. However, some of the data requires specific subscriptions on the Quandl platform.
 <ul>
 <li><span style="color: #990000">{</span><a href="https://cran.r-project.org/package=Quandl" style="color: #990000">Quandl</a><span style="color: #990000">}</span> has some <a href="https://www.msperlin.com/post/2019-10-01-new-package-getquandldata/">issues</a></li>
 <li>Getting Quandl data requires you to register for an account, and in the account settings, you’ll find your API key.</li>
 <li><a href="https://docs.data.nasdaq.com/docs/parameters-2">List of parameters</a> that can be used for querying the data.</li>
 </ul></li>
-<li><span style="color: #990000">{</span><a href="https://cran.r-project.org/package=edgarWebR" style="color: #990000">edgarWebR</a><span style="color: #990000">}</span> - The EDGAR database provides free public access to corporate information, allowing you to research a public company’s financial information and operations by reviewing the filings the company makes with the SEC. You can also research information provided by mutual funds (including money market funds), exchange-traded funds (ETFs), and variable annuities.</li>
-<li><span style="color: #990000">{</span><a href="https://tidy-finance.github.io/r-fmpapi/" style="color: #990000">fmpapi</a><span style="color: #990000">}</span>, <span style="color: goldenrod">{</span><a href="https://github.com/tidy-finance/py-fmpapi" style="color: goldenrod">fmpapi</a><span style="color: goldenrod">}</span> - Wrapper for the FMP API — (free) real-time stock prices, financial statements, or historical data</li>
+<li><span style="color: #990000">{</span><a href="https://cran.r-project.org/package=Rblpapi" style="color: #990000">Rblpapi</a><span style="color: #990000">}</span> - Bloomberg’s Fundamental coverage includes current and normalized historical data for the balance sheet, income statement, cash flows statement, and financial ratios. Additionally, it provides industry-specific data for communications, consumer, energy, health care, and many more. In order to retrieve Bloomberg data, a paid subscription is needed.</li>
+<li><span style="color: #990000">{</span><a href="https://cran.r-project.org/package=simfinapi" style="color: #990000">simfinapi</a><span style="color: #990000">}</span> - Simfin make fundamental financial data freely available to private investors, researchers, and students. The data provider applies automating data collection processes to collect a large set of publicly available information from firms’ financial statements.
+<ul>
+<li>Offers a generous free plan, with a daily limit of 2000 api calls.</li>
+<li>See <a href="https://msperlin.com/afedr/importing-internet#package-simfinapi">chapter</a> for a few examples</li>
+</ul></li>
+<li><span style="color: #990000">{</span><a href="https://business-science.github.io/tidyquant/" style="color: #990000">tidyquant</a><span style="color: #990000">}</span>
+<ul>
+<li>Download and clean data - Daily stock prices (historical), key statistics (real-time), key ratios (historical), financial statements, dividends, splits, economic data from the FRED, FOREX rates from Oanda</li>
+<li>Performance Analysis and Portfolio Analysis</li>
+</ul></li>
+<li><span style="color: goldenrod">{</span><a href="https://github.com/ranaroussi/yfinance" style="color: goldenrod">yfinance</a><span style="color: goldenrod">}</span>, <a href="https://cran.r-project.org/web/packages/yfinancer/index.html">yfinancer</a> - Downloads market data from yahoo finance</li>
+<li><span style="color: #990000">{</span><a href="https://docs.ropensci.org/yfR/" style="color: #990000">yfR</a><span style="color: #990000">}</span> - Facilitates importing stock prices from Yahoo finance, organizing the data in the tidy format and speeding up the process using a cache system and parallel computing.
+<ul>
+<li>See <a href="https://msperlin.com/afedr/importing-internet#package-yfr">chapter</a> for examples and notes on using this package</li>
+</ul></li>
 <li><span style="color: #990000">{</span><a href="https://cran.r-project.org/web/packages/yfscreen/index.html" style="color: #990000">yfscreen</a><span style="color: #990000">}</span> - Yahoo Finance ‘screener’ API
 <ul>
 <li>Use cases include screening across a range of security types including equities, mutual funds, ETFs, indices, and futures.</li>
