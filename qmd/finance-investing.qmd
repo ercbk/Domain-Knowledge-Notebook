@@ -25,13 +25,13 @@ fig-cap-location: top
         -   [Interactive Brokers](https://www.interactivebrokers.com/) is an international brokerage firm specializing in electronic execution in products ranging from equities to bonds, options to futures, as well as FX, all from a single account
     -   [{]{style="color: #990000"}[rPublic](https://cran.r-project.org/web/packages/rPublic/index.html){style="color: #990000"}[}]{style="color: #990000"} - The [Public Trading API](https://public.com/api/docs) allows clients to access their brokerage accounts, request market data, and place stock/etf/option orders.
     -   [{]{style="color: #990000"}[TTR](https://cran.r-project.org/web/packages/TTR/index.html){style="color: #990000"}[}]{style="color: #990000"} - A collection of over 50 technical indicators for creating technical trading rules. The package also provides fast implementations of common rolling-window functions, and several volatility calculations.
-    -   [{{]{style="color: goldenrod"}[zipline-reloaded](https://pypi.org/project/zipline-reloaded/){style="color: goldenrod"}[}}]{style="color: goldenrod"} - Backtesting and live-trading engine by crowd-sourced investment fund Quantopian
-    -   [{{]{style="color: goldenrod"}[pyfolio](https://pyfolio.ml4trading.io/){style="color: goldenrod"}[}}]{style="color: goldenrod"} - Performance and risk analysis for financial portfolios
-    -   [{{]{style="color: goldenrod"}[skfolio](https://skfolio.org/){style="color: goldenrod"}[}}]{style="color: goldenrod"} - Portfolio optimization built on top of scikit-learn. It offers a unified interface and tools compatible with scikit-learn to build, fine-tune, and cross-validate portfolio models.
-    -   [{{]{style="color: goldenrod"}[alphalens](https://alphalens.ml4trading.io/){style="color: goldenrod"}[}}]{style="color: goldenrod"} - Performance analysis of predictive stock factors
-    -   [{{]{style="color: goldenrod"}[PyBroker](https://www.pybroker.com/en/latest/){style="color: goldenrod"}[}}]{style="color: goldenrod"} - A backtesting engine; A framework is designed for developing algorithmic trading strategies, with a focus on strategies that use machine learning. Easily create and fine-tune trading rules, build powerful models, and gain valuable insights into your strategy’s performance.
-    -   [{{]{style="color: goldenrod"}[empyrical](https://github.com/quantopian/empyrical){style="color: goldenrod"}[}}]{style="color: goldenrod"} - Common financial risk and performance metrics. Used by zipline and pyfolio.
-    -   [{{]{style="color: goldenrod"}[riskfolio-lib](https://pypi.org/project/Riskfolio-Lib/){style="color: goldenrod"}[}}]{style="color: goldenrod"} - Tools for quantitative strategic asset allocation or portfolio optimization
+    -   [{]{style="color: goldenrod"}[zipline-reloaded](https://pypi.org/project/zipline-reloaded/){style="color: goldenrod"}[}]{style="color: goldenrod"} - Backtesting and live-trading engine by crowd-sourced investment fund Quantopian
+    -   [{]{style="color: goldenrod"}[pyfolio](https://pyfolio.ml4trading.io/){style="color: goldenrod"}[}]{style="color: goldenrod"} - Performance and risk analysis for financial portfolios
+    -   [{]{style="color: goldenrod"}[skfolio](https://skfolio.org/){style="color: goldenrod"}[}]{style="color: goldenrod"} - Portfolio optimization built on top of scikit-learn. It offers a unified interface and tools compatible with scikit-learn to build, fine-tune, and cross-validate portfolio models.
+    -   [{]{style="color: goldenrod"}[alphalens](https://alphalens.ml4trading.io/){style="color: goldenrod"}[}]{style="color: goldenrod"} - Performance analysis of predictive stock factors
+    -   [{]{style="color: goldenrod"}[PyBroker](https://www.pybroker.com/en/latest/){style="color: goldenrod"}[}]{style="color: goldenrod"} - A backtesting engine; A framework is designed for developing algorithmic trading strategies, with a focus on strategies that use machine learning. Easily create and fine-tune trading rules, build powerful models, and gain valuable insights into your strategy’s performance.
+    -   [{]{style="color: goldenrod"}[empyrical](https://github.com/quantopian/empyrical){style="color: goldenrod"}[}]{style="color: goldenrod"} - Common financial risk and performance metrics. Used by zipline and pyfolio.
+    -   [{]{style="color: goldenrod"}[riskfolio-lib](https://pypi.org/project/Riskfolio-Lib/){style="color: goldenrod"}[}]{style="color: goldenrod"} - Tools for quantitative strategic asset allocation or portfolio optimization
 
 -   Tools
 
@@ -144,7 +144,7 @@ fig-cap-location: top
 ## 60/40 Portfolio Strategy {#sec-finance-invest-6040 .unnumbered}
 
 -   Misc
-    -   [{{]{style="color: goldenrod"}[QSTrader](https://www.quantstart.com/qstrader/tutorial-60-40-portfolio/){style="color: goldenrod"}[}}]{style="color: goldenrod"}
+    -   [{]{style="color: goldenrod"}[QSTrader](https://www.quantstart.com/qstrader/tutorial-60-40-portfolio/){style="color: goldenrod"}[}]{style="color: goldenrod"}
     -   Notes from - [The 60/40 Benchmark Portfolio](https://www.quantstart.com/articles/the-6040-benchmark-portfolio/)
 -   Description
     -   60/40 US Equities/Bonds strategy is a simple long-term investment approach that is widely utilised in the investment industry. It seeks to ensure that at any point during the lifetime of the investment that 60% of account equity is invested in one or more assets representing a broad selection of US equities (such as an S&P500 ETF), while 40% of account equity is invested in one or more assets representing a broad selection of US treasury bonds (such as a treasury bond ETF).
@@ -241,7 +241,7 @@ fig-cap-location: top
 ### Momentum Tactical Asset Allocation Strategy {#sec-finance-invest-mom-mtaas .unnumbered}
 
 -   Misc
-    -   [{{]{style="color: goldenrod"}[QSTrader](https://www.quantstart.com/qstrader/tutorial-60-40-portfolio/){style="color: goldenrod"}[}}]{style="color: goldenrod"}
+    -   [{]{style="color: goldenrod"}[QSTrader](https://www.quantstart.com/qstrader/tutorial-60-40-portfolio/){style="color: goldenrod"}[}]{style="color: goldenrod"}
 
     -   Notes from
 
@@ -333,7 +333,7 @@ fig-cap-location: top
 -   Misc
     -   The Impact of Volatility Targeting ([paper](https://www.man.com/maninstitute/the-impact-of-volatility-targeting#:~:text=Volatility%20targeting%20seeks%20to%20counter%20the%20fluctuations%20in%20volatility%3A,than%20a%20constant%20notional%20exposure.))
     -   Quant Science [article](https://www.quantscience.io/newsletter/b/automating-trades-interactive-brokers-and-python?ck_subscriber_id=2259292279) uses {{riskfolio}} to generate volatility weights for equities. ([code](https://github.com/quant-science/sunday-quant-scientist/blob/main/QS002-automate-trades/automate-trades.py?ck_subscriber_id=2259292279))
-        -   [{{]{style="color: goldenrod"}[riskfolio](https://riskfolio-lib.readthedocs.io/en/latest/index.html){style="color: goldenrod"}[}}]{style="color: goldenrod"} - Good docs with plenty of examples
+        -   [{]{style="color: goldenrod"}[riskfolio](https://riskfolio-lib.readthedocs.io/en/latest/index.html){style="color: goldenrod"}[}]{style="color: goldenrod"} - Good docs with plenty of examples
 -   Volatility targeting seeks to counter the fluctuations in volatility:
     -   It leads to leveraging a portfolio at times of low volatility, and scaling down exposures at times of high volatility.
     -   This approach targets a constant level of volatility, rather than a constant notional exposure.

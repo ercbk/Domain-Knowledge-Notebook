@@ -2,6 +2,13 @@
 
 ## Misc {#sec-finance-snip-misc .unnumbered}
 
+-   Packages
+
+    -   [{]{style="color: #990000"}[lightweightchartR](https://arkraieski.github.io/lightweightchartR/){style="color: #990000"}[}]{style="color: #990000"} - Visualization package designed for {quantmod} users.
+        -   Makes interactive market charts feel natural in R
+        -   Keeps the workflow pipe-friendly
+        -   Supports common trading-chart patterns like volume overlays, moving averages, and indicator panes without a lot of setup
+
 -   Notes from
 
     -   Tidy Finance and Accessing Financial Data ([slides](https://github.com/tidy-intelligence/talks/tree/main/2024-03-06_R_Consortium_Webinar), [video](https://www.youtube.com/watch?v=7jtX9Li_Ua4&ab_channel=RConsortium))

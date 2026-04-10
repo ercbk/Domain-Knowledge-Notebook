@@ -3,6 +3,8 @@
 ## Misc {#sec-ag-misc .unnumbered}
 
 -   Packages
+    -   [{]{style="color: #990000"}[agriReg](https://cran.r-project.org/web/packages/agriReg/index.html){style="color: #990000"}[}]{style="color: #990000"} - Fit, compare, and visualise linear and nonlinear regression models tailored to field-trial and dose-response agricultural data.
+        -   Provides Mixed-effects models (via 'lme4'), nonlinear growth curves (logistic, 'Gompertz', asymptotic, linear-plateau, quadratic), and four/five-parameter log-logistic dose-response models (via 'drc').
     -   [{]{style="color: #990000"}[aridagri](https://cran.r-project.org/web/packages/aridagri/index.html){style="color: #990000"}[}]{style="color: #990000"} - Provides 35+ functions for statistical analysis in agricultural research, with special focus on experimental design analysis and agronomic calculations
         -   Complete ANOVA Suite: All experimental designs with proper error terms
         -   Multiple Post-Hoc Tests: LSD, Duncan, Tukey, SNK, Scheffé, Bonferroni, Dunnett

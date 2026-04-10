@@ -37,8 +37,16 @@
         -   The community is active.
         -   The ecosystem is healthy.
         -   The language continues to matter in research, statistics, and data‑driven work.
-    -   TIOBE Index\
-        ![](_resources/Low-Hanging-Fruit.resources/tiobe-index-2007-2026-1.webp){.lightbox width="632"}
+    -   [Posit](https://posit.co/), who maintains RStudio and Positron IDEs (integrated development environment) and many of the most popular R packages, have many full time staff working solely on maintaining and creating new functionality within R. This means we get:
+        -   Defined accountability
+        -   Predictable release cycles
+        -   Bugs can be solved quicker
+    -   Popular in these industries
+        -   Healthcare & biostats
+        -   Academic research
+        -   Government departments
+        -   Finance & risk modeling
+        -   Pharmaceutical companies
     -   Companies that use R for data science
         -   Captial One
         -   Johnson & Johnson
@@ -46,6 +54,8 @@
         -   Roche
         -   Novo Nordisk
         -   Oventive
+    -   TIOBE Index\
+        ![](_resources/Low-Hanging-Fruit.resources/tiobe-index-2007-2026-1.webp){.lightbox width="632"}
 
 ## What you offer {#sec-lhf-wyo .unnumbered}
 
