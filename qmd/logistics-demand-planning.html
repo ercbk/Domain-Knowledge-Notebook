@@ -622,7 +622,7 @@ window.Quarto = {
 <li><u>Misc</u>
 <ul>
 <li>Forecasting shocks is difficult for an algorithm</li>
-<li>Also see <a href="forecasting-dl.qmd#sec-fcast-dl-misc" style="color: green">Forecasting, Deep Learning &gt;&gt; Misc</a> &gt;&gt; Predictive Adjustment</li>
+<li>Also see <a href="https://ercbk.github.io/Data-Science-Notebook/qmd/forecasting-dl.html#sec-fcast-dl-misc" style="color: green">Forecasting, Deep Learning &gt;&gt; Misc</a> &gt;&gt; Predictive Adjustment</li>
 <li>Notes from <a href="https://doordash.engineering/2021/02/24/why-good-forecasts-treat-human-input-as-part-of-the-model/">Why Good Forecasts Treat Human Input as Part of the Model</a></li>
 </ul></li>
 <li><u>Preprocessing</u>
@@ -1064,9 +1064,7 @@ window.Quarto = {
 <li><span class="math inline">\(\max(DI_a)\)</span> - the costs associated with the forecast at 95% percentile.</li>
 </ul></li>
 <li><p>Calculate economic risk</p>
-<p><span class="math display">\[
-\text{risk}_{\text{econ}} = \left|\max(DI_a) - \min(DI_a)\right|
-\]</span></p></li>
+<p><span class="math display">\[\text{risk}_{\text{econ}} = \left|\max(DI_a) - \min(DI_a)\right|\]</span></p></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -1217,31 +1215,21 @@ window.Quarto = {
 <li>Calculate Decision Impact metrics:
 <ul>
 <li><p><strong>Earned Value</strong> (aka <strong>Forecast Value Added</strong>) (<span class="math inline">\(DI_{na}\)</span>)</p>
-<p><span class="math display">\[
-DI_{na} = DI_n - DI_a
-\]</span></p></li>
+<p><span class="math display">\[DI_{na} = DI_n - DI_a\]</span></p></li>
 <li><p><strong>Unearned Value</strong> (aka <strong>Yet-To-Be-Earned Value</strong>)(<span class="math inline">\(DI_{ao}\)</span>)</p>
-<p><span class="math display">\[
-DI_{ao} = DI_a -DI_o
-\]</span></p>
+<p><span class="math display">\[DI_{ao} = DI_a -DI_o\]</span></p>
 <ul>
 <li>The value that could still be gained by improving forecasts</li>
 </ul></li>
 <li><p><strong>Total Earnable Value</strong> (<span class="math inline">\(DI_{no}\)</span>)</p>
-<p><span class="math display">\[
-DI_{no} = DI_n - DI_o
-\]</span></p>
+<p><span class="math display">\[DI_{no} = DI_n - DI_o\]</span></p>
 <ul>
 <li>The range of earnable value</li>
 </ul></li>
 <li><p><strong>Proportion of the Earned Value</strong></p>
-<p><span class="math display">\[
-\frac{DI_{na}}{DI_{no}}
-\]</span></p></li>
+<p><span class="math display">\[\frac{DI_{na}}{DI_{no}}\]</span></p></li>
 <li><p><strong>Proportion of Yet-To-Be-Earned value</strong></p>
-<p><span class="math display">\[
-\frac{DI_{ao}}{DI_{no}}
-\]</span></p></li>
+<p><span class="math display">\[\frac{DI_{ao}}{DI_{no}}\]</span></p></li>
 </ul></li>
 </ol>
 </section>
@@ -1257,13 +1245,11 @@ DI_{no} = DI_n - DI_o
 </ul></li>
 <li><p>Instead of a two-stage problem (see DoorDash section): Optimising the forecast model via MSE or any other conventional loss and then solving the optimisation problem, we could estimate the model via maximization of the specific <strong>profit function</strong>, thus obtaining the required number of product orders directly.</p></li>
 <li><p>Calculate profit as a linear function</p>
-<p><span class="math display">\[
-\pi(q_t,y_t) =
+<p><span class="math display">\[\pi(q_t,y_t) =
 \left\{ \begin{array}{lcl}
 py_t - vq_t - c_h(q_t - y_t) &amp; \text{for}\;\; q_t \geq y_t \\
 pq_t - vq_t - c_s(y_t-q_t) &amp; \text{for}\;\; q_t &lt; y_t
-\end{array}\right.
-\]</span></p>
+\end{array}\right.\]</span></p>
 <ul>
 <li><span class="math inline">\(y_t\)</span>: Actual Sales</li>
 <li><span class="math inline">\(p\)</span>: Price of the Product</li>
