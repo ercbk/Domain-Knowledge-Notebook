@@ -3,6 +3,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Merienda:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,500;1,500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap');
+
 
 
 /* Import font from local source */
@@ -14,18 +17,57 @@
 
 h1, .h1 {
  text-transform: uppercase !important;
- font-family: "Noto Sans", sans-serif;
+ font-family: "Oswald", sans-serif;
+ font-size: 40px !important;
  font-weight: 540;
+ font-optical-sizing: auto;
  color: #1E4477 !important;
 }
 
 
+/* simple straight border line */
+/* 
+border-bottom: 2px solid #1E4477 !important;
+border-bottom: 2px solid !important;
+*/
+
+/* h2 color gradient border line with no taper */
+/*
 h2, .h2 {
     font-family: "Noto Sans", sans-serif;
     font-weight: 540 !important;
-    border-bottom: 2px solid #1E4477 !important;
+    border-bottom: 4px solid !important;
     padding-bottom: .5rem;
     color: #1E4477 !important;
+    border-image: linear-gradient(to right, #415D8EFF, #859CCDFF , #B1BEE7FF, #fffaf0, #fffaf0, #fffaf0, #fffaf0) !important;
+    border-image-slice: .65 !important;
+}
+*/
+
+h2, .h2 {
+    font-family: "Caveat", sans-serif;
+    font-weight: 540 !important;
+    font-size: 42px;
+    font-optical-sizing: auto;
+    color: #1E4477 !important;
+    padding-bottom: 0.5rem;
+    position: relative;
+    display: inline-block; /* Ensures proper width */
+}
+
+/* pseudo-element */
+/* creates color gradient and tapers the thickness (clip-path) */
+h2::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 7px;
+    background: linear-gradient(to right, #415D8E, #859CCD, #B1BEE7, #fffaf0);
+    position: absolute; /* ensures the border stays underneath the h2 and doesn’t affect layout. */
+    bottom: -2px; /* position it just below the text */
+    left: 0;
+    clip-path: polygon(0% 0%, 100% 66%, 100% 100%, 0% 100%);
+    border-radius: 6px;
 }
 
 
@@ -33,6 +75,7 @@ h3, .h3 {
     font-family: "Noto Sans", sans-serif;
     font-weight: 530 !important;
     font-size: calc(1.25rem + 0.24vw);
+    font-optical-sizing: auto;
     border-bottom: 2px solid #dee2e6;
     padding-bottom: .5rem;
     color: #365586FF !important;
@@ -41,8 +84,20 @@ h3, .h3 {
 
 h4, h5, .h4, .h5 {
   font-family: "Noto Sans", sans-serif;
+  font-optical-sizing: auto;
   color: #365586FF !important;
   border-bottom: 2px solid #dee2e6;
+  padding-bottom: .1rem;
+  width: -moz-max-content;
+  width: -webkit-max-content;
+  width: max-content;
+}
+
+h6, .h6 {
+  font-family: "Noto Sans", sans-serif;
+  font-optical-sizing: auto;
+  color: #500E00FF  !important;
+  border-bottom: 2px solid #500E00FF  !important;
   padding-bottom: .1rem;
   width: -moz-max-content;
   width: -webkit-max-content;
@@ -89,7 +144,7 @@ details > summary {
 /* styling for inline code text */
 code {
     display: inline-block;
-    margin: 0 .4em !important;
+    margin: 0 .2em !important;
     padding: 1px 6px !important;
     color: #365586FF;
     background: #FFFDF9FF !important;
@@ -114,6 +169,26 @@ pre code {
   background-color: #FFFDF9FF;  
 }
 
+/* use this for llm prompts; wanted the text wrap; matches .callout-note appearance="minimal" */
+.callout.callout-style-simple {
+  font-family: 'FiraCode-Retina';
+  color: #404d59;
+  background-color: #fff;
+  border-left: 1px solid #dee2e6 !important;
+}
+
+/* package icon for tip callout; you get this by copying svg path and doing a little manipulation */
+/* Claude's changes:
+Removed unnecessary XML attributes and groups
+Consolidated the paths
+Set width and height to 16
+Kept the original viewBox to maintain the proportions 
+*/
+div.callout-tip.callout-titled .callout-icon::before {
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 512 512"><polygon style="fill:%237E4F1F" points="511.516,107.105 511.788,107.036 264.065,31.004 0.479,106.898 0,106.759 0,411.849 238.676,480.721 238.676,480.159 238.888,480.996 512,412.125 512,107.036"/><polygon style="fill:%23EDA637" points="264.065,31.004 0,107.036 238.676,175.907 511.788,107.036"/><polygon style="fill:%23C27526" points="238.888,480.996 512,412.125 512,107.036 238.888,175.907"/><path style="fill:%23FFEC99" d="M193.016,51.462L78.638,84.393l230.233,73.866v50.416c0,3.323,1.541,6.458,4.172,8.487 c2.631,2.029,6.053,2.725,9.268,1.881l99.058-25.986c4.713-1.237,7.999-5.495,7.999-10.369v-54.816L193.016,51.462z"/><path style="fill:%23FFDC35" d="M486.158,374.572c0,6.29-4.278,11.775-10.378,13.307l-52.647,13.55 c-2.779,0.698-5.736,0.663-8.41-0.367c-5.363-2.066-8.677-7.119-8.677-12.576v-56.226c0-6.29,4.278-11.775,10.378-13.307 l52.647-13.55c2.779-0.698,5.736-0.663,8.41,0.367c5.363,2.066,8.677,7.119,8.677,12.576V374.572z M429.367,182.689c0,4.872-3.287,9.132-7.999,10.368l-99.058,25.986c-3.214,0.843-6.637,0.148-9.268-1.881-2.631-2.029-4.172-5.164-4.172-8.487v-50.416l120.497-30.386v54.816z"/><path style="fill:%23DF7400" d="M186.692,292.407l-40.804-11.978c-5.273-1.548-8.895-6.385-8.895-11.881v-39.76 c0-8.263,7.941-14.208,15.87-11.881l40.804,11.978c5.273,1.548,8.895,6.385,8.895,11.881v39.76 c0,8.265-7.94,14.209-15.87,11.881z"/></svg>');
+}
+
+
 
 /* old color for title and icons: #0064B6FF */
 /* Book title */
@@ -121,7 +196,7 @@ pre code {
     color: #1E4477;
 }
 
-/* css selector for github icon */
+/* icons in side panel e.g. home, other notebooks, github, reader-mode */
 #quarto-sidebar > div.pt-lg-2.mt-2.text-left.sidebar-header > div > div > a > i{
   color: #1E4477;
 }
@@ -140,9 +215,11 @@ pre code {
 
 /* --------------------------------MathJax LateX attributes ------------------------------------- */
 
+
 .math.inline .MathJax {
-  font-size: 100%;
+  font-size: 100% !important;
 }
+
 
 .math.display .MathJax {
   /*background-color: #FFFDFAFF !important*/
@@ -195,7 +272,7 @@ mjx-container [width="full"] {
 }
 */
 
-/* ----------- Scrollbars -------------*/
+/* -------------------------------------------- Scrollbars ------------------------------------------------*/
 
 /* page and code block scroll bars' color */
 /* also narrows and rounds bar */
@@ -232,6 +309,7 @@ mjx-container [width="full"] {
 }
 .nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {
     color: #882815 ;
+    font-size: smaller;
     font-weight: bold;
     background-color: #E3DED4FF ;
     border-color: #882815 #B2ADA3FF #E3DED4FF ;
@@ -240,7 +318,46 @@ mjx-container [width="full"] {
 
 .nav-tabs .nav-link {
     color: #9B3B2DFF;
+    font-size: smaller;
     background: none;
     border-top-left-radius: .30rem;
     border-top-right-radius: .30rem;
+}
+
+
+/* ---------------------- TOC ------------------------- */
+
+/* I styled the h2 header border line but the TOC title inherited that styling which I didn't like.*/
+/* Removes body's h2 border line styling and add a simple blue border line */
+
+/* Remove the existing border for TOC h2 elements */
+.sidebar .toc-actions h2::after,
+.sidebar .toc-actions .h2::after,
+.sidebar .quarto-code-links h2::after,
+.sidebar .quarto-code-links .h2::after,
+.sidebar .quarto-other-links h2::after,
+.sidebar .quarto-other-links .h2::after,
+.sidebar .quarto-alternate-notebooks h2::after,
+.sidebar .quarto-alternate-notebooks .h2::after,
+.sidebar .quarto-alternate-formats h2::after,
+.sidebar .quarto-alternate-formats .h2::after,
+.sidebar nav[role=doc-toc] > h2::after,
+.sidebar nav[role=doc-toc] > .h2::after {
+    display: none; /* Remove the existing border */
+}
+
+/* Add a custom border for TOC h2 elements */
+.sidebar .toc-actions h2,
+.sidebar .toc-actions .h2,
+.sidebar .quarto-code-links h2,
+.sidebar .quarto-code-links .h2,
+.sidebar .quarto-other-links h2,
+.sidebar .quarto-other-links .h2,
+.sidebar .quarto-alternate-notebooks h2,
+.sidebar .quarto-alternate-notebooks .h2,
+.sidebar .quarto-alternate-formats h2,
+.sidebar .quarto-alternate-formats .h2,
+.sidebar nav[role=doc-toc] > h2,
+.sidebar nav[role=doc-toc] > .h2 {
+    border-bottom: 2px solid #1E4477; 
 }

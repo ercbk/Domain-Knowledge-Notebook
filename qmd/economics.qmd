@@ -10,6 +10,7 @@
     -   [{]{style="color: #990000"}[nowcast](https://cran.r-project.org/web/packages/nowcast/index.html){style="color: #990000"}[}]{style="color: #990000"} - Provides bridge equations with optional autoregressive terms for nowcasting low-frequency macroeconomic variables (e.g. quarterly GDP) from higher-frequency indicators (e.g. monthly retail sales).
         -   Handles the ragged-edge problem where different indicators have different publication lags via mixed-frequency alignment.
         -   Includes pseudo-real-time evaluation with expanding or rolling windows, and the Diebold-Mariano test
+    -   [{]{style="color: #990000"}[nowcastr](https://whocov.github.io/nowcastr){style="color: #990000"}[}]{style="color: #990000"} - Implements the chain-ladder method for nowcasting, supporting both non-cumulative delay-based estimation and model-based completeness fitting (*e.g.*, logistic or Gompertz curves)
 -   **Dynamic stochastic general equilibrium (DSGE)** models, which are popular in macroeconomic modeling, are garbage ([article](https://marginalrevolution.com/marginalrevolution/2022/11/a-big-and-embarrassing-challenge-to-dsge-models.html))
     -   Even under extremely ideal conditions they don't retrieve the parameters and using them to forecast is no better than chance.
 
@@ -33,6 +34,8 @@
 
     -   A method for firms to separate consumer groups based on willingness to pay
     -   e.g. last minute travel bookings (opposite direction since last minute bookings usually cost more)
+
+-   [**Nowcasting**]{style="color: #009499"} - The process of estimating the current state of a phenomenon when the data are incomplete due to reporting delays.
 
 -   [**Price Elasticity of Demand (PED)**]{style="color: #009499"} - The percent change in demand given the percent change in price assuming that everything else doesn't change
 
