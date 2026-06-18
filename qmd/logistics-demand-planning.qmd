@@ -172,6 +172,8 @@
 
 ### Misc {#sec-log-demfcast-intdem-misc .unnumbered}
 
+- Packages
+  - [{]{style="color: #990000"}[fable.intermittent](https://cran.r-project.org/web/packages/fable.intermittent/index.html){style="color: #990000"}[}]{style="color: #990000"} - Extends the [{fable}]{style="color: #990000"} framework to support forecasting methods specifically designed for intermittent time series data, where demand occurs sporadically with many zero values.
 - Notes from
   - CMAF FFT: Intermittent Demand Forecasting ([Video](https://www.youtube.com/watch?v=PRidAjQRtCs&list=WL&index=1))
     - From authors of "Intermittent Demand Forecasting. Context, Methods and Applications" (see your book shelf)
