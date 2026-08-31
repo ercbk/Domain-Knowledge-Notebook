@@ -2,15 +2,54 @@
 
 ## Metrics {#sec-foot-met .unnumbered}
 
-- [**Success Rate**]{style="color: #009499"} is:
-  - 1st Down: Gain $40\%$ of yards to go.
-  - 2nd Down: Gain $60\%$ of yards to go.
-  - 3rd/4th Down: Gain $100\%$ of yards to go (convert).
-  - [**Standard Downs**]{style="color: #009499"}: First downs, second-and-7 or less and third- or fourth-and-4 or less
-- Receiving
-  - [**1st**]{style="color: #009499"} - Number of First Downs
-  - [**ADOT**]{style="color: #009499"} - Average Depth of Target
-  - [**CTT**]{style="color: #009499"} - Contested Targets
-  - [**CCR**]{style="color: #009499"} - Contested Catch Rate
-  - [**DRP**]{style="color: #009499"} - Drop Rate
-  - [**MTF**]{style="color: #009499"} - Missed Tackles Forced
+- Misc
+  - Stats like "yards per rush" can be less informative based on how many games that include garbage time a team has.
+    - e.g. Georgia may be ranked lower in rushing yards per play than Ohio State but Ohio State's numbers might be inflated because they played a weak schedule and blew out more teams than Georgia.
+  - Clavio doesn't like PFF grades for TEs and WRs as he feels they don't capture enough to be informative.
+  - FEI ratings are normally distributed, and one standard deviation is approximately 0.6 on the FEI rating scale, calibrated to equate to a scoring advantage or disadvantage on a neutral field of 0.6 points per possession. ([source](https://bcftoys.com/whiteboard/outliers))
+  - In terms of the FEI ranking scale (end-of-season FEI), and now with nearly 140 FBS teams: ([source](https://bcftoys.com/whiteboard/outliers))
+    - Average Team - Ranks in the mid-60s
+    - Good Team - Ranks in the mid-20s (one standard deviation better than the avg team)
+    - Elite Team - Ranks around 5th (two standard deviations better than the avg team)
+    - National Champions - Sometimes push into three-sigma (three standard deviations above average) territory.
+  - Luck metrics can be useful in win total prediction
+    - Example: 2025 Houston (9-3) ([source](https://davidhale.substack.com/p/you-got-lucky-babe))
+      - Easiest schedule in the Big 12 (ranked 73rd at the end of the regular season)
+      - +12 swing year over year in turnover margin (though they didn’t do nearly enough with those takeaways)
+      - Successful play and explosive play rates profiled almost exactly the same as NC State — a team that won 7 regular-season games
+      - 6-1 in one-possession games, 4-1 in games decided by a field goal or less, and won 5 games when tied or behind in the fourth quarter
+      - Therefore, the luck metrics indicate a lower win total than the 9 in 2025. With the o/u at 8.5 for 2026, the under might be a good bet.
+- Individual
+  - Career Snaps - The number of plays participated in
+- Team
+  - Efficiency (EF)
+  - EPA/Play
+  - [**Success Rate**]{style="color: #009499"} is:
+    - 1st Down: Gain $40\%$ of yards to go.
+    - 2nd Down: Gain $60\%$ of yards to go.
+    - 3rd/4th Down: Gain $100\%$ of yards to go (convert).
+    - [**Standard Downs**]{style="color: #009499"}: First downs, second-and-7 or less and third- or fourth-and-4 or less
+  - Yards/Point
+  - Points/Play
+  - Luck
+    - Points off Turnover Margin (and YoY change)
+    - Fumble Recovery Rate
+    - Red-Zone Production
+    - Third-and-Short Production
+    - Avg Starting Field Position
+    - Close Game Records
+- Offense
+  - Offensive Line
+    - HIT - Hits on the QB
+    - HUR - Hurries where a QB is forced to throw early or scramble
+    - OPP - Opportunities (aka snaps, reps)
+    - PEN - Penalties
+    - PR - Pressures Allowed which is sacks + hits + hurries
+    - SK - Sacks Allowed
+  - Receiving
+    - [**1st**]{style="color: #009499"} - Number of First Downs
+    - [**ADOT**]{style="color: #009499"} - Average Depth of Target
+    - [**CTT**]{style="color: #009499"} - Contested Targets
+    - [**CCR**]{style="color: #009499"} - Contested Catch Rate
+    - [**DRP**]{style="color: #009499"} - Drop Rate
+    - [**MTF**]{style="color: #009499"} - Missed Tackles Forced
