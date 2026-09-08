@@ -48,7 +48,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-cd5a5e2e1b6543c3d002122cbcf2b4f2.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-791d6c92d7cc876fe65f6f81a214b9f9.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-26ae4f69286d0e1c9e46d52f2e6c62c8.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -399,7 +399,8 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#sec-foot-met" id="toc-sec-foot-met" class="nav-link active" data-scroll-target="#sec-foot-met">Metrics</a></li>
+  <li><a href="#sec-foot-misc" id="toc-sec-foot-misc" class="nav-link active" data-scroll-target="#sec-foot-misc">Misc</a></li>
+  <li><a href="#sec-foot-met" id="toc-sec-foot-met" class="nav-link" data-scroll-target="#sec-foot-met">Metrics</a></li>
   </ul>
 </nav>
     </div>
@@ -425,6 +426,18 @@ window.Quarto = {
 </header>
 
 
+<section id="sec-foot-misc" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="sec-foot-misc">Misc</h2>
+<ul>
+<li>Resources
+<ul>
+<li><a href="https://cfbtrack.com/glossary">CFBTrack College Football Glossary &amp; Stats Dictionary</a></li>
+<li><a href="https://collegefootballdata.com/glossary">CFBD Glossary</a></li>
+<li><a href="https://www.pff.com/news/pro-pff-signature-statistics-a-glossary">PFF Signature Statistics Glossary</a></li>
+<li><a href="https://cfbfastr.sportsdataverse.org/articles/index.html">cfbfastr vignettes</a> has a series of articles on Expected Points</li>
+</ul></li>
+</ul>
+</section>
 <section id="sec-foot-met" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="sec-foot-met">Metrics</h2>
 <ul>
@@ -457,21 +470,41 @@ window.Quarto = {
 </ul></li>
 <li>Individual
 <ul>
-<li>Career Snaps - The number of plays participated in</li>
+<li><strong>Career Snaps</strong> - The number of plays participated in</li>
 </ul></li>
 <li>Team
 <ul>
-<li>Efficiency (EF)</li>
-<li>EPA/Play</li>
+<li>Average Starting Field Position (e.g.&nbsp;Own 25.5)</li>
+<li><strong>Efficiency (EF)</strong>
+<ul>
+<li><strong>Pass Blocking Efficiency (PBE)</strong> - The number of pressures allowed per pass protection snap with sacks weighted more heavily</li>
+<li><strong>Tackling Efficiency</strong> - The number of tackles per “would-be sure” tackling opportunity</li>
+</ul></li>
+<li>Early Down Success / EPA</li>
+<li><strong>EPA/Play</strong></li>
+<li>Explosive Play Rate</li>
+<li><strong>Garbage Time</strong> - When one of the following is true:
+<ul>
+<li>Lead &gt; 38 points in 2nd quarter</li>
+<li>Lead &gt; 28 points in 3rd quarter</li>
+<li>Lead &gt; 22 points in 4th quarter</li>
+</ul></li>
+<li>Line Yards / Rush</li>
+<li>Points / Scoring Opportunity</li>
+<li><strong>PPA</strong> - Predicted Points Added; The net point value that a player relative to the down and field position
+<ul>
+<li>Equivalent to EPA but uses CollegeFootballData.com’s custom model (what that model is… ¯\_(ツ)_/¯)</li>
+</ul></li>
 <li><span style="color: #009499"><strong>Success Rate</strong></span> is:
 <ul>
 <li>1st Down: Gain <span class="math inline">\(40\%\)</span> of yards to go.</li>
 <li>2nd Down: Gain <span class="math inline">\(60\%\)</span> of yards to go.</li>
 <li>3rd/4th Down: Gain <span class="math inline">\(100\%\)</span> of yards to go (convert).</li>
 <li><span style="color: #009499"><strong>Standard Downs</strong></span>: First downs, second-and-7 or less and third- or fourth-and-4 or less</li>
+<li>Categories: Passing, Rushing, Early-Down, 3rd Down, etc.</li>
 </ul></li>
-<li>Yards/Point</li>
-<li>Points/Play</li>
+<li><strong>Yards/Point</strong></li>
+<li><strong>Points/Play</strong></li>
 <li>Luck
 <ul>
 <li>Points off Turnover Margin (and YoY change)</li>
@@ -486,12 +519,12 @@ window.Quarto = {
 <ul>
 <li>Offensive Line
 <ul>
-<li>HIT - Hits on the QB</li>
-<li>HUR - Hurries where a QB is forced to throw early or scramble</li>
-<li>OPP - Opportunities (aka snaps, reps)</li>
-<li>PEN - Penalties</li>
-<li>PR - Pressures Allowed which is sacks + hits + hurries</li>
-<li>SK - Sacks Allowed</li>
+<li><strong>HIT</strong> - Hits on the QB</li>
+<li><strong>QBH</strong> - Hurries where a QB is forced to throw early or scramble</li>
+<li><strong>OPP</strong> - Opportunities (aka snaps, reps)</li>
+<li><strong>PEN</strong> - Penalties</li>
+<li><strong>PR</strong> - Pressures Allowed which is sacks + hits + hurries</li>
+<li><strong>SK</strong> - Sacks Allowed</li>
 </ul></li>
 <li>Receiving
 <ul>
@@ -502,6 +535,16 @@ window.Quarto = {
 <li><span style="color: #009499"><strong>DRP</strong></span> - Drop Rate</li>
 <li><span style="color: #009499"><strong>MTF</strong></span> - Missed Tackles Forced</li>
 </ul></li>
+</ul></li>
+<li>Defense
+<ul>
+<li><strong>Havoc Rate</strong> - Percentage of plays that result in a disruptive negative event. It includes: tackles for loss (TFL), sacks, forced fumbles, interceptions, and pass break ups (PBU).</li>
+<li><strong>ST</strong> (Solo Tackles), <strong>AT</strong> (Assisted Tackles)</li>
+<li><strong>MT%</strong> - Missed Tackle Percentage</li>
+<li><strong>R%</strong> - Reception Percentage; receptions per target</li>
+<li><strong>YPR</strong> - Yards per Reception</li>
+<li><strong>PBU</strong> - Pass Break-Ups</li>
+<li><strong>FF</strong> - Forced Fumbles</li>
 </ul></li>
 </ul>
 
