@@ -2,6 +2,8 @@
 
 ## Misc {#sec-foot-misc .unnumbered}
 
+- Packages
+  - [{]{style="color: #990000"}[cfbfastR](https://cfbfastr.sportsdataverse.org/){style="color: #990000"}[}]{style="color: #990000"} - API wrapper around <https://collegefootballdata.com/.> Beyond data aggregation and tidying ease, one of the multitude of services that cfbfastR provides is for benchmarking open-source expected points and win probability metrics.
 - Resources
   - [CFBTrack College Football Glossary & Stats Dictionary](https://cfbtrack.com/glossary)
   - [CFBD Glossary](https://collegefootballdata.com/glossary)
@@ -27,40 +29,54 @@
       - Successful play and explosive play rates profiled almost exactly the same as NC State — a team that won 7 regular-season games
       - 6-1 in one-possession games, 4-1 in games decided by a field goal or less, and won 5 games when tied or behind in the fourth quarter
       - Therefore, the luck metrics indicate a lower win total than the 9 in 2025. With the o/u at 8.5 for 2026, the under might be a good bet.
-- Individual
+- [Individual]{.underline}
   - **Career Snaps** - The number of plays participated in
-- Team
-  - Average Starting Field Position (e.g. Own 25.5)
+- [Team]{.underline}
+  - **Average Starting Field Position** (e.g. Own 25.5)
+  - **Conversion**
+    - Late Down
   - **Efficiency (EF)**
     - **Pass Blocking Efficiency (PBE)** - The number of pressures allowed per pass protection snap with sacks weighted more heavily
     - **Tackling Efficiency** - The number of tackles per "would-be sure" tackling opportunity
-  - Early Down Success / EPA
-  - **EPA/Play**
-  - Explosive Play Rate
+  - **Eckel Rate** - How often your offense \[defense\] generates \[allows\] a big play touchdown or a first down inside the 40 on any given drive.
+    - These are definitions from a [twitter post](https://x.com/statsowar/status/1709229240720449536?lang=en) by Fleming.
+  - **Eckel Ratio** - The percent of total first downs and big play touchdowns in a game that you control
+  - **EP (Expected Points)** - Assigns point values to field positions based on down, distance, and yard line. A negative value means the opponent is expected to score next.
+  - **EPA (Expected Points Added)** -Uses EP to measure play impact by calculating the change in EP from the start to end of a play
+    - per Play or Dropback
+    - per Rush
+    - Early Downs
+  - **Explosive Play Rate**
   - **Garbage Time** - When one of the following is true:
     - Lead \> 38 points in 2nd quarter
     - Lead \> 28 points in 3rd quarter
     - Lead \> 22 points in 4th quarter
-  - Line Yards / Rush
-  - Points / Scoring Opportunity
+  - **Line Yards**
+    - per Rush
+  - **Points**
+    - per Play
+    - per Drive
+    - per Scoring Opportunity
+    - per Eckel - What an offense \[defense\] does \[allows\] given that you \[your opponent\] has a big play touchdown or a first down inside the 40
   - **PPA** - Predicted Points Added; The net point value that a player relative to the down and field position
     - Equivalent to EPA but uses CollegeFootballData.com's custom model (what that model is... ¯\\\_(ツ)\_/¯)
-  - [**Success Rate**]{style="color: #009499"} is:
+  - **Success Rate** is:
     - 1st Down: Gain $40\%$ of yards to go.
     - 2nd Down: Gain $60\%$ of yards to go.
     - 3rd/4th Down: Gain $100\%$ of yards to go (convert).
-    - [**Standard Downs**]{style="color: #009499"}: First downs, second-and-7 or less and third- or fourth-and-4 or less
+    - **Standard Downs** : First downs, second-and-7 or less and third- or fourth-and-4 or less
     - Categories: Passing, Rushing, Early-Down, 3rd Down, etc.
-  - **Yards/Point**
-  - **Points/Play**
-  - Luck
-    - Points off Turnover Margin (and YoY change)
-    - Fumble Recovery Rate
-    - Red-Zone Production
-    - Third-and-Short Production
-    - Avg Starting Field Position
-    - Close Game Records
-- Offense
+    - per EPA (e.g. Early Down Success / EPA)
+  - **Yards**
+    - per Point
+- Luck
+  - Points off Turnover Margin (and YoY change)
+  - Fumble Recovery Rate
+  - Red-Zone Production
+  - Third-and-Short Production
+  - Avg Starting Field Position
+  - Close Game Record
+- [Offense]{.underline}
   - Offensive Line
     - **HIT** - Hits on the QB
     - **QBH** - Hurries where a QB is forced to throw early or scramble
@@ -75,7 +91,7 @@
     - [**CCR**]{style="color: #009499"} - Contested Catch Rate
     - [**DRP**]{style="color: #009499"} - Drop Rate
     - [**MTF**]{style="color: #009499"} - Missed Tackles Forced
-- Defense
+- [Defense]{.underline}
   - **Havoc Rate** - Percentage of plays that result in a disruptive negative event. It includes: tackles for loss (TFL), sacks, forced fumbles, interceptions, and pass break ups (PBU).
   - **ST** (Solo Tackles), **AT** (Assisted Tackles)
   - **MT%** - Missed Tackle Percentage
