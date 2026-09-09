@@ -429,6 +429,10 @@ window.Quarto = {
 <section id="sec-foot-misc" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="sec-foot-misc">Misc</h2>
 <ul>
+<li>Packages
+<ul>
+<li><span style="color: #990000">{</span><a href="https://cfbfastr.sportsdataverse.org/" style="color: #990000">cfbfastR</a><span style="color: #990000">}</span> - API wrapper around <a href="https://collegefootballdata.com/." class="uri">https://collegefootballdata.com/.</a> Beyond data aggregation and tidying ease, one of the multitude of services that cfbfastR provides is for benchmarking open-source expected points and win probability metrics.</li>
+</ul></li>
 <li>Resources
 <ul>
 <li><a href="https://cfbtrack.com/glossary">CFBTrack College Football Glossary &amp; Stats Dictionary</a></li>
@@ -468,43 +472,70 @@ window.Quarto = {
 </ul></li>
 </ul></li>
 </ul></li>
-<li>Individual
+<li><u>Individual</u>
 <ul>
 <li><strong>Career Snaps</strong> - The number of plays participated in</li>
 </ul></li>
-<li>Team
+<li><u>Team</u>
 <ul>
-<li>Average Starting Field Position (e.g.&nbsp;Own 25.5)</li>
+<li><strong>Average Starting Field Position</strong> (e.g.&nbsp;Own 25.5)</li>
+<li><strong>Conversion</strong>
+<ul>
+<li>Late Down</li>
+</ul></li>
 <li><strong>Efficiency (EF)</strong>
 <ul>
 <li><strong>Pass Blocking Efficiency (PBE)</strong> - The number of pressures allowed per pass protection snap with sacks weighted more heavily</li>
 <li><strong>Tackling Efficiency</strong> - The number of tackles per “would-be sure” tackling opportunity</li>
 </ul></li>
-<li>Early Down Success / EPA</li>
-<li><strong>EPA/Play</strong></li>
-<li>Explosive Play Rate</li>
+<li><strong>Eckel Rate</strong> - How often your offense [defense] generates [allows] a big play touchdown or a first down inside the 40 on any given drive.
+<ul>
+<li>These are definitions from a <a href="https://x.com/statsowar/status/1709229240720449536?lang=en">twitter post</a> by Fleming.</li>
+</ul></li>
+<li><strong>Eckel Ratio</strong> - The percent of total first downs and big play touchdowns in a game that you control</li>
+<li><strong>EP (Expected Points)</strong> - Assigns point values to field positions based on down, distance, and yard line. A negative value means the opponent is expected to score next.</li>
+<li><strong>EPA (Expected Points Added)</strong> -Uses EP to measure play impact by calculating the change in EP from the start to end of a play
+<ul>
+<li>per Play or Dropback</li>
+<li>per Rush</li>
+<li>Early Downs</li>
+</ul></li>
+<li><strong>Explosive Play Rate</strong></li>
 <li><strong>Garbage Time</strong> - When one of the following is true:
 <ul>
 <li>Lead &gt; 38 points in 2nd quarter</li>
 <li>Lead &gt; 28 points in 3rd quarter</li>
 <li>Lead &gt; 22 points in 4th quarter</li>
 </ul></li>
-<li>Line Yards / Rush</li>
-<li>Points / Scoring Opportunity</li>
+<li><strong>Line Yards</strong>
+<ul>
+<li>per Rush</li>
+</ul></li>
+<li><strong>Points</strong>
+<ul>
+<li>per Play</li>
+<li>per Drive</li>
+<li>per Scoring Opportunity</li>
+<li>per Eckel - What an offense [defense] does [allows] given that you [your opponent] has a big play touchdown or a first down inside the 40</li>
+</ul></li>
 <li><strong>PPA</strong> - Predicted Points Added; The net point value that a player relative to the down and field position
 <ul>
 <li>Equivalent to EPA but uses CollegeFootballData.com’s custom model (what that model is… ¯\_(ツ)_/¯)</li>
 </ul></li>
-<li><span style="color: #009499"><strong>Success Rate</strong></span> is:
+<li><strong>Success Rate</strong> is:
 <ul>
 <li>1st Down: Gain <span class="math inline">\(40\%\)</span> of yards to go.</li>
 <li>2nd Down: Gain <span class="math inline">\(60\%\)</span> of yards to go.</li>
 <li>3rd/4th Down: Gain <span class="math inline">\(100\%\)</span> of yards to go (convert).</li>
-<li><span style="color: #009499"><strong>Standard Downs</strong></span>: First downs, second-and-7 or less and third- or fourth-and-4 or less</li>
+<li><strong>Standard Downs</strong> : First downs, second-and-7 or less and third- or fourth-and-4 or less</li>
 <li>Categories: Passing, Rushing, Early-Down, 3rd Down, etc.</li>
+<li>per EPA (e.g.&nbsp;Early Down Success / EPA)</li>
 </ul></li>
-<li><strong>Yards/Point</strong></li>
-<li><strong>Points/Play</strong></li>
+<li><strong>Yards</strong>
+<ul>
+<li>per Point</li>
+</ul></li>
+</ul></li>
 <li>Luck
 <ul>
 <li>Points off Turnover Margin (and YoY change)</li>
@@ -512,10 +543,9 @@ window.Quarto = {
 <li>Red-Zone Production</li>
 <li>Third-and-Short Production</li>
 <li>Avg Starting Field Position</li>
-<li>Close Game Records</li>
+<li>Close Game Record</li>
 </ul></li>
-</ul></li>
-<li>Offense
+<li><u>Offense</u>
 <ul>
 <li>Offensive Line
 <ul>
@@ -536,7 +566,7 @@ window.Quarto = {
 <li><span style="color: #009499"><strong>MTF</strong></span> - Missed Tackles Forced</li>
 </ul></li>
 </ul></li>
-<li>Defense
+<li><u>Defense</u>
 <ul>
 <li><strong>Havoc Rate</strong> - Percentage of plays that result in a disruptive negative event. It includes: tackles for loss (TFL), sacks, forced fumbles, interceptions, and pass break ups (PBU).</li>
 <li><strong>ST</strong> (Solo Tackles), <strong>AT</strong> (Assisted Tackles)</li>
