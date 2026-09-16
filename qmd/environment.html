@@ -373,8 +373,7 @@ gtag('config', 'G-BK8YC1GLDM', { 'anonymize_ip': true});
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#sec-environ-misc" id="toc-sec-environ-misc" class="nav-link active" data-scroll-target="#sec-environ-misc">Misc</a></li>
-  <li><a href="#sec-environ-metrics" id="toc-sec-environ-metrics" class="nav-link" data-scroll-target="#sec-environ-metrics">Metrics</a></li>
+  <li><a href="#sec-environ-metrics" id="toc-sec-environ-metrics" class="nav-link active" data-scroll-target="#sec-environ-metrics">Metrics</a></li>
   <li><a href="#sec-environ-canopy" id="toc-sec-environ-canopy" class="nav-link" data-scroll-target="#sec-environ-canopy">Canopy Assessment</a></li>
   </ul>
 </nav>
@@ -401,9 +400,6 @@ gtag('config', 'G-BK8YC1GLDM', { 'anonymize_ip': true});
 </header>
 
 
-<section id="sec-environ-misc" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="sec-environ-misc">Misc</h2>
-</section>
 <section id="sec-environ-metrics" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="sec-environ-metrics">Metrics</h2>
 <ul>
@@ -423,7 +419,7 @@ gtag('config', 'G-BK8YC1GLDM', { 'anonymize_ip': true});
 <li>Not Suitable: Areas where it is highly unlikely that new tree canopy could be established (primarily buildings and roads).</li>
 <li>Relative tree canopy change - change of tree canopy over a period of time
 <ul>
-<li>e.g (for 1 hexagon) relative tree canopy change % = (tree_canopy_area_2019 - tree_canopy_area_2012) / tree_canopy_area_2012 - Acre gain per <category></category></li>
+<li>e.g (for 1 hexagon) relative tree canopy change % = (tree_canopy_area_2019 - tree_canopy_area_2012) / tree_canopy_area_2012 - Acre gain per category</li>
 </ul></li>
 <li>Canopy height - proxy for tree age
 <ul>
@@ -442,6 +438,7 @@ gtag('config', 'G-BK8YC1GLDM', { 'anonymize_ip': true});
 </ul></li>
 </ul></li>
 </ul></li>
+<li>NDVI saturates above roughly 0.8, so you’re averaging a compressive transform of biomass rather than biomass itself. EVI, kNDVI, or LAI are less compressed if canopy density is the actual construct. Snow and persistent cloud make winter values meaningless at higher latitudes, and those months are still being averaged in as real numbers, so a growing-season restriction is often more defensible than a calendar-year window.</li>
 </ul>
 </section>
 <section id="sec-environ-canopy" class="level2 unnumbered">
