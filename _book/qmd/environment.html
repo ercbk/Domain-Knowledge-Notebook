@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.37">
+<meta name="generator" content="quarto-1.9.38">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -42,7 +42,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-709e903f7486fc15c5f7f9cf283d35df.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-8e563bccdeb7e5b4bf8f1d510bb78af9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap-97d47a8c4eabc6d189ce98cb45f77069.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
@@ -420,7 +420,7 @@ gtag('config', 'G-BK8YC1GLDM', { 'anonymize_ip': true});
 <li>Not Suitable: Areas where it is highly unlikely that new tree canopy could be established (primarily buildings and roads).</li>
 <li>Relative tree canopy change - change of tree canopy over a period of time
 <ul>
-<li>e.g (for 1 hexagon) relative tree canopy change % = (tree_canopy_area_2019 - tree_canopy_area_2012) / tree_canopy_area_2012 - Acre gain per <category></category></li>
+<li>e.g (for 1 hexagon) relative tree canopy change % = (tree_canopy_area_2019 - tree_canopy_area_2012) / tree_canopy_area_2012 - Acre gain per category</li>
 </ul></li>
 <li>Canopy height - proxy for tree age
 <ul>
@@ -439,6 +439,7 @@ gtag('config', 'G-BK8YC1GLDM', { 'anonymize_ip': true});
 </ul></li>
 </ul></li>
 </ul></li>
+<li>NDVI saturates above roughly 0.8, so you’re averaging a compressive transform of biomass rather than biomass itself. EVI, kNDVI, or LAI are less compressed if canopy density is the actual construct. Snow and persistent cloud make winter values meaningless at higher latitudes, and those months are still being averaged in as real numbers, so a growing-season restriction is often more defensible than a calendar-year window.</li>
 </ul>
 </section>
 <section id="sec-environ-canopy" class="level2 unnumbered">
