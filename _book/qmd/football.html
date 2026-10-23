@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.38">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -12,10 +12,13 @@
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
 */
-code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -42,10 +45,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-8e563bccdeb7e5b4bf8f1d510bb78af9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-cd5a5e2e1b6543c3d002122cbcf2b4f2.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-97d47a8c4eabc6d189ce98cb45f77069.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-3b8729f6943059fc6928447f0a5467e5.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -84,7 +87,7 @@ gtag('config', 'G-BK8YC1GLDM', { 'anonymize_ip': true});
 </script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -305,12 +308,6 @@ window.Quarto = {
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../qmd/low-hanging-fruit.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Low Hanging Fruit</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../qmd/manufacturing.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Manufacturing</span></a>
   </div>
@@ -437,6 +434,10 @@ window.Quarto = {
 <li><a href="https://www.pff.com/news/pro-pff-signature-statistics-a-glossary">PFF Signature Statistics Glossary</a></li>
 <li><a href="https://cfbfastr.sportsdataverse.org/articles/index.html">cfbfastr vignettes</a> has a series of articles on Expected Points</li>
 </ul></li>
+<li>Articles
+<ul>
+<li><a href="https://all-takes.com/college-football/what-the-score-missed">Breakdown of Fremeau’s FEI rating</a></li>
+</ul></li>
 </ul>
 </section>
 <section id="sec-foot-met" class="level2 unnumbered">
@@ -497,12 +498,16 @@ window.Quarto = {
 <li>per Rush</li>
 <li>Early Downs</li>
 </ul></li>
-<li><strong>Explosive Play Rate</strong></li>
+<li><strong>Explosive Play Rate</strong> - Percentage of plays greater than or equal to 20 passing yds or 15 rushing yds</li>
 <li><strong>Garbage Time</strong> - When one of the following is true:
 <ul>
 <li>Lead &gt; 38 points in 2nd quarter</li>
 <li>Lead &gt; 28 points in 3rd quarter</li>
 <li>Lead &gt; 22 points in 4th quarter</li>
+</ul></li>
+<li><strong>Hidden Yards</strong> (<a href="https://x.com/statsowar/status/2105360418105614653">for vs against</a>, vs <a href="https://x.com/statsowar/status/2105366866214650252">efficiency</a>) - Sum of net punt yards, kickoffs, accepted penalties, and turnover returns
+<ul>
+<li>100 Hidden Yards = 7 points (per Parcells definition)</li>
 </ul></li>
 <li><strong>Line Yards</strong>
 <ul>
@@ -555,23 +560,30 @@ window.Quarto = {
 </ul></li>
 <li>Receiving
 <ul>
-<li><span style="color: #009499"><strong>1st</strong></span> - Number of First Downs</li>
-<li><span style="color: #009499"><strong>ADOT</strong></span> - Average Depth of Target</li>
-<li><span style="color: #009499"><strong>CTT</strong></span> - Contested Targets</li>
-<li><span style="color: #009499"><strong>CCR</strong></span> - Contested Catch Rate</li>
-<li><span style="color: #009499"><strong>DRP</strong></span> - Drop Rate</li>
-<li><span style="color: #009499"><strong>MTF</strong></span> - Missed Tackles Forced</li>
+<li><strong>1st</strong> - Number of First Downs</li>
+<li><strong>ADOT</strong> - Average Depth of Target</li>
+<li><strong>CTT</strong> - Contested Targets</li>
+<li><strong>CCR</strong> - Contested Catch Rate</li>
+<li><strong>DRP</strong> - Drop Rate</li>
+<li><strong>DROE</strong> - Drop Rate Over Expected measures the percentage of catchable passes dropped by a receiver compared to what would typically be expected in similar situations. It helps evaluate a receiver’s reliability and performance in catching passes
+<ul>
+<li>High DROE often indicates receivers are dropping throws despite good placement, or that high pass velocity (a “fastball”) makes target completion harder than predicted.</li>
+</ul></li>
+<li><strong>MTF</strong> - Missed Tackles Forced</li>
 </ul></li>
 </ul></li>
 <li><u>Defense</u>
 <ul>
-<li><strong>Havoc Rate</strong> - Percentage of plays that result in a disruptive negative event. It includes: tackles for loss (TFL), sacks, forced fumbles, interceptions, and pass break ups (PBU).</li>
-<li><strong>ST</strong> (Solo Tackles), <strong>AT</strong> (Assisted Tackles)</li>
-<li><strong>MT%</strong> - Missed Tackle Percentage</li>
-<li><strong>R%</strong> - Reception Percentage; receptions per target</li>
-<li><strong>YPR</strong> - Yards per Reception</li>
-<li><strong>PBU</strong> - Pass Break-Ups</li>
-<li><strong>FF</strong> - Forced Fumbles</li>
+<li><p><strong>AT</strong> (Assisted Tackles)</p></li>
+<li><p><strong>FF</strong> - Forced Fumbles</p></li>
+<li><p><strong>Havoc Rate</strong> - Percentage of plays that result in a disruptive negative event. It includes: tackles for loss (TFL), sacks, forced fumbles, interceptions, and pass break ups (PBU).</p></li>
+<li><p><strong>MT%</strong> - Missed Tackle Percentage</p></li>
+<li><p><strong>PBU</strong> - Pass Break-Ups</p></li>
+<li><p><strong>R%</strong> - Reception Percentage; receptions per target</p></li>
+<li><p><strong>ST</strong> (Solo Tackles)</p></li>
+<li><p><strong>Stop Rate</strong> - The percentage of rushing plays in which the defender successfully beats his blocker so he’s in better position to stop the runner; disrupts the pocket or running lane by pushing his blocker backward; contains the runner such that he must adjust his running lane; or recording a tackle within 3 yards of the line of scrimmage. (ESPN)</p></li>
+<li><p><strong>Win Rate</strong> - The percentage of pass-rush plays in which the defender successfully pressures or sacks the quarterback. More specifically, how often a pass rusher is able to beat/win his block within 2.5 seconds (ESPN)</p></li>
+<li><p><strong>YPR</strong> - Yards per Reception</p></li>
 </ul></li>
 </ul>
 

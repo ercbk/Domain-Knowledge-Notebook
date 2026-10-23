@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.38">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -12,10 +12,13 @@
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
 */
-code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -42,10 +45,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-8e563bccdeb7e5b4bf8f1d510bb78af9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-cd5a5e2e1b6543c3d002122cbcf2b4f2.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-97d47a8c4eabc6d189ce98cb45f77069.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-3b8729f6943059fc6928447f0a5467e5.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
 <link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
@@ -279,12 +282,6 @@ gtag('config', 'G-BK8YC1GLDM', { 'anonymize_ip': true});
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../qmd/low-hanging-fruit.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Low Hanging Fruit</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="../qmd/manufacturing.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Manufacturing</span></a>
   </div>
@@ -370,8 +367,7 @@ gtag('config', 'G-BK8YC1GLDM', { 'anonymize_ip': true});
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#sec-environ-misc" id="toc-sec-environ-misc" class="nav-link active" data-scroll-target="#sec-environ-misc">Misc</a></li>
-  <li><a href="#sec-environ-metrics" id="toc-sec-environ-metrics" class="nav-link" data-scroll-target="#sec-environ-metrics">Metrics</a></li>
+  <li><a href="#sec-environ-metrics" id="toc-sec-environ-metrics" class="nav-link active" data-scroll-target="#sec-environ-metrics">Metrics</a></li>
   <li><a href="#sec-environ-canopy" id="toc-sec-environ-canopy" class="nav-link" data-scroll-target="#sec-environ-canopy">Canopy Assessment</a></li>
   </ul>
 </nav>
@@ -398,9 +394,6 @@ gtag('config', 'G-BK8YC1GLDM', { 'anonymize_ip': true});
 </header>
 
 
-<section id="sec-environ-misc" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="sec-environ-misc">Misc</h2>
-</section>
 <section id="sec-environ-metrics" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="sec-environ-metrics">Metrics</h2>
 <ul>

@@ -53,7 +53,6 @@ book:
         - qmd/logistics-demand-planning.qmd
         - qmd/logistics-inventory-management.qmd
         - qmd/logistics-supply-chain.qmd
-    - qmd/low-hanging-fruit.qmd
     - qmd/manufacturing.qmd
     - qmd/marketing.qmd
     - qmd/meteorology.qmd

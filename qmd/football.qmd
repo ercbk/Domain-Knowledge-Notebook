@@ -9,6 +9,8 @@
   - [CFBD Glossary](https://collegefootballdata.com/glossary)
   - [PFF Signature Statistics Glossary](https://www.pff.com/news/pro-pff-signature-statistics-a-glossary)
   - [cfbfastr vignettes](https://cfbfastr.sportsdataverse.org/articles/index.html) has a series of articles on Expected Points
+- Articles
+  - [Breakdown of Fremeau's FEI rating](https://all-takes.com/college-football/what-the-score-missed)
 
 ## Metrics {#sec-foot-met .unnumbered}
 
@@ -46,11 +48,13 @@
     - per Play or Dropback
     - per Rush
     - Early Downs
-  - **Explosive Play Rate**
+  - **Explosive Play Rate** - Percentage of plays greater than or equal to 20 passing yds or 15 rushing yds
   - **Garbage Time** - When one of the following is true:
     - Lead \> 38 points in 2nd quarter
     - Lead \> 28 points in 3rd quarter
     - Lead \> 22 points in 4th quarter
+  - **Hidden Yards** ([for vs against](https://x.com/statsowar/status/2105360418105614653), vs [efficiency](https://x.com/statsowar/status/2105366866214650252)) - Sum of net punt yards, kickoffs, accepted penalties, and turnover returns
+    - 100 Hidden Yards = 7 points (per Parcells definition)
   - **Line Yards**
     - per Rush
   - **Points**
@@ -85,17 +89,22 @@
     - **PR** - Pressures Allowed which is sacks + hits + hurries
     - **SK** - Sacks Allowed
   - Receiving
-    - [**1st**]{style="color: #009499"} - Number of First Downs
-    - [**ADOT**]{style="color: #009499"} - Average Depth of Target
-    - [**CTT**]{style="color: #009499"} - Contested Targets
-    - [**CCR**]{style="color: #009499"} - Contested Catch Rate
-    - [**DRP**]{style="color: #009499"} - Drop Rate
-    - [**MTF**]{style="color: #009499"} - Missed Tackles Forced
+    - **1st** - Number of First Downs
+    - **ADOT** - Average Depth of Target
+    - **CTT** - Contested Targets
+    - **CCR** - Contested Catch Rate
+    - **DRP** - Drop Rate
+    - **DROE** - Drop Rate Over Expected measures the percentage of catchable passes dropped by a receiver compared to what would typically be expected in similar situations. It helps evaluate a receiver's reliability and performance in catching passes
+      - High DROE often indicates receivers are dropping throws despite good placement, or that high pass velocity (a "fastball") makes target completion harder than predicted.
+    - **MTF** - Missed Tackles Forced
 - [Defense]{.underline}
-  - **Havoc Rate** - Percentage of plays that result in a disruptive negative event. It includes: tackles for loss (TFL), sacks, forced fumbles, interceptions, and pass break ups (PBU).
-  - **ST** (Solo Tackles), **AT** (Assisted Tackles)
-  - **MT%** - Missed Tackle Percentage
-  - **R%** - Reception Percentage; receptions per target
-  - **YPR** - Yards per Reception
-  - **PBU** - Pass Break-Ups
+  - **AT** (Assisted Tackles)
   - **FF** - Forced Fumbles
+  - **Havoc Rate** - Percentage of plays that result in a disruptive negative event. It includes: tackles for loss (TFL), sacks, forced fumbles, interceptions, and pass break ups (PBU).
+  - **MT%** - Missed Tackle Percentage
+  - **PBU** - Pass Break-Ups
+  - **R%** - Reception Percentage; receptions per target
+  - **ST** (Solo Tackles)
+  - **Stop Rate** - The percentage of rushing plays in which the defender successfully beats his blocker so he's in better position to stop the runner; disrupts the pocket or running lane by pushing his blocker backward; contains the runner such that he must adjust his running lane; or recording a tackle within 3 yards of the line of scrimmage. (ESPN)
+  - **Win Rate** - The percentage of pass-rush plays in which the defender successfully pressures or sacks the quarterback. More specifically, how often a pass rusher is able to beat/win his block within 2.5 seconds (ESPN)
+  - **YPR** - Yards per Reception
