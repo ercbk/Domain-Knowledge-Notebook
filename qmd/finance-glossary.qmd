@@ -167,7 +167,7 @@
 
   ![](_resources/Finance.resources/apple-fin-stat-1.webp){.lightbox width="532"}
 
-- [**Earnings Before Interest and Taxes (EBIT)**]{style="color: #009499"} - (aka **Operating Income**, **Operating Profit**) Common method for measuring profitability. $\text{EBIT} = \text{Operating Expenses} - \text{Sales Revenue}$ where the sales revenue excludes tax and interest. Located in the company's income statement. (Also see Profit)
+- [**Earnings Before Interest and Taxes (EBIT)**]{style="color: #009499"} - (aka **Operating Income**, **Operating Profit**) Common method for measuring profitability. $\text{EBIT} = \text{Operating Expenses} - \text{Sales Revenue}$ where the sales revenue excludes tax and interest. Located in the company's income statement. (Also see **Profit**)
 
 - [**Earnings Before Interest Tax Depreciation Amortization (EBITDA)**]{style="color: #009499"} - Metric used to analyze and compare pre-tax cash flow of a business. It eliminates non-cash factors (depreciation and amortization) and backs out financing costs (interest). Using net profit (aka earnings) would not be an apples-to-apples comparison. Preferred over EBIT in industries with a high level of fixed assets.
 
@@ -203,6 +203,11 @@
 - [**Fixed Asset**]{style="color: #009499"} - Property with a useful life greater than one reporting period (i.e. period covered by finanacial statments), and which exceeds an entity's minimum capitalization limit (i.e. paid amount threshold to classify it as a long-term asset).
 
 - [**Futures**]{style="color: #009499"} - An obligation to the buyer and a seller. The seller of the future agrees to provide the underlying asset at expiry, and the buyer of the contract agrees to buy the underlying at expiry. The price they receive and pay, respectively, is the price they entered the futures contract at. Most futures traders close out their positions prior to expiration since retail traders and hedge funds have little need to take physical possession of barrels of oil, for example. But, they can buy or sell the contract at one price, and if it moves favorably they can exit the trade and make a profit that way. Futures are a derivative because the price of an oil futures contract is based on the price movement of oil, for example.
+
+- [**Generally Accepted Accounting Principle (GAAP) Metrics**]{style="color: #009499"} - Metrics that provide a uniform framework for financial reporting
+
+  - Non-GAAP metrics, such as Non-GAAP Earnings, strip out certain items that companies deem non-recurring, irregular, or unrelated to their core business operations
+    - By excluding expenses such as restructuring costs, asset impairments, and other one-time charges, non-GAAP earnings aim to present a clearer picture of a company's ongoing financial health.
 
 - [**Gross Margin**]{style="color: #009499"} - A measure a company's profitability as a percentage. Gross Profit is the numerator.
 
@@ -303,6 +308,23 @@
 
 - [**Open, High, Low, Close (OHLC)**]{style="color: #009499"} - Data that shows open, high, low, and closing prices for each period. OHLC charts are useful since they show the four major data points over a period, with the closing price being considered the most important by many traders.
 
+- [**Operating Margin**]{style="color: #009499"} (aka **Return on Sales**) - The proportion of a company's revenue that remains after covering operating expenses, excluding interest and tax obligations, highlighting its efficiency in managing core business operations. The proportion of revenues that are available to cover non-operating costs, such as interest. ([source](https://www.investopedia.com/terms/o/operatingmargin.asp))
+
+  - i.e. how good management is at turning sales into profit.
+  - Calculated by dividing the company’s operating income by its net sales.
+  - Higher is better
+    - e.g. Anthropic's IPO showed an adjusted operating margin of 19% which was considered excellent ([source](https://bsky.app/profile/peark.es/post/3myrrxux6u22v))
+    - Should only be used to compare companies that operate in the same industry and, ideally, have similar business models and annual sales.
+  - Highly variable operating margins are a prime indicator of business risk. By the same token, looking at a company’s past operating margins is a good way to gauge whether a company's performance has been getting better.
+  - Formula\
+    $$
+    \text{Operating Margin} = \frac{\text{Operating Earnings}}{\text{Revenue}}
+    $$
+    - **EBIT** is used for Operating Earnings
+    - [**Adjusted Operating Margin**]{style="color: #009499"} uses an Adjusted Operating Earnings ([source](https://fastercapital.com/content/Adjusted-Operating-Margin--Optimizing-for-Success--Adjusted-Operating-Margin-and-Non-GAAP-Earnings.html)) (See non-**GAAP** metrics)
+      - [Example]{.ribbon-highlight}: Adjusted Operating Income = \$500,000 (Operating Income) + \$50,000 (One-time Gain) - \$30,000 (Non-Recurring Expense) - \$20,000 (Depreciation) = \$500,000.
+      - See source for the complete procedure. Also the [Anthropic IPO thread](https://bsky.app/profile/peark.es/post/3myrrxux6u22v) discusses it
+
 - [**Options**]{style="color: #009499"} - An option on stock XYZ gives the holder the right to buy or sell XYZ at the strike price up until expiration. The underlying asset for the option is the stock of XYZ. The writer must either buy or sell the underlying asset to the buyer on the specified date at the agreed-upon price. The buyer is not obligated to purchase the underlying asset, but they can exercise their right if they choose to do so. If the option is about to expire, and the underlying asset has not moved favorably enough to make exercising the option worthwhile, the buyer can let the expire and they will lose the amount they paid for the option.
 
   - [**Call options**]{style="color: #009499"} - (Useful if you think the price might go up) Contract giving the owner the right, but not the obligation, to buy a specified amount of an underlying security at a specified price within a specified time. The specified price is known as the [**strike price**]{style="color: #009499"} and the specified time during which a sale is made is its expiration (expiry) or time to maturity. As the price of the stock goes up, the value of the call option contract goes up. The contract can be sold at any time or you can purchase the stock at the guaranteed price on the expiration date. The price of the call option is called the premium.
@@ -350,6 +372,8 @@
 - [**Relative Performance**]{style="color: #009499"} - The price ratio of two stocks
 
 - [**Return on Investment (ROI)**]{style="color: #009499"} - $\text{ROI} = \frac{\text{Net Profit}}{\text{Investment}}$ where investment can include working capital, R&D, capital spending, acquisitions, etc.
+
+- [**Return on Sales (ROS)**]{style="color: #009499"} - See **Operating Margin**
 
 - [**Reversal Effect**]{style="color: #009499"} - The tendency for stocks that have performed poorly over a recent period (e.g., the past year) to outperform stocks that have performed well over the same period in the immediately following period, i.e. past losers tend to become future winners, while past winners tend to become future losers over the short-term. Researchers often try to avoid any short-term return reversals contaminating their results by not including the most recent period. For example, they will compute monthly, cumulative returns from t-12 to t-1 (skipping month t).
 
