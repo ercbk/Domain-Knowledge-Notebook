@@ -1,4 +1,4 @@
-# Football {#sec-foot .unnumbered}
+# Football Metrics {#sec-foot .unnumbered}
 
 ## Misc {#sec-foot-misc .unnumbered}
 
@@ -7,12 +7,16 @@
 - Resources
   - [CFBTrack College Football Glossary & Stats Dictionary](https://cfbtrack.com/glossary)
   - [CFBD Glossary](https://collegefootballdata.com/glossary)
-  - [PFF Signature Statistics Glossary](https://www.pff.com/news/pro-pff-signature-statistics-a-glossary)
+  - PFF
+    - [PFF Signature Statistics Glossary](https://www.pff.com/news/pro-pff-signature-statistics-a-glossary)
+      - [Article with links](https://www.pff.com/news/pro-signature-stat-spotlight-quarterbacks) to position specific articles that go into detail (formulas) about the metrics
+    - [Defining PFF's new metrics for plays over expectation](https://www.pff.com/news/nfl-plays-over-expectation-pff-research-stats-grades)
+  - [statrankings glossary](https://statrankings.com/cfb/glossary)
   - [cfbfastr vignettes](https://cfbfastr.sportsdataverse.org/articles/index.html) has a series of articles on Expected Points
 - Articles
   - [Breakdown of Fremeau's FEI rating](https://all-takes.com/college-football/what-the-score-missed)
 
-## Metrics {#sec-foot-met .unnumbered}
+## General {#sec-foot-met .unnumbered}
 
 - Misc
   - Stats like "yards per rush" can be less informative based on how many games that include garbage time a team has.
@@ -80,24 +84,49 @@
   - Third-and-Short Production
   - Avg Starting Field Position
   - Close Game Record
-- [Offense]{.underline}
-  - Offensive Line
-    - **HIT** - Hits on the QB
-    - **QBH** - Hurries where a QB is forced to throw early or scramble
-    - **OPP** - Opportunities (aka snaps, reps)
-    - **PEN** - Penalties
-    - **PR** - Pressures Allowed which is sacks + hits + hurries
-    - **SK** - Sacks Allowed
-  - Receiving
-    - **1st** - Number of First Downs
-    - **ADOT** - Average Depth of Target
-    - **CTT** - Contested Targets
-    - **CCR** - Contested Catch Rate
-    - **DRP** - Drop Rate
-    - **DROE** - Drop Rate Over Expected measures the percentage of catchable passes dropped by a receiver compared to what would typically be expected in similar situations. It helps evaluate a receiver's reliability and performance in catching passes
-      - High DROE often indicates receivers are dropping throws despite good placement, or that high pass velocity (a "fastball") makes target completion harder than predicted.
-    - **MTF** - Missed Tackles Forced
-- [Defense]{.underline}
+
+## Offense
+
+- [QB]{.underline}
+  - **Accuracy Rate Over Expected (AROE)**
+    - PFF metric that doesn't seem to be available anymore but not sure
+    - Uses an XGBoost model with depth of target, standard of coverage (coverage on receiver, e.g. tight or wide open) and other metrics (I assume) to predict an expected accuracy rate value.
+    - Using AROE is more predictive than completion percentage over expected (CPOE), as it doesn’t need the receiver to complete their side of the pass.
+      - This explanation is unclear. If completions aren't a factor then how is "accuracy" calculated? (within a certain catch radius?). Unfortunately, I only found 1 or two PFF articles that mention it and they were from like 2021.
+  - **Completion Percentage**
+    - **Adjusted Completion Percentage**
+      - Adjusted completion percentage takes box-score completion percentage to the next level. The formula: ((Completions + Drops) / (Attempts – Throw Aways – Spikes – Batted Passes – Hit As Thrown)).
+      - Removing throwaways, spikes, batted passes and passes released while being hit creates a completion percentage that's more indicative of quarterback accuracy and success.
+    - **Completion Percentage Over Expected (CPOE)**
+      - An accuracy metric that seeks to place completions into the context of their air yards, receiver separation, the pass width and whether or not the quarterback was pressured in addition to game situation variables such as down, distance, yard line, time remaining, etc
+      - Looks like the same model as AROE except only uses completed passes.
+      - Flaws (when comparing QBs) ([source](https://www.pff.com/news/college-football-what-college-completion-percentage-over-expected-cpoe-tells-us-about-the-2022-nfl-draft-qb-class))
+        - Doesn't include the quarterback's rushing ability nor consider sacks in the equation
+        - Doesn’t *truly* grasp an interception's impact because it’s just counted as a regular incompletion with a negative CPOE
+      - This gives QBs credit for unexpected completions and penalizes them for unexpected incompletions.
+- [Offensive Line]{.underline}
+  - **HIT** - Hits on the QB
+  - **QBH** - Hurries where a QB is forced to throw early or scramble
+  - **OPP** - Opportunities (aka snaps, reps)
+  - **PEN** - Penalties
+  - **PR** - Pressures Allowed which is sacks + hits + hurries
+  - **SK** - Sacks Allowed
+- [Receiving]{.underline}
+  - **1st** - Number of First Downs
+  - **ADOT** - Average Depth of Target
+  - **CTT** - Contested Targets
+  - **CCR** - Contested Catch Rate
+  - **DRP** - Drop Rate
+  - **Drop Rate Over Expected (DROE)**
+    - Measures the percentage of catchable passes dropped by a receiver compared to what would typically be expected in similar situations. It helps evaluate a receiver's reliability and performance in catching passes
+    - High DROE often indicates receivers are dropping throws despite good placement, or that high pass velocity (a "fastball") makes target completion harder than predicted.
+  - **MTF** - Missed Tackles Forced
+  - **Wide Receiver Rating**
+    - Takes into account the total targeted passes to one receiver, the amount of receptions, yards, touchdowns and interceptions on those throws, and gives a rating on a scale of 0.0 to 158.3, the higher the rating the better.
+
+## Defense
+
+- [General]{.underline}
   - **AT** (Assisted Tackles)
   - **FF** - Forced Fumbles
   - **Havoc Rate** - Percentage of plays that result in a disruptive negative event. It includes: tackles for loss (TFL), sacks, forced fumbles, interceptions, and pass break ups (PBU).
@@ -108,3 +137,6 @@
   - **Stop Rate** - The percentage of rushing plays in which the defender successfully beats his blocker so he's in better position to stop the runner; disrupts the pocket or running lane by pushing his blocker backward; contains the runner such that he must adjust his running lane; or recording a tackle within 3 yards of the line of scrimmage. (ESPN)
   - **Win Rate** - The percentage of pass-rush plays in which the defender successfully pressures or sacks the quarterback. More specifically, how often a pass rusher is able to beat/win his block within 2.5 seconds (ESPN)
   - **YPR** - Yards per Reception
+- [Cornerbacks]{.underline}
+  - **Adjusted Passer Rating When Targeted** ([source](https://www.pff.com/news/nfl-adjusted-passer-rating-when-targeted-week-6))
+    - Removes off-target throws and dropped passes from the data set, which naturally inflates values but does a better job of describing what cornerbacks have done on targeted passes.

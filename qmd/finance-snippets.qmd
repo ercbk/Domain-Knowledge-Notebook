@@ -2,337 +2,341 @@
 
 ## Misc {#sec-finance-snip-misc .unnumbered}
 
--   Packages
+- Packages
 
-    -   [{]{style="color: #990000"}[lightweightchartR](https://arkraieski.github.io/lightweightchartR/){style="color: #990000"}[}]{style="color: #990000"} - Visualization package designed for {quantmod} users.
-        -   Makes interactive market charts feel natural in R
-        -   Keeps the workflow pipe-friendly
-        -   Supports common trading-chart patterns like volume overlays, moving averages, and indicator panes without a lot of setup
+  - [{]{style="color: #990000"}[lightweightchartR](https://arkraieski.github.io/lightweightchartR/){style="color: #990000"}[}]{style="color: #990000"} - Visualization package designed for {quantmod} users.
+    - Makes interactive market charts feel natural in R
+    - Keeps the workflow pipe-friendly
+    - Supports common trading-chart patterns like volume overlays, moving averages, and indicator panes without a lot of setup
+  - [{]{style="color: #990000"}[ti](https://usrbinr.codeberg.page/ti/){style="color: #990000"}[}]{style="color: #990000"} - A collection of business intelligence tools designed to simplify common financial planning and analysis (FP&A) tasks
+    - Time intelligence calculations (e.g. Year-over-Year, Month to Date, etc.)
+    - ABC classification is a business analysis technique that categorizes items (like products, customers, or suppliers) based on their relative contribution of a value.
+    - Cohort analysis is a type of behavioral analytics that takes data from a given group of users (called a cohort) and tracks their activity over time.
 
--   Notes from
+- Notes from
 
-    -   Tidy Finance and Accessing Financial Data ([slides](https://github.com/tidy-intelligence/talks/tree/main/2024-03-06_R_Consortium_Webinar), [video](https://www.youtube.com/watch?v=7jtX9Li_Ua4&ab_channel=RConsortium))
+  - Tidy Finance and Accessing Financial Data ([slides](https://github.com/tidy-intelligence/talks/tree/main/2024-03-06_R_Consortium_Webinar), [video](https://www.youtube.com/watch?v=7jtX9Li_Ua4&ab_channel=RConsortium))
 
--   Calculate Returns from Stock Prices
+- Calculate Returns from Stock Prices
+
+  ::: panel-tabset
+  ## [R]{style="color: #990000"}
+
+  ``` r
+  returns <- 
+    prices |>
+    group_by(symbol) |>
+    mutate(ret = adjusted / lag(adjusted) - 1) |>
+    select(symbol, date, ret) |>
+    drop_na(ret)
+  ```
+
+  ## [Python]{style="color: goldenrod"}
+
+  ``` python
+  all_returns = (
+    index_prices
+    .assign(ret=lambda x: x.groupby("symbol")["adjusted"].pct_change())
+    .get(["symbol", "date", "ret"])
+    .dropna(subset="ret")
+  )
+  ```
+  :::
+
+- Basic Calculation of Volatility
+
+  ``` r
+  VTI <- VTI %>%
+    # calculate volatility as pct range
+    mutate(range_pct = (high/low - 1) * 100)
+  ```
+
+  - [VTI]{.var-text} is daily OHLC data
+  - Volatility as a percentage range between daily highs and daily lows
+
+- Test whether assumptions are consistent over a time period
+
+  - Notes from [How to Test the Assumption of Persistence](https://robotwealth.com/how-to-test-the-assumption-of-persistence/)
+
+  - If your strategy only works when certain conditions are present, then you need to see how consistent they are across time.
+
+  - Don't use overlapping windows (i.e. rolling) in your analysis of persistence. It creates relationships between subsequent daily estimates of your statistic.
+
+  - Use Case Examples
+
+    - Correlation or covariance between pairs of assets.
+
+      - You'll typically find that correlations are also persistent, but that this persistence is much noisier than than the volatility example below
+
+    - Asset Returns
+
+      - You'll typically find almost no persistence at all, other than a very weak negative relationship at the daily timescale in some assets.
+
+  - [Example]{.ribbon-highlight}: How persistent is volatility over time?
+
+    - Statistically, you can calculate the ACF. For relationships further back than one day, ACF(2), ACF(3), etc.
 
     ::: panel-tabset
-    ## [R]{style="color: #990000"}
+    ## Overall Present Volatility vs 1 Day Lead
+
+    ![](_resources/Finance-Snippets.resources/daily-vol-vs-1-day-lead-2.png){.lightbox width="532"}
 
     ``` r
-    returns <- 
-      prices |>
-      group_by(symbol) |>
-      mutate(ret = adjusted / lag(adjusted) - 1) |>
-      select(symbol, date, ret) |>
-      drop_na(ret)
-    ```
-
-    ## [Python]{style="color: goldenrod"}
-
-    ``` python
-    all_returns = (
-      index_prices
-      .assign(ret=lambda x: x.groupby("symbol")["adjusted"].pct_change())
-      .get(["symbol", "date", "ret"])
-      .dropna(subset="ret")
-    )
-    ```
-    :::
-
--   Basic Calculation of Volatility
-
-    ``` r
-    VTI <- VTI %>%
+    VTI <- 
+      VTI %>%
       # calculate volatility as pct range
-      mutate(range_pct = (high/low - 1) * 100)
+      mutate(range_pct = (high/low - 1) * 100) %>%
+      # ensure our observations are arranged by date
+      arrange(date) %>%
+      # shift our observations
+      mutate(next_day_range_pct = lead(range_pct, 1)) %>%
+      # remove NAs (we'll have an NA on our last observation as there's no tomorrow)
+      na.omit()
+
+    VTI %>%
+      ggplot(aes(x=range_pct, y=next_day_range_pct)) +
+      scale_x_log10() +
+      scale_y_log10() +
+      geom_point() +
+      # add regression line
+      geom_smooth(method = "lm", formula = 'y ~ x') +
+      labs(
+        title = "Daily range vs next day's range"
+      )
     ```
 
-    -   [VTI]{.var-text} is daily OHLC data
-    -   Volatility as a percentage range between daily highs and daily lows
+    - I think the data is over a 20 year span.
+    - Using log scaled axes because the points were clumped towards zero and obscuring the relationsip.
+    - The seems to be a fairly persistent relationship between today's and tomorrow's volatility
 
--   Test whether assumptions are consistent over a time period
+    ## Over Years
 
-    -   Notes from [How to Test the Assumption of Persistence](https://robotwealth.com/how-to-test-the-assumption-of-persistence/)
+    ![](_resources/Finance-Snippets.resources/daily-vol-vs-1-day-lead-per-year-2.png){.lightbox width="532"}
 
-    -   If your strategy only works when certain conditions are present, then you need to see how consistent they are across time.
+    ``` r
+    VTI %>%
+      mutate(year = year(date)) %>%
+      ggplot(aes(x=range_pct, y=next_day_range_pct)) +
+      scale_x_log10() +
+      scale_y_log10() +
+      geom_point() +
+      geom_smooth(method = 'lm', formula = 'y ~ x') +
+      facet_wrap(~year, scales = "free") +
+      labs(
+        title = "Daily range vs next day's range by year"
+      )
+    ```
 
-    -   Don't use overlapping windows (i.e. rolling) in your analysis of persistence. It creates relationships between subsequent daily estimates of your statistic.
+    - Some years are more volatile than others, the relationship between today’s and yesterday’s volatilities has been reasonably consistent over time. And while the slope of the regression line has changed over the years, it’s always up and to the right (i.e. *reasonably persistent*).
 
-    -   Use Case Examples
+    ## Across ETFs
 
-        -   Correlation or covariance between pairs of assets.
+    ![](_resources/Finance-Snippets.resources/daily-vol-vs-1-day-lead-across-etfs-2.png){width="532"}
 
-            -   You'll typically find that correlations are also persistent, but that this persistence is much noisier than than the volatility example below
+    ``` r
+    prices %>%
+      # calculate the daily range
+      mutate(range_pct = (high/low - 1) * 100) %>%
+      # perform subsequent operations on each ticker separately
+      group_by(ticker) %>%
+      arrange(date) %>%
+      mutate(next_day_range_pct  = lead(range_pct, 1)) %>%
+      na.omit() %>%
+      # plot each ticker separately
+      ggplot(aes(x=range_pct, y=next_day_range_pct)) +
+      scale_y_log10() +
+      scale_x_log10() +
+      geom_point() +
+      geom_smooth(method = 'lm', formula = 'y ~ x') +
+      facet_wrap(~ticker, scales = "free") +
+      labs(
+        title = "Daily range vs next day's range by ticker"
+      )
+    ```
 
-        -   Asset Returns
-
-            -   You'll typically find almost no persistence at all, other than a very weak negative relationship at the daily timescale in some assets.
-
-    -   [Example]{.ribbon-highlight}: How persistent is volatility over time?
-
-        -   Statistically, you can calculate the ACF. For relationships further back than one day, ACF(2), ACF(3), etc.
-
-        ::: panel-tabset
-        ## Overall Present Volatility vs 1 Day Lead
-
-        ![](_resources/Finance-Snippets.resources/daily-vol-vs-1-day-lead-2.png){.lightbox width="532"}
-
-        ``` r
-        VTI <- 
-          VTI %>%
-          # calculate volatility as pct range
-          mutate(range_pct = (high/low - 1) * 100) %>%
-          # ensure our observations are arranged by date
-          arrange(date) %>%
-          # shift our observations
-          mutate(next_day_range_pct = lead(range_pct, 1)) %>%
-          # remove NAs (we'll have an NA on our last observation as there's no tomorrow)
-          na.omit()
-
-        VTI %>%
-          ggplot(aes(x=range_pct, y=next_day_range_pct)) +
-          scale_x_log10() +
-          scale_y_log10() +
-          geom_point() +
-          # add regression line
-          geom_smooth(method = "lm", formula = 'y ~ x') +
-          labs(
-            title = "Daily range vs next day's range"
-          )
-        ```
-
-        -   I think the data is over a 20 year span.
-        -   Using log scaled axes because the points were clumped towards zero and obscuring the relationsip.
-        -   The seems to be a fairly persistent relationship between today's and tomorrow's volatility
-
-        ## Over Years
-
-        ![](_resources/Finance-Snippets.resources/daily-vol-vs-1-day-lead-per-year-2.png){.lightbox width="532"}
-
-        ``` r
-        VTI %>%
-          mutate(year = year(date)) %>%
-          ggplot(aes(x=range_pct, y=next_day_range_pct)) +
-          scale_x_log10() +
-          scale_y_log10() +
-          geom_point() +
-          geom_smooth(method = 'lm', formula = 'y ~ x') +
-          facet_wrap(~year, scales = "free") +
-          labs(
-            title = "Daily range vs next day's range by year"
-          )
-        ```
-
-        -   Some years are more volatile than others, the relationship between today’s and yesterday’s volatilities has been reasonably consistent over time. And while the slope of the regression line has changed over the years, it’s always up and to the right (i.e. *reasonably persistent*).
-
-        ## Across ETFs
-
-        ![](_resources/Finance-Snippets.resources/daily-vol-vs-1-day-lead-across-etfs-2.png){width="532"}
-
-        ``` r
-        prices %>%
-          # calculate the daily range
-          mutate(range_pct = (high/low - 1) * 100) %>%
-          # perform subsequent operations on each ticker separately
-          group_by(ticker) %>%
-          arrange(date) %>%
-          mutate(next_day_range_pct  = lead(range_pct, 1)) %>%
-          na.omit() %>%
-          # plot each ticker separately
-          ggplot(aes(x=range_pct, y=next_day_range_pct)) +
-          scale_y_log10() +
-          scale_x_log10() +
-          geom_point() +
-          geom_smooth(method = 'lm', formula = 'y ~ x') +
-          facet_wrap(~ticker, scales = "free") +
-          labs(
-            title = "Daily range vs next day's range by ticker"
-          )
-        ```
-
-        -   Still fairly consistent
-        :::
+    - Still fairly consistent
+    :::
 
 ## Get Data {#sec-finance-snip-basic .unnumbered}
 
--   Packages
+- Packages
 
-    -   [{]{style="color: #990000"}[edgarfundamentals](https://cran.r-project.org/web/packages/edgarfundamentals/index.html){style="color: #990000"}[}]{style="color: #990000"} - Retrieve Fundamental Financial Data from SEC 'EDGAR'
-        -   Includes earnings per share, return on equity, return on assets, debt-to-equity, current ratio, gross margin, operating margin, net margin, price-to-earnings, price-to-book, and dividend yield for any publicly traded U.S. company
-    -   [{]{style="color: #990000"}[edgarWebR](https://cran.r-project.org/package=edgarWebR){style="color: #990000"}[}]{style="color: #990000"} - The EDGAR database provides free public access to corporate information, allowing you to research a public company’s financial information and operations by reviewing the filings the company makes with the SEC. You can also research information provided by mutual funds (including money market funds), exchange-traded funds (ETFs), and variable annuities.
-    -   [{]{style="color: #990000"}[fmpapi](https://tidy-finance.github.io/r-fmpapi/){style="color: #990000"}[}]{style="color: #990000"}, [{]{style="color: goldenrod"}[fmpapi](https://github.com/tidy-finance/py-fmpapi){style="color: goldenrod"}[}]{style="color: goldenrod"} - Wrapper for the FMP API — (free) real-time stock prices, financial statements, or historical data
-    -   [{]{style="color: #990000"}[fredr](https://cran.r-project.org/package=fredr){style="color: #990000"}[}]{style="color: #990000"} - The Federal Reserve Bank of St. Louis provides more than 818,000 US and international time series from 109 sources via the API FRED. The data is freely available and can be browsed online on the FRED [homepage](https://fred.stlouisfed.org/).
-    -   [{]{style="color: #990000"}[frenchdata](https://nareal.github.io/frenchdata/){style="color: #990000"}[}]{style="color: #990000"} - Download and read data sets from Prof. Kenneth French finance data library
-    -   [{]{style="color: #990000"}[GetQuandlData](https://github.com/msperlin/GetQuandlData/){style="color: #990000"}[}]{style="color: #990000"} - Quandl is a publisher of alternative data. Quandl publishes free data, scraped from many different sources from the web. However, some of the data requires specific subscriptions on the Quandl platform.
-        -   [{]{style="color: #990000"}[Quandl](https://cran.r-project.org/package=Quandl){style="color: #990000"}[}]{style="color: #990000"} has some [issues](https://www.msperlin.com/post/2019-10-01-new-package-getquandldata/)
-        -   Getting Quandl data requires you to register for an account, and in the account settings, you'll find your API key.
-        -   [List of parameters](https://docs.data.nasdaq.com/docs/parameters-2) that can be used for querying the data.
-    -   [{]{style="color: #990000"}[Rblpapi](https://cran.r-project.org/package=Rblpapi){style="color: #990000"}[}]{style="color: #990000"} - Bloomberg’s Fundamental coverage includes current and normalized historical data for the balance sheet, income statement, cash flows statement, and financial ratios. Additionally, it provides industry-specific data for communications, consumer, energy, health care, and many more. In order to retrieve Bloomberg data, a paid subscription is needed.
-    -   [{]{style="color: #990000"}[simfinapi](https://cran.r-project.org/package=simfinapi){style="color: #990000"}[}]{style="color: #990000"} - Simfin make fundamental financial data freely available to private investors, researchers, and students. The data provider applies automating data collection processes to collect a large set of publicly available information from firms’ financial statements.
-        -   Offers a generous free plan, with a daily limit of 2000 api calls.
-        -   See [chapter](https://msperlin.com/afedr/importing-internet#package-simfinapi) for a few examples
-    -   [{]{style="color: #990000"}[tidyquant](https://business-science.github.io/tidyquant/){style="color: #990000"}[}]{style="color: #990000"}
-        -   Download and clean data - Daily stock prices (historical), key statistics (real-time), key ratios (historical), financial statements, dividends, splits, economic data from the FRED, FOREX rates from Oanda
-        -   Performance Analysis and Portfolio Analysis
-    -   [{]{style="color: goldenrod"}[yfinance](https://github.com/ranaroussi/yfinance){style="color: goldenrod"}[}]{style="color: goldenrod"}, [yfinancer](https://cran.r-project.org/web/packages/yfinancer/index.html) - Downloads market data from yahoo finance
-    -   [{]{style="color: #990000"}[yfR](https://docs.ropensci.org/yfR/){style="color: #990000"}[}]{style="color: #990000"} - Facilitates importing stock prices from Yahoo finance, organizing the data in the tidy format and speeding up the process using a cache system and parallel computing.
-        -   See [chapter](https://msperlin.com/afedr/importing-internet#package-yfr) for examples and notes on using this package
-    -   [{]{style="color: #990000"}[yfscreen](https://cran.r-project.org/web/packages/yfscreen/index.html){style="color: #990000"}[}]{style="color: #990000"} - Yahoo Finance 'screener' API
-        -   Use cases include screening across a range of security types including equities, mutual funds, ETFs, indices, and futures.
+  - [{]{style="color: #990000"}[edgarfundamentals](https://cran.r-project.org/web/packages/edgarfundamentals/index.html){style="color: #990000"}[}]{style="color: #990000"} - Retrieve Fundamental Financial Data from SEC 'EDGAR'
+    - Includes earnings per share, return on equity, return on assets, debt-to-equity, current ratio, gross margin, operating margin, net margin, price-to-earnings, price-to-book, and dividend yield for any publicly traded U.S. company
+  - [{]{style="color: #990000"}[edgarWebR](https://cran.r-project.org/package=edgarWebR){style="color: #990000"}[}]{style="color: #990000"} - The EDGAR database provides free public access to corporate information, allowing you to research a public company’s financial information and operations by reviewing the filings the company makes with the SEC. You can also research information provided by mutual funds (including money market funds), exchange-traded funds (ETFs), and variable annuities.
+  - [{]{style="color: #990000"}[fmpapi](https://tidy-finance.github.io/r-fmpapi/){style="color: #990000"}[}]{style="color: #990000"}, [{]{style="color: goldenrod"}[fmpapi](https://github.com/tidy-finance/py-fmpapi){style="color: goldenrod"}[}]{style="color: goldenrod"} - Wrapper for the FMP API — (free) real-time stock prices, financial statements, or historical data
+  - [{]{style="color: #990000"}[fredr](https://cran.r-project.org/package=fredr){style="color: #990000"}[}]{style="color: #990000"} - The Federal Reserve Bank of St. Louis provides more than 818,000 US and international time series from 109 sources via the API FRED. The data is freely available and can be browsed online on the FRED [homepage](https://fred.stlouisfed.org/).
+  - [{]{style="color: #990000"}[frenchdata](https://nareal.github.io/frenchdata/){style="color: #990000"}[}]{style="color: #990000"} - Download and read data sets from Prof. Kenneth French finance data library
+  - [{]{style="color: #990000"}[GetQuandlData](https://github.com/msperlin/GetQuandlData/){style="color: #990000"}[}]{style="color: #990000"} - Quandl is a publisher of alternative data. Quandl publishes free data, scraped from many different sources from the web. However, some of the data requires specific subscriptions on the Quandl platform.
+    - [{]{style="color: #990000"}[Quandl](https://cran.r-project.org/package=Quandl){style="color: #990000"}[}]{style="color: #990000"} has some [issues](https://www.msperlin.com/post/2019-10-01-new-package-getquandldata/)
+    - Getting Quandl data requires you to register for an account, and in the account settings, you'll find your API key.
+    - [List of parameters](https://docs.data.nasdaq.com/docs/parameters-2) that can be used for querying the data.
+  - [{]{style="color: #990000"}[Rblpapi](https://cran.r-project.org/package=Rblpapi){style="color: #990000"}[}]{style="color: #990000"} - Bloomberg’s Fundamental coverage includes current and normalized historical data for the balance sheet, income statement, cash flows statement, and financial ratios. Additionally, it provides industry-specific data for communications, consumer, energy, health care, and many more. In order to retrieve Bloomberg data, a paid subscription is needed.
+  - [{]{style="color: #990000"}[simfinapi](https://cran.r-project.org/package=simfinapi){style="color: #990000"}[}]{style="color: #990000"} - Simfin make fundamental financial data freely available to private investors, researchers, and students. The data provider applies automating data collection processes to collect a large set of publicly available information from firms’ financial statements.
+    - Offers a generous free plan, with a daily limit of 2000 api calls.
+    - See [chapter](https://msperlin.com/afedr/importing-internet#package-simfinapi) for a few examples
+  - [{]{style="color: #990000"}[tidyquant](https://business-science.github.io/tidyquant/){style="color: #990000"}[}]{style="color: #990000"}
+    - Download and clean data - Daily stock prices (historical), key statistics (real-time), key ratios (historical), financial statements, dividends, splits, economic data from the FRED, FOREX rates from Oanda
+    - Performance Analysis and Portfolio Analysis
+  - [{]{style="color: goldenrod"}[yfinance](https://github.com/ranaroussi/yfinance){style="color: goldenrod"}[}]{style="color: goldenrod"}, [yfinancer](https://cran.r-project.org/web/packages/yfinancer/index.html) - Downloads market data from yahoo finance
+  - [{]{style="color: #990000"}[yfR](https://docs.ropensci.org/yfR/){style="color: #990000"}[}]{style="color: #990000"} - Facilitates importing stock prices from Yahoo finance, organizing the data in the tidy format and speeding up the process using a cache system and parallel computing.
+    - See [chapter](https://msperlin.com/afedr/importing-internet#package-yfr) for examples and notes on using this package
+  - [{]{style="color: #990000"}[yfscreen](https://cran.r-project.org/web/packages/yfscreen/index.html){style="color: #990000"}[}]{style="color: #990000"} - Yahoo Finance 'screener' API
+    - Use cases include screening across a range of security types including equities, mutual funds, ETFs, indices, and futures.
 
--   [Stock Prices]{.underline}
+- [Stock Prices]{.underline}
 
-    ::: panel-tabset
-    ## [{tidyquant}]{style="color: #990000"}
+  ::: panel-tabset
+  ## [{tidyquant}]{style="color: #990000"}
+
+  ``` r
+  library(tidyverse)
+  library(tidyquant)
+
+  # Download symbols of DOW index
+  symbols <- 
+    tq_index(x = "DOW") |> 
+    filter(company != "US DOLLAR")
+
+  # Download prices of DOW index constituents
+  prices <- 
+    tq_get(x = symbols, 
+           get = "stock.prices", 
+           from = "2000-01-01", 
+           to = "2022-12-31")
+  ```
+
+  ## [{{yfinance}}]{style="color: goldenrod"}
+
+  ``` python
+  import pandas as pd
+  import numpy as np
+  import yfinance as yf
+
+  # Download symbols of DOW index
+  url = ("https://www.ssga.com/us/en/institutional/etfs/library-content/"
+         "products/fund-data/etfs/us/holdings-daily-us-en-dia.xlsx")
+  symbols = (
+    pd.read_excel(url, skiprows=4, nrows=30)
+    .get("Ticker")
+    .tolist()
+  )
+
+  # Download prices of DOW index constituents
+  index_prices = (
+    yf.download(tickers=symbols, start="2000-01-01", end="2022-12-31")
+    .melt(ignore_index=False, var_name=["variable", "symbol"])
+    .reset_index()
+    .pivot(index=["Date", "symbol"], columns="variable", values="value")
+    .reset_index()
+    .rename(columns={"Date": "date", "Open": "open", "High": "high", "Low": "low", 
+                     "Close": "close", "Adj Close": "adjusted", "Volume": "volume"})
+  )
+  ```
+  :::
+
+- [Fama French Factors]{.underline}
+
+  - [Example]{.ribbon-highlight}: [{frenchdata}]{style="color: #990000"}
 
     ``` r
-    library(tidyverse)
+    library(frenchdata)
+
+    factors_ff3_monthly_raw <- download_french_data("Fama/French 3 Factors")
+    factors_ff3_monthly <- 
+      factors_ff3_monthly_raw$subsets$data[[1]] |>
+      mutate(
+        month = floor_date(ymd(str_c(date, "01")), "month"),
+        across(c(RF, `Mkt-RF`, SMB, HML), ~as.numeric(.) / 100),
+        .keep = "none"
+      ) |>
+      rename_with(str_to_lower) |>
+      rename(mkt_excess = `mkt-rf`) |>
+      select(month, everything())
+
+    print(factors_ff3_monthly, n = 5)
+    #> # A tibble: 1,170 × 5
+    #>   month      mkt_excess     smb     hml     rf
+    #>   <date>          <dbl>   <dbl>   <dbl>  <dbl>
+    #> 1 1926-07-01     0.0296 -0.0256 -0.0243 0.0022
+    #> 2 1926-08-01     0.0264 -0.0117  0.0382 0.0025
+    #> 3 1926-09-01     0.0036 -0.014   0.0013 0.0023
+    #> 4 1926-10-01    -0.0324 -0.0009  0.007  0.0032
+    #> 5 1926-11-01     0.0253 -0.001  -0.0051 0.0031
+    ```
+
+- [q-Factors]{.underline}
+
+  - [Example]{.ribbon-highlight}:
+
+    ``` r
+    factors_q_monthly_link <-
+      "https://global-q.org/uploads/1/2/2/6/122679606/q5_factors_monthly_2022.csv"
+
+    factors_q_monthly <- read_csv(factors_q_monthly_link) |>
+      mutate(month = ymd(str_c(year, month, "01", sep = "-"))) |>
+      select(-R_F, -R_MKT, -year) |>
+      rename_with(~ str_remove(., "R_")) |>
+      rename_with(~ str_to_lower(.)) |>
+      mutate(across(-month, ~ . / 100)) 
+
+    print(factors_q_monthly, n = 5)
+    #> # A tibble: 672 × 5
+    #>   month            me       ia     roe       eg
+    #>   <date>        <dbl>    <dbl>   <dbl>    <dbl>
+    #> 1 1967-01-01  0.0683  -0.0297  0.0192  -0.0218 
+    #> 2 1967-02-01  0.0165  -0.00227 0.0354   0.0222 
+    #> 3 1967-03-01  0.0200  -0.0178  0.0184  -0.0104 
+    #> 4 1967-04-01 -0.00690 -0.0288  0.0106  -0.0173 
+    #> 5 1967-05-01  0.0285   0.0252  0.00692  0.00158
+    ```
+
+- [Macroeconomic Predictors]{.underline}
+
+  - [Example]{.ribbon-highlight}: Welch and Goyal (2008)
+
+    ``` r
+    download.file(
+      url = "https://docs.google.com/spreadsheets/d/1g4LOaRj4TvwJr9RIaA_nwrXXWTOy46bP/export?format=xlsx", 
+      destfile = "macro_predictors.xlsx", 
+      mode = "wb"
+    )
+
+    macro_predictors <- 
+      read_xlsx("macro_predictors.xlsx", sheet = "Monthly") |> 
+      mutate(
+        # Several cleaning steps & variable transformations...
+      )
+    #>   # A tibble: 1,152 × 15
+    #>   month        rp_div    dp    dy    ep     de     svar    bm   ntis    tbl
+    #>   <date>        <dbl> <dbl> <dbl> <dbl>  <dbl>    <dbl> <dbl>  <dbl>  <dbl>
+    #> 1 1926-12-01 -0.0220  -2.97 -2.96 -2.39 -0.586 0.000465 0.441 0.0509 0.0307
+    #> 2 1927-01-01  0.0422  -2.94 -2.96 -2.37 -0.568 0.000470 0.444 0.0508 0.0323
+    #> 3 1927-02-01  0.00363 -2.98 -2.93 -2.43 -0.549 0.000287 0.429 0.0517 0.0329
+    #> 4 1927-03-01  0.0142  -2.98 -2.97 -2.45 -0.531 0.000924 0.470 0.0464 0.032 
+    #> 5 1927-04-01  0.0459  -2.98 -2.97 -2.47 -0.513 0.000603 0.457 0.0505 0.0339
+    #> # ℹ 5 more variables: lty <dbl>, ltr <dbl>, tms <dbl>, dfy <dbl>, infl <dbl>
+    ```
+
+  - [Example]{.ribbon-highlight}: FRED CPI data using [{tidyquant}]{style="color: #990000"}
+
+    ``` r
     library(tidyquant)
 
-    # Download symbols of DOW index
-    symbols <- 
-      tq_index(x = "DOW") |> 
-      filter(company != "US DOLLAR")
-
-    # Download prices of DOW index constituents
-    prices <- 
-      tq_get(x = symbols, 
-             get = "stock.prices", 
-             from = "2000-01-01", 
-             to = "2022-12-31")
+    cpi_monthly <- 
+      tq_get("CPIAUCNS", get = "economic.data") |>
+      mutate(
+        month = floor_date(date, "month"),
+        cpi = price / price[month == max(month)],
+        .keep = "none"
+      )
+    print(cpi_monthly, n = 5)
+    #> # A tibble: 121 × 2
+    #>   month        cpi
+    #>   <date>     <dbl>
+    #> 1 2014-01-01 0.758
+    #> 2 2014-02-01 0.761
+    #> 3 2014-03-01 0.766
+    #> 4 2014-04-01 0.769
+    #> 5 2014-05-01 0.771
     ```
-
-    ## [{{yfinance}}]{style="color: goldenrod"}
-
-    ``` python
-    import pandas as pd
-    import numpy as np
-    import yfinance as yf
-
-    # Download symbols of DOW index
-    url = ("https://www.ssga.com/us/en/institutional/etfs/library-content/"
-           "products/fund-data/etfs/us/holdings-daily-us-en-dia.xlsx")
-    symbols = (
-      pd.read_excel(url, skiprows=4, nrows=30)
-      .get("Ticker")
-      .tolist()
-    )
-
-    # Download prices of DOW index constituents
-    index_prices = (
-      yf.download(tickers=symbols, start="2000-01-01", end="2022-12-31")
-      .melt(ignore_index=False, var_name=["variable", "symbol"])
-      .reset_index()
-      .pivot(index=["Date", "symbol"], columns="variable", values="value")
-      .reset_index()
-      .rename(columns={"Date": "date", "Open": "open", "High": "high", "Low": "low", 
-                       "Close": "close", "Adj Close": "adjusted", "Volume": "volume"})
-    )
-    ```
-    :::
-
--   [Fama French Factors]{.underline}
-
-    -   [Example]{.ribbon-highlight}: [{frenchdata}]{style="color: #990000"}
-
-        ``` r
-        library(frenchdata)
-
-        factors_ff3_monthly_raw <- download_french_data("Fama/French 3 Factors")
-        factors_ff3_monthly <- 
-          factors_ff3_monthly_raw$subsets$data[[1]] |>
-          mutate(
-            month = floor_date(ymd(str_c(date, "01")), "month"),
-            across(c(RF, `Mkt-RF`, SMB, HML), ~as.numeric(.) / 100),
-            .keep = "none"
-          ) |>
-          rename_with(str_to_lower) |>
-          rename(mkt_excess = `mkt-rf`) |>
-          select(month, everything())
-
-        print(factors_ff3_monthly, n = 5)
-        #> # A tibble: 1,170 × 5
-        #>   month      mkt_excess     smb     hml     rf
-        #>   <date>          <dbl>   <dbl>   <dbl>  <dbl>
-        #> 1 1926-07-01     0.0296 -0.0256 -0.0243 0.0022
-        #> 2 1926-08-01     0.0264 -0.0117  0.0382 0.0025
-        #> 3 1926-09-01     0.0036 -0.014   0.0013 0.0023
-        #> 4 1926-10-01    -0.0324 -0.0009  0.007  0.0032
-        #> 5 1926-11-01     0.0253 -0.001  -0.0051 0.0031
-        ```
-
--   [q-Factors]{.underline}
-
-    -   [Example]{.ribbon-highlight}:
-
-        ``` r
-        factors_q_monthly_link <-
-          "https://global-q.org/uploads/1/2/2/6/122679606/q5_factors_monthly_2022.csv"
-
-        factors_q_monthly <- read_csv(factors_q_monthly_link) |>
-          mutate(month = ymd(str_c(year, month, "01", sep = "-"))) |>
-          select(-R_F, -R_MKT, -year) |>
-          rename_with(~ str_remove(., "R_")) |>
-          rename_with(~ str_to_lower(.)) |>
-          mutate(across(-month, ~ . / 100)) 
-
-        print(factors_q_monthly, n = 5)
-        #> # A tibble: 672 × 5
-        #>   month            me       ia     roe       eg
-        #>   <date>        <dbl>    <dbl>   <dbl>    <dbl>
-        #> 1 1967-01-01  0.0683  -0.0297  0.0192  -0.0218 
-        #> 2 1967-02-01  0.0165  -0.00227 0.0354   0.0222 
-        #> 3 1967-03-01  0.0200  -0.0178  0.0184  -0.0104 
-        #> 4 1967-04-01 -0.00690 -0.0288  0.0106  -0.0173 
-        #> 5 1967-05-01  0.0285   0.0252  0.00692  0.00158
-        ```
-
--   [Macroeconomic Predictors]{.underline}
-
-    -   [Example]{.ribbon-highlight}: Welch and Goyal (2008)
-
-        ``` r
-        download.file(
-          url = "https://docs.google.com/spreadsheets/d/1g4LOaRj4TvwJr9RIaA_nwrXXWTOy46bP/export?format=xlsx", 
-          destfile = "macro_predictors.xlsx", 
-          mode = "wb"
-        )
-
-        macro_predictors <- 
-          read_xlsx("macro_predictors.xlsx", sheet = "Monthly") |> 
-          mutate(
-            # Several cleaning steps & variable transformations...
-          )
-        #>   # A tibble: 1,152 × 15
-        #>   month        rp_div    dp    dy    ep     de     svar    bm   ntis    tbl
-        #>   <date>        <dbl> <dbl> <dbl> <dbl>  <dbl>    <dbl> <dbl>  <dbl>  <dbl>
-        #> 1 1926-12-01 -0.0220  -2.97 -2.96 -2.39 -0.586 0.000465 0.441 0.0509 0.0307
-        #> 2 1927-01-01  0.0422  -2.94 -2.96 -2.37 -0.568 0.000470 0.444 0.0508 0.0323
-        #> 3 1927-02-01  0.00363 -2.98 -2.93 -2.43 -0.549 0.000287 0.429 0.0517 0.0329
-        #> 4 1927-03-01  0.0142  -2.98 -2.97 -2.45 -0.531 0.000924 0.470 0.0464 0.032 
-        #> 5 1927-04-01  0.0459  -2.98 -2.97 -2.47 -0.513 0.000603 0.457 0.0505 0.0339
-        #> # ℹ 5 more variables: lty <dbl>, ltr <dbl>, tms <dbl>, dfy <dbl>, infl <dbl>
-        ```
-
-    -   [Example]{.ribbon-highlight}: FRED CPI data using [{tidyquant}]{style="color: #990000"}
-
-        ``` r
-        library(tidyquant)
-
-        cpi_monthly <- 
-          tq_get("CPIAUCNS", get = "economic.data") |>
-          mutate(
-            month = floor_date(date, "month"),
-            cpi = price / price[month == max(month)],
-            .keep = "none"
-          )
-        print(cpi_monthly, n = 5)
-        #> # A tibble: 121 × 2
-        #>   month        cpi
-        #>   <date>     <dbl>
-        #> 1 2014-01-01 0.758
-        #> 2 2014-02-01 0.761
-        #> 3 2014-03-01 0.766
-        #> 4 2014-04-01 0.769
-        #> 5 2014-05-01 0.771
-        ```
