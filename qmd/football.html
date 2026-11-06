@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.10.19">
+<meta name="generator" content="quarto-1.11.9">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Football – Domain Knowledge</title>
+<title>Football Metrics – Domain Knowledge</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -41,14 +41,15 @@ ul.task-list li input[type="checkbox"] {
 <link href="../images/dk-favicon-32.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/scrollable-regions/scrollable-regions.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-1ca6cdb68b3cd6e9d3d42ba01654c7dc.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dd45f6cd06564c034cd062c9bbe27f21.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-5e7d04c372a3b54f3a8a58ea2e4d4f44.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-0d1f635479d660db3d856ffe7b4c258e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -119,17 +120,17 @@ window.Quarto = {
 <link rel="stylesheet" href="../styles.css">
 </head>
 
-<body class="nav-sidebar floating quarto-light">
+<body class="nav-sidebar floating quarto-light"><a id="quarto-skip-link" class="visually-hidden-focusable" href="#quarto-document-content">Skip to main content</a>
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav">
+  <nav class="quarto-secondary-nav" aria-label="Toolbar">
     <div class="container-fluid d-flex">
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../qmd/football.html">Football</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <nav class="quarto-page-breadcrumbs" aria-label="Breadcrumbs"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../qmd/football.html">Football Metrics</a></li></ol></nav>
+        <a class="flex-grow-1" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
@@ -140,7 +141,7 @@ window.Quarto = {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto" aria-label="Site">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="../">Domain Knowledge</a> 
@@ -208,13 +209,10 @@ window.Quarto = {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
- <span class="menu-text">Finance</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
+            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-controls="quarto-sidebar-section-1" aria-expanded="false">
+ <span class="menu-text" id="quarto-sidebar-section-1-label">Finance</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-1" aria-labelledby="quarto-sidebar-section-1-label" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../qmd/finance-glossary.html" class="sidebar-item-text sidebar-link">
@@ -250,7 +248,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../qmd/football.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Football</span></a>
+ <span class="menu-text">Football Metrics</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -279,13 +277,10 @@ window.Quarto = {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
- <span class="menu-text">Logistics</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
+            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-controls="quarto-sidebar-section-2" aria-expanded="false">
+ <span class="menu-text" id="quarto-sidebar-section-2-label">Logistics</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-2" aria-labelledby="quarto-sidebar-section-2-label" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../qmd/logistics-demand-planning.html" class="sidebar-item-text sidebar-link">
@@ -338,13 +333,10 @@ window.Quarto = {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
- <span class="menu-text">Product Development</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
+            <button type="button" class="sidebar-item-text sidebar-item-toggle sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-controls="quarto-sidebar-section-3" aria-expanded="false">
+ <span class="menu-text" id="quarto-sidebar-section-3-label">Product Development</span><i class="bi bi-chevron-right" aria-hidden="true"></i></button>
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-3" aria-labelledby="quarto-sidebar-section-3-label" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../qmd/product-development-general.html" class="sidebar-item-text sidebar-link">
@@ -389,21 +381,23 @@ window.Quarto = {
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
+        <nav id="TOC" role="doc-toc" aria-labelledby="toc-title" class="toc-active">
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
   <li><a href="#sec-foot-misc" id="toc-sec-foot-misc" class="nav-link active" data-scroll-target="#sec-foot-misc">Misc</a></li>
-  <li><a href="#sec-foot-met" id="toc-sec-foot-met" class="nav-link" data-scroll-target="#sec-foot-met">Metrics</a></li>
+  <li><a href="#sec-foot-met" id="toc-sec-foot-met" class="nav-link" data-scroll-target="#sec-foot-met">General</a></li>
+  <li><a href="#offense" id="toc-offense" class="nav-link" data-scroll-target="#offense">Offense</a></li>
+  <li><a href="#defense" id="toc-defense" class="nav-link" data-scroll-target="#defense">Defense</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content" id="quarto-document-content" tabindex="-1">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span id="sec-foot" class="quarto-section-identifier">Football</span></h1>
+<h1 class="title"><span id="sec-foot" class="quarto-section-identifier">Football Metrics</span></h1>
 </div>
 
 
@@ -431,7 +425,15 @@ window.Quarto = {
 <ul>
 <li><a href="https://cfbtrack.com/glossary">CFBTrack College Football Glossary &amp; Stats Dictionary</a></li>
 <li><a href="https://collegefootballdata.com/glossary">CFBD Glossary</a></li>
-<li><a href="https://www.pff.com/news/pro-pff-signature-statistics-a-glossary">PFF Signature Statistics Glossary</a></li>
+<li>PFF
+<ul>
+<li><a href="https://www.pff.com/news/pro-pff-signature-statistics-a-glossary">PFF Signature Statistics Glossary</a>
+<ul>
+<li><a href="https://www.pff.com/news/pro-signature-stat-spotlight-quarterbacks">Article with links</a> to position specific articles that go into detail (formulas) about the metrics</li>
+</ul></li>
+<li><a href="https://www.pff.com/news/nfl-plays-over-expectation-pff-research-stats-grades">Defining PFF’s new metrics for plays over expectation</a></li>
+</ul></li>
+<li><a href="https://statrankings.com/cfb/glossary">statrankings glossary</a></li>
 <li><a href="https://cfbfastr.sportsdataverse.org/articles/index.html">cfbfastr vignettes</a> has a series of articles on Expected Points</li>
 </ul></li>
 <li>Articles
@@ -441,7 +443,7 @@ window.Quarto = {
 </ul>
 </section>
 <section id="sec-foot-met" class="level2 unnumbered">
-<h2 class="unnumbered anchored" data-anchor-id="sec-foot-met">Metrics</h2>
+<h2 class="unnumbered anchored" data-anchor-id="sec-foot-met">General</h2>
 <ul>
 <li>Misc
 <ul>
@@ -547,9 +549,43 @@ window.Quarto = {
 <li>Avg Starting Field Position</li>
 <li>Close Game Record</li>
 </ul></li>
-<li><u>Offense</u>
+</ul>
+</section>
+<section id="offense" class="level2">
+<h2 class="anchored" data-anchor-id="offense">Offense</h2>
 <ul>
-<li>Offensive Line
+<li><u>QB</u>
+<ul>
+<li><strong>Accuracy Rate Over Expected (AROE)</strong>
+<ul>
+<li>PFF metric that doesn’t seem to be available anymore but not sure</li>
+<li>Uses an XGBoost model with depth of target, standard of coverage (coverage on receiver, e.g.&nbsp;tight or wide open) and other metrics (I assume) to predict an expected accuracy rate value.</li>
+<li>Using AROE is more predictive than completion percentage over expected (CPOE), as it doesn’t need the receiver to complete their side of the pass.
+<ul>
+<li>This explanation is unclear. If completions aren’t a factor then how is “accuracy” calculated? (within a certain catch radius?). Unfortunately, I only found 1 or two PFF articles that mention it and they were from like 2021.</li>
+</ul></li>
+</ul></li>
+<li><strong>Completion Percentage</strong>
+<ul>
+<li><strong>Adjusted Completion Percentage</strong>
+<ul>
+<li>Adjusted completion percentage takes box-score completion percentage to the next level. The formula: ((Completions + Drops) / (Attempts – Throw Aways – Spikes – Batted Passes – Hit As Thrown)).</li>
+<li>Removing throwaways, spikes, batted passes and passes released while being hit creates a completion percentage that’s more indicative of quarterback accuracy and success.</li>
+</ul></li>
+<li><strong>Completion Percentage Over Expected (CPOE)</strong>
+<ul>
+<li>An accuracy metric that seeks to place completions into the context of their air yards, receiver separation, the pass width and whether or not the quarterback was pressured in addition to game situation variables such as down, distance, yard line, time remaining, etc</li>
+<li>Looks like the same model as AROE except only uses completed passes.</li>
+<li>Flaws (when comparing QBs) (<a href="https://www.pff.com/news/college-football-what-college-completion-percentage-over-expected-cpoe-tells-us-about-the-2022-nfl-draft-qb-class">source</a>)
+<ul>
+<li>Doesn’t include the quarterback’s rushing ability nor consider sacks in the equation</li>
+<li>Doesn’t <em>truly</em> grasp an interception’s impact because it’s just counted as a regular incompletion with a negative CPOE</li>
+</ul></li>
+<li>This gives QBs credit for unexpected completions and penalizes them for unexpected incompletions.</li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><u>Offensive Line</u>
 <ul>
 <li><strong>HIT</strong> - Hits on the QB</li>
 <li><strong>QBH</strong> - Hurries where a QB is forced to throw early or scramble</li>
@@ -558,21 +594,30 @@ window.Quarto = {
 <li><strong>PR</strong> - Pressures Allowed which is sacks + hits + hurries</li>
 <li><strong>SK</strong> - Sacks Allowed</li>
 </ul></li>
-<li>Receiving
+<li><u>Receiving</u>
 <ul>
 <li><strong>1st</strong> - Number of First Downs</li>
 <li><strong>ADOT</strong> - Average Depth of Target</li>
 <li><strong>CTT</strong> - Contested Targets</li>
 <li><strong>CCR</strong> - Contested Catch Rate</li>
 <li><strong>DRP</strong> - Drop Rate</li>
-<li><strong>DROE</strong> - Drop Rate Over Expected measures the percentage of catchable passes dropped by a receiver compared to what would typically be expected in similar situations. It helps evaluate a receiver’s reliability and performance in catching passes
+<li><strong>Drop Rate Over Expected (DROE)</strong>
 <ul>
+<li>Measures the percentage of catchable passes dropped by a receiver compared to what would typically be expected in similar situations. It helps evaluate a receiver’s reliability and performance in catching passes</li>
 <li>High DROE often indicates receivers are dropping throws despite good placement, or that high pass velocity (a “fastball”) makes target completion harder than predicted.</li>
 </ul></li>
 <li><strong>MTF</strong> - Missed Tackles Forced</li>
+<li><strong>Wide Receiver Rating</strong>
+<ul>
+<li>Takes into account the total targeted passes to one receiver, the amount of receptions, yards, touchdowns and interceptions on those throws, and gives a rating on a scale of 0.0 to 158.3, the higher the rating the better.</li>
 </ul></li>
 </ul></li>
-<li><u>Defense</u>
+</ul>
+</section>
+<section id="defense" class="level2">
+<h2 class="anchored" data-anchor-id="defense">Defense</h2>
+<ul>
+<li><u>General</u>
 <ul>
 <li><strong>AT</strong> (Assisted Tackles)</li>
 <li><strong>FF</strong> - Forced Fumbles</li>
@@ -584,6 +629,13 @@ window.Quarto = {
 <li><strong>Stop Rate</strong> - The percentage of rushing plays in which the defender successfully beats his blocker so he’s in better position to stop the runner; disrupts the pocket or running lane by pushing his blocker backward; contains the runner such that he must adjust his running lane; or recording a tackle within 3 yards of the line of scrimmage. (ESPN)</li>
 <li><strong>Win Rate</strong> - The percentage of pass-rush plays in which the defender successfully pressures or sacks the quarterback. More specifically, how often a pass rusher is able to beat/win his block within 2.5 seconds (ESPN)</li>
 <li><strong>YPR</strong> - Yards per Reception</li>
+</ul></li>
+<li><u>Cornerbacks</u>
+<ul>
+<li><strong>Adjusted Passer Rating When Targeted</strong> (<a href="https://www.pff.com/news/nfl-adjusted-passer-rating-when-targeted-week-6">source</a>)
+<ul>
+<li>Removes off-target throws and dropped passes from the data set, which naturally inflates values but does a better job of describing what cornerbacks have done on targeted passes.</li>
+</ul></li>
 </ul></li>
 </ul>
 
@@ -669,7 +721,8 @@ window.Quarto = {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
       // Inspect non-navigation links and adorn them if external
-     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      window.quartoDecorateExternalLinks = function (root) {
+     var links = (root || window.document).querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
       for (var i=0; i<links.length; i++) {
         const link = links[i];
         if (!isInternal(link.href)) {
@@ -678,8 +731,69 @@ window.Quarto = {
           if (link.dataset.originalHref !== undefined) {
             link.href = link.dataset.originalHref;
           }
+          if (!link.classList.contains('no-external-icon')) {
+          }
         }
       }
+      };
+      window.quartoDecorateExternalLinks(window.document);
+    // Esc closes the popup (WCAG 1.4.13) and focus leaving both trigger and
+    // popup closes it (WCAG 2.4.11); tippy handles neither for interactive popups.
+    const hideOnEscAndFocusOut = {
+      name: 'hideOnEscAndFocusOut',
+      defaultValue: true,
+      fn(instance) {
+        const dismiss = () => {
+          // A show scheduled by the trigger delay would otherwise reopen it
+          instance.clearDelayTimeouts();
+          instance.hide();
+        };
+        const onKeyDown = (event) => {
+          if (event.key !== 'Escape') {
+            return;
+          }
+          // Keep Esc from also reaching page handlers (e.g. reveal.js overview),
+          // except an open reveal.js slide menu, which Esc should close too.
+          // The menu handles keys only when its keyboard option is on.
+          const menuHandlesEsc = window.Reveal?.getPlugin?.('menu')?.isOpen() &&
+            window.Reveal.getConfig().menu?.keyboard !== false;
+          if (!menuHandlesEsc) {
+            event.stopPropagation();
+          }
+          if (instance.popper.contains(window.document.activeElement)) {
+            // Disabled while refocusing so the focus trigger does not reopen it
+            instance.disable();
+            instance.reference.focus();
+            instance.enable();
+          }
+          dismiss();
+        };
+        const onFocusOut = (event) => {
+          const target = event.relatedTarget;
+          if (target && !instance.reference.contains(target) &&
+              !instance.popper.contains(target)) {
+            dismiss();
+          }
+        };
+        // On the trigger too: a click trigger (code-annotations: select) has no
+        // blur handling. Attached for the instance's lifetime so leaving the
+        // trigger also cancels a show still pending on the trigger delay.
+        instance.reference.addEventListener('focusout', onFocusOut);
+        return {
+          onShow() {
+            window.document.addEventListener('keydown', onKeyDown, true);
+            instance.popper.addEventListener('focusout', onFocusOut);
+          },
+          onHide() {
+            window.document.removeEventListener('keydown', onKeyDown, true);
+            instance.popper.removeEventListener('focusout', onFocusOut);
+          },
+          onDestroy() {
+            instance.reference.removeEventListener('focusout', onFocusOut);
+          },
+        };
+      },
+    };
     function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
       const config = {
         allowHTML: true,
@@ -693,6 +807,7 @@ window.Quarto = {
         interactiveBorder: 10,
         theme: 'quarto',
         placement: 'bottom-start',
+        plugins: [hideOnEscAndFocusOut],
       };
       if (contentFn) {
         config.content = contentFn;
@@ -855,44 +970,54 @@ window.Quarto = {
           const lineIds = lines.map((line) => {
             return targetCell + "-" + line;
           })
-          let top = null;
-          let height = null;
-          let parent = null;
+          // Each band is positioned against its own containing block, which is
+          // not the offsetParent of the lines, so place it from client rects.
+          const placeBand = (band, firstEl, lastEl, codeBlock) => {
+            const container = band.offsetParent;
+            if (container === null) {
+              return;
+            }
+            const containerRect = container.getBoundingClientRect();
+            // Reveal.js scales slides with a transform, so convert client
+            // pixels back to the CSS pixels of the container.
+            const scale = containerRect.height / container.offsetHeight || 1;
+            const firstRect = firstEl.getBoundingClientRect();
+            const lastRect = lastEl.getBoundingClientRect();
+            const top = (firstRect.top - containerRect.top) / scale - container.clientTop + container.scrollTop;
+            const height = (lastRect.bottom - firstRect.top) / scale;
+            band.style.top = top - 2 + "px";
+            band.style.height = height + 4 + "px";
+            if (codeBlock) {
+              // Without the copy button wrapper, the containing block is wider
+              // than the code block, so span the code block explicitly.
+              const blockRect = codeBlock.getBoundingClientRect();
+              band.style.left = (blockRect.left - containerRect.left) / scale - container.clientLeft + container.scrollLeft + "px";
+              band.style.width = blockRect.width / scale + "px";
+            }
+          };
           if (lineIds.length > 0) {
-              //compute the position of the single el (top and bottom and make a div)
-              const el = window.document.getElementById(lineIds[0]);
-              top = el.offsetTop;
-              height = el.offsetHeight;
-              parent = el.parentElement.parentElement;
-            if (lineIds.length > 1) {
-              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-              height = bottom - top;
+            const el = window.document.getElementById(lineIds[0]);
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const parent = el.parentElement.parentElement;
+            // cook up a div (if necessary) and position it
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
             }
-            if (top !== null && height !== null && parent !== null) {
-              // cook up a div (if necessary) and position it 
-              let div = window.document.getElementById("code-annotation-line-highlight");
-              if (div === null) {
-                div = window.document.createElement("div");
-                div.setAttribute("id", "code-annotation-line-highlight");
-                div.style.position = 'absolute';
-                parent.appendChild(div);
-              }
-              div.style.top = top - 2 + "px";
-              div.style.height = height + 4 + "px";
-              div.style.left = 0;
-              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-              if (gutterDiv === null) {
-                gutterDiv = window.document.createElement("div");
-                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-                gutterDiv.style.position = 'absolute';
-                const codeCell = window.document.getElementById(targetCell);
-                const gutter = codeCell.querySelector('.code-annotation-gutter');
-                gutter.appendChild(gutterDiv);
-              }
-              gutterDiv.style.top = top - 2 + "px";
-              gutterDiv.style.height = height + 4 + "px";
+            placeBand(div, el, lastEl, parent.closest("div.sourceCode") || parent);
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
             }
+            placeBand(gutterDiv, el, lastEl);
             selectedAnnoteEl = annoteEl;
           }
         };
@@ -991,7 +1116,10 @@ window.Quarto = {
     }
   });
   </script>
-<nav class="page-navigation">
+  <script type="application/javascript">
+  window.quartoScrollableRegionsLabels = {"code":"Scrollable code","output":"Scrollable output"};
+  </script>
+<nav class="page-navigation" aria-label="Page">
   <div class="nav-page nav-page-previous">
       <a href="../qmd/finance-valuation.html" class="pagination-link" aria-label="Valuation">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Valuation</span>
