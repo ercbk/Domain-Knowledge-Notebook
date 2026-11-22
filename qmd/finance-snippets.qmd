@@ -178,7 +178,8 @@
   - [{]{style="color: #990000"}[tidyquant](https://business-science.github.io/tidyquant/){style="color: #990000"}[}]{style="color: #990000"}
     - Download and clean data - Daily stock prices (historical), key statistics (real-time), key ratios (historical), financial statements, dividends, splits, economic data from the FRED, FOREX rates from Oanda
     - Performance Analysis and Portfolio Analysis
-  - [{]{style="color: goldenrod"}[yfinance](https://github.com/ranaroussi/yfinance){style="color: goldenrod"}[}]{style="color: goldenrod"}, [yfinancer](https://cran.r-project.org/web/packages/yfinancer/index.html) - Downloads market data from yahoo finance
+  - [{]{style="color: goldenrod"}[yfinance](https://github.com/ranaroussi/yfinance){style="color: goldenrod"}[}]{style="color: goldenrod"}, [{]{style="color: #990000"}[yfinancer](https://cran.r-project.org/web/packages/yfinancer/index.html){style="color: #990000"}[}]{style="color: #990000"} - Downloads market data from yahoo finance
+  - [{]{style="color: #990000"}[yahoofinancer](https://yahoofinancer.rsquaredacademy.com/){style="color: #990000"}[}]{style="color: #990000"} - An R interface to the Yahoo Finance API. Fetch historical prices, real-time quotes, financial statements, valuation metrics, and currency exchange rates — all returned as tidy tibbles ready for analysis.
   - [{]{style="color: #990000"}[yfR](https://docs.ropensci.org/yfR/){style="color: #990000"}[}]{style="color: #990000"} - Facilitates importing stock prices from Yahoo finance, organizing the data in the tidy format and speeding up the process using a cache system and parallel computing.
     - See [chapter](https://msperlin.com/afedr/importing-internet#package-yfr) for examples and notes on using this package
   - [{]{style="color: #990000"}[yfscreen](https://cran.r-project.org/web/packages/yfscreen/index.html){style="color: #990000"}[}]{style="color: #990000"} - Yahoo Finance 'screener' API

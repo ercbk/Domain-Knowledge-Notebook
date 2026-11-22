@@ -38,7 +38,10 @@
   - Maintaining your customer base
     - Get your customer retention people in a room with a white board and list all the issues they CONSTANTLY hear from customers but have stopped bothering to report up the chain.
     - However painful it is to your bottom line. However politically tough it is. However complex the problem. These are the things that need to be fixed.
-- Go-To-Market (GTM) Strategy ([source](https://www.linkedin.com/pulse/go-to-market-gtm-product-management-comprehensive-guide-salunke-6u3hf))
+- Go-To-Market (GTM) Strategy
+  - Notes from [Go-To-Market (GTM) in Product Management: A Comprehensive Guide](https://www.linkedin.com/pulse/go-to-market-gtm-product-management-comprehensive-guide-salunke-6u3hf)
+  - Resources
+    - [GTM Engineering 101: The Complete Guide for 2025](https://www.linkedin.com/pulse/gtm-engineering-101-complete-guide-2025-ronit-yawalkar-psytc) - Goes more into the technical infrastructure
   - A comprehensive blueprint detailing how a company will deliver a new product or service to its target customers and achieve competitive advantage.
   - It defines the market landscape, customer segments, product positioning, pricing, distribution, marketing, and sales tactics.
   - A GTM plan fuses cross-functional business functions—product, marketing, sales, customer success — to ensure alignment and clarity of purpose for a successful product launch and ongoing growth.
